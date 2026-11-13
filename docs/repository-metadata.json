@@ -1,0 +1,24 @@
+{
+  "repository": "mehdisafer/enterprise-master-data-reconciliation",
+  "status": "prepared_not_applied",
+  "observed_description": null,
+  "observed_topics": [],
+  "description": "Explainable, reversible master-data reconciliation across industrial ERPs with Python, dbt, PostgreSQL and Snowflake.",
+  "topics": [
+    "master-data-management",
+    "data-engineering",
+    "entity-resolution",
+    "record-linkage",
+    "data-quality",
+    "data-lineage",
+    "dbt",
+    "postgresql",
+    "snowflake",
+    "fastapi",
+    "terraform",
+    "synthetic-data"
+  ],
+  "visibility": "private",
+  "license": "pending_explicit_maintainer_choice",
+  "application_blocker": "The connected GitHub interface has no repository metadata mutation capability; the isolated browser has no authenticated GitHub session."
+}

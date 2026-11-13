@@ -8,19 +8,22 @@ The reference implementation uses **Python, PostgreSQL, dbt and a FastAPI review
 
 ## Delivery status
 
-This is a **private release candidate**, developed under [issue #1](https://github.com/mehdisafer/enterprise-master-data-reconciliation/issues/1). Full project acceptance remains open until the authorized Snowflake qualification and release prerequisites are satisfied.
+This is an **unqualified private release candidate**, developed in [PR #2](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/2) under [issue #1](https://github.com/mehdisafer/enterprise-master-data-reconciliation/issues/1). PostgreSQL, dbt build, restore, container/browser and Snowflake qualification are still open. The first GitHub Actions run failed before a runner received any step; it produced no integration artifacts. Its cause is not established by the available evidence.
 
 | Area | Implementation | Execution evidence |
 | --- | --- | --- |
 | Synthetic ERP contracts, blocking, matching and survivorship | Implemented | Local unit tests and measured synthetic control |
-| Human review, merge, split, unmerge and temporal history | Implemented | Real PostgreSQL qualification is required in CI |
-| Transactional outbox and reporting consumer | Implemented | Crash, replay and correction scenarios are exercised by integration tests |
-| PostgreSQL dbt models and tests | Implemented | Parse executed; live build tracked in CI artifacts |
-| Container deployment and restore drill | Implemented | Execution tracked in CI artifacts |
-| Snowflake publication, dbt parity and Terraform | Implemented | **Not live-qualified: dedicated authorized account and budget required** |
+| Human review, merge, split, unmerge and temporal history | Implemented | Real PostgreSQL tests are written; execution blocked |
+| Transactional outbox and reporting consumer | Implemented | Crash, replay and correction tests are written; execution blocked |
+| PostgreSQL dbt models and tests | Implemented | Parse executed; **no live build or data-test result** |
+| Container deployment, rendered console and restore drill | Implemented | **Not executed**; CI received no runner |
+| Terraform configuration | Implemented; provider lock generated | Formatting passed; schema validation blocked by local socket restrictions |
+| Snowflake publication and dbt parity | Implemented | **Not live-qualified: dedicated authorized account and budget required** |
 | Repository licence and public visibility | Pending maintainer decision | No licence grant or visibility change made |
 
-The [acceptance matrix](docs/acceptance.md) is the detailed status record. A passing local unit suite does not qualify a database, provider or deployment.
+The [acceptance matrix](docs/acceptance.md), [evidence index](evidence/README.md) and [release notes](docs/releases/0.1.0rc1.md) distinguish observed results from implementation. A passing local unit suite does not qualify a database, provider or deployment.
+
+At the retained executable revision, the local run passed 72 tests and 15 subtests. The 40 PostgreSQL integration cases were collected but not executed. The locked audit reported zero known vulnerabilities across 119 dependencies at capture time. The final executable revision's [PostgreSQL workflow](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43526045051) and [Terraform workflow](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43526045030) both stopped before runner execution.
 
 ## Run the complete reference
 
@@ -75,7 +78,7 @@ export MDM_TEST_DATABASE_URL=postgresql://mdm@127.0.0.1:5432/mdm_test
 uv run --no-sync pytest -q
 ```
 
-The [CI workflow](.github/workflows/quality.yml) installs the frozen lock, scans Git history for common secret patterns, audits dependencies, executes real PostgreSQL tests, runs the business demo and dbt, restores a consistent backup, measures a bounded database profile, and starts the containerized deployment. Runtime qualification is skipped for documentation-only changes; secret scanning still runs. The initial development sandbox forbids local sockets, so its database integration evidence must come from the isolated CI runner.
+The [CI workflow](.github/workflows/quality.yml) is configured to install the frozen lock, scan Git history for common secret patterns, audit dependencies, execute real PostgreSQL tests, run the business demo and dbt, restore a consistent backup, measure a bounded database profile, and start the containerized deployment. Runtime qualification is skipped for documentation-only changes; secret scanning still runs. A [separate Terraform workflow](.github/workflows/terraform.yml) validates configuration against the installed provider without cloud credentials or apply. The authoring sandbox forbids local sockets. A runner-capable isolated environment is required to obtain the missing integration evidence.
 
 ```bash
 uv run --no-sync dbt build --project-dir dbt --profiles-dir dbt --target postgres
@@ -105,3 +108,5 @@ The reference serializes graph mutations under one PostgreSQL advisory transacti
 The Snowflake profile requires a dedicated account/role, key-pair authentication, database/warehouse scope and approved spending limit. Its resource monitor constrains warehouse credits, not every possible account cost. See [provider semantics and qualification](docs/snowflake.md).
 
 No repository licence has been selected. Original code and synthetic data are not offered under an implied open-source grant; third-party dependencies retain their own licences. GitHub reported unavailable rulesets for the current private plan and denied the integration's branch-protection endpoint. These constraints are recorded, with no billing, visibility or external resource changes.
+
+The [third-party notices](THIRD_PARTY_NOTICES.md) preserve the upstream rights of embedded dbt manifest macros. Repository description/topics are [prepared](docs/repository-metadata.json) and still await a settings-capable interface.

@@ -2,6 +2,8 @@
 
 Use a dedicated synthetic database. `mdm demo` is a local operator scenario, not an API shortcut that bypasses real user roles. Its three named demo actors are fixtures; real API calls derive an actor and role from server-side token configuration.
 
+**Execution status:** this scenario is implemented and has real-database assertions, but no successful PostgreSQL run or rendered-console capture has been obtained yet. The local environment forbids sockets and the initial CI run did not receive a runner. This guide describes the reproducible procedure; it is not a recorded successful demonstration.
+
 ## Automatic demonstration
 
 ```bash
@@ -11,6 +13,8 @@ mdm check
 ```
 
 The output records baseline ingestion, repeat ingestion, the initial consumer view, mistaken Orion merge, late Northstar correction, a source update after the Orion merge, the unmerge, a committed-but-unpublished state, and the corrected reporting view. It asserts preserved source identities, restored original Orion IDs, the later source address, event replay idempotency and coherent reporting crosswalks.
+
+An interrupted run resumes an existing pending or approved decision instead of recreating it. An executed merge is not replayed. If an unmerge already exists, the procedure completes any remaining transition and consumer publication. Resume output is labeled and does not relabel the current state as an original baseline. Two dedicated integration tests inject failures before unmerge approval and after a committed merge; they remain unexecuted until PostgreSQL is available.
 
 ## Interactive stewardship
 

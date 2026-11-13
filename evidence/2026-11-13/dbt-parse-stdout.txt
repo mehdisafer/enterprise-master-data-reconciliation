@@ -1,0 +1,3 @@
+[0m23:18:52  Running with dbt=1.12.7
+[0m23:18:53  Registered adapter: postgres=1.11.0
+[0m23:18:54  Performance info: /workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/evidence/local/dbt-final-parse/perf_info.json

@@ -1,0 +1,8 @@
+[0m23:18:57  Running with dbt=1.12.7
+[0m23:18:57  Registered adapter: postgres=1.11.0
+[0m23:18:58  [[31mERROR[0m]: Encountered an error:
+Compilation Error in operation enterprise_mdm-on-run-start-0 (./dbt_project.yml)
+  Database and schema names must be simple SQL identifiers
+  
+  > in macro validate_mdm_config (macros/portable.sql)
+  > called by operation enterprise_mdm-on-run-start-0 (./dbt_project.yml)

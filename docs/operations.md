@@ -22,7 +22,7 @@ GitHub Actions are pinned to full commit SHAs verified against their release ref
 
 The local authoring sandbox refused socket creation, including Unix sockets, so
 starting PostgreSQL there was not a database integration. The CI workflow runs
-real PostgreSQL, dbt, restoration and container checks. Its raw results determine
+real PostgreSQL, dbt, restoration and container checks when a runner is available. The initial workflow failed before runner assignment and produced no test or deployment artifacts. Its raw results determine
 their acceptance status. An unexecuted or failed CI job is not a passed check.
 Snowflake requires a separate dedicated authorized account configuration; see
 [its qualification procedure](snowflake.md).
@@ -116,7 +116,13 @@ The orchestrator permits three attempts per run. A graph operation has a
 30-second statement timeout and a 5-second lock timeout. Candidate limits raise
 errors explicitly. The API reference uses one worker. CI is limited to 5 minutes
 for scope checks, 10 for dependency auditing, 20 for PostgreSQL qualification and
-20 for the container job. A new run on the same ref cancels the older CI run.
+20 for the container job. Runs on the same ref are serialized. A documentation-only
+update does not cancel an already running qualification. Pull-request synchronize
+events select work from the previous head to the new head; opened, reopened and
+ready-for-review events consider the full PR. Manual dispatch always selects the
+full runtime profile. Missing comparison commits select runtime conservatively.
+Scheduling or skipping a job is not a new qualification result; final acceptance
+requires an actual full result for the delivered executable code.
 
 These bounds prevent runaway work; they are not throughput guarantees. The
 benchmark output records input size, candidate/exhaustive counts, elapsed time,
@@ -131,7 +137,8 @@ The input manifest must include all three ERP names; `null` explicitly represent
 an unavailable source. Do not substitute an empty source and infer deletions.
 
 ```bash
-mdm run --input path/to/erp-manifest.json --run-key operator-run-2026-11-13-01
+timeout --signal=TERM --kill-after=10s 300s \
+  mdm run --input path/to/erp-manifest.json --run-key operator-run-2026-11-13-01
 mdm consume --consumer reporting --limit 10000
 mdm check
 ```
@@ -141,6 +148,14 @@ input contents or matching mode under an existing key is rejected. A completed
 degraded run remains evidence of the outage. When that ERP returns, submit the new
 manifest under a new key. If a process crashed after a decision commit, the
 consumer drain replays the durable outbox without replaying the decision.
+
+The example uses GNU `timeout` to bound the CLI invocation to five minutes with
+a ten-second forced-stop allowance. The Python orchestrator itself does not
+enforce a global wall-clock deadline; statement, lock, input and retry bounds have
+different scopes. A process timeout can leave committed source checkpoints or
+outbox events, so inspect and resume the same run rather than changing its key.
+API latency, runtime CPU/RAM, additional workers and representative source skew
+still require measurements in the target environment.
 
 ## Monitoring and correlation
 
@@ -156,12 +171,29 @@ monitoring configuration. No monitoring service is automatically deployed.
 `mdm_unconsumed_events` counts events received by no consumer; use the explicit
 consumer-lag SQL for a particular consumer, including one that has never started.
 
-Each completed API request returns `X-Correlation-ID` and logs a JSON event with
-`correlation_id`, method, route template, status and duration. Request headers,
-tokens and record bodies are not logged. Run IDs, decision IDs, event IDs and
-aggregate versions identify durable business work. HTTP correlation is not yet a
-distributed tracing system that propagates one trace through every database,
-warehouse and consumer action.
+Each completed API request receives a server-generated `X-Correlation-ID` and
+logs an allowlisted JSON event with method, route template, status and duration.
+The synchronous service calls inherit that context. CLI invocations use the same
+scoping mechanism. Request headers, tokens, actor names, reasons, source keys,
+record bodies, SQL and exception messages are excluded from those diagnostics.
+
+The `correlation.v1` metadata is persisted separately from business attributes in
+decision requests, immutable transition payloads and outbox events. Each human
+transition keeps its current request ID and the original request's correlation
+ID. Pipeline work also carries its durable run ID across retries. Consumer inbox
+receipts join to the original event, the projection retains its producer trace,
+and post-commit receipt logs identify the consumer invocation. Context scopes
+reset after success, failure or cancellation. A failed log sink must not turn a
+committed business transaction into an application failure.
+
+Use the correlation queries in [queries.sql](../observability/queries.sql) to
+connect an HTTP ID to a decision, its outbox events and consumer receipts.
+Snowflake's full JSON export preserves these fields. A publication report links
+its snapshot ID to the recorded Snowflake query IDs, providing an
+event-to-snapshot-to-publication join. It does not map every event directly to one
+SQL statement, and no distributed-tracing collector is deployed. In-process
+tests can verify request isolation and safe logging; durable and warehouse
+propagation still require the real PostgreSQL/Snowflake qualification.
 
 ### Initial service objectives
 
@@ -230,11 +262,12 @@ operational table fingerprint with the backup snapshot, runs `mdm check` and
 writes the result only after these succeed. A hash proves content agreement;
 it does not certify the data or validate an external consumer.
 
-CI exercises these same scripts against PostgreSQL 17.12 and checks that a second
+CI is configured to exercise these same scripts against PostgreSQL 17.12 and check that a second
 restore into the populated target is rejected. Its narrow client wrappers execute
 the real `pg_dump`/`pg_restore` binaries inside the service container, streaming the
 archive without passing credentials in arguments. CI then runs dbt tests on the
-restored database. Original reports remain in the workflow artifact; no restore
+restored database. No restore report has been produced by the initial blocked run.
+When executed, original reports belong in the workflow artifact; no restore
 success should be asserted without reading that result.
 
 After recovery, external consumers may still be ahead of the restored delivery

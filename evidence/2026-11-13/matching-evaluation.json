@@ -1,0 +1,118 @@
+{
+  "development": {
+    "deterministic": {
+      "mode": "deterministic",
+      "rule_version": "matching.v1",
+      "records": 18,
+      "exhaustive_pairs": 153,
+      "candidate_pairs": 13,
+      "truth_positive_pairs": 7,
+      "candidate_recall": 1.0,
+      "candidate_missed_pairs": [],
+      "comparison_reduction": 0.9150326797385621,
+      "auto": {
+        "true_positives": 4,
+        "false_positives": 0,
+        "false_negatives": 3,
+        "precision": 1.0,
+        "recall": 0.5714285714285714
+      },
+      "suggestion": {
+        "true_positives": 6,
+        "false_positives": 1,
+        "false_negatives": 1,
+        "precision": 0.8571428571428571,
+        "recall": 0.8571428571428571
+      },
+      "review_pairs": 3,
+      "review_false_positives": 1,
+      "review_share_of_candidates": 0.23076923076923078
+    },
+    "hybrid": {
+      "mode": "hybrid",
+      "rule_version": "matching.v1",
+      "records": 18,
+      "exhaustive_pairs": 153,
+      "candidate_pairs": 13,
+      "truth_positive_pairs": 7,
+      "candidate_recall": 1.0,
+      "candidate_missed_pairs": [],
+      "comparison_reduction": 0.9150326797385621,
+      "auto": {
+        "true_positives": 4,
+        "false_positives": 0,
+        "false_negatives": 3,
+        "precision": 1.0,
+        "recall": 0.5714285714285714
+      },
+      "suggestion": {
+        "true_positives": 7,
+        "false_positives": 1,
+        "false_negatives": 0,
+        "precision": 0.875,
+        "recall": 1.0
+      },
+      "review_pairs": 4,
+      "review_false_positives": 1,
+      "review_share_of_candidates": 0.3076923076923077
+    }
+  },
+  "heldout": {
+    "deterministic": {
+      "mode": "deterministic",
+      "rule_version": "matching.v1",
+      "records": 16,
+      "exhaustive_pairs": 120,
+      "candidate_pairs": 11,
+      "truth_positive_pairs": 7,
+      "candidate_recall": 1.0,
+      "candidate_missed_pairs": [],
+      "comparison_reduction": 0.9083333333333333,
+      "auto": {
+        "true_positives": 3,
+        "false_positives": 0,
+        "false_negatives": 4,
+        "precision": 1.0,
+        "recall": 0.42857142857142855
+      },
+      "suggestion": {
+        "true_positives": 6,
+        "false_positives": 1,
+        "false_negatives": 1,
+        "precision": 0.8571428571428571,
+        "recall": 0.8571428571428571
+      },
+      "review_pairs": 4,
+      "review_false_positives": 1,
+      "review_share_of_candidates": 0.36363636363636365
+    },
+    "hybrid": {
+      "mode": "hybrid",
+      "rule_version": "matching.v1",
+      "records": 16,
+      "exhaustive_pairs": 120,
+      "candidate_pairs": 11,
+      "truth_positive_pairs": 7,
+      "candidate_recall": 1.0,
+      "candidate_missed_pairs": [],
+      "comparison_reduction": 0.9083333333333333,
+      "auto": {
+        "true_positives": 3,
+        "false_positives": 0,
+        "false_negatives": 4,
+        "precision": 1.0,
+        "recall": 0.42857142857142855
+      },
+      "suggestion": {
+        "true_positives": 7,
+        "false_positives": 1,
+        "false_negatives": 0,
+        "precision": 0.875,
+        "recall": 1.0
+      },
+      "review_pairs": 5,
+      "review_false_positives": 1,
+      "review_share_of_candidates": 0.45454545454545453
+    }
+  }
+}

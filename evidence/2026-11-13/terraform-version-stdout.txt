@@ -1,0 +1,9 @@
+{
+  "format_version": "1.0",
+  "terraform_version": "1.17.2",
+  "platform": "linux_amd64",
+  "provider_selections": {
+    "registry.terraform.io/snowflakedb/snowflake": "2.22.1"
+  },
+  "terraform_outdated": false
+}

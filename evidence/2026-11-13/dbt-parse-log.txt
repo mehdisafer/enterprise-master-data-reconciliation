@@ -1,0 +1,15 @@
+
+
+============================== 00:18:52.395858 | f6cd7d17-4e90-4ae3-98b9-7b6ebd66c4c4 ==============================
+[0m00:18:52.395858 [info ] [MainThread]: Running with dbt=1.12.7
+[0m00:18:52.410203 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'cache_selected_only': 'False', 'quiet': 'False', 'no_print': 'None', 'printer_width': '80', 'log_format': 'default', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'log_path': '/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/evidence/local/dbt-final-parse-logs', 'warn_error': 'None', 'introspect': 'True', 'version_check': 'True', 'maximum_seed_size_mib': '1', 'invocation_command': 'dbt parse --no-partial-parse --project-dir dbt --profiles-dir dbt --target postgres --target-path /workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/evidence/local/dbt-final-parse --log-path /workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/evidence/local/dbt-final-parse-logs', 'use_experimental_parser': 'False', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'False', 'partial_parse': 'False', 'profiles_dir': 'dbt', 'empty': 'None', 'target_path': '/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/evidence/local/dbt-final-parse', 'indirect_selection': 'eager', 'hints_enabled': 'True', 'log_cache_events': 'False', 'static_parser': 'True', 'write_json': 'True'}
+[0m00:18:53.008241 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m00:18:53.225178 [debug] [MainThread]: checksum: f3e979a96d57622af921a14bee005a0dd221345157a5d4e66f158ef3be3d0b0e, vars: {}, profile: enterprise_mdm, target: postgres, version: 1.12.7
+[0m00:18:53.225924 [debug] [MainThread]: Partial parsing not enabled
+[0m00:18:54.889509 [info ] [MainThread]: Performance info: /workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/evidence/local/dbt-final-parse/perf_info.json
+[0m00:18:55.112769 [debug] [MainThread]: Wrote artifact WritableManifest to /workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/evidence/local/dbt-final-parse/manifest.json
+[0m00:18:55.115092 [debug] [MainThread]: Wrote artifact SemanticManifest to /workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/evidence/local/dbt-final-parse/semantic_manifest.json
+[0m00:18:55.129725 [debug] [MainThread]: Wrote artifact OsiDocument to /workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/evidence/local/dbt-final-parse/osi_document.json
+[0m00:18:55.130649 [debug] [MainThread]: Resource report: {"command_name": "parse", "command_success": true, "command_wall_clock_time": 2.9756267, "process_in_blocks": "333000", "process_kernel_time": 4.582725, "process_mem_max_rss": "122824", "process_out_blocks": "2624", "process_user_time": 3.473969}
+[0m00:18:55.131053 [debug] [MainThread]: Command `dbt parse` succeeded at 00:18:55.130987 after 2.98 seconds
+[0m00:18:55.131454 [debug] [MainThread]: Flushing usage events

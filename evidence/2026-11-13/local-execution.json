@@ -1,0 +1,276 @@
+{
+  "source_commit": "f87abb572c03b5088c466e9c411a23b7c75a8da4",
+  "source_tree": "966ec4b81c4e2fe38a8b4d22d73d5b353c56b840",
+  "environment": "provided isolated authoring environment; not a GitHub runner",
+  "database_executed": false,
+  "snowflake_live_executed": false,
+  "commands": [
+    {
+      "name": "socket-capability",
+      "command": [
+        ".venv/bin/python",
+        "-c",
+        "import json, socket\ntry:\n    sock = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)\nexcept OSError as exc:\n    result = {\"operation\": \"create_unix_stream_socket\", \"allowed\": False, \"error_type\": type(exc).__name__, \"errno\": exc.errno, \"message\": str(exc)}\nelse:\n    sock.close()\n    result = {\"operation\": \"create_unix_stream_socket\", \"allowed\": True}\nprint(json.dumps(result))\n"
+      ],
+      "started_at": "2026-11-13T23:17:55.938077+00:00",
+      "duration_seconds": 0.03722918999983449,
+      "exit_code": 0,
+      "stdout": "socket-capability-stdout.txt",
+      "stderr": "socket-capability-stderr.txt",
+      "environment_overrides": {}
+    },
+    {
+      "name": "unit-tests",
+      "command": [
+        ".venv/bin/pytest",
+        "-q",
+        "-m",
+        "not integration",
+        "--junitxml=/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/evidence/2026-11-13/unit-tests.xml"
+      ],
+      "started_at": "2026-11-13T23:17:55.975537+00:00",
+      "duration_seconds": 17.50804207200008,
+      "exit_code": 0,
+      "stdout": "unit-tests-stdout.txt",
+      "stderr": "unit-tests-stderr.txt",
+      "environment_overrides": {}
+    },
+    {
+      "name": "integration-collection",
+      "command": [
+        ".venv/bin/pytest",
+        "--collect-only",
+        "-q",
+        "-m",
+        "integration"
+      ],
+      "started_at": "2026-11-13T23:18:13.483863+00:00",
+      "duration_seconds": 1.0288583960000324,
+      "exit_code": 0,
+      "stdout": "integration-collection-stdout.txt",
+      "stderr": "integration-collection-stderr.txt",
+      "environment_overrides": {}
+    },
+    {
+      "name": "ruff",
+      "command": [
+        ".venv/bin/ruff",
+        "check",
+        "src",
+        "tests",
+        "scripts",
+        ".github/scripts"
+      ],
+      "started_at": "2026-11-13T23:18:14.513066+00:00",
+      "duration_seconds": 0.026040187000035075,
+      "exit_code": 0,
+      "stdout": "ruff-stdout.txt",
+      "stderr": "ruff-stderr.txt",
+      "environment_overrides": {}
+    },
+    {
+      "name": "javascript-syntax",
+      "command": [
+        "node",
+        "--check",
+        "src/mdm/static/app.js"
+      ],
+      "started_at": "2026-11-13T23:18:14.539451+00:00",
+      "duration_seconds": 0.06650007500002175,
+      "exit_code": 0,
+      "stdout": "javascript-syntax-stdout.txt",
+      "stderr": "javascript-syntax-stderr.txt",
+      "environment_overrides": {}
+    },
+    {
+      "name": "dbt-parse",
+      "command": [
+        ".venv/bin/dbt",
+        "parse",
+        "--no-partial-parse",
+        "--project-dir",
+        "dbt",
+        "--profiles-dir",
+        "dbt",
+        "--target",
+        "postgres",
+        "--target-path",
+        "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/evidence/local/dbt-final-parse",
+        "--log-path",
+        "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/evidence/local/dbt-final-parse-logs"
+      ],
+      "started_at": "2026-11-13T23:18:14.607007+00:00",
+      "duration_seconds": 40.95842162700001,
+      "exit_code": 0,
+      "stdout": "dbt-parse-stdout.txt",
+      "stderr": "dbt-parse-stderr.txt",
+      "environment_overrides": {}
+    },
+    {
+      "name": "dbt-reject-unsafe-schema",
+      "command": [
+        ".venv/bin/dbt",
+        "parse",
+        "--no-partial-parse",
+        "--project-dir",
+        "dbt",
+        "--profiles-dir",
+        "dbt",
+        "--target",
+        "postgres",
+        "--target-path",
+        "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/evidence/local/dbt-invalid-parse",
+        "--log-path",
+        "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/evidence/local/dbt-invalid-logs"
+      ],
+      "started_at": "2026-11-13T23:18:55.566367+00:00",
+      "duration_seconds": 3.6498366020000503,
+      "exit_code": 2,
+      "stdout": "dbt-reject-unsafe-schema-stdout.txt",
+      "stderr": "dbt-reject-unsafe-schema-stderr.txt",
+      "environment_overrides": {
+        "MDM_ANALYTICS_SCHEMA": "public;select1"
+      }
+    },
+    {
+      "name": "benchmark-control",
+      "command": [
+        ".venv/bin/mdm",
+        "benchmark",
+        "--size",
+        "300",
+        "--output",
+        "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/evidence/2026-11-13/benchmark-control.json"
+      ],
+      "started_at": "2026-11-13T23:18:59.216994+00:00",
+      "duration_seconds": 1.2222973320003803,
+      "exit_code": 0,
+      "stdout": "benchmark-control-stdout.txt",
+      "stderr": "benchmark-control-stderr.txt",
+      "environment_overrides": {}
+    },
+    {
+      "name": "matching-evaluation",
+      "command": [
+        ".venv/bin/python",
+        "-c",
+        "import json\nfrom pathlib import Path\nfrom mdm.matching import evaluate\nfrom mdm.synthetic import demo_records, truth\nrecords, labels = demo_records(), truth()\nreport = {split: {mode: evaluate([r for r in records if r.key in spec[\"identity_by_key\"]], spec[\"identity_by_key\"], mode=mode) for mode in (\"deterministic\", \"hybrid\")} for split, spec in labels[\"splits\"].items()}\nPath(\"evidence/2026-11-13/matching-evaluation.json\").write_text(json.dumps(report, indent=2) + \"\\n\")\nprint(json.dumps({\"records\": len(records), \"rule\": \"matching.v1\", \"splits\": list(report)}))\n"
+      ],
+      "started_at": "2026-11-13T23:19:00.439668+00:00",
+      "duration_seconds": 0.12375071499991463,
+      "exit_code": 0,
+      "stdout": "matching-evaluation-stdout.txt",
+      "stderr": "matching-evaluation-stderr.txt",
+      "environment_overrides": {}
+    },
+    {
+      "name": "component-inventory",
+      "command": [
+        ".venv/bin/python",
+        "scripts/component_inventory.py",
+        "--check",
+        "--output",
+        "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/evidence/2026-11-13/components.json"
+      ],
+      "started_at": "2026-11-13T23:19:00.563744+00:00",
+      "duration_seconds": 1.0020427049998943,
+      "exit_code": 0,
+      "stdout": "component-inventory-stdout.txt",
+      "stderr": "component-inventory-stderr.txt",
+      "environment_overrides": {}
+    },
+    {
+      "name": "locked-requirements",
+      "command": [
+        "uv",
+        "export",
+        "--frozen",
+        "--all-extras",
+        "--no-emit-project",
+        "--no-hashes",
+        "--output-file",
+        "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/evidence/2026-11-13/audit-requirements.txt"
+      ],
+      "started_at": "2026-11-13T23:19:01.566424+00:00",
+      "duration_seconds": 0.012605885000084527,
+      "exit_code": 0,
+      "stdout": "locked-requirements-stdout.txt",
+      "stderr": "locked-requirements-stderr.txt",
+      "environment_overrides": {}
+    },
+    {
+      "name": "dependency-audit",
+      "command": [
+        ".venv/bin/pip-audit",
+        "--strict",
+        "--disable-pip",
+        "--no-deps",
+        "-r",
+        "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/evidence/2026-11-13/audit-requirements.txt",
+        "--progress-spinner",
+        "off",
+        "--timeout",
+        "20",
+        "--format",
+        "json",
+        "--output",
+        "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/evidence/2026-11-13/dependency-audit.json"
+      ],
+      "started_at": "2026-11-13T23:19:01.579599+00:00",
+      "duration_seconds": 14.93645408500015,
+      "exit_code": 0,
+      "stdout": "dependency-audit-stdout.txt",
+      "stderr": "dependency-audit-stderr.txt",
+      "environment_overrides": {}
+    },
+    {
+      "name": "terraform-version",
+      "command": [
+        "/workspace/scratch/fc83c385ce79/warehouse-terraform-tool/terraform",
+        "-chdir=infra/snowflake",
+        "version",
+        "-json"
+      ],
+      "started_at": "2026-11-13T23:19:16.517226+00:00",
+      "duration_seconds": 0.09515822299999854,
+      "exit_code": 0,
+      "stdout": "terraform-version-stdout.txt",
+      "stderr": "terraform-version-stderr.txt",
+      "environment_overrides": {}
+    },
+    {
+      "name": "terraform-format",
+      "command": [
+        "/workspace/scratch/fc83c385ce79/warehouse-terraform-tool/terraform",
+        "-chdir=infra/snowflake",
+        "fmt",
+        "-check",
+        "-diff",
+        "-no-color"
+      ],
+      "started_at": "2026-11-13T23:19:16.612925+00:00",
+      "duration_seconds": 0.042477981000047293,
+      "exit_code": 0,
+      "stdout": "terraform-format-stdout.txt",
+      "stderr": "terraform-format-stderr.txt",
+      "environment_overrides": {}
+    },
+    {
+      "name": "pre-publication-secret-scan",
+      "command": [
+        ".venv/bin/python",
+        "scripts/secret_scan.py",
+        "--history",
+        "--output",
+        "evidence/2026-11-13/secret-scan.json"
+      ],
+      "started_at": "2026-11-13T23:23:53.740190+00:00",
+      "duration_seconds": 0.48439146100008657,
+      "exit_code": 0,
+      "stdout": "secret-scan-stdout.txt",
+      "stderr": "secret-scan-stderr.txt",
+      "environment_overrides": {},
+      "scope_note": "Final working tree, including original artifacts and documentation; local reachable Git history. This is not a remote CI scan."
+    }
+  ]
+}
