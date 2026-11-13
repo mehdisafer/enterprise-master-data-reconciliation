@@ -2,6 +2,7 @@ name: Quality and PostgreSQL qualification
 
 on:
   pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
   push:
     branches: [main]
   workflow_dispatch:
@@ -17,7 +18,7 @@ permissions:
 
 concurrency:
   group: mdm-quality-${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 env:
   PYTHON_VERSION: "3.12.14"
@@ -44,20 +45,56 @@ jobs:
           import json, os, re, subprocess
           from pathlib import Path
           event = json.loads(Path(os.environ["GITHUB_EVENT_PATH"]).read_text())
+          event_name = os.environ["GITHUB_EVENT_NAME"]
           pr = event.get("pull_request", {})
-          base = pr.get("base", {}).get("sha") or event.get("before", "")
-          head = pr.get("head", {}).get("sha") or os.environ["GITHUB_SHA"]
-          if re.fullmatch(r"[0-9a-f]{40}", base or "") and set(base) != {"0"}:
-              changed = subprocess.check_output(["git", "diff", "--name-only", base, head], text=True).splitlines()
+          pr_head = pr.get("head", {}).get("sha", "")
+          force_runtime = event_name == "workflow_dispatch"
+          if event_name == "pull_request" and event.get("action") == "synchronize":
+              # The previous push head, not the PR base, makes a later docs-only
+              # commit incremental even when the whole PR introduces runtime code.
+              base, head = event.get("before", ""), event.get("after", "")
+              selection = "incremental-pr-push"
+              if head != pr_head:
+                  force_runtime = True
+                  selection = "inconsistent-pr-head-full-qualification"
+          elif event_name == "pull_request":
+              base, head = pr.get("base", {}).get("sha", ""), pr_head
+              selection = "full-pr-diff"
           else:
-              changed = subprocess.check_output(["git", "ls-files"], text=True).splitlines()
+              base, head = event.get("before", ""), event.get("after") or os.environ["GITHUB_SHA"]
+              selection = "branch-push-diff"
+          def available_commit(value):
+              return bool(re.fullmatch(r"[0-9a-f]{40}", value or "")) and set(value) != {"0"} and subprocess.run(
+                  ["git", "cat-file", "-e", value + "^{commit}"], capture_output=True
+              ).returncode == 0
+          changed = []
+          if force_runtime:
+              selection = "manual-full-qualification" if event_name == "workflow_dispatch" else selection
+          elif available_commit(base) and available_commit(head):
+              changed = subprocess.check_output([
+                  "git", "diff", "--no-ext-diff", "--no-renames", "--name-only", "-z", base, head, "--"
+              ]).decode("utf-8", "surrogateescape").split("\0")
+              changed = [path for path in changed if path]
+          else:
+              # A force-push may make the previous head unreachable. Unknown
+              # change scope must never silently suppress runtime qualification.
+              force_runtime = True
+              selection = "unavailable-reference-full-qualification"
           prefixes = ("src/", "tests/", "dbt/", "contracts/", "data/", "migrations/", "scripts/", ".github/", "infra/", "observability/")
-          runtime = os.environ["GITHUB_EVENT_NAME"] == "workflow_dispatch" or any(
+          runtime = force_runtime or any(
               path.startswith(prefixes) or path in {"pyproject.toml", "uv.lock", "Dockerfile", "compose.yaml", ".dockerignore"}
               for path in changed
           )
+          print(json.dumps({"selection": selection, "runtime": runtime, "changed_paths": len(changed)}))
           with open(os.environ["GITHUB_OUTPUT"], "a") as output:
               output.write("runtime=" + str(runtime).lower() + "\n")
+          summary = os.environ.get("GITHUB_STEP_SUMMARY")
+          if summary:
+              with open(summary, "a") as output:
+                  output.write("### Qualification selection\n\n")
+                  output.write(f"Selection: `{selection}`. Changed paths inspected: {len(changed)}.\n\n")
+                  output.write("Runtime qualification requested.\n\n" if runtime else "Documentation/evidence changes only; runtime qualification not requested.\n\n")
+                  output.write("This is a scheduling decision, not a qualification result.\n")
           PY
       - name: Scan publishable files and Git history
         run: python3 scripts/secret_scan.py --history --output artifacts/secret-scan.json

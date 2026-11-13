@@ -14,7 +14,7 @@ terraform {
 # Resource-monitor assignment requires an administrator authorized for this task.
 provider "snowflake" {
   authenticator   = "SNOWFLAKE_JWT"
-  login_timeout  = 15
+  login_timeout   = 15
   request_timeout = 30
 }
 
@@ -54,7 +54,7 @@ resource "snowflake_warehouse" "mdm" {
 resource "snowflake_database" "mdm" {
   name                        = var.prefix
   is_transient                = false
-  data_retention_time_in_days  = 1
+  data_retention_time_in_days = 1
   comment                     = "Synthetic enterprise MDM integration data."
   lifecycle {
     prevent_destroy = true
@@ -70,7 +70,7 @@ resource "snowflake_schema" "raw" {
   name                        = "MDM_RAW"
   with_managed_access         = "true"
   is_transient                = "false"
-  data_retention_time_in_days  = 1
+  data_retention_time_in_days = 1
   lifecycle {
     prevent_destroy = true
   }
@@ -81,7 +81,7 @@ resource "snowflake_schema" "analytics" {
   name                        = "ANALYTICS"
   with_managed_access         = "true"
   is_transient                = "false"
-  data_retention_time_in_days  = 1
+  data_retention_time_in_days = 1
   lifecycle {
     prevent_destroy = true
   }
