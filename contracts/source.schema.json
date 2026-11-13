@@ -1,0 +1,256 @@
+{
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "else": {
+        "properties": {
+          "product_code": {
+            "type": "null"
+          },
+          "manufacturer": {
+            "type": "null"
+          },
+          "unit_of_measure": {
+            "type": "null"
+          }
+        }
+      },
+      "if": {
+        "properties": {
+          "entity_type": {
+            "const": "product"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "registration_id": {
+            "type": "null"
+          },
+          "parent_source_key": {
+            "type": "null"
+          },
+          "roles": {
+            "maxItems": 0
+          }
+        }
+      }
+    }
+  ],
+  "description": "Strict synthetic ERP source assertion. Timestamps use RFC3339 offsets. Python additionally checks self-parent identity and nonempty registration content.",
+  "properties": {
+    "source_system": {
+      "enum": [
+        "ERP_ALPHA",
+        "ERP_BETA",
+        "ERP_GAMMA"
+      ],
+      "title": "Source System",
+      "type": "string"
+    },
+    "entity_type": {
+      "enum": [
+        "organization",
+        "establishment",
+        "product"
+      ],
+      "title": "Entity Type",
+      "type": "string"
+    },
+    "source_id": {
+      "maxLength": 100,
+      "minLength": 1,
+      "pattern": "^[A-Za-z0-9_.-]+$",
+      "title": "Source Id",
+      "type": "string"
+    },
+    "name": {
+      "maxLength": 240,
+      "minLength": 1,
+      "pattern": "\\S",
+      "title": "Name",
+      "type": "string"
+    },
+    "valid_from": {
+      "format": "date-time",
+      "title": "Valid From",
+      "type": "string"
+    },
+    "source_updated_at": {
+      "format": "date-time",
+      "title": "Source Updated At",
+      "type": "string"
+    },
+    "country": {
+      "anyOf": [
+        {
+          "maxLength": 2,
+          "minLength": 2,
+          "pattern": "^[A-Za-z]{2}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Country"
+    },
+    "registration_id": {
+      "anyOf": [
+        {
+          "maxLength": 128,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Registration Id"
+    },
+    "parent_source_key": {
+      "anyOf": [
+        {
+          "maxLength": 140,
+          "pattern": "^(ERP_ALPHA|ERP_BETA|ERP_GAMMA):organization:[A-Za-z0-9_.-]{1,100}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Parent Source Key"
+    },
+    "address": {
+      "anyOf": [
+        {
+          "maxLength": 500,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Address"
+    },
+    "postal_code": {
+      "anyOf": [
+        {
+          "maxLength": 32,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Postal Code"
+    },
+    "city": {
+      "anyOf": [
+        {
+          "maxLength": 120,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "City"
+    },
+    "email": {
+      "anyOf": [
+        {
+          "maxLength": 254,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Email"
+    },
+    "phone": {
+      "anyOf": [
+        {
+          "maxLength": 64,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Phone"
+    },
+    "product_code": {
+      "anyOf": [
+        {
+          "maxLength": 128,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Product Code"
+    },
+    "manufacturer": {
+      "anyOf": [
+        {
+          "maxLength": 240,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Manufacturer"
+    },
+    "unit_of_measure": {
+      "anyOf": [
+        {
+          "maxLength": 32,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Unit Of Measure"
+    },
+    "roles": {
+      "default": [],
+      "items": {
+        "enum": [
+          "customer",
+          "supplier"
+        ],
+        "type": "string"
+      },
+      "title": "Roles",
+      "type": "array",
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "source_system",
+    "entity_type",
+    "source_id",
+    "name",
+    "valid_from",
+    "source_updated_at"
+  ],
+  "title": "SourceRecord",
+  "type": "object",
+  "$id": "https://example.invalid/mdm/contracts/source.v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}
