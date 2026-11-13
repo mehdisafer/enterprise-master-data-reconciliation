@@ -1,0 +1,21 @@
+name: enterprise_mdm
+version: '0.1.0'
+config-version: 2
+profile: enterprise_mdm
+model-paths: [models]
+macro-paths: [macros]
+test-paths: [tests]
+clean-targets: [target, dbt_packages]
+on-run-start:
+  - "{{ validate_mdm_config() }}"
+  - "{{ snowflake_session_bounds() }}"
+require-dbt-version: [">=1.12.7", "<1.13.0"]
+models:
+  enterprise_mdm:
+    +materialized: view
+    +pre-hook: "{{ snowflake_session_bounds() }}"
+    +persist_docs:
+      relation: true
+      columns: true
+flags:
+  send_anonymous_usage_stats: false

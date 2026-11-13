@@ -1,0 +1,106 @@
+name: enterprise-mdm
+
+x-app: &app
+  image: enterprise-mdm:${MDM_IMAGE_TAG:-0.1.0rc1}
+  build: .
+  init: true
+  user: "10001:10001"
+  read_only: true
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  tmpfs:
+    - /tmp:size=134217728,mode=1777
+  networks: [data]
+  environment:
+    MDM_DATABASE_URL_FILE: /run/secrets/database_url
+    MDM_ACTORS_JSON_FILE: /run/secrets/actors_json
+    DBT_SEND_ANONYMOUS_USAGE_STATS: "false"
+    DBT_LOG_PATH: /tmp/dbt-logs
+    DBT_TARGET_PATH: /tmp/dbt-target
+  secrets: [database_url, actors_json]
+  mem_limit: 1g
+  cpus: 1.0
+  pids_limit: 128
+  stop_grace_period: 30s
+  logging:
+    driver: json-file
+    options:
+      max-size: "10m"
+      max-file: "3"
+
+services:
+  postgres:
+    image: postgres:17.12
+    environment:
+      POSTGRES_DB: mdm
+      POSTGRES_USER: mdm
+      POSTGRES_PASSWORD_FILE: /run/secrets/postgres_password
+      POSTGRES_INITDB_ARGS: --auth-host=scram-sha-256
+    secrets: [postgres_password]
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks: [data]
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U mdm -d mdm"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 15s
+    command:
+      - postgres
+      - -c
+      - max_connections=40
+      - -c
+      - shared_buffers=256MB
+      - -c
+      - statement_timeout=60000
+      - -c
+      - idle_in_transaction_session_timeout=60000
+      - -c
+      - log_statement=none
+    restart: on-failure:3
+    mem_limit: 1g
+    cpus: 1.0
+    pids_limit: 128
+    stop_grace_period: 30s
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  migrate:
+    <<: *app
+    command: [mdm, migrate]
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      disable: true
+    restart: "no"
+
+  api:
+    <<: *app
+    ports:
+      - "127.0.0.1:${MDM_PORT:-8000}:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      migrate:
+        condition: service_completed_successfully
+    restart: on-failure:3
+
+volumes:
+  postgres_data:
+
+networks:
+  data:
+    internal: true
+
+secrets:
+  postgres_password:
+    file: ${MDM_SECRET_DIR:?Set MDM_SECRET_DIR to the directory containing local secret files}/postgres_password
+  database_url:
+    file: ${MDM_SECRET_DIR:?Set MDM_SECRET_DIR to the directory containing local secret files}/database_url
+  actors_json:
+    file: ${MDM_SECRET_DIR:?Set MDM_SECRET_DIR to the directory containing local secret files}/actors.json

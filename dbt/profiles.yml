@@ -1,0 +1,33 @@
+enterprise_mdm:
+  target: "{{ env_var('MDM_DBT_TARGET', 'postgres') }}"
+  outputs:
+    postgres:
+      type: postgres
+      host: "{{ env_var('PGHOST', '127.0.0.1') }}"
+      port: "{{ env_var('PGPORT', '5432') | int }}"
+      user: "{{ env_var('PGUSER', 'mdm') }}"
+      password: "{{ env_var('DBT_ENV_SECRET_PG_PASSWORD', '') }}"
+      dbname: "{{ env_var('PGDATABASE', 'mdm') }}"
+      schema: "{{ env_var('MDM_ANALYTICS_SCHEMA', 'analytics') }}"
+      threads: 2
+      connect_timeout: 10
+      retries: 1
+    snowflake:
+      type: snowflake
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT', '') }}"
+      user: "{{ env_var('SNOWFLAKE_USER', '') }}"
+      private_key_path: "{{ env_var('SNOWFLAKE_PRIVATE_KEY_PATH', '/run/secrets/snowflake_key.p8') }}"
+      private_key_passphrase: "{{ env_var('DBT_ENV_SECRET_SNOWFLAKE_KEY_PASSPHRASE', '') }}"
+      authenticator: snowflake_jwt
+      role: "{{ env_var('SNOWFLAKE_ROLE', 'MDM_LOADER') }}"
+      database: "{{ env_var('SNOWFLAKE_DATABASE', 'MDM_DEMO') }}"
+      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE', 'MDM_DEMO_XS') }}"
+      schema: "{{ env_var('MDM_ANALYTICS_SCHEMA', 'ANALYTICS') }}"
+      threads: 2
+      client_session_keep_alive: false
+      connect_timeout: 10
+      connect_retries: 1
+      query_tag: enterprise_mdm_dbt_v1
+      # dbt-snowflake 1.12.5 has no generic session_parameters or ocsp_fail_open
+      # profile field. Fixed SQL hooks set session bounds; warehouse limits also
+      # apply to dbt test connections. See docs/snowflake.md for the OCSP boundary.

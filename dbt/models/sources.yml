@@ -1,0 +1,68 @@
+version: 2
+sources:
+  - name: mdm
+    description: Transactional reference tables on PostgreSQL; published snapshot views on Snowflake.
+    schema: "{{ env_var('MDM_SOURCE_SCHEMA', 'MDM_RAW' if target.type == 'snowflake' else 'public') }}"
+    tables:
+      - name: source_records
+        columns:
+          - name: source_key
+            data_tests: [not_null, unique]
+      - name: raw_records
+        columns:
+          - name: raw_id
+            data_tests: [not_null, unique]
+      - name: identity_groups
+        columns:
+          - name: golden_id
+            data_tests: [not_null, unique]
+          - name: status
+            data_tests:
+              - accepted_values:
+                  arguments:
+                    values: [active, retired]
+      - name: memberships
+        columns:
+          - name: source_key
+            data_tests:
+              - not_null
+              - unique
+              - relationships:
+                  arguments:
+                    to: source('mdm', 'source_records')
+                    field: source_key
+          - name: golden_id
+            data_tests:
+              - not_null
+              - relationships:
+                  arguments:
+                    to: source('mdm', 'identity_groups')
+                    field: golden_id
+      - name: golden_history
+        columns:
+          - name: history_id
+            data_tests: [not_null, unique]
+          - name: golden_id
+            data_tests:
+              - not_null
+              - relationships:
+                  arguments:
+                    to: source('mdm', 'identity_groups')
+                    field: golden_id
+      - name: decisions
+        columns:
+          - name: decision_id
+            data_tests: [not_null, unique]
+      - name: outbox
+        columns:
+          - name: event_id
+            data_tests: [not_null, unique]
+      - name: consumer_inbox
+      - name: consumer_records
+      - name: candidates
+      - name: standard_records
+      - name: membership_history
+      - name: decision_events
+      - name: consumer_crosswalk
+      - name: runs
+      - name: run_sources
