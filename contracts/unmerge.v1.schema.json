@@ -1,0 +1,36 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "merge_decision_id": {
+      "title": "Merge Decision Id",
+      "type": "string"
+    },
+    "expected_versions": {
+      "additionalProperties": {
+        "type": "integer"
+      },
+      "title": "Expected Versions",
+      "type": "object"
+    },
+    "reason": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Reason",
+      "type": "string"
+    },
+    "idempotency_key": {
+      "maxLength": 160,
+      "minLength": 1,
+      "title": "Idempotency Key",
+      "type": "string"
+    }
+  },
+  "required": [
+    "merge_decision_id",
+    "expected_versions",
+    "reason",
+    "idempotency_key"
+  ],
+  "title": "UnmergeInput",
+  "type": "object"
+}

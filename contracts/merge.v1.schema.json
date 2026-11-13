@@ -1,0 +1,41 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "group_ids": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 20,
+      "minItems": 2,
+      "title": "Group Ids",
+      "type": "array"
+    },
+    "expected_versions": {
+      "additionalProperties": {
+        "type": "integer"
+      },
+      "title": "Expected Versions",
+      "type": "object"
+    },
+    "reason": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Reason",
+      "type": "string"
+    },
+    "idempotency_key": {
+      "maxLength": 160,
+      "minLength": 1,
+      "title": "Idempotency Key",
+      "type": "string"
+    }
+  },
+  "required": [
+    "group_ids",
+    "expected_versions",
+    "reason",
+    "idempotency_key"
+  ],
+  "title": "MergeInput",
+  "type": "object"
+}
