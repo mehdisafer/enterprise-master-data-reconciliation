@@ -41,6 +41,42 @@ def test_real_end_to_end_demonstration_and_repeat(service):
     assert demonstrate(service)["already_executed"]
 
 
+def test_demo_resumes_a_pending_unmerge_after_process_failure(service, monkeypatch):
+    original = service.approve
+    calls = 0
+    def crash_on_second_approval(*args, **kwargs):
+        nonlocal calls
+        calls += 1
+        if calls == 2:
+            raise RuntimeError("injected process failure before unmerge approval")
+        return original(*args, **kwargs)
+    monkeypatch.setattr(service, "approve", crash_on_second_approval)
+    with pytest.raises(RuntimeError, match="injected"):
+        demonstrate(service)
+    monkeypatch.setattr(service, "approve", original)
+    result = demonstrate(service)
+    assert result["resumed"] and not result["already_executed"]
+    assert result["publication"]["caught_up"]
+    assert result["check"]["passed"]
+
+
+def test_demo_resumes_after_committed_merge_without_replaying_it(service, monkeypatch):
+    original = service.ingest
+    def crash_before_late_update(records):
+        if len(records) == 1 and records[0].key == "ERP_BETA:organization:NS-44":
+            raise RuntimeError("injected process failure after merge")
+        return original(records)
+    monkeypatch.setattr(service, "ingest", crash_before_late_update)
+    with pytest.raises(RuntimeError, match="injected"):
+        demonstrate(service)
+    monkeypatch.setattr(service, "ingest", original)
+    result = demonstrate(service)
+    assert result["resumed"]
+    assert all(result["assertions"].values())
+    with service.db.connect() as conn:
+        assert conn.execute("SELECT count(*) n FROM decisions WHERE idempotency_key='demo:merge-orion:v1'").fetchone()["n"] == 1
+
+
 def test_ingestion_is_idempotent_raw_is_immutable_and_migration_repeats(service):
     records = demo_records()
     service.ingest(records)

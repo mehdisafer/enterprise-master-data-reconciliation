@@ -18,6 +18,7 @@ from mdm.config import Actor
 from mdm.db import Database
 from mdm.domain import NORMALIZATION_VERSION, RULE_VERSION, SourceRecord
 from mdm.matching import compare, generate_candidates, group_conflicts, normalize, survive
+from mdm.telemetry import correlated_operation, emit, metadata
 
 NAMESPACE = UUID("7062f685-fb4a-48b7-b4f7-592af1a65930")
 
@@ -58,6 +59,7 @@ class Service:
             "SELECT s.current_payload FROM source_records s JOIN memberships m USING(source_key) WHERE m.golden_id=ANY(%s::uuid[]) ORDER BY s.source_key",
             (list(group_ids),))]
 
+    @correlated_operation("service.ingest")
     def ingest(self, records: list[SourceRecord]) -> dict:
         if len(records) > 10000:
             raise ValueError("batch limit is 10,000 records")
@@ -111,15 +113,22 @@ class Service:
                     raise Conflict("source correction would invalidate the current group; split it before ingesting: " + ";".join(conflicts))
                 self._rebuild(conn, group_id, timestamp)
             return {"received": len(records), "accepted": accepted, "duplicates": len(records)-accepted,
-                    "groups_rebuilt": len(changed)}
+                    "groups_rebuilt": len(changed), "trace": metadata()}
 
     def _rebuild(self, conn, group_id: str, timestamp: datetime, *, correction_for: str | None = None):
         group = conn.execute("UPDATE identity_groups SET version=version+1 WHERE golden_id=%s RETURNING *", (group_id,)).fetchone()
         conn.execute("UPDATE golden_history SET known_to=%s WHERE golden_id=%s AND known_to IS NULL", (timestamp, group_id))
         keys = [r["source_key"] for r in conn.execute("SELECT source_key FROM memberships WHERE golden_id=%s ORDER BY source_key", (group_id,))]
+        event_id = uuid4()
+        parent_trace = None
+        if correction_for:
+            parent = conn.execute("SELECT request->'trace' trace FROM decisions WHERE decision_id=%s",
+                                  (correction_for,)).fetchone()
+            parent_trace = parent["trace"] if parent else None
         payload = {"contract_version": "golden-event.v1", "golden_id": str(group_id), "group_version": group["version"],
                    "active": bool(keys), "source_keys": keys, "correction_for": correction_for,
-                   "attributes": {}, "provenance": {}, "conflicts": [], "business_slices": []}
+                   "attributes": {}, "provenance": {}, "conflicts": [], "business_slices": [],
+                   "trace": metadata(parent_trace, decision_id=correction_for, event_id=event_id)}
         if keys:
             originals = list(conn.execute("SELECT source_key,payload,effective_from,observed_at,raw_id FROM raw_records WHERE source_key=ANY(%s) ORDER BY effective_from,(payload->>'source_updated_at')::timestamptz,observed_at,raw_id", (keys,)))
             boundaries = sorted({row["effective_from"] for row in originals})
@@ -144,7 +153,7 @@ class Service:
         else:
             conn.execute("UPDATE identity_groups SET status='retired' WHERE golden_id=%s", (group_id,))
         conn.execute("INSERT INTO outbox VALUES(%s,%s,%s,%s,%s,%s)",
-                     (uuid4(), group_id, group["version"], "golden.changed" if keys else "golden.retired", Jsonb(payload), timestamp))
+                     (event_id, group_id, group["version"], "golden.changed" if keys else "golden.retired", Jsonb(payload), timestamp))
         return payload
 
     def _versions(self, conn, group_ids) -> dict[str, int]:
@@ -201,6 +210,8 @@ class Service:
             if (old["kind"] != kind or saved != submission or old["request"]["reason"] != reason
                     or old["requested_by"] != actor.name):
                 raise Conflict("idempotency key was used for another request")
+            emit("decision.replayed", decision_id=old["decision_id"],
+                 origin_correlation_id=old["request"].get("trace", {}).get("origin_correlation_id"))
         return old
 
     def _assert_restore_destinations(self, conn, current_group_ids, mapping: dict):
@@ -301,8 +312,13 @@ class Service:
                     "source_keys": sorted(record.key for record in records)}
 
     def _audit(self, conn, decision_id, actor, transition, payload, timestamp):
+        event_id = uuid4()
+        parent = conn.execute("SELECT request->'trace' trace FROM decisions WHERE decision_id=%s",
+                              (decision_id,)).fetchone()
+        audited = {**payload, "trace": metadata(parent["trace"] if parent else None,
+                                               decision_id=decision_id, event_id=event_id)}
         conn.execute("INSERT INTO decision_events VALUES(%s,%s,%s,%s,%s,%s)",
-                     (uuid4(), decision_id, actor, transition, Jsonb(payload), timestamp))
+                     (event_id, decision_id, actor, transition, Jsonb(audited), timestamp))
 
     def _request(self, conn, kind: str, request: dict, actor: Actor, reason: str, key: str, *, submission: dict):
         old = self._replay(conn, kind, submission, actor, reason, key)
@@ -311,11 +327,13 @@ class Service:
         request = {**request, "reason": reason, "contract_version": "decision.v1", "rule_version": RULE_VERSION,
                    "submission": submission, "basis": self._basis(conn, request["group_ids"])}
         decision_id, timestamp = uuid4(), now(conn)
+        request["trace"] = metadata(decision_id=decision_id)
         result = conn.execute("INSERT INTO decisions VALUES(%s,%s,%s,'pending',1,%s,NULL,NULL,%s,NULL,%s) RETURNING *",
                               (decision_id, key, kind, actor.name, Jsonb(request), timestamp)).fetchone()
         self._audit(conn, decision_id, actor.name, "requested", request, timestamp)
         return result
 
+    @correlated_operation("service.request_merge")
     def request_merge(self, group_ids: list[str], expected_versions: dict, actor: Actor, reason: str, idempotency_key: str):
         group_ids = sorted({_uuid(g) for g in group_ids})
         if not 2 <= len(group_ids) <= 20:
@@ -335,6 +353,7 @@ class Service:
             return self._request(conn, "merge", {"group_ids": group_ids, "expected_versions": versions},
                                  actor, reason, idempotency_key, submission=submission)
 
+    @correlated_operation("service.request_split")
     def request_split(self, group_id: str, partitions: list[list[str]], expected_version: int, actor: Actor,
                       reason: str, idempotency_key: str):
         group_id = _uuid(group_id)
@@ -359,6 +378,7 @@ class Service:
                                                   "partitions": partitions}, actor, reason, idempotency_key,
                                  submission=submission)
 
+    @correlated_operation("service.request_unmerge")
     def request_unmerge(self, merge_decision_id: str, expected_versions: dict, actor: Actor, reason: str, idempotency_key: str):
         merge_decision_id = _uuid(merge_decision_id)
         expected_versions = self._canonical_versions(expected_versions)
@@ -381,6 +401,7 @@ class Service:
                 "restore_mapping": mapping, "undoes": str(old["decision_id"])}, actor, reason, idempotency_key,
                 submission=submission)
 
+    @correlated_operation("service.approve")
     def approve(self, decision_id: str, actor: Actor, expected_version: int, *, reject: bool = False):
         actor.require("approver")
         with self.db.connect(write=True) as conn:
@@ -399,6 +420,7 @@ class Service:
             self._audit(conn, decision_id, actor.name, status, {}, now(conn))
             return result
 
+    @correlated_operation("service.execute")
     def execute(self, decision_id: str, actor: Actor, expected_version: int, *, failpoint: str | None = None):
         actor.require("executor")
         with self.db.connect(write=True) as conn:
@@ -450,7 +472,8 @@ class Service:
                 conn.execute("UPDATE membership_history SET known_to=%s WHERE source_key=%s AND known_to IS NULL", (timestamp, key))
                 conn.execute("INSERT INTO membership_history VALUES(%s,%s,%s,%s,NULL)", (uuid4(), key, target, timestamp))
         result = {"before_memberships": before, "after_memberships": after, "affected_groups": affected,
-                  "consumers_must_apply_corrections": True}
+                  "consumers_must_apply_corrections": True,
+                  "trace": metadata(request.get("trace"), decision_id=decision["decision_id"])}
         conn.execute("UPDATE decisions SET status='executed',executed_by=%s,result=%s,version=version+1 WHERE decision_id=%s",
                      (executor, Jsonb(result), decision["decision_id"]))
         self._audit(conn, decision["decision_id"], executor, "executed", result, timestamp)
@@ -460,6 +483,7 @@ class Service:
             self._rebuild(conn, group_id, timestamp, correction_for=str(decision["decision_id"]))
         return conn.execute("SELECT * FROM decisions WHERE decision_id=%s", (decision["decision_id"],)).fetchone()
 
+    @correlated_operation("service.reconcile")
     def reconcile(self, *, mode: str = "hybrid", failpoint: str | None = None) -> dict:
         if mode not in {"deterministic", "hybrid"}:
             raise ValueError("unsupported matching mode")
@@ -470,7 +494,8 @@ class Service:
             policies = self._policy_events(conn)
             pairs = generate_candidates(records)
             result = {"records": len(records), "candidates": len(pairs), "new_evidence": 0, "automatic_merges": 0,
-                      "review": 0, "reject": 0, "group_conflicts": 0, "policy_blocked_candidates": 0, "mode": mode}
+                      "review": 0, "reject": 0, "group_conflicts": 0, "policy_blocked_candidates": 0,
+                      "mode": mode, "trace": metadata()}
             for left, right in sorted(pairs):
                 evidence = compare(by_key[left], by_key[right], mode=mode)
                 candidate = conn.execute("INSERT INTO candidates VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) ON CONFLICT DO NOTHING RETURNING candidate_id",
@@ -515,7 +540,8 @@ class Service:
                 versions = self._versions(conn, group_ids)
                 decision_id = uuid4()
                 request = {"group_ids": group_ids, "expected_versions": versions, "rule_version": RULE_VERSION,
-                           "contract_version": "decision.v1", "basis": basis, "evidence": evidence.model_dump(mode="json")}
+                           "contract_version": "decision.v1", "basis": basis, "evidence": evidence.model_dump(mode="json"),
+                           "trace": metadata(decision_id=decision_id)}
                 decision = conn.execute("INSERT INTO decisions VALUES(%s,%s,'automatic_merge','approved',1,'system.rules','system.rules',NULL,%s,NULL,%s) RETURNING *",
                     (decision_id, f"auto:{digest([left,right,versions])}", Jsonb(request), now(conn))).fetchone()
                 self._audit(conn, decision_id, "system.rules", "auto-authorized", request, now(conn))
@@ -607,6 +633,7 @@ class Service:
         )} | {"reporting"}
         return [self._consumer_state(conn, name) for name in sorted(names)]
 
+    @correlated_operation("service.consume")
     def consume(self, consumer: str = "reporting", *, limit: int = 10000, failpoint: str | None = None) -> dict:
         if not re.fullmatch(r"[a-z][a-z0-9_-]{0,39}", consumer):
             raise ValueError("invalid consumer identifier")
@@ -655,8 +682,17 @@ class Service:
                         conn.execute("INSERT INTO consumer_crosswalk VALUES(%s,%s,%s)", (consumer, key, ids[0]))
                 if failpoint == "before_ack":
                     raise RuntimeError("injected consumer crash; snapshot and inbox must roll back together")
-            return {**self._consumer_state(conn, consumer), "processed": len(rows), "requested_limit": limit,
-                    "expanded_for_atomic_corrections": len(rows) - selected_count}
+            result = {**self._consumer_state(conn, consumer), "processed": len(rows), "requested_limit": limit,
+                      "expanded_for_atomic_corrections": len(rows) - selected_count, "trace": metadata()}
+        # These receipts are logged only after the inbox/projection transaction
+        # commits. Durable receipt correlation is inbox.event_id -> outbox.trace.
+        for row in rows:
+            trace = row["payload"].get("trace", {})
+            emit("consumer.acknowledged", consumer=consumer, event_id=row["event_id"],
+                 aggregate_id=row["aggregate_id"], aggregate_version=row["aggregate_version"],
+                 decision_id=trace.get("decision_id"), producer_correlation_id=trace.get("correlation_id"),
+                 producer_run_id=trace.get("run_id"), origin_correlation_id=trace.get("origin_correlation_id"))
+        return result
 
     def snapshot(self, *, mode: str = "hybrid") -> dict:
         with self.db.connect() as conn:

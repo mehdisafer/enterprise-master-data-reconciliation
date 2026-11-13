@@ -56,3 +56,24 @@ FROM public.memberships m
 FULL JOIN (SELECT source_key, golden_id FROM public.consumer_crosswalk WHERE consumer = 'reporting') c
   ON c.source_key = m.source_key
 WHERE m.golden_id IS DISTINCT FROM c.golden_id;
+
+-- Latest durable business correlations. Values are opaque IDs, not record bodies.
+-- The same trace is preserved inside the versioned Snowflake snapshot document.
+SELECT o.event_id, o.aggregate_id, o.aggregate_version,
+       o.payload->'trace'->>'correlation_id' AS producer_correlation_id,
+       o.payload->'trace'->>'origin_correlation_id' AS origin_correlation_id,
+       o.payload->'trace'->>'run_id' AS run_id,
+       o.payload->>'correction_for' AS decision_id,
+       i.consumer, i.processed_at
+FROM public.outbox o
+LEFT JOIN public.consumer_inbox i ON i.event_id = o.event_id
+ORDER BY o.occurred_at DESC, o.event_id, i.consumer
+LIMIT 100;
+
+-- Each transition records its own HTTP/CLI correlation while retaining the origin.
+SELECT decision_id, event_id, transition, occurred_at,
+       payload->'trace'->>'correlation_id' AS transition_correlation_id,
+       payload->'trace'->>'origin_correlation_id' AS origin_correlation_id
+FROM public.decision_events
+ORDER BY occurred_at DESC, event_id
+LIMIT 100;

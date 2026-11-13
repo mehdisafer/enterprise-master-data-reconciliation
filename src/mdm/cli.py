@@ -7,8 +7,10 @@ import sys
 from pathlib import Path
 
 from mdm.service import Service
+from mdm.telemetry import correlated_operation
 
 
+@correlated_operation("cli.command")
 def main(argv=None):
     parser = argparse.ArgumentParser(prog="mdm")
     sub = parser.add_subparsers(dest="command", required=True)

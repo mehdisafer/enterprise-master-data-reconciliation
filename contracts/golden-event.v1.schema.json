@@ -17,7 +17,20 @@
     "valid_from": {"type": "string", "format": "date-time"},
     "valid_to": {"type": ["string", "null"], "format": "date-time"},
     "business_slices": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["valid_from", "valid_to", "attributes", "provenance", "conflicts"], "properties": {"valid_from": {"type": "string", "format": "date-time"}, "valid_to": {"type": ["string", "null"], "format": "date-time"}, "attributes": {"type": "object"}, "provenance": {"type": "object"}, "conflicts": {"type": "array", "items": {"type": "string"}}}}},
-    "correction_for": {"type": ["string", "null"], "format": "uuid"}
+    "correction_for": {"type": ["string", "null"], "format": "uuid"},
+    "trace": {
+      "description": "Optional pre-release v1 correlation metadata; legacy events may omit it. Not business attribute provenance or a provider tracing assertion.",
+      "type": "object", "additionalProperties": false,
+      "required": ["trace_version", "correlation_id", "origin_correlation_id"],
+      "properties": {
+        "trace_version": {"const": "correlation.v1"},
+        "correlation_id": {"type": "string", "format": "uuid"},
+        "origin_correlation_id": {"type": "string", "format": "uuid"},
+        "run_id": {"type": "string", "format": "uuid"},
+        "decision_id": {"type": "string", "format": "uuid"},
+        "event_id": {"type": "string", "format": "uuid"}
+      }
+    }
   },
   "allOf": [{"if": {"properties": {"active": {"const": true}}}, "then": {"required": ["valid_from", "valid_to"], "properties": {"source_keys": {"minItems": 1}, "business_slices": {"minItems": 1}}}, "else": {"properties": {"source_keys": {"maxItems": 0}, "business_slices": {"maxItems": 0}}}}]
 }

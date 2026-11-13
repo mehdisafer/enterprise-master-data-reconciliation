@@ -12,24 +12,42 @@ EXECUTOR = Actor("demo.executor", "executor")
 
 
 def execute_request(service: Service, decision):
-    approved = service.approve(str(decision["decision_id"]), APPROVER, decision["version"])
-    return service.execute(str(approved["decision_id"]), EXECUTOR, approved["version"])
+    if decision["status"] == "pending":
+        decision = service.approve(str(decision["decision_id"]), APPROVER, decision["version"])
+    if decision["status"] == "approved":
+        decision = service.execute(str(decision["decision_id"]), EXECUTOR, decision["version"])
+    if decision["status"] != "executed":
+        raise ValueError("the demonstration decision was rejected; inspect it before starting another scenario")
+    return decision
 
 
 def demonstrate(service: Service) -> dict:
     records = demo_records()
     with service.db.connect() as conn:
-        prior = conn.execute("SELECT 1 FROM decisions WHERE idempotency_key='demo:unmerge-orion:v1'").fetchone()
+        existing_keys = {r["source_key"] for r in conn.execute("SELECT source_key FROM source_records")}
+        prior = conn.execute("SELECT * FROM decisions WHERE idempotency_key='demo:unmerge-orion:v1'").fetchone()
+        prior_merge = conn.execute("SELECT * FROM decisions WHERE idempotency_key='demo:merge-orion:v1'").fetchone()
+    if existing_keys - {r.key for r in records}:
+        raise ValueError("the demonstration requires a dedicated database containing only its synthetic source identities")
     if prior:
-        return {"already_executed": True, "check": service.check(), "quality": service.quality(), "snapshot": service.snapshot()}
+        already_executed = prior["status"] == "executed"
+        execute_request(service, prior)
+        publication = service.consume()
+        checks = service.check()
+        if not checks["passed"] or not publication["caught_up"]:
+            raise AssertionError("resumed demonstration is not reconciled")
+        return {"already_executed": already_executed, "resumed": True, "publication": publication,
+                "check": checks, "quality": service.quality(), "snapshot": service.snapshot()}
     baseline = run(service, {s: [r for r in records if r.source_system == s] for s in SOURCES}, run_key="demo:initial:v1")
     repeat = service.ingest(records)
     initial = service.snapshot()
     by_source = {r["source_key"]: str(r["golden_id"]) for r in initial["crosswalk"]}
+    if prior_merge and prior_merge["status"] == "executed":
+        by_source.update(prior_merge["result"]["before_memberships"])
     by_id = {str(r["golden_id"]): r for r in initial["groups"]}
     orion_keys = ["ERP_ALPHA:organization:ORION-01", "ERP_BETA:organization:ORION-02"]
     group_ids = sorted({by_source[k] for k in orion_keys})
-    request = service.request_merge(group_ids, {g: by_id[g]["version"] for g in group_ids}, REQUESTER,
+    request = prior_merge or service.request_merge(group_ids, {g: by_id[g]["version"] for g in group_ids}, REQUESTER,
         "Demonstration: steward initially mistakes two similar Orion companies for one identity.", "demo:merge-orion:v1")
     merge = execute_request(service, request)
     service.consume()
@@ -64,7 +82,8 @@ def demonstrate(service: Service) -> dict:
     }
     if not all(assertions.values()):
         raise AssertionError(assertions)
-    return {"contract_version": "demo.v1", "baseline": baseline, "repeated_ingestion": repeat, "late_ingestion": late,
+    return {"contract_version": "demo.v1", "resumed": prior_merge is not None,
+            "initial_stage_is_resume_state": prior_merge is not None, "baseline": baseline, "repeated_ingestion": repeat, "late_ingestion": late,
             "merge_decision": str(merge["decision_id"]), "unmerge_decision": str(undone["decision_id"]),
             "publication": publication, "assertions": assertions,
             "stages": {"initial": initial, "merged": merged, "after_commit_before_publication": after_commit_before_publication,

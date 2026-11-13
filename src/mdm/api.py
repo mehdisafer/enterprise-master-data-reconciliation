@@ -2,11 +2,8 @@
 from __future__ import annotations
 
 import hmac
-import json
-import logging
 import time
 from importlib.resources import files
-from uuid import uuid4
 
 from fastapi import Depends, FastAPI, HTTPException, Request
 from fastapi.responses import HTMLResponse, JSONResponse, PlainTextResponse
@@ -16,14 +13,8 @@ from pydantic import BaseModel, ConfigDict, Field
 from mdm.config import Actor, actors
 from mdm.domain import SourceRecord
 from mdm.service import Conflict, Service
+from mdm.telemetry import correlation_scope, emit
 
-logger = logging.getLogger("mdm.requests")
-if not logger.handlers:
-    handler = logging.StreamHandler()
-    handler.setFormatter(logging.Formatter("%(message)s"))
-    logger.addHandler(handler)
-logger.setLevel(logging.INFO)
-logger.propagate = False
 bearer = HTTPBearer(auto_error=False)
 
 
@@ -113,25 +104,42 @@ def create_app(service: Service | None = None, actor_map: dict[str, Actor] | Non
 
     @app.middleware("http")
     async def observe(request: Request, call_next):
-        correlation = str(uuid4())
-        started = time.monotonic()
-        length = request.headers.get("content-length", "0")
-        try:
-            too_large = int(length) > 10_000_000
-        except ValueError:
-            return JSONResponse({"detail": "invalid content length"}, 400)
-        if too_large:
-            return JSONResponse({"detail": "request body exceeds 10 MB"}, 413)
-        response = await call_next(request)
-        response.headers["X-Correlation-ID"] = correlation
-        response.headers["X-Content-Type-Options"] = "nosniff"
-        response.headers["Referrer-Policy"] = "no-referrer"
-        response.headers["Cache-Control"] = "no-store"
-        response.headers["Content-Security-Policy"] = "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
-        logger.info(json.dumps({"event": "http.request", "correlation_id": correlation, "method": request.method,
-                                "route": request.scope.get("route").path if request.scope.get("route") else "unmatched",
-                                "status": response.status_code, "duration_ms": round((time.monotonic()-started)*1000, 2)}))
-        return response
+        # Incoming correlation headers are deliberately not trusted/copied.
+        # ContextVars propagate through Starlette/AnyIO's synchronous worker
+        # pool, so service audit/outbox writes share this server-issued UUID.
+        with correlation_scope(new=True) as context:
+            started = time.monotonic()
+            error_type = None
+            try:
+                try:
+                    length = int(request.headers.get("content-length", "0"))
+                except ValueError:
+                    response = JSONResponse({"detail": "invalid content length"}, 400)
+                else:
+                    if length > body_limit:
+                        response = JSONResponse({"detail": "request body exceeds configured byte limit"}, 413)
+                    else:
+                        response = await call_next(request)
+            except Exception as exc:
+                # Never copy exception text, SQL, bodies or credentials to logs
+                # or an unexpected-error response. The ID connects diagnostics.
+                error_type = type(exc).__name__
+                response = JSONResponse({"detail": "internal error; provide the correlation ID to the operator"}, 500)
+            except BaseException as exc:
+                emit("http.interrupted", error_type=type(exc).__name__,
+                     duration_ms=(time.monotonic() - started) * 1000)
+                raise
+            response.headers["X-Correlation-ID"] = context.correlation_id
+            response.headers["X-Content-Type-Options"] = "nosniff"
+            response.headers["Referrer-Policy"] = "no-referrer"
+            response.headers["Cache-Control"] = "no-store"
+            response.headers["Content-Security-Policy"] = "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+            method = request.method if request.method in {"GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"} else "OTHER"
+            emit("http.request", method=method,
+                 route=request.scope.get("route").path if request.scope.get("route") else "unmatched",
+                 status=response.status_code, error_type=error_type,
+                 duration_ms=(time.monotonic() - started) * 1000)
+            return response
 
     @app.exception_handler(Conflict)
     async def conflict_handler(request, exc):
