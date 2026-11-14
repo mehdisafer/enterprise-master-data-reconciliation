@@ -1,0 +1,10 @@
+{
+  "elapsed_seconds": 5.434845,
+  "expected_returncode": 0,
+  "finished_at": "2026-11-14T13:45:12.665660+00:00",
+  "name": "02-dbt-build",
+  "returncode": 0,
+  "script_sha256": "cf7f1c37921433b09dd6c0f17d26a9f220ca282b5c2b4e3261f193b6a5b5cce1",
+  "started_at": "2026-11-14T13:45:07.230830+00:00",
+  "working_directory": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/reference-work"
+}

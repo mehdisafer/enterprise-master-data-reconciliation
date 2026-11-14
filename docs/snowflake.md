@@ -196,6 +196,11 @@ and schema `prevent_destroy` guards require a reviewed decommission operation.
 Terraform state must use an access-controlled backend before a shared deployment.
 `terraform init`, provider-schema validation, plan, apply and restore remain
 separate evidence requirements; an unexecuted HCL file is not a deployed system.
+Provider installation and formatting were observed locally; schema loading failed
+at Unix socket creation. The [pinned-provider transport investigation](terraform-provider-transport.md)
+explains why its Linux normal/debug entry points cannot be redirected to TCP by
+the examined official parameters. Static schema checks need a compatible runner
+but no warehouse credentials; the live operations below require their own scope.
 
 Resource monitors help control warehouse usage but are not an exact currency
 cap and do not cover every serverless feature. No such feature is enabled here.
@@ -217,7 +222,10 @@ The script records the commit, publishes a real snapshot, exercises rollback
 before the first publication, reads all source views back, repeats the same
 publication to test idempotency, executes `dbt build --target snowflake`, and
 generates dbt documentation. It preserves the connector report, query ids,
-`manifest.json`, `run_results.json`, `catalog.json`, compiled SQL and logs. Inspect
+build `manifest.json` and `run_results.json` under `dbt/build/`, and documentation
+results and `catalog.json` under `dbt/docs/`, with compiled SQL and logs. This
+separation prevents documentation compilation from replacing executed test results.
+The output-path correction is syntax-checked; live Snowflake execution remains open. Inspect
 the report: on a previously-published identical snapshot, rollback is not
 re-exercised and `rollback_exercised` remains false. Use a genuine changed input
 for a new rollback exercise; do not relabel an idempotent no-op as a failure test.

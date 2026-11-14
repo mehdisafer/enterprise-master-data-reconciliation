@@ -7,13 +7,13 @@
 | Unit smoke | `uv run --no-sync pytest -q -m 'not integration'` | Domain, matching, in-process auth and Snowflake driver boundaries; no provider integration |
 | Real integration | `uv run --no-sync pytest -q` with `MDM_TEST_DATABASE_URL` | Real PostgreSQL; reset restricted to an explicitly supplied `*_test` database |
 | Business demonstration | `mdm demo --output artifacts/demo.json` | Dedicated synthetic database; completed demonstration is idempotent |
-| dbt | `dbt build --project-dir dbt --profiles-dir dbt --target postgres` | Real PostgreSQL models and data tests |
-| Catalog | `dbt docs generate --project-dir dbt --profiles-dir dbt --target postgres` | Executed catalog introspection and model lineage |
+| dbt | `dbt build --project-dir dbt --profiles-dir dbt --target postgres --target-path ../artifacts/dbt-build` | Real PostgreSQL models and data tests; retained build results |
+| Catalog | `dbt docs generate --project-dir dbt --profiles-dir dbt --target postgres --target-path ../artifacts/dbt-docs` | Executed catalog and lineage; separate results cannot overwrite the build |
 | Bounded control | `mdm benchmark --size 300 --output artifacts/benchmark-control.json` | Candidate/exhaustive work and Python memory |
 | Database load | `mdm benchmark --size 300 --database --output artifacts/benchmark-database.json` | Empty dedicated database; ingestion, consolidation, EXPLAIN ANALYZE/BUFFERS and history growth |
 | Larger load | Manual workflow input, maximum 10,000 records | Explicit run with a 180-second command bound; not every documentation change |
 | Restore | `scripts/backup.sh` then `scripts/restore.sh` into an empty database | Native same-major clients, exact fingerprints and invariants |
-| Restored data | `dbt test --project-dir dbt --profiles-dir dbt --target postgres` with restored `PGDATABASE` | Tests over restored views and operational tables |
+| Restored data | `dbt test --project-dir dbt --profiles-dir dbt --target postgres --target-path ../artifacts/dbt-restored` with restored `PGDATABASE` | Tests over restored views and operational tables |
 | Container/browser | Container job in `quality.yml`, including `scripts/browser_smoke.py` | Real image, container lifecycle and rendered console screenshots |
 | Terraform | Static workflow: init without backend, format, validate and provider schema | Actual pinned provider; no cloud apply |
 | Snowflake | `infra/snowflake/qualify.sh --execute-live` | Authorized dedicated provider resources; no local substitute |
@@ -24,7 +24,7 @@ The full suite fails if its database is missing. No skipped test is accepted as 
 
 ## Observed 14 November qualification
 
-The executable inputs match [source revision 205e7507](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/205e7507b9cd7dc1b34a858f2c524ce0c832642c). The [source correspondence](../evidence/2026-11-14/source-correspondence.json) compares file hashes from three actual captures with that complete source tree.
+The application, test and dbt inputs match [source revision 205e7507](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/205e7507b9cd7dc1b34a858f2c524ce0c832642c). The [source correspondence](../evidence/2026-11-14/source-correspondence.json) compares file hashes from three actual captures with that complete source tree. Subsequent changes to qualification scripts are recorded separately below.
 
 | Profile | Observed result | Evidence |
 | --- | --- | --- |
@@ -46,13 +46,24 @@ The committed [evidence index](../evidence/README.md) retains original command a
 
 Native `dbt` ran on a byte-identical copy of the tracked project so generated targets/logs stayed outside the source checkout. Database backup archives, credentials, PostgreSQL/browser binaries and generated dbt application HTML are excluded from published evidence. Embedded upstream macros and their compiled derivatives retain the notices in [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md).
 
-The CI workflow is configured to retain artifacts for 14 days after successful uploads. The observed GitHub runs produced no artifacts because they never received a runner. Locally preserved results must not be relabelled as CI output. The dated 13 November parse/audit/unit capture remains unchanged as historical evidence; the 14 November live database results supersede its database-execution gap.
+The CI workflow is configured to retain artifacts for 14 days after successful uploads. It keeps build, documentation and restored-test results in separate directories, including their manifests and applicable compiled/executed SQL. The observed GitHub runs produced no artifacts because they never received a runner. Locally preserved results must not be relabelled as CI output. The dated 13 November parse/audit/unit capture remains unchanged as historical evidence; the 14 November live database results supersede its database-execution gap.
+
+## Targeted verification of CI evidence controls
+
+The [13:45 UTC capture](../evidence/2026-11-14/ci-evidence-hardening/qualification.json) executes the revised workflow's dbt commands and populated-target check on the same isolated PostgreSQL 17.12 runtime. Its capture helper extracts the commands from the workflow, records their hashes and uses fresh output directories. Native clients and a private passfile replace the CI container wrappers; neither Docker nor GitHub Actions is executed by this capture.
+
+- Build produced 41 passing data tests, five successful models and two successful hooks. Both build artifact hashes stayed identical after documentation generation. The two phases have distinct invocation IDs, and the documentation catalog contains five models and 16 sources.
+- The populated-target control accepted only exit 1 with `restore_verified: false`, `error_type: OperationError` and the exact expected reason, with no forbidden report.
+- Two real alternate failures, a missing archive and missing restore configuration, each returned exit 1 from the restore tool. The revised control rejected both with its own exit 1 and a retained `passed: false` report. These are deliberate negative controls, not failed qualification attempts.
+- Fingerprints for all 17 operational tables in both the source and restored databases matched before/after. The existing populated database was not reset, and no successful restore was repeated. PostgreSQL stopped with exit zero.
+
+The [original command outputs](../evidence/2026-11-14/ci-evidence-hardening/commands/02-dbt-build/execution.json), [copy manifest](../evidence/2026-11-14/ci-evidence-hardening/preserved-artifacts.json), dbt results, restore-control responses and runtime logs are retained. The Snowflake helper uses the same separation between build/docs output paths; only its shell syntax and source changes are checked here. No live Snowflake result follows from this native run.
 
 ## Remaining environment boundaries
 
 Loopback TCP is allowed in the provided workspace; Unix socket creation is denied. PostgreSQL 17.12 used `unix_socket_directories=''`, with standard TCP and private SCRAM credentials. The signed PGDG packages were extracted locally without a system installation. Uvicorn served actual HTTP on loopback. The earlier blanket socket restriction diagnosis was therefore too broad and is superseded by these observed runs.
 
-Docker is unavailable. The official Playwright Chromium download failed with an unavailable-site HTML response; the system Chromium then failed at its required Unix socket. No rendered console, screenshot, browser interaction or container startup is claimed. Terraform's actual provider-schema startup remains blocked by the recorded Unix-socket error. Snowflake account authorization, credentials, target scope and spending limit remain absent.
+Docker is unavailable. The official Playwright Chromium download failed with an unavailable-site HTML response; the system Chromium then failed at its required Unix socket. No rendered console, screenshot, browser interaction or container startup is claimed. Terraform's actual provider-schema startup remains blocked by the recorded Unix-socket error. The [official-source transport investigation](terraform-provider-transport.md) confirms that normal/debug startup of the pinned Linux provider does not expose a TCP selection; it is source analysis, not schema execution. Snowflake account authorization, credentials, target scope and spending limit remain absent.
 
 The latest [quality run](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711716) and [Terraform run](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711641) at the qualified code revision have zero executed steps and zero artifacts. Their precise admission failure requires an authorized interface exposing the annotation text. There is no evidence establishing a billing, quota or policy cause.
 

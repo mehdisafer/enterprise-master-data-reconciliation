@@ -282,7 +282,10 @@ writes the result only after these succeed. A hash proves content agreement;
 it does not certify the data or validate an external consumer.
 
 CI is configured to exercise these same scripts against PostgreSQL 17.12 and check that a second
-restore into the populated target is rejected. Its narrow client wrappers execute
+restore into the populated target is rejected for the exact intended reason, with
+exit 1, `restore_verified: false` and `error_type: OperationError`. An unrelated
+failure does not satisfy that control; the raw outputs and per-condition results
+are retained. Its narrow client wrappers execute
 the real `pg_dump`/`pg_restore` binaries inside the service container, streaming the
 archive without passing credentials in arguments. CI then runs dbt tests on the
 restored database. The native 14 November drill used the actual 17.12 clients:

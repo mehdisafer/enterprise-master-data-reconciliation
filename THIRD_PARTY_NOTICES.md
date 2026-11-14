@@ -2,7 +2,7 @@
 
 The licence for the original repository code and synthetic fixtures is still awaiting an explicit maintainer decision. This file does not select it or apply a third-party licence to the project.
 
-The original [dbt parse manifest](evidence/2026-11-13/dbt-parse-manifest.json) and the [executed PostgreSQL build](evidence/2026-11-14/native-flow/dbt/build/manifest.json) and [restored-database manifests](evidence/2026-11-14/native-flow/dbt/restored-test/manifest.json) include macro definitions from installed dbt packages as part of dbt's generated output. Those definitions retain their upstream rights and copyright notices. Copies of the actual installed licence files are preserved separately:
+The original [dbt parse manifest](evidence/2026-11-13/dbt-parse-manifest.json), the [executed PostgreSQL build](evidence/2026-11-14/native-flow/dbt/build/manifest.json), the [restored-database manifest](evidence/2026-11-14/native-flow/dbt/restored-test/manifest.json), and the later [CI-control build](evidence/2026-11-14/ci-evidence-hardening/dbt/build/manifest.json) and [documentation manifest](evidence/2026-11-14/ci-evidence-hardening/dbt/docs/manifest.json) include macro definitions from installed dbt packages as part of dbt's generated output. Those definitions retain their upstream rights and copyright notices. Copies of the actual installed licence files are preserved separately:
 
 | Package | Installed version | Preserved licence |
 | --- | --- | --- |

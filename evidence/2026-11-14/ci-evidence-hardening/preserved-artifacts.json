@@ -1,0 +1,326 @@
+{
+  "captured_at": "2026-11-14T13:46:10.142403+00:00",
+  "byte_preserved_originals": 52,
+  "entries": [
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/qualification.json",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/qualification.json",
+      "bytes": 4818,
+      "sha256": "a15fe6d3f6cadd1709166006de2a5347c5ccacae6509a54e4488407cc50b33f7"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/source-before.json",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/source-before.json",
+      "bytes": 2467,
+      "sha256": "ad7989754601cca56818d491c6076af8e5f27a17c13c9ee10eb5a886d5e95719"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/source-after.json",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/source-after.json",
+      "bytes": 2467,
+      "sha256": "ad7989754601cca56818d491c6076af8e5f27a17c13c9ee10eb5a886d5e95719"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/database-before.json",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/database-before.json",
+      "bytes": 4483,
+      "sha256": "9258fc988a51d7435e87444d24030381e50bad89a70245c332995d2abb8c42dc"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/database-after.json",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/database-after.json",
+      "bytes": 4483,
+      "sha256": "9258fc988a51d7435e87444d24030381e50bad89a70245c332995d2abb8c42dc"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/01-dbt-deps/execution.json",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/01-dbt-deps/execution.json",
+      "bytes": 423,
+      "sha256": "f0168d026effdc187c509aced4238e022f805f9ae4a66783140fcbf5aa2edc46"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/01-dbt-deps/stderr.txt",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/01-dbt-deps/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/01-dbt-deps/stdout.txt",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/01-dbt-deps/stdout.txt",
+      "bytes": 162,
+      "sha256": "691333bf2a0f3cf466abaaab51951267430fedde6c9e3cae15c737c6fa3bc105"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/01-dbt-deps/step.sh",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/01-dbt-deps/step.sh",
+      "bytes": 81,
+      "sha256": "77c2f35dd9f75d52886699c8592ced3ba656df312ed5dd0dcd6034ac1050d42b"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/02-dbt-build/execution.json",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/02-dbt-build/execution.json",
+      "bytes": 424,
+      "sha256": "21b4248f2a70dfd26004fbae67ff6e6200f529a4700b08b3a1951e8041942b97"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/02-dbt-build/stderr.txt",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/02-dbt-build/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/02-dbt-build/stdout.txt",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/02-dbt-build/stdout.txt",
+      "bytes": 11638,
+      "sha256": "ef0e5e09b97a22b06ca91583221675f1fe7a56ea801dfc69d0bb9e166ebe7f3b"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/02-dbt-build/step.sh",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/02-dbt-build/step.sh",
+      "bytes": 119,
+      "sha256": "cf7f1c37921433b09dd6c0f17d26a9f220ca282b5c2b4e3261f193b6a5b5cce1"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/03-dbt-docs/execution.json",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/03-dbt-docs/execution.json",
+      "bytes": 422,
+      "sha256": "30621caa1cb2a5abe3c1dabe962f3561298b44ce919b7d224ddfdfd03716dc01"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/03-dbt-docs/stderr.txt",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/03-dbt-docs/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/03-dbt-docs/stdout.txt",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/03-dbt-docs/stdout.txt",
+      "bytes": 550,
+      "sha256": "66dbd5e130cec1dc97eaec9eceffb5b53b3a6fa53b3283a000b694a0d70bfe3c"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/03-dbt-docs/step.sh",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/03-dbt-docs/step.sh",
+      "bytes": 126,
+      "sha256": "e1f1466536f127dad44a1a39a83e5dbdc86c1c077279ca1a3b533e46829f9b48"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/04-expected-populated-target/execution.json",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/04-expected-populated-target/execution.json",
+      "bytes": 440,
+      "sha256": "2e5d0763ebe5779d1414e072a37c620a60f5d21391709f2a08448518c1a75a51"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/04-expected-populated-target/stderr.txt",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/04-expected-populated-target/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/04-expected-populated-target/stdout.txt",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/04-expected-populated-target/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/04-expected-populated-target/step.sh",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/04-expected-populated-target/step.sh",
+      "bytes": 2164,
+      "sha256": "ee37dff810e4ed7cafe95718755d59c287825d9833112a43998343d17a9ff8d8"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/05-missing-archive/execution.json",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/05-missing-archive/execution.json",
+      "bytes": 434,
+      "sha256": "95befac28e825f12e9eb151ee04b60aa823e799bb1b653d48299828e32c76ecd"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/05-missing-archive/stderr.txt",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/05-missing-archive/stderr.txt",
+      "bytes": 96,
+      "sha256": "f853540cd39a35cbd144f4e8cd7e4897bf0506d1ec7f53e972583a9ed12d31fa"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/05-missing-archive/stdout.txt",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/05-missing-archive/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/05-missing-archive/step.sh",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/05-missing-archive/step.sh",
+      "bytes": 2164,
+      "sha256": "ee37dff810e4ed7cafe95718755d59c287825d9833112a43998343d17a9ff8d8"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/06-missing-restore-configuration/execution.json",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/06-missing-restore-configuration/execution.json",
+      "bytes": 462,
+      "sha256": "92e973bc8f1b46bf9d442463466f8d533d58fe458e128b0158eb861018dead12"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/06-missing-restore-configuration/stderr.txt",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/06-missing-restore-configuration/stderr.txt",
+      "bytes": 96,
+      "sha256": "f853540cd39a35cbd144f4e8cd7e4897bf0506d1ec7f53e972583a9ed12d31fa"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/06-missing-restore-configuration/stdout.txt",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/06-missing-restore-configuration/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/commands/06-missing-restore-configuration/step.sh",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/commands/06-missing-restore-configuration/step.sh",
+      "bytes": 2164,
+      "sha256": "ee37dff810e4ed7cafe95718755d59c287825d9833112a43998343d17a9ff8d8"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/reference-work/artifacts/dbt-build/manifest.json",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/dbt/build/manifest.json",
+      "bytes": 709843,
+      "sha256": "ca8fc45a45c5d6f25ab0ce9030fd78a07f3b29ec33b5b6119f837ec38d219d57"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/reference-work/artifacts/dbt-build/run_results.json",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/dbt/build/run_results.json",
+      "bytes": 46553,
+      "sha256": "1d4b4de7f8e25c95976dc1775060d73e14d3194e34eb2648852f6fee95cc8309"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/reference-work/artifacts/dbt-docs/manifest.json",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/dbt/docs/manifest.json",
+      "bytes": 701658,
+      "sha256": "13be0cc11aa8435b20e154d343b484ba12da987da6f28abc0e948fb0c15a5ada"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/reference-work/artifacts/dbt-docs/run_results.json",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/dbt/docs/run_results.json",
+      "bytes": 43882,
+      "sha256": "bb450972c2c371b8396a62ee676a0fffffe618d9c914dc7ad95fb58dd947a92b"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/reference-work/artifacts/dbt-docs/catalog.json",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/dbt/docs/catalog.json",
+      "bytes": 20420,
+      "sha256": "ffef6500127c31b68b8f659da1c5dcbe6a3f145bfcac7fc246beabdc658cf0eb"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/reference-work/dbt/logs/dbt.log",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/dbt/dbt.log",
+      "bytes": 211541,
+      "sha256": "9c0244d965f195ccd2d9657029bcf2ae0f8ec694d19b1153e46e85a24d3dd07d"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/reference-work/artifacts/second-restore-rejection.json",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/restore-controls/populated-target/second-restore-rejection.json",
+      "bytes": 618,
+      "sha256": "224d6342ce342617f0f74091ebbc3377cae1144399d5281e373cfa9ddb910275"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/reference-work/artifacts/second-restore.stdout.txt",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/restore-controls/populated-target/second-restore.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/reference-work/artifacts/second-restore.stderr.txt",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/restore-controls/populated-target/second-restore.stderr.txt",
+      "bytes": 114,
+      "sha256": "ed120c0ae868af3d8a36e026f253fc5397d689f7d7f9b6800373f3df8d9dc11b"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/05-missing-archive/artifacts/second-restore-rejection.json",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/restore-controls/missing-archive/second-restore-rejection.json",
+      "bytes": 610,
+      "sha256": "36344fa0b8ca7977cd93ff964ee717072832ec6cc0d5e591a465fcba42d65ca8"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/05-missing-archive/artifacts/second-restore.stdout.txt",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/restore-controls/missing-archive/second-restore.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/05-missing-archive/artifacts/second-restore.stderr.txt",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/restore-controls/missing-archive/second-restore.stderr.txt",
+      "bytes": 104,
+      "sha256": "5d55f28a21ed2bae116e2814dabf870e862822b2eea30256acf2bd1214b0ed20"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/06-missing-restore-configuration/artifacts/second-restore-rejection.json",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/restore-controls/missing-restore-configuration/second-restore-rejection.json",
+      "bytes": 649,
+      "sha256": "7c0a1f8a5b74ddf554d5d46ebabaad32e3c0e315a156b026bb4cd3cf72d9e266"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/06-missing-restore-configuration/artifacts/second-restore.stdout.txt",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/restore-controls/missing-restore-configuration/second-restore.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/06-missing-restore-configuration/artifacts/second-restore.stderr.txt",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/restore-controls/missing-restore-configuration/second-restore.stderr.txt",
+      "bytes": 143,
+      "sha256": "c33c5a2d3d0f30137cef8b13ffc9e906a668c8633287435b3c293b9c91169763"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/logs/20261114T134504074495Z/databases-before.txt",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/runtime/databases-before.txt",
+      "bytes": 63,
+      "sha256": "635ad2c56aa6c9c9258d7e29db089ba4d3c961e6279556f5b1f2f3daa6229e43"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/logs/20261114T134504074495Z/pg-isready.log",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/runtime/pg-isready.log",
+      "bytes": 40,
+      "sha256": "ee144ef8efac37627474f1193365a8f0e8a20452d56c0549051e39277ef726f9"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/logs/20261114T134504074495Z/postgres.log",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/runtime/postgres.log",
+      "bytes": 1182,
+      "sha256": "9f25e310dd2acfbed304dee97d02d447807c308201d416689589a2ead2239320"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/logs/20261114T134504074495Z/readiness-query.json",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/runtime/readiness-query.json",
+      "bytes": 1047,
+      "sha256": "a6a97e0a9c6bcd72baa7edb5b1ac98165618ab814f1463ff27e24a0ca015c93b"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/logs/20261114T134504074495Z/run.json",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/runtime/run.json",
+      "bytes": 345,
+      "sha256": "278999b574ca87349271f451c41ad61bf6f21ef6649cd4bc207d4fb5dbf37c38"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/logs/20261114T134504074495Z/start.log",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/runtime/start.log",
+      "bytes": 52,
+      "sha256": "66afd0411ccc09366e99fdd99b85f21899c8d2d064f5835126859618802153ad"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/logs/20261114T134504074495Z/stop.log",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/runtime/stop.log",
+      "bytes": 56,
+      "sha256": "ca19178a35ab4153b75b494963b66ce8243e1b94c173107c87b44d09db23652d"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/qualify_ci_evidence.py",
+      "preserved_path": "evidence/2026-11-14/ci-evidence-hardening/capture-tools/qualify_ci_evidence.py",
+      "bytes": 11183,
+      "sha256": "9a42d7bd7dc9ac57b4611927f926acca0b0fedb224cd0d75f62f5a4f0ea43a2c"
+    }
+  ],
+  "exclusions": [
+    "database archive",
+    "credentials",
+    "vendor binaries",
+    "generated dbt application HTML",
+    "dbt caches"
+  ],
+  "manifest_itself_listed": false
+}

@@ -1,0 +1,195 @@
+{
+  "started_at": "2026-11-14T13:49:05.295550+00:00",
+  "finished_at": "2026-11-14T13:49:05.377713+00:00",
+  "passed": true,
+  "bash_blocks_checked": 27,
+  "python_blocks_parsed": 6,
+  "checks": [
+    {
+      "job": "scope",
+      "step": "Select meaningful qualification work",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 1
+    },
+    {
+      "job": "scope",
+      "step": "Scan publishable files and Git history",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 0
+    },
+    {
+      "job": "dependencies",
+      "step": "Install the exact reviewed lock",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 0
+    },
+    {
+      "job": "dependencies",
+      "step": "Retain installed component and license declarations",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 0
+    },
+    {
+      "job": "dependencies",
+      "step": "Audit installed dependencies against published advisories",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 0
+    },
+    {
+      "job": "postgres",
+      "step": "3",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 0
+    },
+    {
+      "job": "postgres",
+      "step": "Record runtime and create isolated qualification databases",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 1
+    },
+    {
+      "job": "postgres",
+      "step": "Lint executable code",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 0
+    },
+    {
+      "job": "postgres",
+      "step": "Run unit and real PostgreSQL integration tests",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 0
+    },
+    {
+      "job": "postgres",
+      "step": "Fail if any test was skipped",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 1
+    },
+    {
+      "job": "postgres",
+      "step": "Execute the business demonstration",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 0
+    },
+    {
+      "job": "postgres",
+      "step": "Validate the warehouse export against the real PostgreSQL schema",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 1
+    },
+    {
+      "job": "postgres",
+      "step": "Execute dbt models, contracts and data tests",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 0
+    },
+    {
+      "job": "postgres",
+      "step": "Exercise consistent backup and restoration into an empty database",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 0
+    },
+    {
+      "job": "postgres",
+      "step": "Reject a second restore into the populated database",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 1
+    },
+    {
+      "job": "postgres",
+      "step": "Validate restored business views with dbt",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 0
+    },
+    {
+      "job": "postgres",
+      "step": "Measure a bounded control profile",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 0
+    },
+    {
+      "job": "postgres",
+      "step": "Measure database work, query plan and history growth",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 0
+    },
+    {
+      "job": "postgres",
+      "step": "Measure an explicitly requested load profile",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 1
+    },
+    {
+      "job": "container",
+      "step": "Install the locked browser qualification environment",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 0
+    },
+    {
+      "job": "container",
+      "step": "Create ephemeral file secrets",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 0
+    },
+    {
+      "job": "container",
+      "step": "Validate and build the reference deployment",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 0
+    },
+    {
+      "job": "container",
+      "step": "Start the reference deployment",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 0
+    },
+    {
+      "job": "container",
+      "step": "Execute the demo through the installed image",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 0
+    },
+    {
+      "job": "container",
+      "step": "Qualify the rendered review, golden records and consumer views",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 0
+    },
+    {
+      "job": "container",
+      "step": "Retain deployment logs",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 0
+    },
+    {
+      "job": "container",
+      "step": "Remove only this run's ephemeral deployment",
+      "bash_syntax_exit": 0,
+      "python_blocks_parsed": 0
+    }
+  ],
+  "snowflake_helper_shell_syntax_exit": 0,
+  "snowflake_helper_live_executed": false,
+  "relative_markdown_links_checked": 151,
+  "markdown_files_checked": 20,
+  "preserved_originals_verified": 52,
+  "workflow_matches_native_capture": true,
+  "unchanged_from_qualified_application_commit": [
+    "src",
+    "tests",
+    "dbt",
+    "contracts",
+    "data",
+    "scripts",
+    ".github/scripts",
+    "pyproject.toml",
+    "uv.lock",
+    "Dockerfile",
+    "compose.yaml",
+    ".dockerignore",
+    "infra/snowflake/main.tf",
+    "infra/snowflake/variables.tf",
+    "infra/snowflake/.terraform.lock.hcl"
+  ],
+  "scope": "syntax, links, byte preservation, and scoped source comparison; no GitHub, container, browser or Snowflake execution"
+}

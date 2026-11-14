@@ -1,0 +1,10 @@
+{
+  "elapsed_seconds": 0.264724,
+  "expected_returncode": 0,
+  "finished_at": "2026-11-14T13:45:17.213097+00:00",
+  "name": "04-expected-populated-target",
+  "returncode": 0,
+  "script_sha256": "ee37dff810e4ed7cafe95718755d59c287825d9833112a43998343d17a9ff8d8",
+  "started_at": "2026-11-14T13:45:16.948384+00:00",
+  "working_directory": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/reference-work"
+}

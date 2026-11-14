@@ -1,0 +1,10 @@
+{
+  "elapsed_seconds": 4.27837,
+  "expected_returncode": 0,
+  "finished_at": "2026-11-14T13:45:16.945759+00:00",
+  "name": "03-dbt-docs",
+  "returncode": 0,
+  "script_sha256": "e1f1466536f127dad44a1a39a83e5dbdc86c1c077279ca1a3b533e46829f9b48",
+  "started_at": "2026-11-14T13:45:12.667403+00:00",
+  "working_directory": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/reference-work"
+}

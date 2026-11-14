@@ -8,7 +8,7 @@ Inventory on 13 November 2026: private empty repository, no branches, issues, PR
 
 **The native PostgreSQL reference and HTTP boundary are now qualified for the recorded synthetic scenarios. Full project acceptance remains open.** Docker, rendered-browser behavior, Terraform provider-schema validation, live Snowflake behavior and repository publication have separate unmet gates.
 
-The 14 November executable inputs match [commit `205e7507`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/205e7507b9cd7dc1b34a858f2c524ce0c832642c), tree `2075183147d1ff50ddfee7e86e99ad7d7bdb367e`. Local and remote trees were compared before the branch advanced. Original file hashes establish correspondence with the tests, native flow and HTTP runs; see [source correspondence](../evidence/2026-11-14/source-correspondence.json).
+The application, test and dbt inputs qualified on 14 November match [commit `205e7507`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/205e7507b9cd7dc1b34a858f2c524ce0c832642c), tree `2075183147d1ff50ddfee7e86e99ad7d7bdb367e`. Local and remote trees were compared before the branch advanced. Original file hashes establish correspondence with the tests, native flow and HTTP runs; see [source correspondence](../evidence/2026-11-14/source-correspondence.json). Later CI and Snowflake evidence-capture changes have separate, explicitly scoped checks below.
 
 ## What changed during qualification
 
@@ -20,6 +20,8 @@ The original 112 tests passed against real PostgreSQL 17.12. Further review foun
 - Recomputes candidate disposition when a third member changes, and displays the group conflict in the console's evidence.
 
 Thirteen new PostgreSQL regressions cover those boundaries. The final suite passed **125 tests plus 15 subtests, with zero skipped cases**, including **53 real PostgreSQL integration cases**. A Starlette TestClient deprecation warning remains recorded.
+
+The CI evidence review then found that documentation generation overwrote dbt build results and that the negative restore check accepted unrelated failures. The workflow now uses separate build/docs paths and verifies the exact populated-target error, preserving raw outputs and per-condition results. A [targeted native run](../evidence/2026-11-14/ci-evidence-hardening/qualification.json) executed those revised commands: five models and 41 tests passed, build artifact hashes remained unchanged after docs, the expected rejection passed, and missing-archive/missing-configuration failures were correctly rejected as evidence. All 17 operational tables in each of the two databases remained unchanged. The equivalent Snowflake output-path correction is implemented and syntax-checked, not live-qualified.
 
 ## Acceptance matrix
 
@@ -51,6 +53,8 @@ Thirteen new PostgreSQL regressions cover those boundaries. The final suite pass
 The earlier inference that Unix socket denial prevented every local server was too broad. A fresh probe established that loopback TCP works. PostgreSQL 17.12 ran with `unix_socket_directories=''` and Uvicorn bound to `127.0.0.1`. The packages came from the signed official PGDG repository; signature, package checksums, binary versions and real readiness queries are retained. No system installation, permission change or external resource was needed.
 
 Chromium's official Playwright download returned an unavailable-site HTML response. The installed system Chromium was also attempted and aborted when its process singleton required a denied Unix socket. These are explicit failed attempts, not a rendered-interface result. Terraform's previously observed provider startup has the same Unix-socket boundary. Docker is absent.
+
+The [version-specific provider transport review](terraform-provider-transport.md) establishes from official source code that the pinned Linux Snowflake executable still selects a Unix listener in managed debug mode. `TF_REATTACH_PROVIDERS` and the plugin port variables do not give this executable a TCP listener. This narrows the environment diagnosis without qualifying the provider schema. Static validation needs a compatible runner, not Snowflake credentials; live warehouse qualification has separate prerequisites.
 
 At the qualified source revision, [quality run 43593711716](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711716) and [Terraform run 43593711641](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711641) again failed before runner execution. The failed jobs have `runner_id: 0`, no steps and one check annotation each; artifact collections are empty. The connected endpoint exposes the annotation count but not its text. Billing, quota and policy causes remain unconfirmed. These GitHub runs do not invalidate or replace the separately recorded native runs.
 

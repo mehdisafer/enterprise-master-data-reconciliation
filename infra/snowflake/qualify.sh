@@ -14,7 +14,7 @@ git rev-parse HEAD > "$evidence_dir/commit.txt"
 uv run --locked --extra snowflake python -m mdm.snowflake \
   --execute --exercise-rollback --output "$evidence_dir/publication.json"
 uv run --locked --extra snowflake dbt build --project-dir dbt --profiles-dir dbt \
-  --target snowflake --target-path "$evidence_dir/dbt" --log-path "$evidence_dir/logs"
+  --target snowflake --target-path "$evidence_dir/dbt/build" --log-path "$evidence_dir/logs"
 uv run --locked --extra snowflake dbt docs generate --project-dir dbt --profiles-dir dbt \
-  --target snowflake --target-path "$evidence_dir/dbt" --log-path "$evidence_dir/logs"
+  --target snowflake --target-path "$evidence_dir/dbt/docs" --log-path "$evidence_dir/logs"
 printf '%s\n' 'Live publication, business readback, replay and dbt completed; inspect the retained results before accepting the environment.'

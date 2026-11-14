@@ -25,7 +25,9 @@ This is a **private release candidate with a verified native PostgreSQL referenc
 
 The [acceptance matrix](docs/acceptance.md), [evidence index](evidence/README.md) and [release notes](docs/releases/0.1.0rc1.md) distinguish observed results from implementation. A passing local unit suite does not qualify a database, provider or deployment.
 
-The qualified executable inputs match [commit `205e7507`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/205e7507b9cd7dc1b34a858f2c524ce0c832642c): **125 tests and 15 subtests passed, with no skipped cases**, including 53 real PostgreSQL integration cases. Thirteen regressions cover incomplete publication, historical incompatibility and stale candidate status. The 13 November locked audit reported zero known vulnerabilities across 119 dependencies at that capture time; it is not a continuous security guarantee.
+The qualified application, test and dbt inputs match [commit `205e7507`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/205e7507b9cd7dc1b34a858f2c524ce0c832642c): **125 tests and 15 subtests passed, with no skipped cases**, including 53 real PostgreSQL integration cases. Thirteen regressions cover incomplete publication, historical incompatibility and stale candidate status. The 13 November locked audit reported zero known vulnerabilities across 119 dependencies at that capture time; it is not a continuous security guarantee.
+
+A subsequent [targeted native check](evidence/2026-11-14/ci-evidence-hardening/qualification.json) qualifies the revised CI evidence controls: dbt build results survive documentation generation, and the populated-target restore control rejects unrelated failures. Its 41 dbt tests passed again; both databases' 17 operational table fingerprints remained unchanged. These are local results from selected workflow commands, not an executed GitHub job. The Snowflake helper now separates the same output paths, with live execution still pending.
 
 The same code's [quality workflow](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711716) and [Terraform workflow](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711641) again stopped before runner execution. The native results are separate original evidence, not successful GitHub jobs. The precise GitHub admission annotation remains inaccessible through the connected interface.
 
@@ -87,8 +89,8 @@ The [CI workflow](.github/workflows/quality.yml) is configured to install the fr
 The isolated workspace allows loopback TCP but denies Unix sockets. PostgreSQL 17.12 therefore ran with `unix_socket_directories=''`, and Uvicorn used loopback TCP. No permission was relaxed. Those native results establish the database/HTTP path; a capable runner is still required for the container, rendered-browser and provider-schema gates.
 
 ```bash
-uv run --no-sync dbt build --project-dir dbt --profiles-dir dbt --target postgres
-uv run --no-sync dbt docs generate --project-dir dbt --profiles-dir dbt --target postgres
+uv run --no-sync dbt build --project-dir dbt --profiles-dir dbt --target postgres --target-path ../artifacts/dbt-build
+uv run --no-sync dbt docs generate --project-dir dbt --profiles-dir dbt --target postgres --target-path ../artifacts/dbt-docs
 uv run --no-sync mdm benchmark --size 300 --output artifacts/benchmark.json
 ```
 
