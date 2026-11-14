@@ -20,10 +20,17 @@ Image version tags can be moved by their publishers. Release evidence records
 resolved image digests; the source does not pretend a tag is immutable. External
 GitHub Actions are pinned to full commit SHAs verified against their release refs.
 
-The local authoring sandbox refused socket creation, including Unix sockets, so
-starting PostgreSQL there was not a database integration. The CI workflow runs
-real PostgreSQL, dbt, restoration and container checks when a runner is available. The initial workflow failed before runner assignment and produced no test or deployment artifacts. Its raw results determine
-their acceptance status. An unexecuted or failed CI job is not a passed check.
+The 14 November native qualification established that this isolated workspace
+allows loopback TCP while denying Unix sockets. PostgreSQL 17.12 ran with Unix
+sockets disabled, using verified official packages extracted in the workspace.
+The real database suite, dbt, restoration and HTTP checks passed; see the
+[evidence index](../evidence/README.md). No system permission was changed. This
+supersedes the earlier overbroad inference that all socket-based execution was
+unavailable. The Docker image and rendered browser remain unqualified.
+
+The CI workflow is configured to run these profiles on a runner. The latest
+code-revision workflows still failed before runner assignment and produced no
+test or deployment artifacts. Native evidence is not a successful CI result.
 Snowflake requires a separate dedicated authorized account configuration; see
 [its qualification procedure](snowflake.md).
 
@@ -112,7 +119,8 @@ kill still needs database crash recovery and outbox reconciliation on restart.
 | Manual larger load | Workflow dispatch `load_records=100..10000` | Explicit operator input, command timeout 180 seconds, no cloud warehouse. |
 | Snowflake qualification | Procedure in `snowflake.md` | Dedicated approved account, bounded warehouse and statement/run limits. |
 
-The orchestrator permits three attempts per run. A graph operation has a
+The orchestrator permits three attempts in total per run and at most 100
+consumer batches per publication attempt. A graph operation has a
 30-second statement timeout and a 5-second lock timeout. Candidate limits raise
 errors explicitly. The API reference uses one worker. CI is limited to 5 minutes
 for scope checks, 10 for dependency auditing, 20 for PostgreSQL qualification and
@@ -149,6 +157,15 @@ degraded run remains evidence of the outage. When that ERP returns, submit the n
 manifest under a new key. If a process crashed after a decision commit, the
 consumer drain replays the durable outbox without replaying the decision.
 
+Publication completes only when the last batch reports `caught_up=True`, which
+includes projection integrity as well as an empty outstanding outbox. Inspect
+`publication_batch_limit` before resuming the remaining delivery, and inspect
+the recorded inconsistency fields for `publication_no_progress` before retrying.
+Committed receipts remain durable. Older terminal results that explicitly lack
+complete publication reuse their run identity and checkpoints within the same
+three-attempt budget. See [ADR 002](adr/002-durable-orchestration.md) for the scope
+of per-attempt counters and recovery after an interrupted response.
+
 The example uses GNU `timeout` to bound the CLI invocation to five minutes with
 a ten-second forced-stop allowance. The Python orchestrator itself does not
 enforce a global wall-clock deadline; statement, lock, input and retry bounds have
@@ -168,8 +185,9 @@ inspection paths.
 
 The example Prometheus configuration and alert rules are optional external
 monitoring configuration. No monitoring service is automatically deployed.
-`mdm_unconsumed_events` counts events received by no consumer; use the explicit
-consumer-lag SQL for a particular consumer, including one that has never started.
+`mdm_unconsumed_events` counts pending events for the reference `reporting`
+consumer, even if another consumer has acknowledged them. Use the explicit
+consumer-lag SQL to inspect a particular consumer, including one never started.
 
 Each completed API request receives a server-generated `X-Correlation-ID` and
 logs an allowlisted JSON event with method, route template, status and duration.
@@ -191,9 +209,10 @@ connect an HTTP ID to a decision, its outbox events and consumer receipts.
 Snowflake's full JSON export preserves these fields. A publication report links
 its snapshot ID to the recorded Snowflake query IDs, providing an
 event-to-snapshot-to-publication join. It does not map every event directly to one
-SQL statement, and no distributed-tracing collector is deployed. In-process
-tests can verify request isolation and safe logging; durable and warehouse
-propagation still require the real PostgreSQL/Snowflake qualification.
+SQL statement, and no distributed-tracing collector is deployed. The real
+PostgreSQL correlation tests and native HTTP response/log checks passed in the
+14 November capture. Live propagation through Snowflake query execution remains
+a separate unexecuted qualification.
 
 ### Initial service objectives
 
@@ -266,9 +285,12 @@ CI is configured to exercise these same scripts against PostgreSQL 17.12 and che
 restore into the populated target is rejected. Its narrow client wrappers execute
 the real `pg_dump`/`pg_restore` binaries inside the service container, streaming the
 archive without passing credentials in arguments. CI then runs dbt tests on the
-restored database. No restore report has been produced by the initial blocked run.
-When executed, original reports belong in the workflow artifact; no restore
-success should be asserted without reading that result.
+restored database. The native 14 November drill used the actual 17.12 clients:
+all 17 table fingerprints matched, the nine business invariants passed, the
+populated target was rejected for the expected reason, and all 41 restored dbt
+tests passed. Its [original report](../evidence/2026-11-14/native-flow/restore.json)
+does not establish Docker execution or rollback of an external consumer. The
+archive itself is excluded from published evidence.
 
 After recovery, external consumers may still be ahead of the restored delivery
 ledger. Compare their last aggregate versions and source mappings, publish any

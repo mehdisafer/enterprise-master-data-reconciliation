@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/.venv/bin/mdm",
+    "check"
+  ],
+  "cwd": "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation",
+  "database": "mdm",
+  "elapsed_seconds": 0.290103,
+  "expected_returncodes": [
+    0
+  ],
+  "finished_at": "2026-11-14T12:12:58.417190+00:00",
+  "name": "06-business-check",
+  "output_retained": true,
+  "returncode": 0,
+  "started_at": "2026-11-14T12:12:58.127102+00:00",
+  "status": "passed",
+  "stderr_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/06-business-check.stderr.log",
+  "stdout_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/06-business-check.stdout.log",
+  "timed_out": false
+}

@@ -1,0 +1,33 @@
+{
+  "command": [
+    "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/.venv/bin/dbt",
+    "docs",
+    "generate",
+    "--project-dir",
+    "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-project",
+    "--profiles-dir",
+    "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-project",
+    "--target",
+    "postgres",
+    "--log-path",
+    "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-logs/docs",
+    "--no-use-colors",
+    "--target-path",
+    "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/docs"
+  ],
+  "cwd": "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation",
+  "database": "mdm",
+  "elapsed_seconds": 6.176867,
+  "expected_returncodes": [
+    0
+  ],
+  "finished_at": "2026-11-14T12:13:14.692803+00:00",
+  "name": "11-dbt-docs",
+  "output_retained": true,
+  "returncode": 0,
+  "started_at": "2026-11-14T12:13:08.515941+00:00",
+  "status": "passed",
+  "stderr_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/11-dbt-docs.stderr.log",
+  "stdout_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/11-dbt-docs.stdout.log",
+  "timed_out": false
+}

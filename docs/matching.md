@@ -104,8 +104,8 @@ A merge is blocked by any of the following:
 - Different entity domains, or a direct parent/child source relationship.
 - Different nonempty registration identifiers, or a shared identifier with
   contradictory known jurisdictions.
-- Two current organization names from the same authority and exact source change
-  time that normalize to different values.
+- Two organization names selected for the same business interval, from the same
+  authority and exact source change time, that normalize to different values.
 - Conflicting known manufacturer, manufacturer SKU or unit for a product.
 
 An establishment cannot match on its parent's legal registration alone. Parent
@@ -116,9 +116,65 @@ complete corporate ownership graph from names.
 `group_conflicts()` checks every pair in the proposed group, including pairs that
 were never candidates. Therefore A-B and B-C evidence cannot merge incompatible
 A-C endpoints. `survive()` rejects a group with a hard conflict. Connectivity is
-never a sufficient group acceptance criterion. The persistent application must
-rerun this validation against the current source versions inside each serialized
-merge or split transaction.
+never a sufficient group acceptance criterion.
+
+### Historical compatibility
+
+The persistent application checks the current records and the group's business
+history before accepting a merge. In [the service](../src/mdm/service.py),
+`_business_slices()` is shared by this validation and golden-record reconstruction.
+It orders assertions by business validity, source change time, observation time
+and raw record ID. For each half-open business interval `[valid_from, valid_to)`,
+it selects the latest known assertion for each source that has become effective.
+A source does not enter an earlier interval merely because it belongs to the
+proposed group today. A late correction replaces an assertion at its business
+coordinate without overriding a later business interval.
+
+`_merge_conflicts()` first checks current compatibility. If the current records
+are compatible, it reports the first incompatible historical interval, including
+its start and end in `historical_interval[start,end):<conflict>`. Merge preview,
+request validation, execution and automatic reconciliation all use this check.
+A blocked preview exposes the conflicts and no proposed consolidated attributes.
+An incompatible automatic candidate retains its comparison evidence, receives
+the `group_conflict` disposition, and does not prevent unrelated compatible pairs
+from being processed. Reconstruction checks every interval again inside the
+serialized transaction; ingestion, split and unmerge cannot persist incompatible
+business slices either.
+
+For example, two current registration IDs can agree after a February update while
+their January assertions still disagree. They remain incompatible for a merge
+that reconstructs the whole history. If the second source only becomes effective
+in February, that January conflict does not exist. A subsequent correction of the
+January assertion can remove the conflict; earlier golden interpretations remain
+available through their closed knowledge-time intervals.
+
+### Comparison evidence and current disposition
+
+The stored comparison describes a specific pair of source revisions and a rule
+version. Its score and criterion contributions are distinct from the operational
+decision for the complete identity groups:
+
+| Candidate field | Meaning |
+| --- | --- |
+| `evidence` | Original pair comparison, including its proposed `auto`, `review` or `reject` decision. |
+| `disposition` | Current interpretation after membership, whole-group conflicts and human policy are considered. |
+| `group_conflicts` | Inspectable current or dated historical incompatibilities for the proposed groups. |
+| `policy_blocks` | Recorded human separation or rejection that requires a later explicit human merge. |
+
+Snapshot and quality reads use current source revisions and recompute the
+group-dependent disposition. A correction to a third member can change the
+compatibility of A-B without revising A or B; an old `group_conflict` disposition
+must disappear when its cause disappears. Records already in one group display
+`merged`. These reads do not execute a merge: an eligible `auto` disposition can
+await a later reconciliation call.
+
+Historical compatibility and human policy remain separate. Correcting a source
+does not erase a recorded human rejection or separation. Automatic reconciliation
+checks negative links across all members of the proposed groups; only a later
+executed explicit human merge can clear the relevant separation. The original
+pair score remains visible even when policy changes its disposition to `review`.
+Quality counts keep policy-blocked and group-conflicting candidates separate from
+actionable review pairs.
 
 Orion deliberately has no hard conflict. Its records share a normalized name and
 address but represent distinct companies in truth. The proposed decision is
@@ -167,9 +223,14 @@ An empty denominator produces `null`, not perfect accuracy. Caller-supplied trut
 must cover exactly the evaluated records, and supplied groups must partition every
 record once. A single global accuracy number is intentionally absent.
 
+These algorithm metrics measure pair evidence and candidate retrieval. They do
+not incorporate the persistent application's historical compatibility checks,
+current memberships or human policy. Operational dispositions and quality counts
+must therefore be interpreted separately from the frozen pair evaluation.
+
 The first pure-Python fixture run observed the following held-out results. These
-are reference results, not a claim that Snowflake, persistence or UI operations
-have been validated; their integration evidence is separate.
+are reference results for the algorithm. Database, orchestration, warehouse and
+UI qualification is recorded separately.
 
 | Held-out result | Deterministic | Hybrid |
 | --- | ---: | ---: |
@@ -199,4 +260,12 @@ explicitly, freeze a new holdout before tuning, and remeasure blocking as well a
 matching. Names with different scripts or all distinctive tokens misspelled can
 fall outside the current blocks. Missing identifiers are a business review burden;
 the fixture result must not hide that limitation.
+
+The database behavior is covered separately by
+[temporal regressions](../tests/test_temporal_regressions.py) and
+[lifecycle regressions](../tests/test_lifecycle_regressions.py), including dated
+conflicts, nonoverlapping source histories, retrospective corrections, group
+changes that leave candidate endpoints unchanged, and durable human policy.
+Those tests require real PostgreSQL; their presence is not a substitute for an
+execution report.
 

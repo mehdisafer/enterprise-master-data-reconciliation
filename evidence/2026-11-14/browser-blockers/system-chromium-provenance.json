@@ -1,0 +1,32 @@
+{
+  "browser_version": {
+    "command": [
+      "/usr/bin/chromium",
+      "--version"
+    ],
+    "returncode": 0,
+    "stdout": "Chromium 156.0.8078.79 built on Debian GNU/Linux 13 (trixie)\n",
+    "stderr": "/usr/bin/chromium: 9: [: 5225713664: unexpected operator\n"
+  },
+  "package_version": {
+    "command": [
+      "dpkg-query",
+      "-W",
+      "-f=${Package}\t${Version}\t${Architecture}\n",
+      "chromium"
+    ],
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "dpkg-query: no packages found matching chromium\n"
+  },
+  "package_policy": {
+    "command": [
+      "apt-cache",
+      "policy",
+      "chromium"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "W: Unable to read /etc/apt/apt.conf.d/80-applied-apt-retries - open (13: Permission denied)\n"
+  }
+}

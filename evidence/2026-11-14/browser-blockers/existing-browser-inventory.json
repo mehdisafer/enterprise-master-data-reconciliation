@@ -1,0 +1,12 @@
+{
+  "path_browsers": {
+    "chromium": "/usr/bin/chromium",
+    "chromium-browser": null,
+    "google-chrome": null,
+    "google-chrome-stable": null,
+    "chrome-headless-shell": null
+  },
+  "existing_standard_cache_browser_executables": [],
+  "custom_browser_environment_configured": false,
+  "no_browser_executed": true
+}

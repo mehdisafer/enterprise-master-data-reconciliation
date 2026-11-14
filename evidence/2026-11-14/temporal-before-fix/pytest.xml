@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="4" time="0.764" timestamp="2026-11-14T13:08:03.525131+01:00" hostname="209792f7a523"><testcase classname="tests.test_temporal_regressions" name="test_historical_conflict_retains_evidence_and_does_not_abort_unrelated_merge" time="0.242"><failure message="mdm.service.Conflict: historical business interval contains incompatible identities: registration_id_conflict:ERP_ALPHA:organization:TEMP-A|ERP_BETA:organization:TEMP-B">service = &lt;mdm.service.Service object at 0x7f65a5cdfcb0&gt;
+
+    def test_historical_conflict_retains_evidence_and_does_not_abort_unrelated_merge(service):
+        left, right = changing_pair(service)
+        stable = [record("ERP_ALPHA", "OTHER-A", "STABLE-ID", name="Unrelated Manufacturing"),
+                  record("ERP_GAMMA", "OTHER-B", "STABLE-ID", name="Unrelated Manufacturing")]
+        service.ingest(stable)
+&gt;       outcome = service.reconcile()
+                  ^^^^^^^^^^^^^^^^^^^
+
+tests/test_temporal_regressions.py:41: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/mdm/telemetry.py:159: in wrapped
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+src/mdm/service.py:548: in reconcile
+    self._execute_plan(conn, decision, "system.rules", failpoint=failpoint)
+src/mdm/service.py:483: in _execute_plan
+    self._rebuild(conn, group_id, timestamp, correction_for=str(decision["decision_id"]))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;mdm.service.Service object at 0x7f65a5cdfcb0&gt;
+conn = &lt;psycopg.Connection [BAD] at 0x7f65a5cdfbc0&gt;
+group_id = '24981d37-a440-5105-bbf9-5818a5c0a57f'
+timestamp = datetime.datetime(2026, 11, 14, 12, 8, 3, 793968, tzinfo=datetime.timezone.utc)
+correction_for = '05a028b2-d29e-42f0-9bd1-ea70eb2f7ae8'
+
+    def _rebuild(self, conn, group_id: str, timestamp: datetime, *, correction_for: str | None = None):
+        group = conn.execute("UPDATE identity_groups SET version=version+1 WHERE golden_id=%s RETURNING *", (group_id,)).fetchone()
+        conn.execute("UPDATE golden_history SET known_to=%s WHERE golden_id=%s AND known_to IS NULL", (timestamp, group_id))
+        keys = [r["source_key"] for r in conn.execute("SELECT source_key FROM memberships WHERE golden_id=%s ORDER BY source_key", (group_id,))]
+        event_id = uuid4()
+        parent_trace = None
+        if correction_for:
+            parent = conn.execute("SELECT request-&gt;'trace' trace FROM decisions WHERE decision_id=%s",
+                                  (correction_for,)).fetchone()
+            parent_trace = parent["trace"] if parent else None
+        payload = {"contract_version": "golden-event.v1", "golden_id": str(group_id), "group_version": group["version"],
+                   "active": bool(keys), "source_keys": keys, "correction_for": correction_for,
+                   "attributes": {}, "provenance": {}, "conflicts": [], "business_slices": [],
+                   "trace": metadata(parent_trace, decision_id=correction_for, event_id=event_id)}
+        if keys:
+            originals = list(conn.execute("SELECT source_key,payload,effective_from,observed_at,raw_id FROM raw_records WHERE source_key=ANY(%s) ORDER BY effective_from,(payload-&gt;&gt;'source_updated_at')::timestamptz,observed_at,raw_id", (keys,)))
+            boundaries = sorted({row["effective_from"] for row in originals})
+            for index, start in enumerate(boundaries):
+                end = boundaries[index+1] if index+1 &lt; len(boundaries) else None
+                effective = {}
+                for row in originals:
+                    if row["effective_from"] &lt;= start:
+                        effective[row["source_key"]] = SourceRecord.model_validate(row["payload"])
+                hard = group_conflicts(list(effective.values()))
+                if hard:
+&gt;                   raise Conflict("historical business interval contains incompatible identities: " + ";".join(hard))
+E                   mdm.service.Conflict: historical business interval contains incompatible identities: registration_id_conflict:ERP_ALPHA:organization:TEMP-A|ERP_BETA:organization:TEMP-B
+
+src/mdm/service.py:143: Conflict</failure></testcase><testcase classname="tests.test_temporal_regressions" name="test_preview_and_request_explain_historical_conflict_without_mutation" time="0.144"><failure message="AssertionError: assert {'name': 'Temporal Industries', 'country': 'FR', 'registration_id': 'HISTORICAL-B', 'parent_source_key': None, ...} is None">service = &lt;mdm.service.Service object at 0x7f65a5cfb260&gt;
+
+    def test_preview_and_request_explain_historical_conflict_without_mutation(service):
+        records = changing_pair(service)
+        ids, versions = groups(service, records)
+        before = service.snapshot()["counts"]
+        preview = service.preview_merge(ids)
+&gt;       assert preview["attributes"] is None
+E       AssertionError: assert {'name': 'Temporal Industries', 'country': 'FR', 'registration_id': 'HISTORICAL-B', 'parent_source_key': None, ...} is None
+
+tests/test_temporal_regressions.py:60: AssertionError</failure></testcase><testcase classname="tests.test_temporal_regressions" name="test_nonoverlapping_historical_identifiers_do_not_create_a_false_conflict" time="0.181" /><testcase classname="tests.test_temporal_regressions" name="test_corrected_historical_assertion_can_unblock_merge_without_erasing_prior_knowledge" time="0.103"><failure message="mdm.service.Conflict: historical business interval contains incompatible identities: registration_id_conflict:ERP_ALPHA:organization:TEMP-A|ERP_BETA:organization:TEMP-B">service = &lt;mdm.service.Service object at 0x7f65a5cfa630&gt;
+
+    def test_corrected_historical_assertion_can_unblock_merge_without_erasing_prior_knowledge(service):
+        left, right = changing_pair(service)
+&gt;       assert service.reconcile()["group_conflicts"] == 1
+               ^^^^^^^^^^^^^^^^^^^
+
+tests/test_temporal_regressions.py:80: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+src/mdm/telemetry.py:159: in wrapped
+    result = function(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+src/mdm/service.py:548: in reconcile
+    self._execute_plan(conn, decision, "system.rules", failpoint=failpoint)
+src/mdm/service.py:483: in _execute_plan
+    self._rebuild(conn, group_id, timestamp, correction_for=str(decision["decision_id"]))
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;mdm.service.Service object at 0x7f65a5cfa630&gt;
+conn = &lt;psycopg.Connection [BAD] at 0x7f65a5cfa9f0&gt;
+group_id = '24981d37-a440-5105-bbf9-5818a5c0a57f'
+timestamp = datetime.datetime(2026, 11, 14, 12, 8, 4, 256049, tzinfo=datetime.timezone.utc)
+correction_for = 'f312641f-1040-485e-a0a9-b037876c80fe'
+
+    def _rebuild(self, conn, group_id: str, timestamp: datetime, *, correction_for: str | None = None):
+        group = conn.execute("UPDATE identity_groups SET version=version+1 WHERE golden_id=%s RETURNING *", (group_id,)).fetchone()
+        conn.execute("UPDATE golden_history SET known_to=%s WHERE golden_id=%s AND known_to IS NULL", (timestamp, group_id))
+        keys = [r["source_key"] for r in conn.execute("SELECT source_key FROM memberships WHERE golden_id=%s ORDER BY source_key", (group_id,))]
+        event_id = uuid4()
+        parent_trace = None
+        if correction_for:
+            parent = conn.execute("SELECT request-&gt;'trace' trace FROM decisions WHERE decision_id=%s",
+                                  (correction_for,)).fetchone()
+            parent_trace = parent["trace"] if parent else None
+        payload = {"contract_version": "golden-event.v1", "golden_id": str(group_id), "group_version": group["version"],
+                   "active": bool(keys), "source_keys": keys, "correction_for": correction_for,
+                   "attributes": {}, "provenance": {}, "conflicts": [], "business_slices": [],
+                   "trace": metadata(parent_trace, decision_id=correction_for, event_id=event_id)}
+        if keys:
+            originals = list(conn.execute("SELECT source_key,payload,effective_from,observed_at,raw_id FROM raw_records WHERE source_key=ANY(%s) ORDER BY effective_from,(payload-&gt;&gt;'source_updated_at')::timestamptz,observed_at,raw_id", (keys,)))
+            boundaries = sorted({row["effective_from"] for row in originals})
+            for index, start in enumerate(boundaries):
+                end = boundaries[index+1] if index+1 &lt; len(boundaries) else None
+                effective = {}
+                for row in originals:
+                    if row["effective_from"] &lt;= start:
+                        effective[row["source_key"]] = SourceRecord.model_validate(row["payload"])
+                hard = group_conflicts(list(effective.values()))
+                if hard:
+&gt;                   raise Conflict("historical business interval contains incompatible identities: " + ";".join(hard))
+E                   mdm.service.Conflict: historical business interval contains incompatible identities: registration_id_conflict:ERP_ALPHA:organization:TEMP-A|ERP_BETA:organization:TEMP-B
+
+src/mdm/service.py:143: Conflict</failure></testcase></testsuite></testsuites>

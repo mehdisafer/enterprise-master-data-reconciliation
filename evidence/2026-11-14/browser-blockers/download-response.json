@@ -1,0 +1,11 @@
+{
+  "requested_url": "https://cdn.playwright.dev/builds/cft/158.0.8127.18/linux64/chrome-headless-shell-linux64.zip",
+  "method": "GET bounded first 128 bytes",
+  "status": 200,
+  "final_url": "https://cdn.playwright.dev/builds/cft/158.0.8127.18/linux64/chrome-headless-shell-linux64.zip",
+  "content_type": "text/html",
+  "content_length": "195",
+  "content_range": null,
+  "prefix_hex": "3c68746d6c3e0a202020203c686561643e3c7469746c653e5369746520556e617661696c61626c653c2f7469746c653e3c2f686561643e0a202020203c626f64793e0a2020202020203c63656e7465723e0a20202020202020203c68313e5369746520556e617661696c61626c653c2f68313e0a20202020202020203c703e55",
+  "zip_magic": false
+}

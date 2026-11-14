@@ -8,22 +8,26 @@ The reference implementation uses **Python, PostgreSQL, dbt and a FastAPI review
 
 ## Delivery status
 
-This is an **unqualified private release candidate**, developed in [PR #2](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/2) under [issue #1](https://github.com/mehdisafer/enterprise-master-data-reconciliation/issues/1). PostgreSQL, dbt build, restore, container/browser and Snowflake qualification are still open. The first GitHub Actions run failed before a runner received any step; it produced no integration artifacts. Its cause is not established by the available evidence.
+This is a **private release candidate with a verified native PostgreSQL reference**, developed in [PR #2](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/2) under [issue #1](https://github.com/mehdisafer/enterprise-master-data-reconciliation/issues/1). On 14 November 2026, the real database suite, business demonstration, dbt build, restore drill and live HTTP checks succeeded in the isolated workspace. Container deployment, rendered-browser checks, Terraform schema validation and live Snowflake qualification remain open. The full release is not accepted.
 
 | Area | Implementation | Execution evidence |
 | --- | --- | --- |
 | Synthetic ERP contracts, blocking, matching and survivorship | Implemented | Local unit tests and measured synthetic control |
-| Human review, merge, split, unmerge and temporal history | Implemented | Real PostgreSQL tests are written; execution blocked |
-| Transactional outbox and reporting consumer | Implemented | Crash, replay and correction tests are written; execution blocked |
-| PostgreSQL dbt models and tests | Implemented | Parse executed; **no live build or data-test result** |
-| Container deployment, rendered console and restore drill | Implemented | **Not executed**; CI received no runner |
-| Terraform configuration | Implemented; provider lock generated | Formatting passed; schema validation blocked by local socket restrictions |
+| Human review, merge, split, unmerge and temporal history | Implemented | Real PostgreSQL lifecycle, concurrency and failure tests passed |
+| Transactional outbox and reporting consumer | Implemented | Crash/replay, bounded publication and complete correction tests passed |
+| PostgreSQL dbt models and tests | Implemented | Five models and 41 data tests passed; populated catalog generated |
+| Backup and restoration | Implemented | Exact comparison of 17 tables; invariants and 41 dbt tests passed after restore; populated target correctly rejected |
+| Native HTTP server and assets | Implemented | 24 real requests, 127 assertions; authentication, provenance, metrics, correlation and graceful shutdown checked |
+| Container deployment and rendered console | Implemented | **Not qualified**: Docker unavailable; Chromium startup blocked by Unix socket denial |
+| Terraform configuration | Implemented; provider lock generated | Formatting passed; provider schema validation still blocked by Unix socket denial |
 | Snowflake publication and dbt parity | Implemented | **Not live-qualified: dedicated authorized account and budget required** |
 | Repository licence and public visibility | Pending maintainer decision | No licence grant or visibility change made |
 
 The [acceptance matrix](docs/acceptance.md), [evidence index](evidence/README.md) and [release notes](docs/releases/0.1.0rc1.md) distinguish observed results from implementation. A passing local unit suite does not qualify a database, provider or deployment.
 
-At the retained executable revision, the local run passed 72 tests and 15 subtests. The 40 PostgreSQL integration cases were collected but not executed. The locked audit reported zero known vulnerabilities across 119 dependencies at capture time. The final executable revision's [PostgreSQL workflow](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43526045051) and [Terraform workflow](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43526045030) both stopped before runner execution.
+The qualified executable inputs match [commit `205e7507`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/205e7507b9cd7dc1b34a858f2c524ce0c832642c): **125 tests and 15 subtests passed, with no skipped cases**, including 53 real PostgreSQL integration cases. Thirteen regressions cover incomplete publication, historical incompatibility and stale candidate status. The 13 November locked audit reported zero known vulnerabilities across 119 dependencies at that capture time; it is not a continuous security guarantee.
+
+The same code's [quality workflow](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711716) and [Terraform workflow](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711641) again stopped before runner execution. The native results are separate original evidence, not successful GitHub jobs. The precise GitHub admission annotation remains inaccessible through the connected interface.
 
 ## Run the complete reference
 
@@ -49,7 +53,7 @@ For an interactive review from an unreviewed dataset, use the source manifest an
 ## What the model protects
 
 - **Legal identity is not a business role.** Parent, subsidiary and establishment cannot become one entity just because they share names or addresses. A company can be both customer and supplier.
-- **Transitivity is not approval.** Every member of a proposed group is checked against every other member. An incomplete B record cannot bridge conflicting A and C legal identifiers.
+- **Transitivity is not approval.** Every member of a proposed group is checked against every other member, both now and over reconstructed business intervals. An incomplete B record cannot bridge conflicting A and C legal identifiers. A historical conflict remains inspectable without aborting unrelated matches.
 - **Authority comes before recency.** Each attribute uses its own source ranking. A recent lower-authority name cannot overwrite an authoritative legal name.
 - **History is append-and-correct.** Source assertions and decision audit events are immutable. Golden values have separate business-valid and knowledge intervals.
 - **Corrections propagate.** A committed unmerge emits new events. It does not claim to reverse invoices, orders or other decisions made by external consumers.
@@ -78,7 +82,9 @@ export MDM_TEST_DATABASE_URL=postgresql://mdm@127.0.0.1:5432/mdm_test
 uv run --no-sync pytest -q
 ```
 
-The [CI workflow](.github/workflows/quality.yml) is configured to install the frozen lock, scan Git history for common secret patterns, audit dependencies, execute real PostgreSQL tests, run the business demo and dbt, restore a consistent backup, measure a bounded database profile, and start the containerized deployment. Runtime qualification is skipped for documentation-only changes; secret scanning still runs. A [separate Terraform workflow](.github/workflows/terraform.yml) validates configuration against the installed provider without cloud credentials or apply. The authoring sandbox forbids local sockets. A runner-capable isolated environment is required to obtain the missing integration evidence.
+The [CI workflow](.github/workflows/quality.yml) is configured to install the frozen lock, scan Git history for common secret patterns, audit dependencies, execute real PostgreSQL tests, run the business demo and dbt, restore a consistent backup, measure a bounded database profile, and start the containerized deployment. Runtime qualification is skipped for documentation-only changes; secret scanning still runs. A [separate Terraform workflow](.github/workflows/terraform.yml) validates configuration against the installed provider without cloud credentials or apply.
+
+The isolated workspace allows loopback TCP but denies Unix sockets. PostgreSQL 17.12 therefore ran with `unix_socket_directories=''`, and Uvicorn used loopback TCP. No permission was relaxed. Those native results establish the database/HTTP path; a capable runner is still required for the container, rendered-browser and provider-schema gates.
 
 ```bash
 uv run --no-sync dbt build --project-dir dbt --profiles-dir dbt --target postgres

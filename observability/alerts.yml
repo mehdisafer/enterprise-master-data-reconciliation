@@ -23,8 +23,8 @@ groups:
         labels:
           severity: warning
         annotations:
-          summary: Events remain unconsumed by any consumer
-          action: Run the consumer-specific lag SQL, then drain the confirmed consumer with a bounded consume command.
+          summary: Events remain pending for the reporting consumer
+          action: Inspect reporting lag with the consumer-specific SQL, then drain reporting with a bounded consume command.
       - alert: MdmReviewBacklogPersists
         expr: mdm_pending_decisions > 0
         for: 24h

@@ -1,0 +1,17 @@
+{
+  "started_at": "2026-11-14T12:07:30.944075+00:00",
+  "command": [
+    "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/.venv/bin/python",
+    "-m",
+    "playwright",
+    "install",
+    "--only-shell",
+    "chromium"
+  ],
+  "playwright": "1.65.1",
+  "browser_path": "/workspace/scratch/fc83c385ce79/p02-ui-runtime/browsers",
+  "system_dependencies_modified": false,
+  "returncode": 1,
+  "duration_seconds": 34.571310591000156,
+  "completed_at": "2026-11-14T12:08:05.517851+00:00"
+}

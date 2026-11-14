@@ -1,0 +1,29 @@
+[
+  {
+    "Package": "libpq5",
+    "Version": "18.7-1.pgdg13+2",
+    "Filename": "pool/main/p/postgresql-18/libpq5_18.7-1.pgdg13+2_amd64.deb",
+    "SHA256": "bfd1d4e64e1a87c637a84e8a712a517ae8059ec969ba57fe402b259ede61e2b8",
+    "Size": "267044",
+    "url": "https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-18/libpq5_18.7-1.pgdg13+2_amd64.deb",
+    "local_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/downloads/libpq5_18.7-1.pgdg13+2_amd64.deb"
+  },
+  {
+    "Package": "postgresql-17",
+    "Version": "17.12-1.pgdg13+1",
+    "Filename": "pool/main/p/postgresql-17/postgresql-17_17.12-1.pgdg13+1_amd64.deb",
+    "SHA256": "659c0e1215850be6b2f02862acadbd0f0acb738ef26d16915d07a6de536bb020",
+    "Size": "16768568",
+    "url": "https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-17/postgresql-17_17.12-1.pgdg13+1_amd64.deb",
+    "local_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/downloads/postgresql-17_17.12-1.pgdg13+1_amd64.deb"
+  },
+  {
+    "Package": "postgresql-client-17",
+    "Version": "17.12-1.pgdg13+1",
+    "Filename": "pool/main/p/postgresql-17/postgresql-client-17_17.12-1.pgdg13+1_amd64.deb",
+    "SHA256": "4a8a530be4a549753bd82bec2a5032e91233c6a60ebeb1ca5311717866de4059",
+    "Size": "2067792",
+    "url": "https://apt.postgresql.org/pub/repos/apt/pool/main/p/postgresql-17/postgresql-client-17_17.12-1.pgdg13+1_amd64.deb",
+    "local_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/downloads/postgresql-client-17_17.12-1.pgdg13+1_amd64.deb"
+  }
+]

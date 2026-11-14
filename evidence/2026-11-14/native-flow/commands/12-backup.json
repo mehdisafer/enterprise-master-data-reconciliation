@@ -1,0 +1,24 @@
+{
+  "command": [
+    "bash",
+    "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/scripts/backup.sh",
+    "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/reference.dump",
+    "--expect-db",
+    "mdm"
+  ],
+  "cwd": "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation",
+  "database": "mdm",
+  "elapsed_seconds": 0.512158,
+  "expected_returncodes": [
+    0
+  ],
+  "finished_at": "2026-11-14T12:13:15.205910+00:00",
+  "name": "12-backup",
+  "output_retained": true,
+  "returncode": 0,
+  "started_at": "2026-11-14T12:13:14.693744+00:00",
+  "status": "passed",
+  "stderr_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/12-backup.stderr.log",
+  "stdout_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/12-backup.stdout.log",
+  "timed_out": false
+}

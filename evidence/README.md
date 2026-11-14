@@ -1,62 +1,109 @@
 # Observed evidence — 0.1.0rc1
 
-**The reference and provider integrations are not accepted.** The records below preserve actual local results and actual GitHub execution blockers. They do not substitute unit tests for a database, container, browser or Snowflake run.
+**The native PostgreSQL reference and HTTP path passed the recorded qualification. Full release acceptance remains open.** Original successes, failures and environment limits are preserved separately. Database results do not establish Docker, rendered-browser, Terraform or Snowflake qualification.
 
-## Executed source
+## Qualified source and provenance
 
-The final local capture used source commit [`f87abb572c03b5088c466e9c411a23b7c75a8da4`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/f87abb572c03b5088c466e9c411a23b7c75a8da4), whose Git tree is `966ec4b81c4e2fe38a8b4d22d73d5b353c56b840`. The local and remote commit histories have different commit IDs because publication used the GitHub Git-data API; their complete source trees were compared and matched. The [environment record](2026-11-13/environment.json) retains that correspondence, package versions, platform facts and SHA-256 values for executable inputs. Subsequent documentation/evidence additions do not qualify a different implementation.
+The current executable inputs match [remote commit `205e7507b9cd7dc1b34a858f2c524ce0c832642c`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/205e7507b9cd7dc1b34a858f2c524ce0c832642c), with complete source tree `2075183147d1ff50ddfee7e86e99ad7d7bdb367e`. The corresponding local commit is `e39a0b508ac9188558840d3ecb9e4602d002f4e0`. Publication used the GitHub Git-data API with an expected-head check; the complete local and remote trees matched before the branch advanced.
 
-Commands, UTC start times, process wall times, exit codes, output paths and explicit environment overrides are retained in [local-execution.json](2026-11-13/local-execution.json). The capture ran in the provided isolated authoring environment, not on a GitHub runner. Content hashes establish correspondence only; they are not independent certification.
+The [source correspondence](2026-11-14/source-correspondence.json) independently compares 88 test/runtime input hashes, 54 native-flow input hashes and 20 HTTP input hashes with that committed source. The following delivery consolidates documentation/evidence and corrects only the explanatory annotations of one optional alert: its name, expression, duration and severity are unchanged. The [structural comparison](2026-11-14/alert-annotation-review.json) is retained; that monitoring configuration was not deployed. Application, test, dbt, dependency and deployment executable contents remain identical to the qualified source. The local repository was restored from the previous remote tree before continuation; its local commit ancestry differs from the preserved remote history.
 
-## Results actually obtained
+All runtime work used the provided isolated workspace, Linux x86_64 and Python 3.12.14. Nine CPUs were visible to the process; this is not a dedicated hardware allocation or a throughput entitlement. The actual database was PostgreSQL 17.12 from verified official PGDG packages. [Repository signature verification](2026-11-14/postgres-provenance/repository-verification.json), [package hashes](2026-11-14/postgres-provenance/verified-packages.json), [binary versions](2026-11-14/postgres-provenance/binary-versions.json) and the [real readiness query](2026-11-14/native-flow/runtime/readiness-query.json) are retained. Packages were extracted locally without running a system installer.
+
+The earlier claim that every local socket-based process was unavailable was too broad. Unix sockets are denied; loopback TCP works. PostgreSQL ran with `unix_socket_directories=''` and normal private SCRAM credentials. No permission or security policy was relaxed.
+
+## Results actually obtained on 14 November
 
 | Check | Observed result | Original evidence |
 | --- | --- | --- |
-| Python unit, matching, HTTP/context and provider-boundary tests | **72 passed; 15 subtests passed; 40 integration cases deselected** | [pytest output](2026-11-13/unit-tests-stdout.txt), [JUnit](2026-11-13/unit-tests.xml) |
-| PostgreSQL integration collection | 40 cases collected, **not executed** | [collection output](2026-11-13/integration-collection-stdout.txt) |
-| Ruff / JavaScript syntax | Exit code 0 | [Ruff](2026-11-13/ruff-stdout.txt), command records for both |
-| dbt PostgreSQL parse | Exit code 0; five models, 16 sources and 41 data-test nodes parsed | [parse output](2026-11-13/dbt-parse-stdout.txt), [original manifest](2026-11-13/dbt-parse-manifest.json), [parse log](2026-11-13/dbt-parse-log.txt) |
-| Unsafe dbt schema negative case | Exit code 2 with the intended simple-identifier compilation error | [negative-case output](2026-11-13/dbt-reject-unsafe-schema-stdout.txt) |
-| Locked dependency audit | 119 dependencies checked; zero known vulnerabilities reported at capture time | [pip-audit JSON](2026-11-13/dependency-audit.json), [locked requirements](2026-11-13/audit-requirements.txt) |
-| Component licence declarations | 119 dependencies inventoried; metadata check completed; three distribution-obligation review items remain visible | [component inventory](2026-11-13/components.json), [third-party notices](../THIRD_PARTY_NOTICES.md) |
-| Bounded Python matching profile | 300 synthetic records; 309 candidates versus 44,850 exhaustive pairs | [benchmark JSON](2026-11-13/benchmark-control.json) |
-| Terraform formatting/version | Format exit code 0; Terraform 1.17.2 and Snowflake provider 2.22.1 recorded | [version JSON output](2026-11-13/terraform-version-stdout.txt), command records |
-| Terraform provider schema | **Blocked** before schema loading: provider could not create a Unix socket | [original validation JSON](2026-11-13/terraform-validate-blocked.json), [original debug log](2026-11-13/terraform-provider-debug.txt) |
-| Unix socket capability | `PermissionError`, errno 1, operation not permitted | [capability observation](2026-11-13/socket-capability-stdout.txt) |
-| Secret-pattern scan | Working tree and local reachable history reviewed; results and coverage are explicit | [scan report](2026-11-13/secret-scan.json) |
+| Initial real PostgreSQL suite | 112 tests and 15 subtests passed before the added regressions | [Initial JUnit](2026-11-14/baseline-postgres/pytest.xml), [output](2026-11-14/baseline-postgres/stdout.txt) |
+| Historical defect reproduction | Three new cases failed, one passed against the earlier implementation | [Before-fix JUnit](2026-11-14/temporal-before-fix/pytest.xml), [original failure output](2026-11-14/temporal-before-fix/stdout.txt) |
+| Final complete suite | **125 tests and 15 subtests passed, zero skipped; 53 PostgreSQL integration cases** | [Final JUnit](2026-11-14/pytest/pytest.xml), [stdout](2026-11-14/pytest/stdout.txt), [command/input record](2026-11-14/pytest/execution.json) |
+| Ruff / JavaScript syntax | Exit code zero for both commands | [Ruff](2026-11-14/final-static/execution.json), [JavaScript](2026-11-14/final-javascript/execution.json) |
+| New business demonstration | Six assertions true; nine invariants without violations | [Full original demo](2026-11-14/native-flow/demo.json), [business check](2026-11-14/native-flow/business-check.json) |
+| PostgreSQL analytical export | Sixteen operational tables exported and validated | [Export report](2026-11-14/native-flow/warehouse-export.json) |
+| dbt build | Five models and two hooks succeeded; **41 data tests passed** | [Original run results](2026-11-14/native-flow/dbt/build/run_results.json), [executed manifest](2026-11-14/native-flow/dbt/build/manifest.json) |
+| dbt catalog | Five models and sixteen source relations introspected; no catalog errors | [Catalog](2026-11-14/native-flow/dbt/docs/catalog.json) |
+| Backup / restore | Native 17.12 clients; 17 operational table fingerprints equal; nine invariants passed | [Backup manifest](2026-11-14/native-flow/reference.dump.manifest.json), [restore](2026-11-14/native-flow/restore.json) |
+| Populated-target negative case | Code 1 with the exact intended rejection; no forbidden success report | [Negative restore](2026-11-14/native-flow/second-restore-rejection.json) |
+| dbt on restored database | **41 tests and two hooks passed** | [Restored run results](2026-11-14/native-flow/dbt/restored-test/run_results.json), [restored manifest](2026-11-14/native-flow/dbt/restored-test/manifest.json) |
+| Database profile | 300 inputs; measured ingestion, consolidation, query plan and historical growth; declared checks passed | [Full database benchmark](2026-11-14/native-flow/benchmark-database.json) |
+| Real HTTP | **24 requests and 127 assertions passed**; auth, assets, provenance, metrics and correlation checked | [HTTP report](2026-11-14/http/http-report.json), [server log](2026-11-14/http/server-stderr.txt) |
+| Process cleanup | PostgreSQL stopped with code zero; HTTP lifecycle completed and port closed | [Native-flow runtime](2026-11-14/native-flow/runtime/run.json), [HTTP runtime](2026-11-14/http/runtime/run.json) |
 
-The unit run has one Starlette warning about deprecation of `httpx` with its TestClient. The tests passed with the locked versions; future adapter migration is not implied by that result. HTTP context tests use an explicitly named service double to exercise in-process transport and isolation. Snowflake boundary tests also use explicit doubles. Neither is reported as a live integration.
+The complete pytest suite has one recorded Starlette TestClient deprecation warning. Unit transport/provider doubles remain explicitly distinct from the 53 real PostgreSQL cases. The 127 HTTP assertions include repeated checks over headers, responses and traces; they are not 127 additional pytest test cases.
 
-The dbt manifest is an **actual parse artifact**. Its 41 test nodes were not executed, and no `run_results.json`, populated catalog, deployed-model lineage or warehouse result is invented. Embedded upstream macros retain their rights; installed licence files accompany the manifest under [third-party licences](third-party-licenses/sources.json).
+The new regressions cover eight publication cases and five temporal/group cases. The code prevents completion before actual consumer convergence, preserves bounded retries, preflights historical compatibility without aborting unrelated pairs, and removes stale group-conflict status after a third member changes. The comparison score and source revision evidence remain separate from current group disposition.
 
-## Matching observations and their limits
+## Business and recovery observations
 
-The [split evaluation](2026-11-13/matching-evaluation.json) preserves deterministic and hybrid results on the separate development and held-out identities. On the 16-record holdout:
+The fresh demonstration finished with **34 retained sources, 28 active golden records, eight executed decisions and 34 aligned reporting mappings**. The deliberately mistaken Orion merge was corrected, its original IDs were restored, and later source updates were retained. Final outstanding delivery was zero. The six demonstration assertions include repeat ingestion, duplicate-event polling, late-assertion preservation, original-ID restoration, consumer alignment and business invariants.
 
-- Candidate generation retrieves all seven labeled positive pairs among 11 candidates, compared with 120 exhaustive pairs.
-- Automatic matching produces three true pairs and zero false pairs: precision 3/3 and recall 3/7.
-- Deterministic auto-plus-review retrieves six of seven true pairs with one false review.
-- The hybrid policy retrieves seven of seven true pairs with the same one false review: suggestion precision 7/8, with five review pairs.
+The sixteen-table analytical export has snapshot ID `65f67c169a9bbddc085dd8a7f97df002e12309fd98b6800b4aa8b9e61e411341`. It includes 36 raw assertions, 48 golden-history rows, 18 decision events and 52 outbox events. It is a real PostgreSQL export; no Snowflake load followed it.
 
-The 300-record load corpus is a separate, easier distribution with complete identifiers. Its measured candidate reduction is 99.31%. Blocking took approximately 0.019 seconds and candidate comparison 0.055 seconds in this run. Peak traced Python heap was 571,470 bytes; process maximum RSS was 57,020 KiB. The 150-record exhaustive control produced the same automatic pair set as blocking, with full labeled candidate recall and zero false automatic pairs.
+The backup archive contained 132,994 bytes. The restore compared all seventeen operational tables, including the migration ledger, against the consistent exported snapshot. The restore's internal elapsed field was 0.802 seconds for this small fixture. The next restore attempt was rejected specifically because the target was not empty and isolated. All 41 dbt tests then passed over the restored database. This does not restore external consumer business decisions or qualify a larger recovery-time objective. The archive itself is excluded from the repository.
 
-These are bounded single-process measurements. They do not establish database join cost, consolidation latency, history growth, extra-worker throughput, provider performance or provider billing. Those require the unexecuted profiles.
+## Measured bounded database profile
 
-## GitHub runs: no runner execution
+| Measurement | Observation |
+| --- | ---: |
+| Source records | 300 |
+| Candidate pairs / exhaustive pairs | 309 / 44,850 |
+| Ingestion | 1.294 seconds |
+| Consolidation | 1.774 seconds |
+| Observed ingestion rate | 231.9 source records/second |
+| Measured SQL join execution | 0.519 milliseconds |
+| Raw assertions after 30 updates | 300 → 330 |
+| Golden-history rows after updates | 500 → 530 |
+| Outbox events after updates | 700 → 730 |
+| Post-load invariants | Nine checks, zero violations |
 
-The final executable revision triggered these workflows:
+The 150-record exhaustive control had complete candidate recall, zero false automatic pairs and equal automatic pair sets between blocked and exhaustive comparison. The 300-record distribution has complete identifiers and is easier than the held-out ambiguity set. These observations do not establish production-scale throughput, arbitrary skew, additional-worker performance or Snowflake cost.
 
-| Workflow | Run | Observation |
+The benchmark's traced heap covers blocking/comparison, and its maximum RSS is sampled before the database branch. Neither is a peak for the complete database flow or PostgreSQL server. The query plan measures one small join, not application or warehouse latency.
+
+## HTTP and browser boundaries
+
+The successful native HTTP run checked actual Uvicorn responses backed by the populated PostgreSQL database. All 34 reporting pointers aligned with the reference. Reads and refused writes left the business snapshot unchanged. Each of the 24 distinct response correlation IDs was found in an actual structured server event. Temporary actor files were deleted and no actor token was found in retained responses/logs.
+
+The [first HTTP harness report](2026-11-14/http-initial-harness/http-report.json) remains `passed: false`: its HTTP assertions passed, but the harness incorrectly demanded process exit zero after Uvicorn's graceful SIGTERM sequence. The wrapper was corrected to verify lifecycle completion and a closed port along with the expected signal exit. The second run succeeded without changing application code. The original failed report was not rewritten.
+
+No rendered screenshot was produced. The [official Playwright download](2026-11-14/browser-blockers/install-report.json) received an unavailable-site HTML response instead of a browser archive. A separate [system Chromium launch](2026-11-14/browser-blockers/system-launch-report.json) failed when its singleton needed a denied Unix socket. Standard launch was attempted without additional permission-workaround flags. Docker was unavailable. Native HTTP success does not qualify either browser rendering or container deployment.
+
+## GitHub: source-code workflows still received no runner
+
+| Workflow at source `205e7507` | Run | Observed outcome |
 | --- | --- | --- |
-| Quality and PostgreSQL qualification | [43526045051](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43526045051) | Scope job failed with `runner_id: 0`, empty runner name and no steps; PostgreSQL/dependency/container jobs skipped |
-| Terraform static qualification | [43526045030](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43526045030) | Static job failed with `runner_id: 0`, empty runner name and no steps |
+| Quality and PostgreSQL qualification | [43593711716](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711716) | Scope failed with `runner_id: 0`, no steps; dependency, database and container jobs skipped |
+| Terraform static qualification | [43593711641](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711641) | Static job failed with `runner_id: 0`, no steps |
 
-Both runs were created at `2026-11-13T23:17:52Z` and updated as failed by `23:17:55Z`. Both artifact collections are empty. Original API responses are retained as `ci-43526045051-{run,jobs,artifacts}.json` and `ci-43526045030-{run,jobs,artifacts}.json` in this directory's date folder. The earlier run [43524025662](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43524025662), at `d60f423fab56add510ba16933f20497baccd3383`, is preserved separately under `ci-initial-*` and had the same pre-runner outcome.
+Both artifact collections are empty. Original responses are retained under [github](2026-11-14/github/ci-quality-run.json), including [jobs](2026-11-14/github/ci-quality-jobs.json), [artifacts](2026-11-14/github/ci-quality-artifacts.json) and [check outputs](2026-11-14/github/ci-checks.json). Each failed check reports one annotation, but the connected interface cannot read its text. The exact cause remains unknown; billing, quota and policy explanations are unconfirmed.
 
-The connector does not expose the failure annotation through its allowed endpoints. The isolated browser presented the private GitHub URL without an authenticated session. **The exact cause is unknown**; quota, billing and repository-policy explanations remain hypotheses. No billing, policy, visibility or external resources were changed to work around it.
+The earlier source runs [43526045051](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43526045051) and [43526045030](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43526045030), and the initial run [43524025662](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43524025662), are retained unchanged in the 13 November folder. No billing, visibility or external-resource setting was changed to bypass the admission failure.
 
-## Missing evidence and continuation
+## Historical 13 November capture
 
-No successful PostgreSQL transaction scenario, dbt build/data test, restoration, database load, container startup, rendered console capture, Terraform provider-schema validation or Snowflake qualification exists in this delivery. Those gaps remain explicit in [acceptance](../docs/acceptance.md).
+The earlier retained source was [`f87abb572c03b5088c466e9c411a23b7c75a8da4`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/f87abb572c03b5088c466e9c411a23b7c75a8da4), tree `966ec4b81c4e2fe38a8b4d22d73d5b353c56b840`. Its [environment](2026-11-13/environment.json) and [command record](2026-11-13/local-execution.json) remain historical evidence.
 
-Read the exact failed-job annotation through an authorized signed-in GitHub interface and provide a runner-capable environment. Run the full [verification profiles](../docs/verification.md) against the intended revision and retain their original artifacts. Snowflake additionally needs a dedicated authorized account/role, key-pair credential, resource scope and budget. A skipped job, clean parse, source-tree hash or published PR is not a replacement for those results.
+| Historical check | Observed at capture | Original artifact |
+| --- | --- | --- |
+| Unit suite | 72 tests and 15 subtests passed; 40 integration cases deselected | [JUnit](2026-11-13/unit-tests.xml) |
+| PostgreSQL integration collection | Forty cases collected, not executed then | [Collection](2026-11-13/integration-collection-stdout.txt) |
+| dbt parse | Five models, sixteen sources and 41 test nodes parsed; not executed then | [Parse manifest](2026-11-13/dbt-parse-manifest.json) |
+| Unsafe-schema negative case | Rejected with the intended simple-identifier error | [Output](2026-11-13/dbt-reject-unsafe-schema-stdout.txt) |
+| Locked dependency audit | 119 dependencies, zero known vulnerabilities reported at capture time | [Audit JSON](2026-11-13/dependency-audit.json) |
+| Component declarations | 119 dependencies inventoried; three distribution-obligation review items retained | [Inventory](2026-11-13/components.json) |
+| Terraform | Format passed and provider installed; schema loading failed at Unix socket creation | [Validation output](2026-11-13/terraform-validate-blocked.json), [debug log](2026-11-13/terraform-provider-debug.txt) |
+| Secret-pattern control | Scoped working-tree and local reachable-history report | [Original scan](2026-11-13/secret-scan.json) |
+
+The [matching evaluation](2026-11-13/matching-evaluation.json) still records the unchanged matching rules on the separate sixteen-record holdout: seven positive pairs retrieved among eleven candidates, three true automatic pairs and zero false automatic pairs. Deterministic auto-plus-review retrieved six of seven positives with one false review; hybrid review retrieved all seven with the same one false review. These small synthetic denominators remain explicit.
+
+## Preservation, controls and remaining evidence
+
+The [preserved-artifact manifest](2026-11-14/preserved-artifacts.json) lists original file paths, sizes and digests for byte-preserved copies. [Native command records](2026-11-14/native-flow/qualification.json) retain UTC intervals, arguments and exit codes for all seventeen phases. Build/restored SQL and dbt logs remain alongside their manifests. Capture helpers preserve the actual execution procedure; they are records of this isolated setup, not an installed system service.
+
+The [known-database-secret scan](2026-11-14/native-flow/known-secret-scan.json) checked 338 original qualification files against the generated database password without retaining its value or digest. Its scope is that known value, not universal secret detection. The [final repository pattern scan](2026-11-14/security/scan.json) checked 483 files and 146 reachable local-history blobs, with no detected pattern and no unscanned input. The [earlier prepublication scan](2026-11-14/secret-scan.json) is also preserved. These scans precede copying their own reports into the evidence folder; their limited coverage is explicit. Local reachable history is the restored baseline plus continuation commits; it is not presented as a new scan of every remote ancestor.
+
+Upstream macros and compiled derivatives retain the rights in [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md) and [preserved licence files](third-party-licenses/sources.json). Credentials, database archives, vendor binaries and generated dbt application HTML are excluded. Evidence hashes prove correspondence, not independent certification, licence approval or production readiness.
+
+Remaining evidence is the actual container/browser run, Terraform provider-schema validation, GitHub runner execution and authorized live Snowflake publication/dbt parity/cost observations. The exact acceptance and publication prerequisites are in [the acceptance matrix](../docs/acceptance.md). A successful native reference does not close those gates.

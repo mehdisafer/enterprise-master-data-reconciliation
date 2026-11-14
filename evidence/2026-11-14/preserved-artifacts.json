@@ -1,0 +1,1884 @@
+{
+  "schema_version": 1,
+  "copy_policy": "original bytes; no backup archive, credentials, browser binary or generated dbt HTML copied",
+  "artifacts": [
+    {
+      "path": "evidence/2026-11-14/baseline-postgres/execution.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/first-postgres/execution.json",
+      "bytes": 10819,
+      "sha256": "42f561826158e598f313b771d5d6bf192a5eced5300d3f27b02addb9d23e6027"
+    },
+    {
+      "path": "evidence/2026-11-14/baseline-postgres/pytest.xml",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/first-postgres/pytest.xml",
+      "bytes": 15437,
+      "sha256": "2f45e7a6138c85dd1cb3a1f788abf43c878b4d07c193fc0b1f54c77248dbca40"
+    },
+    {
+      "path": "evidence/2026-11-14/baseline-postgres/stderr.txt",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/first-postgres/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-11-14/baseline-postgres/stdout.txt",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/first-postgres/stdout.txt",
+      "bytes": 724,
+      "sha256": "a90bcc91b16331c197e34cfd2e12b7844bef287aeb3e8d6492455f2b63175b76"
+    },
+    {
+      "path": "evidence/2026-11-14/temporal-before-fix/execution.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/temporal-before-fix/execution.json",
+      "bytes": 11084,
+      "sha256": "87c5cf9d522c3b6b233099a9aeaf3b77fbef1ea1e4bc6eb763a5ac437ed4dfad"
+    },
+    {
+      "path": "evidence/2026-11-14/temporal-before-fix/pytest.xml",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/temporal-before-fix/pytest.xml",
+      "bytes": 9376,
+      "sha256": "40eb14a81e0a9e40e59cefc83d68efd7e05566e3fdc40f6d76b463a4f9d744f5"
+    },
+    {
+      "path": "evidence/2026-11-14/temporal-before-fix/stderr.txt",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/temporal-before-fix/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-11-14/temporal-before-fix/stdout.txt",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/temporal-before-fix/stdout.txt",
+      "bytes": 18827,
+      "sha256": "1f0de42fa0a462531cce5157ba80ea244ad2be03894ebc02b7c79e08b3447e44"
+    },
+    {
+      "path": "evidence/2026-11-14/pytest/execution.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/final-postgres/execution.json",
+      "bytes": 11039,
+      "sha256": "ad6407f49c85e5b6dda24109ec4cf8d293c89c1c7fd0b5c918dfcbb65882efe5"
+    },
+    {
+      "path": "evidence/2026-11-14/pytest/pytest.xml",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/final-postgres/pytest.xml",
+      "bytes": 17422,
+      "sha256": "e56f77e2031b34ad72505181d068d49f42b2079f553e1359b2d4cc4153a0d370"
+    },
+    {
+      "path": "evidence/2026-11-14/pytest/stderr.txt",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/final-postgres/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-11-14/pytest/stdout.txt",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/final-postgres/stdout.txt",
+      "bytes": 724,
+      "sha256": "9aa6ebc0c756a58ee0f211c1f3f5a3515414181c4af8a9f6b9d12666407afef8"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/qualification.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/qualification.json",
+      "bytes": 20533,
+      "sha256": "d8f7d5b21adf5906b4fcf7b2dafb03703d9445fbf4821bd9469b15580dd6c095"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/environment.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/environment.json",
+      "bytes": 1289,
+      "sha256": "cc7fc67809cebc7c25a047b311e3387177e88fa00071e383a819efaa81fdedbd"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/source-before.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/source-before.json",
+      "bytes": 5703,
+      "sha256": "e30a9f48d50ac69e055ecd9197098f9583bb9a881ef03f48d65f1655b38a70cf"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/source-after.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/source-after.json",
+      "bytes": 5732,
+      "sha256": "85282ae22018a75f44269629abc1a777343746db5ca6812fd55d2d62d13cdd35"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/demo.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/demo.json",
+      "bytes": 2739672,
+      "sha256": "1b673116192fe568e0e7e212118718dcadbd5e4a301a95816c74871dd55c4e19"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/business-check.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/business-check.json",
+      "bytes": 313,
+      "sha256": "59aa7bb82f00b3232b66dbf1a69bc6ee2977faffb40de009098c73339c34d5dc"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/postgres-snapshot.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/postgres-snapshot.json",
+      "bytes": 635907,
+      "sha256": "881ff6154672abeb9b81389a8d7533b51fadb4237b4162b1696efd098c882e41"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/warehouse-export.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/warehouse-export.json",
+      "bytes": 622,
+      "sha256": "802f52e11186337c57cb13f9fc5b6493db93ac36a99b9aa3e5eb8b7d4b09a7ee"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/reference.dump.manifest.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/reference.dump.manifest.json",
+      "bytes": 2646,
+      "sha256": "7cccd964446754887ecd475f53961db7c55de47722e06d8a4f5ff4e2f7cd20e1"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/restore.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/restore.json",
+      "bytes": 3126,
+      "sha256": "759a703e5a5491ebfc6754ee354e21f1f0a6238eb7397458f23cf1ae810c5033"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/second-restore-rejection.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/second-restore-rejection.json",
+      "bytes": 233,
+      "sha256": "0c8fd0aedfc16caeefa737a2f6443210703bfe2dd0f49452248b44b1155e73a3"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/benchmark-control.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/benchmark-control.json",
+      "bytes": 1875,
+      "sha256": "f68939330bcb27a134978ed3e9a048324e5d7b14dfee278347d46008686733bd"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/benchmark-database.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/benchmark-database.json",
+      "bytes": 9643,
+      "sha256": "534c98149ca7eff8d2f1384421c9e8d2a000cc83283cf53ab80b673ead8cbcfe"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/known-secret-scan.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/known-secret-scan.json",
+      "bytes": 239,
+      "sha256": "b07e7550a759c8abf46ae709babea073cc344e7c6c17cb70bf15b81946363911"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/01-environment.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/01-environment.json",
+      "bytes": 1034,
+      "sha256": "0c5efc8433da2a6b00a8bad6549c6d8b41621a926986b70585a73faff5ba5492"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/01-environment.stderr.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/01-environment.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/01-environment.stdout.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/01-environment.stdout.log",
+      "bytes": 1109,
+      "sha256": "25772c428f1ab479a24556e7617f400f9404b9011590f98210cdbdaa2bcc4411"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/02-pg-dump-version.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/02-pg-dump-version.json",
+      "bytes": 839,
+      "sha256": "0f79613e963524af18decb30ee74aace8337d375c8a59afc75a94bb830c385db"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/02-pg-dump-version.stderr.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/02-pg-dump-version.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/02-pg-dump-version.stdout.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/02-pg-dump-version.stdout.log",
+      "bytes": 53,
+      "sha256": "40f5f481a6cf5c7dcaa3eea8c99c254a765e9bd1e7ba0051b0596b6fa9ae497a"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/03-pg-restore-version.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/03-pg-restore-version.json",
+      "bytes": 851,
+      "sha256": "c15db0a2a2d2ed4a1f3fca1e44876cde925da535c94bbb8e474d6722b1e20af6"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/03-pg-restore-version.stderr.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/03-pg-restore-version.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/03-pg-restore-version.stdout.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/03-pg-restore-version.stdout.log",
+      "bytes": 56,
+      "sha256": "c6f0eca8794f19ffbb7c78d5e133d3734f80b8bbac105379de251b1c1244cb5e"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/04-migrate.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/04-migrate.json",
+      "bytes": 802,
+      "sha256": "33e9ce8d9ebdf1f4310e448831a7ee57631a3191e03aa888f101c876cc0772a9"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/04-migrate.stderr.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/04-migrate.stderr.log",
+      "bytes": 440,
+      "sha256": "5d91bef3399a2e30a55559e10a6d3240789b5438a2c7f05be1b4bb22a2b9cdab"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/04-migrate.stdout.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/04-migrate.stdout.log",
+      "bytes": 120,
+      "sha256": "a6fa6979caab47406458084f8b2d53dca11fae68e11e42a0ba240a46e1462ff6"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/05-demo.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/05-demo.json",
+      "bytes": 913,
+      "sha256": "60ca61d59cebfdbf5f3ec3cb9083d30c9b017379f4b4226c0e9028aa2080f8ac"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/05-demo.stderr.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/05-demo.stderr.log",
+      "bytes": 37749,
+      "sha256": "040414ef8c90cbfcf9ddbca6536d21f608b8392e02641b0047fb5ea65c446603"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/05-demo.stdout.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/05-demo.stdout.log",
+      "bytes": 133,
+      "sha256": "94760cf9447624e703f8b19784268a0266a99e2a6350a99a0391922a8feefde2"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/06-business-check.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/06-business-check.json",
+      "bytes": 821,
+      "sha256": "7e2e31f61220afb341362c76268095f5239752ab1c3adbcf1dbfe5d066f2135f"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/06-business-check.stderr.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/06-business-check.stderr.log",
+      "bytes": 439,
+      "sha256": "7c24156b6fd64a13563213e65cea7c172123d11e5ba441263ec552c864de0f5c"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/06-business-check.stdout.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/06-business-check.stdout.log",
+      "bytes": 313,
+      "sha256": "59aa7bb82f00b3232b66dbf1a69bc6ee2977faffb40de009098c73339c34d5dc"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/07-snapshot.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/07-snapshot.json",
+      "bytes": 942,
+      "sha256": "1dc91dfa5588b2198514684fce3f63305a3869dfad03dd6ffe66250407acf86c"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/07-snapshot.stderr.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/07-snapshot.stderr.log",
+      "bytes": 439,
+      "sha256": "6ff347d83604dde2d6b5745df6c135fb40d526537d2d53c080d205ffde100717"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/07-snapshot.stdout.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/07-snapshot.stdout.log",
+      "bytes": 150,
+      "sha256": "85ced52258b093b9033fdc448d15b13afbff2fd309aaa6c3e61144143bc7f2d7"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/08-warehouse-export.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/08-warehouse-export.json",
+      "bytes": 1053,
+      "sha256": "417753132b7a856f73526d44373a3b62c48f1de95e96eee0d2757f31bcb9527d"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/08-warehouse-export.stderr.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/08-warehouse-export.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/08-warehouse-export.stdout.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/08-warehouse-export.stdout.log",
+      "bytes": 542,
+      "sha256": "b4d9107c3a41897b24b03440b4c3d2609e53c6332ef6c12462122b6abc4d32b5"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/09-dbt-deps.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/09-dbt-deps.json",
+      "bytes": 1246,
+      "sha256": "f351112f01cfb65f7043eb90cab00878781034514c923d4e4ffeab00a29eece4"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/09-dbt-deps.stderr.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/09-dbt-deps.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/09-dbt-deps.stdout.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/09-dbt-deps.stdout.log",
+      "bytes": 150,
+      "sha256": "a2d933ea1f600abfa13ac4a13cdf897f7bf153459fea918e922fb04b20303737"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/10-dbt-build.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/10-dbt-build.json",
+      "bytes": 1387,
+      "sha256": "a484528d4f9d75aabc41efdcdd50524f4c9d586b726df8925b6ab05e42b8a1e9"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/10-dbt-build.stderr.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/10-dbt-build.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/10-dbt-build.stdout.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/10-dbt-build.stdout.log",
+      "bytes": 10757,
+      "sha256": "dd1e73218b02e8fcc4082067a6e8352aeace4862bde8f43ea8cb48104be998e4"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/11-dbt-docs.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/11-dbt-docs.json",
+      "bytes": 1397,
+      "sha256": "9ea5e1642d3689481a558e59d45ab9649202ac07c420806d3671e1b990b8e6f2"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/11-dbt-docs.stderr.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/11-dbt-docs.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/11-dbt-docs.stdout.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/11-dbt-docs.stdout.log",
+      "bytes": 502,
+      "sha256": "783384ae35aea1264d264568ab1c9553bcd06601cef1f8a215f3b2d78c851fb2"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/12-backup.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/12-backup.json",
+      "bytes": 942,
+      "sha256": "a7312c7ae625bf0c59ee3e0370a680f6804cc3ef250a53ecff54e83b3c9ab4f6"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/12-backup.stderr.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/12-backup.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/12-backup.stdout.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/12-backup.stdout.log",
+      "bytes": 278,
+      "sha256": "59f44aa3ed77c6b84d7ee353a403c78342d83f168fdd3d063a45ef6ebede02f2"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/13-restore.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/13-restore.json",
+      "bytes": 1080,
+      "sha256": "9cde5734f33ae896bf8fdeb9ec53bb3e9f486175f5c43c30c056e35e57653900"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/13-restore.stderr.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/13-restore.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/13-restore.stdout.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/13-restore.stdout.log",
+      "bytes": 143,
+      "sha256": "af32feb94d7fffc0bdeb90ff4ce202cb9e9a76f526a9c1347b8b8e0b134e9f8e"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/14-reject-second-restore.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/14-reject-second-restore.json",
+      "bytes": 1132,
+      "sha256": "c72b957966e86ce6ec830518952d609bb7c5d5b405ea1480e934bf872dd45c0a"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/14-reject-second-restore.stderr.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/14-reject-second-restore.stderr.log",
+      "bytes": 114,
+      "sha256": "ed120c0ae868af3d8a36e026f253fc5397d689f7d7f9b6800373f3df8d9dc11b"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/14-reject-second-restore.stdout.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/14-reject-second-restore.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/15-dbt-restored-test.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/15-dbt-restored-test.json",
+      "bytes": 1434,
+      "sha256": "ee4a95b7034f9daf5f152c3d53059dcef80a238468cfd50c98a4777e767440ec"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/15-dbt-restored-test.stderr.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/15-dbt-restored-test.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/15-dbt-restored-test.stdout.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/15-dbt-restored-test.stdout.log",
+      "bytes": 9687,
+      "sha256": "7099da49c1bf91973a82985b032df8f314d19c0bf07f03df7d722120d479cf3c"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/16-benchmark-control.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/16-benchmark-control.json",
+      "bytes": 995,
+      "sha256": "b3dc37bf05383a0f7814edbf2f93dea26f41fa20a0a1a286c6d6ef3f1d92825a"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/16-benchmark-control.stderr.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/16-benchmark-control.stderr.log",
+      "bytes": 441,
+      "sha256": "d0201064995ffcced2a481f3e5b38d621155053310157c80e52d71eabdd46b60"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/16-benchmark-control.stdout.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/16-benchmark-control.stdout.log",
+      "bytes": 151,
+      "sha256": "dc2754d736cddcfd8bc35ad64a99a5ba82817dc5ee825ae0af9a0534e83bde67"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/17-benchmark-database.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/17-benchmark-database.json",
+      "bytes": 1022,
+      "sha256": "64d3dca72342e880e78eb955b466bf4de71a5138d83ab38aa9f99a984263f5fd"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/17-benchmark-database.stderr.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/17-benchmark-database.stderr.log",
+      "bytes": 315775,
+      "sha256": "3776791c1ea7183f7d81767396b89acf20352c00625fed72c70bb5a42ab9a0e8"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/commands/17-benchmark-database.stdout.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/17-benchmark-database.stdout.log",
+      "bytes": 152,
+      "sha256": "bc2916f3fba17319932d28af0b4834d0a529ca8c1467bf36628533d8f792851d"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/manifest.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/manifest.json",
+      "bytes": 717721,
+      "sha256": "edb7711e7d7370df50d0f4d7286a3434552d67f5b394c1949d5615abdb007df0"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run_results.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run_results.json",
+      "bytes": 47332,
+      "sha256": "13c702ac2293981f58a7dcc465aae4b7b9344bb400edaf9e44a908975674f2af"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/dbt_project.yml/hooks/enterprise_mdm-on-run-start-0.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/dbt_project.yml/hooks/enterprise_mdm-on-run-start-0.sql",
+      "bytes": 37,
+      "sha256": "2e07bae15b2781927a37bd28cfca6cf5057f68454fe4d19b9ffaac6a17e26f14"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/dbt_project.yml/hooks/enterprise_mdm-on-run-start-1.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/dbt_project.yml/hooks/enterprise_mdm-on-run-start-1.sql",
+      "bytes": 57,
+      "sha256": "5da12f1a9c3d52f10f6d5903b09c29aa57fb4a306d1e880ebf8c95d0167c395b"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/attribute_lineage.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/attribute_lineage.sql",
+      "bytes": 232,
+      "sha256": "cf6f5caf75b398b317f8aca4a9024f66a787e14b5b0cc85349b516dcfac8502a"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/consumer_impact.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/consumer_impact.sql",
+      "bytes": 691,
+      "sha256": "ca2ecf1924b0d16e166f5a4cfd383a18cb865a0dd2e995dbac84ff7fd78d18fd"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/crosswalk.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/crosswalk.sql",
+      "bytes": 330,
+      "sha256": "b51d356e2c097b241f68413c9578a06d968c8040942a165c91367c41fa61e0dc"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/golden_records.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/golden_records.sql",
+      "bytes": 535,
+      "sha256": "ddf548120c92142cfc25aa01f7d1f2a1ceeec13d4c3dcc2a5afc41c74d32db03"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/models.yml/accepted_values_consumer_impac_0193a17378dfacd027e59e8f65874a9b.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/models.yml/accepted_values_consumer_impac_0193a17378dfacd027e59e8f65874a9b.sql",
+      "bytes": 371,
+      "sha256": "49c543830e0c0372bbb00e485d798e5ac5bb659d121a9d14449ba59ba056ae9f"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/models.yml/not_null_attribute_lineage_lineage.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/models.yml/not_null_attribute_lineage_lineage.sql",
+      "bytes": 96,
+      "sha256": "372bd112212349db5922e40ca6ecd5f4049fea9454f544e208f1476c1276fc0d"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/models.yml/not_null_crosswalk_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/models.yml/not_null_crosswalk_golden_id.sql",
+      "bytes": 92,
+      "sha256": "e5ed3ed6711e7a975e28a49928ac7a215d3d5beb836475337af880f26eeb9254"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/models.yml/not_null_crosswalk_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/models.yml/not_null_crosswalk_source_key.sql",
+      "bytes": 94,
+      "sha256": "63a5909299196b9774cbe2978bdcf2636182b3363bce9c620fe6103a6ea89adf"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/models.yml/not_null_golden_records_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/models.yml/not_null_golden_records_golden_id.sql",
+      "bytes": 97,
+      "sha256": "f3223af6e234a380b7a17a2967dd0155703803b4fddae5c1d64dee06957f629e"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/models.yml/not_null_golden_records_provenance.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/models.yml/not_null_golden_records_provenance.sql",
+      "bytes": 99,
+      "sha256": "b0f6bff90c645858d98b20ec2508555df21888bba8a910c0b26aad1a6832d7ea"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/models.yml/not_null_quality_report_metric.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/models.yml/not_null_quality_report_metric.sql",
+      "bytes": 91,
+      "sha256": "d75d026ceeacfbf9ced5fa88419d8b53efaecafd2c8444cb2a3294398497ce2a"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/models.yml/not_null_quality_report_value.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/models.yml/not_null_quality_report_value.sql",
+      "bytes": 89,
+      "sha256": "1b8380f2c4b94e545c85a76a6eaf6f954d05f00bb8cedad2fa8b7969302ea2ff"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/models.yml/unique_crosswalk_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/models.yml/unique_crosswalk_source_key.sql",
+      "bytes": 184,
+      "sha256": "1f1f3d988bc7c883d60f69bfdc8a58e1d819da4fb2b63c60275c52f7d8ed60e7"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/models.yml/unique_golden_records_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/models.yml/unique_golden_records_golden_id.sql",
+      "bytes": 186,
+      "sha256": "440a78b7412544614219a5e7ac74a7043ab0bdcc44b75b742202a201d124abd5"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/models.yml/unique_quality_report_metric.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/models.yml/unique_quality_report_metric.sql",
+      "bytes": 177,
+      "sha256": "c23da9c4273a9bb7c75d5dcc327718c019406eb94ed390ceebbfeaad5b4e120a"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/quality_report.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/quality_report.sql",
+      "bytes": 1226,
+      "sha256": "464824065aee8ab91497751ec368f79ac7c4fc8bc7e3ffdef77a930c4f7e294e"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_accepted_values_mdm_ide_39281f0d81ee46e2e8199bd0b9ce4d67.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/sources.yml/source_accepted_values_mdm_ide_39281f0d81ee46e2e8199bd0b9ce4d67.sql",
+      "bytes": 252,
+      "sha256": "d591719964fb793a93ce42129d4704279a2d869b6259f4f9b049eb11da5ef190"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_decisions_decision_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_decisions_decision_id.sql",
+      "bytes": 93,
+      "sha256": "f534ed93a7e24139e37624811af576f154863a815e7817e2c1b5453dcd1a694d"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_golden_id.sql",
+      "bytes": 94,
+      "sha256": "d0621321867bae0187fab9458f071d327d0a517f29483e39370e62df762df4d2"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_history_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_history_id.sql",
+      "bytes": 96,
+      "sha256": "52919d80216154f863d05bdf6fda52ed4175794342ce441c35c2f95f8055c1bc"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_identity_groups_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_identity_groups_golden_id.sql",
+      "bytes": 95,
+      "sha256": "ba629eb37c226b5c2c308c23f00acfb3239c2c3631becc5751e573cf83ce2f01"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_golden_id.sql",
+      "bytes": 91,
+      "sha256": "8ca94c729200e3669386b454c560534e39c2ae3c52e90c83a6bc1f56c46f7b97"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_source_key.sql",
+      "bytes": 93,
+      "sha256": "742681fb7ff1165b6f0c3acc663610a4412dd173202776dd722403707c848fad"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_outbox_event_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_outbox_event_id.sql",
+      "bytes": 84,
+      "sha256": "e9445c1848c78124719baa207d9c47944556331df2eb7a131421cd17f2693860"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_raw_records_raw_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_raw_records_raw_id.sql",
+      "bytes": 85,
+      "sha256": "987fb63817f78595e192fcbd362a6892a1f3eb3cfe73f3140c4ab6744c1c0ebf"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_source_records_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_source_records_source_key.sql",
+      "bytes": 96,
+      "sha256": "52c305525c8f591ce8b5602157953cf2932fce2a4fd4143a70bf6f04be6c31b5"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_golde_90a9cf45fe29fbd0357600c3e060e17b.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_golde_90a9cf45fe29fbd0357600c3e060e17b.sql",
+      "bytes": 356,
+      "sha256": "e3550301f20225c784b0ca3649131209bc9033fa86e5cd028967b9239e97304d"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_af740a4a434d411470f9beb93abb34a2.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_af740a4a434d411470f9beb93abb34a2.sql",
+      "bytes": 355,
+      "sha256": "c3c011a6329c985c64419c7dbc84ca3b7685686d15f10d8481cd48dfc2880275"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_ed824537b8ea0b41636cc7359a1a8736.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_ed824537b8ea0b41636cc7359a1a8736.sql",
+      "bytes": 353,
+      "sha256": "730e9adf00a64b09f1dca2879a282c6d09f8ae1ed046cbc9ffef773f51df1987"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_decisions_decision_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_decisions_decision_id.sql",
+      "bytes": 184,
+      "sha256": "905a4e50e6d79a2aeed3978559f7f68bdc16d76f369f24a5b8a0b5b070c5efb1"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_golden_history_history_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_golden_history_history_id.sql",
+      "bytes": 186,
+      "sha256": "01049c277ae218af894c45645c075b3a5ff797ea08eb4777b8bf796d74b1047e"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_identity_groups_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_identity_groups_golden_id.sql",
+      "bytes": 184,
+      "sha256": "2d363360a09dd356da8e63b1aa1e4b68a58d11c9c5be33d7325f8b6f3e48789a"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_memberships_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_memberships_source_key.sql",
+      "bytes": 183,
+      "sha256": "d09700a2dc7915826869dedee87c90bc8feda77989153f58346b1dd614cd43b3"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_outbox_event_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_outbox_event_id.sql",
+      "bytes": 172,
+      "sha256": "ed29c1c547e559f01db62465dc913e78c508e6e6d789e43cdbf4d7d92ca2300a"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_raw_records_raw_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_raw_records_raw_id.sql",
+      "bytes": 171,
+      "sha256": "684efbeb8f016cff96272c9b42316746327e5310b554afa0717a7d6805d41ad9"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_source_records_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_source_records_source_key.sql",
+      "bytes": 186,
+      "sha256": "4491892adc7bcb2b3e51e938681b870d8ce93c313447b87221593138881313fa"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/tests/consumer_inbox_unique.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/tests/consumer_inbox_unique.sql",
+      "bytes": 110,
+      "sha256": "6526801954eada7a60bf32f2c0077d816089985b1d2e1667b00b83406d6a2b98"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/tests/consumer_records_unique.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/tests/consumer_records_unique.sql",
+      "bytes": 114,
+      "sha256": "d9e9e73401d8f8a40c667d37db3bace4cc1389ebf8282376b701ed1c1c3b3934"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/tests/full_crosswalk_coverage.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/tests/full_crosswalk_coverage.sql",
+      "bytes": 158,
+      "sha256": "ceea95b404d542dfc9b23e709d20643d797e5f08e078501b755752f9a0a1c55c"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/tests/historical_attribute_lineage.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/tests/historical_attribute_lineage.sql",
+      "bytes": 1097,
+      "sha256": "ff99cacdb1bfa1197f5691a412abb71fa083aca0b934d81b9173dacff76fca62"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/tests/no_bitemporal_overlap.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/tests/no_bitemporal_overlap.sql",
+      "bytes": 664,
+      "sha256": "5b9cc77d9abb8c4fc14c876818c61974b275df9b254173112f61e924d5e258f8"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/tests/no_conflicting_registration_ids.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/tests/no_conflicting_registration_ids.sql",
+      "bytes": 574,
+      "sha256": "02d9f9af68a8e56a98fb5554367862f3bd4a2be367958a403433cccf72447b9c"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/tests/no_mixed_entity_groups.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/tests/no_mixed_entity_groups.sql",
+      "bytes": 109,
+      "sha256": "8aa36fa0dc33798be60202cc794e382f190cd1b8b110a34c24fbf1be4a697d5d"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/tests/no_parent_child_merge.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/tests/no_parent_child_merge.sql",
+      "bytes": 328,
+      "sha256": "35c7c81837ebe094a107100fbacafbc9fa865f0f1c99851e18379f1b79a0fd49"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/tests/no_retired_memberships.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/tests/no_retired_memberships.sql",
+      "bytes": 164,
+      "sha256": "7737c904537a83054537bc27b1718fa18098d9e04dff61b8f1bdd510a22f2372"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/compiled/enterprise_mdm/tests/valid_history_intervals.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/compiled/enterprise_mdm/tests/valid_history_intervals.sql",
+      "bytes": 213,
+      "sha256": "d1dba417b7531658735368170cb1f040521090fdc42b4d018d7979cfc50f4af6"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/attribute_lineage.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/attribute_lineage.sql",
+      "bytes": 320,
+      "sha256": "36cb2a2595cf5d9907198741e96396f736aee1ad81dd25b10d5f6b8703c967bd"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/consumer_impact.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/consumer_impact.sql",
+      "bytes": 777,
+      "sha256": "eda5e254ca0970130b55426827d81756f412118b6426b02b851e9913540bf40f"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/crosswalk.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/crosswalk.sql",
+      "bytes": 410,
+      "sha256": "d4ae8d0adf406c1c62e35e71e55b27ec8eed8302d5d915f33f1c878bc27efe2b"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/golden_records.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/golden_records.sql",
+      "bytes": 620,
+      "sha256": "3472057e4beb95f3a27b5af9b8810f803d9dfbca3d186341744f73517d0c2e87"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/models.yml/accepted_values_consumer_impac_0193a17378dfacd027e59e8f65874a9b.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/models.yml/accepted_values_consumer_impac_0193a17378dfacd027e59e8f65874a9b.sql",
+      "bytes": 550,
+      "sha256": "8bcc993e965f7cf5f709a8d42021df634e9f33e847fcd4f85d862f31e3f899a2"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/models.yml/not_null_attribute_lineage_lineage.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/models.yml/not_null_attribute_lineage_lineage.sql",
+      "bytes": 275,
+      "sha256": "908cdb8242b6452aada9cd20252b8a00e9e5daebbc521d0281ec84b7a63c6f11"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/models.yml/not_null_crosswalk_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/models.yml/not_null_crosswalk_golden_id.sql",
+      "bytes": 271,
+      "sha256": "840c703cf14a4ff4dd8cf6439df186f5899cccd2706bf7a7b2e2f5584329daae"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/models.yml/not_null_crosswalk_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/models.yml/not_null_crosswalk_source_key.sql",
+      "bytes": 273,
+      "sha256": "2cb39e924fe4b17113d4ebb91ac630b218f4bf62b4556f805beb7b79bbaf1f3c"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/models.yml/not_null_golden_records_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/models.yml/not_null_golden_records_golden_id.sql",
+      "bytes": 276,
+      "sha256": "800f2c3f5f89520ae551a90339bf27f870dec84b4c5c0aa0e0f201e64f5dbfbb"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/models.yml/not_null_golden_records_provenance.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/models.yml/not_null_golden_records_provenance.sql",
+      "bytes": 278,
+      "sha256": "291389e7310b71cf4ef0a4eace530335eca4d70b8b5b2e17a661a6bd107f67ab"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/models.yml/not_null_quality_report_metric.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/models.yml/not_null_quality_report_metric.sql",
+      "bytes": 270,
+      "sha256": "8fb16d598f3006b189846a17d3dddcbcaf0f0f18975340c24b293955a92d2421"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/models.yml/not_null_quality_report_value.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/models.yml/not_null_quality_report_value.sql",
+      "bytes": 268,
+      "sha256": "f9946288d8434a892215f32567aa044fb81123943e4bd9aa2180ff0da4ba27d0"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/models.yml/unique_crosswalk_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/models.yml/unique_crosswalk_source_key.sql",
+      "bytes": 363,
+      "sha256": "9007d78e0d1992a246a50f766a1516b7ae5a688ad01cc0d9abb2ebf7a7b620a8"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/models.yml/unique_golden_records_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/models.yml/unique_golden_records_golden_id.sql",
+      "bytes": 365,
+      "sha256": "6fb176aa91e81d4e17b1449be4bfe8d9be83671488c076ad27e621b052aee5b0"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/models.yml/unique_quality_report_metric.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/models.yml/unique_quality_report_metric.sql",
+      "bytes": 356,
+      "sha256": "731757d53e09fc5414b17c4afae37babad28f936bd2b5b86b6e9a8a58a396962"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/quality_report.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/quality_report.sql",
+      "bytes": 1311,
+      "sha256": "16fdb6058de34cc6606b255daf2b7db6f2393d99edd4c7f65354d30eec98ebc7"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_accepted_values_mdm_ide_39281f0d81ee46e2e8199bd0b9ce4d67.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/sources.yml/source_accepted_values_mdm_ide_39281f0d81ee46e2e8199bd0b9ce4d67.sql",
+      "bytes": 431,
+      "sha256": "b081783c81571673ede691b321283bea6f41a0081c31beb7d9a31ba12bc12d0a"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_decisions_decision_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_decisions_decision_id.sql",
+      "bytes": 272,
+      "sha256": "b05ea43a177af7a34b94e52b0cc1edffa3bb329e788f8f383890c969bc6fdc79"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_golden_id.sql",
+      "bytes": 273,
+      "sha256": "d0c138b14b0d9b6b07b5a26d4211a128709a370a0d97c741829f1b7017e19404"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_history_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_history_id.sql",
+      "bytes": 275,
+      "sha256": "2f1915c42fb0313d9e424175508eb86194d7bac69eaaf7d27a17cfddfd47ea80"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_identity_groups_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_identity_groups_golden_id.sql",
+      "bytes": 274,
+      "sha256": "3a5b7ec3e89f433a2a946c8df0fb88f0fdddc5cd52a75ed483825ee4d175c237"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_golden_id.sql",
+      "bytes": 270,
+      "sha256": "281b7d5b5c6ac68f0092801dd0aa002cbd5ebd925542145f6e94bd3e4a1aa46a"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_source_key.sql",
+      "bytes": 272,
+      "sha256": "28602a1feee1dd03052fbfb76296cc073cd86370b156bae68355c05771299428"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_outbox_event_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_outbox_event_id.sql",
+      "bytes": 263,
+      "sha256": "68de31b7021d5ca1b4f7ffea59e720e526551613d95164b0771a054ee9a5b420"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_raw_records_raw_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_raw_records_raw_id.sql",
+      "bytes": 264,
+      "sha256": "ee19b36089af19f3844d3aeb32bbe02529a36d4340f859f77ae0475493f29de0"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_source_records_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_source_records_source_key.sql",
+      "bytes": 275,
+      "sha256": "a258af9f3edccff63eec449f9c555c16c5f294d5f0615a27858e0ba954ca635f"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_golde_90a9cf45fe29fbd0357600c3e060e17b.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_golde_90a9cf45fe29fbd0357600c3e060e17b.sql",
+      "bytes": 535,
+      "sha256": "595ae2e21d107f80b4e34bc6d8a3f0e3d7159617131a1acedc6306a6ff5156f0"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_af740a4a434d411470f9beb93abb34a2.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_af740a4a434d411470f9beb93abb34a2.sql",
+      "bytes": 534,
+      "sha256": "48f1dc36a9f9160ec0505b8906e8e678a7e9056031aa5e0b493001a85845999b"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_ed824537b8ea0b41636cc7359a1a8736.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_ed824537b8ea0b41636cc7359a1a8736.sql",
+      "bytes": 532,
+      "sha256": "04cff061db82812a6b37ab66c9dc419fc723e45121b841447d7c3bf8cca358be"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_decisions_decision_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_decisions_decision_id.sql",
+      "bytes": 363,
+      "sha256": "770449936be3731264416928f834feb6859894e46d811afb1b713b1c853aba87"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_golden_history_history_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_golden_history_history_id.sql",
+      "bytes": 365,
+      "sha256": "6d7ca0afa1e3533e56d6a952b27817c1acbb4d0369ee3e55e170e77eaacc9bc7"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_identity_groups_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_identity_groups_golden_id.sql",
+      "bytes": 363,
+      "sha256": "8291907f1c84eefc2757d4aefe20c3bf3b4c9890886fc5e32e97ce40f856dd1c"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_memberships_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_memberships_source_key.sql",
+      "bytes": 362,
+      "sha256": "590ae5db18701939ccc25ac72768f41b8fa0624a8f744fd2fafa1170ae2fd9fa"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_outbox_event_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_outbox_event_id.sql",
+      "bytes": 351,
+      "sha256": "da13abc705df1134a189b3f9172d23da75ee7d537b9da98fa3a1ad65363e2e82"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_raw_records_raw_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_raw_records_raw_id.sql",
+      "bytes": 350,
+      "sha256": "9ea5404655aeb0379c9faf01dd0720f913a0cf5b1a82a5a6d49cb028ed40954a"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_source_records_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_source_records_source_key.sql",
+      "bytes": 365,
+      "sha256": "fffd2b1f9fb9dd182e100cb2ec77925a6e0bbe630510fc2f9272f1321fd25651"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/tests/consumer_inbox_unique.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/tests/consumer_inbox_unique.sql",
+      "bytes": 289,
+      "sha256": "82ee4a5ca04abaa3678090ced6f2c3ccb816089be0344710e582d0d5b01c5313"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/tests/consumer_records_unique.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/tests/consumer_records_unique.sql",
+      "bytes": 293,
+      "sha256": "eaf279c94be5bbb762ad2e25ecb15d70f2ed2581aae1dc9083140817c19aacc8"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/tests/full_crosswalk_coverage.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/tests/full_crosswalk_coverage.sql",
+      "bytes": 337,
+      "sha256": "7399391f14fbdd504068b6e18fb170c38d6f77a7b68f2c4fd43ad9f8ef8dca10"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/tests/historical_attribute_lineage.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/tests/historical_attribute_lineage.sql",
+      "bytes": 1276,
+      "sha256": "503395c7b4b109016a10e5b98233de4f1c5b9bfcfd35fc3bf42cf00d583ef78f"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/tests/no_bitemporal_overlap.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/tests/no_bitemporal_overlap.sql",
+      "bytes": 843,
+      "sha256": "cb42fdf4a099aeb825734d306871353c8e22d71b2bfa66933d39cf651f9df22c"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/tests/no_conflicting_registration_ids.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/tests/no_conflicting_registration_ids.sql",
+      "bytes": 753,
+      "sha256": "e49b1fa302e13ae2ccc9d7ca44c8f0936edd5d077ed5c04b9f6a5bf739203f0f"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/tests/no_mixed_entity_groups.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/tests/no_mixed_entity_groups.sql",
+      "bytes": 288,
+      "sha256": "bdbab167bb4fbb2cc8a0d848b74d7e6e2bc7e1d749de429543441c7e0dfcf6a2"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/tests/no_parent_child_merge.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/tests/no_parent_child_merge.sql",
+      "bytes": 507,
+      "sha256": "264b2e58df6f57bdf6c409a08be007903d4728344d3ef83d8eee2c0288538bd2"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/tests/no_retired_memberships.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/tests/no_retired_memberships.sql",
+      "bytes": 343,
+      "sha256": "1c07dfe9ba877b63831f0fb28e311736483b1f8ab19d23e4482bdfe95f0c37e3"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/build/run/enterprise_mdm/tests/valid_history_intervals.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build/run/enterprise_mdm/tests/valid_history_intervals.sql",
+      "bytes": 392,
+      "sha256": "e3d6aed30d69cdd66f554942439a54cce0b137896a40dc2cd153a7eae9b8b31c"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/docs/catalog.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/docs/catalog.json",
+      "bytes": 20420,
+      "sha256": "e04b0e478f1cf14dcd0c90e1f74a7f617f29042713360e64aad61cff2f89d1d8"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/docs/run_results.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/docs/run_results.json",
+      "bytes": 44660,
+      "sha256": "bb4a95924bc4a7c5f911cfaa301f7f7f83935f429f5fe4f67c8293549d51cfd0"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/manifest.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/manifest.json",
+      "bytes": 714319,
+      "sha256": "652dbee8337e8903da4715f6352b3c5f5370bb8ea6b42a53d405c6d2a0f74eb9"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run_results.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run_results.json",
+      "bytes": 41129,
+      "sha256": "cc6dbd56b6d1d4a024f7d0141f19b1772d2fa1d20ca66f6fcd52538701736f19"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/dbt_project.yml/hooks/enterprise_mdm-on-run-start-0.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/dbt_project.yml/hooks/enterprise_mdm-on-run-start-0.sql",
+      "bytes": 37,
+      "sha256": "2e07bae15b2781927a37bd28cfca6cf5057f68454fe4d19b9ffaac6a17e26f14"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/dbt_project.yml/hooks/enterprise_mdm-on-run-start-1.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/dbt_project.yml/hooks/enterprise_mdm-on-run-start-1.sql",
+      "bytes": 57,
+      "sha256": "5da12f1a9c3d52f10f6d5903b09c29aa57fb4a306d1e880ebf8c95d0167c395b"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/models.yml/accepted_values_consumer_impac_0193a17378dfacd027e59e8f65874a9b.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/models.yml/accepted_values_consumer_impac_0193a17378dfacd027e59e8f65874a9b.sql",
+      "bytes": 379,
+      "sha256": "3b9c04625511da97cb131ba47d7518f04047bc8c7a378e841f6a9d13b3883cbc"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/models.yml/not_null_attribute_lineage_lineage.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/models.yml/not_null_attribute_lineage_lineage.sql",
+      "bytes": 104,
+      "sha256": "fcd51c1cef2823bef6ea95cf1217e3b17580c98da4b7c8897d1f6d2f8ade2140"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/models.yml/not_null_crosswalk_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/models.yml/not_null_crosswalk_golden_id.sql",
+      "bytes": 100,
+      "sha256": "f09c9d085d44113626085dad89ae550c6b738599d07e7600513c4e06e07fac1d"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/models.yml/not_null_crosswalk_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/models.yml/not_null_crosswalk_source_key.sql",
+      "bytes": 102,
+      "sha256": "312a9c0ee5021e6e8a455748bb2b90ae4088166e9ef5ffae72544e9189fb714e"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/models.yml/not_null_golden_records_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/models.yml/not_null_golden_records_golden_id.sql",
+      "bytes": 105,
+      "sha256": "066e1fcadae3d0e35e341d36cb7ae65a66491f6b7536d2a8dea3426943cad750"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/models.yml/not_null_golden_records_provenance.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/models.yml/not_null_golden_records_provenance.sql",
+      "bytes": 107,
+      "sha256": "0ae1fc390bb12788847056c71b5dafe0b91b79edacb1e9d1b214a19571702a72"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/models.yml/not_null_quality_report_metric.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/models.yml/not_null_quality_report_metric.sql",
+      "bytes": 99,
+      "sha256": "5a07926c9ab83b1349b299b85389dc82a2e3b7838849685863ba6cf5b0a625cc"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/models.yml/not_null_quality_report_value.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/models.yml/not_null_quality_report_value.sql",
+      "bytes": 97,
+      "sha256": "2bacaf54a17eecfd2245578786ced6d4187767463f0c15e335c77f6103f9ec19"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/models.yml/unique_crosswalk_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/models.yml/unique_crosswalk_source_key.sql",
+      "bytes": 192,
+      "sha256": "8af5cfe7684a38276c8b3656aec20b4f9edbe55a9b81047e92839655bf05d45d"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/models.yml/unique_golden_records_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/models.yml/unique_golden_records_golden_id.sql",
+      "bytes": 194,
+      "sha256": "39eec14bf45ba07c8390061f0f8c1bb3e190c5a7fe167c130645351c0193744e"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/models.yml/unique_quality_report_metric.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/models.yml/unique_quality_report_metric.sql",
+      "bytes": 185,
+      "sha256": "a52c0a9a3ad44e50a21e4d4bae014b53c3afed69edffcc6458bc2e70683fe90c"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/sources.yml/source_accepted_values_mdm_ide_39281f0d81ee46e2e8199bd0b9ce4d67.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/sources.yml/source_accepted_values_mdm_ide_39281f0d81ee46e2e8199bd0b9ce4d67.sql",
+      "bytes": 260,
+      "sha256": "035ecb5602a4fc0dffb5f5355c8a971634aa0b442fe4da0528c355b4a9026633"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_decisions_decision_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_decisions_decision_id.sql",
+      "bytes": 101,
+      "sha256": "3b81b689da039f0d26c4d709379a5aaee3f5cc437982a6a1354313a3d6046fa8"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_golden_id.sql",
+      "bytes": 102,
+      "sha256": "9c0bab7f009275e5261a103102cea1d19a5862e726104e0791e116277a4046c2"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_history_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_history_id.sql",
+      "bytes": 104,
+      "sha256": "577654fc8913a6ba12d6744c390e67d24835132eddb9689f53603358b3ca7cb8"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_identity_groups_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_identity_groups_golden_id.sql",
+      "bytes": 103,
+      "sha256": "1678cfbd62667523115b9cffd11e7e3f0590db60af47d57ddda6b07eed85d5b4"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_golden_id.sql",
+      "bytes": 99,
+      "sha256": "d9bbfbc658cfdaa67beaa7d71d13e790c2d3aff6c9438c0b1721f8549802283f"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_source_key.sql",
+      "bytes": 101,
+      "sha256": "61ce32c456d8cc1fb10277261692c2c4bad530b2880b48119abe4309e1817628"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_outbox_event_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_outbox_event_id.sql",
+      "bytes": 92,
+      "sha256": "8ca9c92564ef0a78f40ed044e7955c420ba159ed675f67033fc7e7f69b41cc5b"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_raw_records_raw_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_raw_records_raw_id.sql",
+      "bytes": 93,
+      "sha256": "b4770b241a836c3d64145463b459a443db84372662a18d3aa918b9602751dee4"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_source_records_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_source_records_source_key.sql",
+      "bytes": 104,
+      "sha256": "983813561a297e74b5d23d44b24e84115e3535726a46466de7f0d2214b2f6b13"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_golde_90a9cf45fe29fbd0357600c3e060e17b.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_golde_90a9cf45fe29fbd0357600c3e060e17b.sql",
+      "bytes": 372,
+      "sha256": "f07b1d5afb82521374671136f1a6fc061666e979dc71dfa982ed82b80940700d"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_af740a4a434d411470f9beb93abb34a2.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_af740a4a434d411470f9beb93abb34a2.sql",
+      "bytes": 371,
+      "sha256": "e9cdd6d5493ea235a4d9899f60fe12586f6bd9d563fbddbf9502996863adb060"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_ed824537b8ea0b41636cc7359a1a8736.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_ed824537b8ea0b41636cc7359a1a8736.sql",
+      "bytes": 369,
+      "sha256": "02500c67640732e91c2d84e2589eec75893f0cfbf5cd225d6d74d0debaf5a78a"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_decisions_decision_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_decisions_decision_id.sql",
+      "bytes": 192,
+      "sha256": "b7bfeb5c8f22878d304f72967ca61f5c09c9eb3d4220c47c25a59e0547de785f"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_golden_history_history_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_golden_history_history_id.sql",
+      "bytes": 194,
+      "sha256": "1ef0764d6dc68876d019376f3421aa64e2dd1b2d463185c89cef19fa1b8eb72f"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_identity_groups_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_identity_groups_golden_id.sql",
+      "bytes": 192,
+      "sha256": "844bdf95ef33de56edbd7a44339dc5b337418b057850cefd8def42c0967a070f"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_memberships_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_memberships_source_key.sql",
+      "bytes": 191,
+      "sha256": "814a44fa47ae56bee205c062babd446a673001ce7fcaa815d0a2ed81763cb330"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_outbox_event_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_outbox_event_id.sql",
+      "bytes": 180,
+      "sha256": "2ae4ab7719dae0b90bc3e7f19d75016fde5949635168fd6a33a19dad572c29b7"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_raw_records_raw_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_raw_records_raw_id.sql",
+      "bytes": 179,
+      "sha256": "9fbd666273543f38416c117d1bd25653abbfe7f17ddd2f068b9550069459c0a9"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_source_records_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_source_records_source_key.sql",
+      "bytes": 194,
+      "sha256": "8a0cfd79f4aed2831a7e271d8db634af30d5f126f4ad88b8cca6afb636ba6b01"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/tests/consumer_inbox_unique.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/tests/consumer_inbox_unique.sql",
+      "bytes": 118,
+      "sha256": "6386f480c789ba47eb759504485e4b329c8f322f68b982037f49418b1e851c9f"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/tests/consumer_records_unique.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/tests/consumer_records_unique.sql",
+      "bytes": 122,
+      "sha256": "d0df2ad3866f50b8737e56f0937f6a467c61cffc65ea232aa485ca0d4a20797b"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/tests/full_crosswalk_coverage.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/tests/full_crosswalk_coverage.sql",
+      "bytes": 174,
+      "sha256": "cb3661dd95ada0af3bffad3b5f1b3b5447d9b7b946736a9943ddbf0fb50ea093"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/tests/historical_attribute_lineage.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/tests/historical_attribute_lineage.sql",
+      "bytes": 1121,
+      "sha256": "85a7bde52e9410e91e65d364f5249577a1cee6cda4b5bedf68dd3d33d1910642"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/tests/no_bitemporal_overlap.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/tests/no_bitemporal_overlap.sql",
+      "bytes": 680,
+      "sha256": "095adb5c9062e45d7a8a9452f173919786a6075d9d2d40e3b9e406668358a2f5"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/tests/no_conflicting_registration_ids.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/tests/no_conflicting_registration_ids.sql",
+      "bytes": 590,
+      "sha256": "6b4ba3a8e6ab684418cd53115b64d527c0f808427ea9a64602b094422a783e53"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/tests/no_mixed_entity_groups.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/tests/no_mixed_entity_groups.sql",
+      "bytes": 117,
+      "sha256": "d6bcdb96deb08f3ab256abfa774699718fb34b8436c868435e2e63941b0dc951"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/tests/no_parent_child_merge.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/tests/no_parent_child_merge.sql",
+      "bytes": 352,
+      "sha256": "d477bbe5371d8fca5544e9c6c649cb0a4393523351bf1889ac9fd740885a2c24"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/tests/no_retired_memberships.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/tests/no_retired_memberships.sql",
+      "bytes": 180,
+      "sha256": "3172215acbef20b5d86f2ebd0d3bc04ab7a75388b31edce7e8178166f80d9248"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/compiled/enterprise_mdm/tests/valid_history_intervals.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/compiled/enterprise_mdm/tests/valid_history_intervals.sql",
+      "bytes": 221,
+      "sha256": "1744115fe12a13e59ea681d8ec576585649c9caedb786b5a58c6cca473aad429"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/models.yml/accepted_values_consumer_impac_0193a17378dfacd027e59e8f65874a9b.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/models.yml/accepted_values_consumer_impac_0193a17378dfacd027e59e8f65874a9b.sql",
+      "bytes": 558,
+      "sha256": "9b257de3fd735570abdeddf24c9aa26a267a231d1c8e358db60a3cd1efefb9c3"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/models.yml/not_null_attribute_lineage_lineage.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/models.yml/not_null_attribute_lineage_lineage.sql",
+      "bytes": 283,
+      "sha256": "3cedd6534af0bd3473158ba743e963d9cfcfc66618dd8e2cc73a9c33a116f83c"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/models.yml/not_null_crosswalk_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/models.yml/not_null_crosswalk_golden_id.sql",
+      "bytes": 279,
+      "sha256": "e04215a68d0170be9618d309928a7fe279b61ddbd4690c2155cb29a612875ab7"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/models.yml/not_null_crosswalk_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/models.yml/not_null_crosswalk_source_key.sql",
+      "bytes": 281,
+      "sha256": "f7f09af6f7b2e9dfa8fb2726357ddd353ec9293fcd46e5d5d664f0d0fe342589"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/models.yml/not_null_golden_records_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/models.yml/not_null_golden_records_golden_id.sql",
+      "bytes": 284,
+      "sha256": "b4a75604408d3218035b14bef1be52a4dcfa6bad6c7a33084659daa9b324eea9"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/models.yml/not_null_golden_records_provenance.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/models.yml/not_null_golden_records_provenance.sql",
+      "bytes": 286,
+      "sha256": "74553cae8ba37e93355d608cf7ef26a78acbb40301a96c822ab590ce537f3aba"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/models.yml/not_null_quality_report_metric.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/models.yml/not_null_quality_report_metric.sql",
+      "bytes": 278,
+      "sha256": "0f36d1d5f14ae1d4e7692bb8bb6e687c6c50d21ab7dbc06bd0ebcf7a0ad94030"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/models.yml/not_null_quality_report_value.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/models.yml/not_null_quality_report_value.sql",
+      "bytes": 276,
+      "sha256": "2a99a4023f6ce4e90ea63ed2352cf24da1d2d3dab7fad0692140d01b8c72e46a"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/models.yml/unique_crosswalk_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/models.yml/unique_crosswalk_source_key.sql",
+      "bytes": 371,
+      "sha256": "2abb2a4aa4569c779ac67c0244ba70ad9211e03d04b18e85371ef11a33c3963a"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/models.yml/unique_golden_records_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/models.yml/unique_golden_records_golden_id.sql",
+      "bytes": 373,
+      "sha256": "96e364e2db4f73bcd396fa538d7f1dac54eb241ad395cf05849f957e71e197db"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/models.yml/unique_quality_report_metric.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/models.yml/unique_quality_report_metric.sql",
+      "bytes": 364,
+      "sha256": "91dfda3e7e15c2bd645e08f61a92f26bec8d41f1055db56a63b8630b35c2c80a"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/sources.yml/source_accepted_values_mdm_ide_39281f0d81ee46e2e8199bd0b9ce4d67.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/sources.yml/source_accepted_values_mdm_ide_39281f0d81ee46e2e8199bd0b9ce4d67.sql",
+      "bytes": 439,
+      "sha256": "bda0137153e66e6ef10f759ab5de09a6031f46b6d2feb3e1d559c9fc35df3ade"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_decisions_decision_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_decisions_decision_id.sql",
+      "bytes": 280,
+      "sha256": "5b8b7cdd8f84efe54bcd066063e9c40a5a3c74c4a4c2b37af66d99ff8bef704b"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_golden_id.sql",
+      "bytes": 281,
+      "sha256": "07fedc271df3b04e3c4e2d9ae688c98786c6b84c51f85512f065053efdad311f"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_history_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_history_id.sql",
+      "bytes": 283,
+      "sha256": "0131de52470673f1b85e72162c400301f73241605dcad08a55b7c6c52a5c99ee"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_identity_groups_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_identity_groups_golden_id.sql",
+      "bytes": 282,
+      "sha256": "e509727c613d4b4aac5cd7966db35ac0b8c6c9df754c570dfca62a541ce7982a"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_golden_id.sql",
+      "bytes": 278,
+      "sha256": "aa905fafe20b6824614165523a852b4199ec635ef1b990121cc6d2b901f2719f"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_source_key.sql",
+      "bytes": 280,
+      "sha256": "568e0b3d9fe6866b6977a1dfd17363d8a0c736f4839ebeeb5bd8ff71fe62c5a2"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_outbox_event_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_outbox_event_id.sql",
+      "bytes": 271,
+      "sha256": "d925dbee017bf40dfbad8cb8628e6f1eecfd6c4337d2c5c9dfb311585909373f"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_raw_records_raw_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_raw_records_raw_id.sql",
+      "bytes": 272,
+      "sha256": "fa7efbc7977fc3c05a372dea72248b653e23af22e8984d4c9d0390ea279b4414"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_source_records_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_source_records_source_key.sql",
+      "bytes": 283,
+      "sha256": "ec87df0334abbfab374baf3f4360e8ae51aad8bc3ad8ba1e4644c3192f135dde"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_golde_90a9cf45fe29fbd0357600c3e060e17b.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_golde_90a9cf45fe29fbd0357600c3e060e17b.sql",
+      "bytes": 551,
+      "sha256": "4d9bd6bf8006f55f857ec3093cec627848339207610adddf3ff7711b4b0b459a"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_af740a4a434d411470f9beb93abb34a2.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_af740a4a434d411470f9beb93abb34a2.sql",
+      "bytes": 550,
+      "sha256": "c4e9235ba7b2c55bf3a1c526dcc7920f60037bce323a818fa1afb2ff68c96774"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_ed824537b8ea0b41636cc7359a1a8736.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_ed824537b8ea0b41636cc7359a1a8736.sql",
+      "bytes": 548,
+      "sha256": "d65131f6d7229ee8a4ccdd57887679bd493ac3c6e0ed7d1fdfe95385f551df10"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/sources.yml/source_unique_mdm_decisions_decision_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/sources.yml/source_unique_mdm_decisions_decision_id.sql",
+      "bytes": 371,
+      "sha256": "e5dcff860a93e74f24d94100f5a5a24f26e7b64fc4fbd3fe5420f2c581fedffb"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/sources.yml/source_unique_mdm_golden_history_history_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/sources.yml/source_unique_mdm_golden_history_history_id.sql",
+      "bytes": 373,
+      "sha256": "43ab099c51de42490fff62b827ed5b3719cb3c913a7940a6db245cd8e2d100fc"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/sources.yml/source_unique_mdm_identity_groups_golden_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/sources.yml/source_unique_mdm_identity_groups_golden_id.sql",
+      "bytes": 371,
+      "sha256": "1ccd2faaf5144f464d7de57600291fce0d0df20a3731193e582759625ad8d793"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/sources.yml/source_unique_mdm_memberships_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/sources.yml/source_unique_mdm_memberships_source_key.sql",
+      "bytes": 370,
+      "sha256": "845c26cfc1fe9e2ad704305aeac31cc2b6dfb4c943ffa4ce4f5d79e6386a2b33"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/sources.yml/source_unique_mdm_outbox_event_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/sources.yml/source_unique_mdm_outbox_event_id.sql",
+      "bytes": 359,
+      "sha256": "d283afbafe83874f0f7c8d8c74145a767e27abe870ab3b726551acdc098b3138"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/sources.yml/source_unique_mdm_raw_records_raw_id.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/sources.yml/source_unique_mdm_raw_records_raw_id.sql",
+      "bytes": 358,
+      "sha256": "d4f106270d3a17790989555d0910365592631c69c8dec0a6106cbc2f7b8ba06d"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/models/sources.yml/source_unique_mdm_source_records_source_key.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/models/sources.yml/source_unique_mdm_source_records_source_key.sql",
+      "bytes": 373,
+      "sha256": "b2e8c2024a19a00fc8256c78ec130e8d4461b072115a69b6249041d0d286a66e"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/tests/consumer_inbox_unique.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/tests/consumer_inbox_unique.sql",
+      "bytes": 297,
+      "sha256": "eb5e3ba237dbe18c9bd7b63e1839daf065a823e854893c28f59b000c2b356d35"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/tests/consumer_records_unique.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/tests/consumer_records_unique.sql",
+      "bytes": 301,
+      "sha256": "52507259c92796c700b47169a73ba009438c153b7291d4e082c24ad79cbcba0a"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/tests/full_crosswalk_coverage.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/tests/full_crosswalk_coverage.sql",
+      "bytes": 353,
+      "sha256": "1c54a46b9ee9737cfbf2311ae3da0bc168941e26a748aac451da89f9ded0eefe"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/tests/historical_attribute_lineage.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/tests/historical_attribute_lineage.sql",
+      "bytes": 1300,
+      "sha256": "eef90d03f91b1d0a87efd983ab04f7866350bb92511871077ea4fe473f097dcd"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/tests/no_bitemporal_overlap.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/tests/no_bitemporal_overlap.sql",
+      "bytes": 859,
+      "sha256": "d9baff0f70c44993eac2e1bf17ec7bf06fbb44e74cdd4e6f60980a8d2ec7fe5e"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/tests/no_conflicting_registration_ids.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/tests/no_conflicting_registration_ids.sql",
+      "bytes": 769,
+      "sha256": "cdc26ab22ac1ca0414e4ae2c6ba037ba3e66ef83f12b0040fb15d306f1060eb9"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/tests/no_mixed_entity_groups.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/tests/no_mixed_entity_groups.sql",
+      "bytes": 296,
+      "sha256": "279f815262ec26ca257ab3dce14baf03d330bf0c589e3e71dec934cd12dafc50"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/tests/no_parent_child_merge.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/tests/no_parent_child_merge.sql",
+      "bytes": 531,
+      "sha256": "fd2e91ecc3795fdf9c303ca2033a04f3b362dd9ecbf41577c6c37583741a406f"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/tests/no_retired_memberships.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/tests/no_retired_memberships.sql",
+      "bytes": 359,
+      "sha256": "5302b09694712985142bc373682237fa5ecda210b5c435e996a8b1544da7bdfc"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt/restored-test/run/enterprise_mdm/tests/valid_history_intervals.sql",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/restored-test/run/enterprise_mdm/tests/valid_history_intervals.sql",
+      "bytes": 400,
+      "sha256": "0942e51c4380e3bf6308d95ae651aa0bdae6cfbcc670fc29141d7267c76b0c3d"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt-logs/deps/dbt.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-logs/deps/dbt.log",
+      "bytes": 2168,
+      "sha256": "250dcb3ac62cf47b095d545a4b1ef883468ff40927de94a4c9ebcee548421372"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt-logs/build/dbt.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-logs/build/dbt.log",
+      "bytes": 151262,
+      "sha256": "89e52decd4b9b2db3688af5f49168d2649223cad4f9ce0136cfe98feb90618ec"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt-logs/docs/dbt.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-logs/docs/dbt.log",
+      "bytes": 55439,
+      "sha256": "22cdc472fb0d363284effece40335c9a1d4b5bc69717ec829d632eb3d4607191"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/dbt-logs/restored-test/dbt.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-logs/restored-test/dbt.log",
+      "bytes": 115831,
+      "sha256": "796e8a77567b16fb58a495cc20321761304d3311c8b004153117f2c30b8fa731"
+    },
+    {
+      "path": "evidence/2026-11-14/postgres-provenance/repository-verification.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/logs/repository-verification.json",
+      "bytes": 310,
+      "sha256": "1142bb48482456b3f3a8b36cbc91a7431d29eb29596f7a968e47dbb18af1f8a4"
+    },
+    {
+      "path": "evidence/2026-11-14/postgres-provenance/verified-packages.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/logs/verified-packages.json",
+      "bytes": 1538,
+      "sha256": "ef7dad1ac15f89730d4491a0fb8f8e3ed14c6acd14995ecd15686bca0f78654d"
+    },
+    {
+      "path": "evidence/2026-11-14/postgres-provenance/pgdg-signature.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/logs/pgdg-signature.log",
+      "bytes": 789,
+      "sha256": "850ac3ef50782b6a9cfb43ba0b5250a9d7ac5976ae32e761af0e563b4f15b53c"
+    },
+    {
+      "path": "evidence/2026-11-14/postgres-provenance/binary-versions.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/logs/binary-versions.json",
+      "bytes": 1320,
+      "sha256": "87c198860ac05f9b1ac7f1a13ab4e3abb624e8159d22a960715b1589daf89334"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/runtime/readiness-query.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/logs/20261114T121255195727Z/readiness-query.json",
+      "bytes": 1047,
+      "sha256": "ee952bbf9de1833f0cd2cd5b7e114c03f1dd4c8b2a6723e39a6da35d0d3c4c73"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/runtime/run.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/logs/20261114T121255195727Z/run.json",
+      "bytes": 345,
+      "sha256": "f8082d85b1f148a650c7a2f2e560ce7b65ff5949917de74e3a863cc52f3c552e"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/runtime/postgres.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/logs/20261114T121255195727Z/postgres.log",
+      "bytes": 1187,
+      "sha256": "ae27e41a9acfcdcd76f3c9d68869f98ca5bb34a8e777d0b94c37dad9512ff1d3"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/runtime/start.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/logs/20261114T121255195727Z/start.log",
+      "bytes": 52,
+      "sha256": "66afd0411ccc09366e99fdd99b85f21899c8d2d064f5835126859618802153ad"
+    },
+    {
+      "path": "evidence/2026-11-14/native-flow/runtime/stop.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/logs/20261114T121255195727Z/stop.log",
+      "bytes": 56,
+      "sha256": "ca19178a35ab4153b75b494963b66ce8243e1b94c173107c87b44d09db23652d"
+    },
+    {
+      "path": "evidence/2026-11-14/capture-tools/run_with_postgres.py",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/run_with_postgres.py",
+      "bytes": 7483,
+      "sha256": "afbd87f9538ec887534bc71f78dcef4cb74fb27aadb32b1f52e4e1799fd492af"
+    },
+    {
+      "path": "evidence/2026-11-14/capture-tools/qualify_native_flow.py",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualify_native_flow.py",
+      "bytes": 17621,
+      "sha256": "d880f58f27ab4a86e87fd2f2f1fbb8f77db01ed4bd8a26dc9e53e9a027ac9981"
+    },
+    {
+      "path": "evidence/2026-11-14/capture-tools/RUNTIME.md",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/RUNTIME.md",
+      "bytes": 4591,
+      "sha256": "ad6cdcff2279b2d1451af5a0c89673f48e71682c0bd499c953032b3a8a41c324"
+    },
+    {
+      "path": "evidence/2026-11-14/browser-blockers/install-report.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ui-runtime/install-report.json",
+      "bytes": 506,
+      "sha256": "396c68115d1a97fc67d4294906bb787dae8032a765d821ed7afbdbd59ee2b377"
+    },
+    {
+      "path": "evidence/2026-11-14/browser-blockers/install-stdout.txt",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ui-runtime/install-stdout.txt",
+      "bytes": 2765,
+      "sha256": "1f280aabc46387bfc38d08e9af53678299cbd2d82e86597e249703f66a420b36"
+    },
+    {
+      "path": "evidence/2026-11-14/browser-blockers/install-stderr.txt",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ui-runtime/install-stderr.txt",
+      "bytes": 3315,
+      "sha256": "1a05fdae72fb5798e21b6dc6cb1bcb1ee0637296ea00367ed15e6dd54a2462f0"
+    },
+    {
+      "path": "evidence/2026-11-14/browser-blockers/download-response.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ui-runtime/download-response.json",
+      "bytes": 672,
+      "sha256": "aad0ce770aef3b3a6514e4054c1096e90c6911d2e953ef39c1dca9a6d9778cdf"
+    },
+    {
+      "path": "evidence/2026-11-14/browser-blockers/launch-report.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ui-runtime/launch-report.json",
+      "bytes": 1982,
+      "sha256": "ee4fce497ae7a6b47948a6c3a1aae10bcdb9b69be8145711ea2582a25e809103"
+    },
+    {
+      "path": "evidence/2026-11-14/browser-blockers/launch-traceback.txt",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ui-runtime/launch-traceback.txt",
+      "bytes": 2731,
+      "sha256": "610b942ed11b28d5305f25fb07dd805699c72034eb8a8ff1b795714100c166dc"
+    },
+    {
+      "path": "evidence/2026-11-14/browser-blockers/system-chromium-provenance.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ui-runtime/system-chromium-provenance.json",
+      "bytes": 788,
+      "sha256": "c2044ba99a4243554ec8ab368eb3b44fa484422e120c4f2c601fd6d81bf86f8f"
+    },
+    {
+      "path": "evidence/2026-11-14/browser-blockers/existing-browser-inventory.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ui-runtime/existing-browser-inventory.json",
+      "bytes": 325,
+      "sha256": "1744efda4c11bf8d2d49370945a1b360872b91c8082d8106f70ecba08a01da89"
+    },
+    {
+      "path": "evidence/2026-11-14/browser-blockers/system-launch-report.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ui-runtime/system-launch-report.json",
+      "bytes": 5478,
+      "sha256": "5ad547eabae06804f38f0a334352e4126d7ba8f2fe4f26829473374a024a974c"
+    },
+    {
+      "path": "evidence/2026-11-14/browser-blockers/system-launch-traceback.txt",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ui-runtime/system-launch-traceback.txt",
+      "bytes": 6492,
+      "sha256": "f19d6bd4a448d980128f7f7334b7285b2e8626923e2d8a27da835f0205f35208"
+    },
+    {
+      "path": "evidence/2026-11-14/http-initial-harness/http-report.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ui-runtime/http-runs/20261114T121541180124Z/http-report.json",
+      "bytes": 36893,
+      "sha256": "9ed69b3377b43f57c4b3769c94ff807c1ff444a39eedb720c696a79f5bb3861d"
+    },
+    {
+      "path": "evidence/2026-11-14/http-initial-harness/server-stderr.txt",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ui-runtime/http-runs/20261114T121541180124Z/server-stderr.txt",
+      "bytes": 6298,
+      "sha256": "def84747c74feb9d56b19b322abd9525b515061859320aabb4d8bf9bef6156dd"
+    },
+    {
+      "path": "evidence/2026-11-14/http-initial-harness/server-stdout.txt",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ui-runtime/http-runs/20261114T121541180124Z/server-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-11-14/http/http-report.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ui-runtime/http-runs/20261114T121649116413Z/http-report.json",
+      "bytes": 37052,
+      "sha256": "e8e115a7885656049400ef071b5194c279382c694df9a7f8a3ba54859873572b"
+    },
+    {
+      "path": "evidence/2026-11-14/http/server-stderr.txt",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ui-runtime/http-runs/20261114T121649116413Z/server-stderr.txt",
+      "bytes": 6298,
+      "sha256": "848da4b32427cb1c2aafb49aa3ca143f39f5d889778c7235485920c954ad7fa6"
+    },
+    {
+      "path": "evidence/2026-11-14/http/server-stdout.txt",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ui-runtime/http-runs/20261114T121649116413Z/server-stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-11-14/capture-tools/http_probe.py",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-ui-runtime/http_probe.py",
+      "bytes": 22207,
+      "sha256": "0d2f3f9f3b6b323d244e93cc920c8737d98764bdd604d8648c5880a4c7cc8e24"
+    },
+    {
+      "path": "evidence/2026-11-14/final-static/stdout.txt",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/final-static/stdout.txt",
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "path": "evidence/2026-11-14/final-static/stderr.txt",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/final-static/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-11-14/final-static/execution.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/final-static/execution.json",
+      "bytes": 11007,
+      "sha256": "b06368b60796bd8a317f386e000be3193ddb7d828b176ec4008663cabc735046"
+    },
+    {
+      "path": "evidence/2026-11-14/final-javascript/stdout.txt",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/final-javascript/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-11-14/final-javascript/stderr.txt",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/final-javascript/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-11-14/final-javascript/execution.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/final-javascript/execution.json",
+      "bytes": 10966,
+      "sha256": "64195c4789ce9c22bc7d5b46568a24fb5f6b3071b5fbea04a35ec97dabf7dc81"
+    },
+    {
+      "path": "evidence/2026-11-14/http/runtime/run.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/logs/20261114T121648824213Z/run.json",
+      "bytes": 345,
+      "sha256": "23e3182e660cf0cdc4d0159cd553085175dae672ddffa341897273998ecd4d02"
+    },
+    {
+      "path": "evidence/2026-11-14/http/runtime/readiness-query.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/logs/20261114T121648824213Z/readiness-query.json",
+      "bytes": 1047,
+      "sha256": "6486eb5be4148764f8180e4862a304196223c2c58c96f6c790c8bb8ec62699a6"
+    },
+    {
+      "path": "evidence/2026-11-14/http/runtime/postgres.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/logs/20261114T121648824213Z/postgres.log",
+      "bytes": 1173,
+      "sha256": "0d27b1c8bf7c9dcb203d441ed27b6d6cd06c4c9ca5574c9b94f7c1a00d53ee0a"
+    },
+    {
+      "path": "evidence/2026-11-14/http/runtime/start.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/logs/20261114T121648824213Z/start.log",
+      "bytes": 52,
+      "sha256": "66afd0411ccc09366e99fdd99b85f21899c8d2d064f5835126859618802153ad"
+    },
+    {
+      "path": "evidence/2026-11-14/http/runtime/stop.log",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/logs/20261114T121648824213Z/stop.log",
+      "bytes": 56,
+      "sha256": "ca19178a35ab4153b75b494963b66ce8243e1b94c173107c87b44d09db23652d"
+    },
+    {
+      "path": "evidence/2026-11-14/integration-collection/execution.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/integration-collection/execution.json",
+      "bytes": 10995,
+      "sha256": "a10c3f33a15e66ff23585b8c96a0357a77868ea31792815ec80afd3c76eba512"
+    },
+    {
+      "path": "evidence/2026-11-14/integration-collection/stderr.txt",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/integration-collection/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-11-14/integration-collection/stdout.txt",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/integration-collection/stdout.txt",
+      "bytes": 5950,
+      "sha256": "47e2b4e0daacfd44f7369b94ef301037542ad0dfeb95874a63b23d851adf44b9"
+    },
+    {
+      "path": "evidence/2026-11-14/secret-scan.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/publish-secret-scan-complete.json",
+      "bytes": 275,
+      "sha256": "92d970dd87f034a6e3550ebce23c0042d830d18e8b06d7c139b4ea3fce04dac7"
+    },
+    {
+      "path": "evidence/2026-11-14/security/execution.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/final-security/execution.json",
+      "bytes": 11069,
+      "sha256": "c93d77a937a0e95d7f98e3106245dc110dcda2eac9ad42192f85c4d4e1d9f6d0"
+    },
+    {
+      "path": "evidence/2026-11-14/security/scan.json",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/final-security/scan.json",
+      "bytes": 275,
+      "sha256": "6e0a9659c538cfeb8e4e6c30fa69285b55ad6130459a50cd5bef2e97514ce7cb"
+    },
+    {
+      "path": "evidence/2026-11-14/security/stderr.txt",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/final-security/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "evidence/2026-11-14/security/stdout.txt",
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-qualification/final-security/stdout.txt",
+      "bytes": 275,
+      "sha256": "6e0a9659c538cfeb8e4e6c30fa69285b55ad6130459a50cd5bef2e97514ce7cb"
+    }
+  ]
+}

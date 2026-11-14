@@ -1,51 +1,65 @@
 # Acceptance and remaining work
 
-Acceptance is evidence-based. “Implemented” means the code exists; “executed” identifies an actual command; “qualified” requires the corresponding environment and passing invariants. No component hash or automated self-review is an independent certification.
+Acceptance is evidence-based. “Implemented” means the code exists; “executed” identifies an actual command; “qualified” applies only to the corresponding environment and passing invariants. A source hash or implementation-agent review is not independent certification.
 
-## Scope baseline
+## Scope and current decision
 
-Inventory on 2026-11-13: private empty repository, no branches, issues, PRs, code or licence. Scope was published in issue #1 before implementation. No other user repository was modified, and no personal/client system was accessed. Public upstream documentation and release sources were used to check dependencies. All demo records were authored for this repository.
+Inventory on 13 November 2026: private empty repository, no branches, issues, PRs, code or licence. Scope was published in issue #1 before implementation. Only this repository and the provided isolated workspace were used. No personal PC, client data or client system was accessed. All demonstration records are synthetic.
 
-## Execution blockers
+**The native PostgreSQL reference and HTTP boundary are now qualified for the recorded synthetic scenarios. Full project acceptance remains open.** Docker, rendered-browser behavior, Terraform provider-schema validation, live Snowflake behavior and repository publication have separate unmet gates.
 
-The [first CI run](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43524025662) at `d60f423fab56add510ba16933f20497baccd3383` failed before execution: the scope job has no steps and `runner_id: 0`; the database, dependency and container jobs were skipped. There are no artifacts. The connector does not expose its failure annotation, and the isolated browser has no authenticated GitHub session. Billing, quota and policy explanations are unconfirmed hypotheses.
+The 14 November executable inputs match [commit `205e7507`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/205e7507b9cd7dc1b34a858f2c524ce0c832642c), tree `2075183147d1ff50ddfee7e86e99ad7d7bdb367e`. Local and remote trees were compared before the branch advanced. Original file hashes establish correspondence with the tests, native flow and HTTP runs; see [source correspondence](../evidence/2026-11-14/source-correspondence.json).
 
-The local environment independently denies Unix socket creation. PostgreSQL startup and Terraform provider schema loading were blocked by that restriction. Terraform formatting and actual provider installation succeeded; `validate` did not. Snowflake account authorization, credentials, resource scope and spending limit have not been supplied.
+## What changed during qualification
 
-The [evidence index](../evidence/README.md) records commands, source revisions and preserved outputs. An integration test present in the repository is not an executed result.
+The original 112 tests passed against real PostgreSQL 17.12. Further review found a publication-completion gap and a historical-compatibility gap. The historical case was reproduced before correction. The resulting implementation:
 
-The final local capture at `f87abb572c03b5088c466e9c411a23b7c75a8da4` passed 72 tests and 15 subtests, with 40 real-PostgreSQL cases deselected. The [quality run](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43526045051) and [Terraform run](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43526045030) at that same revision both failed before runner execution and produced zero artifacts.
+- Drains publication in at most 100 batches per attempt, completes only at `caught_up=True`, and retains failed/resumable state on budget exhaustion or no progress.
+- Repairs an older incomplete terminal result using its original run identity and checkpoints, within the existing three-attempt limit.
+- Uses the same historical slice interpretation for preview, request validation, execution and golden reconstruction. An incompatible pair retains a dated conflict without aborting unrelated matches.
+- Recomputes candidate disposition when a third member changes, and displays the group conflict in the console's evidence.
+
+Thirteen new PostgreSQL regressions cover those boundaries. The final suite passed **125 tests plus 15 subtests, with zero skipped cases**, including **53 real PostgreSQL integration cases**. A Starlette TestClient deprecation warning remains recorded.
 
 ## Acceptance matrix
 
-| Requirement | Implementation / evidence target | Current acceptance |
+| Requirement | Implementation / original evidence | Current acceptance |
 | --- | --- | --- |
-| Strict versioned composite source keys | `domain.py`, `contracts/source.schema.json`, domain tests | Local unit-qualified |
-| Original / standard / candidates / evidence / decisions / identities / crosswalk separation | Migration, service and architecture | PostgreSQL execution blocked |
-| Three ERPs and difficult negatives | Versioned data/truth; heldout positive and negative pairs | Local unit-qualified; synthetic only |
-| Blocking recall and deterministic/fuzzy comparison | Matching evaluator and benchmarks | Local measured; see evidence |
-| Full-group constraints and attribute authority | Matching + merge/execution rechecks | Domain tests passed; transaction execution blocked |
-| Stable IDs, late changes and bitemporal provenance | Golden and membership history; DB overlap trigger | PostgreSQL execution blocked |
-| Review, separation of duties, merge/unmerge/split | Authenticated console/API and audit ledger | In-process auth tests passed; database and browser execution blocked |
-| Crash/replay/concurrent decisions | Transactional outbox, version checks, source checkpoints | PostgreSQL execution blocked |
-| Consumer correction and source mapping preservation | Reporting projection and explicit corrected events | PostgreSQL execution blocked |
-| Real dbt execution and lineage | Five dbt models, schema tests and SQL invariants | PostgreSQL parse passed; build and data tests not executed |
-| Measured candidate/join/heap/history costs | Bounded control + empty-database profile | Local candidate profile measured; database profile not executed |
-| Reference deployment and operational recovery | Docker Compose, backup/restore and exact fingerprints | Container, browser and restore drill not executed |
-| End-to-end business correlation | HTTP/CLI context, durable run/decision/outbox trace, consumer receipts and snapshot/query links | Implemented; local context tests distinct from blocked durable/provider qualification |
-| Snowflake snapshot + dbt semantics | Validated publication, Terraform, qualification script | Implemented and unit-tested; live run blocked |
-| Terraform configuration and actual provider schema | Dedicated resources, pinned provider and generated lock | Format/install observed; schema validation blocked, no plan/apply |
-| CI dependency/licence/secret controls | Frozen lock, pip-audit, component inventory, history scanner | Local reports preserved; remote CI not executed; declarations are not legal approval |
-| License/visibility/protections/release | Release candidate notes and repository controls | Licence choice pending; private visibility preserved; metadata prepared, not applied |
+| Strict versioned composite source keys | Domain, JSON contracts and tests | Unit-qualified on the recorded lock |
+| Original / standard / candidate / decision / identity / crosswalk separation | Migration and real ledger tests | PostgreSQL-qualified |
+| Three ERPs and difficult negatives | Versioned synthetic inputs and separate truth | Unit-qualified; small synthetic corpus only |
+| Candidate recall and deterministic/fuzzy comparison | Matching evaluator and bounded controls | Measured; no industrial accuracy generalization |
+| Whole-group and historical constraints; authority | Shared temporal preflight, execution checks and regressions | PostgreSQL-qualified, including unrelated-match isolation |
+| Stable IDs, late changes and bitemporal provenance | Lifecycle tests, demo and overlap trigger | PostgreSQL-qualified |
+| Requester/approver/executor, merge/split/unmerge | Real API/database tests and audit ledger | Server workflow qualified; rendered console still pending |
+| Crash/replay/concurrent decisions | Outbox, optimistic versions and source checkpoints | PostgreSQL-qualified |
+| Complete publication and recovery | Bounded drain, durable receipts and legacy-terminal repair | Eight new publication cases passed on PostgreSQL |
+| Consumer correction and retained mappings | Demo and reporting state | 34 of 34 mappings aligned; no outstanding delivery |
+| dbt execution and lineage | Five models, 41 tests, manifest and populated catalog | Live PostgreSQL build passed |
+| Database profile | 300-source workload, real query plan and history growth | Measured locally; limited synthetic distribution |
+| Backup and restore | Native 17.12 clients, 17 table fingerprints and invariants | Restored content equal; 41 restored dbt tests passed; populated target correctly rejected |
+| Native HTTP operation | 24 requests and 127 assertions | Authentication, assets, metrics, trace correlation and graceful shutdown checked |
+| Container reference and rendered console | Compose and Playwright smoke procedure | Not qualified: Docker unavailable; browser startup blocked |
+| Durable business correlation | HTTP/CLI, run, decision, audit, outbox and receipt tests | PostgreSQL/HTTP qualified; live warehouse query links not qualified |
+| Snowflake snapshot and dbt semantics | Publisher, unit boundaries, real PostgreSQL export | Live Snowflake load/readback and parity not executed |
+| Terraform and actual provider schema | Pinned CLI/provider, generated lock | Earlier format/install observed; schema validation blocked; no plan/apply |
+| Dependency/licence/secret controls | Frozen lock, dated audit/inventory and scoped scans | Original local reports retained; remote CI execution remains blocked |
+| Licence, metadata, protections and release | Prepared metadata and release notes | Explicit licence choice pending; repository remains private; no published release |
 
-## Prioritized remaining gates
+## Environment and CI limits
 
-1. Resolve the GitHub runner-admission failure by reading its exact annotation through an authorized signed-in interface, or supply another explicitly authorized isolated runner. Do not change billing, visibility or policy merely to obtain a green check. Execute and review PostgreSQL/dbt/restore/container/browser and Terraform schema results at the delivered code revision; fix observed failures before claiming reference qualification.
-2. Run the dedicated Snowflake qualification with an authorized account, key-pair role, warehouse/database and credit budget. Retain query IDs, timings, provider parity tests and observed credit metrics where available.
-3. Obtain the maintainer's explicit repository licence choice. Public visibility requires a separate authorized change and an anonymous-access check after that change.
-4. Apply the prepared description/topics through a repository-settings-capable interface. Recheck repository protection availability when account capabilities or visibility change; no paid plan is enabled by this project.
-5. Extend the small synthetic holdout with independently labeled, rights-cleared industrial fixtures before any accuracy generalization.
+The earlier inference that Unix socket denial prevented every local server was too broad. A fresh probe established that loopback TCP works. PostgreSQL 17.12 ran with `unix_socket_directories=''` and Uvicorn bound to `127.0.0.1`. The packages came from the signed official PGDG repository; signature, package checksums, binary versions and real readiness queries are retained. No system installation, permission change or external resource was needed.
 
-## Release scope
+Chromium's official Playwright download returned an unavailable-site HTML response. The installed system Chromium was also attempted and aborted when its process singleton required a denied Unix socket. These are explicit failed attempts, not a rendered-interface result. Terraform's previously observed provider startup has the same Unix-socket boundary. Docker is absent.
 
-The code may be reviewed as a reference release candidate while Snowflake remains unverified. Issue #1 must stay open until the full agreed acceptance is complete. A PR self-review is disclosed as such; no independent approval is invented.
+At the qualified source revision, [quality run 43593711716](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711716) and [Terraform run 43593711641](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711641) again failed before runner execution. The failed jobs have `runner_id: 0`, no steps and one check annotation each; artifact collections are empty. The connected endpoint exposes the annotation count but not its text. Billing, quota and policy causes remain unconfirmed. These GitHub runs do not invalidate or replace the separately recorded native runs.
+
+## Remaining gates, in order
+
+1. Read the exact GitHub admission annotation through an authorized signed-in interface and restore runner execution, or use another explicitly authorized isolated runner. Run the delivered code's Docker, rendered-browser and Terraform schema profiles. A docs-only synchronization selects no heavy runtime work; use a full qualification trigger or the source-code run when appropriate. Do not change billing, visibility or policy merely to obtain a green check.
+2. Run the dedicated Snowflake qualification with an authorized account, key-pair role, database/warehouse scope and explicit spending limit. Retain publication/readback/rollback results, dbt parity, query IDs and accessible credit metrics. PostgreSQL export success is not a Snowflake result.
+3. Obtain the maintainer's explicit repository licence choice before publication. Any public-visibility change is a separate authorization and must be followed by an anonymous-access check.
+4. Apply the prepared repository description/topics through a settings-capable interface. Recheck protection availability if account capabilities or visibility change; no paid plan has been enabled.
+5. Extend the small holdout with independently labeled, rights-cleared industrial fixtures before making accuracy or scale claims beyond the measured synthetic profiles.
+
+Issue #1 stays open and PR #2 stays in draft until the full agreed acceptance is met. Implementation-agent reviews are disclosed self-review, not independent approval.

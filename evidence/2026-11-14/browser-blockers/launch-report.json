@@ -1,0 +1,19 @@
+{
+  "started_at": "2026-11-14T12:08:13.541793+00:00",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "playwright": "1.65.1",
+  "browser_path": "/workspace/scratch/fc83c385ce79/p02-ui-runtime/browsers",
+  "launch_kwargs": {},
+  "additional_browser_flags": [],
+  "application_executed": false,
+  "postgres_started": false,
+  "container_executed": false,
+  "docker_executable": null,
+  "screenshots_created": false,
+  "probe_passed": false,
+  "error_type": "Error",
+  "error": "BrowserType.launch: Executable doesn't exist at /workspace/scratch/fc83c385ce79/p02-ui-runtime/browsers/chromium_headless_shell-1254/chrome-headless-shell-linux64/chrome-headless-shell\n\u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n\u2551 Looks like Playwright was just installed or updated.       \u2551\n\u2551 Please run the following command to download new browsers: \u2551\n\u2551                                                            \u2551\n\u2551     playwright install                                     \u2551\n\u2551                                                            \u2551\n\u2551 <3 Playwright Team                                         \u2551\n\u255a\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255d",
+  "duration_seconds": 0.5938661619998129,
+  "completed_at": "2026-11-14T12:08:14.142947+00:00"
+}

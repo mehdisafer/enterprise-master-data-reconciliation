@@ -1,0 +1,26 @@
+{
+  "command": [
+    "bash",
+    "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/scripts/restore.sh",
+    "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/reference.dump",
+    "--expect-db",
+    "mdm_restore",
+    "--report",
+    "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/forbidden-restore.json"
+  ],
+  "cwd": "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation",
+  "database": "mdm",
+  "elapsed_seconds": 0.214633,
+  "expected_returncodes": [
+    1
+  ],
+  "finished_at": "2026-11-14T12:13:16.425839+00:00",
+  "name": "14-reject-second-restore",
+  "output_retained": true,
+  "returncode": 1,
+  "started_at": "2026-11-14T12:13:16.211221+00:00",
+  "status": "passed",
+  "stderr_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/14-reject-second-restore.stderr.log",
+  "stdout_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/14-reject-second-restore.stdout.log",
+  "timed_out": false
+}

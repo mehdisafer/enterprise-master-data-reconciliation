@@ -1,0 +1,8 @@
+{
+  "repository": "https://apt.postgresql.org/pub/repos/apt",
+  "suite": "trixie-pgdg",
+  "key_fingerprint": "B97B0AFCAA1A47F044F244A07FCC7D46ACCC4CF8",
+  "signature_valid": true,
+  "packages_index_sha256": "7025a836c0f0b62c0cb4ef730dc25c9399f5d6b0db29486dfe9cf716b7b253d1",
+  "packages_index_size": 1493618
+}

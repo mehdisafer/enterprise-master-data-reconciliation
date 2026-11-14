@@ -1,0 +1,32 @@
+{
+  "postgres": {
+    "exit_code": 0,
+    "output": "postgres (PostgreSQL) 17.12 (Debian 17.12-1.pgdg13+1)",
+    "path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/packages/usr/lib/postgresql/17/bin/postgres"
+  },
+  "initdb": {
+    "exit_code": 0,
+    "output": "initdb (PostgreSQL) 17.12 (Debian 17.12-1.pgdg13+1)",
+    "path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/packages/usr/lib/postgresql/17/bin/initdb"
+  },
+  "pg_ctl": {
+    "exit_code": 0,
+    "output": "pg_ctl (PostgreSQL) 17.12 (Debian 17.12-1.pgdg13+1)",
+    "path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/packages/usr/lib/postgresql/17/bin/pg_ctl"
+  },
+  "psql": {
+    "exit_code": 0,
+    "output": "psql (PostgreSQL) 17.12 (Debian 17.12-1.pgdg13+1)",
+    "path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/packages/usr/lib/postgresql/17/bin/psql"
+  },
+  "pg_dump": {
+    "exit_code": 0,
+    "output": "pg_dump (PostgreSQL) 17.12 (Debian 17.12-1.pgdg13+1)",
+    "path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/packages/usr/lib/postgresql/17/bin/pg_dump"
+  },
+  "pg_restore": {
+    "exit_code": 0,
+    "output": "pg_restore (PostgreSQL) 17.12 (Debian 17.12-1.pgdg13+1)",
+    "path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/packages/usr/lib/postgresql/17/bin/pg_restore"
+  }
+}

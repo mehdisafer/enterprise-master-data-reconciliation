@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/.venv/bin/python",
+    "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualify_native_flow.py",
+    "--probe",
+    "environment",
+    "--evidence",
+    "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z"
+  ],
+  "cwd": "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation",
+  "database": "mdm",
+  "elapsed_seconds": 0.385413,
+  "expected_returncodes": [
+    0
+  ],
+  "finished_at": "2026-11-14T12:12:56.026559+00:00",
+  "name": "01-environment",
+  "output_retained": true,
+  "returncode": 0,
+  "started_at": "2026-11-14T12:12:55.641160+00:00",
+  "status": "passed",
+  "stderr_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/01-environment.stderr.log",
+  "stdout_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/01-environment.stdout.log",
+  "timed_out": false
+}

@@ -2,7 +2,7 @@
 
 Use a dedicated synthetic database. `mdm demo` is a local operator scenario, not an API shortcut that bypasses real user roles. Its three named demo actors are fixtures; real API calls derive an actor and role from server-side token configuration.
 
-**Execution status:** this scenario is implemented and has real-database assertions, but no successful PostgreSQL run or rendered-console capture has been obtained yet. The local environment forbids sockets and the initial CI run did not receive a runner. This guide describes the reproducible procedure; it is not a recorded successful demonstration.
+**Execution status:** the full scenario ran successfully on PostgreSQL 17.12 on 14 November 2026. Its six assertions and nine database invariants passed. The final state has 34 source identities, 28 active golden records and 34 aligned reporting mappings, with no pending delivery. The [original demonstration](../evidence/2026-11-14/native-flow/demo.json) and [HTTP report](../evidence/2026-11-14/http/http-report.json) preserve the observed results. Rendered-console captures and the Docker deployment remain unqualified.
 
 ## Automatic demonstration
 
@@ -14,7 +14,7 @@ mdm check
 
 The output records baseline ingestion, repeat ingestion, the initial consumer view, mistaken Orion merge, late Northstar correction, a source update after the Orion merge, the unmerge, a committed-but-unpublished state, and the corrected reporting view. It asserts preserved source identities, restored original Orion IDs, the later source address, event replay idempotency and coherent reporting crosswalks.
 
-An interrupted run resumes an existing pending or approved decision instead of recreating it. An executed merge is not replayed. If an unmerge already exists, the procedure completes any remaining transition and consumer publication. Resume output is labeled and does not relabel the current state as an original baseline. Two dedicated integration tests inject failures before unmerge approval and after a committed merge; they remain unexecuted until PostgreSQL is available.
+An interrupted run resumes an existing pending or approved decision instead of recreating it. An executed merge is not replayed. If an unmerge already exists, the procedure completes any remaining transition and consumer publication. Resume output is labeled and does not relabel the current state as an original baseline. The two dedicated PostgreSQL tests injecting failures before unmerge approval and after a committed merge passed in the [full suite](../evidence/2026-11-14/pytest/pytest.xml).
 
 ## Interactive stewardship
 
@@ -45,7 +45,9 @@ The known Orion ambiguity deliberately demonstrates a human mistake and its corr
 
 A manifest must name all three ERP systems. Use JSON `null` for an explicitly unavailable source. The run is marked `degraded`, and existing source rows are retained. Restored source availability requires a new run key because the input manifest changed.
 
-The single application orchestrator records `ingestion`, `reconciliation`, `publication` and `complete` phases. Retrying a failed run uses the same manifest and key, at most three attempts. Raw hashes make a crash after ingestion and before the phase checkpoint safe. A session advisory lock releases automatically when a failed process disconnects. No second scheduler is required by this reference.
+The single application orchestrator records `ingestion`, `reconciliation`, `publication` and `complete` phases. Retrying a failed run uses the same manifest and key, at most three attempts in total. Publication drains at most 100 consumer batches per attempt and cannot complete until `caught_up=True`. A batch limit or an empty batch with an inconsistent projection leaves an explicit failed, resumable publication. Existing complete results are replayed; an older terminal result with incomplete publication is repaired within the same attempt budget.
+
+Raw hashes make a crash after ingestion and before the source checkpoint safe. A session advisory lock releases automatically when a failed process disconnects. No second scheduler is required by this reference. See [ADR 002](adr/002-durable-orchestration.md) for metric scopes and recovery boundaries.
 
 ## Corrections and downstream responsibility
 
