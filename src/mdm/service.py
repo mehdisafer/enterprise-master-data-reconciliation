@@ -9,7 +9,7 @@ import hashlib
 import json
 import re
 from datetime import datetime
-from itertools import combinations
+from itertools import combinations, groupby
 from uuid import UUID, uuid4, uuid5
 
 from psycopg.types.json import Jsonb
@@ -58,6 +58,39 @@ class Service:
         return [SourceRecord.model_validate(row["current_payload"]) for row in conn.execute(
             "SELECT s.current_payload FROM source_records s JOIN memberships m USING(source_key) WHERE m.golden_id=ANY(%s::uuid[]) ORDER BY s.source_key",
             (list(group_ids),))]
+
+    def _business_slices(self, conn, source_keys):
+        """Interpret each business interval from the latest known assertions.
+
+        Preflight and materialization deliberately use the same ordering. A late
+        correction wins within its effective coordinate, never over a later
+        business interval. Records enter the group only when first effective.
+        """
+        originals = list(conn.execute(
+            "SELECT source_key,payload,effective_from FROM raw_records WHERE source_key=ANY(%s) "
+            "ORDER BY effective_from,(payload->>'source_updated_at')::timestamptz,observed_at,raw_id",
+            (list(source_keys),),
+        ))
+        changes = [(start, list(rows)) for start, rows in groupby(originals, key=lambda row: row["effective_from"])]
+        effective = {}
+        for index, (start, assertions) in enumerate(changes):
+            for row in assertions:
+                effective[row["source_key"]] = SourceRecord.model_validate(row["payload"])
+            end = changes[index + 1][0] if index + 1 < len(changes) else None
+            yield start, end, list(effective.values())
+
+    def _merge_conflicts(self, conn, group_ids, *, records=None) -> list[str]:
+        """Return current conflicts or the first incompatible historical slice."""
+        records = self._group_records(conn, group_ids) if records is None else records
+        current = group_conflicts(records)
+        if current:
+            return current
+        for start, end, effective in self._business_slices(conn, [record.key for record in records]):
+            hard = group_conflicts(effective)
+            if hard:
+                interval = f"historical_interval[{start.isoformat()},{end.isoformat() if end else 'unbounded'})"
+                return [f"{interval}:{conflict}" for conflict in hard]
+        return []
 
     @correlated_operation("service.ingest")
     def ingest(self, records: list[SourceRecord]) -> dict:
@@ -130,18 +163,11 @@ class Service:
                    "attributes": {}, "provenance": {}, "conflicts": [], "business_slices": [],
                    "trace": metadata(parent_trace, decision_id=correction_for, event_id=event_id)}
         if keys:
-            originals = list(conn.execute("SELECT source_key,payload,effective_from,observed_at,raw_id FROM raw_records WHERE source_key=ANY(%s) ORDER BY effective_from,(payload->>'source_updated_at')::timestamptz,observed_at,raw_id", (keys,)))
-            boundaries = sorted({row["effective_from"] for row in originals})
-            for index, start in enumerate(boundaries):
-                end = boundaries[index+1] if index+1 < len(boundaries) else None
-                effective = {}
-                for row in originals:
-                    if row["effective_from"] <= start:
-                        effective[row["source_key"]] = SourceRecord.model_validate(row["payload"])
-                hard = group_conflicts(list(effective.values()))
+            for start, end, effective in self._business_slices(conn, keys):
+                hard = group_conflicts(effective)
                 if hard:
                     raise Conflict("historical business interval contains incompatible identities: " + ";".join(hard))
-                attributes, provenance, conflicts = survive(list(effective.values()))
+                attributes, provenance, conflicts = survive(effective)
                 conn.execute("INSERT INTO golden_history VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,NULL)",
                              (uuid4(), group_id, group["version"], Jsonb(attributes), Jsonb(provenance), Jsonb(conflicts), start, end, timestamp))
                 segment = {"valid_from": start.isoformat(), "valid_to": end.isoformat() if end else None,
@@ -303,7 +329,7 @@ class Service:
             conn.execute("SET TRANSACTION ISOLATION LEVEL REPEATABLE READ READ ONLY")
             versions = self._versions(conn, group_ids)
             records = self._group_records(conn, group_ids)
-            hard = group_conflicts(records)
+            hard = self._merge_conflicts(conn, group_ids, records=records)
             attributes, provenance, conflicts = (None, {}, hard) if hard else survive(records)
             block = self._group_policy_block(self._basis(conn, group_ids)["memberships"], self._policy_events(conn))
             return {"group_ids": group_ids, "expected_versions": versions,
@@ -347,7 +373,7 @@ class Service:
             versions = self._versions(conn, group_ids)
             self._assert_versions(versions, expected_versions)
             records = self._group_records(conn, group_ids)
-            conflicts = group_conflicts(records)
+            conflicts = self._merge_conflicts(conn, group_ids, records=records)
             if conflicts:
                 raise Conflict("merge blocked: " + ";".join(conflicts))
             return self._request(conn, "merge", {"group_ids": group_ids, "expected_versions": versions},
@@ -444,7 +470,7 @@ class Service:
         before = {r["source_key"]: str(r["golden_id"]) for r in conn.execute(
             "SELECT source_key,golden_id FROM memberships WHERE golden_id=ANY(%s::uuid[])", (group_ids,))}
         if decision["kind"] in {"merge", "automatic_merge"}:
-            conflicts = group_conflicts(self._group_records(conn, group_ids))
+            conflicts = self._merge_conflicts(conn, group_ids)
             if conflicts:
                 raise Conflict("merge blocked: " + ";".join(conflicts))
             target = min(group_ids)
@@ -520,7 +546,7 @@ class Service:
                     result["reject"] += 1
                     conn.execute("UPDATE candidates SET disposition='reject' WHERE candidate_id=%s", (candidate_id,))
                     continue
-                if group_conflicts(self._group_records(conn, group_ids)):
+                if self._merge_conflicts(conn, group_ids):
                     result["group_conflicts"] += 1
                     conn.execute("UPDATE candidates SET disposition='group_conflict' WHERE candidate_id=%s", (candidate_id,))
                     continue
@@ -561,14 +587,25 @@ class Service:
             "WHERE c.mode=%s AND c.rule_version=%s ORDER BY c.left_key,c.right_key", (mode, RULE_VERSION),
         ))
         policies = self._policy_events(conn) if policies is None else policies
-        basis_cache, block_cache = {}, {}
+        basis_cache, block_cache, conflict_cache = {}, {}, {}
         for row in rows:
             left_group, right_group = str(row["left_golden_id"]), str(row["right_golden_id"])
             row["policy_blocks"] = []
+            row["group_conflicts"] = []
             if left_group == right_group:
                 row["disposition"] = "merged"
                 continue
+            # Another group member may have changed without revising either
+            # endpoint of this candidate. Recompute topology-dependent state.
+            if row["disposition"] != "dismissed":
+                row["disposition"] = row["evidence"]["decision"]
             groups = tuple(sorted((left_group, right_group)))
+            if row["evidence"]["decision"] != "reject":
+                if groups not in conflict_cache:
+                    conflict_cache[groups] = self._merge_conflicts(conn, groups)
+                row["group_conflicts"] = conflict_cache[groups]
+                if row["group_conflicts"]:
+                    row["disposition"] = "group_conflict"
             if policies and row["evidence"]["decision"] != "reject":
                 if groups not in block_cache:
                     for group in groups:

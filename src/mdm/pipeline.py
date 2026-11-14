@@ -10,6 +10,36 @@ from mdm.service import Conflict, Service, digest, now
 from mdm.telemetry import correlated_operation, correlation_scope, emit, metadata
 
 SOURCES = ("ERP_ALPHA", "ERP_BETA", "ERP_GAMMA")
+MAX_PUBLICATION_BATCHES = 100
+
+
+class PublicationIncomplete(RuntimeError):
+    """Publication stopped safely; committed receipts remain usable on retry."""
+
+    def __init__(self, code: str, consumer: dict):
+        self.code = code
+        self.consumer = consumer
+        message = {
+            "publication_no_progress": "publication made no progress while the consumer was not caught up; inspect consumer consistency before retrying the run",
+            "publication_batch_limit": "publication reached its bounded batch limit before the consumer caught up; retry the run to continue",
+        }[code]
+        super().__init__(message)
+
+
+def _drain_publication(service: Service) -> dict:
+    """Drain bounded transactions; never equate an empty batch with consistency."""
+    processed = expanded = 0
+    for batches in range(1, MAX_PUBLICATION_BATCHES + 1):
+        batch = service.consume()
+        processed += batch["processed"]
+        expanded += batch["expanded_for_atomic_corrections"]
+        consumer = {**batch, "processed": processed, "expanded_for_atomic_corrections": expanded,
+                    "publication_batches": batches}
+        if batch["caught_up"]:
+            return consumer
+        if batch["processed"] == 0:
+            raise PublicationIncomplete("publication_no_progress", consumer)
+    raise PublicationIncomplete("publication_batch_limit", consumer)
 
 
 @correlated_operation("pipeline.run")
@@ -37,7 +67,11 @@ def run(service: Service, sources: dict[str, list[SourceRecord] | None], *, run_
                 if prior:
                     if prior["input_hash"] != input_hash:
                         raise Conflict("run key already refers to a different input manifest")
-                    if prior["status"] in {"succeeded", "degraded"}:
+                    # Older versions could mark a single, incomplete publication
+                    # batch as complete. Repair that run using the same identity,
+                    # source checkpoints and three-attempt budget.
+                    if (prior["status"] in {"succeeded", "degraded"}
+                            and prior["result"].get("consumer", {}).get("caught_up") is True):
                         emit("pipeline.replayed", run_id=prior["run_id"],
                              origin_correlation_id=prior["result"].get("trace", {}).get("origin_correlation_id"))
                         return prior["result"]
@@ -45,7 +79,7 @@ def run(service: Service, sources: dict[str, list[SourceRecord] | None], *, run_
                         raise Conflict("run exhausted its three attempts; inspect before creating a new run")
                     run_id = prior["run_id"]
                     run_trace = metadata(prior["result"].get("trace"), run_id=run_id)
-                    conn.execute("UPDATE runs SET status='running',attempts=attempts+1,finished_at=NULL,result=%s WHERE run_id=%s",
+                    conn.execute("UPDATE runs SET status='running',phase='ingestion',attempts=attempts+1,finished_at=NULL,result=%s WHERE run_id=%s",
                                  (Jsonb({**prior["result"], "trace": run_trace}), run_id))
                 else:
                     run_id = uuid4()
@@ -84,7 +118,7 @@ def run(service: Service, sources: dict[str, list[SourceRecord] | None], *, run_
                     with service.db.connect(write=True) as conn:
                         conn.execute("UPDATE runs SET phase='publication' WHERE run_id=%s", (run_id,))
                     emit("pipeline.phase", phase="publication")
-                    consumer = service.consume()
+                    consumer = _drain_publication(service)
                     status = "degraded" if any(v["status"] == "unavailable" for v in source_status.values()) else "succeeded"
                     result = {"run_id": str(run_id), "input_hash": input_hash, "status": status,
                               "sources": source_status, "reconciliation": reconciliation, "consumer": consumer,
@@ -95,9 +129,12 @@ def run(service: Service, sources: dict[str, list[SourceRecord] | None], *, run_
                     emit("pipeline.phase", phase="complete", status=status)
                     return result
                 except Exception as exc:
+                    failure = {"error_type": type(exc).__name__, "trace": metadata()}
+                    if isinstance(exc, PublicationIncomplete):
+                        failure.update(error_code=exc.code, consumer=exc.consumer)
                     with service.db.connect(write=True) as conn:
                         conn.execute("UPDATE runs SET status='failed',result=%s,finished_at=%s WHERE run_id=%s",
-                                     (Jsonb({"error_type": type(exc).__name__, "trace": metadata()}), now(conn), run_id))
+                                     (Jsonb(failure), now(conn), run_id))
                     raise
         finally:
             lease.execute("SELECT pg_advisory_unlock(24022003)")
