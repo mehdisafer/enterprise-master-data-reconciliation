@@ -1,0 +1,32 @@
+INFO:     Started server process [22]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+{"correlation_id":"40f600cc-24ef-49a2-8ac5-5f0fa29be30f","duration_ms":9.361,"event":"http.request","method":"GET","origin_correlation_id":"40f600cc-24ef-49a2-8ac5-5f0fa29be30f","route":"/healthz","status":200,"trace_version":"correlation.v1"}
+{"correlation_id":"b023c851-e60a-4cb9-921a-4e782e0d6afc","duration_ms":1.208,"event":"http.request","method":"GET","origin_correlation_id":"b023c851-e60a-4cb9-921a-4e782e0d6afc","route":"/","status":200,"trace_version":"correlation.v1"}
+{"correlation_id":"635b91db-f84e-427a-9b70-371528ff90a9","duration_ms":0.495,"event":"http.request","method":"GET","origin_correlation_id":"635b91db-f84e-427a-9b70-371528ff90a9","route":"/assets/app.js","status":200,"trace_version":"correlation.v1"}
+{"correlation_id":"e9196cbb-2748-4c4b-9c9e-6c67759b6812","duration_ms":0.422,"event":"http.request","method":"GET","origin_correlation_id":"e9196cbb-2748-4c4b-9c9e-6c67759b6812","route":"/assets/style.css","status":200,"trace_version":"correlation.v1"}
+{"correlation_id":"8938613f-4d38-4c7d-b1c2-329d215752bc","duration_ms":0.733,"event":"http.request","method":"GET","origin_correlation_id":"8938613f-4d38-4c7d-b1c2-329d215752bc","route":"/api/overview","status":401,"trace_version":"correlation.v1"}
+{"correlation_id":"e81ce177-544a-485e-ad2c-d603fc45b3f7","duration_ms":0.374,"event":"http.request","method":"GET","origin_correlation_id":"e81ce177-544a-485e-ad2c-d603fc45b3f7","route":"/api/overview","status":401,"trace_version":"correlation.v1"}
+{"correlation_id":"06f67cbe-230e-40b6-a615-c45438717c3a","duration_ms":0.358,"event":"http.request","method":"GET","origin_correlation_id":"06f67cbe-230e-40b6-a615-c45438717c3a","route":"/api/me","status":401,"trace_version":"correlation.v1"}
+{"correlation_id":"c8ba60ac-86ba-4686-86bc-b631af041578","duration_ms":0.272,"event":"http.request","method":"GET","origin_correlation_id":"c8ba60ac-86ba-4686-86bc-b631af041578","route":"/api/me","status":401,"trace_version":"correlation.v1"}
+{"correlation_id":"3ea9a92e-97df-4741-a877-a9238b411c50","duration_ms":0.345,"event":"http.request","method":"GET","origin_correlation_id":"3ea9a92e-97df-4741-a877-a9238b411c50","route":"/api/openapi.json","status":401,"trace_version":"correlation.v1"}
+{"correlation_id":"2ee94357-da55-4c9f-be7c-602eb1809b5f","duration_ms":0.27,"event":"http.request","method":"GET","origin_correlation_id":"2ee94357-da55-4c9f-be7c-602eb1809b5f","route":"/api/openapi.json","status":401,"trace_version":"correlation.v1"}
+{"correlation_id":"2e499248-5188-44eb-ae09-4b6a4d11fee8","duration_ms":0.381,"event":"http.request","method":"GET","origin_correlation_id":"2e499248-5188-44eb-ae09-4b6a4d11fee8","route":"/metrics","status":401,"trace_version":"correlation.v1"}
+{"correlation_id":"c83efba3-9c21-43ca-919a-6ae99d15f307","duration_ms":0.278,"event":"http.request","method":"GET","origin_correlation_id":"c83efba3-9c21-43ca-919a-6ae99d15f307","route":"/metrics","status":401,"trace_version":"correlation.v1"}
+{"correlation_id":"2188350d-005d-4f45-8650-1eed2320abd7","duration_ms":0.402,"event":"http.request","method":"GET","origin_correlation_id":"2188350d-005d-4f45-8650-1eed2320abd7","route":"/api/me","status":200,"trace_version":"correlation.v1"}
+{"correlation_id":"a1927f97-bcb0-41e6-90fb-eb115a454857","duration_ms":0.393,"event":"http.request","method":"GET","origin_correlation_id":"a1927f97-bcb0-41e6-90fb-eb115a454857","route":"/api/me","status":200,"trace_version":"correlation.v1"}
+{"correlation_id":"71435001-f81a-44b8-b9e1-2f282a8728b2","duration_ms":0.355,"event":"http.request","method":"GET","origin_correlation_id":"71435001-f81a-44b8-b9e1-2f282a8728b2","route":"/api/me","status":200,"trace_version":"correlation.v1"}
+{"correlation_id":"73e1ff86-b560-409c-9a54-efefb8d538ee","duration_ms":0.344,"event":"http.request","method":"GET","origin_correlation_id":"73e1ff86-b560-409c-9a54-efefb8d538ee","route":"/api/me","status":200,"trace_version":"correlation.v1"}
+{"correlation_id":"03cb10d7-b5af-4c43-98f1-fac56148a3b8","duration_ms":79.351,"event":"http.request","method":"GET","origin_correlation_id":"03cb10d7-b5af-4c43-98f1-fac56148a3b8","route":"/api/overview","status":200,"trace_version":"correlation.v1"}
+{"correlation_id":"226f93e1-2eb2-4762-a17b-fd64ea601fce","duration_ms":1.351,"event":"http.request","method":"POST","origin_correlation_id":"226f93e1-2eb2-4762-a17b-fd64ea601fce","route":"/api/reconcile","status":401,"trace_version":"correlation.v1"}
+{"correlation_id":"eb84d0ec-8166-492f-85b6-0e9eb56e7d19","duration_ms":0.592,"event":"http.request","method":"POST","origin_correlation_id":"eb84d0ec-8166-492f-85b6-0e9eb56e7d19","route":"/api/reconcile","status":403,"trace_version":"correlation.v1"}
+{"correlation_id":"38030698-1698-44ad-a504-3a1fa92b73a0","duration_ms":7.81,"event":"http.request","method":"GET","origin_correlation_id":"38030698-1698-44ad-a504-3a1fa92b73a0","route":"/api/golden/{golden_id}/history","status":200,"trace_version":"correlation.v1"}
+{"correlation_id":"c8a75673-f804-4e85-9b98-81f4160ed58e","duration_ms":10.667,"event":"http.request","method":"POST","origin_correlation_id":"c8a75673-f804-4e85-9b98-81f4160ed58e","route":"/api/preview-merge","status":200,"trace_version":"correlation.v1"}
+{"correlation_id":"8e2da222-ef39-484f-b80b-28336ea92672","duration_ms":19.93,"event":"http.request","method":"GET","origin_correlation_id":"8e2da222-ef39-484f-b80b-28336ea92672","route":"/api/openapi.json","status":200,"trace_version":"correlation.v1"}
+{"correlation_id":"b641ef4d-5f88-4a9d-8d5a-7eb1769df6b3","duration_ms":23.545,"event":"http.request","method":"GET","origin_correlation_id":"b641ef4d-5f88-4a9d-8d5a-7eb1769df6b3","route":"/metrics","status":200,"trace_version":"correlation.v1"}
+{"correlation_id":"1ccdd2b8-87bd-483d-b54a-65819ffd525a","duration_ms":84.633,"event":"http.request","method":"GET","origin_correlation_id":"1ccdd2b8-87bd-483d-b54a-65819ffd525a","route":"/api/overview","status":200,"trace_version":"correlation.v1"}
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [22]

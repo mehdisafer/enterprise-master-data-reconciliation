@@ -1,0 +1,23 @@
+[
+  {
+    "package": "dbt-core",
+    "version": "1.12.7",
+    "source_package_path": "dbt_core-1.12.7.dist-info/licenses/LICENSE",
+    "retained_file": "dbt-core-LICENSE.txt",
+    "sha256": "61df8c320dd014fc99ffce5c4a9920fdf24cbb50cace4bc710a43385b88b0eed"
+  },
+  {
+    "package": "dbt-postgres",
+    "version": "1.11.0",
+    "source_package_path": "dbt_postgres-1.11.0.dist-info/licenses/LICENSE",
+    "retained_file": "dbt-postgres-LICENSE.txt",
+    "sha256": "f728e282226159c099bd08dd6a018a0f0ad1a61e7c4167393f66d5490c17a3ab"
+  },
+  {
+    "package": "dbt-adapters",
+    "version": "1.24.5",
+    "source_package_path": "dbt_adapters-1.24.5.dist-info/licenses/LICENSE",
+    "retained_file": "dbt-adapters-LICENSE.txt",
+    "sha256": "f728e282226159c099bd08dd6a018a0f0ad1a61e7c4167393f66d5490c17a3ab"
+  }
+]

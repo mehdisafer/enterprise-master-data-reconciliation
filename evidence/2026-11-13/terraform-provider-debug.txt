@@ -1,0 +1,33 @@
+2026-11-14T00:05:41.148+0100 [INFO]  Terraform version: 1.17.2
+2026-11-14T00:05:41.148+0100 [DEBUG] using github.com/hashicorp/go-tfe v1.112.0
+2026-11-14T00:05:41.148+0100 [DEBUG] using github.com/hashicorp/hcl/v2 v2.24.0
+2026-11-14T00:05:41.148+0100 [DEBUG] using github.com/hashicorp/terraform-svchost v0.2.1
+2026-11-14T00:05:41.148+0100 [DEBUG] using github.com/zclconf/go-cty v1.18.1
+2026-11-14T00:05:41.148+0100 [INFO]  Go runtime version: go1.26.10
+2026-11-14T00:05:41.148+0100 [INFO]  CLI args: []string{"/workspace/scratch/fc83c385ce79/warehouse-terraform-tool/terraform", "-chdir=infra/snowflake", "validate", "-json"}
+2026-11-14T00:05:41.148+0100 [DEBUG] Attempting to open CLI config file: /home/agent/.terraformrc
+2026-11-14T00:05:41.148+0100 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2026-11-14T00:05:41.149+0100 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2026-11-14T00:05:41.149+0100 [DEBUG] ignoring non-existing provider search directory /home/agent/.terraform.d/plugins
+2026-11-14T00:05:41.149+0100 [DEBUG] ignoring non-existing provider search directory /home/agent/.local/share/terraform/plugins
+2026-11-14T00:05:41.149+0100 [DEBUG] ignoring non-existing provider search directory /usr/local/share/terraform/plugins
+2026-11-14T00:05:41.149+0100 [DEBUG] ignoring non-existing provider search directory /usr/share/terraform/plugins
+2026-11-14T00:05:41.151+0100 [INFO]  CLI command args: []string{"validate", "-json"}
+2026-11-14T00:05:41.159+0100 [DEBUG] Using GOMAXPROCS=9 for policy evaluation parallelism
+2026-11-14T00:05:41.159+0100 [DEBUG] ReferenceTransformer: "var.environment_authorized" references: []
+2026-11-14T00:05:41.159+0100 [DEBUG] ReferenceTransformer: "var.prefix" references: []
+2026-11-14T00:05:41.159+0100 [DEBUG] ReferenceTransformer: "var.total_credit_quota" references: []
+2026-11-14T00:05:41.159+0100 [DEBUG] ReferenceTransformer: "" references: []
+2026-11-14T00:05:41.159+0100 [DEBUG] Starting graph walk: walkInit
+2026-11-14T00:05:41.229+0100 [DEBUG] checking for provisioner in "."
+2026-11-14T00:05:41.229+0100 [DEBUG] checking for provisioner in "/workspace/scratch/fc83c385ce79/warehouse-terraform-tool"
+2026-11-14T00:05:41.229+0100 [DEBUG] Using GOMAXPROCS=9 for policy evaluation parallelism
+2026-11-14T00:05:41.229+0100 [DEBUG] created provider logger: level=debug
+2026-11-14T00:05:41.229+0100 [INFO]  provider: configuring client automatic mTLS
+2026-11-14T00:05:41.242+0100 [DEBUG] provider: starting plugin: path=.terraform/providers/registry.terraform.io/snowflakedb/snowflake/2.22.1/linux_amd64/terraform-provider-snowflake_v2.22.1 args=[".terraform/providers/registry.terraform.io/snowflakedb/snowflake/2.22.1/linux_amd64/terraform-provider-snowflake_v2.22.1"]
+2026-11-14T00:05:41.242+0100 [DEBUG] provider: plugin started: path=.terraform/providers/registry.terraform.io/snowflakedb/snowflake/2.22.1/linux_amd64/terraform-provider-snowflake_v2.22.1 pid=17
+2026-11-14T00:05:41.242+0100 [DEBUG] provider: waiting for RPC address: plugin=.terraform/providers/registry.terraform.io/snowflakedb/snowflake/2.22.1/linux_amd64/terraform-provider-snowflake_v2.22.1
+2026-11-14T00:05:41.310+0100 [DEBUG] provider.terraform-provider-snowflake_v2.22.1: 2026/11/14 00:05:41 [INFO] Setting provider version: v2.22.1
+2026-11-14T00:05:41.311+0100 [ERROR] provider.terraform-provider-snowflake_v2.22.1: plugin init error: error="listen unix /tmp/plugin2489195437: socket: operation not permitted" timestamp="2026-11-14T00:05:41.311+0100"
+2026-11-14T00:05:41.313+0100 [WARN]  provider: plugin failed to exit gracefully
+2026-11-14T00:05:41.313+0100 [INFO]  provider: plugin process exited: plugin=.terraform/providers/registry.terraform.io/snowflakedb/snowflake/2.22.1/linux_amd64/terraform-provider-snowflake_v2.22.1 id=17

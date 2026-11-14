@@ -1,0 +1,4 @@
+# Copy outside Git after approval of the account and non-renewing quota.
+environment_authorized = false
+prefix                 = "MDM_DEMO"
+total_credit_quota     = 1

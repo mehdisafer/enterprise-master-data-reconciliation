@@ -1,0 +1,47 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "group_id": {
+      "title": "Group Id",
+      "type": "string"
+    },
+    "partitions": {
+      "items": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "maxItems": 20,
+      "minItems": 2,
+      "title": "Partitions",
+      "type": "array"
+    },
+    "expected_version": {
+      "minimum": 1,
+      "title": "Expected Version",
+      "type": "integer"
+    },
+    "reason": {
+      "maxLength": 2000,
+      "minLength": 1,
+      "title": "Reason",
+      "type": "string"
+    },
+    "idempotency_key": {
+      "maxLength": 160,
+      "minLength": 1,
+      "title": "Idempotency Key",
+      "type": "string"
+    }
+  },
+  "required": [
+    "group_id",
+    "partitions",
+    "expected_version",
+    "reason",
+    "idempotency_key"
+  ],
+  "title": "SplitInput",
+  "type": "object"
+}

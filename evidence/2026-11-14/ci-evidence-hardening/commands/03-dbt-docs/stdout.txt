@@ -1,0 +1,9 @@
+[0m13:45:14  Running with dbt=1.12.7
+[0m13:45:14  Registered adapter: postgres=1.11.0
+[0m13:45:14  Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m13:45:15  Found 5 models, 41 data tests, 2 operations, 16 sources, 482 macros
+[0m13:45:15  
+[0m13:45:15  Concurrency: 2 threads (target='postgres')
+[0m13:45:15  
+[0m13:45:16  Building catalog
+[0m13:45:16  Catalog written to /workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/reference-work/artifacts/dbt-docs/catalog.json

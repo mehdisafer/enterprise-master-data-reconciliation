@@ -1,0 +1,777 @@
+{
+  "schema_version": 1,
+  "repository": "mehdisafer/enterprise-master-data-reconciliation",
+  "observed_from_utc": "2026-11-14 14:03:13 UTC",
+  "observed_to_utc": "2026-11-14 14:03:46 UTC",
+  "scope": "Current GitHub Actions run, job and artifact metadata returned by authenticated read-only GitHub connector; no settings, annotations or logs fetched.",
+  "run_collection": {
+    "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/actions/runs?per_page=100&page=1",
+    "pages_fetched": [
+      1
+    ],
+    "per_page": 100,
+    "reported_total_count": 12,
+    "returned_count": 12,
+    "complete": true,
+    "listing_rechecked_at_end": true,
+    "ids_heads_attempts_statuses_unchanged": true
+  },
+  "summary": {
+    "runs": 12,
+    "run_conclusions": {
+      "failure": 12
+    },
+    "jobs": 33,
+    "job_conclusions": {
+      "failure": 12,
+      "skipped": 21
+    },
+    "runner_ids": {
+      "0": 12,
+      "null": 21
+    },
+    "step_arrays_present_for_all_jobs": true,
+    "total_returned_steps": 0,
+    "jobs_with_nonempty_steps": [],
+    "current_artifacts": 0,
+    "all_job_and_artifact_collections_complete": true,
+    "all_run_attempts_are_one": true
+  },
+  "interpretation": {
+    "observed": "All 33 returned job records explicitly contain steps: []; 12 failed jobs have runner_id 0 and 21 skipped jobs have runner_id null. No executed step is recorded in these job payloads. All 12 current artifact collections are empty.",
+    "logs_fetched": false,
+    "annotations_fetched": false,
+    "limitations": [
+      "This inventory does not inspect or certify workflow log or annotation content.",
+      "No precise admission failure cause is established.",
+      "Zero recorded steps and zero artifacts are not a successful application test result.",
+      "Collection completeness applies to records currently returned by GitHub, not deleted historical records.",
+      "This is an API observation, not an independent runner audit."
+    ]
+  },
+  "runs": [
+    {
+      "id": 43601927242,
+      "name": "Terraform static qualification",
+      "head_sha": "fc67bf68261aee32559c108fb3002ec14c02e3d9",
+      "event": "pull_request",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43601927242",
+      "created_at": "2026-11-14T13:52:21Z",
+      "updated_at": "2026-11-14T13:52:24Z",
+      "jobs_page": {
+        "page": 1,
+        "per_page": 100,
+        "filter": "all",
+        "reported_total_count": 1,
+        "returned_count": 1,
+        "complete": true
+      },
+      "jobs": [
+        {
+          "id": 132468319229,
+          "name": "static",
+          "status": "completed",
+          "conclusion": "failure",
+          "runner_id": 0,
+          "runner_name": "",
+          "runner_group_id": 0,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43601927242/job/132468319229"
+        }
+      ],
+      "artifacts_page": {
+        "page": 1,
+        "per_page": 100,
+        "reported_total_count": 0,
+        "returned_count": 0,
+        "complete": true
+      },
+      "artifacts": []
+    },
+    {
+      "id": 43601927197,
+      "name": "Quality and PostgreSQL qualification",
+      "head_sha": "fc67bf68261aee32559c108fb3002ec14c02e3d9",
+      "event": "pull_request",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43601927197",
+      "created_at": "2026-11-14T13:52:21Z",
+      "updated_at": "2026-11-14T13:52:25Z",
+      "jobs_page": {
+        "page": 1,
+        "per_page": 100,
+        "filter": "all",
+        "reported_total_count": 4,
+        "returned_count": 4,
+        "complete": true
+      },
+      "jobs": [
+        {
+          "id": 132468318962,
+          "name": "scope",
+          "status": "completed",
+          "conclusion": "failure",
+          "runner_id": 0,
+          "runner_name": "",
+          "runner_group_id": 0,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43601927197/job/132468318962"
+        },
+        {
+          "id": 132468330749,
+          "name": "dependencies",
+          "status": "completed",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "runner_name": null,
+          "runner_group_id": null,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43601927197/job/132468330749"
+        },
+        {
+          "id": 132468330888,
+          "name": "container",
+          "status": "completed",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "runner_name": null,
+          "runner_group_id": null,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43601927197/job/132468330888"
+        },
+        {
+          "id": 132468331441,
+          "name": "postgres",
+          "status": "completed",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "runner_name": null,
+          "runner_group_id": null,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43601927197/job/132468331441"
+        }
+      ],
+      "artifacts_page": {
+        "page": 1,
+        "per_page": 100,
+        "reported_total_count": 0,
+        "returned_count": 0,
+        "complete": true
+      },
+      "artifacts": []
+    },
+    {
+      "id": 43595658445,
+      "name": "Quality and PostgreSQL qualification",
+      "head_sha": "e2c4efa9a75756d60459d8b0a7747869e20ca340",
+      "event": "pull_request",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43595658445",
+      "created_at": "2026-11-14T12:36:24Z",
+      "updated_at": "2026-11-14T12:36:28Z",
+      "jobs_page": {
+        "page": 1,
+        "per_page": 100,
+        "filter": "all",
+        "reported_total_count": 4,
+        "returned_count": 4,
+        "complete": true
+      },
+      "jobs": [
+        {
+          "id": 132449462976,
+          "name": "scope",
+          "status": "completed",
+          "conclusion": "failure",
+          "runner_id": 0,
+          "runner_name": "",
+          "runner_group_id": 0,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43595658445/job/132449462976"
+        },
+        {
+          "id": 132449474296,
+          "name": "postgres",
+          "status": "completed",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "runner_name": null,
+          "runner_group_id": null,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43595658445/job/132449474296"
+        },
+        {
+          "id": 132449474434,
+          "name": "dependencies",
+          "status": "completed",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "runner_name": null,
+          "runner_group_id": null,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43595658445/job/132449474434"
+        },
+        {
+          "id": 132449474987,
+          "name": "container",
+          "status": "completed",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "runner_name": null,
+          "runner_group_id": null,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43595658445/job/132449474987"
+        }
+      ],
+      "artifacts_page": {
+        "page": 1,
+        "per_page": 100,
+        "reported_total_count": 0,
+        "returned_count": 0,
+        "complete": true
+      },
+      "artifacts": []
+    },
+    {
+      "id": 43595658439,
+      "name": "Terraform static qualification",
+      "head_sha": "e2c4efa9a75756d60459d8b0a7747869e20ca340",
+      "event": "pull_request",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43595658439",
+      "created_at": "2026-11-14T12:36:24Z",
+      "updated_at": "2026-11-14T12:36:28Z",
+      "jobs_page": {
+        "page": 1,
+        "per_page": 100,
+        "filter": "all",
+        "reported_total_count": 1,
+        "returned_count": 1,
+        "complete": true
+      },
+      "jobs": [
+        {
+          "id": 132449462937,
+          "name": "static",
+          "status": "completed",
+          "conclusion": "failure",
+          "runner_id": 0,
+          "runner_name": "",
+          "runner_group_id": 0,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43595658439/job/132449462937"
+        }
+      ],
+      "artifacts_page": {
+        "page": 1,
+        "per_page": 100,
+        "reported_total_count": 0,
+        "returned_count": 0,
+        "complete": true
+      },
+      "artifacts": []
+    },
+    {
+      "id": 43593711716,
+      "name": "Quality and PostgreSQL qualification",
+      "head_sha": "205e7507b9cd7dc1b34a858f2c524ce0c832642c",
+      "event": "pull_request",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711716",
+      "created_at": "2026-11-14T12:13:07Z",
+      "updated_at": "2026-11-14T12:13:11Z",
+      "jobs_page": {
+        "page": 1,
+        "per_page": 100,
+        "filter": "all",
+        "reported_total_count": 4,
+        "returned_count": 4,
+        "complete": true
+      },
+      "jobs": [
+        {
+          "id": 132443661445,
+          "name": "scope",
+          "status": "completed",
+          "conclusion": "failure",
+          "runner_id": 0,
+          "runner_name": "",
+          "runner_group_id": 0,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711716/job/132443661445"
+        },
+        {
+          "id": 132443675885,
+          "name": "container",
+          "status": "completed",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "runner_name": null,
+          "runner_group_id": null,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711716/job/132443675885"
+        },
+        {
+          "id": 132443675982,
+          "name": "dependencies",
+          "status": "completed",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "runner_name": null,
+          "runner_group_id": null,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711716/job/132443675982"
+        },
+        {
+          "id": 132443676026,
+          "name": "postgres",
+          "status": "completed",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "runner_name": null,
+          "runner_group_id": null,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711716/job/132443676026"
+        }
+      ],
+      "artifacts_page": {
+        "page": 1,
+        "per_page": 100,
+        "reported_total_count": 0,
+        "returned_count": 0,
+        "complete": true
+      },
+      "artifacts": []
+    },
+    {
+      "id": 43593711641,
+      "name": "Terraform static qualification",
+      "head_sha": "205e7507b9cd7dc1b34a858f2c524ce0c832642c",
+      "event": "pull_request",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711641",
+      "created_at": "2026-11-14T12:13:07Z",
+      "updated_at": "2026-11-14T12:13:11Z",
+      "jobs_page": {
+        "page": 1,
+        "per_page": 100,
+        "filter": "all",
+        "reported_total_count": 1,
+        "returned_count": 1,
+        "complete": true
+      },
+      "jobs": [
+        {
+          "id": 132443661334,
+          "name": "static",
+          "status": "completed",
+          "conclusion": "failure",
+          "runner_id": 0,
+          "runner_name": "",
+          "runner_group_id": 0,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711641/job/132443661334"
+        }
+      ],
+      "artifacts_page": {
+        "page": 1,
+        "per_page": 100,
+        "reported_total_count": 0,
+        "returned_count": 0,
+        "complete": true
+      },
+      "artifacts": []
+    },
+    {
+      "id": 43527099576,
+      "name": "Terraform static qualification",
+      "head_sha": "4e0eb447f90a0c4a380a3e8eac8ae8532560685d",
+      "event": "pull_request",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43527099576",
+      "created_at": "2026-11-13T23:26:14Z",
+      "updated_at": "2026-11-13T23:26:18Z",
+      "jobs_page": {
+        "page": 1,
+        "per_page": 100,
+        "filter": "all",
+        "reported_total_count": 1,
+        "returned_count": 1,
+        "complete": true
+      },
+      "jobs": [
+        {
+          "id": 132235446770,
+          "name": "static",
+          "status": "completed",
+          "conclusion": "failure",
+          "runner_id": 0,
+          "runner_name": "",
+          "runner_group_id": 0,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43527099576/job/132235446770"
+        }
+      ],
+      "artifacts_page": {
+        "page": 1,
+        "per_page": 100,
+        "reported_total_count": 0,
+        "returned_count": 0,
+        "complete": true
+      },
+      "artifacts": []
+    },
+    {
+      "id": 43527099561,
+      "name": "Quality and PostgreSQL qualification",
+      "head_sha": "4e0eb447f90a0c4a380a3e8eac8ae8532560685d",
+      "event": "pull_request",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43527099561",
+      "created_at": "2026-11-13T23:26:14Z",
+      "updated_at": "2026-11-13T23:26:18Z",
+      "jobs_page": {
+        "page": 1,
+        "per_page": 100,
+        "filter": "all",
+        "reported_total_count": 4,
+        "returned_count": 4,
+        "complete": true
+      },
+      "jobs": [
+        {
+          "id": 132235446771,
+          "name": "scope",
+          "status": "completed",
+          "conclusion": "failure",
+          "runner_id": 0,
+          "runner_name": "",
+          "runner_group_id": 0,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43527099561/job/132235446771"
+        },
+        {
+          "id": 132235464792,
+          "name": "dependencies",
+          "status": "completed",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "runner_name": null,
+          "runner_group_id": null,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43527099561/job/132235464792"
+        },
+        {
+          "id": 132235465184,
+          "name": "container",
+          "status": "completed",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "runner_name": null,
+          "runner_group_id": null,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43527099561/job/132235465184"
+        },
+        {
+          "id": 132235465309,
+          "name": "postgres",
+          "status": "completed",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "runner_name": null,
+          "runner_group_id": null,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43527099561/job/132235465309"
+        }
+      ],
+      "artifacts_page": {
+        "page": 1,
+        "per_page": 100,
+        "reported_total_count": 0,
+        "returned_count": 0,
+        "complete": true
+      },
+      "artifacts": []
+    },
+    {
+      "id": 43526045051,
+      "name": "Quality and PostgreSQL qualification",
+      "head_sha": "f87abb572c03b5088c466e9c411a23b7c75a8da4",
+      "event": "pull_request",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43526045051",
+      "created_at": "2026-11-13T23:17:52Z",
+      "updated_at": "2026-11-13T23:17:55Z",
+      "jobs_page": {
+        "page": 1,
+        "per_page": 100,
+        "filter": "all",
+        "reported_total_count": 4,
+        "returned_count": 4,
+        "complete": true
+      },
+      "jobs": [
+        {
+          "id": 132231939891,
+          "name": "scope",
+          "status": "completed",
+          "conclusion": "failure",
+          "runner_id": 0,
+          "runner_name": "",
+          "runner_group_id": 0,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43526045051/job/132231939891"
+        },
+        {
+          "id": 132231957635,
+          "name": "postgres",
+          "status": "completed",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "runner_name": null,
+          "runner_group_id": null,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43526045051/job/132231957635"
+        },
+        {
+          "id": 132231959039,
+          "name": "dependencies",
+          "status": "completed",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "runner_name": null,
+          "runner_group_id": null,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43526045051/job/132231959039"
+        },
+        {
+          "id": 132231959613,
+          "name": "container",
+          "status": "completed",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "runner_name": null,
+          "runner_group_id": null,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43526045051/job/132231959613"
+        }
+      ],
+      "artifacts_page": {
+        "page": 1,
+        "per_page": 100,
+        "reported_total_count": 0,
+        "returned_count": 0,
+        "complete": true
+      },
+      "artifacts": []
+    },
+    {
+      "id": 43526045030,
+      "name": "Terraform static qualification",
+      "head_sha": "f87abb572c03b5088c466e9c411a23b7c75a8da4",
+      "event": "pull_request",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43526045030",
+      "created_at": "2026-11-13T23:17:52Z",
+      "updated_at": "2026-11-13T23:17:55Z",
+      "jobs_page": {
+        "page": 1,
+        "per_page": 100,
+        "filter": "all",
+        "reported_total_count": 1,
+        "returned_count": 1,
+        "complete": true
+      },
+      "jobs": [
+        {
+          "id": 132231937811,
+          "name": "static",
+          "status": "completed",
+          "conclusion": "failure",
+          "runner_id": 0,
+          "runner_name": "",
+          "runner_group_id": 0,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43526045030/job/132231937811"
+        }
+      ],
+      "artifacts_page": {
+        "page": 1,
+        "per_page": 100,
+        "reported_total_count": 0,
+        "returned_count": 0,
+        "complete": true
+      },
+      "artifacts": []
+    },
+    {
+      "id": 43526017177,
+      "name": "Quality and PostgreSQL qualification",
+      "head_sha": "f819affe5683f1644649df05475269c0addfb8a1",
+      "event": "pull_request",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43526017177",
+      "created_at": "2026-11-13T23:17:38Z",
+      "updated_at": "2026-11-13T23:17:43Z",
+      "jobs_page": {
+        "page": 1,
+        "per_page": 100,
+        "filter": "all",
+        "reported_total_count": 4,
+        "returned_count": 4,
+        "complete": true
+      },
+      "jobs": [
+        {
+          "id": 132231845154,
+          "name": "scope",
+          "status": "completed",
+          "conclusion": "failure",
+          "runner_id": 0,
+          "runner_name": "",
+          "runner_group_id": 0,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43526017177/job/132231845154"
+        },
+        {
+          "id": 132231867527,
+          "name": "postgres",
+          "status": "completed",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "runner_name": null,
+          "runner_group_id": null,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43526017177/job/132231867527"
+        },
+        {
+          "id": 132231867792,
+          "name": "dependencies",
+          "status": "completed",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "runner_name": null,
+          "runner_group_id": null,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43526017177/job/132231867792"
+        },
+        {
+          "id": 132231868403,
+          "name": "container",
+          "status": "completed",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "runner_name": null,
+          "runner_group_id": null,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43526017177/job/132231868403"
+        }
+      ],
+      "artifacts_page": {
+        "page": 1,
+        "per_page": 100,
+        "reported_total_count": 0,
+        "returned_count": 0,
+        "complete": true
+      },
+      "artifacts": []
+    },
+    {
+      "id": 43524025662,
+      "name": "Quality and PostgreSQL qualification",
+      "head_sha": "d60f423fab56add510ba16933f20497baccd3383",
+      "event": "pull_request",
+      "attempt": 1,
+      "status": "completed",
+      "conclusion": "failure",
+      "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43524025662",
+      "created_at": "2026-11-13T23:02:17Z",
+      "updated_at": "2026-11-13T23:02:21Z",
+      "jobs_page": {
+        "page": 1,
+        "per_page": 100,
+        "filter": "all",
+        "reported_total_count": 4,
+        "returned_count": 4,
+        "complete": true
+      },
+      "jobs": [
+        {
+          "id": 132225180385,
+          "name": "scope",
+          "status": "completed",
+          "conclusion": "failure",
+          "runner_id": 0,
+          "runner_name": "",
+          "runner_group_id": 0,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43524025662/job/132225180385"
+        },
+        {
+          "id": 132225205750,
+          "name": "postgres",
+          "status": "completed",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "runner_name": null,
+          "runner_group_id": null,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43524025662/job/132225205750"
+        },
+        {
+          "id": 132225206396,
+          "name": "container",
+          "status": "completed",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "runner_name": null,
+          "runner_group_id": null,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43524025662/job/132225206396"
+        },
+        {
+          "id": 132225206495,
+          "name": "dependencies",
+          "status": "completed",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "runner_name": null,
+          "runner_group_id": null,
+          "steps": [],
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43524025662/job/132225206495"
+        }
+      ],
+      "artifacts_page": {
+        "page": 1,
+        "per_page": 100,
+        "reported_total_count": 0,
+        "returned_count": 0,
+        "complete": true
+      },
+      "artifacts": []
+    }
+  ]
+}

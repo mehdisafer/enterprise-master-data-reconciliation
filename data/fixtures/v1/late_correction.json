@@ -1,0 +1,22 @@
+{
+  "source_system": "ERP_BETA",
+  "entity_type": "organization",
+  "source_id": "NS-44",
+  "name": "Northstar Industrial Group",
+  "valid_from": "2026-01-15T00:00:00Z",
+  "source_updated_at": "2026-02-14T10:30:00Z",
+  "country": "FR",
+  "registration_id": "fr syn northstar 001",
+  "parent_source_key": null,
+  "address": "22 Rue des Ateliers",
+  "postal_code": "69007",
+  "city": "LYON",
+  "email": "achats@northstar.example",
+  "phone": "0033 4 00 00 00 01",
+  "product_code": null,
+  "manufacturer": null,
+  "unit_of_measure": null,
+  "roles": [
+    "supplier"
+  ]
+}

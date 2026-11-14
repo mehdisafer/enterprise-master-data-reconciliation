@@ -1,0 +1,23 @@
+{
+  "passed": false,
+  "checks": {
+    "exit_code_is_one": true,
+    "completed_within_timeout": true,
+    "restore_verified_is_false": true,
+    "expected_error_type": true,
+    "expected_reason": false,
+    "forbidden_report_absent": true
+  },
+  "returncode": 1,
+  "timeout_seconds": 60,
+  "timed_out": false,
+  "execution_error": null,
+  "response": {
+    "restore_verified": false,
+    "error_type": "OperationError",
+    "reason": "Archive must be a regular file"
+  },
+  "parse_error": null,
+  "stdout_path": "artifacts/second-restore.stdout.txt",
+  "stderr_path": "artifacts/second-restore.stderr.txt"
+}

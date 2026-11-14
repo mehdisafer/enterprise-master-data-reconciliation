@@ -1,0 +1,1 @@
+{"operation": "create_unix_stream_socket", "allowed": false, "error_type": "PermissionError", "errno": 1, "message": "[Errno 1] Operation not permitted"}

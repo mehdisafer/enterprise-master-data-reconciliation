@@ -1,0 +1,35 @@
+version: 2
+models:
+  - name: golden_records
+    description: One current business-time slice per active golden identity, as known now.
+    columns:
+      - name: golden_id
+        data_tests: [not_null, unique]
+      - name: provenance
+        data_tests: [not_null]
+  - name: crosswalk
+    description: Complete retained source identities and their active golden assignment.
+    columns:
+      - name: source_key
+        data_tests: [not_null, unique]
+      - name: golden_id
+        data_tests: [not_null]
+  - name: attribute_lineage
+    description: Per-attribute source, rule, trust and freshness evidence. Includes current business slice only.
+    columns:
+      - name: lineage
+        data_tests: [not_null]
+  - name: consumer_impact
+    description: Consumer-applied state compared with authoritative identity generations.
+    columns:
+      - name: reconciliation_status
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [aligned, unknown_identity, retirement_pending, activation_pending, update_pending, consumer_ahead]
+  - name: quality_report
+    columns:
+      - name: metric
+        data_tests: [not_null, unique]
+      - name: value
+        data_tests: [not_null]

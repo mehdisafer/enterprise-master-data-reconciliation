@@ -1,0 +1,32 @@
+{
+  "command": [
+    "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/.venv/bin/dbt",
+    "build",
+    "--project-dir",
+    "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-project",
+    "--profiles-dir",
+    "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-project",
+    "--target",
+    "postgres",
+    "--log-path",
+    "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-logs/build",
+    "--no-use-colors",
+    "--target-path",
+    "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-target/build"
+  ],
+  "cwd": "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation",
+  "database": "mdm",
+  "elapsed_seconds": 7.141827,
+  "expected_returncodes": [
+    0
+  ],
+  "finished_at": "2026-11-14T12:13:08.514160+00:00",
+  "name": "10-dbt-build",
+  "output_retained": true,
+  "returncode": 0,
+  "started_at": "2026-11-14T12:13:01.372347+00:00",
+  "status": "passed",
+  "stderr_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/10-dbt-build.stderr.log",
+  "stdout_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/10-dbt-build.stdout.log",
+  "timed_out": false
+}

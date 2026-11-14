@@ -1,0 +1,111 @@
+name: Terraform static qualification
+
+on:
+  pull_request:
+    paths:
+      - "infra/snowflake/**"
+      - ".github/workflows/terraform.yml"
+  push:
+    branches: [main]
+    paths:
+      - "infra/snowflake/**"
+      - ".github/workflows/terraform.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: mdm-terraform-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  TF_IN_AUTOMATION: "true"
+  TF_INPUT: "false"
+  CHECKPOINT_DISABLE: "1"
+  TERRAFORM_VERSION: "1.17.2"
+
+jobs:
+  static:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      # Official v4.0.1 tag resolved to this commit. Action licence: MPL-2.0.
+      # https://github.com/hashicorp/setup-terraform/tree/dfe3c3f87815947d99a8997f908cb6525fc44e9e
+      # Terraform CLI 1.17.2: BUSL-1.1; used as a CI tool, not relicensed here.
+      # https://github.com/hashicorp/terraform/blob/v1.17.2/LICENSE
+      - uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4.0.1
+        with:
+          terraform_version: ${{ env.TERRAFORM_VERSION }}
+          terraform_wrapper: false
+      - name: Record tool and source versions
+        run: |
+          mkdir -p artifacts/terraform
+          git rev-parse HEAD > artifacts/terraform/commit.txt
+          terraform version -json > artifacts/terraform/version.json
+      - name: Check formatting
+        id: fmt
+        continue-on-error: true
+        run: terraform -chdir=infra/snowflake fmt -check -diff -no-color > artifacts/terraform/fmt.txt 2>&1
+      - name: Initialize provider without a backend or credentials
+        id: init
+        continue-on-error: true
+        # No cloud variables, credentials, remote state, plan or apply are used.
+        run: terraform -chdir=infra/snowflake init -backend=false -input=false -no-color > artifacts/terraform/init.log 2>&1
+      - name: Validate against the installed provider schema
+        id: validate
+        if: steps.init.outcome == 'success'
+        continue-on-error: true
+        run: terraform -chdir=infra/snowflake validate -json > artifacts/terraform/validate.json
+      - name: Preserve the actual provider schema
+        id: schema
+        if: steps.init.outcome == 'success'
+        continue-on-error: true
+        run: terraform -chdir=infra/snowflake providers schema -json > artifacts/terraform/provider-schema.json
+      - name: Record gate outcomes and generated lock
+        if: always()
+        env:
+          FMT_RESULT: ${{ steps.fmt.outcome }}
+          INIT_RESULT: ${{ steps.init.outcome }}
+          VALIDATE_RESULT: ${{ steps.validate.outcome }}
+          SCHEMA_RESULT: ${{ steps.schema.outcome }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          directory = Path("artifacts/terraform")
+          directory.mkdir(parents=True, exist_ok=True)
+          report = {
+              "scope": "static_configuration_and_provider_schema_only",
+              "cloud_connected": False,
+              "plan_executed": False,
+              "apply_executed": False,
+              "checks": {name: os.environ.get(name.upper() + "_RESULT", "") for name in ("fmt", "init", "validate", "schema")},
+          }
+          report["passed"] = all(value == "success" for value in report["checks"].values())
+          (directory / "checks.json").write_text(json.dumps(report, indent=2) + "\n")
+          lock = Path("infra/snowflake/.terraform.lock.hcl")
+          if lock.is_file():
+              (directory / "provider-lock.hcl").write_bytes(lock.read_bytes())
+          PY
+      - name: Retain diagnostics even when qualification fails
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: terraform-static-${{ github.sha }}
+          path: artifacts/terraform/
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Require every static check to succeed
+        if: always()
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          report = json.loads(Path("artifacts/terraform/checks.json").read_text())
+          print(json.dumps(report["checks"]))
+          raise SystemExit(0 if report["passed"] else 1)
+          PY

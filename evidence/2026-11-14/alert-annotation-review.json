@@ -1,0 +1,22 @@
+{
+  "baseline_source": "205e7507b9cd7dc1b34a858f2c524ce0c832642c",
+  "path": "observability/alerts.yml",
+  "before_sha256": "a23bba6997bf685a368b22441a1731e65ef185bb6617a87d0b487c1dd960bf38",
+  "after_sha256": "917708a4fa1d29632aca64d5a48a0a08f0b12e26d55007e14f7d4bd4a811ea27",
+  "only_annotations_changed": true,
+  "name_expression_duration_labels_unchanged": true,
+  "configuration_deployed": false,
+  "changes": [
+    {
+      "alert": "MdmEventsNeverConsumed",
+      "before": {
+        "summary": "Events remain unconsumed by any consumer",
+        "action": "Run the consumer-specific lag SQL, then drain the confirmed consumer with a bounded consume command."
+      },
+      "after": {
+        "summary": "Events remain pending for the reporting consumer",
+        "action": "Inspect reporting lag with the consumer-specific SQL, then drain reporting with a bounded consume command."
+      }
+    }
+  ]
+}

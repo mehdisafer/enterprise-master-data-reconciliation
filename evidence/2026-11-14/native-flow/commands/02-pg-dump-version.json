@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/packages/usr/lib/postgresql/17/bin/pg_dump",
+    "--version"
+  ],
+  "cwd": "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation",
+  "database": "mdm",
+  "elapsed_seconds": 0.02786,
+  "expected_returncodes": [
+    0
+  ],
+  "finished_at": "2026-11-14T12:12:56.055687+00:00",
+  "name": "02-pg-dump-version",
+  "output_retained": true,
+  "returncode": 0,
+  "started_at": "2026-11-14T12:12:56.027839+00:00",
+  "status": "passed",
+  "stderr_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/02-pg-dump-version.stderr.log",
+  "stdout_path": "/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/commands/02-pg-dump-version.stdout.log",
+  "timed_out": false
+}

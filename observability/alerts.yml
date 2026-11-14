@@ -1,0 +1,35 @@
+groups:
+  - name: enterprise-mdm
+    rules:
+      - alert: MdmScrapeUnavailable
+        expr: up{job="enterprise-mdm"} == 0
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: MDM health or metrics authentication needs investigation
+          action: Check /healthz, reader-token validity, network path and API logs before restarting.
+      - alert: MdmCrosswalkCoverageGap
+        expr: (mdm_crosswalk_coverage < 1) and (mdm_sources > 0)
+        for: 1m
+        labels:
+          severity: critical
+        annotations:
+          summary: Some source identities have no current crosswalk
+          action: Pause publication, run mdm check and inspect the failed run before making a correction.
+      - alert: MdmEventsNeverConsumed
+        expr: mdm_unconsumed_events > 0
+        for: 5m
+        labels:
+          severity: warning
+        annotations:
+          summary: Events remain pending for the reporting consumer
+          action: Inspect reporting lag with the consumer-specific SQL, then drain reporting with a bounded consume command.
+      - alert: MdmReviewBacklogPersists
+        expr: mdm_pending_decisions > 0
+        for: 24h
+        labels:
+          severity: warning
+        annotations:
+          summary: A review backlog has remained nonempty for a day
+          action: Inspect decision age and conflicts in the console; do not approve merely to clear the alert.

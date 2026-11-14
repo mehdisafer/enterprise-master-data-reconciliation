@@ -1,0 +1,136 @@
+{
+  "version": "matching.v1",
+  "executable_metadata": false,
+  "normalization": {
+    "version": "normalization.v1",
+    "rules": [
+      "preserve original field values",
+      "Unicode casefold and NFKD combining-mark removal in comparison projection",
+      "punctuation collapsed to spaces for names/addresses; legal suffixes removed from names",
+      "registration separators removed; leading zeroes preserved",
+      "manufacturer SKU punctuation and leading zeroes preserved; uppercase comparison",
+      "phone punctuation removed; international 00 prefix normalized; no guessed country dialing code",
+      "roles never partition identity"
+    ]
+  },
+  "candidate_generation": {
+    "strategy": "union of identifier, normalized name, distinctive name prefix, contact, full address/postal and postal/name prefix blocks",
+    "max_block_size": 1000,
+    "max_candidates": 1000000,
+    "on_limit": "fail explicitly; do not truncate",
+    "same_source_pairs": true,
+    "exhaustive_evaluator_default_max_records": 1000
+  },
+  "pair_evidence": {
+    "score_is_probability": false,
+    "review_threshold": 0.6,
+    "fuzzy_min_similarity": 0.86,
+    "fuzzy_algorithm": "minimum of both argument orders of Python difflib.SequenceMatcher with autojunk=False",
+    "auto_merge": [
+      "organization: exact registration identifier and jurisdiction",
+      "product: exact manufacturer, manufacturer SKU and unit"
+    ],
+    "fuzzy_auto_merge": false,
+    "weights": {
+      "registration_exact_complete": 0.98,
+      "registration_exact_missing_jurisdiction": 0.65,
+      "manufacturer_product_unit_exact": 0.98,
+      "name_exact": 0.45,
+      "name_fuzzy": "0.45 * normalized name similarity",
+      "address_postal_exact": 0.25,
+      "email_exact": 0.15,
+      "phone_exact": 0.15,
+      "product_code_exact_incomplete": 0.45
+    }
+  },
+  "hard_constraints": [
+    "different entity types",
+    "direct parent/child source identities",
+    "different nonempty legal registration identifiers",
+    "same registration identifier but conflicting known jurisdictions",
+    "same-source, same-change-time organizations with different normalized current names",
+    "products with conflicting known manufacturer, manufacturer SKU or unit"
+  ],
+  "group_constraint": "Evaluate all source pairs before every group mutation; graph connectivity is insufficient.",
+  "survivorship": {
+    "version": "survivorship.v1",
+    "order": [
+      "nonempty",
+      "attribute-specific source authority descending",
+      "source_updated_at descending",
+      "string completeness descending",
+      "source_key lexical ascending"
+    ],
+    "authority": {
+      "name": {
+        "ERP_ALPHA": 300,
+        "ERP_BETA": 200,
+        "ERP_GAMMA": 100
+      },
+      "country": {
+        "ERP_ALPHA": 300,
+        "ERP_BETA": 200,
+        "ERP_GAMMA": 100
+      },
+      "registration_id": {
+        "ERP_ALPHA": 300,
+        "ERP_BETA": 200,
+        "ERP_GAMMA": 100
+      },
+      "parent_source_key": {
+        "ERP_ALPHA": 300,
+        "ERP_BETA": 200,
+        "ERP_GAMMA": 100
+      },
+      "address": {
+        "ERP_ALPHA": 200,
+        "ERP_BETA": 300,
+        "ERP_GAMMA": 100
+      },
+      "postal_code": {
+        "ERP_ALPHA": 200,
+        "ERP_BETA": 300,
+        "ERP_GAMMA": 100
+      },
+      "city": {
+        "ERP_ALPHA": 200,
+        "ERP_BETA": 300,
+        "ERP_GAMMA": 100
+      },
+      "email": {
+        "ERP_ALPHA": 100,
+        "ERP_BETA": 200,
+        "ERP_GAMMA": 300
+      },
+      "phone": {
+        "ERP_ALPHA": 100,
+        "ERP_BETA": 200,
+        "ERP_GAMMA": 300
+      },
+      "product_code": {
+        "ERP_ALPHA": 300,
+        "ERP_BETA": 200,
+        "ERP_GAMMA": 100
+      },
+      "manufacturer": {
+        "ERP_ALPHA": 300,
+        "ERP_BETA": 200,
+        "ERP_GAMMA": 100
+      },
+      "unit_of_measure": {
+        "ERP_ALPHA": 300,
+        "ERP_BETA": 200,
+        "ERP_GAMMA": 100
+      },
+      "entity_type": {
+        "ERP_ALPHA": 300,
+        "ERP_BETA": 200,
+        "ERP_GAMMA": 100
+      }
+    },
+    "roles": "union with contributor provenance",
+    "missing": "null with explicit no-source provenance",
+    "conflicts": "retain normalized disagreements and alternatives"
+  },
+  "truth_policy": "Development and held-out identity groups are disjoint. Neither truth labels nor heldout results are matching inputs."
+}

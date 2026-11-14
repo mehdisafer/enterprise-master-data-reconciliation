@@ -1,0 +1,39 @@
+{
+  "databases": {
+    "mdm": {
+      "address": "127.0.0.1",
+      "initial_source_records": 0,
+      "initial_user_functions": 0,
+      "initial_user_objects": 0,
+      "port": 59701,
+      "version": "PostgreSQL 17.12 (Debian 17.12-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit"
+    },
+    "mdm_load": {
+      "address": "127.0.0.1",
+      "initial_source_records": 0,
+      "initial_user_functions": 0,
+      "initial_user_objects": 0,
+      "port": 59701,
+      "version": "PostgreSQL 17.12 (Debian 17.12-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit"
+    },
+    "mdm_restore": {
+      "address": "127.0.0.1",
+      "initial_source_records": 0,
+      "initial_user_functions": 0,
+      "initial_user_objects": 0,
+      "port": 59701,
+      "version": "PostgreSQL 17.12 (Debian 17.12-1.pgdg13+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit"
+    }
+  },
+  "observed_at": "2026-11-14T12:12:55.973918+00:00",
+  "packages": {
+    "dbt-core": "1.12.7",
+    "dbt-postgres": "1.11.0",
+    "dbt-snowflake": "1.12.5",
+    "fastapi": "0.141.1",
+    "psycopg": "3.3.9"
+  },
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.12.14",
+  "snowflake_live_executed": false
+}

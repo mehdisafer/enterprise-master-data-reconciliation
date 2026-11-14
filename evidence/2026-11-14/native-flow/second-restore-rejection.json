@@ -1,0 +1,9 @@
+{
+  "expected_rejection_observed": true,
+  "forbidden_report_created": false,
+  "original_response": {
+    "error_type": "OperationError",
+    "reason": "Restore target is not empty and isolated",
+    "restore_verified": false
+  }
+}

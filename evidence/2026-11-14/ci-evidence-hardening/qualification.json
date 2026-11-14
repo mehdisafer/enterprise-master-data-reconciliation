@@ -1,0 +1,116 @@
+{
+  "archive_bytes": 132994,
+  "archive_sha256": "1781e8a74abdd579753bb763800f11a702ae1b44b499a51767dc6d711adb16bb",
+  "commands": [
+    {
+      "elapsed_seconds": 2.521682,
+      "expected_returncode": 0,
+      "finished_at": "2026-11-14T13:45:07.230114+00:00",
+      "name": "01-dbt-deps",
+      "returncode": 0,
+      "script_sha256": "77c2f35dd9f75d52886699c8592ced3ba656df312ed5dd0dcd6034ac1050d42b",
+      "started_at": "2026-11-14T13:45:04.708438+00:00",
+      "working_directory": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/reference-work"
+    },
+    {
+      "elapsed_seconds": 5.434845,
+      "expected_returncode": 0,
+      "finished_at": "2026-11-14T13:45:12.665660+00:00",
+      "name": "02-dbt-build",
+      "returncode": 0,
+      "script_sha256": "cf7f1c37921433b09dd6c0f17d26a9f220ca282b5c2b4e3261f193b6a5b5cce1",
+      "started_at": "2026-11-14T13:45:07.230830+00:00",
+      "working_directory": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/reference-work"
+    },
+    {
+      "elapsed_seconds": 4.27837,
+      "expected_returncode": 0,
+      "finished_at": "2026-11-14T13:45:16.945759+00:00",
+      "name": "03-dbt-docs",
+      "returncode": 0,
+      "script_sha256": "e1f1466536f127dad44a1a39a83e5dbdc86c1c077279ca1a3b533e46829f9b48",
+      "started_at": "2026-11-14T13:45:12.667403+00:00",
+      "working_directory": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/reference-work"
+    },
+    {
+      "elapsed_seconds": 0.264724,
+      "expected_returncode": 0,
+      "finished_at": "2026-11-14T13:45:17.213097+00:00",
+      "name": "04-expected-populated-target",
+      "returncode": 0,
+      "script_sha256": "ee37dff810e4ed7cafe95718755d59c287825d9833112a43998343d17a9ff8d8",
+      "started_at": "2026-11-14T13:45:16.948384+00:00",
+      "working_directory": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/reference-work"
+    },
+    {
+      "elapsed_seconds": 0.264627,
+      "expected_returncode": 1,
+      "finished_at": "2026-11-14T13:45:17.480105+00:00",
+      "name": "05-missing-archive",
+      "returncode": 1,
+      "script_sha256": "ee37dff810e4ed7cafe95718755d59c287825d9833112a43998343d17a9ff8d8",
+      "started_at": "2026-11-14T13:45:17.215491+00:00",
+      "working_directory": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/05-missing-archive"
+    },
+    {
+      "elapsed_seconds": 0.475791,
+      "expected_returncode": 1,
+      "finished_at": "2026-11-14T13:45:17.960420+00:00",
+      "name": "06-missing-restore-configuration",
+      "returncode": 1,
+      "script_sha256": "ee37dff810e4ed7cafe95718755d59c287825d9833112a43998343d17a9ff8d8",
+      "started_at": "2026-11-14T13:45:17.484642+00:00",
+      "working_directory": "/workspace/scratch/fc83c385ce79/p02-ci-evidence-runtime/runs/20261114T134504560544Z/06-missing-restore-configuration"
+    }
+  ],
+  "databases_reset": false,
+  "dbt": {
+    "build_artifact_sha256": {
+      "manifest.json": "ca8fc45a45c5d6f25ab0ce9030fd78a07f3b29ec33b5b6119f837ec38d219d57",
+      "run_results.json": "1d4b4de7f8e25c95976dc1775060d73e14d3194e34eb2648852f6fee95cc8309"
+    },
+    "build_invocation_id": "5b9f6f5d-0fbe-4183-9ad4-ff4a98dbbfae",
+    "build_status_counts": {
+      "pass": 41,
+      "success": 7
+    },
+    "build_unchanged_after_docs": true,
+    "catalog_models": 5,
+    "catalog_sources": 16,
+    "docs_invocation_id": "80dcd0d9-181f-483d-9a17-a89c722363ad",
+    "docs_status_counts": {
+      "success": 48
+    }
+  },
+  "failure_controls": [
+    {
+      "name": "05-missing-archive",
+      "reason": "Archive must be a regular file",
+      "restore_exit": 1,
+      "workflow_exit": 1,
+      "wrong_failure_rejected": true
+    },
+    {
+      "name": "06-missing-restore-configuration",
+      "reason": "MDM_RESTORE_DATABASE_URL or MDM_RESTORE_DATABASE_URL_FILE is required",
+      "restore_exit": 1,
+      "workflow_exit": 1,
+      "wrong_failure_rejected": true
+    }
+  ],
+  "finished_at": "2026-11-14T13:45:18.029258+00:00",
+  "input_file_count": 24,
+  "operational_tables_unchanged": true,
+  "passed": true,
+  "populated_target_control": {
+    "expected_reason": "Restore target is not empty and isolated",
+    "restore_exit": 1,
+    "workflow_exit": 0
+  },
+  "restore_positive_case_reexecuted": false,
+  "runtime_difference": "Native PG 17.12 clients and private passfile replace CI service-container clients; uv uses the same frozen installed project environment.",
+  "scope": "selected_workflow_commands_on_native_PostgreSQL_not_GitHub_or_Docker",
+  "source_inputs_unchanged": true,
+  "started_at": "2026-11-14T13:45:04.560498+00:00",
+  "workflow_sha256": "8d713e6e9756668d03ff4c328b9f9b507f5a69d5128939a1bbfc107dbf734969"
+}

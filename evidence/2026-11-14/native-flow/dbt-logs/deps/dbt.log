@@ -1,0 +1,10 @@
+
+
+============================== 13:13:00.853142 | f54113fc-06f8-478a-bb7a-167b0516f01a ==============================
+13:13:00.853142 [info ] [MainThread]: Running with dbt=1.12.7
+13:13:00.901630 [debug] [MainThread]: running dbt with arguments {'fail_fast': 'False', 'log_format': 'default', 'send_anonymous_usage_stats': 'False', 'debug': 'False', 'quiet': 'False', 'write_json': 'True', 'log_path': '/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-logs/deps', 'profiles_dir': '/workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-project', 'warn_error': 'None', 'maximum_seed_size_mib': '1', 'version_check': 'True', 'use_colors': 'False', 'partial_parse': 'True', 'printer_width': '80', 'log_cache_events': 'False', 'hints_enabled': 'True', 'invocation_command': 'dbt deps --project-dir /workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-project --profiles-dir /workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-project --target postgres --log-path /workspace/scratch/fc83c385ce79/p02-postgres-runtime/qualification/20261114T121255604194Z/dbt-logs/deps --no-use-colors', 'static_parser': 'True', 'no_print': 'None', 'target_path': 'None', 'cache_selected_only': 'False', 'introspect': 'True', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'empty': 'None'}
+13:13:01.054447 [info ] [MainThread]: Warning: No packages were found in packages.yml
+13:13:01.055352 [info ] [MainThread]: Warning: No packages were found in packages.yml
+13:13:01.056033 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_success": true, "command_wall_clock_time": 0.26302856, "process_in_blocks": "60384", "process_kernel_time": 0.353325, "process_mem_max_rss": "119088", "process_out_blocks": "1472", "process_user_time": 1.372772}
+13:13:01.056432 [debug] [MainThread]: Command `dbt deps` succeeded at 13:13:01.056370 after 0.26 seconds
+13:13:01.056836 [debug] [MainThread]: Flushing usage events

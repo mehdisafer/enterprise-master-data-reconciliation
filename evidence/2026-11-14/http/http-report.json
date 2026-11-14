@@ -1,0 +1,1170 @@
+{
+  "run_id": "20261114T121649116413Z",
+  "started_at": "2026-11-14T12:16:49.118656+00:00",
+  "passed": true,
+  "transport": "real HTTP over loopback TCP",
+  "host": "127.0.0.1",
+  "port": 8000,
+  "application_executed": true,
+  "browser_executed": false,
+  "screenshots_created": false,
+  "container_executed": false,
+  "postgres_started_by_this_script": false,
+  "readiness_endpoint": "/healthz",
+  "readiness_contract": "database connection and schema migration version 1 present",
+  "separate_ready_endpoint": false,
+  "python": "3.12.14",
+  "packages": {
+    "uvicorn": "0.52.1",
+    "fastapi": "0.141.1",
+    "psycopg": "3.3.9"
+  },
+  "inputs_sha256": {
+    "src/mdm/__init__.py": "7303b14e2e24d4141723719419e3c0e80421f2be09565045cb7f3283f875f782",
+    "src/mdm/api.py": "b2b8c641e9a8038ce982036267251e47bd40a85ad284944513f928ee2c5b5f0a",
+    "src/mdm/benchmark.py": "b417bae40b9a0e142cc6b05f28236e341d99ce4a62af972f664152506114fefe",
+    "src/mdm/cli.py": "19ec878bb6d10804113773772c7909636b6bc00bdc617f67854fd620ec74b2f5",
+    "src/mdm/config.py": "fd443176e130cf14acf2c60a03545b62ed5614546d86f1bd35dd4bd2f1e0bae4",
+    "src/mdm/db.py": "c8c63e904c3432dfa947719eb52b1fbc9a3c623fb9c53bf326fbf917b820e528",
+    "src/mdm/demo.py": "43bbae4cf94f7b9efb2896341b530b3aa32ab31aa0b23f76c5f5726fd532d0db",
+    "src/mdm/domain.py": "57adf88d8005251ffe38d38055f8dfd5d11919547747a6bf5daef157d8b1b1ad",
+    "src/mdm/matching.py": "e7a5fbacdbef6abdec27e893fa56319d691e625bb8cad38c563e6740dae9543d",
+    "src/mdm/pipeline.py": "435f3daf13800c014b3f1973138a7a71d3f0bcd7e90b8fc7f103e9c79e43665a",
+    "src/mdm/service.py": "b2acb1f330340d5656f880b7328a104bb96258ab094faed794fbc5eb2af8c451",
+    "src/mdm/snowflake.py": "a2b56e23fad2783e7f3d33faa0ffe70fd20289d15ae1361c647c9ca2e7519d40",
+    "src/mdm/sql/001.sql": "7ed5e8b83b6950b6c02a89ff3c214a36834642f91f4dc9ec2d089004f8d242c2",
+    "src/mdm/static/app.js": "da12565496ba0d93ad263ea93ae8d549090de4206e0df7f9bd1a58a30a58d417",
+    "src/mdm/static/index.html": "a609c62462dd867725ec91ab6cc4730ef910ddf6279655a13e49b6bc969420f4",
+    "src/mdm/static/style.css": "c06f77b8ab476873e68719eb7096e1c54a8aab70788f57f59407e6ecaa28d3f7",
+    "src/mdm/synthetic.py": "ff1bace5381dd2c405bbe265ace216b4a23926f932698c7f1605ccab52458a41",
+    "src/mdm/telemetry.py": "255053987f6433ce5c22c460409dfbeb8d6f3c4de4060490f42e8c49de6c27e2",
+    "pyproject.toml": "fd43850080918aea27625f24189218b7b907f97e9e5495f59803b5baf97043bb",
+    "uv.lock": "1f426547ffd38cd930b6aaa9964663e46971fa6b5c64a34b4f7e195049673eb0"
+  },
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/healthz",
+      "authentication": "absent",
+      "status": 200,
+      "response_bytes": 15,
+      "response_sha256": "a29ee2b15c494311c52521766e44af56a3ad2248e7a8ab465e5206463c13d288",
+      "headers": {
+        "content-length": "15",
+        "content-type": "application/json",
+        "x-correlation-id": "40f600cc-24ef-49a2-8ac5-5f0fa29be30f",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 43.628
+    },
+    {
+      "method": "GET",
+      "path": "/",
+      "authentication": "absent",
+      "status": 200,
+      "response_bytes": 2228,
+      "response_sha256": "a609c62462dd867725ec91ab6cc4730ef910ddf6279655a13e49b6bc969420f4",
+      "headers": {
+        "content-length": "2228",
+        "content-type": "text/html; charset=utf-8",
+        "x-correlation-id": "b023c851-e60a-4cb9-921a-4e782e0d6afc",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 2.916
+    },
+    {
+      "method": "GET",
+      "path": "/assets/app.js",
+      "authentication": "absent",
+      "status": 200,
+      "response_bytes": 12884,
+      "response_sha256": "da12565496ba0d93ad263ea93ae8d549090de4206e0df7f9bd1a58a30a58d417",
+      "headers": {
+        "content-length": "12884",
+        "content-type": "text/javascript; charset=utf-8",
+        "x-correlation-id": "635b91db-f84e-427a-9b70-371528ff90a9",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 1.247
+    },
+    {
+      "method": "GET",
+      "path": "/assets/style.css",
+      "authentication": "absent",
+      "status": 200,
+      "response_bytes": 5857,
+      "response_sha256": "c06f77b8ab476873e68719eb7096e1c54a8aab70788f57f59407e6ecaa28d3f7",
+      "headers": {
+        "content-length": "5857",
+        "content-type": "text/css; charset=utf-8",
+        "x-correlation-id": "e9196cbb-2748-4c4b-9c9e-6c67759b6812",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 0.949
+    },
+    {
+      "method": "GET",
+      "path": "/api/overview",
+      "authentication": "absent",
+      "status": 401,
+      "response_bytes": 50,
+      "response_sha256": "a1e00a7ee949bd4ee424cb4f055fa910ae106f821ad4b521422ac1989ff43895",
+      "headers": {
+        "www-authenticate": "Bearer",
+        "content-length": "50",
+        "content-type": "application/json",
+        "x-correlation-id": "8938613f-4d38-4c7d-b1c2-329d215752bc",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 1.242
+    },
+    {
+      "method": "GET",
+      "path": "/api/overview",
+      "authentication": "invalid bearer",
+      "status": 401,
+      "response_bytes": 50,
+      "response_sha256": "a1e00a7ee949bd4ee424cb4f055fa910ae106f821ad4b521422ac1989ff43895",
+      "headers": {
+        "www-authenticate": "Bearer",
+        "content-length": "50",
+        "content-type": "application/json",
+        "x-correlation-id": "e81ce177-544a-485e-ad2c-d603fc45b3f7",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 0.823
+    },
+    {
+      "method": "GET",
+      "path": "/api/me",
+      "authentication": "absent",
+      "status": 401,
+      "response_bytes": 50,
+      "response_sha256": "a1e00a7ee949bd4ee424cb4f055fa910ae106f821ad4b521422ac1989ff43895",
+      "headers": {
+        "www-authenticate": "Bearer",
+        "content-length": "50",
+        "content-type": "application/json",
+        "x-correlation-id": "06f67cbe-230e-40b6-a615-c45438717c3a",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 0.796
+    },
+    {
+      "method": "GET",
+      "path": "/api/me",
+      "authentication": "invalid bearer",
+      "status": 401,
+      "response_bytes": 50,
+      "response_sha256": "a1e00a7ee949bd4ee424cb4f055fa910ae106f821ad4b521422ac1989ff43895",
+      "headers": {
+        "www-authenticate": "Bearer",
+        "content-length": "50",
+        "content-type": "application/json",
+        "x-correlation-id": "c8ba60ac-86ba-4686-86bc-b631af041578",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 0.727
+    },
+    {
+      "method": "GET",
+      "path": "/api/openapi.json",
+      "authentication": "absent",
+      "status": 401,
+      "response_bytes": 50,
+      "response_sha256": "a1e00a7ee949bd4ee424cb4f055fa910ae106f821ad4b521422ac1989ff43895",
+      "headers": {
+        "www-authenticate": "Bearer",
+        "content-length": "50",
+        "content-type": "application/json",
+        "x-correlation-id": "3ea9a92e-97df-4741-a877-a9238b411c50",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 0.79
+    },
+    {
+      "method": "GET",
+      "path": "/api/openapi.json",
+      "authentication": "invalid bearer",
+      "status": 401,
+      "response_bytes": 50,
+      "response_sha256": "a1e00a7ee949bd4ee424cb4f055fa910ae106f821ad4b521422ac1989ff43895",
+      "headers": {
+        "www-authenticate": "Bearer",
+        "content-length": "50",
+        "content-type": "application/json",
+        "x-correlation-id": "2ee94357-da55-4c9f-be7c-602eb1809b5f",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 0.691
+    },
+    {
+      "method": "GET",
+      "path": "/metrics",
+      "authentication": "absent",
+      "status": 401,
+      "response_bytes": 50,
+      "response_sha256": "a1e00a7ee949bd4ee424cb4f055fa910ae106f821ad4b521422ac1989ff43895",
+      "headers": {
+        "www-authenticate": "Bearer",
+        "content-length": "50",
+        "content-type": "application/json",
+        "x-correlation-id": "2e499248-5188-44eb-ae09-4b6a4d11fee8",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 0.795
+    },
+    {
+      "method": "GET",
+      "path": "/metrics",
+      "authentication": "invalid bearer",
+      "status": 401,
+      "response_bytes": 50,
+      "response_sha256": "a1e00a7ee949bd4ee424cb4f055fa910ae106f821ad4b521422ac1989ff43895",
+      "headers": {
+        "www-authenticate": "Bearer",
+        "content-length": "50",
+        "content-type": "application/json",
+        "x-correlation-id": "c83efba3-9c21-43ca-919a-6ae99d15f307",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 0.755
+    },
+    {
+      "method": "GET",
+      "path": "/api/me",
+      "authentication": "requester",
+      "status": 200,
+      "response_bytes": 44,
+      "response_sha256": "0846458f7ca4ea3d768713aa62d555f69d6150218c0986b6518596eb535547b2",
+      "headers": {
+        "content-length": "44",
+        "content-type": "application/json",
+        "x-correlation-id": "2188350d-005d-4f45-8650-1eed2320abd7",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 0.847
+    },
+    {
+      "method": "GET",
+      "path": "/api/me",
+      "authentication": "approver",
+      "status": 200,
+      "response_bytes": 42,
+      "response_sha256": "c0a8bb7c40ae03b1fc1be3a4272561e3cd2f70db18525a9bff68e3963b0d15f8",
+      "headers": {
+        "content-length": "42",
+        "content-type": "application/json",
+        "x-correlation-id": "a1927f97-bcb0-41e6-90fb-eb115a454857",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 0.839
+    },
+    {
+      "method": "GET",
+      "path": "/api/me",
+      "authentication": "executor",
+      "status": 200,
+      "response_bytes": 42,
+      "response_sha256": "81c950f414cd3f9b6474a2c9c5833a7e8920203024f87cc2ba3fed3cf005f7a3",
+      "headers": {
+        "content-length": "42",
+        "content-type": "application/json",
+        "x-correlation-id": "71435001-f81a-44b8-b9e1-2f282a8728b2",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 0.757
+    },
+    {
+      "method": "GET",
+      "path": "/api/me",
+      "authentication": "reader",
+      "status": 200,
+      "response_bytes": 38,
+      "response_sha256": "0d6742e36e13e225dc10a7ff20014a03914a0e8674854cda9878083c453e1bdc",
+      "headers": {
+        "content-length": "38",
+        "content-type": "application/json",
+        "x-correlation-id": "73e1ff86-b560-409c-9a54-efefb8d538ee",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 0.78
+    },
+    {
+      "method": "GET",
+      "path": "/api/overview",
+      "authentication": "requester",
+      "status": 200,
+      "response_bytes": 419986,
+      "response_sha256": "67f02fcfc98a60b6b6ec92a04b4443ce895135aebebc2baf406c670ce5a667b6",
+      "headers": {
+        "content-length": "419986",
+        "content-type": "application/json",
+        "x-correlation-id": "03cb10d7-b5af-4c43-98f1-fac56148a3b8",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 80.835
+    },
+    {
+      "method": "POST",
+      "path": "/api/reconcile",
+      "authentication": "absent",
+      "status": 401,
+      "response_bytes": 50,
+      "response_sha256": "a1e00a7ee949bd4ee424cb4f055fa910ae106f821ad4b521422ac1989ff43895",
+      "headers": {
+        "www-authenticate": "Bearer",
+        "content-length": "50",
+        "content-type": "application/json",
+        "x-correlation-id": "226f93e1-2eb2-4762-a17b-fd64ea601fce",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 2.2
+    },
+    {
+      "method": "POST",
+      "path": "/api/reconcile",
+      "authentication": "requester",
+      "status": 403,
+      "response_bytes": 42,
+      "response_sha256": "b5593f67df67733184f07b5f868c88515989886191b340aaa786e3a56b76df29",
+      "headers": {
+        "content-length": "42",
+        "content-type": "application/json",
+        "x-correlation-id": "eb84d0ec-8166-492f-85b6-0e9eb56e7d19",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 1.136
+    },
+    {
+      "method": "GET",
+      "path": "/api/golden/01e6bcef-506d-5bd3-af57-28d1d71fe58d/history",
+      "authentication": "requester",
+      "status": 200,
+      "response_bytes": 3759,
+      "response_sha256": "da5d7e75e5107dc01e26a5e865d880964610c8fef1759ae5c3a57f8fe75f4e8c",
+      "headers": {
+        "content-length": "3759",
+        "content-type": "application/json",
+        "x-correlation-id": "38030698-1698-44ad-a504-3a1fa92b73a0",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 8.428
+    },
+    {
+      "method": "POST",
+      "path": "/api/preview-merge",
+      "authentication": "requester",
+      "status": 200,
+      "response_bytes": 780,
+      "response_sha256": "cb926acba70320483a0a1172edaf963dc53831402041a2dd854f7d9b6160606e",
+      "headers": {
+        "content-length": "780",
+        "content-type": "application/json",
+        "x-correlation-id": "c8a75673-f804-4e85-9b98-81f4160ed58e",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 11.258
+    },
+    {
+      "method": "GET",
+      "path": "/api/openapi.json",
+      "authentication": "reader",
+      "status": 200,
+      "response_bytes": 12638,
+      "response_sha256": "361f4e969a14c2265f24a3ae57b75465b1c29a58f84a92fe5bee0adeb54a9a28",
+      "headers": {
+        "content-length": "12638",
+        "content-type": "application/json",
+        "x-correlation-id": "8e2da222-ef39-484f-b80b-28336ea92672",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 20.843
+    },
+    {
+      "method": "GET",
+      "path": "/metrics",
+      "authentication": "reader",
+      "status": 200,
+      "response_bytes": 297,
+      "response_sha256": "a61a1d4c810a11dd49c323f3ec2b6d4cd9fc981ee78230abbac2a9ab20d58c80",
+      "headers": {
+        "content-length": "297",
+        "content-type": "text/plain; charset=utf-8",
+        "x-correlation-id": "b641ef4d-5f88-4a9d-8d5a-7eb1769df6b3",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 24.429
+    },
+    {
+      "method": "GET",
+      "path": "/api/overview",
+      "authentication": "reader",
+      "status": 200,
+      "response_bytes": 419986,
+      "response_sha256": "67f02fcfc98a60b6b6ec92a04b4443ce895135aebebc2baf406c670ce5a667b6",
+      "headers": {
+        "content-length": "419986",
+        "content-type": "application/json",
+        "x-correlation-id": "1ccdd2b8-87bd-483d-b54a-65819ffd525a",
+        "x-content-type-options": "nosniff",
+        "referrer-policy": "no-referrer",
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'"
+      },
+      "duration_ms": 85.984
+    }
+  ],
+  "checks": [
+    {
+      "name": "dedicated local database target",
+      "passed": true
+    },
+    {
+      "name": "private ephemeral actor files",
+      "passed": true
+    },
+    {
+      "name": "bounded response GET /healthz",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /healthz",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /healthz",
+      "passed": true
+    },
+    {
+      "name": "security response headers /healthz",
+      "passed": true
+    },
+    {
+      "name": "live database readiness",
+      "passed": true
+    },
+    {
+      "name": "bounded response GET /",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /",
+      "passed": true
+    },
+    {
+      "name": "security response headers /",
+      "passed": true
+    },
+    {
+      "name": "served source asset /",
+      "passed": true,
+      "observed": {
+        "source_file": "src/mdm/static/index.html",
+        "bytes": 2228,
+        "sha256": "a609c62462dd867725ec91ab6cc4730ef910ddf6279655a13e49b6bc969420f4"
+      }
+    },
+    {
+      "name": "bounded response GET /assets/app.js",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /assets/app.js",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /assets/app.js",
+      "passed": true
+    },
+    {
+      "name": "security response headers /assets/app.js",
+      "passed": true
+    },
+    {
+      "name": "served source asset /assets/app.js",
+      "passed": true,
+      "observed": {
+        "source_file": "src/mdm/static/app.js",
+        "bytes": 12884,
+        "sha256": "da12565496ba0d93ad263ea93ae8d549090de4206e0df7f9bd1a58a30a58d417"
+      }
+    },
+    {
+      "name": "bounded response GET /assets/style.css",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /assets/style.css",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /assets/style.css",
+      "passed": true
+    },
+    {
+      "name": "security response headers /assets/style.css",
+      "passed": true
+    },
+    {
+      "name": "served source asset /assets/style.css",
+      "passed": true,
+      "observed": {
+        "source_file": "src/mdm/static/style.css",
+        "bytes": 5857,
+        "sha256": "c06f77b8ab476873e68719eb7096e1c54a8aab70788f57f59407e6ecaa28d3f7"
+      }
+    },
+    {
+      "name": "bounded response GET /api/overview",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /api/overview",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /api/overview",
+      "passed": true
+    },
+    {
+      "name": "security response headers /api/overview",
+      "passed": true
+    },
+    {
+      "name": "authentication denied /api/overview absent",
+      "passed": true
+    },
+    {
+      "name": "bounded response GET /api/overview",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /api/overview",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /api/overview",
+      "passed": true
+    },
+    {
+      "name": "security response headers /api/overview",
+      "passed": true
+    },
+    {
+      "name": "authentication denied /api/overview invalid",
+      "passed": true
+    },
+    {
+      "name": "bounded response GET /api/me",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /api/me",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /api/me",
+      "passed": true
+    },
+    {
+      "name": "security response headers /api/me",
+      "passed": true
+    },
+    {
+      "name": "authentication denied /api/me absent",
+      "passed": true
+    },
+    {
+      "name": "bounded response GET /api/me",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /api/me",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /api/me",
+      "passed": true
+    },
+    {
+      "name": "security response headers /api/me",
+      "passed": true
+    },
+    {
+      "name": "authentication denied /api/me invalid",
+      "passed": true
+    },
+    {
+      "name": "bounded response GET /api/openapi.json",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /api/openapi.json",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /api/openapi.json",
+      "passed": true
+    },
+    {
+      "name": "security response headers /api/openapi.json",
+      "passed": true
+    },
+    {
+      "name": "authentication denied /api/openapi.json absent",
+      "passed": true
+    },
+    {
+      "name": "bounded response GET /api/openapi.json",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /api/openapi.json",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /api/openapi.json",
+      "passed": true
+    },
+    {
+      "name": "security response headers /api/openapi.json",
+      "passed": true
+    },
+    {
+      "name": "authentication denied /api/openapi.json invalid",
+      "passed": true
+    },
+    {
+      "name": "bounded response GET /metrics",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /metrics",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /metrics",
+      "passed": true
+    },
+    {
+      "name": "security response headers /metrics",
+      "passed": true
+    },
+    {
+      "name": "authentication denied /metrics absent",
+      "passed": true
+    },
+    {
+      "name": "bounded response GET /metrics",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /metrics",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /metrics",
+      "passed": true
+    },
+    {
+      "name": "security response headers /metrics",
+      "passed": true
+    },
+    {
+      "name": "authentication denied /metrics invalid",
+      "passed": true
+    },
+    {
+      "name": "bounded response GET /api/me",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /api/me",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /api/me",
+      "passed": true
+    },
+    {
+      "name": "security response headers /api/me",
+      "passed": true
+    },
+    {
+      "name": "server actor mapping requester",
+      "passed": true
+    },
+    {
+      "name": "bounded response GET /api/me",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /api/me",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /api/me",
+      "passed": true
+    },
+    {
+      "name": "security response headers /api/me",
+      "passed": true
+    },
+    {
+      "name": "server actor mapping approver",
+      "passed": true
+    },
+    {
+      "name": "bounded response GET /api/me",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /api/me",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /api/me",
+      "passed": true
+    },
+    {
+      "name": "security response headers /api/me",
+      "passed": true
+    },
+    {
+      "name": "server actor mapping executor",
+      "passed": true
+    },
+    {
+      "name": "bounded response GET /api/me",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /api/me",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /api/me",
+      "passed": true
+    },
+    {
+      "name": "security response headers /api/me",
+      "passed": true
+    },
+    {
+      "name": "server actor mapping reader",
+      "passed": true
+    },
+    {
+      "name": "bounded response GET /api/overview",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /api/overview",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /api/overview",
+      "passed": true
+    },
+    {
+      "name": "security response headers /api/overview",
+      "passed": true
+    },
+    {
+      "name": "caller cannot select the server correlation",
+      "passed": true
+    },
+    {
+      "name": "authenticated overview",
+      "passed": true
+    },
+    {
+      "name": "bounded response POST /api/reconcile",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /api/reconcile",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /api/reconcile",
+      "passed": true
+    },
+    {
+      "name": "security response headers /api/reconcile",
+      "passed": true
+    },
+    {
+      "name": "unauthenticated mutation denied",
+      "passed": true
+    },
+    {
+      "name": "bounded response POST /api/reconcile",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /api/reconcile",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /api/reconcile",
+      "passed": true
+    },
+    {
+      "name": "security response headers /api/reconcile",
+      "passed": true
+    },
+    {
+      "name": "requester cannot reconcile",
+      "passed": true
+    },
+    {
+      "name": "demo preserves all 34 source identities",
+      "passed": true
+    },
+    {
+      "name": "34 reporting mappings equal the reference",
+      "passed": true
+    },
+    {
+      "name": "active golden count matches quality",
+      "passed": true
+    },
+    {
+      "name": "real merge and unmerge ledger is present",
+      "passed": true
+    },
+    {
+      "name": "bounded response GET /api/golden/01e6bcef-506d-5bd3-af57-28d1d71fe58d/history",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /api/golden/01e6bcef-506d-5bd3-af57-28d1d71fe58d/history",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /api/golden/01e6bcef-506d-5bd3-af57-28d1d71fe58d/history",
+      "passed": true
+    },
+    {
+      "name": "security response headers /api/golden/01e6bcef-506d-5bd3-af57-28d1d71fe58d/history",
+      "passed": true
+    },
+    {
+      "name": "live golden temporal history",
+      "passed": true
+    },
+    {
+      "name": "bounded response POST /api/preview-merge",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /api/preview-merge",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /api/preview-merge",
+      "passed": true
+    },
+    {
+      "name": "security response headers /api/preview-merge",
+      "passed": true
+    },
+    {
+      "name": "live evidence preview",
+      "passed": true
+    },
+    {
+      "name": "bounded response GET /api/openapi.json",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /api/openapi.json",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /api/openapi.json",
+      "passed": true
+    },
+    {
+      "name": "security response headers /api/openapi.json",
+      "passed": true
+    },
+    {
+      "name": "authenticated API specification",
+      "passed": true
+    },
+    {
+      "name": "bounded response GET /metrics",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /metrics",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /metrics",
+      "passed": true
+    },
+    {
+      "name": "security response headers /metrics",
+      "passed": true
+    },
+    {
+      "name": "live numeric metrics",
+      "passed": true
+    },
+    {
+      "name": "bounded response GET /api/overview",
+      "passed": true
+    },
+    {
+      "name": "ephemeral tokens absent from response /api/overview",
+      "passed": true
+    },
+    {
+      "name": "unique server correlation /api/overview",
+      "passed": true
+    },
+    {
+      "name": "security response headers /api/overview",
+      "passed": true
+    },
+    {
+      "name": "HTTP read and denied write checks preserved the snapshot",
+      "passed": true
+    }
+  ],
+  "failures": [],
+  "secret_directory_mode": "0o700",
+  "actor_file_mode": "0o600",
+  "database_target": {
+    "host": "127.0.0.1",
+    "port": "59701",
+    "dbname": "mdm",
+    "user": "mdm"
+  },
+  "server_command": [
+    "/workspace/scratch/fc83c385ce79/enterprise-master-data-reconciliation/.venv/bin/python",
+    "-m",
+    "uvicorn",
+    "mdm.api:app",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "8000",
+    "--workers",
+    "1",
+    "--limit-concurrency",
+    "32",
+    "--no-access-log",
+    "--timeout-graceful-shutdown",
+    "20"
+  ],
+  "server_pid": 22,
+  "readiness_attempts": 3,
+  "business_state": {
+    "source_count": 34,
+    "reference_mappings": 34,
+    "reporting_mappings": 34,
+    "mapping_mismatches": 0,
+    "active_golden_records": 28,
+    "candidates": 21,
+    "executed_decisions_by_kind": {
+      "automatic_merge": 6,
+      "merge": 1,
+      "unmerge": 1
+    },
+    "quality": {
+      "sources": 34,
+      "crosswalks": 34,
+      "active_groups": 28,
+      "pending_decisions": 0,
+      "corrections": 1,
+      "executed_decisions": 8,
+      "matching_mode": "hybrid",
+      "suspected_duplicate_pairs": 8,
+      "policy_blocked_candidates": 0,
+      "group_conflicting_candidates": 0,
+      "crosswalk_coverage": 1.0,
+      "correction_rate": 0.125,
+      "consumer_lag": [
+        {
+          "consumer": "reporting",
+          "remaining": 0,
+          "caught_up": true,
+          "reference_sources": 34,
+          "consumed_sources": 34,
+          "consumed_crosswalks": 34,
+          "reference_coverage": 1.0,
+          "consumed_coverage": 1.0,
+          "conflicting_sources": [],
+          "projection_mismatches": [],
+          "missing_sources": [],
+          "unexpected_sources": [],
+          "mismatched_sources": [],
+          "stale_groups": [],
+          "unexpected_active_groups": [],
+          "pending_events": 0
+        }
+      ],
+      "unconsumed_events": 0
+    },
+    "snapshot_before_sha256": "36baeaae476e9a33c18fc24faa214a55b63e3befbb442cb4c6e9a5165ff11f37",
+    "golden_attributes_with_provenance": 28,
+    "snapshot_after_sha256": "36baeaae476e9a33c18fc24faa214a55b63e3befbb442cb4c6e9a5165ff11f37"
+  },
+  "golden_history": {
+    "golden_id": "01e6bcef-506d-5bd3-af57-28d1d71fe58d",
+    "rows": 1,
+    "provenance_attributes": [
+      "address",
+      "city",
+      "country",
+      "email",
+      "entity_type",
+      "manufacturer",
+      "name",
+      "parent_source_key",
+      "phone",
+      "postal_code",
+      "product_code",
+      "registration_id",
+      "roles",
+      "unit_of_measure"
+    ]
+  },
+  "evidence_preview": {
+    "candidate_id": "5b0aaed5-c57b-4270-9b71-542dd664f566",
+    "source_count": 2,
+    "hard_conflicts": [
+      "parent_child_identity:ERP_ALPHA:organization:ASTERIA-HOLDING|ERP_BETA:organization:ASTERIA-PLANT",
+      "registration_id_conflict:ERP_ALPHA:organization:ASTERIA-HOLDING|ERP_BETA:organization:ASTERIA-PLANT"
+    ],
+    "provenance_attribute_count": 0
+  },
+  "openapi": {
+    "title": "Enterprise Master Data Reconciliation",
+    "version": "0.1.0rc1",
+    "path_count": 19
+  },
+  "metrics": {
+    "mdm_sources": 34.0,
+    "mdm_crosswalks": 34.0,
+    "mdm_active_groups": 28.0,
+    "mdm_pending_decisions": 0.0,
+    "mdm_corrections": 1.0,
+    "mdm_executed_decisions": 8.0,
+    "mdm_suspected_duplicate_pairs": 8.0,
+    "mdm_policy_blocked_candidates": 0.0,
+    "mdm_group_conflicting_candidates": 0.0,
+    "mdm_crosswalk_coverage": 1.0,
+    "mdm_correction_rate": 0.125,
+    "mdm_unconsumed_events": 0.0
+  },
+  "server_shutdown": {
+    "method": "SIGTERM",
+    "exit_code": -15,
+    "duration_seconds": 0.16403423800011296,
+    "graceful": true,
+    "lifecycle_completion_logged": true,
+    "listener_closed": true,
+    "listener_state": "connection refused after process exit",
+    "signal_policy": "Uvicorn re-raises captured SIGTERM after graceful shutdown"
+  },
+  "server_logs_token_redactions": [],
+  "ephemeral_secrets_removed": true,
+  "http_observability": {
+    "structured_http_events": 24,
+    "response_correlation_count": 24,
+    "response_correlations_found_in_logs": 24,
+    "all_response_correlations_found": true
+  },
+  "repository_runtime_inputs_unchanged": true,
+  "completed_at": "2026-11-14T12:16:49.996140+00:00",
+  "duration_seconds": 0.8794282250000833,
+  "evidence_files": {
+    "server-stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "server-stderr.txt": {
+      "bytes": 6298,
+      "sha256": "848da4b32427cb1c2aafb49aa3ca143f39f5d889778c7235485920c954ad7fa6"
+    }
+  }
+}

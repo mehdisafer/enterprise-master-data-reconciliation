@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+set -euo pipefail
+exec python3 "$(dirname "$0")/pg_client.py" pg_restore "$@"
