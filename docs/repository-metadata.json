@@ -23,5 +23,11 @@
   "requested_visibility": "public",
   "license": "pending_explicit_maintainer_choice",
   "application_method": "maintainer_github_interface",
-  "verification_status": "main_integration_public_access_and_metadata_readback_pending"
+  "source_integration": {
+    "status": "verified",
+    "pull_request": 2,
+    "merge_commit": "e27f4c2f58d812a2213b1457378095dc72dafd8a",
+    "tree": "4e3591997281aeb6666c933d39d731e00b53186c"
+  },
+  "verification_status": "main_integration_verified_public_access_and_metadata_readback_pending"
 }

@@ -322,11 +322,11 @@ The license inventory records publisher declarations and license files, flags
 missing/proprietary evidence and keeps distribution obligations visible. It is
 not a licensing certification and does not choose this repository's license.
 
-The maintainer has requested public source publication, with the documented
-candidate integrated into `main` through PR #2. Follow the [publication procedure](publication.md)
+The documented candidate has been integrated into `main` through PR #2 under the
+maintainer's public-source objective. The [merge and tree readback](../evidence/2026-11-14/publication-preflight/integration-verification.json)
+establishes that integration. Follow the [publication procedure](publication.md)
 for the maintainer's visibility/metadata changes and subsequent anonymous-access
-check. The last recorded visibility on 14 November 2026 was private; merge and
-public access are not established by these instructions. Source delivery leaves
+check. Visibility was still private at that 14 November check. Source delivery leaves
 issue #1 and Docker, rendered-browser, Terraform-schema and Snowflake qualification
 open. It does not create a release tag or select the project licence.
 

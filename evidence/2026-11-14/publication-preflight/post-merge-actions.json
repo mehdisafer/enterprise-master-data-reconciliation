@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-14 14:23:38 UTC",
+  "repository": "mehdisafer/enterprise-master-data-reconciliation",
+  "merged_reference_commit": "e27f4c2f58d812a2213b1457378095dc72dafd8a",
+  "scope": "two main-push qualification runs and three distinct initial Dependabot service runs; not all subsequent runs",
+  "runs": [
+    {
+      "run_id": 43603763090,
+      "role": "reference_qualification",
+      "url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43603763090",
+      "jobs": [
+        {
+          "id": 132473859256,
+          "name": "scope",
+          "conclusion": "failure",
+          "runner_id": 0,
+          "steps": []
+        },
+        {
+          "id": 132473871689,
+          "name": "dependencies",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "steps": []
+        },
+        {
+          "id": 132473871877,
+          "name": "postgres",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "steps": []
+        },
+        {
+          "id": 132473872150,
+          "name": "container",
+          "conclusion": "skipped",
+          "runner_id": null,
+          "steps": []
+        }
+      ],
+      "artifacts": 0
+    },
+    {
+      "run_id": 43603763082,
+      "role": "reference_qualification",
+      "url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43603763082",
+      "jobs": [
+        {
+          "id": 132473859921,
+          "name": "static",
+          "conclusion": "failure",
+          "runner_id": 0,
+          "steps": []
+        }
+      ],
+      "artifacts": 0
+    },
+    {
+      "run_id": 43603768630,
+      "role": "dependency_update_service",
+      "url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43603768630",
+      "jobs": [
+        {
+          "id": 132473880903,
+          "name": "Dependabot",
+          "conclusion": "success",
+          "runner_id": 1000001003,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Start background runner disk cleanup",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Create job directory",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run Dependabot",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run Dependabot",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ],
+      "artifacts": 0
+    },
+    {
+      "run_id": 43603766985,
+      "role": "dependency_update_service",
+      "url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43603766985",
+      "jobs": [
+        {
+          "id": 132473875143,
+          "name": "Dependabot",
+          "conclusion": "success",
+          "runner_id": 1000001002,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Start background runner disk cleanup",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Create job directory",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run Dependabot",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run Dependabot",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ],
+      "artifacts": 0
+    },
+    {
+      "run_id": 43603766806,
+      "role": "dependency_update_service",
+      "url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43603766806",
+      "jobs": [
+        {
+          "id": 132473873980,
+          "name": "Dependabot",
+          "conclusion": "success",
+          "runner_id": 1000001001,
+          "steps": [
+            {
+              "name": "Set up job",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Start background runner disk cleanup",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Create job directory",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Run Dependabot",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Post Run Dependabot",
+              "status": "completed",
+              "conclusion": "success"
+            },
+            {
+              "name": "Complete job",
+              "status": "completed",
+              "conclusion": "success"
+            }
+          ]
+        }
+      ],
+      "artifacts": 0
+    }
+  ],
+  "interpretation": "Reference qualification still has no job steps. Successful Dependabot steps demonstrate update-service execution, not application or proposed dependency qualification.",
+  "python_update": {
+    "pr": 3,
+    "head": "8a444eb66601d652b42075dfc8345de2f00a4346",
+    "state": "closed",
+    "merged": false,
+    "proposed": "3.15.0",
+    "supported": ">=3.12,<3.13",
+    "reason": "outside the declared runtime contract"
+  },
+  "other_dependency_prs": [
+    {
+      "number": 4,
+      "dependency": "fastapi",
+      "version": "0.162.4"
+    },
+    {
+      "number": 5,
+      "dependency": "pydantic",
+      "version": "2.14.3"
+    },
+    {
+      "number": 6,
+      "dependency": "hatchling",
+      "version": "1.33.0"
+    }
+  ],
+  "other_dependency_prs_integrated": false,
+  "annotations_read": false,
+  "logs_certified": false
+}

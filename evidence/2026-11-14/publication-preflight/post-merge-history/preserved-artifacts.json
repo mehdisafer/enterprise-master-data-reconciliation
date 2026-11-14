@@ -1,0 +1,29 @@
+{
+  "entries": [
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-publication-preflight/post-merge/remote-inventory.json",
+      "preserved_path": "evidence/2026-11-14/publication-preflight/post-merge-history/remote-inventory.json",
+      "bytes": 361177,
+      "sha256": "68befe3115c0fe6d7a2da057465cf37e9e5e5f550e31a906655aaf8990627057"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-publication-preflight/post-merge/remote-history-scan.json",
+      "preserved_path": "evidence/2026-11-14/publication-preflight/post-merge-history/remote-history-scan.json",
+      "bytes": 127409,
+      "sha256": "97e6388c76f0811f7a388c6d9032c2aa5e7e7ebe0836dd825122955e0205d465"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-publication-preflight/post-merge/commit-messages.json",
+      "preserved_path": "evidence/2026-11-14/publication-preflight/post-merge-history/commit-messages.json",
+      "bytes": 3949,
+      "sha256": "91fc73d4f1d3a4b7266d5456161b952542e436ddf4382860400f62b0e6561a30"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-publication-preflight/post-merge/scan_remote_history.py",
+      "preserved_path": "evidence/2026-11-14/publication-preflight/post-merge-history/scan_remote_history.py",
+      "bytes": 4236,
+      "sha256": "aed0f26a49dfee0720ad30226add529f61ba93c31ad0509b20b365281a3777f4"
+    }
+  ],
+  "original_blob_content_not_duplicated": true
+}

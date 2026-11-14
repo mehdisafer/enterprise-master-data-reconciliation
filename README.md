@@ -10,7 +10,7 @@ The reference implementation uses **Python, PostgreSQL, dbt and a FastAPI review
 
 This is a **reference release candidate with a verified native PostgreSQL implementation**, developed in [PR #2](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/2) under [issue #1](https://github.com/mehdisafer/enterprise-master-data-reconciliation/issues/1). On 14 November 2026, the real database suite, business demonstration, dbt build, restore drill and live HTTP checks succeeded in the isolated workspace. Container deployment, rendered-browser checks, Terraform schema validation and live Snowflake qualification remain open. The full release is not accepted.
 
-The maintainer has requested public source publication. This candidate is being prepared for integration into `main` through PR #2 so the repository presents the complete reference. Merge completion and anonymous public access still require verification; visibility was observed as private on 14 November 2026. Source publication leaves issue #1 and the remaining qualification work open. See the [publication procedure and recorded checks](docs/publication.md).
+The maintainer has requested public source publication. PR #2 has integrated the complete reference into `main`; its [merge and full-tree readback](evidence/2026-11-14/publication-preflight/integration-verification.json) are recorded. Source delivery leaves issue #1 and the remaining qualification work open. Repository visibility, About metadata and anonymous-access checks are tracked separately in the [publication record](docs/publication.md).
 
 | Area | Implementation | Execution evidence |
 | --- | --- | --- |
@@ -23,7 +23,7 @@ The maintainer has requested public source publication. This candidate is being 
 | Container deployment and rendered console | Implemented | **Not qualified**: Docker unavailable; Chromium startup blocked by Unix socket denial |
 | Terraform configuration | Implemented; provider lock generated | Formatting passed; provider schema validation still blocked by Unix socket denial |
 | Snowflake publication and dbt parity | Implemented | **Not live-qualified: dedicated authorized account and budget required** |
-| Source publication | Public visibility requested; integration into `main` prepared | Merge and anonymous access verification pending |
+| Source integration | Complete reference merged into `main` through PR #2 | Merge/tree/README verified; visibility and anonymous-access status tracked separately |
 | Repository licence | No licence selected | No open-source licence grant or release tag |
 
 The [acceptance matrix](docs/acceptance.md), [evidence index](evidence/README.md) and [release notes](docs/releases/0.1.0rc1.md) distinguish observed results from implementation. A passing local unit suite does not qualify a database, provider or deployment.
@@ -32,7 +32,7 @@ The qualified application, test and dbt inputs match [commit `205e7507`](https:/
 
 A subsequent [targeted native check](evidence/2026-11-14/ci-evidence-hardening/qualification.json) qualifies the revised CI evidence controls: dbt build results survive documentation generation, and the populated-target restore control rejects unrelated failures. Its 41 dbt tests passed again; both databases' 17 operational table fingerprints remained unchanged. These are local results from selected workflow commands, not an executed GitHub job. The Snowflake helper now separates the same output paths, with live execution still pending.
 
-The same code's [quality workflow](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711716) and [Terraform workflow](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711641) again stopped before runner execution. The native results are separate original evidence, not successful GitHub jobs. The precise GitHub admission annotation remains inaccessible through the connected interface.
+The merged reference's [quality workflow](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43603763090) and [Terraform workflow](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43603763082) again stopped before runner execution. The [post-merge inventory](evidence/2026-11-14/publication-preflight/post-merge-actions.json) separately records successful Dependabot service steps; these do not qualify the application or its proposed dependency updates. The native results remain separate original evidence. The precise qualification-job admission annotation remains inaccessible through the connected interface.
 
 ## Run the complete reference
 

@@ -70,7 +70,7 @@ The [first HTTP harness report](2026-11-14/http-initial-harness/http-report.json
 
 No rendered screenshot was produced. The [official Playwright download](2026-11-14/browser-blockers/install-report.json) received an unavailable-site HTML response instead of a browser archive. A separate [system Chromium launch](2026-11-14/browser-blockers/system-launch-report.json) failed when its singleton needed a denied Unix socket. Standard launch was attempted without additional permission-workaround flags. Docker was unavailable. Native HTTP success does not qualify either browser rendering or container deployment.
 
-## GitHub: source-code workflows still received no runner
+## GitHub: Quality and Terraform at the qualified source
 
 | Workflow at source `205e7507` | Run | Observed outcome |
 | --- | --- | --- |
@@ -114,6 +114,16 @@ Publication of the documented source candidate and full runtime acceptance are s
 
 The later [documentation verification](2026-11-14/publication-preflight/static-verification.json) checked 172 relative links, the exact About metadata and preservation hashes, with no executable-input change from `fc67bf68`. Its [working-tree scan](2026-11-14/publication-preflight/publication-working-tree-scan.json) includes the newly prepared publication files: 552 files and 501 reachable local-history blobs, with no detected pattern or limited input. That local scope complements the separately enumerated remote history above and precedes copying its own report.
 
+## Post-merge readback and dependency automation
+
+The [integration record](2026-11-14/publication-preflight/integration-verification.json) verifies that PR #2 merged at `e27f4c2f58d812a2213b1457378095dc72dafd8a` and that `main` contains the full reviewed tree `4e3591997281aeb6666c933d39d731e00b53186c`. The full README was fetched from `main`. Visibility was private and About metadata was empty at the recorded 14:15:46 UTC check; the maintainer owns those interface changes. This record proves source integration, not anonymous public access or full runtime acceptance.
+
+The [expanded remote-history scan](2026-11-14/publication-preflight/post-merge-history/remote-history-scan.json) includes the five branches listed after integration and the closed Python-update PR's head: **16 commits, 15 complete trees, 540 unique blobs, 11,065,653 bytes and 16 commit messages**. All blob sizes and Git object hashes matched. Of these blobs, 517 matched local Git objects and 23 were retrieved remotely. No configured pattern or limited input was reported within this scope. This includes the new dependency proposal branches without integrating their contents into `main`. Tags, unreachable objects and inaccessible account/log contents remain outside the scan. Four originals are recorded in the [preservation manifest](2026-11-14/publication-preflight/post-merge-history/preserved-artifacts.json).
+
+The [post-merge Actions inventory](2026-11-14/publication-preflight/post-merge-actions.json) preserves the main-push Quality and Terraform job summaries: zero steps and zero artifacts. Separately, three Dependabot service runs succeeded with six steps each. The historical 14:03 inventory above remains unchanged; the 18 later service steps must not be mistaken for application qualification. The Python 3.15 proposal was closed without merging because it conflicts with the Python 3.12 contract. The new Docker-update ignore rule keeps major/minor Python upgrades out of automatic proposals; its future service execution is not yet observed. PRs #4–#6 remain unqualified and unmerged, with the reference lock unchanged.
+
+The final consolidation's [static checks](2026-11-14/publication-preflight/post-merge-static-verification.json) cover the runtime contract, metadata, relative links and original evidence hashes. The corresponding [working-tree scan](2026-11-14/publication-preflight/post-merge-working-tree-scan.json) covers the new publication files separately from the recorded remote history and precedes copying its own report. No full runtime suite was rerun for these documentation and automation-policy changes.
+
 ## Historical 13 November capture
 
 The earlier retained source was [`f87abb572c03b5088c466e9c411a23b7c75a8da4`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/f87abb572c03b5088c466e9c411a23b7c75a8da4), tree `966ec4b81c4e2fe38a8b4d22d73d5b353c56b840`. Its [environment](2026-11-13/environment.json) and [command record](2026-11-13/local-execution.json) remain historical evidence.
@@ -139,4 +149,4 @@ The [known-database-secret scan](2026-11-14/native-flow/known-secret-scan.json) 
 
 Upstream macros and compiled derivatives retain the rights in [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md) and [preserved licence files](third-party-licenses/sources.json). Credentials, database archives, vendor binaries and generated dbt application HTML are excluded. Evidence hashes prove correspondence, not independent certification, licence approval or production readiness.
 
-Remaining evidence is the actual container/browser run, Terraform provider-schema validation, GitHub runner execution and authorized live Snowflake publication/dbt parity/cost observations. The exact acceptance and publication prerequisites are in [the acceptance matrix](../docs/acceptance.md). A successful native reference does not close those gates.
+Remaining evidence is the actual container/browser run, Terraform provider-schema validation, GitHub application-qualification execution and authorized live Snowflake publication/dbt parity/cost observations. The exact acceptance and publication prerequisites are in [the acceptance matrix](../docs/acceptance.md). A successful native reference does not close those gates.

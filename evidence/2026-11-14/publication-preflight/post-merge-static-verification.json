@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "captured_at": "2026-11-14T14:27:50.397825+00:00",
+  "passed": true,
+  "scope": "post-merge documentation, dependency-update policy, metadata and preserved evidence; no runtime qualification",
+  "markdown_files_checked": 21,
+  "relative_links_checked": 192,
+  "generated_report_links_verified_after_writing": true,
+  "metadata_and_publication_runbook_equal": true,
+  "preserved_originals_hash_and_byte_verified": 4,
+  "capture_helper_python_syntax_valid": true,
+  "dependabot": {
+    "runtime_contract": ">=3.12,<3.13",
+    "docker_python_images": [
+      "python:3.12.14-slim",
+      "python:3.12.14-slim"
+    ],
+    "change_limited_to_python_major_minor_ignore": true,
+    "patch_updates_remain_eligible": true,
+    "future_service_behavior_observed": false
+  },
+  "actions_counts_reconciled": {
+    "reference_runs": 2,
+    "reference_jobs": 5,
+    "reference_steps": 0,
+    "dependabot_runs": 3,
+    "dependabot_jobs": 3,
+    "dependabot_steps": 18,
+    "artifacts": 0
+  },
+  "runtime_inputs_unchanged_from_local_commit": "e39a0b508ac9188558840d3ecb9e4602d002f4e0",
+  "equivalent_qualified_remote_commit": "205e7507b9cd7dc1b34a858f2c524ce0c832642c",
+  "qualification_workflows_and_helper_unchanged_from_local_commit": "70267e683f0858b2e2362c931e14e3b403912de4",
+  "equivalent_merged_tree": "4e3591997281aeb6666c933d39d731e00b53186c",
+  "runtime_tests_reexecuted": false,
+  "visibility_or_account_setting_changed": false,
+  "checks_do_not_establish_complete_secret_detection_or_full_runtime_acceptance": true
+}

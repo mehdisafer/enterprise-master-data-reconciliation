@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-11-14 14:15:46 UTC",
+  "repository": "mehdisafer/enterprise-master-data-reconciliation",
+  "public_source_requested": true,
+  "interface_actions_owner": "maintainer",
+  "default_branch": "main",
+  "main_commit": "e27f4c2f58d812a2213b1457378095dc72dafd8a",
+  "source_head": "be1ca2f2eafbec79dab16ee3629b7e7a9a3380de",
+  "tree": "4e3591997281aeb6666c933d39d731e00b53186c",
+  "merge_parents": [
+    "8fc92d966bfa05f5e1f3c2a21926ff7cb2408ff2",
+    "be1ca2f2eafbec79dab16ee3629b7e7a9a3380de"
+  ],
+  "pull_request": {
+    "number": 2,
+    "merged": true,
+    "state": "closed",
+    "merge_commit": "e27f4c2f58d812a2213b1457378095dc72dafd8a"
+  },
+  "entire_tree_matches_reviewed_local_tree": true,
+  "readme_blob": "4ceab84f1e89d250a54bab8b7a0dce853809c53e",
+  "full_reference_readme_retrieved": true,
+  "visibility": {
+    "private": true,
+    "visibility": "private",
+    "anonymous_access_verified": false,
+    "anonymous_check_status": "pending_maintainer_public_setting"
+  },
+  "metadata": {
+    "description": null,
+    "topics": [],
+    "proposal": "docs/repository-metadata.json",
+    "applied": false
+  },
+  "project_license": null,
+  "release_tag_created": false,
+  "full_runtime_acceptance": false,
+  "pending_qualification": [
+    "GitHub application and Terraform qualification execution",
+    "Docker reference",
+    "rendered browser",
+    "actual Terraform provider schema",
+    "live Snowflake"
+  ]
+}
