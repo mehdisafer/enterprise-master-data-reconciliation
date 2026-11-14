@@ -8,7 +8,9 @@ The reference implementation uses **Python, PostgreSQL, dbt and a FastAPI review
 
 ## Delivery status
 
-This is a **private release candidate with a verified native PostgreSQL reference**, developed in [PR #2](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/2) under [issue #1](https://github.com/mehdisafer/enterprise-master-data-reconciliation/issues/1). On 14 November 2026, the real database suite, business demonstration, dbt build, restore drill and live HTTP checks succeeded in the isolated workspace. Container deployment, rendered-browser checks, Terraform schema validation and live Snowflake qualification remain open. The full release is not accepted.
+This is a **reference release candidate with a verified native PostgreSQL implementation**, developed in [PR #2](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/2) under [issue #1](https://github.com/mehdisafer/enterprise-master-data-reconciliation/issues/1). On 14 November 2026, the real database suite, business demonstration, dbt build, restore drill and live HTTP checks succeeded in the isolated workspace. Container deployment, rendered-browser checks, Terraform schema validation and live Snowflake qualification remain open. The full release is not accepted.
+
+The maintainer has requested public source publication. This candidate is being prepared for integration into `main` through PR #2 so the repository presents the complete reference. Merge completion and anonymous public access still require verification; visibility was observed as private on 14 November 2026. Source publication leaves issue #1 and the remaining qualification work open. See the [publication procedure and recorded checks](docs/publication.md).
 
 | Area | Implementation | Execution evidence |
 | --- | --- | --- |
@@ -21,7 +23,8 @@ This is a **private release candidate with a verified native PostgreSQL referenc
 | Container deployment and rendered console | Implemented | **Not qualified**: Docker unavailable; Chromium startup blocked by Unix socket denial |
 | Terraform configuration | Implemented; provider lock generated | Formatting passed; provider schema validation still blocked by Unix socket denial |
 | Snowflake publication and dbt parity | Implemented | **Not live-qualified: dedicated authorized account and budget required** |
-| Repository licence and public visibility | Pending maintainer decision | No licence grant or visibility change made |
+| Source publication | Public visibility requested; integration into `main` prepared | Merge and anonymous access verification pending |
+| Repository licence | No licence selected | No open-source licence grant or release tag |
 
 The [acceptance matrix](docs/acceptance.md), [evidence index](evidence/README.md) and [release notes](docs/releases/0.1.0rc1.md) distinguish observed results from implementation. A passing local unit suite does not qualify a database, provider or deployment.
 
@@ -115,6 +118,8 @@ The reference serializes graph mutations under one PostgreSQL advisory transacti
 
 The Snowflake profile requires a dedicated account/role, key-pair authentication, database/warehouse scope and approved spending limit. Its resource monitor constrains warehouse credits, not every possible account cost. See [provider semantics and qualification](docs/snowflake.md).
 
-No repository licence has been selected. Original code and synthetic data are not offered under an implied open-source grant; third-party dependencies retain their own licences. GitHub reported unavailable rulesets for the current private plan and denied the integration's branch-protection endpoint. These constraints are recorded, with no billing, visibility or external resource changes.
+No repository licence has been selected. Original code and synthetic data are not offered under an implied open-source grant; third-party dependencies retain their own licences. GitHub's [licensing guidance](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository) does not require a licence choice to make a repository public. The [publication procedure](docs/publication.md) records the separate rights and visibility status.
 
-The [third-party notices](THIRD_PARTY_NOTICES.md) preserve the upstream rights of embedded dbt manifest macros. Repository description/topics are [prepared](docs/repository-metadata.json) and still await a settings-capable interface.
+During setup on 13 November 2026, GitHub reported a private-plan restriction for rulesets and denied the integration's branch-protection endpoint. These are historical observations, not proof of enforced protections or of their availability after publication. No paid plan or external resource change is part of source publication.
+
+The [third-party notices](THIRD_PARTY_NOTICES.md) preserve the upstream rights of embedded dbt manifest macros. Repository description/topics are [prepared](docs/repository-metadata.json) for the maintainer to apply in GitHub's interface, followed by readback verification.

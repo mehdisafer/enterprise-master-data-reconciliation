@@ -1,0 +1,13 @@
+{
+  "captured_at": "2026-11-14T14:09:44.789397+00:00",
+  "passed": true,
+  "scope": "publication documentation, metadata, preserved evidence and unchanged executable inputs",
+  "markdown_files_checked": 21,
+  "relative_links_checked": 172,
+  "metadata_and_runbook_equal": true,
+  "original_reports_hash_verified": 5,
+  "executable_inputs_unchanged_from_local_commit": "4908a33fa3e3c3b2e71bc129522813f65fec430c",
+  "equivalent_remote_commit": "fc67bf68261aee32559c108fb3002ec14c02e3d9",
+  "runtime_tests_reexecuted": false,
+  "visibility_changed_by_this_check": false
+}

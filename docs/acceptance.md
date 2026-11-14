@@ -6,7 +6,9 @@ Acceptance is evidence-based. “Implemented” means the code exists; “execut
 
 Inventory on 13 November 2026: private empty repository, no branches, issues, PRs, code or licence. Scope was published in issue #1 before implementation. Only this repository and the provided isolated workspace were used. No personal PC, client data or client system was accessed. All demonstration records are synthetic.
 
-**The native PostgreSQL reference and HTTP boundary are now qualified for the recorded synthetic scenarios. Full project acceptance remains open.** Docker, rendered-browser behavior, Terraform provider-schema validation, live Snowflake behavior and repository publication have separate unmet gates.
+**The native PostgreSQL reference and HTTP boundary are now qualified for the recorded synthetic scenarios. Full project acceptance remains open.** Docker, rendered-browser behavior, Terraform provider-schema validation and live Snowflake behavior remain unqualified.
+
+The maintainer has requested public source publication. The delivery path integrates this documented candidate into `main` through PR #2. These delivery actions do not close full qualification or issue #1. Visibility was observed as private on 14 November 2026; integration and anonymous public access still require verification. The [publication procedure](publication.md) separates those checks from runtime acceptance and the still-unselected project licence.
 
 The application, test and dbt inputs qualified on 14 November match [commit `205e7507`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/205e7507b9cd7dc1b34a858f2c524ce0c832642c), tree `2075183147d1ff50ddfee7e86e99ad7d7bdb367e`. Local and remote trees were compared before the branch advanced. Original file hashes establish correspondence with the tests, native flow and HTTP runs; see [source correspondence](../evidence/2026-11-14/source-correspondence.json). Later CI and Snowflake evidence-capture changes have separate, explicitly scoped checks below.
 
@@ -46,7 +48,7 @@ The CI evidence review then found that documentation generation overwrote dbt bu
 | Snowflake snapshot and dbt semantics | Publisher, unit boundaries, real PostgreSQL export | Live Snowflake load/readback and parity not executed |
 | Terraform and actual provider schema | Pinned CLI/provider, generated lock | Earlier format/install observed; schema validation blocked; no plan/apply |
 | Dependency/licence/secret controls | Frozen lock, dated audit/inventory and scoped scans | Original local reports retained; remote CI execution remains blocked |
-| Licence, metadata, protections and release | Prepared metadata and release notes | Explicit licence choice pending; repository remains private; no published release |
+| Source publication, licence and release | Prepared metadata, publication procedure and candidate notes | Public visibility requested; observed private on 14 November; merge/access verification pending; no licence or release tag selected |
 
 ## Environment and CI limits
 
@@ -58,12 +60,13 @@ The [version-specific provider transport review](terraform-provider-transport.md
 
 At the qualified source revision, [quality run 43593711716](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711716) and [Terraform run 43593711641](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711641) again failed before runner execution. The failed jobs have `runner_id: 0`, no steps and one check annotation each; artifact collections are empty. The connected endpoint exposes the annotation count but not its text. Billing, quota and policy causes remain unconfirmed. These GitHub runs do not invalidate or replace the separately recorded native runs.
 
-## Remaining gates, in order
+## Source publication and remaining qualification
 
-1. Read the exact GitHub admission annotation through an authorized signed-in interface and restore runner execution, or use another explicitly authorized isolated runner. Run the delivered code's Docker, rendered-browser and Terraform schema profiles. A docs-only synchronization selects no heavy runtime work; use a full qualification trigger or the source-code run when appropriate. Do not change billing, visibility or policy merely to obtain a green check.
+The maintainer's explicit decision is public source publication. The delivery integrates the reference through PR #2, applies the requested public visibility and prepared metadata in the maintainer's GitHub interface, and verifies `main` and anonymous access. The [recorded preparation](publication.md#recorded-prepublication-checks) includes the remote branch-history scan and Actions inventory, with their coverage limits. This does not require waiting for a live Snowflake account or imply a licence grant.
+
+1. Read the exact GitHub admission annotation when an authorized interface exposes it, and restore runner execution or use an explicitly authorized isolated runner. Run the delivered code's Docker, rendered-browser and Terraform schema profiles. A docs-only synchronization selects no heavy runtime work; select a full qualification run for the intended source revision. Public source visibility is a maintainer decision, not evidence that CI execution has recovered. No billing or policy change is authorized by this procedure.
 2. Run the dedicated Snowflake qualification with an authorized account, key-pair role, database/warehouse scope and explicit spending limit. Retain publication/readback/rollback results, dbt parity, query IDs and accessible credit metrics. PostgreSQL export success is not a Snowflake result.
-3. Obtain the maintainer's explicit repository licence choice before publication. Any public-visibility change is a separate authorization and must be followed by an anonymous-access check.
-4. Apply the prepared repository description/topics through a settings-capable interface. Recheck protection availability if account capabilities or visibility change; no paid plan has been enabled.
-5. Extend the small holdout with independently labeled, rights-cleared industrial fixtures before making accuracy or scale claims beyond the measured synthetic profiles.
+3. Recheck available branch protections after publication and record actual enforcement separately from the earlier access errors. Maintain the explicit unlicensed status until the maintainer chooses a project licence; third-party notices remain applicable.
+4. Extend the small holdout with independently labeled, rights-cleared industrial fixtures before making accuracy or scale claims beyond the measured synthetic profiles.
 
-Issue #1 stays open and PR #2 stays in draft until the full agreed acceptance is met. Implementation-agent reviews are disclosed self-review, not independent approval.
+PR #2 may move out of draft and merge for this reference-source delivery while issue #1 remains open for full acceptance. No release tag is part of that action. Implementation-agent reviews are disclosed self-review, not independent approval.

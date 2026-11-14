@@ -34,8 +34,9 @@ this is not a claim that it is the only current dbt distribution. The official
 [Python compatibility table](https://docs.getdbt.com/faqs/Core/install-python-compatibility)
 includes Python 3.12 for the selected Core line. Adapters use independent version
 numbers; equality of those numbers is not a compatibility criterion. This table
-does not grant a licence to this repository. The maintainer must separately choose
-the repository licence before public publication.
+does not grant a licence to this repository. The project licence remains unselected;
+the [source-publication decision](publication.md) is separate from that choice and
+does not authorize or qualify a live Snowflake deployment.
 
 The initial connector pin, 4.7.4, constrained `filelock` below version 4 and left
 known dependency advisories unresolved. It was replaced before publication by

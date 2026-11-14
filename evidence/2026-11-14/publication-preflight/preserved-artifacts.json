@@ -1,0 +1,40 @@
+{
+  "captured_at": "2026-11-14T14:05:55.416111+00:00",
+  "entries": [
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-publication-preflight/remote-inventory.json",
+      "preserved_path": "evidence/2026-11-14/publication-preflight/remote-inventory.json",
+      "bytes": 226893,
+      "sha256": "5cc632c51c79be7c741099381ec4cce6377df2566db9ae481c4078852baef7b8"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-publication-preflight/remote-history-scan.json",
+      "preserved_path": "evidence/2026-11-14/publication-preflight/remote-history-scan.json",
+      "bytes": 121774,
+      "sha256": "2b76743813076d9f15c4c3bc28df956594fcabe8f35c08eaaadd543fb8287c0e"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-publication-preflight/actions-inventory.json",
+      "preserved_path": "evidence/2026-11-14/publication-preflight/actions-inventory.json",
+      "bytes": 25548,
+      "sha256": "9d720acadf57c71dcedadf32857f7da2aaee8e7dba349b911fa9e996ea7067ba"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-publication-preflight/commit-messages.json",
+      "preserved_path": "evidence/2026-11-14/publication-preflight/commit-messages.json",
+      "bytes": 1193,
+      "sha256": "09ea4784ab2c16f261bd8cf008e6e084624711f4fcb804eda299aafe7747ead0"
+    },
+    {
+      "original_path": "/workspace/scratch/fc83c385ce79/p02-publication-preflight/scan_remote_history.py",
+      "preserved_path": "evidence/2026-11-14/publication-preflight/capture-tools/scan_remote_history.py",
+      "bytes": 4175,
+      "sha256": "fb24ad7f0cd51bf28a1a1483b26b72fd1348dddd0f102988c817ed2aeca7c669"
+    }
+  ],
+  "notes": [
+    "Original blob content is retained by its remote Git history, not duplicated here.",
+    "The capture helper records the original isolated workspace procedure; use scripts/secret_scan.py --history in a complete clone for a new local-history scan.",
+    "The fetched tag endpoint was unavailable; this is enumeration of the two named branches only."
+  ]
+}

@@ -102,6 +102,18 @@ The [static verification record](2026-11-14/ci-evidence-hardening/static-verific
 
 The subsequent [publication pattern scan](2026-11-14/ci-evidence-hardening/publication-secret-scan.json) checked 543 publishable files and 452 reachable local-history blobs, with no detected pattern or unscanned input. This scan includes the explicitly staged build artifacts and logs that Git ignore rules would otherwise omit. It precedes copying its own report and does not claim complete secret detection or coverage of every remote ancestor.
 
+## Public-source publication preflight
+
+On 14 November the maintainer requested a public repository and retained responsibility for GitHub interface actions. The [remote branch-history inventory](2026-11-14/publication-preflight/remote-inventory.json) enumerates both observed branch heads, all ten reachable commits and their ten complete recursive trees at that capture. The [scoped history scan](2026-11-14/publication-preflight/remote-history-scan.json) checked **518 distinct blobs, 10,211,743 bytes and ten commit messages**, with no detected pattern or limited input within that scope. All blob sizes and Git object hashes were verified: 501 matching objects were available locally and 17 older versions were fetched through the connected GitHub blob endpoint. Commit identity addresses use the GitHub noreply domain.
+
+This closes the earlier gap between the reconstructed local history and the reachable histories of the two named remote branches at `fc67bf68` / `8fc92d96`. It does not claim coverage of tags, whose enumeration endpoint was unavailable, unreachable objects, other repositories or account configuration. The generated publication documentation and its own evidence are later inputs, checked separately before publication. Pattern scanning is not complete secret detection; the synthetic fixtures and notices were also reviewed for presentation scope.
+
+The separate [Actions inventory](2026-11-14/publication-preflight/actions-inventory.json) reconciled all **12 runs and 33 jobs** returned at 14:03 UTC. Every job has an explicitly empty step list, and all twelve artifact collections are empty. Twelve failed jobs report `runner_id: 0`; the remaining 21 are skipped. No annotation text or inaccessible log was read, and the inventory does not infer the admission cause. The [preservation record](2026-11-14/publication-preflight/preserved-artifacts.json) identifies the original reports and capture helper.
+
+Publication of the documented source candidate and full runtime acceptance are separate outcomes. The current publication procedure, maintainer interface actions and anonymous-access checks are in [publication](../docs/publication.md). No additional runtime gate is credited by these read-only inventories.
+
+The later [documentation verification](2026-11-14/publication-preflight/static-verification.json) checked 172 relative links, the exact About metadata and preservation hashes, with no executable-input change from `fc67bf68`. Its [working-tree scan](2026-11-14/publication-preflight/publication-working-tree-scan.json) includes the newly prepared publication files: 552 files and 501 reachable local-history blobs, with no detected pattern or limited input. That local scope complements the separately enumerated remote history above and precedes copying its own report.
+
 ## Historical 13 November capture
 
 The earlier retained source was [`f87abb572c03b5088c466e9c411a23b7c75a8da4`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/f87abb572c03b5088c466e9c411a23b7c75a8da4), tree `966ec4b81c4e2fe38a8b4d22d73d5b353c56b840`. Its [environment](2026-11-13/environment.json) and [command record](2026-11-13/local-execution.json) remain historical evidence.

@@ -322,12 +322,19 @@ The license inventory records publisher declarations and license files, flags
 missing/proprietary evidence and keeps distribution obligations visible. It is
 not a licensing certification and does not choose this repository's license.
 
-The repository remains private. During initial setup, reading the rulesets endpoint
-returned a plan restriction for private repositories, and the integration could
-not read the branch-protection administration endpoint. Do not represent protections as
-enforced. Maintainer license approval, available branch rules, required checks,
-public visibility and anonymous access are separate release decisions. No paid
-plan change or public publication is performed by this workflow.
+The maintainer has requested public source publication, with the documented
+candidate integrated into `main` through PR #2. Follow the [publication procedure](publication.md)
+for the maintainer's visibility/metadata changes and subsequent anonymous-access
+check. The last recorded visibility on 14 November 2026 was private; merge and
+public access are not established by these instructions. Source delivery leaves
+issue #1 and Docker, rendered-browser, Terraform-schema and Snowflake qualification
+open. It does not create a release tag or select the project licence.
+
+During initial setup on 13 November 2026, the rulesets endpoint reported a
+private-plan restriction, and the integration could not read the branch-protection
+administration endpoint. Recheck available protections after the visibility change;
+the historical errors do not establish enforcement. No paid plan change or cloud
+deployment is part of source publication.
 
 ## Primary implementation references
 

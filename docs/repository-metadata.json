@@ -18,7 +18,10 @@
     "terraform",
     "synthetic-data"
   ],
-  "visibility": "private",
+  "observed_visibility": "private",
+  "visibility_observation_date": "2026-11-14",
+  "requested_visibility": "public",
   "license": "pending_explicit_maintainer_choice",
-  "application_blocker": "The connected GitHub interface has no repository metadata mutation capability; the isolated browser has no authenticated GitHub session."
+  "application_method": "maintainer_github_interface",
+  "verification_status": "main_integration_public_access_and_metadata_readback_pending"
 }
