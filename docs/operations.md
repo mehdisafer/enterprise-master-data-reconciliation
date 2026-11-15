@@ -158,6 +158,12 @@ The API receives SIGTERM and has 20 seconds for graceful shutdown inside a
 30-second container stop budget. PostgreSQL has a 30-second stop budget. A hard
 kill still needs database crash recovery and outbox reconciliation on restart.
 
+## Mainline CI gates
+
+The default [CircleCI configuration](../.circleci/config.yml) now separates a low-cost branch gate (matching, other non-DB unit tests, lint and scoped secret-history scan) from an ephemeral `postgres:17.12` real-integration/dbt gate, restricted to `main`. It installs Python 3.12.16 via uv; the test fixture resets only the explicitly named `mdm_test` database. CI outputs and source SHA belong to each CircleCI job. The configuration's presence is not proof of remote execution.
+
+The mainline gate intentionally does **not** execute full native backup/restore, image build or rendered browser, which remain in the separate full/reference qualification profiles. It uses only disposable synthetic records and ephemeral credentials. No real customer environment or Snowflake account is involved.
+
 ## Run profiles and limits
 
 | Profile | Command or workflow | Bound and purpose |
