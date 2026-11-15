@@ -1,0 +1,5 @@
+name: matching-unit
+discover: git ls-files tests/test_matching.py
+run: uv run --extra dev pytest -q --junitxml="<< outputs.junit >>" << test.atoms >>
+outputs:
+  junit: test-results/matching-unit.xml
