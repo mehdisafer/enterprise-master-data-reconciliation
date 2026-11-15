@@ -1,92 +1,76 @@
 # Acceptance and remaining work
 
-Acceptance is evidence-based. “Implemented” means the code exists; “executed” identifies an actual command; “qualified” applies only to the corresponding environment and passing invariants. A source hash or implementation-agent review is not independent certification.
+Updated 15 November 2026. “Implemented” means code exists; “executed” identifies an actual command; “qualified” applies only to the corresponding environment and passing invariants. A hash or an implementation review is not independent certification.
 
-## Scope and current decision
+## Current decision
 
-Inventory on 13 November 2026: private empty repository, no branches, issues, PRs, code or licence. Scope was published in issue #1 before implementation. Only this repository and the provided isolated workspace were used. No personal PC, client data or client system was accessed. All demonstration records are synthetic.
+**The synthetic local PostgreSQL reference, installed package, Docker deployment and actual rendered lifecycle are qualified. Live Snowflake and target-specific production acceptance remain open.** No stable production V1 or provider success is inferred from these local results.
 
-**The updated native PostgreSQL reference and HTTP boundary passed qualification on 15 November 2026 for the recorded synthetic scenarios. Full project acceptance remains open.** Docker, rendered-browser behavior, Terraform provider-schema validation and live Snowflake behavior remain unqualified.
+The maintainer's parallel dependency and native-qualification work was preserved. PR #10 merged current `main` into the CircleCI candidate before a fresh full test. No source, lockfile, compatibility test or retained upstream evidence was discarded. The combined qualified runtime revision is:
 
-The maintainer has requested public source publication. The original reference was integrated into `main` through PR #2, with the [merge, complete tree and README verified](../evidence/2026-11-14/publication-preflight/integration-verification.json). [PR #8](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/8) subsequently integrated the dependency versions. [PR #9](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/9) carries the qualification, controls and evidence; its conversation records the reviewed head, final `main`/tree readback and workflow observations. Source delivery does not close full qualification or issue #1. Visibility was still private at the 14 November integration check; anonymous public access remains to be verified after the maintainer's setting change. The [publication procedure](publication.md) separates those checks from runtime acceptance and the still-unselected project licence.
+`b7485a20fa9a13aaa5a84179bf1a03f01bdbee7a`
 
-## Current dependency qualification — 15 November
+The PC-Mehdi connection was used, with task-specific authorization, to control CircleCI and download proof into a dedicated temporary task directory. Application/database/browser execution occurred on CI workers. No client data, client infrastructure or personal database was used.
 
-The initial [fresh native capture](../evidence/2026-11-15/dependency-qualification/native-flow/qualification.json) uses Python 3.12.16, PostgreSQL 17.12, FastAPI 0.162.4, Pydantic 2.14.3 and Hatchling 1.33.0. The [source-correspondence record](../evidence/2026-11-15/dependency-qualification/source-correspondence.json) binds its executable inputs to [commit `88c932de`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/88c932de80dd1d20f49b93798153f2986f3c5029). The capture records commands, source-file hashes, UTC intervals and original outputs. This is an isolated native run, not a GitHub Actions, container or warehouse result.
+## Executed profiles
 
-- The latest [complete suite](../evidence/2026-11-15/dependency-qualification/main-reconciliation/qualification.json) passed **180 tests and 15 subtests**, including 55 real PostgreSQL cases, with zero failures, errors or skips. It preserves the eleven compatibility tests added by PR #8 and uses the existing non-editable installed wheel. Its [source correspondence](../evidence/2026-11-15/dependency-qualification/main-reconciliation/source-correspondence.json) binds 83 inputs to [commit `bb369db1`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/bb369db1360ef17c5328dc6a68392355728e9920).
-- The initial complete native capture passed **169 tests and 15 subtests**, including the same 55 real PostgreSQL cases. The editable smoke separately passed 114 tests and 15 subtests, with the 55 integration cases intentionally deselected for that profile.
-- Forty-four new HTTP cases cover nested source validation, protected routes, serialization, error handling and two real decision lifecycles. The live Uvicorn exercise passed **34 requests and 341 checks**; all 17 operational table fingerprints stayed unchanged.
-- Five dbt models and 41 tests passed. A new backup restored all 17 operational table fingerprints exactly, passed the invariants and 41 restored dbt tests, and rejected a populated target for the intended reason.
-- The wheel preserves all 18 application resources and the CLI. The application lock and seven explicitly hashed build dependencies were exercised. Dated audits reported zero known vulnerabilities in 119 installed application, development and qualification packages and, separately, seven explicitly constrained build dependencies. The inventories overlap; their counts are not additive.
-- [Contract comparison](../evidence/2026-11-15/dependency-qualification/contract-comparison.json) preserved the 35 reference assertions' serialization and ingestion hashes, five schemas and OpenAPI across the dependency change. Those 35 assertions are the compatibility input set; the business demo still retains 34 source identities.
+### Full package/database profile
 
-The supplementary run executed Ruff and the full pytest suite only. The business demonstration, dbt, restore and live HTTP outputs remain the initial capture; their executable inputs are unchanged.
+Pipeline `f8810a1d-f659-493f-a513-e3c6a2bb9d06`; [workflow](https://app.circleci.com/workflow/b514e6ba-1af2-4074-8a1c-b6751960d29c).
 
-The previous continuation's account of 166 passing tests was not recovered as a published candidate. It is not reused as proof. The current qualification was executed again against the reconstructed GitHub baseline and reviewed update proposals. [Source-delivery status](publication.md) is separate from these local results.
+The inspected workflow succeeded on the combined revision. It executed the locked Python 3.12.16 environment, installed-wheel controls, source/secret/dependency checks, real PostgreSQL tests, business demonstration, export validation, dbt build/docs, backup/restoration, refusal to restore over a populated database, restored dbt checks and bounded benchmarks.
 
-The browser workflow now invokes the optional lifecycle profile and checks `mdm check` afterward. That profile implements merge, approval, execution, unmerge, split and consumer correction under three distinct operators. Neither it nor the existing view-only smoke has executed successfully in the current environment; the console criterion stays open.
+The complete suite reports **180 tests and 15 subtests**. The retained JUnit contains **195 case entries, zero failures, zero errors and zero skipped entries**. Do not add those 195 entries to the 180 tests as independent tests.
 
-## Historical source correspondence — 14 November
+### Native Docker/browser profile
 
-The application, test and dbt inputs qualified on 14 November match [commit `205e7507`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/205e7507b9cd7dc1b34a858f2c524ce0c832642c), tree `2075183147d1ff50ddfee7e86e99ad7d7bdb367e`. The [source correspondence](../evidence/2026-11-14/source-correspondence.json) remains unchanged. Its dependency and test versions describe that earlier capture, not the updated candidate.
+Pipeline `cdd50eb5-fb9d-4a29-8612-37bc5d186c25`; [workflow](https://app.circleci.com/workflow/872b65af-ec73-4fd2-872c-9b3c38c31c40).
 
-## Historical correctness and evidence fixes — 14 November
+The manual `.circleci/reference.yml` ran on `ubuntu-2404:2026.10.1` with a dedicated Compose project and ephemeral identities. It built the actual image, started PostgreSQL/migrations/API, executed the demo from the installed container, reached the host loopback health endpoint and ran `scripts/browser_smoke.py --exercise-lifecycle`.
 
-The original 112 tests passed against real PostgreSQL 17.12. Further review found a publication-completion gap and a historical-compatibility gap. The historical case was reproduced before correction. The resulting implementation:
+The browser receipt reports `passed`, with no recorded console or page errors. Its real form actions and distinct request/approve/execute identities exercised merge, split, unmerge and corrected consumer views. Observed lifecycle states were `executed`; the final business check also passed. This is not only a screenshot or an HTTP reachability check. Cleanup targeted only the stack marked as owned by this run.
 
-- Drains publication in at most 100 batches per attempt, completes only at `caught_up=True`, and retains failed/resumable state on budget exhaustion or no progress.
-- Repairs an older incomplete terminal result using its original run identity and checkpoints, within the existing three-attempt limit.
-- Uses the same historical slice interpretation for preview, request validation, execution and golden reconstruction. An incompatible pair retains a dated conflict without aborting unrelated matches.
-- Recomputes candidate disposition when a third member changes, and displays the group conflict in the console's evidence.
+### Terraform schema
 
-Thirteen new PostgreSQL regressions cover those boundaries. That capture's final suite passed **125 tests plus 15 subtests, with zero skipped cases**, including **53 real PostgreSQL integration cases**. A Starlette TestClient deprecation warning remains recorded.
+Pipeline `0b0d2b4b-fc01-4f41-8fcf-c48d56003a8d` executed formatting, backend-disabled initialization, provider validation and schema extraction. Its scope is **static configuration/provider schema only**. No live account, plan or apply is claimed. Source changes made later to application/dependency code do not turn that static run into a provider deployment.
 
-The CI evidence review then found that documentation generation overwrote dbt build results and that the negative restore check accepted unrelated failures. The workflow now uses separate build/docs paths and verifies the exact populated-target error, preserving raw outputs and per-condition results. A [targeted native run](../evidence/2026-11-14/ci-evidence-hardening/qualification.json) executed those revised commands: five models and 41 tests passed, build artifact hashes remained unchanged after docs, the expected rejection passed, and missing-archive/missing-configuration failures were correctly rejected as evidence. All 17 operational tables in each of the two databases remained unchanged. The equivalent Snowflake output-path correction is implemented and syntax-checked, not live-qualified.
+## Inspected artifact integrity
 
-## Acceptance matrix
+SHA-256 values below were calculated from downloaded original artifacts, not regenerated test results:
 
-| Requirement | Implementation / original evidence | Current acceptance |
-| --- | --- | --- |
-| Strict versioned composite source keys | Domain, JSON contracts and tests | Unit-qualified on the recorded lock |
-| Original / standard / candidate / decision / identity / crosswalk separation | Migration and real ledger tests | PostgreSQL-qualified |
-| Three ERPs and difficult negatives | Versioned synthetic inputs and separate truth | Unit-qualified; small synthetic corpus only |
-| Candidate recall and deterministic/fuzzy comparison | Matching evaluator and bounded controls | Measured; no industrial accuracy generalization |
-| Whole-group and historical constraints; authority | Shared temporal preflight, execution checks and regressions | PostgreSQL-qualified, including unrelated-match isolation |
-| Stable IDs, late changes and bitemporal provenance | Lifecycle tests, demo and overlap trigger | PostgreSQL-qualified |
-| Requester/approver/executor, merge/split/unmerge | Real API/database tests and audit ledger | Server workflow qualified; rendered console still pending |
-| Crash/replay/concurrent decisions | Outbox, optimistic versions and source checkpoints | PostgreSQL-qualified |
-| Complete publication and recovery | Bounded drain, durable receipts and legacy-terminal repair | Eight new publication cases passed on PostgreSQL |
-| Consumer correction and retained mappings | Demo and reporting state | 34 of 34 mappings aligned; no outstanding delivery |
-| dbt execution and lineage | Five models, 41 tests, manifest and populated catalog | Live PostgreSQL build passed |
-| Database profile | 300-source workload, real query plan and history growth | Measured locally; limited synthetic distribution |
-| Backup and restore | Native 17.12 clients, 17 table fingerprints and invariants | Restored content equal; 41 restored dbt tests passed; populated target correctly rejected |
-| Native HTTP operation | 34 requests and 341 checks; 17 table fingerprints unchanged | Authentication, assets, metrics, trace correlation and graceful shutdown checked |
-| Container reference and rendered console | Compose, view smoke and three-role lifecycle procedure | Not qualified: Docker unavailable; browser startup blocked |
-| Durable business correlation | HTTP/CLI, run, decision, audit, outbox and receipt tests | PostgreSQL/HTTP qualified; live warehouse query links not qualified |
-| Snowflake snapshot and dbt semantics | Publisher, unit boundaries, real PostgreSQL export | Live Snowflake load/readback and parity not executed |
-| Terraform and actual provider schema | Pinned CLI/provider and retained lock | 15 November format/init passed; validate/schema blocked; no plan/apply |
-| Dependency/licence/secret controls | Application lock, seven hashed build pins, dated audits/inventory and scoped scans | Both local audits clean at capture; CI execution and licence choice remain separate |
-| Installed package | Source distribution, wheel, resource hashes and entrypoint | All 18 resources preserved; full suite passed against the installed wheel |
-| Source publication, licence and release | PR #2 integrated the reference; PR #8 integrated dependency versions; PR #9 carries qualification/controls/evidence | PR #9 records source-delivery checks; public access unverified; no licence or release tag selected |
+| Artifact | SHA-256 |
+|---|---|
+| Combined database `artifacts/pytest.xml` | `627c48e46b9fc3ae8488127d8b442287bef2ebae5468d5ecd6ad001a0443d602` |
+| Combined database `artifacts/restore.json` | `6405f80122edbe8229966cc0fdd32a547a883f839ac56561af81dd974481cab93` |
+| Combined database `artifacts/second-restore-rejection.json` | `a3a69b2f806c94701dbfc89c938a0f61a97965ab1f0e72d6fdbd694ae3fc077a` |
+| Native reference `reference/browser-check.json` | `eae88c88efe68c3f1071bde7d0fe7cd7f3366d2f0f418d291b3cf3950cff9d34` |
+| Native reference `reference/container-post-lifecycle-check.json` | `02df03919c8a29f7e416c2a16adf57eea377c7b519b406fb8030bfd695616544` |
 
-## Environment and CI limits
+The database artifacts also retain installed versions, source/environment, model manifests, consumer assertions, query plans and performance measurements. Original native evidence from the parallel dependency work remains at [dependency-qualification](../evidence/2026-11-15/dependency-qualification/), with its own environment and revision. CircleCI retention is finite; these fingerprints and acceptance decisions remain versioned.
 
-The earlier inference that Unix socket denial prevented every local server was too broad. A fresh probe established that loopback TCP works. PostgreSQL 17.12 ran with `unix_socket_directories=''` and Uvicorn bound to `127.0.0.1`. The 14 November capture used signed PGDG packages. The current 15 November capture uses Debian Security packages for trixie, version `17.12-0+deb13u1`; its [runtime manifest](../evidence/2026-11-15/dependency-qualification/environment/runtime_manifest.json) and [signature verification](../evidence/2026-11-15/dependency-qualification/environment/signature_verification.json) retain package provenance and verification. No system installation, permission change or external resource was needed.
+## Corrections and network implications
 
-Fresh [15 November environment attempts](../evidence/2026-11-15/dependency-qualification/environment/) confirmed the remaining boundary: Docker is absent, Chromium fails before rendering at Unix socket creation, and Terraform formatting/initialization pass while provider validation/schema startup fail with the socket permission error. These results reaffirm the earlier limitation on this environment; they are not successful browser or provider-schema runs. The older Playwright download failure remains a historical failed attempt.
+Missing GitHub event metadata in a manually triggered CircleCI Actions run now requests full qualification, not a skip. The optional load profile is not invoked with an absent input. Explicit Python selection preserves the reviewed environment.
 
-The [version-specific provider transport review](terraform-provider-transport.md) establishes from official source code that the pinned Linux Snowflake executable still selects a Unix listener in managed debug mode. `TF_REATTACH_PROVIDERS` and the plugin port variables do not give this executable a TCP listener. This narrows the environment diagnosis without qualifying the provider schema. Static validation needs a compatible runner, not Snowflake credentials; live warehouse qualification has separate prerequisites.
+An API attached only to Docker's internal network had a configured port but was unreachable from the host in the observed runtime. The API now also joins an ingress bridge, while its published binding remains `127.0.0.1:8000`. PostgreSQL and migrations retain the internal `data` network with no published database port.
 
-At the historically qualified 14 November source revision, [quality run 43593711716](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711716) and [Terraform run 43593711641](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711641) failed before runner execution. The failed jobs have `runner_id: 0`, no steps and one check annotation each; artifact collections are empty. The connected endpoint exposes the annotation count but not its text. The [post-merge record](../evidence/2026-11-14/publication-preflight/post-merge-actions.json) confirms the same absence of steps for the main-push qualification runs, while recording three successful Dependabot service jobs with 18 steps in total. Update-service execution did not qualify the application or the then-proposed dependencies. The 15 November local qualification above supplies separate evidence for the consolidated dependency candidate. Billing, quota and policy causes for the qualification failures remain unconfirmed. The [15 November Quality record at `bb369db1`](../evidence/2026-11-15/dependency-qualification/main-reconciliation/github-actions.json) likewise records scope failure before runner assignment, no executed steps or artifacts, and skipped dependent jobs. Its one admission annotation remains unread. These GitHub observations do not invalidate or replace the separately recorded native runs.
+**The ingress-connected API can initiate egress. The deployment is not wholly air-gapped.** No `0.0.0.0` host binding or security bypass was introduced to obtain successful browser execution. Earlier failed container runs remain in history.
 
-## Source publication and remaining qualification
+## Invariants and operational limits
 
-The maintainer's explicit decision is public source publication. PR #2 integrated the original reference and PR #8 integrated the dependency versions. PR #9 carries the qualification, controls and evidence, with its conversation serving as the record for review, the delivered head, final `main`/tree readback and workflow observations. The maintainer applies the requested public visibility and prepared metadata in GitHub's interface; anonymous access and metadata then require readback. The [recorded preparation](publication.md#recorded-prepublication-checks) includes the initial and expanded remote branch-history scans and scoped Actions inventories. This does not require waiting for a live Snowflake account or imply a licence grant.
+Source hashes, schemas, OpenAPI, field provenance, legal-identity conflicts, immutable history, bitemporal values, separate human roles, optimistic versions, consumer corrections and repeat-safe operations remain required. A second restore into a non-empty target must be refused for the expected reason, not merely fail arbitrarily.
 
-1. Read the exact GitHub admission annotation when an authorized interface exposes it, and restore runner execution or use an explicitly authorized isolated runner. Run the delivered code's Docker, rendered-browser and Terraform schema profiles. A docs-only synchronization selects no heavy runtime work; select a full qualification run for the intended source revision. Public source visibility is a maintainer decision, not evidence that CI execution has recovered. No billing or policy change is authorized by this procedure.
-2. Run the dedicated Snowflake qualification with an authorized account, key-pair role, database/warehouse scope and explicit spending limit. Retain publication/readback/rollback results, dbt parity, query IDs and accessible credit metrics. PostgreSQL export success is not a Snowflake result.
-3. Recheck available branch protections after publication and record actual enforcement separately from the earlier access errors. Maintain the explicit unlicensed status until the maintainer chooses a project licence; third-party notices remain applicable.
-4. Extend the small holdout with independently labeled, rights-cleared industrial fixtures before making accuracy or scale claims beyond the measured synthetic profiles.
+The ledger serializes graph mutations using a PostgreSQL advisory transaction lock. Tests and bounded measurements do not establish horizontal write scalability. The 34-identity synthetic truth corpus is not a real customer population. Corrections to reporting do not reverse external business actions.
 
-PR #2 integrated the original reference, PR #8 integrated the dependency versions, and PR #9 carries the supplementary qualification and controls. Issue #1 remains open for full acceptance. No release tag is part of that action. Implementation-agent reviews are disclosed self-review, not independent approval.
+Secrets must remain in protected external files, not repository artifacts. Tests requiring database reset use a dedicated `_test` database. See [operations](operations.md), [verification](verification.md), [demo](demo.md), [matching](matching.md) and the current README for executable instructions.
+
+## Gates still open
+
+| Gate | Closure evidence required |
+|---|---|
+| Live Snowflake | Authorized dedicated account/role, authentication, warehouse/database scope, budget, real load/dbt/idempotence/reconciliation/restore results and provider outputs |
+| Production target | Selected environment, permissions, secret lifecycle, monitoring, measured recovery and operator acceptance |
+| Project licence | Explicit maintainer choice; third-party notices are not a licence for original project code |
+| Public visibility/protections | Maintainer setting changes followed by readback; historical private-plan restrictions are not current enforcement proof |
+
+Issue #1 remains open for the original live-provider scope. Source integration, public visibility, static Terraform validity and production acceptance are separate decisions. No paid plan, external provider deployment or cloud spending was initiated in this qualification.
