@@ -71,6 +71,9 @@ Deterministic evidence is the baseline. Conservative fuzzy name evidence can add
 
 ## Develop and qualify
 
+The default [CircleCI pipeline](.circleci/config.yml) now defines two levels of automated checking: `build-and-test` runs Ruff, the matching suite, all non-database tests and a scoped repository-history secret scan on branches; `postgres-integration` runs the complete PostgreSQL pytest suite, the three-ERP demo, business invariants, dbt build/catalog and a 300-source benchmark on **`main` only**. Both use Python 3.12.16 and the frozen uv dependency lock. JUnit, source/CI environment and selected dbt outputs are retained. This expanded profile is **configured, not yet recorded as passing at the new commit**; it does not replace the separate backup/restore, Docker/browser, Terraform or live Snowflake qualifications. Documentation/evidence-only commits on `main` write a scope receipt and bypass the expensive PostgreSQL/dbt steps; this is never counted as a passing integration test. An unknown change scope triggers the full suite. See [CI provenance and execution boundaries](docs/circleci.md).
+
+
 Python **3.12.16**, uv **0.13.6** and the complete dependency/build constraints are the qualified development profile:
 
 ```bash
