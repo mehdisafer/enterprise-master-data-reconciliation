@@ -26,7 +26,7 @@ jobs:
       - run:
           name: Install the reviewed browser qualification environment
           command: |
-            uv sync --frozen --extra browser --python 3.12.14
+            uv sync --frozen --extra browser --python 3.12.16
             uv run --no-sync python --version
             uv run --no-sync python -m playwright install --with-deps --only-shell chromium
       - run:
@@ -48,8 +48,10 @@ jobs:
             curl --fail --silent --show-error --max-time 10 http://127.0.0.1:8000/healthz > artifacts/container-health.json
             docker compose images --format json > artifacts/container-images.json
       - run:
-          name: Exercise the actual rendered review and consumer views
-          command: timeout --signal=TERM --kill-after=10s 180s uv run --no-sync python scripts/browser_smoke.py
+          name: Exercise rendered decisions, reversals and consumer corrections
+          command: |
+            timeout --signal=TERM --kill-after=10s 180s uv run --no-sync python scripts/browser_smoke.py --exercise-lifecycle
+            docker compose exec -T api mdm check > artifacts/container-post-lifecycle-check.json
       - run:
           name: Retain diagnostics and remove only this synthetic deployment
           when: always
