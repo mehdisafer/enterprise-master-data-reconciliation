@@ -36,10 +36,14 @@ source commits and hashes are identified in the
 This isolated workspace allows loopback TCP while denying Unix sockets.
 PostgreSQL ran with Unix sockets disabled, using Debian Security trixie packages
 `17.12-0+deb13u1` in the current capture; no system permission was changed.
-Fresh Chromium and Terraform schema attempts failed at Unix socket creation,
-while Terraform formatting/initialization succeeded. Docker is absent. The image,
-rendered browser and provider-schema validation remain unqualified. Earlier
-13–14 November evidence describes its original versions and remains unchanged.
+Fresh **local** Chromium and Terraform schema attempts failed at Unix socket
+creation, while Terraform formatting/initialization succeeded. Docker is absent
+in that workspace. On a separate Linux runner, CircleCI reported successful
+container and rendered browser jobs at the tested setup-branch commit
+`b7485a2`; see [CircleCI source and status reconciliation](circleci.md).
+Original remote artifacts and current-main execution remain to be inspected.
+Provider-schema and Snowflake qualification are independent. Earlier evidence
+retains its original versions.
 
 The CI definitions select these profiles but do not themselves prove execution.
 Recorded GitHub qualification jobs failed before runner assignment; native evidence
@@ -135,8 +139,9 @@ then merges and explicitly splits the group. The split creates a new identity
 for one partition by design; source assertions and unrelated mappings stay
 unchanged. Each stage publishes corrections and checks reporting alignment.
 Use this only in the disposable synthetic environment, and retain the final
-`mdm check` result with the browser report/screenshots. The current workspace has
-not executed this profile successfully.
+`mdm check` result with the browser report/screenshots. The local workspace
+has not executed this profile; CircleCI reported successful execution on
+the setup-branch commit, and original screenshots/reports need readback.
 
 ### Shutdown and restart
 
@@ -378,8 +383,8 @@ carries the supplementary qualification, controls and evidence; its conversation
 is the record for review, the delivered head, final `main`/tree readback and
 workflow observations. Follow the [publication procedure](publication.md) for
 the maintainer's visibility/metadata changes and anonymous-access check. Source
-delivery leaves issue #1 and Docker, rendered-browser, Terraform-schema and
-Snowflake qualification open. It does not create a release tag or select the
+delivery leaves issue #1, final-main container/browser artifact readback,
+Terraform provider-schema and Snowflake qualification open. It does not create a release tag or select the
 project licence.
 
 During initial setup on 13 November 2026, the rulesets endpoint reported a
