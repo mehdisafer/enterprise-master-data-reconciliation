@@ -27,6 +27,10 @@ The previous continuation's account of 166 passing tests was not recovered as a 
 
 The browser workflow now invokes the optional lifecycle profile and checks `mdm check` afterward. That profile implements merge, approval, execution, unmerge, split and consumer correction under three distinct operators. The native local workspace still cannot run Chromium; the separately executed CircleCI `reference-containers` job reported success at `b7485a2`. Original screenshots, response checks and post-lifecycle artifacts have not been read back independently here.
 
+## Supplementary original CircleCI artifact register
+
+A parallel workstream documented additional [original CircleCI artifact inspection and SHA-256 values](circleci.md#parallel-original-artifact-inspection-recorded-in-pr-12) in [PR #12](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/12). It reports 195 JUnit entries (180 tests + 15 subtests, zero failures/errors/skips), successful browser merge/unmerge/split and successful post-lifecycle business checks for the tested combined source `b7485a2`. This conversation has verified the GitHub success contexts and executable-file correspondence; it has **not independently downloaded or rehashed** the artifact files. These different verification scopes must remain visible when deciding acceptance.
+
 ## Historical source correspondence — 14 November
 
 The application, test and dbt inputs qualified on 14 November match [commit `205e7507`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/205e7507b9cd7dc1b34a858f2c524ce0c832642c), tree `2075183147d1ff50ddfee7e86e99ad7d7bdb367e`. The [source correspondence](../evidence/2026-11-14/source-correspondence.json) remains unchanged. Its dependency and test versions describe that earlier capture, not the updated candidate.
