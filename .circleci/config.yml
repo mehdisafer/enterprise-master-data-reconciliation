@@ -1,35 +1,172 @@
+# Fast PR checks plus real PostgreSQL/dbt qualification on main.
+# Docker/browser and Snowflake remain separate, explicitly scoped workflows.
 version: 2.1
 jobs:
   build-and-test:
     docker:
       - image: cimg/python:3.12
+    resource_class: small
+    environment:
+      UV_LINK_MODE: copy
+      DBT_SEND_ANONYMOUS_USAGE_STATS: "false"
+      DO_NOT_TRACK: "1"
     steps:
       - checkout
       - restore_cache:
           keys:
-            - mdm-uv-v1-{{ checksum "uv.lock" }}
+            - mdm-uv-v2-{{ checksum "uv.lock" }}
       - run:
-          name: Install locked Python environment
+          name: Install the reviewed Python and frozen test environment
+          no_output_timeout: 10m
           command: |
             python -m pip install --disable-pip-version-check uv==0.13.6
-            uv sync --frozen --extra dev
+            uv python install 3.12.16
+            uv sync --frozen --python 3.12.16 --extra dev --extra postgres
+            uv run --no-sync python -c 'import sys; assert sys.version_info[:3] == (3, 12, 16), sys.version'
       - save_cache:
-          key: mdm-uv-v1-{{ checksum "uv.lock" }}
+          key: mdm-uv-v2-{{ checksum "uv.lock" }}
           paths:
             - .venv
             - ~/.cache/uv
       - run:
-          name: Lint
-          command: uv run --extra dev ruff check src tests scripts .github/scripts
+          name: Lint all application and qualification source
+          command: uv run --no-sync ruff check src tests scripts .github/scripts
       - run:
-          name: Diagnose test suite
+          name: Diagnose Smarter Testing matching suite
           command: circleci testsuite doctor "matching-unit"
       - run:
-          name: Run test suite
+          name: Run the matching Smarter Testing suite
           command: circleci testsuite run "matching-unit"
+      - run:
+          name: Exercise all non-database regression tests
+          command: |
+            mkdir -p test-results
+            uv run --no-sync pytest -q -m 'not integration' --junitxml=test-results/non-integration.xml
+            uv run --no-sync python - <<'PY'
+            import xml.etree.ElementTree as ET
+            root = ET.parse('test-results/non-integration.xml').getroot()
+            suites = [root] if root.tag == 'testsuite' else root.findall('testsuite')
+            assert suites and sum(int(s.get('tests', '0')) for s in suites) > 0
+            assert all(int(s.get(field, '0')) == 0 for s in suites for field in ('failures', 'errors', 'skipped'))
+            PY
+      - run:
+          name: Scan the checked-out source and reachable git history
+          command: |
+            mkdir -p artifacts
+            uv run --no-sync python scripts/secret_scan.py --history --output artifacts/secret-scan.json
       - store_test_results:
           path: test-results
+      - store_artifacts:
+          path: test-results
+          destination: unit-tests
+      - store_artifacts:
+          path: artifacts
+          destination: source-security
+
+  postgres-integration:
+    docker:
+      - image: cimg/python:3.12
+      - image: postgres:17.12
+        environment:
+          POSTGRES_DB: mdm
+          POSTGRES_USER: mdm
+          POSTGRES_PASSWORD: ci-ephemeral-only
+    resource_class: medium
+    environment:
+      UV_LINK_MODE: copy
+      DBT_SEND_ANONYMOUS_USAGE_STATS: "false"
+      DO_NOT_TRACK: "1"
+      PGHOST: 127.0.0.1
+      PGPORT: "5432"
+      PGUSER: mdm
+      PGDATABASE: mdm
+      PGPASSWORD: ci-ephemeral-only
+      DBT_ENV_SECRET_PG_PASSWORD: ci-ephemeral-only
+      MDM_DATABASE_URL: postgresql://mdm@127.0.0.1:5432/mdm
+      MDM_TEST_DATABASE_URL: postgresql://mdm@127.0.0.1:5432/mdm_test
+    steps:
+      - checkout
+      - run:
+          name: Install Python 3.12.16 and the exact application/dbt lock
+          no_output_timeout: 10m
+          command: |
+            python -m pip install --disable-pip-version-check uv==0.13.6
+            uv python install 3.12.16
+            uv sync --frozen --python 3.12.16 --extra dev --extra postgres
+            uv run --no-sync python -c 'import sys; assert sys.version_info[:3] == (3, 12, 16), sys.version'
+      - run:
+          name: Wait for disposable PostgreSQL and create the isolated test database
+          command: |
+            mkdir -p artifacts test-results
+            uv run --no-sync python - <<'PY'
+            import json
+            import os
+            import platform
+            import time
+            from pathlib import Path
+            import psycopg
+            for attempt in range(30):
+                try:
+                    with psycopg.connect(os.environ['MDM_DATABASE_URL'], autocommit=True, connect_timeout=2) as conn:
+                        server = conn.execute('SELECT version()').fetchone()[0]
+                        conn.execute('CREATE DATABASE mdm_test')
+                    break
+                except psycopg.OperationalError:
+                    if attempt == 29:
+                        raise
+                    time.sleep(1)
+            Path('artifacts/environment.json').write_text(json.dumps({
+                'commit': os.environ['CIRCLE_SHA1'],
+                'branch': os.environ.get('CIRCLE_BRANCH'),
+                'python': platform.python_version(),
+                'postgres': server,
+                'snowflake_live_executed': False,
+            }, indent=2) + '\n')
+            PY
+      - run:
+          name: Execute complete real-PostgreSQL suite and prohibit skipped tests
+          no_output_timeout: 10m
+          command: |
+            uv run --no-sync pytest -q --junitxml=test-results/postgres.xml
+            uv run --no-sync python - <<'PY'
+            import xml.etree.ElementTree as ET
+            root = ET.parse('test-results/postgres.xml').getroot()
+            suites = [root] if root.tag == 'testsuite' else root.findall('testsuite')
+            assert suites and sum(int(s.get('tests', '0')) for s in suites) > 0
+            assert all(int(s.get(field, '0')) == 0 for s in suites for field in ('failures', 'errors', 'skipped'))
+            PY
+      - run:
+          name: Run real three-ERP reconciliation and business invariants
+          command: |
+            uv run --no-sync mdm migrate
+            uv run --no-sync mdm demo --output artifacts/demo.json
+            uv run --no-sync mdm check > artifacts/business-check.json
+      - run:
+          name: Build PostgreSQL dbt models and data tests
+          no_output_timeout: 10m
+          command: |
+            uv run --no-sync dbt deps --project-dir dbt --profiles-dir dbt --target postgres
+            uv run --no-sync dbt build --project-dir dbt --profiles-dir dbt --target postgres --target-path ../artifacts/dbt-build
+            uv run --no-sync dbt docs generate --project-dir dbt --profiles-dir dbt --target postgres --target-path ../artifacts/dbt-docs
+      - run:
+          name: Measure bounded synthetic matching candidates
+          command: uv run --no-sync mdm benchmark --size 300 --output artifacts/benchmark-control.json
+      - store_test_results:
+          path: test-results
+      - store_artifacts:
+          path: test-results
+          destination: postgres-junit
+      - store_artifacts:
+          path: artifacts
+          destination: postgres-dbt-evidence
+
 workflows:
   build-and-test:
     jobs:
       - build-and-test
+      - postgres-integration:
+          requires:
+            - build-and-test
+          filters:
+            branches:
+              only: main
