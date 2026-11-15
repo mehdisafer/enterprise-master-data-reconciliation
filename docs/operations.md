@@ -9,10 +9,10 @@ repository's visibility does not expose a running service.
 
 | Component | Selected version or contract | Evidence boundary |
 | --- | --- | --- |
-| Python image | `python:3.12.14-slim` | Version tag exists in the official image registry; the container job records its actual built image. |
+| Python image | `python:3.12.16-slim` | Version tag exists in the official image registry; the container job records its actual built image. |
 | PostgreSQL image | `postgres:17.12` | Selected after the 12 November 2026 security update; CI records `version()` and the pulled digest. |
 | uv | `0.13.6` | The Docker build and CI install from the same lock. |
-| Python dependencies | `uv.lock` | Direct constraints are in `pyproject.toml`; the lock captures transitive versions and hashes. |
+| Python dependencies | `uv.lock` | Direct constraints are in `pyproject.toml`; the lock captures transitive versions and hashes. See the [15 November dependency refresh](dependency-refresh-2026-11-15.md); earlier results concern the prior lock. |
 | dbt | PostgreSQL and Snowflake adapters in the lock | SQL compilation is distinct from executing models and data tests. |
 | Source and rules | `contracts/` | Input data is synthetic; repository licensing awaits maintainer approval. |
 

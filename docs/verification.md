@@ -59,6 +59,12 @@ The [13:45 UTC capture](../evidence/2026-11-14/ci-evidence-hardening/qualificati
 
 The [original command outputs](../evidence/2026-11-14/ci-evidence-hardening/commands/02-dbt-build/execution.json), [copy manifest](../evidence/2026-11-14/ci-evidence-hardening/preserved-artifacts.json), dbt results, restore-control responses and runtime logs are retained. The Snowflake helper uses the same separation between build/docs output paths; only its shell syntax and source changes are checked here. No live Snowflake result follows from this native run.
 
+## Dependency refresh qualification — 15 November 2026
+
+The [change record](dependency-refresh-2026-11-15.md) combines Dependabot PRs #4–#7. Historical source, tests, dbt, restore, HTTP results and dependency-audit reports remain valid only for the source revisions they captured. The updated lock is not accepted on the strength of old evidence.
+
+A new-head qualification must install Python 3.12.16 and uv 0.13.6; run `uv sync --locked --all-extras`, package-build checks, full `pytest -q` with real dedicated PostgreSQL, dbt build/tests, HTTP contracts, business demo, native backup/restore, component/advisory inventory and container/browser/Terraform checks on an assigned runner. Snowflake remains a separate authorized live qualification. Preserve original results tied to the new SHA.
+
 ## Remaining environment boundaries
 
 Loopback TCP is allowed in the provided workspace; Unix socket creation is denied. PostgreSQL 17.12 used `unix_socket_directories=''`, with standard TCP and private SCRAM credentials. The signed PGDG packages were extracted locally without a system installation. Uvicorn served actual HTTP on loopback. The earlier blanket socket restriction diagnosis was therefore too broad and is superseded by these observed runs.

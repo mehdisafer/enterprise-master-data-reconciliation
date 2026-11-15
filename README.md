@@ -34,6 +34,8 @@ A subsequent [targeted native check](evidence/2026-11-14/ci-evidence-hardening/q
 
 The merged reference's [quality workflow](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43603763090) and [Terraform workflow](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43603763082) again stopped before runner execution. The [post-merge inventory](evidence/2026-11-14/publication-preflight/post-merge-actions.json) separately records successful Dependabot service steps; these do not qualify the application or its proposed dependency updates. The native results remain separate original evidence. The precise qualification-job admission annotation remains inaccessible through the connected interface.
 
+**Dependency refresh (15 November 2026):** Python 3.12.16, FastAPI 0.162.4, Pydantic 2.14.3 and Hatchling 1.33.0 are consolidated in [a separate change record](docs/dependency-refresh-2026-11-15.md). The 14 November full-suite and audit reports concern the earlier source and lock; they do not automatically qualify this refresh. Runtime and CI evidence for the updated commit must be captured separately.
+
 ## Run the complete reference
 
 Requirements: Docker Engine with Compose v2, approximately 2 CPU cores and 2–3 GB available RAM. The API binds only to `127.0.0.1:8000`; the database has no host port.
