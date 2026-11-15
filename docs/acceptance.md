@@ -50,6 +50,10 @@ The CI evidence review then found that documentation generation overwrote dbt bu
 | Dependency/licence/secret controls | Frozen lock, dated audit/inventory and scoped scans | Original local reports retained; remote application qualification has no executed steps |
 | Source publication, licence and release | Integrated candidate, prepared metadata and publication procedure | Main integration verified; public visibility requested and anonymous access pending; no licence or release tag selected |
 
+### 15 November dependency-refresh boundary
+
+The consolidated [dependency refresh](dependency-refresh-2026-11-15.md) changes Python/FastAPI/Pydantic/Hatchling without changing domain decisions or migration contracts. The 14 November PostgreSQL, dbt, HTTP and audit evidence predates the new lock. A new source-head CI and integration run is required to qualify it; the existing runner admission, container, browser, Terraform and live Snowflake blockers remain independent.
+
 ## Environment and CI limits
 
 The earlier inference that Unix socket denial prevented every local server was too broad. A fresh probe established that loopback TCP works. PostgreSQL 17.12 ran with `unix_socket_directories=''` and Uvicorn bound to `127.0.0.1`. The packages came from the signed official PGDG repository; signature, package checksums, binary versions and real readiness queries are retained. No system installation, permission change or external resource was needed.

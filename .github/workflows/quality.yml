@@ -21,7 +21,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  PYTHON_VERSION: "3.12.14"
+  PYTHON_VERSION: "3.12.16"
   UV_VERSION: "0.13.6"
   DBT_SEND_ANONYMOUS_USAGE_STATS: "false"
   DO_NOT_TRACK: "1"
