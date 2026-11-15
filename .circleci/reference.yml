@@ -1,0 +1,72 @@
+# Manual Docker/HTTP/browser qualification. PostgreSQL/dbt/restore and Terraform
+# retain their separate full workflows; this does not claim Snowflake acceptance.
+version: 2.1
+jobs:
+  reference-containers:
+    machine:
+      image: ubuntu-2404:2026.10.1
+    resource_class: large
+    environment:
+      DBT_SEND_ANONYMOUS_USAGE_STATS: "false"
+      DO_NOT_TRACK: "1"
+    steps:
+      - checkout
+      - run:
+          name: Record source and scope an isolated reference deployment
+          command: |
+            mkdir -p artifacts
+            git rev-parse HEAD > artifacts/commit.txt
+            docker version > artifacts/docker-version.txt
+            docker compose version > artifacts/compose-version.txt
+            printf 'export COMPOSE_PROJECT_NAME=mdm-ci-%s\n' "$CIRCLE_WORKFLOW_ID" >> "$BASH_ENV"
+            printf 'export MDM_SECRET_DIR=.secrets/ci-%s\n' "$CIRCLE_WORKFLOW_ID" >> "$BASH_ENV"
+            python3 -m venv /tmp/mdm-ci-tools
+            /tmp/mdm-ci-tools/bin/python -m pip install --disable-pip-version-check uv==0.13.6
+            printf 'export PATH=/tmp/mdm-ci-tools/bin:$PATH\n' >> "$BASH_ENV"
+      - run:
+          name: Install the reviewed browser qualification environment
+          command: |
+            uv sync --frozen --extra browser --python 3.12.16
+            uv run --no-sync python --version
+            uv run --no-sync python -m playwright install --with-deps --only-shell chromium
+      - run:
+          name: Prepare ephemeral identities and build the reference image
+          no_output_timeout: 20m
+          command: |
+            python3 .github/scripts/setup_ci_secrets.py
+            docker compose config --quiet
+            printf '%s\n' "$COMPOSE_PROJECT_NAME" > artifacts/owned-compose-project.txt
+            docker compose build
+      - run:
+          name: Start PostgreSQL, migrations and API with health checks
+          command: docker compose up --detach --wait --wait-timeout 120 api
+      - run:
+          name: Execute the image and verify the host-facing API
+          command: |
+            docker compose exec -T api mdm demo > artifacts/container-demo.json
+            docker compose exec -T api mdm check > artifacts/container-check.json
+            curl --fail --silent --show-error --max-time 10 http://127.0.0.1:8000/healthz > artifacts/container-health.json
+            docker compose images --format json > artifacts/container-images.json
+      - run:
+          name: Exercise rendered decisions, reversals and consumer corrections
+          command: |
+            timeout --signal=TERM --kill-after=10s 180s uv run --no-sync python scripts/browser_smoke.py --exercise-lifecycle
+            docker compose exec -T api mdm check > artifacts/container-post-lifecycle-check.json
+      - run:
+          name: Retain diagnostics and remove only this synthetic deployment
+          when: always
+          command: |
+            mkdir -p artifacts
+            if test -f artifacts/owned-compose-project.txt &&
+               test "$(cat artifacts/owned-compose-project.txt)" = "$COMPOSE_PROJECT_NAME"; then
+              docker compose logs --no-color > artifacts/container.log 2>&1 || true
+              docker compose ps --all --format json > artifacts/container-state.json || true
+              docker compose down --volumes --remove-orphans --timeout 30
+            fi
+      - store_artifacts:
+          path: artifacts
+          destination: reference
+workflows:
+  reference-qualification:
+    jobs:
+      - reference-containers

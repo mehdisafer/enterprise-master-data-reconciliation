@@ -1,0 +1,35 @@
+version: 2.1
+jobs:
+  build-and-test:
+    docker:
+      - image: cimg/python:3.12
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - mdm-uv-v1-{{ checksum "uv.lock" }}
+      - run:
+          name: Install locked Python environment
+          command: |
+            python -m pip install --disable-pip-version-check uv==0.13.6
+            uv sync --frozen --extra dev
+      - save_cache:
+          key: mdm-uv-v1-{{ checksum "uv.lock" }}
+          paths:
+            - .venv
+            - ~/.cache/uv
+      - run:
+          name: Lint
+          command: uv run --extra dev ruff check src tests scripts .github/scripts
+      - run:
+          name: Diagnose test suite
+          command: circleci testsuite doctor "matching-unit"
+      - run:
+          name: Run test suite
+          command: circleci testsuite run "matching-unit"
+      - store_test_results:
+          path: test-results
+workflows:
+  build-and-test:
+    jobs:
+      - build-and-test
