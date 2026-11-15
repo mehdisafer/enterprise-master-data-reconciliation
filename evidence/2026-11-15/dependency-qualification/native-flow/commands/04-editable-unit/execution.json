@@ -1,0 +1,17 @@
+{
+  "label": "editable-unit",
+  "command": [
+    "pytest",
+    "-q",
+    "-m",
+    "not integration",
+    "--junitxml=/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/editable-unit.xml"
+  ],
+  "cwd": "/workspace/scratch/f684f9028a9d/repo",
+  "started_at": "2026-11-15T21:24:54.648455+00:00",
+  "ended_at": "2026-11-15T21:24:57.019097+00:00",
+  "elapsed_seconds": 2.370652968000286,
+  "returncode": 0,
+  "expected_returncode": 0,
+  "timeout_seconds": 240
+}

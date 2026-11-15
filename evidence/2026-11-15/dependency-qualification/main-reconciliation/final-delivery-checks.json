@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "captured_at_utc": "2026-11-15T21:50:49.356606+00:00",
+  "qualified_executable_commit": "bb369db1360ef17c5328dc6a68392355728e9920",
+  "executable_inputs_checked": 83,
+  "source_mismatches": [],
+  "preservation": [
+    {
+      "manifest": "preserved-artifacts.json",
+      "entries": 406,
+      "mismatches": []
+    },
+    {
+      "manifest": "main-reconciliation/preserved-artifacts.json",
+      "entries": 15,
+      "mismatches": []
+    }
+  ],
+  "relative_path_links_checked": 292,
+  "missing_relative_path_links": [],
+  "git_diff_check_exit": 0,
+  "git_diff_check_output": "",
+  "documents": [
+    {
+      "path": "README.md",
+      "bytes": 14899,
+      "sha256": "d3c1567923094246c7a6616f922f32e54883a0dcb747e7e822e60d7f83970d56",
+      "git_blob_sha1": "3db47dae42a3a41ad324831e50e644d6e8c1202c"
+    },
+    {
+      "path": "docs/acceptance.md",
+      "bytes": 17065,
+      "sha256": "2a4cb4dedfc6db948dbf6da6e09a269fab8662b76deb75086f4d83946bd6dd6e",
+      "git_blob_sha1": "649b8f9b39f18a53132ca45d61cd4a1439cb1a41"
+    },
+    {
+      "path": "docs/verification.md",
+      "bytes": 18316,
+      "sha256": "a2223e96e788cce84d010632b555b46219bc397cea41f383b3e257a84b800263",
+      "git_blob_sha1": "ca4a14713b5da3d855f58576872a7ef4662f8fec"
+    },
+    {
+      "path": "docs/operations.md",
+      "bytes": 25959,
+      "sha256": "44edf7d658185e8e682f85185fa5758b65f603555e6b754dfa5d0c801d8a4224",
+      "git_blob_sha1": "2dcfcce3ffe4c835d7281c01e6015be2e92b1ceb"
+    },
+    {
+      "path": "docs/publication.md",
+      "bytes": 14729,
+      "sha256": "01bf1ad8f7e331abb7d4a585b7e42444617bff754dcaa76cb3669231cbe15eec",
+      "git_blob_sha1": "6963a4864456e8c3601f449df63fe0c7cc425b5c"
+    },
+    {
+      "path": "docs/releases/0.1.0rc1.md",
+      "bytes": 14056,
+      "sha256": "01c467aa7f06698a8316e988af4bfb231ded6bf6a9e4bbc8e07bdb032a6e2bd9",
+      "git_blob_sha1": "e524f2036933057645c6ab0d4cca042298268e56"
+    },
+    {
+      "path": "docs/dependency-refresh-2026-11-15.md",
+      "bytes": 8233,
+      "sha256": "0535078632699f4bc844aaa1276bd3a9acf89fd657e33359838c3d4fe8ac6319",
+      "git_blob_sha1": "7c63b31f1d6c41a094878ed4716952f948233d39"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 4035,
+      "sha256": "22cff839557bc9157fb22a042c44a13cc7483104959079366db56e579342b33d",
+      "git_blob_sha1": "d05f3135ee99cac4da5faff11ff8814fb7fba13d"
+    },
+    {
+      "path": "evidence/README.md",
+      "bytes": 33139,
+      "sha256": "0a3435f0b5a284eed1107f55bd57006fa03ec655f329ff2b202dc0732710d7b7",
+      "git_blob_sha1": "6d2e15180678bb726e586fbf61667bb03d83d9cd"
+    },
+    {
+      "path": "evidence/2026-11-15/dependency-qualification/README.md",
+      "bytes": 12151,
+      "sha256": "74ffe10478268ada1b1ece498a8fb2f7f700471f4033d00cc8d7cc071298a32a",
+      "git_blob_sha1": "d584dcab099e3c7c6e29c14862652e4f173cc5de"
+    }
+  ],
+  "limits": [
+    "Relative path targets checked; anchor review recorded separately.",
+    "Historical artifact paths are resolved against the preserved remote baseline tree.",
+    "This report does not assert Docker, rendered-browser, provider-schema or Snowflake qualification."
+  ],
+  "passed": true
+}

@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "returncode": 1,
+  "response": {
+    "restore_verified": false,
+    "error_type": "OperationError",
+    "reason": "Restore target is not empty and isolated"
+  },
+  "forbidden_report_absent": true
+}

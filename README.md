@@ -8,33 +8,31 @@ The reference implementation uses **Python, PostgreSQL, dbt and a FastAPI review
 
 ## Delivery status
 
-This is a **reference release candidate with a verified native PostgreSQL implementation**, developed in [PR #2](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/2) under [issue #1](https://github.com/mehdisafer/enterprise-master-data-reconciliation/issues/1). On 14 November 2026, the real database suite, business demonstration, dbt build, restore drill and live HTTP checks succeeded in the isolated workspace. Container deployment, rendered-browser checks, Terraform schema validation and live Snowflake qualification remain open. The full release is not accepted.
+This is a **reference release candidate with a qualified native PostgreSQL implementation**. The 15 November 2026 dependency update passed fresh qualification under Python **3.12.16** and PostgreSQL **17.12**, including the installed wheel, real database workflows, dbt, restoration and native HTTP. The latest complete test suite passed **180 tests and 15 subtests**, including the compatibility tests preserved from the concurrent dependency rollup. Container deployment, rendered-browser behavior, Terraform provider-schema validation and live Snowflake qualification remain open. **The full release is not accepted.**
 
-The maintainer has requested public source publication. PR #2 has integrated the complete reference into `main`; its [merge and full-tree readback](evidence/2026-11-14/publication-preflight/integration-verification.json) are recorded. Source delivery leaves issue #1 and the remaining qualification work open. Repository visibility, About metadata and anonymous-access checks are tracked separately in the [publication record](docs/publication.md).
+The original reference was integrated through [PR #2](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/2); [PR #8](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/8) integrated the dependency versions into `main`. [PR #9](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/9) carries the additional qualification, controls and [retained evidence](evidence/2026-11-15/dependency-qualification/). Its conversation is the source-delivery record for the reviewed head, final `main`/tree readback and workflow observations. The [publication record](docs/publication.md) separates source integration, public visibility and runtime acceptance; [issue #1](https://github.com/mehdisafer/enterprise-master-data-reconciliation/issues/1) remains open for full acceptance.
 
-| Area | Implementation | Execution evidence |
+| Area | Implementation | Latest execution evidence |
 | --- | --- | --- |
-| Synthetic ERP contracts, blocking, matching and survivorship | Implemented | Local unit tests and measured synthetic control |
-| Human review, merge, split, unmerge and temporal history | Implemented | Real PostgreSQL lifecycle, concurrency and failure tests passed |
-| Transactional outbox and reporting consumer | Implemented | Crash/replay, bounded publication and complete correction tests passed |
+| Synthetic ERP contracts, blocking, matching and survivorship | Implemented | Recorded synthetic controls passed; input serializations, ingestion hashes, five schemas and OpenAPI match the previous dependency baseline |
+| Human review, merge, split, unmerge and temporal history | Implemented | Latest complete suite: 180 tests and 15 subtests passed, including 55 real PostgreSQL cases; zero skipped cases |
+| Transactional outbox and reporting consumer | Implemented | Lifecycle, crash/replay and correction tests passed; all 34 demo source mappings aligned |
 | PostgreSQL dbt models and tests | Implemented | Five models and 41 data tests passed; populated catalog generated |
-| Backup and restoration | Implemented | Exact comparison of 17 tables; invariants and 41 dbt tests passed after restore; populated target correctly rejected |
-| Native HTTP server and assets | Implemented | 24 real requests, 127 assertions; authentication, provenance, metrics, correlation and graceful shutdown checked |
-| Container deployment and rendered console | Implemented | **Not qualified**: Docker unavailable; Chromium startup blocked by Unix socket denial |
-| Terraform configuration | Implemented; provider lock generated | Formatting passed; provider schema validation still blocked by Unix socket denial |
-| Snowflake publication and dbt parity | Implemented | **Not live-qualified: dedicated authorized account and budget required** |
-| Source integration | Complete reference merged into `main` through PR #2 | Merge/tree/README verified; visibility and anonymous-access status tracked separately |
+| Backup and restoration | Implemented | Exact comparison of 17 tables, invariants and 41 restored dbt tests passed; populated target correctly rejected |
+| Native HTTP server and assets | Implemented | 34 real requests and 341 checks passed; all 17 operational fingerprints unchanged |
+| Build and installed distribution | Implemented | Wheel built through the source distribution, all 18 application resources preserved, CLI and non-editable installation exercised |
+| Container deployment and rendered console | Implemented, including a three-role browser lifecycle profile | **Not qualified**: Docker absent; Chromium startup denied Unix socket creation |
+| Terraform configuration | Implemented; provider lock retained | Fresh formatting and initialization passed; provider-schema validation remains blocked by Unix socket denial |
+| Snowflake publication and dbt parity | Implemented | **Not live-qualified: dedicated authorized account, role, scope and budget required** |
 | Repository licence | No licence selected | No open-source licence grant or release tag |
 
-The [acceptance matrix](docs/acceptance.md), [evidence index](evidence/README.md) and [release notes](docs/releases/0.1.0rc1.md) distinguish observed results from implementation. A passing local unit suite does not qualify a database, provider or deployment.
+The qualified versions are FastAPI **0.162.4**, Pydantic **2.14.3**, Hatchling **1.33.0** and Python **3.12.16**. Forty-four HTTP regression cases cover validation, authorization, serialization and real decision lifecycles, alongside the eleven compatibility tests from PR #8. Seven build dependencies have explicit version and artifact-hash constraints alongside the application and development lock. The dated audits report zero known vulnerabilities across **119 installed application, development and qualification packages** and, separately, **seven explicitly constrained build dependencies**. The inventories overlap and are not a total of 126 unique packages or a continuous security guarantee.
 
-The qualified application, test and dbt inputs match [commit `205e7507`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/205e7507b9cd7dc1b34a858f2c524ce0c832642c): **125 tests and 15 subtests passed, with no skipped cases**, including 53 real PostgreSQL integration cases. Thirteen regressions cover incomplete publication, historical incompatibility and stale candidate status. The 13 November locked audit reported zero known vulnerabilities across 119 dependencies at that capture time; it is not a continuous security guarantee.
+The initial [26-command native capture](evidence/2026-11-15/dependency-qualification/native-flow/qualification.json) passed 169 tests and 15 subtests at [commit `88c932de`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/88c932de80dd1d20f49b93798153f2986f3c5029). After preserving PR #8, the [supplementary full suite](evidence/2026-11-15/dependency-qualification/main-reconciliation/qualification.json) passed 180 tests and 15 subtests at [commit `bb369db1`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/bb369db1360ef17c5328dc6a68392355728e9920), using the same installed wheel. The dbt, business demonstration, restore and live HTTP results belong to the initial capture; their executable inputs were unchanged, and those profiles were not repeated in the supplementary run.
 
-A subsequent [targeted native check](evidence/2026-11-14/ci-evidence-hardening/qualification.json) qualifies the revised CI evidence controls: dbt build results survive documentation generation, and the populated-target restore control rejects unrelated failures. Its 41 dbt tests passed again; both databases' 17 operational table fingerprints remained unchanged. These are local results from selected workflow commands, not an executed GitHub job. The Snowflake helper now separates the same output paths, with live execution still pending.
+The [acceptance matrix](docs/acceptance.md), [evidence index](evidence/README.md) and [release notes](docs/releases/0.1.0rc1.md) identify the environment and source inputs behind these results. Earlier 13–14 November captures remain historical records. The previous continuation's unpublished 166-test account could not be recovered as a committed candidate; it is not counted as evidence for this delivery.
 
-The merged reference's [quality workflow](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43603763090) and [Terraform workflow](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43603763082) again stopped before runner execution. The [post-merge inventory](evidence/2026-11-14/publication-preflight/post-merge-actions.json) separately records successful Dependabot service steps; these do not qualify the application or its proposed dependency updates. The native results remain separate original evidence. The precise qualification-job admission annotation remains inaccessible through the connected interface.
-
-**Dependency refresh (15 November 2026):** Python 3.12.16, FastAPI 0.162.4, Pydantic 2.14.3 and Hatchling 1.33.0 are consolidated in [a separate change record](docs/dependency-refresh-2026-11-15.md). The 14 November full-suite and audit reports concern the earlier source and lock; they do not automatically qualify this refresh. Runtime and CI evidence for the updated commit must be captured separately.
+The [Quality run at `bb369db1`](evidence/2026-11-15/dependency-qualification/main-reconciliation/github-actions.json) failed in scope before runner assignment, with zero executed steps or artifacts and its dependent jobs skipped. Successful Dependabot service runs remain distinct from application qualification. The exact admission annotation has not been read through the connected interface, so no billing, quota or policy cause is established. Source publication and anonymous-access verification are tracked separately from runtime acceptance.
 
 ## Run the complete reference
 
@@ -73,7 +71,7 @@ Deterministic evidence is the baseline. Conservative fuzzy name evidence can add
 
 ## Develop and qualify
 
-Python 3.12 and the complete dependency lock are required:
+Python **3.12.16**, uv **0.13.6** and the complete dependency/build constraints are the qualified development profile:
 
 ```bash
 uv sync --frozen --all-extras
@@ -89,7 +87,7 @@ export MDM_TEST_DATABASE_URL=postgresql://mdm@127.0.0.1:5432/mdm_test
 uv run --no-sync pytest -q
 ```
 
-The [CI workflow](.github/workflows/quality.yml) is configured to install the frozen lock, scan Git history for common secret patterns, audit dependencies, execute real PostgreSQL tests, run the business demo and dbt, restore a consistent backup, measure a bounded database profile, and start the containerized deployment. Runtime qualification is skipped for documentation-only changes; secret scanning still runs. A [separate Terraform workflow](.github/workflows/terraform.yml) validates configuration against the installed provider without cloud credentials or apply.
+The [CI workflow](.github/workflows/quality.yml) is configured to install the frozen lock, verify the installed wheel, scan Git history for common secret patterns, audit the installed application/development packages, execute real PostgreSQL tests, run the business demo and dbt, restore a consistent backup, measure a bounded database profile, and exercise the containerized deployment and three-role browser lifecycle. The browser profile finishes with a real business-invariant check; it remains unexecuted in the current workspace. Runtime qualification is skipped for documentation-only changes; secret scanning still runs. A [separate Terraform workflow](.github/workflows/terraform.yml) validates configuration against the installed provider without cloud credentials or apply.
 
 The isolated workspace allows loopback TCP but denies Unix sockets. PostgreSQL 17.12 therefore ran with `unix_socket_directories=''`, and Uvicorn used loopback TCP. No permission was relaxed. Those native results establish the database/HTTP path; a capable runner is still required for the container, rendered-browser and provider-schema gates.
 

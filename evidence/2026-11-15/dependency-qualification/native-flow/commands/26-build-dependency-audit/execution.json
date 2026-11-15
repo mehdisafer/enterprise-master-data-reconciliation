@@ -1,0 +1,26 @@
+{
+  "label": "build-dependency-audit",
+  "command": [
+    "pip-audit",
+    "--strict",
+    "--disable-pip",
+    "--no-deps",
+    "-r",
+    "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/audit-build-requirements.txt",
+    "--progress-spinner",
+    "off",
+    "--timeout",
+    "20",
+    "--format",
+    "json",
+    "--output",
+    "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/build-dependency-audit.json"
+  ],
+  "cwd": "/workspace/scratch/f684f9028a9d/repo",
+  "started_at": "2026-11-15T21:25:55.642839+00:00",
+  "ended_at": "2026-11-15T21:26:01.531460+00:00",
+  "elapsed_seconds": 5.888635212999361,
+  "returncode": 0,
+  "expected_returncode": 0,
+  "timeout_seconds": 180
+}

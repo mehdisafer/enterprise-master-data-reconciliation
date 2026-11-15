@@ -1,0 +1,21 @@
+{
+  "number": 7,
+  "title": "chore(deps): bump python from 3.12.14-slim to 3.12.16-slim",
+  "url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/7",
+  "state": "open",
+  "draft": false,
+  "base_sha": "16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+  "base_ref": "main",
+  "head_sha": "ffc0544109c162575cde47695b9d6955371e34a6",
+  "head_ref": "dependabot/docker/python-3.12.16-slim",
+  "mergeable": true,
+  "mergeable_state": "unstable",
+  "updated_at": "2026-11-14T14:29:28Z",
+  "body": "Bumps python from 3.12.14-slim to 3.12.16-slim.\n\n\n[![Dependabot compatibility score](https://dependabot-badges.githubapp.com/badges/compatibility_score?dependency-name=python&package-manager=docker&previous-version=3.12.14-slim&new-version=3.12.16-slim)](https://docs.github.com/en/github/managing-security-vulnerabilities/about-dependabot-security-updates#about-compatibility-scores)\n\nDependabot will resolve any conflicts with this PR as long as you don't alter it yourself. You can also trigger a rebase manually by commenting `@dependabot rebase`.\n\n[//]: # (dependabot-automerge-start)\n[//]: # (dependabot-automerge-end)\n\n---\n\n<details>\n<summary>Dependabot commands and options</summary>\n<br />\n\nYou can trigger Dependabot actions by commenting on this PR:\n- `@dependabot rebase` will rebase this PR\n- `@dependabot recreate` will recreate this PR, overwriting any edits that have been made to it\n- `@dependabot show <dependency name> ignore conditions` will show all of the ignore conditions of the specified dependency\n- `@dependabot ignore this major version` will close this PR and stop Dependabot creating any more for this major version (unless you reopen the PR or upgrade to it yourself)\n- `@dependabot ignore this minor version` will close this PR and stop Dependabot creating any more for this minor version (unless you reopen the PR or upgrade to it yourself)\n- `@dependabot ignore this dependency` will close this PR and stop Dependabot creating any more for this dependency (unless you reopen the PR or upgrade to it yourself)\n\n\n</details>",
+  "patches": [
+    {
+      "filename": "Dockerfile",
+      "patch": "@@ -1,6 +1,6 @@\n # syntax=docker/dockerfile:1\n # Dependency versions come from uv.lock. Record resolved image digests at release.\n-FROM python:3.12.14-slim AS builder\n+FROM python:3.12.16-slim AS builder\n COPY --from=ghcr.io/astral-sh/uv:0.13.6 /uv /uvx /usr/local/bin/\n ENV UV_PYTHON_DOWNLOADS=never \\\n     UV_LINK_MODE=copy \\\n@@ -10,7 +10,7 @@ WORKDIR /app\n COPY . /app\n RUN uv sync --frozen --no-dev --extra postgres --no-editable\n \n-FROM python:3.12.14-slim AS runtime\n+FROM python:3.12.16-slim AS runtime\n RUN groupadd --gid 10001 mdm \\\n     && useradd --uid 10001 --gid 10001 --create-home --home-dir /home/mdm mdm\n COPY --from=builder --chown=10001:10001 /app /app"
+    }
+  ]
+}

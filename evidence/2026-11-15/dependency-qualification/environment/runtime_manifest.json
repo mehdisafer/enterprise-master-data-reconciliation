@@ -1,0 +1,41 @@
+{
+  "postgres_version": "17.12",
+  "python_version": "3.12.16",
+  "host": "127.0.0.1",
+  "port": 55432,
+  "unix_sockets": false,
+  "databases": [
+    "mdm_test",
+    "mdm_demo",
+    "mdm_restore",
+    "mdm_load"
+  ],
+  "packages": {
+    "postgresql-client-17_17.12-0+deb13u1_amd64.deb": "53466b127f3f6e95c7a30352db7fcdd7b83d2143a03efbdcd005032b5047aa83",
+    "libpq5_17.12-0+deb13u1_amd64.deb": "b93ae6e06672919c28eb018e7e13af34f1a94fc357f21e28488d339faf53ec98",
+    "postgresql-17_17.12-0+deb13u1_amd64.deb": "72443dcedfa0bdfa79dafdf414c18498b89929eeee1555e987c87154f3082fea"
+  },
+  "captured_at_utc": "2026-11-15T21:22:02.186801+00:00",
+  "os": "Debian GNU/Linux 13 (trixie)",
+  "architecture": "x86_64",
+  "python_executable": "/workspace/scratch/f684f9028a9d/runtime/python/cpython-3.12.16-linux-x86_64-gnu/bin/python3.12",
+  "python_executable_sha256": "23bc148d2b48964b621c5561ff2b81c1d9c7b717967a7491efbf12f4304882b5",
+  "python_install_command": "uv python install 3.12.16 --install-dir runtime/python --no-bin --no-progress",
+  "postgres_bin": "/workspace/scratch/f684f9028a9d/runtime/postgres/usr/lib/postgresql/17/bin",
+  "postgres_wrapper": "runtime/with_postgres.py",
+  "postgres_smoke": "SELECT version(), current_user, inet_server_addr(), inet_server_port() succeeded in the same exec invocation; clean fast stop succeeded.",
+  "network_namespace_observation": "A later exec invocation could not reach an active PostgreSQL server in a separate exec invocation; qualification commands must share one exec invocation with the server.",
+  "docker_binary_present": false,
+  "podman_binary_present": false,
+  "browser": {
+    "status": "blocked",
+    "error_type": "TargetClosedError",
+    "reason": "Chromium UNIX socket creation denied by the execution environment",
+    "log": "browser-launch-error.log"
+  },
+  "terraform_results": "terraform-qualification/results.json",
+  "terraform_failure_reason": "Provider fails to initialize UNIX socket: Operation not permitted",
+  "signature_verification": "signature_verification.json",
+  "no_cloud_plan_apply_or_credentials": true,
+  "postgres_setup_last_stop": "clean fast stop observed after the runtime connection smoke"
+}

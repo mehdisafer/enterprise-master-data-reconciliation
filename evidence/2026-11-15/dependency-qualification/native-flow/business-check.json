@@ -1,0 +1,15 @@
+{
+  "checks": 9,
+  "passed": true,
+  "violations": {
+    "active_memberships": 0,
+    "attribute_provenance": 0,
+    "empty_active_groups": 0,
+    "group_compatibility": 0,
+    "ledger_outbox": 0,
+    "membership_history": 0,
+    "nonoverlap": 0,
+    "source_crosswalk_coverage": 0,
+    "source_domains": 0
+  }
+}

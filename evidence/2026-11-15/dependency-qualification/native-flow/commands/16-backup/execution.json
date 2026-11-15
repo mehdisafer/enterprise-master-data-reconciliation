@@ -1,0 +1,17 @@
+{
+  "label": "backup",
+  "command": [
+    "bash",
+    "scripts/backup.sh",
+    "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/reference.dump",
+    "--expect-db",
+    "mdm_demo"
+  ],
+  "cwd": "/workspace/scratch/f684f9028a9d/repo",
+  "started_at": "2026-11-15T21:25:26.540593+00:00",
+  "ended_at": "2026-11-15T21:25:26.856535+00:00",
+  "elapsed_seconds": 0.31595341000047483,
+  "returncode": 0,
+  "expected_returncode": 0,
+  "timeout_seconds": 240
+}

@@ -1,0 +1,15 @@
+{
+  "label": "lock-check",
+  "command": [
+    "uv",
+    "lock",
+    "--check"
+  ],
+  "cwd": "/workspace/scratch/f684f9028a9d/repo",
+  "started_at": "2026-11-15T21:24:54.566209+00:00",
+  "ended_at": "2026-11-15T21:24:54.598415+00:00",
+  "elapsed_seconds": 0.03220968999994511,
+  "returncode": 0,
+  "expected_returncode": 0,
+  "timeout_seconds": 240
+}

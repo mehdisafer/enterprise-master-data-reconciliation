@@ -1,0 +1,10 @@
+{
+  "complete_secret_detection_claimed": false,
+  "credential_values_printed": false,
+  "files_scanned": 521,
+  "findings": [],
+  "historical_blobs_scanned": 107,
+  "scan_scope": "working-tree-and-reachable-git-history",
+  "schema_version": 1,
+  "unscanned_or_limited": []
+}

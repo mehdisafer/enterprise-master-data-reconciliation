@@ -1,0 +1,11 @@
+diff --git a/pyproject.toml b/pyproject.toml
+--- a/pyproject.toml
++++ b/pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["hatchling==1.29.0"]
++requires = ["hatchling==1.33.0"]
+ build-backend = "hatchling.build"
+ 
+ [project]
+

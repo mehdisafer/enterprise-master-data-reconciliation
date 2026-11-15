@@ -1,0 +1,31 @@
+{
+  "terraform_signature_exit_code": 0,
+  "terraform_signer_fingerprint": "374EC75B485913604A831CC7C820C6D5CD27AB87",
+  "terraform_primary_key_fingerprint": "C874011F0AB405110D02105534365D9472D7468F",
+  "terraform_primary_key_url": "https://www.hashicorp.com/.well-known/pgp-key.txt",
+  "debian_repository_signature_exit_code": 0,
+  "debian_packages_sha256_verified": {
+    "libpq5_17.12-0+deb13u1_amd64.deb": {
+      "package": "libpq5",
+      "version": "17.12-0+deb13u1",
+      "sha256": "b93ae6e06672919c28eb018e7e13af34f1a94fc357f21e28488d339faf53ec98",
+      "filename": "pool/updates/main/p/postgresql-17/libpq5_17.12-0+deb13u1_amd64.deb"
+    },
+    "postgresql-17_17.12-0+deb13u1_amd64.deb": {
+      "package": "postgresql-17",
+      "version": "17.12-0+deb13u1",
+      "sha256": "72443dcedfa0bdfa79dafdf414c18498b89929eeee1555e987c87154f3082fea",
+      "filename": "pool/updates/main/p/postgresql-17/postgresql-17_17.12-0+deb13u1_amd64.deb"
+    },
+    "postgresql-client-17_17.12-0+deb13u1_amd64.deb": {
+      "package": "postgresql-client-17",
+      "version": "17.12-0+deb13u1",
+      "sha256": "53466b127f3f6e95c7a30352db7fcdd7b83d2143a03efbdcd005032b5047aa83",
+      "filename": "pool/updates/main/p/postgresql-17/postgresql-client-17_17.12-0+deb13u1_amd64.deb"
+    }
+  },
+  "debian_packages_index_sha256": "7778d3e3f303b7ddb8ce0fe7c8d57473a076c6bf2e8f241f75421d2396352498",
+  "debian_security_repository_signature_exit_code": 0,
+  "debian_security_packages_index_sha256": "18f2feb595a1459ac4f7c12b9a35e2e15aa52231efc73c364875509e0cbbcb46",
+  "debian_security_source_url": "https://deb.debian.org/debian-security/dists/trixie-security/"
+}

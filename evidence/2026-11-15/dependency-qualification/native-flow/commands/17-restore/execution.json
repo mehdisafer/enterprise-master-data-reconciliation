@@ -1,0 +1,19 @@
+{
+  "label": "restore",
+  "command": [
+    "bash",
+    "scripts/restore.sh",
+    "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/reference.dump",
+    "--expect-db",
+    "mdm_restore",
+    "--report",
+    "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/restore.json"
+  ],
+  "cwd": "/workspace/scratch/f684f9028a9d/repo",
+  "started_at": "2026-11-15T21:25:26.857072+00:00",
+  "ended_at": "2026-11-15T21:25:27.372381+00:00",
+  "elapsed_seconds": 0.5153248910000912,
+  "returncode": 0,
+  "expected_returncode": 0,
+  "timeout_seconds": 240
+}

@@ -1,0 +1,37 @@
+{
+  "terraform": "1.17.2",
+  "binary_sha256": "e6f16b2f0b137ee5729caa8c4e79a3bae4ee261acd198a1fcfa8584a6296605b",
+  "downloads": [
+    {
+      "name": "terraform_1.17.2_linux_amd64.zip",
+      "url": "https://releases.hashicorp.com/terraform/1.17.2/terraform_1.17.2_linux_amd64.zip",
+      "bytes": 38245299,
+      "sha256": "e6f16b2f0b137ee5729caa8c4e79a3bae4ee261acd198a1fcfa8584a6296605b"
+    },
+    {
+      "name": "terraform_1.17.2_SHA256SUMS",
+      "url": "https://releases.hashicorp.com/terraform/1.17.2/terraform_1.17.2_SHA256SUMS",
+      "bytes": 1592,
+      "sha256": "6ece9a6cf116bb7b59adb14103140aa197b2d09543457f611c5a7f362302beab"
+    },
+    {
+      "name": "terraform_1.17.2_SHA256SUMS.sig",
+      "url": "https://releases.hashicorp.com/terraform/1.17.2/terraform_1.17.2_SHA256SUMS.sig",
+      "bytes": 566,
+      "sha256": "e25d02e9e4a5a6c3de72385a103dfafce131977091a0bfe5d26d985486d87c2c"
+    },
+    {
+      "name": "hashicorp-pgp-key.txt",
+      "url": "https://www.hashicorp.com/.well-known/pgp-key.txt",
+      "bytes": 7717,
+      "sha256": "c2f5bc1163bd8d15a711616b587bcede212d045a5b8b52df01c74095897cd065"
+    }
+  ],
+  "source_files": {
+    ".terraform.lock.hcl": "7c9d429e69ea25799a4731334d4f69c82c0a53ef5960391307649868ed58cedd",
+    "main.tf": "db8c7a900d1580a0093f2c1ac3b6be9930f766ce0629776463ebc68e2302854c",
+    "variables.tf": "b5d3aafd8d9a0d40fe207e62acc5f4ff77147bde94352310d0139a039d3e2a59",
+    "qualify.sh": "19bd4197c2b9906db69bf26f77aac34e902bb083aebcc840b1862e69ffd68822",
+    "qualification.tfvars.example": "e842f6f62b2e6c1746f12fd6010c47d2b6fb4c9f4dc7fe12b1feecd1cece6e2e"
+  }
+}

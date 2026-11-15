@@ -1,0 +1,19 @@
+{
+  "label": "second-restore-rejection",
+  "command": [
+    "bash",
+    "scripts/restore.sh",
+    "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/reference.dump",
+    "--expect-db",
+    "mdm_restore",
+    "--report",
+    "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/forbidden-restore.json"
+  ],
+  "cwd": "/workspace/scratch/f684f9028a9d/repo",
+  "started_at": "2026-11-15T21:25:27.372831+00:00",
+  "ended_at": "2026-11-15T21:25:27.537414+00:00",
+  "elapsed_seconds": 0.16459679800027516,
+  "returncode": 1,
+  "expected_returncode": 1,
+  "timeout_seconds": 240
+}

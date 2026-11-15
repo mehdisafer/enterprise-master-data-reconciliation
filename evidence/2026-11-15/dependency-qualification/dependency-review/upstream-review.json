@@ -1,0 +1,98 @@
+{
+  "captured_at": "2026-11-15",
+  "upstream_files": [
+    {
+      "component": "fastapi",
+      "version": "0.162.4",
+      "repo": "fastapi/fastapi",
+      "path": "pyproject.toml",
+      "ref": "0.162.4",
+      "git_blob": "085d8b577f6bcfd0c1391d00c5fb9d075e4b505d",
+      "url": "https://github.com/fastapi/fastapi/blob/0.162.4/pyproject.toml"
+    },
+    {
+      "component": "pydantic",
+      "version": "2.14.3",
+      "repo": "pydantic/pydantic",
+      "path": "pyproject.toml",
+      "ref": "v2.14.3",
+      "git_blob": "1862a65cd403b1603b4e1fbf2ada0c0c23fe2745",
+      "url": "https://github.com/pydantic/pydantic/blob/v2.14.3/pyproject.toml"
+    },
+    {
+      "component": "hatchling",
+      "version": "1.33.0",
+      "repo": "pypa/hatch",
+      "path": "backend/pyproject.toml",
+      "ref": "hatchling-v1.33.0",
+      "git_blob": "f53f9d747ad43672653760c5a77810646230a501",
+      "url": "https://github.com/pypa/hatch/blob/hatchling-v1.33.0/backend/pyproject.toml"
+    },
+    {
+      "component": "python_official_images",
+      "version": "3.12.16-slim",
+      "repo": "docker-library/official-images",
+      "path": "library/python",
+      "ref": "master",
+      "git_blob": "0db5e4b8faa59e26e1c7527371b6e9f88555c41b",
+      "url": "https://github.com/docker-library/official-images/blob/master/library/python"
+    }
+  ],
+  "advisories": [
+    {
+      "id": "GHSA-qpmf-fgh3-ff25",
+      "package": "pydantic",
+      "affected": ">=2.13.0,<2.14.2",
+      "patched": "2.14.2",
+      "url": "https://github.com/pydantic/pydantic/security/advisories/GHSA-qpmf-fgh3-ff25",
+      "condition": "JSON model validation allowing typed extra-data keys"
+    },
+    {
+      "id": "GHSA-3r8g-cqwr-jr29",
+      "package": "pydantic",
+      "affected": ">=2.0,<2.14.2",
+      "patched": "2.14.2",
+      "url": "https://github.com/pydantic/pydantic/security/advisories/GHSA-3r8g-cqwr-jr29",
+      "condition": "TypedDict/dataclass allowing extras and alias/name collision"
+    },
+    {
+      "id": "GHSA-gj4f-r7mf-jjxh",
+      "package": "pydantic",
+      "affected": ">=2.10.0,<2.14.0",
+      "patched": "2.14.0",
+      "url": "https://github.com/pydantic/pydantic/security/advisories/GHSA-gj4f-r7mf-jjxh",
+      "condition": "Untrusted exponential string to Fraction validation"
+    },
+    {
+      "id": "GHSA-955g-x97g-8mcp",
+      "package": "pydantic",
+      "affected": ">=2.0.0,<2.14.0",
+      "patched": "2.14.0",
+      "url": "https://github.com/pydantic/pydantic/security/advisories/GHSA-955g-x97g-8mcp",
+      "condition": "Untrusted long scheme/multiple hosts in multi-host URL validation"
+    }
+  ],
+  "source_assessment": {
+    "scope": "src/mdm/domain.py and src/mdm/api.py, plus symbol search of src/mdm/tests",
+    "models_use": "extra=forbid",
+    "conditions_observed": false,
+    "exploitability_proven": false
+  },
+  "uv_lock_check": {
+    "command": "uv lock --check --offline --python 3.12",
+    "cwd": "dependency-prs/combined",
+    "uv": "0.13.6",
+    "interpreter": "CPython 3.12.14",
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "Using CPython 3.12.14 interpreter at: /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12\nResolved 122 packages in 2ms\n",
+    "qualification": "lock freshness/consistency only, not installation/runtime"
+  },
+  "primary_urls": [
+    "https://www.python.org/downloads/release/python-31216/",
+    "https://github.com/fastapi/fastapi/releases/tag/0.162.4",
+    "https://fastapi.tiangolo.com/release-notes/",
+    "https://github.com/pydantic/pydantic/releases/tag/v2.14.3",
+    "https://hatch.pypa.io/dev/history/hatchling/"
+  ]
+}
