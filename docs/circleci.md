@@ -24,6 +24,22 @@ At the initial comparison, `main` `a1ea115` and the successful setup revision `b
 
 The final CI integration imports **exactly** the already-tested blobs `.github/workflows/quality.yml` (`07fb682b8e8ab0023064417975bdcafb1dde5d07`) and `compose.yaml` (`32118804f900d9bca9bea1d80c61e647edb35d05`) without altering application behavior. Quality now handles absent event metadata by selecting full qualification, pins Python 3.12.16 and recognizes `.circleci/` changes. Compose gives only the API a second loopback-bound ingress bridge while PostgreSQL and migrations stay on the internal network. This permits validated configuration correspondence, but does not mean CircleCI ran against the new merge SHA.
 
+## Parallel original-artifact inspection recorded in PR #12
+
+[PR #12](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/12) contains a separate qualification report from an authorized execution session. Its author states that the original CircleCI artifacts were downloaded, inspected and hashed at the tested combined revision `b7485a2`. This current reconciliation independently verified the **GitHub status contexts and executable Git blob equality**, but **did not recompute these external file hashes**. The table preserves the reported SHA-256 values rather than claiming they were regenerated here.
+
+| Original artifact recorded by the parallel qualification | Reported SHA-256 |
+| --- | --- |
+| Database `artifacts/pytest.xml` | `627c48e46b9fc3ae8488127d8b442287bef2ebae5468d5ecd6ad001a0443d602` |
+| Database `artifacts/restore.json` | `6405f80122edbe8229966cc0fdd32a547a883f839ac56561af81dd974481cab93` |
+| Database `artifacts/second-restore-rejection.json` | `a3a69b2f806c94701dbfc89c938a0f61a97965ab1f0e72d6fdbd694ae3fc077a` |
+| Browser `reference/browser-check.json` | `eae88c88efe68c3f1071bde7d0fe7cd7f3366d2f0f418d291b3cf3950cff9d34` |
+| Post-lifecycle `reference/container-post-lifecycle-check.json` | `02df03919c8a29f7e416c2a16adf57eea377c7b519b406fb8030bfd695616544` |
+
+The parallel report says the database JUnit had 195 case entries with zero failures, errors or skips, corresponding to **180 tests and 15 subtests**, and that the rendered browser lifecycle and post-lifecycle business check passed. Its workflow references are [database/package qualification](https://app.circleci.com/workflow/b514e6ba-1af2-4074-8a1c-b6751960d29c) and [rendered container qualification](https://app.circleci.com/workflow/872b65af-ec73-4fd2-872c-9b3c38c31c40). These are **reported observations from PR #12**, not new tests executed by this reconciliation.
+
+A file hash establishes content identity only once original bytes are available. The CircleCI artifact retention window is finite; if those artifacts expire, the register is a historical third-party capture, not independently reproducible raw evidence. Live Snowflake, production permissions/cost and the repository's public release decision remain separate.
+
 ## Pipeline definitions and remaining work
 
 The default `.circleci/config.yml` still executes **matching-only** smoke testing. The separate `.circleci/reference.yml` is the manual Docker/browser lifecycle profile. CircleCI's additional `v1-reference-qualification` pipeline exercised the full `.github/workflows/quality.yml` workflow on the setup revision; it is not interchangeable with matching-only success on `main`.
