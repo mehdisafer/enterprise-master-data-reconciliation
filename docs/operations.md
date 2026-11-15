@@ -9,10 +9,11 @@ repository's visibility does not expose a running service.
 
 | Component | Selected version or contract | Evidence boundary |
 | --- | --- | --- |
-| Python image | `python:3.12.14-slim` | Version tag exists in the official image registry; the container job records its actual built image. |
+| Python image | `python:3.12.16-slim` | Version tag exists in the official image registry; the container job records its actual built image. |
 | PostgreSQL image | `postgres:17.12` | Selected after the 12 November 2026 security update; CI records `version()` and the pulled digest. |
-| uv | `0.13.6` | The Docker build and CI install from the same lock. |
-| Python dependencies | `uv.lock` | Direct constraints are in `pyproject.toml`; the lock captures transitive versions and hashes. |
+| uv | `0.13.6` | Qualified native tooling; Docker and CI use the same application/build constraints. |
+| Python dependencies | `uv.lock` | FastAPI 0.162.4 and Pydantic 2.14.3; transitive versions and hashes retained. |
+| Build dependencies | Seven explicit hash-constrained pins, including Hatchling 1.33.0 | `[tool.uv]` enables `require-build-hashes`; verified with uv 0.13.6. |
 | dbt | PostgreSQL and Snowflake adapters in the lock | SQL compilation is distinct from executing models and data tests. |
 | Source and rules | `contracts/` | Input data is synthetic; repository licensing awaits maintainer approval. |
 
@@ -20,19 +21,41 @@ Image version tags can be moved by their publishers. Release evidence records
 resolved image digests; the source does not pretend a tag is immutable. External
 GitHub Actions are pinned to full commit SHAs verified against their release refs.
 
-The 14 November native qualification established that this isolated workspace
-allows loopback TCP while denying Unix sockets. PostgreSQL 17.12 ran with Unix
-sockets disabled, using verified official packages extracted in the workspace.
-The real database suite, dbt, restoration and HTTP checks passed; see the
-[evidence index](../evidence/README.md). No system permission was changed. This
-supersedes the earlier overbroad inference that all socket-based execution was
-unavailable. The Docker image and rendered browser remain unqualified.
+The latest [full-suite capture](../evidence/2026-11-15/dependency-qualification/main-reconciliation/qualification.json)
+passed 180 tests and 15 subtests under Python 3.12.16 and PostgreSQL 17.12,
+including 55 real database cases and the eleven compatibility tests from PR #8.
+It used the same non-editable installed wheel as the initial
+[26-command native qualification](../evidence/2026-11-15/dependency-qualification/native-flow/qualification.json),
+which passed 169 tests and 15 subtests, dbt, restoration and 34 real HTTP requests
+with 341 checks. The initial build preserved all 18 application resources and
+the CLI. The supplementary run repeated Ruff and the full test suite; it did not
+repeat the other native profiles, whose executable inputs are unchanged. Both
+source commits and hashes are identified in the
+[verification record](verification.md#observed-15-november-dependency-qualification).
 
-The CI workflow is configured to run these profiles on a runner. The latest
-code-revision workflows still failed before runner assignment and produced no
-test or deployment artifacts. Native evidence is not a successful CI result.
+This isolated workspace allows loopback TCP while denying Unix sockets.
+PostgreSQL ran with Unix sockets disabled, using Debian Security trixie packages
+`17.12-0+deb13u1` in the current capture; no system permission was changed.
+Fresh Chromium and Terraform schema attempts failed at Unix socket creation,
+while Terraform formatting/initialization succeeded. Docker is absent. The image,
+rendered browser and provider-schema validation remain unqualified. Earlier
+13–14 November evidence describes its original versions and remains unchanged.
+
+The CI definitions select these profiles but do not themselves prove execution.
+Recorded GitHub qualification jobs failed before runner assignment; native evidence
+is not a successful CI result. The exact admission cause remains unconfirmed.
 Snowflake requires a separate dedicated authorized account configuration; see
 [its qualification procedure](snowflake.md).
+
+The seven build constraints complement the application/development package entries
+in `uv.lock` by constraining isolated backend resolution. `require-build-hashes`
+is experimental in the qualified uv version. Keep uv 0.13.6 when reproducing this
+profile; review and exercise its supported settings when changing the tool rather
+than dropping hash verification. The dated native audits cover 119 installed
+application, development and qualification packages and, separately, seven
+explicitly constrained build dependencies. These inventories overlap; their
+counts are not additive. The CI dependency job audits the installed packages;
+the seven-build-dependency audit is a separate retained native result.
 
 ## Start the local reference
 
@@ -92,6 +115,29 @@ the completed demo returns its recorded state. For a fresh demo, use a new
 dedicated database or separate Compose project and volume; do not truncate a
 database with useful decisions.
 
+### Qualify the rendered decision lifecycle
+
+On a browser-capable isolated host, start the dedicated synthetic reference above,
+then run the same profile selected by CI:
+
+```bash
+uv sync --frozen --extra browser
+uv run --no-sync python -m playwright install --with-deps --only-shell chromium
+uv run --no-sync python scripts/browser_smoke.py --exercise-lifecycle
+docker compose exec -T api mdm check
+```
+
+The original view-only smoke remains available without the option. The lifecycle
+profile requires the complete 34-source demo, aligned consumer mappings, no pending
+decision and one distinct actor for each requester/approver/executor role. It
+uses the rendered controls to merge and unmerge Velora, verifies restored IDs,
+then merges and explicitly splits the group. The split creates a new identity
+for one partition by design; source assertions and unrelated mappings stay
+unchanged. Each stage publishes corrections and checks reporting alignment.
+Use this only in the disposable synthetic environment, and retain the final
+`mdm check` result with the browser report/screenshots. The current workspace has
+not executed this profile successfully.
+
 ### Shutdown and restart
 
 ```bash
@@ -112,6 +158,7 @@ kill still needs database crash recovery and outbox reconciliation on restart.
 | Profile | Command or workflow | Bound and purpose |
 | --- | --- | --- |
 | Pure contract smoke | `uv run --no-sync pytest -m 'not integration' -q` | No database claim; validates contracts and algorithms. |
+| Installed package | Commands in `verification.md` | Build through the source distribution, install the wheel, verify resources/CLI, then run the suite without resyncing to editable mode. |
 | Full integration | `uv run --no-sync pytest -q` | Requires an explicit `MDM_TEST_DATABASE_URL` ending in `_test`; tests reset that schema. Missing DB access fails instead of skipping. |
 | Business demonstration | `mdm demo --output artifacts/demo.json` | Named synthetic fixtures and assertions over actual PostgreSQL state. |
 | Small load control | `mdm benchmark --size 300 --output artifacts/benchmark-control.json` | Measured candidate work and exhaustive small control. |
@@ -210,8 +257,8 @@ Snowflake's full JSON export preserves these fields. A publication report links
 its snapshot ID to the recorded Snowflake query IDs, providing an
 event-to-snapshot-to-publication join. It does not map every event directly to one
 SQL statement, and no distributed-tracing collector is deployed. The real
-PostgreSQL correlation tests and native HTTP response/log checks passed in the
-14 November capture. Live propagation through Snowflake query execution remains
+PostgreSQL correlation tests and native HTTP response/log checks passed again in
+the 15 November capture. Live propagation through Snowflake query execution remains
 a separate unexecuted qualification.
 
 ### Initial service objectives
@@ -288,10 +335,10 @@ failure does not satisfy that control; the raw outputs and per-condition results
 are retained. Its narrow client wrappers execute
 the real `pg_dump`/`pg_restore` binaries inside the service container, streaming the
 archive without passing credentials in arguments. CI then runs dbt tests on the
-restored database. The native 14 November drill used the actual 17.12 clients:
+restored database. The new native 15 November drill used the actual 17.12 clients:
 all 17 table fingerprints matched, the nine business invariants passed, the
 populated target was rejected for the expected reason, and all 41 restored dbt
-tests passed. Its [original report](../evidence/2026-11-14/native-flow/restore.json)
+tests passed. Its [original report](../evidence/2026-11-15/dependency-qualification/native-flow/restore.json)
 does not establish Docker execution or rollback of an external consumer. The
 archive itself is excluded from published evidence.
 
@@ -322,13 +369,18 @@ The license inventory records publisher declarations and license files, flags
 missing/proprietary evidence and keeps distribution obligations visible. It is
 not a licensing certification and does not choose this repository's license.
 
-The documented candidate has been integrated into `main` through PR #2 under the
-maintainer's public-source objective. The [merge and tree readback](../evidence/2026-11-14/publication-preflight/integration-verification.json)
-establishes that integration. Follow the [publication procedure](publication.md)
-for the maintainer's visibility/metadata changes and subsequent anonymous-access
-check. Visibility was still private at that 14 November check. Source delivery leaves
-issue #1 and Docker, rendered-browser, Terraform-schema and Snowflake qualification
-open. It does not create a release tag or select the project licence.
+The original reference was integrated into `main` through PR #2, as recorded in
+the historical [merge and tree readback](../evidence/2026-11-14/publication-preflight/integration-verification.json).
+[PR #8](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/8)
+integrated the dependency versions.
+[PR #9](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/9)
+carries the supplementary qualification, controls and evidence; its conversation
+is the record for review, the delivered head, final `main`/tree readback and
+workflow observations. Follow the [publication procedure](publication.md) for
+the maintainer's visibility/metadata changes and anonymous-access check. Source
+delivery leaves issue #1 and Docker, rendered-browser, Terraform-schema and
+Snowflake qualification open. It does not create a release tag or select the
+project licence.
 
 During initial setup on 13 November 2026, the rulesets endpoint reported a
 private-plan restriction, and the integration could not read the branch-protection

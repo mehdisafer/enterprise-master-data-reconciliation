@@ -4,6 +4,7 @@
 
 | Profile | Command | Boundary |
 | --- | --- | --- |
+| Installed package | `uv build --no-sources`, wheel install, then `python scripts/verify_distribution.py` | Seven hashed build pins; all 18 installed application resources and CLI checked |
 | Unit smoke | `uv run --no-sync pytest -q -m 'not integration'` | Domain, matching, in-process auth and Snowflake driver boundaries; no provider integration |
 | Real integration | `uv run --no-sync pytest -q` with `MDM_TEST_DATABASE_URL` | Real PostgreSQL; reset restricted to an explicitly supplied `*_test` database |
 | Business demonstration | `mdm demo --output artifacts/demo.json` | Dedicated synthetic database; completed demonstration is idempotent |
@@ -14,7 +15,7 @@
 | Larger load | Manual workflow input, maximum 10,000 records | Explicit run with a 180-second command bound; not every documentation change |
 | Restore | `scripts/backup.sh` then `scripts/restore.sh` into an empty database | Native same-major clients, exact fingerprints and invariants |
 | Restored data | `dbt test --project-dir dbt --profiles-dir dbt --target postgres --target-path ../artifacts/dbt-restored` with restored `PGDATABASE` | Tests over restored views and operational tables |
-| Container/browser | Container job in `quality.yml`, including `scripts/browser_smoke.py` | Real image, container lifecycle and rendered console screenshots |
+| Container/browser | Container job in `quality.yml`, including `scripts/browser_smoke.py --exercise-lifecycle`, followed by `mdm check` | Real image, rendered three-role merge/unmerge/split, consumer alignment and screenshots |
 | Terraform | Static workflow: init without backend, format, validate and provider schema | Actual pinned provider; no cloud apply |
 | Snowflake | `infra/snowflake/qualify.sh --execute-live` | Authorized dedicated provider resources; no local substitute |
 
@@ -22,9 +23,46 @@ Predeclared correctness and safety thresholds are zero false automatic merges in
 
 The full suite fails if its database is missing. No skipped test is accepted as integration evidence. Snowflake unit doubles are explicitly identified and never reported as a live provider run.
 
-## Observed 14 November qualification
+## Observed 15 November dependency qualification
 
-The application, test and dbt inputs match [source revision 205e7507](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/205e7507b9cd7dc1b34a858f2c524ce0c832642c). The [source correspondence](../evidence/2026-11-14/source-correspondence.json) compares file hashes from three actual captures with that complete source tree. Subsequent changes to qualification scripts are recorded separately below.
+The initial complete native capture used [commit `88c932de`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/88c932de80dd1d20f49b93798153f2986f3c5029), with [source correspondence](../evidence/2026-11-15/dependency-qualification/source-correspondence.json). The supplementary full test suite used [commit `bb369db1`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/bb369db1360ef17c5328dc6a68392355728e9920), preserving all eleven tests from the dependency rollup integrated through [PR #8](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/8); its [correspondence record](../evidence/2026-11-15/dependency-qualification/main-reconciliation/source-correspondence.json) checks 83 inputs. Both runs used Python 3.12.16 and PostgreSQL 17.12 with the same installed wheel, FastAPI 0.162.4, Pydantic 2.14.3 and Hatchling 1.33.0 build. [PR #9](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/9) carries these controls and evidence; its conversation records review, the delivered head, final `main`/tree readback and workflow observations separately from native execution.
+
+| Profile | Observed result | Original evidence |
+| --- | --- | --- |
+| Latest full suite, existing installed wheel | 180 tests and 15 subtests passed; 55 real PostgreSQL cases; zero failures, errors or skips | [Qualification](../evidence/2026-11-15/dependency-qualification/main-reconciliation/qualification.json), [JUnit](../evidence/2026-11-15/dependency-qualification/main-reconciliation/pytest.xml) |
+| Initial full suite, installed wheel | 169 tests and 15 subtests passed; 55 real PostgreSQL cases; zero skips | [JUnit](../evidence/2026-11-15/dependency-qualification/native-flow/pytest.xml) |
+| Editable smoke | 114 tests and 15 subtests passed; 55 database cases deselected for this profile | [JUnit](../evidence/2026-11-15/dependency-qualification/native-flow/editable-unit.xml) |
+| Build and distribution | Source distribution and wheel built; 18 installed application resources and CLI preserved | [Distribution report](../evidence/2026-11-15/dependency-qualification/native-flow/distribution.json) |
+| Contract compatibility | 35 input assertions, ingestion hashes, five schemas and OpenAPI unchanged | [Comparison](../evidence/2026-11-15/dependency-qualification/contract-comparison.json) |
+| dbt build and catalog | Five models and 41 data tests passed; populated catalog generated | [Build](../evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run_results.json), [catalog](../evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/catalog.json) |
+| Backup and restore | Exact match for all 17 table fingerprints; business invariants passed; populated target correctly refused | [Restore](../evidence/2026-11-15/dependency-qualification/native-flow/restore.json), [negative case](../evidence/2026-11-15/dependency-qualification/native-flow/second-restore-rejection.json) |
+| Restored dbt | 41 data tests passed | [Run results](../evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run_results.json) |
+| Native HTTP | 34 actual requests and 341 checks passed; 17 table fingerprints unchanged; graceful shutdown observed | [HTTP qualification](../evidence/2026-11-15/dependency-qualification/native-flow/http/qualification.json) |
+| Installed-package and build audits | Zero known vulnerabilities at capture in 119 installed application, development and qualification packages; separately, seven explicitly constrained build dependencies | [Installed-package audit](../evidence/2026-11-15/dependency-qualification/native-flow/dependency-audit.json), [build audit](../evidence/2026-11-15/dependency-qualification/native-flow/build-dependency-audit.json) |
+| Database profile | 300 inputs, 309 candidates; 0.846 s ingestion, 1.377 s consolidation; nine invariants passed | [Measured profile](../evidence/2026-11-15/dependency-qualification/native-flow/benchmark-database.json) |
+
+The initial [26-command capture](../evidence/2026-11-15/dependency-qualification/native-flow/qualification.json) retains actual command arguments, intervals and exits. The supplementary run at 21:43:50–21:44:08 UTC passed Ruff and the 180-test suite using the existing installed wheel. It did not repeat the build, editable smoke, demonstration, dbt, restore, audits, benchmark or live HTTP; the corresponding executable inputs stayed unchanged. The two audit inventories overlap and must not be added as unique package counts. Both complete test runs use the non-editable installed wheel; the initial editable run is a separate smoke profile. The 341 native HTTP checks include repeated header, authorization and correlation assertions, not 341 extra pytest cases. The two new database HTTP scenarios do exercise mutations; the separate live HTTP harness intentionally checks reads/refused writes and verifies unchanged business fingerprints.
+
+The 150-record exhaustive control again preserved candidate recall and automatic-pair equivalence. The 300-record benchmark measured a 0.420 ms SQL join and the recorded history growth. Its easy synthetic distribution and partial memory measurements do not establish industrial throughput, overall server-memory peaks or a service-level objective.
+
+### Reproduce package qualification
+
+Use uv 0.13.6. The project uses its experimental `require-build-hashes` setting with seven explicit `build-constraint-dependencies`; the application/development package entries in `uv.lock` do not by themselves constrain isolated build resolution. A tooling upgrade must recheck those supported settings rather than silently dropping the build constraints.
+
+```bash
+uv sync --frozen --all-extras
+uv build --no-sources --out-dir artifacts/dist
+uv pip install --python .venv/bin/python --no-deps --reinstall \
+  artifacts/dist/enterprise_master_data_reconciliation-0.1.0rc1-py3-none-any.whl
+uv run --no-sync python scripts/verify_distribution.py --output artifacts/distribution.json
+uv run --no-sync pytest -q --junitxml=artifacts/pytest.xml
+```
+
+The full test command requires the disposable PostgreSQL configuration described above. `--no-sync` preserves the installed-wheel mode; an ordinary project sync can reinstall the package in editable mode. A source hash proves correspondence, not an independent review. The earlier continuation's uncommitted 166-test account is not used as qualification evidence.
+
+## Historical 14 November qualification
+
+The application, test and dbt inputs for this historical section match [source revision 205e7507](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/205e7507b9cd7dc1b34a858f2c524ce0c832642c). The [source correspondence](../evidence/2026-11-14/source-correspondence.json) compares file hashes from three actual captures with that complete source tree. Subsequent changes to qualification scripts are recorded separately below.
 
 | Profile | Observed result | Evidence |
 | --- | --- | --- |
@@ -61,10 +99,10 @@ The [original command outputs](../evidence/2026-11-14/ci-evidence-hardening/comm
 
 ## Remaining environment boundaries
 
-Loopback TCP is allowed in the provided workspace; Unix socket creation is denied. PostgreSQL 17.12 used `unix_socket_directories=''`, with standard TCP and private SCRAM credentials. The signed PGDG packages were extracted locally without a system installation. Uvicorn served actual HTTP on loopback. The earlier blanket socket restriction diagnosis was therefore too broad and is superseded by these observed runs.
+Loopback TCP is allowed in the provided workspace; Unix socket creation is denied. PostgreSQL 17.12 used `unix_socket_directories=''`, with standard TCP and private SCRAM credentials. The 14 November capture extracted signed PGDG packages. The 15 November capture instead extracted signed Debian Security trixie packages, PostgreSQL `17.12-0+deb13u1`, without a system installation; the [runtime manifest](../evidence/2026-11-15/dependency-qualification/environment/runtime_manifest.json) and [signature record](../evidence/2026-11-15/dependency-qualification/environment/signature_verification.json) retain that provenance. Uvicorn served actual HTTP on loopback. The earlier blanket socket restriction diagnosis was therefore too broad and is superseded by these observed runs.
 
-Docker is unavailable. The official Playwright Chromium download failed with an unavailable-site HTML response; the system Chromium then failed at its required Unix socket. No rendered console, screenshot, browser interaction or container startup is claimed. Terraform's actual provider-schema startup remains blocked by the recorded Unix-socket error. The [official-source transport investigation](terraform-provider-transport.md) confirms that normal/debug startup of the pinned Linux provider does not expose a TCP selection; it is source analysis, not schema execution. Snowflake account authorization, credentials, target scope and spending limit remain absent.
+Fresh [15 November environment captures](../evidence/2026-11-15/dependency-qualification/environment/) again found Docker absent and Chromium unable to start because Unix socket creation is denied. Terraform formatting and initialization passed, but actual provider-schema startup and validation failed at that boundary. No rendered console, screenshot, browser interaction or container startup is claimed. The older Playwright download failure remains part of the historical evidence. The [official-source transport investigation](terraform-provider-transport.md) confirms that normal/debug startup of the pinned Linux provider does not expose a TCP selection; it is source analysis, not schema execution. Snowflake account authorization, credentials, target scope and spending limit remain absent.
 
-The latest [quality run](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711716) and [Terraform run](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711641) at the qualified code revision have zero executed steps and zero artifacts. Their precise admission failure requires an authorized interface exposing the annotation text. There is no evidence establishing a billing, quota or policy cause.
+The historical [quality run](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711716) and [Terraform run](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711641) at the qualified code revision have zero executed steps and zero artifacts. Their precise admission failure requires an authorized interface exposing the annotation text. There is no evidence establishing a billing, quota or policy cause.
 
 The graph lock serializes writes, dense candidate blocks can grow quadratically and fail at explicit limits, and full snapshots/history grow with changes. The recorded profile does not establish arbitrary industrial performance, additional-worker throughput, long-term storage growth or provider cost.

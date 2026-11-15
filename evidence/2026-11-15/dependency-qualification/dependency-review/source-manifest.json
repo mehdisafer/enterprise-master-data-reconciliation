@@ -1,0 +1,32 @@
+{
+  "base_lock.lock": {
+    "git_blob_sha1": "444eb4cfd0e4c5de66ca94c035da1997a47539e4",
+    "bytes": 181677,
+    "sha256": "1f426547ffd38cd930b6aaa9964663e46971fa6b5c64a34b4f7e195049673eb0"
+  },
+  "pr4_lock.lock": {
+    "git_blob_sha1": "e7d7f08f73b259402a6ddee48b198724d4b8cd38",
+    "bytes": 181736,
+    "sha256": "60eb45964a7d14bbe361fd4b41e6418126c47eb4a420f57dfe0ac472df7a41ac"
+  },
+  "pr5_lock.lock": {
+    "git_blob_sha1": "f18ff41717df39d15bf42b23acb5dada6b97f360",
+    "bytes": 181677,
+    "sha256": "9b8673abd5d45c56140d4c855b13fdc42bb943a525a637de56c2220a518e6739"
+  },
+  "pr6_pyproject.toml": {
+    "git_blob_sha1": "a4ef509e58ef237d2b142311475bb9d916482409",
+    "bytes": 1067,
+    "sha256": "f2636f480a699d0dbf252e3f5e9cf7a42dd7fddbd993ed6e6eb655958b326172"
+  },
+  "pr7_Dockerfile.txt": {
+    "git_blob_sha1": "9ff624a5dbbb41a75990508efbbc895f7877de45",
+    "bytes": 1236,
+    "sha256": "c90b7b349f62a799e3c82b3df12de57cc580d3e41c68ec7dc7c974b38f70b24d"
+  },
+  "base_pyproject.toml": {
+    "git_blob_sha1": "2ffcf63576657988f925692ed173fec3c62f6f42",
+    "bytes": 1067,
+    "sha256": "fd43850080918aea27625f24189218b7b907f97e9e5495f59803b5baf97043bb"
+  }
+}

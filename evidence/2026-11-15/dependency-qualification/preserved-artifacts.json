@@ -1,0 +1,2453 @@
+{
+  "files": [
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/audit-build-requirements.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/audit-build-requirements.txt",
+      "bytes": 127,
+      "sha256": "070e1b8224b9039c7a5721823c0acfff7b2177f95c15ccc019535796e5b34fbf"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/audit-requirements.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/audit-requirements.txt",
+      "bytes": 8122,
+      "sha256": "6b28f770a576a20accaecd9e3b1fd6464d1d37b90252634b1b2414e66391043a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/benchmark-control.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/benchmark-control.json",
+      "bytes": 1875,
+      "sha256": "f7af28833fa36fc7d5bcd059aa253aed08944fa9835765b808c98562500c6447"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/benchmark-database.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/benchmark-database.json",
+      "bytes": 9639,
+      "sha256": "ba5afb6b3f4da6a657734be96f2481597408baa9846aaff134fc90c793d95ba0"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/build-dependency-audit.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/build-dependency-audit.json",
+      "bytes": 432,
+      "sha256": "aaf0894873e776478d33a3184990000cba50ac2d69c235fb591c243c887ed5a0"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/business-check.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/business-check.json",
+      "bytes": 313,
+      "sha256": "59aa7bb82f00b3232b66dbf1a69bc6ee2977faffb40de009098c73339c34d5dc"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/01-lock-check/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/01-lock-check/execution.json",
+      "bytes": 350,
+      "sha256": "c09b98287a6ca2b722c10a1ad5d1eff1ed825d926e7fc33846314f86813c4ae8"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/01-lock-check/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/01-lock-check/stderr.txt",
+      "bytes": 197,
+      "sha256": "3437142506793f8da9ae16e050335d357de766e51caef4aeed9ec7439233e3e2"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/01-lock-check/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/01-lock-check/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/02-editable-sync/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/02-editable-sync/execution.json",
+      "bytes": 374,
+      "sha256": "f0af704813ebb36d6539b6c60640db79f35ba3a06752bf991d3bcda3d7fa8a9e"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/02-editable-sync/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/02-editable-sync/stderr.txt",
+      "bytes": 196,
+      "sha256": "22e4b1a379c04036469978d222ef0a68d4d79a60cfd52267b7f16e537a7042b7"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/02-editable-sync/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/02-editable-sync/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/03-lint/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/03-lint/execution.json",
+      "bytes": 395,
+      "sha256": "c1158e214b6e87b80b17bf6acf2a094a7a51f6123f8737969543ab6c6973802b"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/03-lint/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/03-lint/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/03-lint/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/03-lint/stdout.txt",
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/04-editable-unit/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/04-editable-unit/execution.json",
+      "bytes": 477,
+      "sha256": "d4a742d1cd1a98a2d60633010db93af1fa6f4af9b34898de0fe1e7fa3556105a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/04-editable-unit/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/04-editable-unit/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/04-editable-unit/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/04-editable-unit/stdout.txt",
+      "bytes": 697,
+      "sha256": "2fa91c60c7b5d579bcc4f34bd87b42b603f438f88f9c95601378bd9ba18271e3"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/05-build-sdist-and-wheel/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/05-build-sdist-and-wheel/execution.json",
+      "bytes": 465,
+      "sha256": "e73909a3145af2d9fe21dfb078926c2283d648ae4647fcb2a6568574db27ecb2"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/05-build-sdist-and-wheel/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/05-build-sdist-and-wheel/stderr.txt",
+      "bytes": 475,
+      "sha256": "0b2353ae1598f7ffaf6889981771efd6dbf0b2483f5cdd08c89d43ac87491666"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/05-build-sdist-and-wheel/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/05-build-sdist-and-wheel/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/06-install-wheel/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/06-install-wheel/execution.json",
+      "bytes": 611,
+      "sha256": "1aa971b7f6adf73e7dfbb0ef08cd7cd3ad14eee274e04ceb2369fc2a350962aa"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/06-install-wheel/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/06-install-wheel/stderr.txt",
+      "bytes": 585,
+      "sha256": "cb032872aec10502cc1e0578f0a550e45adae5c8ac008115865bba85bf644c1a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/06-install-wheel/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/06-install-wheel/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/07-verify-distribution/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/07-verify-distribution/execution.json",
+      "bytes": 484,
+      "sha256": "e9483ef9fca131ce1ecffc1c9b91aa8ab787d2c31d7402491b1e03a5e293f38d"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/07-verify-distribution/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/07-verify-distribution/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/07-verify-distribution/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/07-verify-distribution/stdout.txt",
+      "bytes": 212,
+      "sha256": "e526c9ec9cbcbcce4a1a89c4d00211702895b14d6c92a361be1986486c862bf8"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/08-full-postgres-suite/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/08-full-postgres-suite/execution.json",
+      "bytes": 444,
+      "sha256": "4d98dde9e083fb37286213a7bbda746fabf2e3ef08bb2500461b777348045978"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/08-full-postgres-suite/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/08-full-postgres-suite/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/08-full-postgres-suite/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/08-full-postgres-suite/stdout.txt",
+      "bytes": 771,
+      "sha256": "375339965b7cd6d2e08b8a7111be7d92068471e468ec4b1f026bde643dff8f69"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/09-migrate/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/09-migrate/execution.json",
+      "bytes": 336,
+      "sha256": "1256a8f4c3c9c1498f15041cb0757f57e5535cead8d309e704a6f3f551c2f506"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/09-migrate/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/09-migrate/stderr.txt",
+      "bytes": 439,
+      "sha256": "37eb3fec2f8da30826dd5fca91eb679cb9df9b80078a1dc013d511f3a9c54ab6"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/09-migrate/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/09-migrate/stdout.txt",
+      "bytes": 120,
+      "sha256": "a6fa6979caab47406458084f8b2d53dca11fae68e11e42a0ba240a46e1462ff6"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/10-demo/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/10-demo/execution.json",
+      "bytes": 432,
+      "sha256": "4ea63ccfeb697b64fc54cae48d6e4b475e4f38c0d84124ba1839355e2d56215c"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/10-demo/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/10-demo/stderr.txt",
+      "bytes": 37742,
+      "sha256": "90fb01fbea5aa04b25050189f7bfd6d49d4efe0d1012962e9edc0cc2dd68d338"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/10-demo/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/10-demo/stdout.txt",
+      "bytes": 113,
+      "sha256": "eae0a4c39935a391c22d716e62e6240cf3bd80a963a3d49d4652540dbc3df150"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/11-business-check/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/11-business-check/execution.json",
+      "bytes": 340,
+      "sha256": "e59c1a4d6ca85a3b89f7b861c8aaed04e234ee675c88780899acb1153334dfe7"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/11-business-check/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/11-business-check/stderr.txt",
+      "bytes": 439,
+      "sha256": "e730f02d3fda7fe1cf29d7399dfa4a49135eefa9d73c23dd57b6d09bd1cc6061"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/11-business-check/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/11-business-check/stdout.txt",
+      "bytes": 313,
+      "sha256": "59aa7bb82f00b3232b66dbf1a69bc6ee2977faffb40de009098c73339c34d5dc"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/12-snapshot/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/12-snapshot/execution.json",
+      "bytes": 453,
+      "sha256": "7e8f7edcd3256e62f8ad09d8eaf50c21caa290f0982d68cd051f5803ec151d19"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/12-snapshot/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/12-snapshot/stderr.txt",
+      "bytes": 439,
+      "sha256": "946b4460005d8f88848c2cefca93465f3785276e2c3765d0d1844575ca16928e"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/12-snapshot/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/12-snapshot/stdout.txt",
+      "bytes": 130,
+      "sha256": "1e32f620b1808710ea72b1ebceefba4b367ea8874df6a701e21b27550646c059"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/13-warehouse-export/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/13-warehouse-export/execution.json",
+      "bytes": 703,
+      "sha256": "562945d303a01cd53b680a334f478216e3be77a1fc80c46f277dc12c706c1b7a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/13-warehouse-export/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/13-warehouse-export/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/13-warehouse-export/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/13-warehouse-export/stdout.txt",
+      "bytes": 491,
+      "sha256": "f0646431feef8febfe8c88deb2a5bab85908ce25ad19e47cbbdeaa2be2280d07"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/14-dbt-build/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/14-dbt-build/execution.json",
+      "bytes": 806,
+      "sha256": "71b5254a2e0bb9503c7cae0923a9b52875e1087e8b84df8a4d092456b4619090"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/14-dbt-build/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/14-dbt-build/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/14-dbt-build/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/14-dbt-build/stdout.txt",
+      "bytes": 11638,
+      "sha256": "4fd7f77b6752fad09fb264c4dd1e5fa15ffdabf99d56f78e4b2d9171199f3828"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/15-dbt-docs/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/15-dbt-docs/execution.json",
+      "bytes": 818,
+      "sha256": "aa1b4e7ea9e13cdd7088fa1f26375e7fcae8333c42dfa8cc99274dac7c0bb55e"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/15-dbt-docs/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/15-dbt-docs/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/15-dbt-docs/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/15-dbt-docs/stdout.txt",
+      "bytes": 511,
+      "sha256": "621fbcdcbd3d6443266f30dc0bb5420a87b948a67c243783845ebdac5ba62c2e"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/16-backup/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/16-backup/execution.json",
+      "bytes": 473,
+      "sha256": "5471b7b0b8687403dd98e486302de3a9d2cecab3e1abcf60084195b4c32038f6"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/16-backup/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/16-backup/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/16-backup/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/16-backup/stdout.txt",
+      "bytes": 238,
+      "sha256": "03e7a3078c897b60fdb91aeb7164a627c5a5ec29fc5b787349443d8bea6d0ef9"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/17-restore/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/17-restore/execution.json",
+      "bytes": 583,
+      "sha256": "946d9de0c273100a65474d651f50fa51a6984af29f242b9bcc6a9170bede1763"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/17-restore/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/17-restore/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/17-restore/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/17-restore/stdout.txt",
+      "bytes": 123,
+      "sha256": "7b2c37aac6fd65af66c7e3a393afc63f3ec8b045a6e555c503cc31906859ab03"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/18-second-restore-rejection/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/18-second-restore-rejection/execution.json",
+      "bytes": 611,
+      "sha256": "dbfd89cd2303aa75f0643f4be6fa59d4e8952342c2510fb78b338b19fd140376"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/18-second-restore-rejection/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/18-second-restore-rejection/stderr.txt",
+      "bytes": 114,
+      "sha256": "ed120c0ae868af3d8a36e026f253fc5397d689f7d7f9b6800373f3df8d9dc11b"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/18-second-restore-rejection/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/18-second-restore-rejection/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/19-dbt-restored/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/19-dbt-restored/execution.json",
+      "bytes": 812,
+      "sha256": "c449a4637c7889aa06826eec41e483b64c6c6650e705937567bc561d178facba"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/19-dbt-restored/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/19-dbt-restored/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/19-dbt-restored/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/19-dbt-restored/stdout.txt",
+      "bytes": 10483,
+      "sha256": "98b1cdd1fe68f7465671878bb1b8499e28cfa841638f2e9eaad6484d18404131"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/20-benchmark-control/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/20-benchmark-control/execution.json",
+      "bytes": 488,
+      "sha256": "e4066fea16390c8b7078f0ad821b50341b6addb2cf850e9600f974828977640d"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/20-benchmark-control/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/20-benchmark-control/stderr.txt",
+      "bytes": 441,
+      "sha256": "5f0ed288971c0f22a3bb80612cb4943ba65796c236a0fc66f23358172c1227fb"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/20-benchmark-control/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/20-benchmark-control/stdout.txt",
+      "bytes": 131,
+      "sha256": "ba0a1d012dd4e6a5891844faa5f6236989059e3db56bfda8312e36925b8651ec"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/21-benchmark-database/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/21-benchmark-database/execution.json",
+      "bytes": 507,
+      "sha256": "38e804a119d868583db5db0e4d2b76bcc8ca1fcf672c3e1c4e9147a10ca41ada"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/21-benchmark-database/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/21-benchmark-database/stderr.txt",
+      "bytes": 315772,
+      "sha256": "fbd5fa648850b09bde598f19270651e33330371c2b5e5b2ab1a9f8606dfa946c"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/21-benchmark-database/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/21-benchmark-database/stdout.txt",
+      "bytes": 132,
+      "sha256": "53ab91bc829279d54765c74a4dd3296eefb70981d1cb599a76ce7eba0a88475e"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/22-http-runtime/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/22-http-runtime/execution.json",
+      "bytes": 481,
+      "sha256": "be53d31ef5b2693b3620dc12f672a274a517f766bd88775f08cb568fcaed47a7"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/22-http-runtime/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/22-http-runtime/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/22-http-runtime/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/22-http-runtime/stdout.txt",
+      "bytes": 88,
+      "sha256": "2c26c3ba41ed05afe6df6abbbfc0965c1609bb373bf674df9aa7aa3c185810aa"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/23-components/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/23-components/execution.json",
+      "bytes": 489,
+      "sha256": "5df886a9b880c57c6f0ea6f5f8616c72731e36a6558337512d3da37efe623937"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/23-components/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/23-components/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/23-components/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/23-components/stdout.txt",
+      "bytes": 146,
+      "sha256": "79e6a130ea056d0b59f6c4d29b8629744bf44e0c600aa72df2ed13e12aba307d"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/24-export-audit-input/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/24-export-audit-input/execution.json",
+      "bytes": 546,
+      "sha256": "f9a8cc500bc657c9de361fc7b935c48c52516bea7af652b15305d9038edaeb5c"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/24-export-audit-input/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/24-export-audit-input/stderr.txt",
+      "bytes": 168,
+      "sha256": "e956a087346816e089bcee467e9d042116df9f369c2b6b76e74c74d57e6fb135"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/24-export-audit-input/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/24-export-audit-input/stdout.txt",
+      "bytes": 8122,
+      "sha256": "6b28f770a576a20accaecd9e3b1fd6464d1d37b90252634b1b2414e66391043a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/25-dependency-audit/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/25-dependency-audit/execution.json",
+      "bytes": 705,
+      "sha256": "18a6ca9ecc092072066b4423824aca89debc7e63fc184ffca4031248426813e8"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/25-dependency-audit/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/25-dependency-audit/stderr.txt",
+      "bytes": 265,
+      "sha256": "79d30422388543b2563e1dde76bb7e7857d7ef0c6fdf05c8c71598633ca07e1e"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/25-dependency-audit/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/25-dependency-audit/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/26-build-dependency-audit/execution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/26-build-dependency-audit/execution.json",
+      "bytes": 723,
+      "sha256": "12447399e4fd9b09cdd6bfc894f8a94d181e8cc7b472045eb8cea201115e8a72"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/26-build-dependency-audit/stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/26-build-dependency-audit/stderr.txt",
+      "bytes": 265,
+      "sha256": "79d30422388543b2563e1dde76bb7e7857d7ef0c6fdf05c8c71598633ca07e1e"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/commands/26-build-dependency-audit/stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/commands/26-build-dependency-audit/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/components.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/components.json",
+      "bytes": 94053,
+      "sha256": "e1b0a3db42d67031f4539e9b165776a60f4ba324e8673a0449c7ad0c39f06398"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/dbt_project.yml/hooks/enterprise_mdm-on-run-start-0.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/dbt_project.yml/hooks/enterprise_mdm-on-run-start-0.sql",
+      "bytes": 37,
+      "sha256": "2e07bae15b2781927a37bd28cfca6cf5057f68454fe4d19b9ffaac6a17e26f14"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/dbt_project.yml/hooks/enterprise_mdm-on-run-start-1.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/dbt_project.yml/hooks/enterprise_mdm-on-run-start-1.sql",
+      "bytes": 57,
+      "sha256": "5da12f1a9c3d52f10f6d5903b09c29aa57fb4a306d1e880ebf8c95d0167c395b"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/attribute_lineage.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/attribute_lineage.sql",
+      "bytes": 237,
+      "sha256": "c182a3a1aefe34f91a88edd2b62bc50ce047833e678fbfbcf66303c8871b45d6"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/consumer_impact.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/consumer_impact.sql",
+      "bytes": 701,
+      "sha256": "d31f0fdf4843ff0636c8421cc371938562937111d444559cd9b1050b7e1d83c9"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/crosswalk.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/crosswalk.sql",
+      "bytes": 345,
+      "sha256": "71cb6181c4bff2bb88a9feeea90d568c1b4e1d674a9be87fb17ebfa3dacd3470"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/golden_records.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/golden_records.sql",
+      "bytes": 545,
+      "sha256": "3d164ba66e9cf8635c161ecc86428ceab2e6293acdf1e4150be969e1b898d906"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/models.yml/accepted_values_consumer_impac_0193a17378dfacd027e59e8f65874a9b.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/models.yml/accepted_values_consumer_impac_0193a17378dfacd027e59e8f65874a9b.sql",
+      "bytes": 376,
+      "sha256": "639733aae5155b421798bc6b5aee083a33e8d014ebf560d994171ada121a4aa2"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/models.yml/not_null_attribute_lineage_lineage.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/models.yml/not_null_attribute_lineage_lineage.sql",
+      "bytes": 101,
+      "sha256": "ace29a6f0f88073b14cab610f0e3b832b5c3bf6ba10a7607e730c0e94bd34e21"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/models.yml/not_null_crosswalk_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/models.yml/not_null_crosswalk_golden_id.sql",
+      "bytes": 97,
+      "sha256": "a550d5e58332206b19676d931fb7981702638be60438bb33cb583a25cc5e92e8"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/models.yml/not_null_crosswalk_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/models.yml/not_null_crosswalk_source_key.sql",
+      "bytes": 99,
+      "sha256": "f5b53202d92268fbaa2beef3e0a18fc3befe8733bb1e6a05e716e3a96ca444e7"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/models.yml/not_null_golden_records_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/models.yml/not_null_golden_records_golden_id.sql",
+      "bytes": 102,
+      "sha256": "865180a0c615e71e4d2471ac17ec6b3fc8044a6ff634377408f7dc236e0373fb"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/models.yml/not_null_golden_records_provenance.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/models.yml/not_null_golden_records_provenance.sql",
+      "bytes": 104,
+      "sha256": "5de4d1a6b4d6b4541ca43ce680d35365229c1d3d71e2a25b5c9bbef58596236f"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/models.yml/not_null_quality_report_metric.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/models.yml/not_null_quality_report_metric.sql",
+      "bytes": 96,
+      "sha256": "d6c83921699e18893172889821d0397098ac9687dd6750ee276f96a00e486ab0"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/models.yml/not_null_quality_report_value.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/models.yml/not_null_quality_report_value.sql",
+      "bytes": 94,
+      "sha256": "e8bb33de0dc46cea481307b0c858dde6336af339a73631aa8ecbad67e31c3f60"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/models.yml/unique_crosswalk_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/models.yml/unique_crosswalk_source_key.sql",
+      "bytes": 189,
+      "sha256": "0eb55ea3bab42e0c8d4deb68aa2cab01ac2901ea72de1fa2b346c474af6f3c83"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/models.yml/unique_golden_records_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/models.yml/unique_golden_records_golden_id.sql",
+      "bytes": 191,
+      "sha256": "272cfa57485a761b076c1801ef75936850d2df9d24e1868a774c726f79cfe0cc"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/models.yml/unique_quality_report_metric.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/models.yml/unique_quality_report_metric.sql",
+      "bytes": 182,
+      "sha256": "1e99d7794340be2daa44f5007946766f507572cea4faa97dd19f9210b0001947"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/quality_report.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/quality_report.sql",
+      "bytes": 1281,
+      "sha256": "0d9f08d2da1b51f47b2de930af983a28f2b9568d080b6bda39fa283f87b13812"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_accepted_values_mdm_ide_39281f0d81ee46e2e8199bd0b9ce4d67.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_accepted_values_mdm_ide_39281f0d81ee46e2e8199bd0b9ce4d67.sql",
+      "bytes": 257,
+      "sha256": "a8a0072402bf387d28cd037fc917716755f6ba6f0720970479382d6cc7dce0a0"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_decisions_decision_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_decisions_decision_id.sql",
+      "bytes": 98,
+      "sha256": "3e57131c3be721251cc65adaced3c970c47fa6ce922a3f1ab92f2cf694b63af5"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_golden_id.sql",
+      "bytes": 99,
+      "sha256": "85c99f8504cec553bcf6a50418b2a37ce26788e329ce0c741770eb8a682ba7d7"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_history_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_history_id.sql",
+      "bytes": 101,
+      "sha256": "655115cba499003b492a08e2aac9c7d6e32b7c9e8d958dca46c93162e0ae69ae"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_identity_groups_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_identity_groups_golden_id.sql",
+      "bytes": 100,
+      "sha256": "92301bd20aa66669c1609e79d3dfbc8674b14bd21b3fbf75530b1f0a4737c68a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_golden_id.sql",
+      "bytes": 96,
+      "sha256": "cb773a8faf7b4b3bc6f6f9763802a6361c34bd3a253a9586b1e43e4597dfce96"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_source_key.sql",
+      "bytes": 98,
+      "sha256": "83b271dff43b5f90ad4edfbdfd30f79465ffabacaf69151e22f04f1e39fd30d6"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_outbox_event_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_outbox_event_id.sql",
+      "bytes": 89,
+      "sha256": "a68805bb5d314ececedc5959faf15c204e2e4e41e90d57a8ce4227766a89d9b8"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_raw_records_raw_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_raw_records_raw_id.sql",
+      "bytes": 90,
+      "sha256": "9a419fb9e2991a060196c9b76e0ac42d16d3a9c173971934f2377895bba25d7c"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_source_records_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_source_records_source_key.sql",
+      "bytes": 101,
+      "sha256": "f2c39836174b28019996148e6fc6438086533d9196c068c2a44c8aa0de246dea"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_golde_90a9cf45fe29fbd0357600c3e060e17b.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_golde_90a9cf45fe29fbd0357600c3e060e17b.sql",
+      "bytes": 366,
+      "sha256": "fbebc6e32c0d46b479922066abef2f4c37e5df4a5eb9a3054df1a7d8df187355"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_af740a4a434d411470f9beb93abb34a2.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_af740a4a434d411470f9beb93abb34a2.sql",
+      "bytes": 365,
+      "sha256": "8441eeb812900d804a892b3e549b6f21b1329f02e8b93614a0fba3ff1ffe388a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_ed824537b8ea0b41636cc7359a1a8736.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_ed824537b8ea0b41636cc7359a1a8736.sql",
+      "bytes": 363,
+      "sha256": "2a5e89157cbe149f160757c5f764faa7d44b0e1894400e092b2d7af025051c69"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_decisions_decision_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_decisions_decision_id.sql",
+      "bytes": 189,
+      "sha256": "c303425b9d998870f2aafa30c02d53a21a31bc962af1d62f9bde62bcdfb1da4f"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_golden_history_history_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_golden_history_history_id.sql",
+      "bytes": 191,
+      "sha256": "fd1cc04837751a9c5ee57857d898cc50c96c93dc4a1dec39fe510e0c84b891ec"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_identity_groups_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_identity_groups_golden_id.sql",
+      "bytes": 189,
+      "sha256": "f80db27b9e22769bdc6ad0dea0f71118429d84f203370a5e29c0d7558701cd14"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_memberships_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_memberships_source_key.sql",
+      "bytes": 188,
+      "sha256": "81d351dd99e80b8d1dd7d35111bf30bc4d86cdcb209584cab584b8984b0d2c3c"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_outbox_event_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_outbox_event_id.sql",
+      "bytes": 177,
+      "sha256": "5d5eea6e23bb29b8845945263b0974bab7302f4a712f2205a4a68971322ccfc2"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_raw_records_raw_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_raw_records_raw_id.sql",
+      "bytes": 176,
+      "sha256": "631357e6038aa3068eca78c15c7e7574db91fd074873c5ec5b534d78a3397bf1"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_source_records_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_source_records_source_key.sql",
+      "bytes": 191,
+      "sha256": "f72b7868d37bf38ca471907a2faf2da6f2fee39e18b32a3af7e2a4447dab8ada"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/tests/consumer_inbox_unique.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/tests/consumer_inbox_unique.sql",
+      "bytes": 115,
+      "sha256": "0769aa07cc64487fa4b281c7919358351395d35f35551d500a409979610da8d5"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/tests/consumer_records_unique.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/tests/consumer_records_unique.sql",
+      "bytes": 119,
+      "sha256": "9e14e033c0a6913c28aa1780765e7b23b8ef56aaa43f5af375920c0002c5f355"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/tests/full_crosswalk_coverage.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/tests/full_crosswalk_coverage.sql",
+      "bytes": 168,
+      "sha256": "77d7fc46c77e1f8aadce3e99c747b64701116f243cc37af2fb96daeb6706ba86"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/tests/historical_attribute_lineage.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/tests/historical_attribute_lineage.sql",
+      "bytes": 1112,
+      "sha256": "8f0984b8a4d6952a6ef75281dc730b2d64ed4be2ef7a23f8a40bfdc48c28b3b1"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/tests/no_bitemporal_overlap.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/tests/no_bitemporal_overlap.sql",
+      "bytes": 674,
+      "sha256": "e0a2348407f034605a908be48d2c73bc6d49b87fcfa0d781e3d97bfa64485f2b"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/tests/no_conflicting_registration_ids.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/tests/no_conflicting_registration_ids.sql",
+      "bytes": 584,
+      "sha256": "11492805c3133a68c3b1cd41b6c7424e43ea8109442e8ffc7156aa075eb99408"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/tests/no_mixed_entity_groups.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/tests/no_mixed_entity_groups.sql",
+      "bytes": 114,
+      "sha256": "a2320b3e8240983b90a3271b0d34620f9b1ed2373b93929b48117d72507b0993"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/tests/no_parent_child_merge.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/tests/no_parent_child_merge.sql",
+      "bytes": 343,
+      "sha256": "59c0cd6c7080f7c3d8b68f7a2542d05a9c57bf63aaa7fd2480307569be060d58"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/tests/no_retired_memberships.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/tests/no_retired_memberships.sql",
+      "bytes": 174,
+      "sha256": "1724289684e7f693b8c626de0f2cfefa4ecb30446bcfa1b111f390e3aec2c455"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/compiled/enterprise_mdm/tests/valid_history_intervals.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/compiled/enterprise_mdm/tests/valid_history_intervals.sql",
+      "bytes": 218,
+      "sha256": "bc35f8b15af5d4dd57c0c98e938befd02e1877286f8acf20237fe9a995cb4a4a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/graph_summary.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/graph_summary.json",
+      "bytes": 13657,
+      "sha256": "5c6f35a9b204c89c59b2ee5301d6e315b8589d6e806c6d557cd085c7a135421e"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/manifest.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/manifest.json",
+      "bytes": 715974,
+      "sha256": "d7a4c9880ee66f2b6211471e335796a66b169a777a65d508a6fb097f0c4913dd"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/osi_document.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/osi_document.json",
+      "bytes": 110,
+      "sha256": "f110c69e3bc938b4c6e35323e69d7997c64a96e26fc08cf8e428910f5a9531e9"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/attribute_lineage.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/attribute_lineage.sql",
+      "bytes": 330,
+      "sha256": "35e1c8f4b04d1e22f50010b28bf6dea7560ade6b734d3b295e220c1da5d40adc"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/consumer_impact.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/consumer_impact.sql",
+      "bytes": 792,
+      "sha256": "1b994a93d6cbbb1e0b2554fe1fb37e2b5b3ddb265e758e7d7bc846ded5cb1294"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/crosswalk.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/crosswalk.sql",
+      "bytes": 430,
+      "sha256": "a23c3df0bc9870e018645e339dc24d6bbe65ad06d8e828a16a99664c0325843a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/golden_records.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/golden_records.sql",
+      "bytes": 635,
+      "sha256": "42a2c3ceb132723baed4021dfe7e6caf167b5af6d66227e8870008e18fd8c90e"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/models.yml/accepted_values_consumer_impac_0193a17378dfacd027e59e8f65874a9b.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/models.yml/accepted_values_consumer_impac_0193a17378dfacd027e59e8f65874a9b.sql",
+      "bytes": 555,
+      "sha256": "df14a8f74db7113090ac81fc93a01bdf0279823248fd6dce9fc296adc0b84b3c"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/models.yml/not_null_attribute_lineage_lineage.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/models.yml/not_null_attribute_lineage_lineage.sql",
+      "bytes": 280,
+      "sha256": "7ebe729a0cefccd24cda607cc28a14617cedf51735aeeb8e5a90874e50d94fda"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/models.yml/not_null_crosswalk_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/models.yml/not_null_crosswalk_golden_id.sql",
+      "bytes": 276,
+      "sha256": "b54523d26fa79851b41a2b55df70759356fe63ea7003af7d2b0ada77bcd859fa"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/models.yml/not_null_crosswalk_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/models.yml/not_null_crosswalk_source_key.sql",
+      "bytes": 278,
+      "sha256": "e80ff26f8bd0be0c5a9b12fde12a9a03d7b751e81627e97a42b240fa948276a6"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/models.yml/not_null_golden_records_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/models.yml/not_null_golden_records_golden_id.sql",
+      "bytes": 281,
+      "sha256": "9bff9d2c6951677afedf36d9f567ff41fe4fe6e99b67571cc0f138765fbe0567"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/models.yml/not_null_golden_records_provenance.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/models.yml/not_null_golden_records_provenance.sql",
+      "bytes": 283,
+      "sha256": "3f687e4efcf1beb8192321b829919c208814bcfd19dde8d143f6766f90acb2b0"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/models.yml/not_null_quality_report_metric.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/models.yml/not_null_quality_report_metric.sql",
+      "bytes": 275,
+      "sha256": "fad7e067620386e7b4e5d11c8e2f5e32680f523ba5de0ec3493617309965e946"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/models.yml/not_null_quality_report_value.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/models.yml/not_null_quality_report_value.sql",
+      "bytes": 273,
+      "sha256": "25e7cb6d0caf9e1752479155ce3e13b3b08e6c8a583294812cefec570cafc427"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/models.yml/unique_crosswalk_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/models.yml/unique_crosswalk_source_key.sql",
+      "bytes": 368,
+      "sha256": "88f3b6b4bc4b96d361e0dd0ed5887f461c390e73f98a075bfc4c62dfc9965f76"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/models.yml/unique_golden_records_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/models.yml/unique_golden_records_golden_id.sql",
+      "bytes": 370,
+      "sha256": "8a447dd2e49531b658b07d677cbe6f0a822f63fc99c91eb681fcd64073b09e11"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/models.yml/unique_quality_report_metric.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/models.yml/unique_quality_report_metric.sql",
+      "bytes": 361,
+      "sha256": "9936a9b5216711b5e41da9bcee242c2b7947c00c8841271229bdfc3be2fb5880"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/quality_report.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/quality_report.sql",
+      "bytes": 1371,
+      "sha256": "e2a9c5b8a01648d56d6a103c3f4123be250f3fb8d09b00725b8268dde10cf7d1"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/sources.yml/source_accepted_values_mdm_ide_39281f0d81ee46e2e8199bd0b9ce4d67.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_accepted_values_mdm_ide_39281f0d81ee46e2e8199bd0b9ce4d67.sql",
+      "bytes": 436,
+      "sha256": "fb871fba5cd18df065641c97bea02288d5b273a6908e9448a6b77a56dab00a06"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_decisions_decision_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_decisions_decision_id.sql",
+      "bytes": 277,
+      "sha256": "926509b06d685ad452201ccccb0f65e2b787734ccc43111807498db80fb0fc50"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_golden_id.sql",
+      "bytes": 278,
+      "sha256": "0b2eefed503dd5d3956b34304c86d1c7e12f664bd44db105a0c4753c24484224"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_history_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_history_id.sql",
+      "bytes": 280,
+      "sha256": "6c710f7e21754dc2d0ad3938b200e052cdcc88d85809c26a0575cdd98afff12b"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_identity_groups_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_identity_groups_golden_id.sql",
+      "bytes": 279,
+      "sha256": "48217b2daa42d1cf69af498a68b19f9bd43b1903a949818cc71da171c1a89692"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_golden_id.sql",
+      "bytes": 275,
+      "sha256": "ea653e6f26a24bb2ba978eb29133f00586d9fc5b5db5f9a180753e055f8568c6"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_source_key.sql",
+      "bytes": 277,
+      "sha256": "306d662c0b41634a08d7edb918708c6a907e7be8c2449622acf85262f75fddb3"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_outbox_event_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_outbox_event_id.sql",
+      "bytes": 268,
+      "sha256": "6b12c68b5891b50fb05c1ccaceed0abc2e4e926f65b260816a7b6281414d2fa7"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_raw_records_raw_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_raw_records_raw_id.sql",
+      "bytes": 269,
+      "sha256": "1a5eafc106332f00c20ae30147f54ba8c26288a44384321c6431ec81eebcefb6"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_source_records_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_source_records_source_key.sql",
+      "bytes": 280,
+      "sha256": "6095453b6b2137e6018dc821b22edced6f71f7f37ab63dbd4913ac9f9b1cfead"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_golde_90a9cf45fe29fbd0357600c3e060e17b.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_golde_90a9cf45fe29fbd0357600c3e060e17b.sql",
+      "bytes": 545,
+      "sha256": "4a20140421d3e56410aa67b2eb07b46b8a904e063ea177ac2388df32b74352bc"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_af740a4a434d411470f9beb93abb34a2.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_af740a4a434d411470f9beb93abb34a2.sql",
+      "bytes": 544,
+      "sha256": "e7caf0a52e340c4875dda2257f66f10cd052715f70099dc2e445df6ad71fd7cd"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_ed824537b8ea0b41636cc7359a1a8736.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_ed824537b8ea0b41636cc7359a1a8736.sql",
+      "bytes": 542,
+      "sha256": "f5efd566fb03ff8ce4c3fa0d97c1d3f569adfb31c5ab44e8555ab9968ed80841"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_decisions_decision_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_decisions_decision_id.sql",
+      "bytes": 368,
+      "sha256": "2673e991dc145203b78568e69c2b864ecba90c642c28303a0b4ba54af9d2fb7a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_golden_history_history_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_golden_history_history_id.sql",
+      "bytes": 370,
+      "sha256": "e2b6cd52cad0062a831f9fc2d7aef31b5e5a9840b7a9987f4facab5a54040784"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_identity_groups_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_identity_groups_golden_id.sql",
+      "bytes": 368,
+      "sha256": "91d73b09ae339d1bbd68bfcf74c2e4d221b4ab7b352c7de74e39b9249b8b1fb4"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_memberships_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_memberships_source_key.sql",
+      "bytes": 367,
+      "sha256": "d8ffa0f4db10c9bbd1c68e8cd7dbd3c0a9cb420c236c53b960ea7810f22f8634"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_outbox_event_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_outbox_event_id.sql",
+      "bytes": 356,
+      "sha256": "8d1234383a057731b0482ea49c34cf26bdfb976b2929004f2ee509a200128875"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_raw_records_raw_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_raw_records_raw_id.sql",
+      "bytes": 355,
+      "sha256": "539645e67f21e4e5c2ffd2af1cba282f6e7c63c0e74c9d2a77aba4fdffa7cf61"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_source_records_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/models/sources.yml/source_unique_mdm_source_records_source_key.sql",
+      "bytes": 370,
+      "sha256": "c4e2b172b7113ad2bc659f0ed90b4ec8b63852f25752803be73a40eee31cb422"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/tests/consumer_inbox_unique.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/tests/consumer_inbox_unique.sql",
+      "bytes": 294,
+      "sha256": "6e74577a8bda03f55c03837766d1e175cefff1c6258f80a458c65e472dc8215e"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/tests/consumer_records_unique.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/tests/consumer_records_unique.sql",
+      "bytes": 298,
+      "sha256": "ee390b1c5024d89369ced7c1863579e9c2199d4f5b956d169559f1816deeebdc"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/tests/full_crosswalk_coverage.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/tests/full_crosswalk_coverage.sql",
+      "bytes": 347,
+      "sha256": "88a41ff7d40054bb6426392d54308a2e71d6b7e4fb7ef13906d16af917d128d2"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/tests/historical_attribute_lineage.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/tests/historical_attribute_lineage.sql",
+      "bytes": 1291,
+      "sha256": "404b597cb58aafebbba811a792ca4e9b64f3b1fb6152f43423c436667e4bda57"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/tests/no_bitemporal_overlap.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/tests/no_bitemporal_overlap.sql",
+      "bytes": 853,
+      "sha256": "a4b5cef1e98a834d1331df0ef6e3167f221959a3d9905b0680dd02da7777ec3e"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/tests/no_conflicting_registration_ids.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/tests/no_conflicting_registration_ids.sql",
+      "bytes": 763,
+      "sha256": "46d67c724237739857eb024ba3b76140e18e19fce40e3f61349cc16cdef5b773"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/tests/no_mixed_entity_groups.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/tests/no_mixed_entity_groups.sql",
+      "bytes": 293,
+      "sha256": "e18806efa17d04f3c748e7668b5734cd4ce0dc4a42f0f026f1de3e4865d52092"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/tests/no_parent_child_merge.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/tests/no_parent_child_merge.sql",
+      "bytes": 522,
+      "sha256": "53ba5884f7193963e4559ae8bdcc9c62838bad83e2175dc77e6075d2a498c1bb"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/tests/no_retired_memberships.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/tests/no_retired_memberships.sql",
+      "bytes": 353,
+      "sha256": "78aa94a22fd6eea6c9a8fe5b91db5fc3ad16eabac5866e33876795162b56e2e9"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run/enterprise_mdm/tests/valid_history_intervals.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run/enterprise_mdm/tests/valid_history_intervals.sql",
+      "bytes": 397,
+      "sha256": "077c82e443177f3abbdcc14a3da71facddcf59a2af0a4943eb27d1dd4e219127"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run_results.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/run_results.json",
+      "bytes": 47530,
+      "sha256": "0f07bdb6b2c6c2f46038e18578cfed20e580314a655dfad4eeb328a300036354"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/semantic_manifest.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/build/semantic_manifest.json",
+      "bytes": 255,
+      "sha256": "3a25287d7a62d14a3355c9be4def98da887f029391ad4d7c001648f121f1534a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/catalog.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/catalog.json",
+      "bytes": 20525,
+      "sha256": "86a8dc9588bf3d4f24b1c9998d5b35c13d00031e51ee5e82a6ad2d551825c76f"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/dbt_project.yml/hooks/enterprise_mdm-on-run-start-0.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/dbt_project.yml/hooks/enterprise_mdm-on-run-start-0.sql",
+      "bytes": 37,
+      "sha256": "2e07bae15b2781927a37bd28cfca6cf5057f68454fe4d19b9ffaac6a17e26f14"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/dbt_project.yml/hooks/enterprise_mdm-on-run-start-1.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/dbt_project.yml/hooks/enterprise_mdm-on-run-start-1.sql",
+      "bytes": 57,
+      "sha256": "5da12f1a9c3d52f10f6d5903b09c29aa57fb4a306d1e880ebf8c95d0167c395b"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/attribute_lineage.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/attribute_lineage.sql",
+      "bytes": 237,
+      "sha256": "c182a3a1aefe34f91a88edd2b62bc50ce047833e678fbfbcf66303c8871b45d6"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/consumer_impact.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/consumer_impact.sql",
+      "bytes": 701,
+      "sha256": "d31f0fdf4843ff0636c8421cc371938562937111d444559cd9b1050b7e1d83c9"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/crosswalk.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/crosswalk.sql",
+      "bytes": 345,
+      "sha256": "71cb6181c4bff2bb88a9feeea90d568c1b4e1d674a9be87fb17ebfa3dacd3470"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/golden_records.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/golden_records.sql",
+      "bytes": 545,
+      "sha256": "3d164ba66e9cf8635c161ecc86428ceab2e6293acdf1e4150be969e1b898d906"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/models.yml/accepted_values_consumer_impac_0193a17378dfacd027e59e8f65874a9b.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/models.yml/accepted_values_consumer_impac_0193a17378dfacd027e59e8f65874a9b.sql",
+      "bytes": 376,
+      "sha256": "639733aae5155b421798bc6b5aee083a33e8d014ebf560d994171ada121a4aa2"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/models.yml/not_null_attribute_lineage_lineage.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/models.yml/not_null_attribute_lineage_lineage.sql",
+      "bytes": 101,
+      "sha256": "ace29a6f0f88073b14cab610f0e3b832b5c3bf6ba10a7607e730c0e94bd34e21"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/models.yml/not_null_crosswalk_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/models.yml/not_null_crosswalk_golden_id.sql",
+      "bytes": 97,
+      "sha256": "a550d5e58332206b19676d931fb7981702638be60438bb33cb583a25cc5e92e8"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/models.yml/not_null_crosswalk_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/models.yml/not_null_crosswalk_source_key.sql",
+      "bytes": 99,
+      "sha256": "f5b53202d92268fbaa2beef3e0a18fc3befe8733bb1e6a05e716e3a96ca444e7"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/models.yml/not_null_golden_records_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/models.yml/not_null_golden_records_golden_id.sql",
+      "bytes": 102,
+      "sha256": "865180a0c615e71e4d2471ac17ec6b3fc8044a6ff634377408f7dc236e0373fb"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/models.yml/not_null_golden_records_provenance.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/models.yml/not_null_golden_records_provenance.sql",
+      "bytes": 104,
+      "sha256": "5de4d1a6b4d6b4541ca43ce680d35365229c1d3d71e2a25b5c9bbef58596236f"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/models.yml/not_null_quality_report_metric.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/models.yml/not_null_quality_report_metric.sql",
+      "bytes": 96,
+      "sha256": "d6c83921699e18893172889821d0397098ac9687dd6750ee276f96a00e486ab0"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/models.yml/not_null_quality_report_value.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/models.yml/not_null_quality_report_value.sql",
+      "bytes": 94,
+      "sha256": "e8bb33de0dc46cea481307b0c858dde6336af339a73631aa8ecbad67e31c3f60"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/models.yml/unique_crosswalk_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/models.yml/unique_crosswalk_source_key.sql",
+      "bytes": 189,
+      "sha256": "0eb55ea3bab42e0c8d4deb68aa2cab01ac2901ea72de1fa2b346c474af6f3c83"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/models.yml/unique_golden_records_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/models.yml/unique_golden_records_golden_id.sql",
+      "bytes": 191,
+      "sha256": "272cfa57485a761b076c1801ef75936850d2df9d24e1868a774c726f79cfe0cc"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/models.yml/unique_quality_report_metric.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/models.yml/unique_quality_report_metric.sql",
+      "bytes": 182,
+      "sha256": "1e99d7794340be2daa44f5007946766f507572cea4faa97dd19f9210b0001947"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/quality_report.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/quality_report.sql",
+      "bytes": 1281,
+      "sha256": "0d9f08d2da1b51f47b2de930af983a28f2b9568d080b6bda39fa283f87b13812"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_accepted_values_mdm_ide_39281f0d81ee46e2e8199bd0b9ce4d67.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_accepted_values_mdm_ide_39281f0d81ee46e2e8199bd0b9ce4d67.sql",
+      "bytes": 257,
+      "sha256": "a8a0072402bf387d28cd037fc917716755f6ba6f0720970479382d6cc7dce0a0"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_decisions_decision_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_decisions_decision_id.sql",
+      "bytes": 98,
+      "sha256": "3e57131c3be721251cc65adaced3c970c47fa6ce922a3f1ab92f2cf694b63af5"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_golden_id.sql",
+      "bytes": 99,
+      "sha256": "85c99f8504cec553bcf6a50418b2a37ce26788e329ce0c741770eb8a682ba7d7"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_history_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_history_id.sql",
+      "bytes": 101,
+      "sha256": "655115cba499003b492a08e2aac9c7d6e32b7c9e8d958dca46c93162e0ae69ae"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_identity_groups_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_identity_groups_golden_id.sql",
+      "bytes": 100,
+      "sha256": "92301bd20aa66669c1609e79d3dfbc8674b14bd21b3fbf75530b1f0a4737c68a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_golden_id.sql",
+      "bytes": 96,
+      "sha256": "cb773a8faf7b4b3bc6f6f9763802a6361c34bd3a253a9586b1e43e4597dfce96"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_source_key.sql",
+      "bytes": 98,
+      "sha256": "83b271dff43b5f90ad4edfbdfd30f79465ffabacaf69151e22f04f1e39fd30d6"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_outbox_event_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_outbox_event_id.sql",
+      "bytes": 89,
+      "sha256": "a68805bb5d314ececedc5959faf15c204e2e4e41e90d57a8ce4227766a89d9b8"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_raw_records_raw_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_raw_records_raw_id.sql",
+      "bytes": 90,
+      "sha256": "9a419fb9e2991a060196c9b76e0ac42d16d3a9c173971934f2377895bba25d7c"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_source_records_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_source_records_source_key.sql",
+      "bytes": 101,
+      "sha256": "f2c39836174b28019996148e6fc6438086533d9196c068c2a44c8aa0de246dea"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_golde_90a9cf45fe29fbd0357600c3e060e17b.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_golde_90a9cf45fe29fbd0357600c3e060e17b.sql",
+      "bytes": 366,
+      "sha256": "fbebc6e32c0d46b479922066abef2f4c37e5df4a5eb9a3054df1a7d8df187355"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_af740a4a434d411470f9beb93abb34a2.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_af740a4a434d411470f9beb93abb34a2.sql",
+      "bytes": 365,
+      "sha256": "8441eeb812900d804a892b3e549b6f21b1329f02e8b93614a0fba3ff1ffe388a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_ed824537b8ea0b41636cc7359a1a8736.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_ed824537b8ea0b41636cc7359a1a8736.sql",
+      "bytes": 363,
+      "sha256": "2a5e89157cbe149f160757c5f764faa7d44b0e1894400e092b2d7af025051c69"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_decisions_decision_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_decisions_decision_id.sql",
+      "bytes": 189,
+      "sha256": "c303425b9d998870f2aafa30c02d53a21a31bc962af1d62f9bde62bcdfb1da4f"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_golden_history_history_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_golden_history_history_id.sql",
+      "bytes": 191,
+      "sha256": "fd1cc04837751a9c5ee57857d898cc50c96c93dc4a1dec39fe510e0c84b891ec"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_identity_groups_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_identity_groups_golden_id.sql",
+      "bytes": 189,
+      "sha256": "f80db27b9e22769bdc6ad0dea0f71118429d84f203370a5e29c0d7558701cd14"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_memberships_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_memberships_source_key.sql",
+      "bytes": 188,
+      "sha256": "81d351dd99e80b8d1dd7d35111bf30bc4d86cdcb209584cab584b8984b0d2c3c"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_outbox_event_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_outbox_event_id.sql",
+      "bytes": 177,
+      "sha256": "5d5eea6e23bb29b8845945263b0974bab7302f4a712f2205a4a68971322ccfc2"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_raw_records_raw_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_raw_records_raw_id.sql",
+      "bytes": 176,
+      "sha256": "631357e6038aa3068eca78c15c7e7574db91fd074873c5ec5b534d78a3397bf1"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_source_records_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_source_records_source_key.sql",
+      "bytes": 191,
+      "sha256": "f72b7868d37bf38ca471907a2faf2da6f2fee39e18b32a3af7e2a4447dab8ada"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/tests/consumer_inbox_unique.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/tests/consumer_inbox_unique.sql",
+      "bytes": 115,
+      "sha256": "0769aa07cc64487fa4b281c7919358351395d35f35551d500a409979610da8d5"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/tests/consumer_records_unique.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/tests/consumer_records_unique.sql",
+      "bytes": 119,
+      "sha256": "9e14e033c0a6913c28aa1780765e7b23b8ef56aaa43f5af375920c0002c5f355"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/tests/full_crosswalk_coverage.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/tests/full_crosswalk_coverage.sql",
+      "bytes": 168,
+      "sha256": "77d7fc46c77e1f8aadce3e99c747b64701116f243cc37af2fb96daeb6706ba86"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/tests/historical_attribute_lineage.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/tests/historical_attribute_lineage.sql",
+      "bytes": 1112,
+      "sha256": "8f0984b8a4d6952a6ef75281dc730b2d64ed4be2ef7a23f8a40bfdc48c28b3b1"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/tests/no_bitemporal_overlap.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/tests/no_bitemporal_overlap.sql",
+      "bytes": 674,
+      "sha256": "e0a2348407f034605a908be48d2c73bc6d49b87fcfa0d781e3d97bfa64485f2b"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/tests/no_conflicting_registration_ids.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/tests/no_conflicting_registration_ids.sql",
+      "bytes": 584,
+      "sha256": "11492805c3133a68c3b1cd41b6c7424e43ea8109442e8ffc7156aa075eb99408"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/tests/no_mixed_entity_groups.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/tests/no_mixed_entity_groups.sql",
+      "bytes": 114,
+      "sha256": "a2320b3e8240983b90a3271b0d34620f9b1ed2373b93929b48117d72507b0993"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/tests/no_parent_child_merge.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/tests/no_parent_child_merge.sql",
+      "bytes": 343,
+      "sha256": "59c0cd6c7080f7c3d8b68f7a2542d05a9c57bf63aaa7fd2480307569be060d58"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/tests/no_retired_memberships.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/tests/no_retired_memberships.sql",
+      "bytes": 174,
+      "sha256": "1724289684e7f693b8c626de0f2cfefa4ecb30446bcfa1b111f390e3aec2c455"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/compiled/enterprise_mdm/tests/valid_history_intervals.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/compiled/enterprise_mdm/tests/valid_history_intervals.sql",
+      "bytes": 218,
+      "sha256": "bc35f8b15af5d4dd57c0c98e938befd02e1877286f8acf20237fe9a995cb4a4a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/graph_summary.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/graph_summary.json",
+      "bytes": 6553,
+      "sha256": "cef86a96c16db824b1d832bb78d80baca00f5c11af963f4bd75a54551f8d0c95"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/manifest.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/manifest.json",
+      "bytes": 705179,
+      "sha256": "8faa39aef0c33d6478f333ab1dfe409b6984b827779d6126f6acae5e123afc1f"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/osi_document.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/osi_document.json",
+      "bytes": 110,
+      "sha256": "f110c69e3bc938b4c6e35323e69d7997c64a96e26fc08cf8e428910f5a9531e9"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/run_results.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/run_results.json",
+      "bytes": 44853,
+      "sha256": "fae2a6e010325196ccd7bcc4511441ee3e004396d2b2f7000dca467c36f51bc8"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/semantic_manifest.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/docs/semantic_manifest.json",
+      "bytes": 255,
+      "sha256": "3a25287d7a62d14a3355c9be4def98da887f029391ad4d7c001648f121f1534a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/logs/build/dbt.log",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/logs/build/dbt.log",
+      "bytes": 155622,
+      "sha256": "06aeb486ce55cbe532d25e5ede115253c543a46d817a4f6f695b3bb36c2b5af2"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/logs/docs/dbt.log",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/logs/docs/dbt.log",
+      "bytes": 56471,
+      "sha256": "9151d9527057fa01193c4a49d6ad9a75320aa4818af2b986ca1e0ebde6019186"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/logs/restored/dbt.log",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/logs/restored/dbt.log",
+      "bytes": 118532,
+      "sha256": "772931fffa63c67142ae9dac671ab963d32a94f8a2a40eeece18515c0c4bd5b5"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/dbt_project.yml/hooks/enterprise_mdm-on-run-start-0.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/dbt_project.yml/hooks/enterprise_mdm-on-run-start-0.sql",
+      "bytes": 37,
+      "sha256": "2e07bae15b2781927a37bd28cfca6cf5057f68454fe4d19b9ffaac6a17e26f14"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/dbt_project.yml/hooks/enterprise_mdm-on-run-start-1.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/dbt_project.yml/hooks/enterprise_mdm-on-run-start-1.sql",
+      "bytes": 57,
+      "sha256": "5da12f1a9c3d52f10f6d5903b09c29aa57fb4a306d1e880ebf8c95d0167c395b"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/models.yml/accepted_values_consumer_impac_0193a17378dfacd027e59e8f65874a9b.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/models.yml/accepted_values_consumer_impac_0193a17378dfacd027e59e8f65874a9b.sql",
+      "bytes": 379,
+      "sha256": "3b9c04625511da97cb131ba47d7518f04047bc8c7a378e841f6a9d13b3883cbc"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/models.yml/not_null_attribute_lineage_lineage.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/models.yml/not_null_attribute_lineage_lineage.sql",
+      "bytes": 104,
+      "sha256": "fcd51c1cef2823bef6ea95cf1217e3b17580c98da4b7c8897d1f6d2f8ade2140"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/models.yml/not_null_crosswalk_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/models.yml/not_null_crosswalk_golden_id.sql",
+      "bytes": 100,
+      "sha256": "f09c9d085d44113626085dad89ae550c6b738599d07e7600513c4e06e07fac1d"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/models.yml/not_null_crosswalk_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/models.yml/not_null_crosswalk_source_key.sql",
+      "bytes": 102,
+      "sha256": "312a9c0ee5021e6e8a455748bb2b90ae4088166e9ef5ffae72544e9189fb714e"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/models.yml/not_null_golden_records_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/models.yml/not_null_golden_records_golden_id.sql",
+      "bytes": 105,
+      "sha256": "066e1fcadae3d0e35e341d36cb7ae65a66491f6b7536d2a8dea3426943cad750"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/models.yml/not_null_golden_records_provenance.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/models.yml/not_null_golden_records_provenance.sql",
+      "bytes": 107,
+      "sha256": "0ae1fc390bb12788847056c71b5dafe0b91b79edacb1e9d1b214a19571702a72"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/models.yml/not_null_quality_report_metric.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/models.yml/not_null_quality_report_metric.sql",
+      "bytes": 99,
+      "sha256": "5a07926c9ab83b1349b299b85389dc82a2e3b7838849685863ba6cf5b0a625cc"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/models.yml/not_null_quality_report_value.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/models.yml/not_null_quality_report_value.sql",
+      "bytes": 97,
+      "sha256": "2bacaf54a17eecfd2245578786ced6d4187767463f0c15e335c77f6103f9ec19"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/models.yml/unique_crosswalk_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/models.yml/unique_crosswalk_source_key.sql",
+      "bytes": 192,
+      "sha256": "8af5cfe7684a38276c8b3656aec20b4f9edbe55a9b81047e92839655bf05d45d"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/models.yml/unique_golden_records_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/models.yml/unique_golden_records_golden_id.sql",
+      "bytes": 194,
+      "sha256": "39eec14bf45ba07c8390061f0f8c1bb3e190c5a7fe167c130645351c0193744e"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/models.yml/unique_quality_report_metric.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/models.yml/unique_quality_report_metric.sql",
+      "bytes": 185,
+      "sha256": "a52c0a9a3ad44e50a21e4d4bae014b53c3afed69edffcc6458bc2e70683fe90c"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_accepted_values_mdm_ide_39281f0d81ee46e2e8199bd0b9ce4d67.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_accepted_values_mdm_ide_39281f0d81ee46e2e8199bd0b9ce4d67.sql",
+      "bytes": 260,
+      "sha256": "035ecb5602a4fc0dffb5f5355c8a971634aa0b442fe4da0528c355b4a9026633"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_decisions_decision_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_decisions_decision_id.sql",
+      "bytes": 101,
+      "sha256": "3b81b689da039f0d26c4d709379a5aaee3f5cc437982a6a1354313a3d6046fa8"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_golden_id.sql",
+      "bytes": 102,
+      "sha256": "9c0bab7f009275e5261a103102cea1d19a5862e726104e0791e116277a4046c2"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_history_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_history_id.sql",
+      "bytes": 104,
+      "sha256": "577654fc8913a6ba12d6744c390e67d24835132eddb9689f53603358b3ca7cb8"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_identity_groups_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_identity_groups_golden_id.sql",
+      "bytes": 103,
+      "sha256": "1678cfbd62667523115b9cffd11e7e3f0590db60af47d57ddda6b07eed85d5b4"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_golden_id.sql",
+      "bytes": 99,
+      "sha256": "d9bbfbc658cfdaa67beaa7d71d13e790c2d3aff6c9438c0b1721f8549802283f"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_source_key.sql",
+      "bytes": 101,
+      "sha256": "61ce32c456d8cc1fb10277261692c2c4bad530b2880b48119abe4309e1817628"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_outbox_event_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_outbox_event_id.sql",
+      "bytes": 92,
+      "sha256": "8ca9c92564ef0a78f40ed044e7955c420ba159ed675f67033fc7e7f69b41cc5b"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_raw_records_raw_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_raw_records_raw_id.sql",
+      "bytes": 93,
+      "sha256": "b4770b241a836c3d64145463b459a443db84372662a18d3aa918b9602751dee4"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_source_records_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_not_null_mdm_source_records_source_key.sql",
+      "bytes": 104,
+      "sha256": "983813561a297e74b5d23d44b24e84115e3535726a46466de7f0d2214b2f6b13"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_golde_90a9cf45fe29fbd0357600c3e060e17b.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_golde_90a9cf45fe29fbd0357600c3e060e17b.sql",
+      "bytes": 372,
+      "sha256": "f07b1d5afb82521374671136f1a6fc061666e979dc71dfa982ed82b80940700d"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_af740a4a434d411470f9beb93abb34a2.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_af740a4a434d411470f9beb93abb34a2.sql",
+      "bytes": 371,
+      "sha256": "e9cdd6d5493ea235a4d9899f60fe12586f6bd9d563fbddbf9502996863adb060"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_ed824537b8ea0b41636cc7359a1a8736.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_ed824537b8ea0b41636cc7359a1a8736.sql",
+      "bytes": 369,
+      "sha256": "02500c67640732e91c2d84e2589eec75893f0cfbf5cd225d6d74d0debaf5a78a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_decisions_decision_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_decisions_decision_id.sql",
+      "bytes": 192,
+      "sha256": "b7bfeb5c8f22878d304f72967ca61f5c09c9eb3d4220c47c25a59e0547de785f"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_golden_history_history_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_golden_history_history_id.sql",
+      "bytes": 194,
+      "sha256": "1ef0764d6dc68876d019376f3421aa64e2dd1b2d463185c89cef19fa1b8eb72f"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_identity_groups_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_identity_groups_golden_id.sql",
+      "bytes": 192,
+      "sha256": "844bdf95ef33de56edbd7a44339dc5b337418b057850cefd8def42c0967a070f"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_memberships_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_memberships_source_key.sql",
+      "bytes": 191,
+      "sha256": "814a44fa47ae56bee205c062babd446a673001ce7fcaa815d0a2ed81763cb330"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_outbox_event_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_outbox_event_id.sql",
+      "bytes": 180,
+      "sha256": "2ae4ab7719dae0b90bc3e7f19d75016fde5949635168fd6a33a19dad572c29b7"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_raw_records_raw_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_raw_records_raw_id.sql",
+      "bytes": 179,
+      "sha256": "9fbd666273543f38416c117d1bd25653abbfe7f17ddd2f068b9550069459c0a9"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_source_records_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/models/sources.yml/source_unique_mdm_source_records_source_key.sql",
+      "bytes": 194,
+      "sha256": "8a0cfd79f4aed2831a7e271d8db634af30d5f126f4ad88b8cca6afb636ba6b01"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/tests/consumer_inbox_unique.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/tests/consumer_inbox_unique.sql",
+      "bytes": 118,
+      "sha256": "6386f480c789ba47eb759504485e4b329c8f322f68b982037f49418b1e851c9f"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/tests/consumer_records_unique.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/tests/consumer_records_unique.sql",
+      "bytes": 122,
+      "sha256": "d0df2ad3866f50b8737e56f0937f6a467c61cffc65ea232aa485ca0d4a20797b"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/tests/full_crosswalk_coverage.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/tests/full_crosswalk_coverage.sql",
+      "bytes": 174,
+      "sha256": "cb3661dd95ada0af3bffad3b5f1b3b5447d9b7b946736a9943ddbf0fb50ea093"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/tests/historical_attribute_lineage.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/tests/historical_attribute_lineage.sql",
+      "bytes": 1121,
+      "sha256": "85a7bde52e9410e91e65d364f5249577a1cee6cda4b5bedf68dd3d33d1910642"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/tests/no_bitemporal_overlap.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/tests/no_bitemporal_overlap.sql",
+      "bytes": 680,
+      "sha256": "095adb5c9062e45d7a8a9452f173919786a6075d9d2d40e3b9e406668358a2f5"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/tests/no_conflicting_registration_ids.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/tests/no_conflicting_registration_ids.sql",
+      "bytes": 590,
+      "sha256": "6b4ba3a8e6ab684418cd53115b64d527c0f808427ea9a64602b094422a783e53"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/tests/no_mixed_entity_groups.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/tests/no_mixed_entity_groups.sql",
+      "bytes": 117,
+      "sha256": "d6bcdb96deb08f3ab256abfa774699718fb34b8436c868435e2e63941b0dc951"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/tests/no_parent_child_merge.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/tests/no_parent_child_merge.sql",
+      "bytes": 352,
+      "sha256": "d477bbe5371d8fca5544e9c6c649cb0a4393523351bf1889ac9fd740885a2c24"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/tests/no_retired_memberships.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/tests/no_retired_memberships.sql",
+      "bytes": 180,
+      "sha256": "3172215acbef20b5d86f2ebd0d3bc04ab7a75388b31edce7e8178166f80d9248"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/compiled/enterprise_mdm/tests/valid_history_intervals.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/compiled/enterprise_mdm/tests/valid_history_intervals.sql",
+      "bytes": 221,
+      "sha256": "1744115fe12a13e59ea681d8ec576585649c9caedb786b5a58c6cca473aad429"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/graph_summary.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/graph_summary.json",
+      "bytes": 6553,
+      "sha256": "1b16a7b3d9931959a589a3eaad143555e59daeeca6fce4ca295527a7b1e638cb"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/manifest.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/manifest.json",
+      "bytes": 711661,
+      "sha256": "b549724c3e07fcbc6ca02db68a66fac21ee69ee30fe76540ebedc89e61a704d5"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/osi_document.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/osi_document.json",
+      "bytes": 110,
+      "sha256": "f110c69e3bc938b4c6e35323e69d7997c64a96e26fc08cf8e428910f5a9531e9"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/models.yml/accepted_values_consumer_impac_0193a17378dfacd027e59e8f65874a9b.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/models.yml/accepted_values_consumer_impac_0193a17378dfacd027e59e8f65874a9b.sql",
+      "bytes": 558,
+      "sha256": "9b257de3fd735570abdeddf24c9aa26a267a231d1c8e358db60a3cd1efefb9c3"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/models.yml/not_null_attribute_lineage_lineage.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/models.yml/not_null_attribute_lineage_lineage.sql",
+      "bytes": 283,
+      "sha256": "3cedd6534af0bd3473158ba743e963d9cfcfc66618dd8e2cc73a9c33a116f83c"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/models.yml/not_null_crosswalk_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/models.yml/not_null_crosswalk_golden_id.sql",
+      "bytes": 279,
+      "sha256": "e04215a68d0170be9618d309928a7fe279b61ddbd4690c2155cb29a612875ab7"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/models.yml/not_null_crosswalk_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/models.yml/not_null_crosswalk_source_key.sql",
+      "bytes": 281,
+      "sha256": "f7f09af6f7b2e9dfa8fb2726357ddd353ec9293fcd46e5d5d664f0d0fe342589"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/models.yml/not_null_golden_records_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/models.yml/not_null_golden_records_golden_id.sql",
+      "bytes": 284,
+      "sha256": "b4a75604408d3218035b14bef1be52a4dcfa6bad6c7a33084659daa9b324eea9"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/models.yml/not_null_golden_records_provenance.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/models.yml/not_null_golden_records_provenance.sql",
+      "bytes": 286,
+      "sha256": "74553cae8ba37e93355d608cf7ef26a78acbb40301a96c822ab590ce537f3aba"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/models.yml/not_null_quality_report_metric.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/models.yml/not_null_quality_report_metric.sql",
+      "bytes": 278,
+      "sha256": "0f36d1d5f14ae1d4e7692bb8bb6e687c6c50d21ab7dbc06bd0ebcf7a0ad94030"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/models.yml/not_null_quality_report_value.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/models.yml/not_null_quality_report_value.sql",
+      "bytes": 276,
+      "sha256": "2a99a4023f6ce4e90ea63ed2352cf24da1d2d3dab7fad0692140d01b8c72e46a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/models.yml/unique_crosswalk_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/models.yml/unique_crosswalk_source_key.sql",
+      "bytes": 371,
+      "sha256": "2abb2a4aa4569c779ac67c0244ba70ad9211e03d04b18e85371ef11a33c3963a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/models.yml/unique_golden_records_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/models.yml/unique_golden_records_golden_id.sql",
+      "bytes": 373,
+      "sha256": "96e364e2db4f73bcd396fa538d7f1dac54eb241ad395cf05849f957e71e197db"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/models.yml/unique_quality_report_metric.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/models.yml/unique_quality_report_metric.sql",
+      "bytes": 364,
+      "sha256": "91dfda3e7e15c2bd645e08f61a92f26bec8d41f1055db56a63b8630b35c2c80a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/sources.yml/source_accepted_values_mdm_ide_39281f0d81ee46e2e8199bd0b9ce4d67.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/sources.yml/source_accepted_values_mdm_ide_39281f0d81ee46e2e8199bd0b9ce4d67.sql",
+      "bytes": 439,
+      "sha256": "bda0137153e66e6ef10f759ab5de09a6031f46b6d2feb3e1d559c9fc35df3ade"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_decisions_decision_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_decisions_decision_id.sql",
+      "bytes": 280,
+      "sha256": "5b8b7cdd8f84efe54bcd066063e9c40a5a3c74c4a4c2b37af66d99ff8bef704b"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_golden_id.sql",
+      "bytes": 281,
+      "sha256": "07fedc271df3b04e3c4e2d9ae688c98786c6b84c51f85512f065053efdad311f"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_history_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_golden_history_history_id.sql",
+      "bytes": 283,
+      "sha256": "0131de52470673f1b85e72162c400301f73241605dcad08a55b7c6c52a5c99ee"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_identity_groups_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_identity_groups_golden_id.sql",
+      "bytes": 282,
+      "sha256": "e509727c613d4b4aac5cd7966db35ac0b8c6c9df754c570dfca62a541ce7982a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_golden_id.sql",
+      "bytes": 278,
+      "sha256": "aa905fafe20b6824614165523a852b4199ec635ef1b990121cc6d2b901f2719f"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_memberships_source_key.sql",
+      "bytes": 280,
+      "sha256": "568e0b3d9fe6866b6977a1dfd17363d8a0c736f4839ebeeb5bd8ff71fe62c5a2"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_outbox_event_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_outbox_event_id.sql",
+      "bytes": 271,
+      "sha256": "d925dbee017bf40dfbad8cb8628e6f1eecfd6c4337d2c5c9dfb311585909373f"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_raw_records_raw_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_raw_records_raw_id.sql",
+      "bytes": 272,
+      "sha256": "fa7efbc7977fc3c05a372dea72248b653e23af22e8984d4c9d0390ea279b4414"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_source_records_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/sources.yml/source_not_null_mdm_source_records_source_key.sql",
+      "bytes": 283,
+      "sha256": "ec87df0334abbfab374baf3f4360e8ae51aad8bc3ad8ba1e4644c3192f135dde"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_golde_90a9cf45fe29fbd0357600c3e060e17b.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_golde_90a9cf45fe29fbd0357600c3e060e17b.sql",
+      "bytes": 551,
+      "sha256": "4d9bd6bf8006f55f857ec3093cec627848339207610adddf3ff7711b4b0b459a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_af740a4a434d411470f9beb93abb34a2.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_af740a4a434d411470f9beb93abb34a2.sql",
+      "bytes": 550,
+      "sha256": "c4e9235ba7b2c55bf3a1c526dcc7920f60037bce323a818fa1afb2ff68c96774"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_ed824537b8ea0b41636cc7359a1a8736.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/sources.yml/source_relationships_mdm_membe_ed824537b8ea0b41636cc7359a1a8736.sql",
+      "bytes": 548,
+      "sha256": "d65131f6d7229ee8a4ccdd57887679bd493ac3c6e0ed7d1fdfe95385f551df10"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/sources.yml/source_unique_mdm_decisions_decision_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/sources.yml/source_unique_mdm_decisions_decision_id.sql",
+      "bytes": 371,
+      "sha256": "e5dcff860a93e74f24d94100f5a5a24f26e7b64fc4fbd3fe5420f2c581fedffb"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/sources.yml/source_unique_mdm_golden_history_history_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/sources.yml/source_unique_mdm_golden_history_history_id.sql",
+      "bytes": 373,
+      "sha256": "43ab099c51de42490fff62b827ed5b3719cb3c913a7940a6db245cd8e2d100fc"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/sources.yml/source_unique_mdm_identity_groups_golden_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/sources.yml/source_unique_mdm_identity_groups_golden_id.sql",
+      "bytes": 371,
+      "sha256": "1ccd2faaf5144f464d7de57600291fce0d0df20a3731193e582759625ad8d793"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/sources.yml/source_unique_mdm_memberships_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/sources.yml/source_unique_mdm_memberships_source_key.sql",
+      "bytes": 370,
+      "sha256": "845c26cfc1fe9e2ad704305aeac31cc2b6dfb4c943ffa4ce4f5d79e6386a2b33"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/sources.yml/source_unique_mdm_outbox_event_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/sources.yml/source_unique_mdm_outbox_event_id.sql",
+      "bytes": 359,
+      "sha256": "d283afbafe83874f0f7c8d8c74145a767e27abe870ab3b726551acdc098b3138"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/sources.yml/source_unique_mdm_raw_records_raw_id.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/sources.yml/source_unique_mdm_raw_records_raw_id.sql",
+      "bytes": 358,
+      "sha256": "d4f106270d3a17790989555d0910365592631c69c8dec0a6106cbc2f7b8ba06d"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/models/sources.yml/source_unique_mdm_source_records_source_key.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/models/sources.yml/source_unique_mdm_source_records_source_key.sql",
+      "bytes": 373,
+      "sha256": "b2e8c2024a19a00fc8256c78ec130e8d4461b072115a69b6249041d0d286a66e"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/tests/consumer_inbox_unique.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/tests/consumer_inbox_unique.sql",
+      "bytes": 297,
+      "sha256": "eb5e3ba237dbe18c9bd7b63e1839daf065a823e854893c28f59b000c2b356d35"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/tests/consumer_records_unique.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/tests/consumer_records_unique.sql",
+      "bytes": 301,
+      "sha256": "52507259c92796c700b47169a73ba009438c153b7291d4e082c24ad79cbcba0a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/tests/full_crosswalk_coverage.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/tests/full_crosswalk_coverage.sql",
+      "bytes": 353,
+      "sha256": "1c54a46b9ee9737cfbf2311ae3da0bc168941e26a748aac451da89f9ded0eefe"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/tests/historical_attribute_lineage.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/tests/historical_attribute_lineage.sql",
+      "bytes": 1300,
+      "sha256": "eef90d03f91b1d0a87efd983ab04f7866350bb92511871077ea4fe473f097dcd"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/tests/no_bitemporal_overlap.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/tests/no_bitemporal_overlap.sql",
+      "bytes": 859,
+      "sha256": "d9baff0f70c44993eac2e1bf17ec7bf06fbb44e74cdd4e6f60980a8d2ec7fe5e"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/tests/no_conflicting_registration_ids.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/tests/no_conflicting_registration_ids.sql",
+      "bytes": 769,
+      "sha256": "cdc26ab22ac1ca0414e4ae2c6ba037ba3e66ef83f12b0040fb15d306f1060eb9"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/tests/no_mixed_entity_groups.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/tests/no_mixed_entity_groups.sql",
+      "bytes": 296,
+      "sha256": "279f815262ec26ca257ab3dce14baf03d330bf0c589e3e71dec934cd12dafc50"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/tests/no_parent_child_merge.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/tests/no_parent_child_merge.sql",
+      "bytes": 531,
+      "sha256": "fd2e91ecc3795fdf9c303ca2033a04f3b362dd9ecbf41577c6c37583741a406f"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/tests/no_retired_memberships.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/tests/no_retired_memberships.sql",
+      "bytes": 359,
+      "sha256": "5302b09694712985142bc373682237fa5ecda210b5c435e996a8b1544da7bdfc"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run/enterprise_mdm/tests/valid_history_intervals.sql",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run/enterprise_mdm/tests/valid_history_intervals.sql",
+      "bytes": 400,
+      "sha256": "0942e51c4380e3bf6308d95ae651aa0bdae6cfbcc670fc29141d7267c76b0c3d"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/run_results.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/run_results.json",
+      "bytes": 40924,
+      "sha256": "f57d01d14b6e850ce71421a5f7f13cf01f7ef561298ec044fbd6791dd1f68f0f"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/restored/semantic_manifest.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dbt/restored/semantic_manifest.json",
+      "bytes": 255,
+      "sha256": "3a25287d7a62d14a3355c9be4def98da887f029391ad4d7c001648f121f1534a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/demo.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/demo.json",
+      "bytes": 2739672,
+      "sha256": "4d379107623c5a715dc3a9c6bac6e3e6524c965e34dc89aa38f9090a725b13d0"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dependency-audit.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/dependency-audit.json",
+      "bytes": 6891,
+      "sha256": "5574de3dd8b3ae3496f13a312283f2a25bf7ed8d5b4448d6698095ac59927daa"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/distribution.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/distribution.json",
+      "bytes": 5760,
+      "sha256": "1c18a408ab1645d61d4035c5d8a0170f62707afc859a96bc725446fc49758aeb"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/editable-unit.xml",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/editable-unit.xml",
+      "bytes": 16839,
+      "sha256": "415c071d817ccdf0e83cddcbbc8363bf35c3850a939420a72fa7254d1852774a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/environment.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/environment.json",
+      "bytes": 631,
+      "sha256": "16a8e737e491cd3d105c73eb933902df72c379f36e96fb91cc1a88655f6c83c0"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/http/qualification.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/http/qualification.json",
+      "bytes": 46568,
+      "sha256": "ea1cbdbb27167830d6da84c2e61ce2a3577d91e7993815496e991d953a54012d"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/http/server.stderr.log",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/http/server.stderr.log",
+      "bytes": 10713,
+      "sha256": "9673c9f42218d2fd5eda26780251ed57faf70606a83564d2cf2797a45f9c08f9"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/http/server.stdout.log",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/http/server.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/postgres-snapshot.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/postgres-snapshot.json",
+      "bytes": 635907,
+      "sha256": "b262a7a884622aff0f2abd8bcfd3a0bad05148746da56f642fe62295a57de3bc"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/pytest.xml",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/pytest.xml",
+      "bytes": 24637,
+      "sha256": "d17b09650caa34c08822bae5c109ee8b96714d4afe5e0a63946b59adb5fb7116"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/qualification.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/qualification.json",
+      "bytes": 16094,
+      "sha256": "e115aa70dfa8a77a3cc9d7689e62ac5707926329353514522fa414a7bc5fb339"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/reference.dump.manifest.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/reference.dump.manifest.json",
+      "bytes": 2649,
+      "sha256": "81a085336355d128610984d9df785c86a730c6b46186d11587e4ee7b6a91047c"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/restore.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/restore.json",
+      "bytes": 3124,
+      "sha256": "cdc6028bca2c29a0892c482e128f9e4fb49b134a221815c6888cfa0866ebf560"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/second-restore-rejection.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/second-restore-rejection.json",
+      "bytes": 220,
+      "sha256": "3ec658b631194c9a6e6de8e0eea5f79b020a3b29b859df3faf49bea38a4978a4"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/source-files.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/source-files.json",
+      "bytes": 11209,
+      "sha256": "11adde3fdddfabf02cdb9a1418c53d894fbb9d26069e2895c00135d912c066d2"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/warehouse-export.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-flow/warehouse-export.json",
+      "bytes": 491,
+      "sha256": "f0646431feef8febfe8c88deb2a5bab85908ce25ad19e47cbbdeaa2be2280d07"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/runtime/runtime_manifest.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/environment/runtime_manifest.json",
+      "bytes": 2183,
+      "sha256": "451d549e885bcaf70c67357edf0380b8c093851e8e44d193dfc9626baf88b3c4"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/runtime/signature_verification.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/environment/signature_verification.json",
+      "bytes": 1652,
+      "sha256": "92079dc88524dd0484060df24fb9ee3db8a7d8dcd035f9df3a230ee43d66235b"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/runtime/debian-repository-signature.log",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/environment/debian-repository-signature.log",
+      "bytes": 2918,
+      "sha256": "8d6a395b130e877268c75c3dfcf7991c75a4c32311a468688a1a4b30fe0b8094"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/runtime/debian-security-repository-signature.log",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/environment/debian-security-repository-signature.log",
+      "bytes": 2074,
+      "sha256": "7153ae78b080371bfc0512d3308fe82c05c3f92bc291bf17ce7de26d515c1691"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/runtime/terraform-checksum-signature.log",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/environment/terraform-checksum-signature.log",
+      "bytes": 1073,
+      "sha256": "9fe871b3aa32c5446d50874f17eb57e2e7047f1d41dc3f447f98da290941d67d"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/runtime/browser-launch-error.log",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/environment/browser-launch-error.log",
+      "bytes": 4692,
+      "sha256": "b37bbb99377b6b660f6a1809d5a39c0a4f26df323107d8c652ae36575ff451ab"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/runtime/terraform-qualification/fmt.stderr",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/environment/terraform-qualification/fmt.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/runtime/terraform-qualification/fmt.stdout",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/environment/terraform-qualification/fmt.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/runtime/terraform-qualification/init.stderr",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/environment/terraform-qualification/init.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/runtime/terraform-qualification/init.stdout",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/environment/terraform-qualification/init.stdout",
+      "bytes": 509,
+      "sha256": "ed918c70ec3f0ba8deb7a65c6691f293e3d4ed96e48f4b12b2033069f8866669"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/runtime/terraform-qualification/provenance.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/environment/terraform-qualification/provenance.json",
+      "bytes": 1621,
+      "sha256": "b0fef8ecbe8922b9d74cbc677d60d7808af3936210c3fdee960069aac6682125"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/runtime/terraform-qualification/provider-debug.log",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/environment/terraform-qualification/provider-debug.log",
+      "bytes": 4095,
+      "sha256": "f4ebabde7819bff27b31a9460c0f6b963c6429a04bce10ade969921f11f79cea"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/runtime/terraform-qualification/providers-schema.stderr",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/environment/terraform-qualification/providers-schema.stderr",
+      "bytes": 1498,
+      "sha256": "fcb0e8652c5214dd8b7b4da45f00f01db7c4915ac5fd67b8c79af1087aaccd5f"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/runtime/terraform-qualification/providers-schema.stdout",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/environment/terraform-qualification/providers-schema.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/runtime/terraform-qualification/results.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/environment/terraform-qualification/results.json",
+      "bytes": 1047,
+      "sha256": "20882f71b6f25266ff7a5caef15221ad7e23282ba9cdf3f5cb4a9722f2647209"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/runtime/terraform-qualification/validate-debug.stderr",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/environment/terraform-qualification/validate-debug.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/runtime/terraform-qualification/validate-debug.stdout",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/environment/terraform-qualification/validate-debug.stdout",
+      "bytes": 1263,
+      "sha256": "44016c0f5776c6e835e2d63fd19cf323d9d90aec5c259c249b5619f900953a18"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/runtime/terraform-qualification/validate.stderr",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/environment/terraform-qualification/validate.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/runtime/terraform-qualification/validate.stdout",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/environment/terraform-qualification/validate.stdout",
+      "bytes": 1263,
+      "sha256": "44016c0f5776c6e835e2d63fd19cf323d9d90aec5c259c249b5619f900953a18"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/runtime/terraform-qualification/version.stderr",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/environment/terraform-qualification/version.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/runtime/terraform-qualification/version.stdout",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/environment/terraform-qualification/version.stdout",
+      "bytes": 215,
+      "sha256": "c7894d4902d4a9eb7458ca5378bff94c3bc9f9c49dbac6be6120206d5b5097b3"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/base_lock.lock",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/base_lock.lock",
+      "bytes": 181677,
+      "sha256": "1f426547ffd38cd930b6aaa9964663e46971fa6b5c64a34b4f7e195049673eb0"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/base_pyproject.toml",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/base_pyproject.toml",
+      "bytes": 1067,
+      "sha256": "fd43850080918aea27625f24189218b7b907f97e9e5495f59803b5baf97043bb"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/combine_candidates.py",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/combine_candidates.py",
+      "bytes": 3985,
+      "sha256": "461e4d655afe2ee28ac65e8b56779ee120d4ac0bac0eb46240c2b991038fc46a"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/combined/Dockerfile",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/combined/Dockerfile",
+      "bytes": 1236,
+      "sha256": "c90b7b349f62a799e3c82b3df12de57cc580d3e41c68ec7dc7c974b38f70b24d"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/combined/pyproject.toml",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/combined/pyproject.toml",
+      "bytes": 1067,
+      "sha256": "2dde87d32b14ea81c70528817bd329e30a0fdf0e444e8e8c93f6dd853944fc8d"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/combined/uv.lock",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/combined/uv.lock",
+      "bytes": 181736,
+      "sha256": "39369f418c761f4caa8a43545415806362267d57f37442af7694c357c53cd785"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/combined-static-check.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/combined-static-check.json",
+      "bytes": 2623,
+      "sha256": "228eeaad5f66628ee94441d30812fa1ec5b0952837515de58fef348a10741dca"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/pr-4.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/pr-4.json",
+      "bytes": 13750,
+      "sha256": "d377a3a13bf95548ea50c4c20e86d90a7d49c28d5f1f3b0160187c8a0c9f86eb"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/pr-4.patch",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/pr-4.patch",
+      "bytes": 2757,
+      "sha256": "e55d492191451b9f5f0004c737006dd428d5f274657a4e97cfd4ffeb7aa937fb"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/pr-5.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/pr-5.json",
+      "bytes": 33536,
+      "sha256": "2fbb1a237cb77c0b260823c0949cf3fea795aad847ba395bf25fc36667c28363"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/pr-5.patch",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/pr-5.patch",
+      "bytes": 16006,
+      "sha256": "9e4457413430657115b9f10bd6607cd6486e7304ad64fbe6b5674f83a58b1518"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/pr-6.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/pr-6.json",
+      "bytes": 7421,
+      "sha256": "4b71c05b1f5bb208ebad432f931171a8f1f92aa9729c10c66e99d9082f118d11"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/pr-6.patch",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/pr-6.patch",
+      "bytes": 236,
+      "sha256": "a242bca4b894d6731926d32bc0a84b3d5ebd6c15d651b19fd49af2270e04bce9"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/pr-7.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/pr-7.json",
+      "bytes": 2868,
+      "sha256": "626c98355fe0ddcffec7368519fa8f1206497e243d9b71596cb9927a7beb4a0d"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/pr-7.patch",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/pr-7.patch",
+      "bytes": 744,
+      "sha256": "4ba8807100b2be2644a3c7fb73597c2da002902da70c364a5da0013c7ca2a7e9"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/pr4_lock.lock",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/pr4_lock.lock",
+      "bytes": 181736,
+      "sha256": "60eb45964a7d14bbe361fd4b41e6418126c47eb4a420f57dfe0ac472df7a41ac"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/pr5_lock.lock",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/pr5_lock.lock",
+      "bytes": 181677,
+      "sha256": "9b8673abd5d45c56140d4c855b13fdc42bb943a525a637de56c2220a518e6739"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/pr6_pyproject.toml",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/pr6_pyproject.toml",
+      "bytes": 1067,
+      "sha256": "f2636f480a699d0dbf252e3f5e9cf7a42dd7fddbd993ed6e6eb655958b326172"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/pr7_Dockerfile.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/pr7_Dockerfile.txt",
+      "bytes": 1236,
+      "sha256": "c90b7b349f62a799e3c82b3df12de57cc580d3e41c68ec7dc7c974b38f70b24d"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/review.md",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/review.md",
+      "bytes": 7204,
+      "sha256": "5ac889648635c7f3eda78ffa9263e0ce1cc101a42e1c41cf701b2d70801afd79"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/source-manifest.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/source-manifest.json",
+      "bytes": 1172,
+      "sha256": "7dd1ac7a87e48d013df9bf0905d689ddc2eaaa68e7afb15796274bb61cd32622"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/upstream-python-images.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/upstream-python-images.txt",
+      "bytes": 9879,
+      "sha256": "c56ab44471f12ddff1ee38203358f448b90bcbeca3aec64bd7b595f1d11dd265"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/upstream-review.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/upstream-review.json",
+      "bytes": 3616,
+      "sha256": "a27dac5976f51e71e3cbd1af35b60e911c0411e7f0d3556655fda323a3d6d478"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/upstream_fastapi.toml",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/upstream_fastapi.toml",
+      "bytes": 12459,
+      "sha256": "c13065ce50793af8567e1b86c495232d189ca6ea297f1e9f735ce3b5e5b2ed98"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/upstream_hatchling.toml",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/upstream_hatchling.toml",
+      "bytes": 1647,
+      "sha256": "01215bf04e77fb97b972fb9056044bfb1a3a3bc2c2b65c524cdfb56314dbb9f8"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/dependency-prs/upstream_pydantic.toml",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/dependency-review/upstream_pydantic.toml",
+      "bytes": 9704,
+      "sha256": "fa0bf298fe9dfed723e979b3291841dd9508167b00adb2f7b37c385450d7383b"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/contract-comparison.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/contract-comparison.json",
+      "bytes": 7191,
+      "sha256": "76c60f7ef0a48f76239b6695e65e0b5fafcf43bc4cca3c73b7b559e00ec39a1c"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/baseline-contracts.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/baseline-contracts.json",
+      "bytes": 3375,
+      "sha256": "fe9554090cc796c53ad8ff6354102615ebe0846a56858eaeff543e199c04f9fa"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/candidate-contracts.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/candidate-contracts.json",
+      "bytes": 3375,
+      "sha256": "bd92bc90407550278e9e997cbdc4475b1a0ca32734dfe63d67d75445d9534b90"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/baseline-unit.xml",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/baseline-unit.xml",
+      "bytes": 9926,
+      "sha256": "6aa0c3f33cf3381549c676b1e029697a62606113eb9853d7fa5230bd9b4a2fd0"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/github-state-audit-20261115.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/github-state-audit-20261115.json",
+      "bytes": 18082,
+      "sha256": "f91581c7c93123222a1adfa8f6201d08ede533bb937e1d563b9ec91d614eb2e3"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/native-wrapper-final-output.json",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/native-wrapper-final-output.json",
+      "bytes": 219,
+      "sha256": "ea9adfae484444dbb9c4deb1754cdbe9b3c137786538439deff3a0c59382340d"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/build-backend-lock.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/build-backend-lock.txt",
+      "bytes": 1317,
+      "sha256": "1e2d296de823fce40bae05d96d0866d72645ce3b38c4baf3bd1a9d54c4048fdd"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/build-backend-compile.stdout.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/build-backend-compile.stdout.txt",
+      "bytes": 1317,
+      "sha256": "1e2d296de823fce40bae05d96d0866d72645ce3b38c4baf3bd1a9d54c4048fdd"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/build-backend-compile.stderr.txt",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/build-backend-compile.stderr.txt",
+      "bytes": 195,
+      "sha256": "25a01d99231b536c2b00358689b0dfa744a74e762745758c0a15a383ef7d74ee"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/qualify_native.py",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/capture/qualify_native.py",
+      "bytes": 9376,
+      "sha256": "1bd3169350052938a6608e8104cc828d43073eccc159888b4bf70f9a99595bc6"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/qualify_http.py",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/capture/qualify_http.py",
+      "bytes": 21900,
+      "sha256": "9758e49b756cd41d0297243815087835a13a0e6e54ef59172ede448118bb5cbf"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/capture_contracts.py",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/capture/capture_contracts.py",
+      "bytes": 1414,
+      "sha256": "1fdae65e7f39c35e655bdfb6d41a84cdf39538b2f567eb9264905f45e69b6df0"
+    },
+    {
+      "source_path": "/workspace/scratch/f684f9028a9d/runtime/with_postgres.py",
+      "repository_path": "evidence/2026-11-15/dependency-qualification/capture/with_postgres.py",
+      "bytes": 3598,
+      "sha256": "7d80e4d93b6e6c59abc49d839dfd7c6b2409f7e0e493721f9b15aa0a7e66aa08"
+    }
+  ],
+  "files_count": 406,
+  "total_bytes": 7725438,
+  "excluded": [
+    "credentials",
+    "database archive",
+    "vendor binaries",
+    "built distributions",
+    "dbt application HTML",
+    "partial_parse caches",
+    "duplicate dbt project copy",
+    "dbt graph pickle caches"
+  ],
+  "byte_preserved": true
+}

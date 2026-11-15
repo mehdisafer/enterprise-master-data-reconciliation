@@ -1,0 +1,16 @@
+{
+  "label": "editable-sync",
+  "command": [
+    "uv",
+    "sync",
+    "--frozen",
+    "--all-extras"
+  ],
+  "cwd": "/workspace/scratch/f684f9028a9d/repo",
+  "started_at": "2026-11-15T21:24:54.598842+00:00",
+  "ended_at": "2026-11-15T21:24:54.630839+00:00",
+  "elapsed_seconds": 0.03201028100011172,
+  "returncode": 0,
+  "expected_returncode": 0,
+  "timeout_seconds": 240
+}

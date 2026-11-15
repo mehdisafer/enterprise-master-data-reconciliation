@@ -1,0 +1,2 @@
+{"correlation_id":"8a8ad148-6740-4581-9a04-ce1158f47992","event":"operation.started","operation":"cli.command","origin_correlation_id":"8a8ad148-6740-4581-9a04-ce1158f47992","trace_version":"correlation.v1"}
+{"correlation_id":"8a8ad148-6740-4581-9a04-ce1158f47992","duration_ms":19.181,"event":"operation.succeeded","operation":"cli.command","origin_correlation_id":"8a8ad148-6740-4581-9a04-ce1158f47992","trace_version":"correlation.v1"}

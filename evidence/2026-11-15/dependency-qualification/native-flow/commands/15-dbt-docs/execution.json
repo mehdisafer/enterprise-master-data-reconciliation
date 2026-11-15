@@ -1,0 +1,25 @@
+{
+  "label": "dbt-docs",
+  "command": [
+    "dbt",
+    "docs",
+    "generate",
+    "--project-dir",
+    "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt-project",
+    "--profiles-dir",
+    "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt-project",
+    "--target",
+    "postgres",
+    "--target-path",
+    "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs",
+    "--log-path",
+    "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/logs/docs"
+  ],
+  "cwd": "/workspace/scratch/f684f9028a9d/repo",
+  "started_at": "2026-11-15T21:25:22.757219+00:00",
+  "ended_at": "2026-11-15T21:25:26.538186+00:00",
+  "elapsed_seconds": 3.7809773169992695,
+  "returncode": 0,
+  "expected_returncode": 0,
+  "timeout_seconds": 240
+}

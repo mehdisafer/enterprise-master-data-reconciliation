@@ -1,0 +1,92 @@
+{
+  "input_main_sha": "16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+  "package_count": 122,
+  "changed_package_blocks": [
+    "enterprise-master-data-reconciliation",
+    "fastapi",
+    "pydantic",
+    "pydantic-core"
+  ],
+  "all_other_package_blocks_preserved_byte_for_byte": true,
+  "direct_upstream_dependency_constraints": [
+    {
+      "source": "upstream_fastapi.toml",
+      "requirement": "starlette>=0.46.0",
+      "locked_version": "1.10.0",
+      "satisfied": true
+    },
+    {
+      "source": "upstream_fastapi.toml",
+      "requirement": "anyio>=4.1.0",
+      "locked_version": "4.16.0",
+      "satisfied": true
+    },
+    {
+      "source": "upstream_fastapi.toml",
+      "requirement": "pydantic>=2.9.0",
+      "locked_version": "2.14.3",
+      "satisfied": true
+    },
+    {
+      "source": "upstream_fastapi.toml",
+      "requirement": "typing-extensions>=4.8.0",
+      "locked_version": "4.16.0",
+      "satisfied": true
+    },
+    {
+      "source": "upstream_fastapi.toml",
+      "requirement": "typing-inspection>=0.4.2",
+      "locked_version": "0.4.5",
+      "satisfied": true
+    },
+    {
+      "source": "upstream_fastapi.toml",
+      "requirement": "annotated-doc>=0.0.2",
+      "locked_version": "0.0.6",
+      "satisfied": true
+    },
+    {
+      "source": "upstream_fastapi.toml",
+      "requirement": "opentelemetry-api>=1.44.0",
+      "locked_version": "1.45.2",
+      "satisfied": true
+    },
+    {
+      "source": "upstream_pydantic.toml",
+      "requirement": "typing-extensions>=4.16.0",
+      "locked_version": "4.16.0",
+      "satisfied": true
+    },
+    {
+      "source": "upstream_pydantic.toml",
+      "requirement": "annotated-types>=0.6.0",
+      "locked_version": "0.8.0",
+      "satisfied": true
+    },
+    {
+      "source": "upstream_pydantic.toml",
+      "requirement": "pydantic-core==2.50.4",
+      "locked_version": "2.50.4",
+      "satisfied": true
+    },
+    {
+      "source": "upstream_pydantic.toml",
+      "requirement": "typing-inspection>=0.4.4",
+      "locked_version": "0.4.5",
+      "satisfied": true
+    }
+  ],
+  "changed_versions": {
+    "fastapi": "0.162.4",
+    "pydantic": "2.14.3",
+    "pydantic-core": "2.50.4"
+  },
+  "build_backend": "hatchling==1.33.0",
+  "build_backend_in_application_lock": false,
+  "runtime_validation": "not executed by this static composition script",
+  "output_sha256": {
+    "uv.lock": "39369f418c761f4caa8a43545415806362267d57f37442af7694c357c53cd785",
+    "pyproject.toml": "2dde87d32b14ea81c70528817bd329e30a0fdf0e444e8e8c93f6dd853944fc8d",
+    "Dockerfile": "c90b7b349f62a799e3c82b3df12de57cc580d3e41c68ec7dc7c974b38f70b24d"
+  }
+}

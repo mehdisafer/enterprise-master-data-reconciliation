@@ -1,0 +1,98 @@
+{
+  "archive_sha256": "b8b1f61ec18ac2a0430861c5272c3c3e322fc471e9b1afa504c4ae0f1e8023c2",
+  "business_check": {
+    "checks": 9,
+    "passed": true,
+    "violations": {
+      "active_memberships": 0,
+      "attribute_provenance": 0,
+      "empty_active_groups": 0,
+      "group_compatibility": 0,
+      "ledger_outbox": 0,
+      "membership_history": 0,
+      "nonoverlap": 0,
+      "source_crosswalk_coverage": 0,
+      "source_domains": 0
+    }
+  },
+  "business_check_exit_code": 0,
+  "client_version": "pg_restore (PostgreSQL) 17.12 (Debian 17.12-0+deb13u1)",
+  "consumer_delivery_state_restored": true,
+  "elapsed_seconds": 0.356,
+  "external_consumer_rollback_performed": false,
+  "format_version": 1,
+  "restored_at": "2026-11-15T21:25:27.317324+00:00",
+  "server_version": "17.12 (Debian 17.12-0+deb13u1)",
+  "snapshot_content_equal": true,
+  "tables": {
+    "candidates": {
+      "rows": 24,
+      "sha256": "23da481331daf04382d1aa15149df204f1bd9069ad8f2b068872f9e020fc153a"
+    },
+    "consumer_crosswalk": {
+      "rows": 34,
+      "sha256": "6eab400d92684320be74f274f06de9955c7fbe44702b1ac541dedc97be5b42ae"
+    },
+    "consumer_inbox": {
+      "rows": 52,
+      "sha256": "627b1948bf5a4b87ea09d0b0b1f5f9eb24235d8722af815b5d6b41f419fc48b3"
+    },
+    "consumer_records": {
+      "rows": 34,
+      "sha256": "66b88dac65da755c23b5f0e2a40147fa0559c09ee1654dd7665d3cd1dc218086"
+    },
+    "decision_events": {
+      "rows": 18,
+      "sha256": "20512147e88c0aa5f88f4bc117f82d4c78dfb1fd2b146af70c20b9354cecf694"
+    },
+    "decisions": {
+      "rows": 8,
+      "sha256": "1d979828056a0cf6308664545de4dbcc4c95a1fb19fffff9fae4430fcce0dd50"
+    },
+    "golden_history": {
+      "rows": 48,
+      "sha256": "04c7814e12f1b864cff6b0cb13bba9b5702a7b46769c5798a383523e723d0a56"
+    },
+    "identity_groups": {
+      "rows": 34,
+      "sha256": "f783e57126ee2bf34fe08095cade76a6850ce82e4ef93c8c75de42a7b094ca03"
+    },
+    "membership_history": {
+      "rows": 42,
+      "sha256": "af51bc326c79b8b0d9f4358d83dc531f09cfabef66d469ac9028fb12a53a3107"
+    },
+    "memberships": {
+      "rows": 34,
+      "sha256": "8df3ccea244f92163555146dc693229725615fb089b11f6562e1cc15e315ae59"
+    },
+    "outbox": {
+      "rows": 52,
+      "sha256": "92b2bb1d5142c58c9de679c93603a2cf1f300ab4f9424549b043bbb3a658fa41"
+    },
+    "raw_records": {
+      "rows": 36,
+      "sha256": "35c383f08a8e189c19f19a7ff2d175a4a2456415a72f77c26337207eea324678"
+    },
+    "run_sources": {
+      "rows": 3,
+      "sha256": "99f1530da5c16efd73c14b9471bc2430ae74c43ea65471ab3d9606d73009e3fd"
+    },
+    "runs": {
+      "rows": 1,
+      "sha256": "b44cbd83f1950bc96fe9fb54e36a1567a243194028ec61c67f7d6f356524ad6f"
+    },
+    "schema_migrations": {
+      "rows": 1,
+      "sha256": "e97acee36f0cb48a287110680e78a3af6c495670bbf430fce66d81d9e0896cfe"
+    },
+    "source_records": {
+      "rows": 34,
+      "sha256": "5ee493469dbe4e069c802eab4e5869c5602a8b2b3814d07a53e3818527b07493"
+    },
+    "standard_records": {
+      "rows": 34,
+      "sha256": "738becbb237e6d8f7730c1cc2748f68995538267efceb55dc5d6248d1d78fb77"
+    }
+  },
+  "target_database": "mdm_restore"
+}

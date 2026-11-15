@@ -21,7 +21,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  PYTHON_VERSION: "3.12.14"
+  PYTHON_VERSION: "3.12.16"
   UV_VERSION: "0.13.6"
   DBT_SEND_ANONYMOUS_USAGE_STATS: "false"
   DO_NOT_TRACK: "1"
@@ -221,6 +221,11 @@ jobs:
               output.write("MDM_CI_POSTGRES_CONTAINER=" + os.environ["MDM_CI_POSTGRES_CONTAINER"] + "\n")
           PY
           docker image inspect postgres:17.12 --format '{{json .RepoDigests}}' > artifacts/postgres-image-digests.json
+      - name: Build and verify the installed wheel from its source archive
+        run: |
+          uv build --no-sources
+          uv pip install --no-deps --reinstall dist/enterprise_master_data_reconciliation-0.1.0rc1-py3-none-any.whl
+          uv run --no-sync python scripts/verify_distribution.py --output artifacts/distribution.json
       - name: Lint executable code
         run: uv run --no-sync ruff check src tests scripts .github/scripts
       - name: Run unit and real PostgreSQL integration tests
@@ -395,9 +400,11 @@ jobs:
           docker compose exec -T api mdm check > artifacts/container-check.json
           curl --fail --silent --show-error --max-time 10 http://127.0.0.1:8000/healthz > artifacts/container-health.json
           docker compose images --format json > artifacts/container-images.json
-      - name: Qualify the rendered review, golden records and consumer views
+      - name: Qualify rendered decisions, reversals and consumer corrections
         timeout-minutes: 3
-        run: uv run --no-sync python scripts/browser_smoke.py
+        run: |
+          uv run --no-sync python scripts/browser_smoke.py --exercise-lifecycle
+          docker compose exec -T api mdm check > artifacts/container-post-lifecycle-check.json
       - name: Retain deployment logs
         if: always()
         run: |

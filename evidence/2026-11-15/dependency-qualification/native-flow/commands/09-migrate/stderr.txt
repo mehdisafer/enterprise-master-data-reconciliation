@@ -1,0 +1,2 @@
+{"correlation_id":"bd0e07e7-c6b2-4a6a-ab81-63c1afbe0b4b","event":"operation.started","operation":"cli.command","origin_correlation_id":"bd0e07e7-c6b2-4a6a-ab81-63c1afbe0b4b","trace_version":"correlation.v1"}
+{"correlation_id":"bd0e07e7-c6b2-4a6a-ab81-63c1afbe0b4b","duration_ms":39.931,"event":"operation.succeeded","operation":"cli.command","origin_correlation_id":"bd0e07e7-c6b2-4a6a-ab81-63c1afbe0b4b","trace_version":"correlation.v1"}

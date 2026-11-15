@@ -1,0 +1,14 @@
+{
+  "label": "business-check",
+  "command": [
+    "mdm",
+    "check"
+  ],
+  "cwd": "/workspace/scratch/f684f9028a9d/repo",
+  "started_at": "2026-11-15T21:25:15.569321+00:00",
+  "ended_at": "2026-11-15T21:25:15.784291+00:00",
+  "elapsed_seconds": 0.2149855710003976,
+  "returncode": 0,
+  "expected_returncode": 0,
+  "timeout_seconds": 240
+}

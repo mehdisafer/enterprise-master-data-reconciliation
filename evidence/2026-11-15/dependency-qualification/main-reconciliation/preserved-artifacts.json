@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "copy_count": 15,
+  "all_bytes_identical": true,
+  "artifacts": [
+    {
+      "path": "01-ruff/execution.json",
+      "source_path": "repo/artifacts/main-reconciliation-20261115/01-ruff/execution.json",
+      "bytes": 444,
+      "sha256": "ec9d9568e6dcc643677fbee7ce06ea6db2580bf5ec30765c862558823169f592"
+    },
+    {
+      "path": "01-ruff/stderr.txt",
+      "source_path": "repo/artifacts/main-reconciliation-20261115/01-ruff/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "01-ruff/stdout.txt",
+      "source_path": "repo/artifacts/main-reconciliation-20261115/01-ruff/stdout.txt",
+      "bytes": 19,
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+    },
+    {
+      "path": "02-full-postgres-suite/execution.json",
+      "source_path": "repo/artifacts/main-reconciliation-20261115/02-full-postgres-suite/execution.json",
+      "bytes": 524,
+      "sha256": "db2060c03ac0f5eb24646c8053f756a075700b10dac9e93af3d63a6868ff3a68"
+    },
+    {
+      "path": "02-full-postgres-suite/stderr.txt",
+      "source_path": "repo/artifacts/main-reconciliation-20261115/02-full-postgres-suite/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "02-full-postgres-suite/stdout.txt",
+      "source_path": "repo/artifacts/main-reconciliation-20261115/02-full-postgres-suite/stdout.txt",
+      "bytes": 771,
+      "sha256": "8da5296c75fa80810315e6e705cb4dc5802d52669f90cc0e52f0e832ca8706c8"
+    },
+    {
+      "path": "capture.py",
+      "source_path": "repo/artifacts/main-reconciliation-20261115/capture.py",
+      "bytes": 5470,
+      "sha256": "6a1dcbd50fe48c9cda167fd374c3e197cfe87f1b6f596a8c33e14233974d3a6a"
+    },
+    {
+      "path": "copied-test.json",
+      "source_path": "repo/artifacts/main-reconciliation-20261115/copied-test.json",
+      "bytes": 585,
+      "sha256": "595aef7bafed0d1371dbf7f22507246e037dd848aa7e47d39ae25e7206489784"
+    },
+    {
+      "path": "environment.json",
+      "source_path": "repo/artifacts/main-reconciliation-20261115/environment.json",
+      "bytes": 5444,
+      "sha256": "60605a5acf3744d49c32722ccd5d9e480206c637c71a35495d31118f915e71f1"
+    },
+    {
+      "path": "pytest.xml",
+      "source_path": "repo/artifacts/main-reconciliation-20261115/pytest.xml",
+      "bytes": 26326,
+      "sha256": "18aec8ccb974164df7d7dd02c89433d14372ece0dbf8b667db3d1fecfd9ac6f5"
+    },
+    {
+      "path": "qualification.json",
+      "source_path": "repo/artifacts/main-reconciliation-20261115/qualification.json",
+      "bytes": 1978,
+      "sha256": "e8a358c8d533bd06314ec12c44cdf62a9a476caf75e012ecf7d5c8f9b000cd19"
+    },
+    {
+      "path": "source-correspondence.json",
+      "source_path": "repo/artifacts/main-reconciliation-20261115/source-correspondence.json",
+      "bytes": 39606,
+      "sha256": "aae2291e891515da02224a6697b1e43e01a2840595a2502ce1b997cb638de852"
+    },
+    {
+      "path": "concurrent-github-state.json",
+      "source_path": "main-concurrent-refresh/capture.json",
+      "bytes": 150548,
+      "sha256": "4186acd27de7d62534a6b4a0d75de3e2d5071045152b3a86d19b37e31ec7a8b3"
+    },
+    {
+      "path": "concurrent-pr-events.json",
+      "source_path": "main-concurrent-refresh/pr-events.json",
+      "bytes": 1072,
+      "sha256": "699dbc7c9d84aac2ed4ce3212349d64197f6ea213ea4db84910550624818123b"
+    },
+    {
+      "path": "github-actions.json",
+      "source_path": "main-reconciliation-ci.json",
+      "bytes": 46710,
+      "sha256": "09f60b65024cacded13b7fc0c7ed4a628ea5e2e46f06794691659ffbd75232b8"
+    }
+  ],
+  "scope": "The twelve original supplemental capture files and three GitHub capture files. This does not replace the earlier 406-artifact preservation manifest."
+}

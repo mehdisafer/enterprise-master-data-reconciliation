@@ -1,0 +1,24 @@
+[31m[31m╷[0m[0m
+[31m│[0m [0m[1m[31mError: [0m[0m[1mFailed to load plugin schemas[0m
+[31m│[0m [0m
+[31m│[0m [0m[0mError while loading schemas for plugin components: Failed to obtain
+[31m│[0m [0mprovider schema: Could not load the schema for provider
+[31m│[0m [0mregistry.terraform.io/snowflakedb/snowflake: failed to instantiate provider
+[31m│[0m [0m"registry.terraform.io/snowflakedb/snowflake" to obtain schema:
+[31m│[0m [0mUnrecognized remote plugin message: 
+[31m│[0m [0mFailed to read any lines from plugin's stdout
+[31m│[0m [0mThis usually means
+[31m│[0m [0m  the plugin was not compiled for this architecture,
+[31m│[0m [0m  the plugin is missing dynamic-link libraries necessary to run,
+[31m│[0m [0m  the plugin is not executable by this process due to file permissions, or
+[31m│[0m [0m  the plugin failed to negotiate the initial go-plugin protocol handshake
+[31m│[0m [0m
+[31m│[0m [0mAdditional notes about plugin:
+[31m│[0m [0m  Path: /workspace/scratch/f684f9028a9d/runtime/terraform-qualification/data/providers/registry.terraform.io/snowflakedb/snowflake/2.22.1/linux_amd64/terraform-provider-snowflake_v2.22.1
+[31m│[0m [0m  Mode: -rwxr-xr-x
+[31m│[0m [0m  Owner: 1000 [agent] (current: 1000 [agent])
+[31m│[0m [0m  Group: 1000 [agent] (current: 1000 [agent])
+[31m│[0m [0m  ELF architecture: EM_X86_64 (current architecture: amd64)
+[31m│[0m [0m..
+[31m╵[0m[0m
+[0m[0m

@@ -1,0 +1,1 @@
+{"passed": true, "resources": 18, "checks": {"installed_outside_source": true, "not_editable": true, "installed_from_wheel": true, "all_source_resources_preserved": true, "entrypoint": true, "cli_usable": true}}

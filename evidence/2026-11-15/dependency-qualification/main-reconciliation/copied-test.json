@@ -1,0 +1,11 @@
+{
+  "source_path": "/workspace/scratch/f684f9028a9d/main-concurrent-refresh/tests/test_dependency_compatibility.py",
+  "repository_path": "tests/test_dependency_compatibility.py",
+  "copied_at_utc": "2026-11-15T21:43:49.855052+00:00",
+  "bytes": 2598,
+  "sha256": "5476a182cf3690af29d158a47ed4f1eca0b5bfcc3aca72e3d2f08a1b123f6f4d",
+  "git_blob_sha1": "f3980636bca92c517b93242d98eae77cecd0a8ca",
+  "source_and_destination_identical": true,
+  "copied_exclusively_without_overwrite": true,
+  "source_context": "Concurrent main update through PR #8; parent verified the retrieved blob."
+}

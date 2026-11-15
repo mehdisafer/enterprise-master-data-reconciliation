@@ -1,0 +1,56 @@
+{
+  "version": {
+    "exit_code": 0,
+    "args": [
+      "version",
+      "-json"
+    ],
+    "stdout_bytes": 215,
+    "stderr_bytes": 0
+  },
+  "fmt": {
+    "exit_code": 0,
+    "args": [
+      "fmt",
+      "-check",
+      "-diff",
+      "-no-color"
+    ],
+    "stdout_bytes": 0,
+    "stderr_bytes": 0
+  },
+  "init": {
+    "exit_code": 0,
+    "args": [
+      "init",
+      "-backend=false",
+      "-input=false",
+      "-lockfile=readonly",
+      "-no-color"
+    ],
+    "stdout_bytes": 509,
+    "stderr_bytes": 0
+  },
+  "validate": {
+    "exit_code": 1,
+    "args": [
+      "validate",
+      "-json"
+    ],
+    "stdout_bytes": 1263,
+    "stderr_bytes": 0
+  },
+  "providers-schema": {
+    "exit_code": 1,
+    "args": [
+      "providers",
+      "schema",
+      "-json"
+    ],
+    "stdout_bytes": 0,
+    "stderr_bytes": 1498
+  },
+  "lockfile_before_sha256": "7c9d429e69ea25799a4731334d4f69c82c0a53ef5960391307649868ed58cedd",
+  "lockfile_after_sha256": "7c9d429e69ea25799a4731334d4f69c82c0a53ef5960391307649868ed58cedd",
+  "lockfile_unchanged": true
+}

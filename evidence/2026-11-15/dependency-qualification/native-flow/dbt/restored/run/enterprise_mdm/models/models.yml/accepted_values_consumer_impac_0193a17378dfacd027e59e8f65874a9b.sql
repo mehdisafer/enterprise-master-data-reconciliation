@@ -1,0 +1,36 @@
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        reconciliation_status as value_field,
+        count(*) as n_records
+
+    from "mdm_restore"."analytics"."consumer_impact"
+    group by reconciliation_status
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'aligned','unknown_identity','retirement_pending','activation_pending','update_pending','consumer_ahead'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test

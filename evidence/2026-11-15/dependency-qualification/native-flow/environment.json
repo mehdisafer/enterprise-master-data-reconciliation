@@ -1,0 +1,18 @@
+{
+  "python": "3.12.16",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "postgres": "PostgreSQL 17.12 (Debian 17.12-0+deb13u1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+  "database": "mdm_demo",
+  "packages": {
+    "fastapi": "0.162.4",
+    "pydantic": "2.14.3",
+    "pydantic-core": "2.50.4",
+    "dbt-core": "1.12.7",
+    "dbt-postgres": "1.11.0",
+    "dbt-snowflake": "1.12.5",
+    "psycopg": "3.3.9",
+    "uvicorn": "0.52.1"
+  },
+  "remote_base_commit": "16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+  "scope": "native isolated workspace; not GitHub Actions, Docker or live Snowflake"
+}

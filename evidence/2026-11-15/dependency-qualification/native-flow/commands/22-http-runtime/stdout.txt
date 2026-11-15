@@ -1,0 +1,1 @@
+{"passed": true, "request_count": 34, "assertion_count": 341, "elapsed_seconds": 0.973}
