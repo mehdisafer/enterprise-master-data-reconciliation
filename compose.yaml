@@ -81,6 +81,9 @@ services:
 
   api:
     <<: *app
+    # Only this HTTP service has an ingress bridge. The database and migrations
+    # retain their internal-only network. API egress is not an air-gap guarantee.
+    networks: [data, ingress]
     ports:
       - "127.0.0.1:${MDM_PORT:-8000}:8000"
     depends_on:
@@ -96,6 +99,10 @@ volumes:
 networks:
   data:
     internal: true
+  ingress:
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.host_binding_ipv4: "127.0.0.1"
 
 secrets:
   postgres_password:
