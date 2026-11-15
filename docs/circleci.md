@@ -40,9 +40,19 @@ The parallel report says the database JUnit had 195 case entries with zero failu
 
 A file hash establishes content identity only once original bytes are available. The CircleCI artifact retention window is finite; if those artifacts expire, the register is a historical third-party capture, not independently reproducible raw evidence. Live Snowflake, production permissions/cost and the repository's public release decision remain separate.
 
+## Mainline test-gate implementation (pending remote acceptance)
+
+The low-cost branch job installs exactly Python 3.12.16, synchronizes the reviewed uv lock with development and PostgreSQL extras, and runs both the pre-existing `matching-unit` Smarter Testing suite and all non-database pytest regressions. `.circleci/test-suites.yml` now uses `uv run --no-sync` so its selected matching tests cannot silently resynchronize away dependencies needed by subsequent tests.
+
+The `postgres-integration` job is filtered to `main`; it creates only the disposable `mdm_test` database on an ephemeral PostgreSQL service. It fails closed on missing database access, missing JUnit or any skipped/failing test, and then executes dbt and business invariants. It deliberately **does not** duplicate native backup/restore, installed-wheel packaging or rendered Chromium because these are covered in the separately scoped, previously executed full/reference workflows. This separation avoids triggering two expensive Docker/browser qualifications on every PR.
+
+Both job definitions underwent local YAML parsing, structural checks and Bash syntax checks, and the submitted configuration blob matched the statically checked file byte-for-byte. These are **static checks only**. A new successful CircleCI `postgres-integration` job and its original output are required to qualify that job.
+
 ## Pipeline definitions and remaining work
 
-The default `.circleci/config.yml` still executes **matching-only** smoke testing. The separate `.circleci/reference.yml` is the manual Docker/browser lifecycle profile. CircleCI's additional `v1-reference-qualification` pipeline exercised the full `.github/workflows/quality.yml` workflow on the setup revision; it is not interchangeable with matching-only success on `main`.
+The historical default `.circleci/config.yml` executed **matching-only** smoke testing; this is what the earlier successful `main` statuses actually prove. The new default configuration defines a fast `build-and-test` job (matching, complete non-database pytest, Ruff, secret-history scan) on every branch, followed by a **`postgres-integration` job on `main` only** (real PostgreSQL 17.12, full pytest with zero skipped tests, three-ERP demonstration, dbt build/catalog and a bounded benchmark). It records checkout SHA, Python version and PostgreSQL version and retains JUnit/DBT evidence. The `postgres-integration` job has not yet been observed as successful at the new head and must not be treated as a pass merely because its YAML exists.
+
+The separate `.circleci/reference.yml` is a manual Docker/browser lifecycle profile. CircleCI's additional `v1-reference-qualification` pipeline exercised the original broader `.github/workflows/quality.yml` workflow on the setup revision. Neither historic pipeline status nor a new default smoke run alone can replace the mainline database job and the separately tested restore/browser/provider gates.
 
 1. Review or export the original CircleCI `postgres`, `container` and `reference-containers` artifacts (pytest JUnit, dbt, backup/restore, screenshots, lifecycle and `mdm check`), including exact `CIRCLE_SHA1`.
 2. Run the appropriate full and, if needed, separate container qualifications on the final `main` ref. Record actual job results; avoid unnecessary duplicate expensive runs if a reviewed source correspondence meets the intended acceptance threshold.
