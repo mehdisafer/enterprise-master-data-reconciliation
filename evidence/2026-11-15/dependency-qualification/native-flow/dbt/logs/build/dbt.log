@@ -1,0 +1,2438 @@
+
+
+============================== 22:25:19.167183 | 4b77d7d9-3e5e-4f50-a186-330da2ae3a3a ==============================
+[0m22:25:19.167183 [info ] [MainThread]: Running with dbt=1.12.7
+[0m22:25:19.198964 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'debug': 'False', 'fail_fast': 'False', 'write_json': 'True', 'no_print': 'None', 'static_parser': 'True', 'cache_selected_only': 'False', 'indirect_selection': 'eager', 'invocation_command': 'dbt build --project-dir /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt-project --profiles-dir /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt-project --target postgres --target-path /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build --log-path /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/logs/build', 'empty': 'False', 'log_path': '/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/logs/build', 'target_path': '/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'hints_enabled': 'True', 'maximum_seed_size_mib': '1', 'introspect': 'True', 'warn_error': 'None', 'use_experimental_parser': 'False', 'log_cache_events': 'False', 'profiles_dir': '/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt-project', 'quiet': 'False', 'log_format': 'default', 'partial_parse': 'True', 'printer_width': '80', 'version_check': 'True', 'send_anonymous_usage_stats': 'False'}
+[0m22:25:19.402411 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m22:25:19.481289 [debug] [MainThread]: checksum: f3e979a96d57622af921a14bee005a0dd221345157a5d4e66f158ef3be3d0b0e, vars: {}, profile: enterprise_mdm, target: postgres, version: 1.12.7
+[0m22:25:19.481926 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m22:25:21.031051 [debug] [MainThread]: Wrote artifact WritableManifest to /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/manifest.json
+[0m22:25:21.033179 [debug] [MainThread]: Wrote artifact SemanticManifest to /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/semantic_manifest.json
+[0m22:25:21.087036 [debug] [MainThread]: Wrote artifact OsiDocument to /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/osi_document.json
+[0m22:25:21.260761 [info ] [MainThread]: Found 5 models, 41 data tests, 2 operations, 16 sources, 482 macros
+[0m22:25:21.264069 [info ] [MainThread]: 
+[0m22:25:21.264402 [info ] [MainThread]: Concurrency: 2 threads (target='postgres')
+[0m22:25:21.264635 [info ] [MainThread]: 
+[0m22:25:21.265094 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m22:25:21.268096 [debug] [ThreadPool]: Acquiring new postgres connection 'list_mdm_demo'
+[0m22:25:21.313696 [debug] [ThreadPool]: Using postgres connection "list_mdm_demo"
+[0m22:25:21.314137 [debug] [ThreadPool]: On list_mdm_demo: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "connection_name": "list_mdm_demo"} */
+
+    select distinct nspname from pg_namespace
+  
+[0m22:25:21.314383 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:25:21.324443 [debug] [ThreadPool]: SQL status: SELECT 4 in 0.010 seconds
+[0m22:25:21.325462 [debug] [ThreadPool]: On list_mdm_demo: Close
+[0m22:25:21.326310 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_mdm_demo, now create_mdm_demo_analytics)
+[0m22:25:21.326865 [debug] [ThreadPool]: Creating schema "database: "mdm_demo"
+schema: "analytics"
+"
+[0m22:25:21.330637 [debug] [ThreadPool]: Using postgres connection "create_mdm_demo_analytics"
+[0m22:25:21.330977 [debug] [ThreadPool]: On create_mdm_demo_analytics: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "connection_name": "create_mdm_demo_analytics"} */
+create schema if not exists "analytics"
+[0m22:25:21.331246 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:25:21.336676 [debug] [ThreadPool]: SQL status: CREATE SCHEMA in 0.005 seconds
+[0m22:25:21.337409 [debug] [ThreadPool]: On create_mdm_demo_analytics: COMMIT
+[0m22:25:21.337778 [debug] [ThreadPool]: Using postgres connection "create_mdm_demo_analytics"
+[0m22:25:21.338030 [debug] [ThreadPool]: On create_mdm_demo_analytics: COMMIT
+[0m22:25:21.338942 [debug] [ThreadPool]: SQL status: COMMIT in 0.001 seconds
+[0m22:25:21.339234 [debug] [ThreadPool]: On create_mdm_demo_analytics: Close
+[0m22:25:21.340643 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly create_mdm_demo_analytics, now list_mdm_demo_analytics)
+[0m22:25:21.347124 [debug] [ThreadPool]: Using postgres connection "list_mdm_demo_analytics"
+[0m22:25:21.347450 [debug] [ThreadPool]: On list_mdm_demo_analytics: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "connection_name": "list_mdm_demo_analytics"} */
+select
+      'mdm_demo' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'mdm_demo' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'mdm_demo' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'analytics'
+    union all
+    select distinct
+     'mdm_demo' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'analytics'
+  
+[0m22:25:21.347695 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m22:25:21.358342 [debug] [ThreadPool]: SQL status: SELECT 0 in 0.011 seconds
+[0m22:25:21.359536 [debug] [ThreadPool]: On list_mdm_demo_analytics: ROLLBACK
+[0m22:25:21.360103 [debug] [ThreadPool]: On list_mdm_demo_analytics: Close
+[0m22:25:21.362971 [debug] [MainThread]: Using postgres connection "master"
+[0m22:25:21.363295 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m22:25:21.363564 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:25:21.372049 [debug] [MainThread]: SQL status: SELECT 0 in 0.008 seconds
+[0m22:25:21.373111 [debug] [MainThread]: On master: ROLLBACK
+[0m22:25:21.373518 [debug] [MainThread]: On master: COMMIT
+[0m22:25:21.373845 [debug] [MainThread]: Using postgres connection "master"
+[0m22:25:21.374076 [debug] [MainThread]: On master: COMMIT
+[0m22:25:21.374447 [debug] [MainThread]: SQL status: COMMIT in 0.000 seconds
+[0m22:25:21.378382 [debug] [MainThread]: Writing injected SQL for node "operation.enterprise_mdm.enterprise_mdm-on-run-start-0"
+[0m22:25:21.381675 [info ] [MainThread]: 1 of 2 START hook: enterprise_mdm.on-run-start.0 ............................... [RUN]
+[0m22:25:21.382090 [debug] [MainThread]: Using postgres connection "master"
+[0m22:25:21.382370 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "connection_name": "master"} */
+select 1 as validated_mdm_identifiers
+[0m22:25:21.382946 [debug] [MainThread]: SQL status: SELECT 1 in 0.000 seconds
+[0m22:25:21.383672 [info ] [MainThread]: 1 of 2 OK hook: enterprise_mdm.on-run-start.0 .................................. [[32mOK[0m in 0.01s]
+[0m22:25:21.384906 [debug] [MainThread]: Writing injected SQL for node "operation.enterprise_mdm.enterprise_mdm-on-run-start-1"
+[0m22:25:21.385416 [info ] [MainThread]: 2 of 2 START hook: enterprise_mdm.on-run-start.1 ............................... [RUN]
+[0m22:25:21.385802 [debug] [MainThread]: Using postgres connection "master"
+[0m22:25:21.386073 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "connection_name": "master"} */
+select 1 as postgres_session_bounds_are_set_by_connection
+[0m22:25:21.386461 [debug] [MainThread]: SQL status: SELECT 1 in 0.000 seconds
+[0m22:25:21.387128 [info ] [MainThread]: 2 of 2 OK hook: enterprise_mdm.on-run-start.1 .................................. [[32mOK[0m in 0.00s]
+[0m22:25:21.387388 [info ] [MainThread]: 
+[0m22:25:21.387786 [debug] [MainThread]: On master: Close
+[0m22:25:21.391946 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.consumer_inbox_unique
+[0m22:25:21.392327 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.consumer_records_unique
+[0m22:25:21.392696 [info ] [Thread-1 (]: 1 of 46 START test consumer_inbox_unique ....................................... [RUN]
+[0m22:25:21.393135 [info ] [Thread-2 (]: 2 of 46 START test consumer_records_unique ..................................... [RUN]
+[0m22:25:21.393570 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_mdm_demo_analytics, now test.enterprise_mdm.consumer_inbox_unique)
+[0m22:25:21.394097 [debug] [Thread-2 (]: Acquiring new postgres connection 'test.enterprise_mdm.consumer_records_unique'
+[0m22:25:21.394456 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.consumer_inbox_unique
+[0m22:25:21.394822 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.consumer_records_unique
+[0m22:25:21.396193 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.consumer_inbox_unique"
+[0m22:25:21.397543 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.consumer_records_unique"
+[0m22:25:21.398297 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.consumer_records_unique
+[0m22:25:21.398626 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.consumer_inbox_unique
+[0m22:25:21.413488 [debug] [Thread-1 (]: Writing runtime sql for node "test.enterprise_mdm.consumer_inbox_unique"
+[0m22:25:21.415320 [debug] [Thread-2 (]: Writing runtime sql for node "test.enterprise_mdm.consumer_records_unique"
+[0m22:25:21.416090 [debug] [Thread-1 (]: Using postgres connection "test.enterprise_mdm.consumer_inbox_unique"
+[0m22:25:21.416419 [debug] [Thread-1 (]: On test.enterprise_mdm.consumer_inbox_unique: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.consumer_inbox_unique"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  select consumer, event_id
+from "mdm_demo"."public"."consumer_inbox"
+group by consumer, event_id
+having count(*) > 1
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.416782 [debug] [Thread-2 (]: Using postgres connection "test.enterprise_mdm.consumer_records_unique"
+[0m22:25:21.417109 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:21.417433 [debug] [Thread-2 (]: On test.enterprise_mdm.consumer_records_unique: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.consumer_records_unique"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  select consumer, golden_id
+from "mdm_demo"."public"."consumer_records"
+group by consumer, golden_id
+having count(*) > 1
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.417897 [debug] [Thread-2 (]: Opening a new connection, currently in state init
+[0m22:25:21.424301 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.007 seconds
+[0m22:25:21.427634 [debug] [Thread-1 (]: On test.enterprise_mdm.consumer_inbox_unique: ROLLBACK
+[0m22:25:21.428038 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.010 seconds
+[0m22:25:21.428459 [debug] [Thread-1 (]: On test.enterprise_mdm.consumer_inbox_unique: Close
+[0m22:25:21.429551 [debug] [Thread-2 (]: On test.enterprise_mdm.consumer_records_unique: ROLLBACK
+[0m22:25:21.430270 [info ] [Thread-1 (]: 1 of 46 PASS consumer_inbox_unique ............................................. [[32mPASS[0m in 0.04s]
+[0m22:25:21.430779 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.consumer_inbox_unique
+[0m22:25:21.431121 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.historical_attribute_lineage
+[0m22:25:21.431426 [info ] [Thread-1 (]: 3 of 46 START test historical_attribute_lineage ................................ [RUN]
+[0m22:25:21.431801 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.consumer_inbox_unique, now test.enterprise_mdm.historical_attribute_lineage)
+[0m22:25:21.432102 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.historical_attribute_lineage
+[0m22:25:21.435139 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.historical_attribute_lineage"
+[0m22:25:21.435674 [debug] [Thread-2 (]: On test.enterprise_mdm.consumer_records_unique: Close
+[0m22:25:21.436558 [info ] [Thread-2 (]: 2 of 46 PASS consumer_records_unique ........................................... [[32mPASS[0m in 0.04s]
+[0m22:25:21.437162 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.consumer_records_unique
+[0m22:25:21.437567 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.no_bitemporal_overlap
+[0m22:25:21.437960 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.historical_attribute_lineage
+[0m22:25:21.438307 [info ] [Thread-2 (]: 4 of 46 START test no_bitemporal_overlap ....................................... [RUN]
+[0m22:25:21.439908 [debug] [Thread-1 (]: Writing runtime sql for node "test.enterprise_mdm.historical_attribute_lineage"
+[0m22:25:21.440295 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.consumer_records_unique, now test.enterprise_mdm.no_bitemporal_overlap)
+[0m22:25:21.440680 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.no_bitemporal_overlap
+[0m22:25:21.443256 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.no_bitemporal_overlap"
+[0m22:25:21.443752 [debug] [Thread-1 (]: Using postgres connection "test.enterprise_mdm.historical_attribute_lineage"
+[0m22:25:21.444102 [debug] [Thread-1 (]: On test.enterprise_mdm.historical_attribute_lineage: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.historical_attribute_lineage"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  with attributes as (
+    
+    select h.history_id, a.key as attribute_name, a.value as attribute_value,
+           h.provenance -> a.key as lineage
+    from "mdm_demo"."public"."golden_history" h
+    cross join lateral jsonb_each(h.attributes) a
+    where a.value not in ('null'::jsonb, '[]'::jsonb)
+    
+), lineage as (
+    select a.*,
+      nullif((a.lineage ->> 'source_key'), 'null') as source_key,
+      nullif((a.lineage ->> 'rule'), 'null') as rule_version,
+      nullif((a.lineage ->> 'source_updated_at'), 'null') as source_updated_at,
+      nullif((a.lineage ->> 'valid_from'), 'null') as valid_from
+    from attributes a
+)
+select a.history_id, a.attribute_name
+from lineage a
+left join "mdm_demo"."public"."source_records" s on s.source_key = a.source_key
+where s.source_key is null or a.rule_version is null
+   or a.source_updated_at is null or a.valid_from is null
+   or (a.attribute_name <> 'roles' and not exists (
+       select 1 from "mdm_demo"."public"."raw_records" r
+       where r.source_key = a.source_key
+       
+         and r.payload -> a.attribute_name = a.attribute_value
+       
+   ))
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.444407 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:21.444793 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.no_bitemporal_overlap
+[0m22:25:21.445841 [debug] [Thread-2 (]: Writing runtime sql for node "test.enterprise_mdm.no_bitemporal_overlap"
+[0m22:25:21.446277 [debug] [Thread-2 (]: Using postgres connection "test.enterprise_mdm.no_bitemporal_overlap"
+[0m22:25:21.446581 [debug] [Thread-2 (]: On test.enterprise_mdm.no_bitemporal_overlap: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.no_bitemporal_overlap"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  -- Both validity and knowledge ranges must overlap for two slices to conflict.
+select a.history_id, b.history_id as conflicting_history_id
+from "mdm_demo"."public"."golden_history" a
+join "mdm_demo"."public"."golden_history" b
+  on a.golden_id = b.golden_id
+ and cast(a.history_id as TEXT) < cast(b.history_id as TEXT)
+ and a.valid_from < coalesce(b.valid_to, cast('9999-12-31 00:00:00+00:00' as timestamp))
+ and b.valid_from < coalesce(a.valid_to, cast('9999-12-31 00:00:00+00:00' as timestamp))
+ and a.known_from < coalesce(b.known_to, cast('9999-12-31 00:00:00+00:00' as timestamp))
+ and b.known_from < coalesce(a.known_to, cast('9999-12-31 00:00:00+00:00' as timestamp))
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.446878 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:25:21.452584 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.006 seconds
+[0m22:25:21.453841 [debug] [Thread-2 (]: On test.enterprise_mdm.no_bitemporal_overlap: ROLLBACK
+[0m22:25:21.454246 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.010 seconds
+[0m22:25:21.455232 [debug] [Thread-1 (]: On test.enterprise_mdm.historical_attribute_lineage: ROLLBACK
+[0m22:25:21.455582 [debug] [Thread-2 (]: On test.enterprise_mdm.no_bitemporal_overlap: Close
+[0m22:25:21.455980 [debug] [Thread-1 (]: On test.enterprise_mdm.historical_attribute_lineage: Close
+[0m22:25:21.456464 [info ] [Thread-2 (]: 4 of 46 PASS no_bitemporal_overlap ............................................. [[32mPASS[0m in 0.02s]
+[0m22:25:21.457274 [info ] [Thread-1 (]: 3 of 46 PASS historical_attribute_lineage ...................................... [[32mPASS[0m in 0.03s]
+[0m22:25:21.458146 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.no_bitemporal_overlap
+[0m22:25:21.458787 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.historical_attribute_lineage
+[0m22:25:21.459179 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.no_conflicting_registration_ids
+[0m22:25:21.459633 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.no_parent_child_merge
+[0m22:25:21.460025 [info ] [Thread-2 (]: 5 of 46 START test no_conflicting_registration_ids ............................. [RUN]
+[0m22:25:21.460383 [info ] [Thread-1 (]: 6 of 46 START test no_parent_child_merge ....................................... [RUN]
+[0m22:25:21.460817 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.no_bitemporal_overlap, now test.enterprise_mdm.no_conflicting_registration_ids)
+[0m22:25:21.461342 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.historical_attribute_lineage, now test.enterprise_mdm.no_parent_child_merge)
+[0m22:25:21.461803 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.no_conflicting_registration_ids
+[0m22:25:21.462154 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.no_parent_child_merge
+[0m22:25:21.492134 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.no_parent_child_merge"
+[0m22:25:21.488299 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.no_conflicting_registration_ids"
+[0m22:25:21.493078 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.no_parent_child_merge
+[0m22:25:21.494415 [debug] [Thread-1 (]: Writing runtime sql for node "test.enterprise_mdm.no_parent_child_merge"
+[0m22:25:21.494831 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.no_conflicting_registration_ids
+[0m22:25:21.496196 [debug] [Thread-2 (]: Writing runtime sql for node "test.enterprise_mdm.no_conflicting_registration_ids"
+[0m22:25:21.496733 [debug] [Thread-1 (]: Using postgres connection "test.enterprise_mdm.no_parent_child_merge"
+[0m22:25:21.497086 [debug] [Thread-1 (]: On test.enterprise_mdm.no_parent_child_merge: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.no_parent_child_merge"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  select child.source_key, parent.source_key as parent_source_key
+from "mdm_demo"."public"."source_records" s
+join "mdm_demo"."public"."memberships" child on s.source_key = child.source_key
+join "mdm_demo"."public"."memberships" parent
+  on (s.current_payload ->> 'parent_source_key') = parent.source_key
+where child.golden_id = parent.golden_id
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.497373 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:21.497846 [debug] [Thread-2 (]: Using postgres connection "test.enterprise_mdm.no_conflicting_registration_ids"
+[0m22:25:21.498199 [debug] [Thread-2 (]: On test.enterprise_mdm.no_conflicting_registration_ids: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.no_conflicting_registration_ids"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  with registrations as (
+    select m.golden_id,
+      (s.current_payload ->> 'country') as country,
+      
+      upper(regexp_replace((s.current_payload ->> 'registration_id'), '[^A-Za-z0-9]', '', 'g')) as registration_id
+      
+    from "mdm_demo"."public"."memberships" m
+    join "mdm_demo"."public"."source_records" s on s.source_key = m.source_key
+    where s.entity_type = 'organization'
+)
+select golden_id
+from registrations
+where registration_id is not null and registration_id <> ''
+group by golden_id
+having count(distinct registration_id) > 1 or count(distinct country) > 1
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.498509 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:25:21.506670 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.009 seconds
+[0m22:25:21.508026 [debug] [Thread-1 (]: On test.enterprise_mdm.no_parent_child_merge: ROLLBACK
+[0m22:25:21.508398 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.010 seconds
+[0m22:25:21.509451 [debug] [Thread-2 (]: On test.enterprise_mdm.no_conflicting_registration_ids: ROLLBACK
+[0m22:25:21.509926 [debug] [Thread-1 (]: On test.enterprise_mdm.no_parent_child_merge: Close
+[0m22:25:21.510284 [debug] [Thread-2 (]: On test.enterprise_mdm.no_conflicting_registration_ids: Close
+[0m22:25:21.510845 [info ] [Thread-1 (]: 6 of 46 PASS no_parent_child_merge ............................................. [[32mPASS[0m in 0.05s]
+[0m22:25:21.511318 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.no_parent_child_merge
+[0m22:25:21.511663 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.no_retired_memberships
+[0m22:25:21.511992 [info ] [Thread-1 (]: 7 of 46 START test no_retired_memberships ...................................... [RUN]
+[0m22:25:21.512352 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.no_parent_child_merge, now test.enterprise_mdm.no_retired_memberships)
+[0m22:25:21.512646 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.no_retired_memberships
+[0m22:25:21.514472 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.no_retired_memberships"
+[0m22:25:21.515133 [info ] [Thread-2 (]: 5 of 46 PASS no_conflicting_registration_ids ................................... [[32mPASS[0m in 0.05s]
+[0m22:25:21.515589 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.no_conflicting_registration_ids
+[0m22:25:21.515943 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.source_accepted_values_mdm_identity_groups_status__active__retired.0fae5701e7
+[0m22:25:21.516248 [info ] [Thread-2 (]: 8 of 46 START test source_accepted_values_mdm_identity_groups_status__active__retired  [RUN]
+[0m22:25:21.516606 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.no_conflicting_registration_ids, now test.enterprise_mdm.source_accepted_values_mdm_identity_groups_status__active__retired.0fae5701e7)
+[0m22:25:21.516973 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.source_accepted_values_mdm_identity_groups_status__active__retired.0fae5701e7
+[0m22:25:21.521608 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.source_accepted_values_mdm_identity_groups_status__active__retired.0fae5701e7"
+[0m22:25:21.522170 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.no_retired_memberships
+[0m22:25:21.523243 [debug] [Thread-1 (]: Writing runtime sql for node "test.enterprise_mdm.no_retired_memberships"
+[0m22:25:21.523689 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.source_accepted_values_mdm_identity_groups_status__active__retired.0fae5701e7
+[0m22:25:21.524754 [debug] [Thread-2 (]: Writing runtime sql for node "test.enterprise_mdm.source_accepted_values_mdm_identity_groups_status__active__retired.0fae5701e7"
+[0m22:25:21.525135 [debug] [Thread-1 (]: Using postgres connection "test.enterprise_mdm.no_retired_memberships"
+[0m22:25:21.525537 [debug] [Thread-1 (]: On test.enterprise_mdm.no_retired_memberships: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.no_retired_memberships"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  select m.source_key, m.golden_id
+from "mdm_demo"."public"."memberships" m
+join "mdm_demo"."public"."identity_groups" g on m.golden_id = g.golden_id
+where g.status <> 'active'
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.525916 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:21.526510 [debug] [Thread-2 (]: Using postgres connection "test.enterprise_mdm.source_accepted_values_mdm_identity_groups_status__active__retired.0fae5701e7"
+[0m22:25:21.526855 [debug] [Thread-2 (]: On test.enterprise_mdm.source_accepted_values_mdm_identity_groups_status__active__retired.0fae5701e7: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.source_accepted_values_mdm_identity_groups_status__active__retired.0fae5701e7"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        status as value_field,
+        count(*) as n_records
+
+    from "mdm_demo"."public"."identity_groups"
+    group by status
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'active','retired'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.527122 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:25:21.532616 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.007 seconds
+[0m22:25:21.533944 [debug] [Thread-1 (]: On test.enterprise_mdm.no_retired_memberships: ROLLBACK
+[0m22:25:21.534308 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.007 seconds
+[0m22:25:21.535318 [debug] [Thread-2 (]: On test.enterprise_mdm.source_accepted_values_mdm_identity_groups_status__active__retired.0fae5701e7: ROLLBACK
+[0m22:25:21.535779 [debug] [Thread-1 (]: On test.enterprise_mdm.no_retired_memberships: Close
+[0m22:25:21.536156 [debug] [Thread-2 (]: On test.enterprise_mdm.source_accepted_values_mdm_identity_groups_status__active__retired.0fae5701e7: Close
+[0m22:25:21.536674 [info ] [Thread-1 (]: 7 of 46 PASS no_retired_memberships ............................................ [[32mPASS[0m in 0.02s]
+[0m22:25:21.537158 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.no_retired_memberships
+[0m22:25:21.537575 [info ] [Thread-2 (]: 8 of 46 PASS source_accepted_values_mdm_identity_groups_status__active__retired  [[32mPASS[0m in 0.02s]
+[0m22:25:21.538029 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.source_not_null_mdm_decisions_decision_id.324f16383a
+[0m22:25:21.538479 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.source_accepted_values_mdm_identity_groups_status__active__retired.0fae5701e7
+[0m22:25:21.538948 [info ] [Thread-1 (]: 9 of 46 START test source_not_null_mdm_decisions_decision_id ................... [RUN]
+[0m22:25:21.539337 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.source_not_null_mdm_golden_history_golden_id.93d7565d76
+[0m22:25:21.539738 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.no_retired_memberships, now test.enterprise_mdm.source_not_null_mdm_decisions_decision_id.324f16383a)
+[0m22:25:21.540131 [info ] [Thread-2 (]: 10 of 46 START test source_not_null_mdm_golden_history_golden_id ............... [RUN]
+[0m22:25:21.540478 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.source_not_null_mdm_decisions_decision_id.324f16383a
+[0m22:25:21.541035 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_accepted_values_mdm_identity_groups_status__active__retired.0fae5701e7, now test.enterprise_mdm.source_not_null_mdm_golden_history_golden_id.93d7565d76)
+[0m22:25:21.547680 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.source_not_null_mdm_decisions_decision_id.324f16383a"
+[0m22:25:21.548076 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.source_not_null_mdm_golden_history_golden_id.93d7565d76
+[0m22:25:21.552109 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.source_not_null_mdm_golden_history_golden_id.93d7565d76"
+[0m22:25:21.552659 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.source_not_null_mdm_decisions_decision_id.324f16383a
+[0m22:25:21.554008 [debug] [Thread-1 (]: Writing runtime sql for node "test.enterprise_mdm.source_not_null_mdm_decisions_decision_id.324f16383a"
+[0m22:25:21.554469 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.source_not_null_mdm_golden_history_golden_id.93d7565d76
+[0m22:25:21.555676 [debug] [Thread-2 (]: Writing runtime sql for node "test.enterprise_mdm.source_not_null_mdm_golden_history_golden_id.93d7565d76"
+[0m22:25:21.556317 [debug] [Thread-1 (]: Using postgres connection "test.enterprise_mdm.source_not_null_mdm_decisions_decision_id.324f16383a"
+[0m22:25:21.556650 [debug] [Thread-1 (]: On test.enterprise_mdm.source_not_null_mdm_decisions_decision_id.324f16383a: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.source_not_null_mdm_decisions_decision_id.324f16383a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select decision_id
+from "mdm_demo"."public"."decisions"
+where decision_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.556962 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:21.557369 [debug] [Thread-2 (]: Using postgres connection "test.enterprise_mdm.source_not_null_mdm_golden_history_golden_id.93d7565d76"
+[0m22:25:21.557720 [debug] [Thread-2 (]: On test.enterprise_mdm.source_not_null_mdm_golden_history_golden_id.93d7565d76: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.source_not_null_mdm_golden_history_golden_id.93d7565d76"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select golden_id
+from "mdm_demo"."public"."golden_history"
+where golden_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.557997 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:25:21.563905 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.007 seconds
+[0m22:25:21.564312 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.006 seconds
+[0m22:25:21.565460 [debug] [Thread-1 (]: On test.enterprise_mdm.source_not_null_mdm_decisions_decision_id.324f16383a: ROLLBACK
+[0m22:25:21.566510 [debug] [Thread-2 (]: On test.enterprise_mdm.source_not_null_mdm_golden_history_golden_id.93d7565d76: ROLLBACK
+[0m22:25:21.567030 [debug] [Thread-1 (]: On test.enterprise_mdm.source_not_null_mdm_decisions_decision_id.324f16383a: Close
+[0m22:25:21.567426 [debug] [Thread-2 (]: On test.enterprise_mdm.source_not_null_mdm_golden_history_golden_id.93d7565d76: Close
+[0m22:25:21.567957 [info ] [Thread-1 (]: 9 of 46 PASS source_not_null_mdm_decisions_decision_id ......................... [[32mPASS[0m in 0.03s]
+[0m22:25:21.568468 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.source_not_null_mdm_decisions_decision_id.324f16383a
+[0m22:25:21.568849 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.source_not_null_mdm_golden_history_history_id.45fcafadf0
+[0m22:25:21.569182 [info ] [Thread-1 (]: 11 of 46 START test source_not_null_mdm_golden_history_history_id .............. [RUN]
+[0m22:25:21.569584 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_not_null_mdm_decisions_decision_id.324f16383a, now test.enterprise_mdm.source_not_null_mdm_golden_history_history_id.45fcafadf0)
+[0m22:25:21.570058 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.source_not_null_mdm_golden_history_history_id.45fcafadf0
+[0m22:25:21.574297 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.source_not_null_mdm_golden_history_history_id.45fcafadf0"
+[0m22:25:21.574880 [info ] [Thread-2 (]: 10 of 46 PASS source_not_null_mdm_golden_history_golden_id ..................... [[32mPASS[0m in 0.03s]
+[0m22:25:21.575423 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.source_not_null_mdm_golden_history_golden_id.93d7565d76
+[0m22:25:21.575813 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.source_not_null_mdm_identity_groups_golden_id.b4c6633645
+[0m22:25:21.576137 [info ] [Thread-2 (]: 12 of 46 START test source_not_null_mdm_identity_groups_golden_id .............. [RUN]
+[0m22:25:21.576505 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_not_null_mdm_golden_history_golden_id.93d7565d76, now test.enterprise_mdm.source_not_null_mdm_identity_groups_golden_id.b4c6633645)
+[0m22:25:21.576867 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.source_not_null_mdm_identity_groups_golden_id.b4c6633645
+[0m22:25:21.581548 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.source_not_null_mdm_identity_groups_golden_id.b4c6633645"
+[0m22:25:21.582221 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.source_not_null_mdm_identity_groups_golden_id.b4c6633645
+[0m22:25:21.583465 [debug] [Thread-2 (]: Writing runtime sql for node "test.enterprise_mdm.source_not_null_mdm_identity_groups_golden_id.b4c6633645"
+[0m22:25:21.583924 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.source_not_null_mdm_golden_history_history_id.45fcafadf0
+[0m22:25:21.585162 [debug] [Thread-1 (]: Writing runtime sql for node "test.enterprise_mdm.source_not_null_mdm_golden_history_history_id.45fcafadf0"
+[0m22:25:21.585755 [debug] [Thread-2 (]: Using postgres connection "test.enterprise_mdm.source_not_null_mdm_identity_groups_golden_id.b4c6633645"
+[0m22:25:21.586115 [debug] [Thread-2 (]: On test.enterprise_mdm.source_not_null_mdm_identity_groups_golden_id.b4c6633645: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.source_not_null_mdm_identity_groups_golden_id.b4c6633645"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select golden_id
+from "mdm_demo"."public"."identity_groups"
+where golden_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.586431 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:25:21.586947 [debug] [Thread-1 (]: Using postgres connection "test.enterprise_mdm.source_not_null_mdm_golden_history_history_id.45fcafadf0"
+[0m22:25:21.587321 [debug] [Thread-1 (]: On test.enterprise_mdm.source_not_null_mdm_golden_history_history_id.45fcafadf0: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.source_not_null_mdm_golden_history_history_id.45fcafadf0"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select history_id
+from "mdm_demo"."public"."golden_history"
+where history_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.587619 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:21.593069 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.007 seconds
+[0m22:25:21.594337 [debug] [Thread-2 (]: On test.enterprise_mdm.source_not_null_mdm_identity_groups_golden_id.b4c6633645: ROLLBACK
+[0m22:25:21.594738 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.007 seconds
+[0m22:25:21.595075 [debug] [Thread-2 (]: On test.enterprise_mdm.source_not_null_mdm_identity_groups_golden_id.b4c6633645: Close
+[0m22:25:21.596067 [debug] [Thread-1 (]: On test.enterprise_mdm.source_not_null_mdm_golden_history_history_id.45fcafadf0: ROLLBACK
+[0m22:25:21.596659 [info ] [Thread-2 (]: 12 of 46 PASS source_not_null_mdm_identity_groups_golden_id .................... [[32mPASS[0m in 0.02s]
+[0m22:25:21.597148 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.source_not_null_mdm_identity_groups_golden_id.b4c6633645
+[0m22:25:21.597444 [debug] [Thread-1 (]: On test.enterprise_mdm.source_not_null_mdm_golden_history_history_id.45fcafadf0: Close
+[0m22:25:21.597948 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.source_not_null_mdm_memberships_golden_id.06e7845aa9
+[0m22:25:21.598460 [info ] [Thread-2 (]: 13 of 46 START test source_not_null_mdm_memberships_golden_id .................. [RUN]
+[0m22:25:21.598927 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_not_null_mdm_identity_groups_golden_id.b4c6633645, now test.enterprise_mdm.source_not_null_mdm_memberships_golden_id.06e7845aa9)
+[0m22:25:21.599257 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.source_not_null_mdm_memberships_golden_id.06e7845aa9
+[0m22:25:21.603591 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.source_not_null_mdm_memberships_golden_id.06e7845aa9"
+[0m22:25:21.604196 [info ] [Thread-1 (]: 11 of 46 PASS source_not_null_mdm_golden_history_history_id .................... [[32mPASS[0m in 0.03s]
+[0m22:25:21.604700 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.source_not_null_mdm_golden_history_history_id.45fcafadf0
+[0m22:25:21.605093 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.source_not_null_mdm_memberships_source_key.7f7a8464eb
+[0m22:25:21.605553 [info ] [Thread-1 (]: 14 of 46 START test source_not_null_mdm_memberships_source_key ................. [RUN]
+[0m22:25:21.606085 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_not_null_mdm_golden_history_history_id.45fcafadf0, now test.enterprise_mdm.source_not_null_mdm_memberships_source_key.7f7a8464eb)
+[0m22:25:21.606414 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.source_not_null_mdm_memberships_source_key.7f7a8464eb
+[0m22:25:21.611400 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.source_not_null_mdm_memberships_source_key.7f7a8464eb"
+[0m22:25:21.611891 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.source_not_null_mdm_memberships_golden_id.06e7845aa9
+[0m22:25:21.612989 [debug] [Thread-2 (]: Writing runtime sql for node "test.enterprise_mdm.source_not_null_mdm_memberships_golden_id.06e7845aa9"
+[0m22:25:21.613515 [debug] [Thread-2 (]: Using postgres connection "test.enterprise_mdm.source_not_null_mdm_memberships_golden_id.06e7845aa9"
+[0m22:25:21.613937 [debug] [Thread-2 (]: On test.enterprise_mdm.source_not_null_mdm_memberships_golden_id.06e7845aa9: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.source_not_null_mdm_memberships_golden_id.06e7845aa9"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select golden_id
+from "mdm_demo"."public"."memberships"
+where golden_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.614252 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:25:21.614674 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.source_not_null_mdm_memberships_source_key.7f7a8464eb
+[0m22:25:21.615939 [debug] [Thread-1 (]: Writing runtime sql for node "test.enterprise_mdm.source_not_null_mdm_memberships_source_key.7f7a8464eb"
+[0m22:25:21.616545 [debug] [Thread-1 (]: Using postgres connection "test.enterprise_mdm.source_not_null_mdm_memberships_source_key.7f7a8464eb"
+[0m22:25:21.617013 [debug] [Thread-1 (]: On test.enterprise_mdm.source_not_null_mdm_memberships_source_key.7f7a8464eb: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.source_not_null_mdm_memberships_source_key.7f7a8464eb"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select source_key
+from "mdm_demo"."public"."memberships"
+where source_key is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.617440 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:21.620593 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.006 seconds
+[0m22:25:21.622004 [debug] [Thread-2 (]: On test.enterprise_mdm.source_not_null_mdm_memberships_golden_id.06e7845aa9: ROLLBACK
+[0m22:25:21.622459 [debug] [Thread-2 (]: On test.enterprise_mdm.source_not_null_mdm_memberships_golden_id.06e7845aa9: Close
+[0m22:25:21.622994 [info ] [Thread-2 (]: 13 of 46 PASS source_not_null_mdm_memberships_golden_id ........................ [[32mPASS[0m in 0.02s]
+[0m22:25:21.623489 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.source_not_null_mdm_memberships_golden_id.06e7845aa9
+[0m22:25:21.623860 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.source_not_null_mdm_outbox_event_id.3109641ff0
+[0m22:25:21.624184 [info ] [Thread-2 (]: 15 of 46 START test source_not_null_mdm_outbox_event_id ........................ [RUN]
+[0m22:25:21.624583 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_not_null_mdm_memberships_golden_id.06e7845aa9, now test.enterprise_mdm.source_not_null_mdm_outbox_event_id.3109641ff0)
+[0m22:25:21.624961 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.source_not_null_mdm_outbox_event_id.3109641ff0
+[0m22:25:21.629017 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.source_not_null_mdm_outbox_event_id.3109641ff0"
+[0m22:25:21.629564 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.012 seconds
+[0m22:25:21.630630 [debug] [Thread-1 (]: On test.enterprise_mdm.source_not_null_mdm_memberships_source_key.7f7a8464eb: ROLLBACK
+[0m22:25:21.631109 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.source_not_null_mdm_outbox_event_id.3109641ff0
+[0m22:25:21.632175 [debug] [Thread-2 (]: Writing runtime sql for node "test.enterprise_mdm.source_not_null_mdm_outbox_event_id.3109641ff0"
+[0m22:25:21.632589 [debug] [Thread-1 (]: On test.enterprise_mdm.source_not_null_mdm_memberships_source_key.7f7a8464eb: Close
+[0m22:25:21.633144 [info ] [Thread-1 (]: 14 of 46 PASS source_not_null_mdm_memberships_source_key ....................... [[32mPASS[0m in 0.03s]
+[0m22:25:21.633670 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.source_not_null_mdm_memberships_source_key.7f7a8464eb
+[0m22:25:21.634093 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.source_not_null_mdm_raw_records_raw_id.29e0cfe5ca
+[0m22:25:21.634413 [info ] [Thread-1 (]: 16 of 46 START test source_not_null_mdm_raw_records_raw_id ..................... [RUN]
+[0m22:25:21.634934 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_not_null_mdm_memberships_source_key.7f7a8464eb, now test.enterprise_mdm.source_not_null_mdm_raw_records_raw_id.29e0cfe5ca)
+[0m22:25:21.635257 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.source_not_null_mdm_raw_records_raw_id.29e0cfe5ca
+[0m22:25:21.639440 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.source_not_null_mdm_raw_records_raw_id.29e0cfe5ca"
+[0m22:25:21.639880 [debug] [Thread-2 (]: Using postgres connection "test.enterprise_mdm.source_not_null_mdm_outbox_event_id.3109641ff0"
+[0m22:25:21.640363 [debug] [Thread-2 (]: On test.enterprise_mdm.source_not_null_mdm_outbox_event_id.3109641ff0: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.source_not_null_mdm_outbox_event_id.3109641ff0"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select event_id
+from "mdm_demo"."public"."outbox"
+where event_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.640693 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:25:21.641238 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.source_not_null_mdm_raw_records_raw_id.29e0cfe5ca
+[0m22:25:21.642398 [debug] [Thread-1 (]: Writing runtime sql for node "test.enterprise_mdm.source_not_null_mdm_raw_records_raw_id.29e0cfe5ca"
+[0m22:25:21.643022 [debug] [Thread-1 (]: Using postgres connection "test.enterprise_mdm.source_not_null_mdm_raw_records_raw_id.29e0cfe5ca"
+[0m22:25:21.643453 [debug] [Thread-1 (]: On test.enterprise_mdm.source_not_null_mdm_raw_records_raw_id.29e0cfe5ca: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.source_not_null_mdm_raw_records_raw_id.29e0cfe5ca"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select raw_id
+from "mdm_demo"."public"."raw_records"
+where raw_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.643890 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:21.647253 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.007 seconds
+[0m22:25:21.648550 [debug] [Thread-2 (]: On test.enterprise_mdm.source_not_null_mdm_outbox_event_id.3109641ff0: ROLLBACK
+[0m22:25:21.649152 [debug] [Thread-2 (]: On test.enterprise_mdm.source_not_null_mdm_outbox_event_id.3109641ff0: Close
+[0m22:25:21.649726 [info ] [Thread-2 (]: 15 of 46 PASS source_not_null_mdm_outbox_event_id .............................. [[32mPASS[0m in 0.03s]
+[0m22:25:21.650231 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.source_not_null_mdm_outbox_event_id.3109641ff0
+[0m22:25:21.650586 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.source_not_null_mdm_source_records_source_key.cd064caf50
+[0m22:25:21.650947 [info ] [Thread-2 (]: 17 of 46 START test source_not_null_mdm_source_records_source_key .............. [RUN]
+[0m22:25:21.651372 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_not_null_mdm_outbox_event_id.3109641ff0, now test.enterprise_mdm.source_not_null_mdm_source_records_source_key.cd064caf50)
+[0m22:25:21.651696 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.source_not_null_mdm_source_records_source_key.cd064caf50
+[0m22:25:21.656370 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.source_not_null_mdm_source_records_source_key.cd064caf50"
+[0m22:25:21.656906 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.013 seconds
+[0m22:25:21.658018 [debug] [Thread-1 (]: On test.enterprise_mdm.source_not_null_mdm_raw_records_raw_id.29e0cfe5ca: ROLLBACK
+[0m22:25:21.658523 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.source_not_null_mdm_source_records_source_key.cd064caf50
+[0m22:25:21.659645 [debug] [Thread-2 (]: Writing runtime sql for node "test.enterprise_mdm.source_not_null_mdm_source_records_source_key.cd064caf50"
+[0m22:25:21.660111 [debug] [Thread-1 (]: On test.enterprise_mdm.source_not_null_mdm_raw_records_raw_id.29e0cfe5ca: Close
+[0m22:25:21.661018 [info ] [Thread-1 (]: 16 of 46 PASS source_not_null_mdm_raw_records_raw_id ........................... [[32mPASS[0m in 0.03s]
+[0m22:25:21.661522 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.source_not_null_mdm_raw_records_raw_id.29e0cfe5ca
+[0m22:25:21.661953 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.source_relationships_mdm_golden_history_golden_id__golden_id__source_mdm_identity_groups_.0843c7870a
+[0m22:25:21.662304 [info ] [Thread-1 (]: 18 of 46 START test source_relationships_mdm_golden_history_golden_id__golden_id__source_mdm_identity_groups_  [RUN]
+[0m22:25:21.662744 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_not_null_mdm_raw_records_raw_id.29e0cfe5ca, now test.enterprise_mdm.source_relationships_mdm_golden_history_golden_id__golden_id__source_mdm_identity_groups_.0843c7870a)
+[0m22:25:21.663079 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.source_relationships_mdm_golden_history_golden_id__golden_id__source_mdm_identity_groups_.0843c7870a
+[0m22:25:21.663555 [debug] [Thread-2 (]: Using postgres connection "test.enterprise_mdm.source_not_null_mdm_source_records_source_key.cd064caf50"
+[0m22:25:21.670560 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.source_relationships_mdm_golden_history_golden_id__golden_id__source_mdm_identity_groups_.0843c7870a"
+[0m22:25:21.671071 [debug] [Thread-2 (]: On test.enterprise_mdm.source_not_null_mdm_source_records_source_key.cd064caf50: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.source_not_null_mdm_source_records_source_key.cd064caf50"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select source_key
+from "mdm_demo"."public"."source_records"
+where source_key is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.671533 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:25:21.672135 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.source_relationships_mdm_golden_history_golden_id__golden_id__source_mdm_identity_groups_.0843c7870a
+[0m22:25:21.673850 [debug] [Thread-1 (]: Writing runtime sql for node "test.enterprise_mdm.source_relationships_mdm_golden_history_golden_id__golden_id__source_mdm_identity_groups_.0843c7870a"
+[0m22:25:21.674310 [debug] [Thread-1 (]: Using postgres connection "test.enterprise_mdm.source_relationships_mdm_golden_history_golden_id__golden_id__source_mdm_identity_groups_.0843c7870a"
+[0m22:25:21.674613 [debug] [Thread-1 (]: On test.enterprise_mdm.source_relationships_mdm_golden_history_golden_id__golden_id__source_mdm_identity_groups_.0843c7870a: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.source_relationships_mdm_golden_history_golden_id__golden_id__source_mdm_identity_groups_.0843c7870a"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select golden_id as from_field
+    from "mdm_demo"."public"."golden_history"
+    where golden_id is not null
+),
+
+parent as (
+    select golden_id as to_field
+    from "mdm_demo"."public"."identity_groups"
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.674908 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:21.677242 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.006 seconds
+[0m22:25:21.678362 [debug] [Thread-2 (]: On test.enterprise_mdm.source_not_null_mdm_source_records_source_key.cd064caf50: ROLLBACK
+[0m22:25:21.678868 [debug] [Thread-2 (]: On test.enterprise_mdm.source_not_null_mdm_source_records_source_key.cd064caf50: Close
+[0m22:25:21.679398 [info ] [Thread-2 (]: 17 of 46 PASS source_not_null_mdm_source_records_source_key .................... [[32mPASS[0m in 0.03s]
+[0m22:25:21.679899 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.source_not_null_mdm_source_records_source_key.cd064caf50
+[0m22:25:21.680230 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.source_relationships_mdm_memberships_golden_id__golden_id__source_mdm_identity_groups_.7e2d1d89f8
+[0m22:25:21.680541 [info ] [Thread-2 (]: 19 of 46 START test source_relationships_mdm_memberships_golden_id__golden_id__source_mdm_identity_groups_  [RUN]
+[0m22:25:21.680916 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_not_null_mdm_source_records_source_key.cd064caf50, now test.enterprise_mdm.source_relationships_mdm_memberships_golden_id__golden_id__source_mdm_identity_groups_.7e2d1d89f8)
+[0m22:25:21.681226 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.source_relationships_mdm_memberships_golden_id__golden_id__source_mdm_identity_groups_.7e2d1d89f8
+[0m22:25:21.681669 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.007 seconds
+[0m22:25:21.689392 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.source_relationships_mdm_memberships_golden_id__golden_id__source_mdm_identity_groups_.7e2d1d89f8"
+[0m22:25:21.690531 [debug] [Thread-1 (]: On test.enterprise_mdm.source_relationships_mdm_golden_history_golden_id__golden_id__source_mdm_identity_groups_.0843c7870a: ROLLBACK
+[0m22:25:21.691194 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.source_relationships_mdm_memberships_golden_id__golden_id__source_mdm_identity_groups_.7e2d1d89f8
+[0m22:25:21.692301 [debug] [Thread-2 (]: Writing runtime sql for node "test.enterprise_mdm.source_relationships_mdm_memberships_golden_id__golden_id__source_mdm_identity_groups_.7e2d1d89f8"
+[0m22:25:21.692730 [debug] [Thread-1 (]: On test.enterprise_mdm.source_relationships_mdm_golden_history_golden_id__golden_id__source_mdm_identity_groups_.0843c7870a: Close
+[0m22:25:21.693321 [info ] [Thread-1 (]: 18 of 46 PASS source_relationships_mdm_golden_history_golden_id__golden_id__source_mdm_identity_groups_  [[32mPASS[0m in 0.03s]
+[0m22:25:21.693876 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.source_relationships_mdm_golden_history_golden_id__golden_id__source_mdm_identity_groups_.0843c7870a
+[0m22:25:21.694222 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.source_relationships_mdm_memberships_source_key__source_key__source_mdm_source_records_.6a8a6e961d
+[0m22:25:21.694544 [info ] [Thread-1 (]: 20 of 46 START test source_relationships_mdm_memberships_source_key__source_key__source_mdm_source_records_  [RUN]
+[0m22:25:21.694965 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_relationships_mdm_golden_history_golden_id__golden_id__source_mdm_identity_groups_.0843c7870a, now test.enterprise_mdm.source_relationships_mdm_memberships_source_key__source_key__source_mdm_source_records_.6a8a6e961d)
+[0m22:25:21.695287 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.source_relationships_mdm_memberships_source_key__source_key__source_mdm_source_records_.6a8a6e961d
+[0m22:25:21.702178 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.source_relationships_mdm_memberships_source_key__source_key__source_mdm_source_records_.6a8a6e961d"
+[0m22:25:21.702775 [debug] [Thread-2 (]: Using postgres connection "test.enterprise_mdm.source_relationships_mdm_memberships_golden_id__golden_id__source_mdm_identity_groups_.7e2d1d89f8"
+[0m22:25:21.703147 [debug] [Thread-2 (]: On test.enterprise_mdm.source_relationships_mdm_memberships_golden_id__golden_id__source_mdm_identity_groups_.7e2d1d89f8: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.source_relationships_mdm_memberships_golden_id__golden_id__source_mdm_identity_groups_.7e2d1d89f8"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select golden_id as from_field
+    from "mdm_demo"."public"."memberships"
+    where golden_id is not null
+),
+
+parent as (
+    select golden_id as to_field
+    from "mdm_demo"."public"."identity_groups"
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.703470 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:25:21.703937 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.source_relationships_mdm_memberships_source_key__source_key__source_mdm_source_records_.6a8a6e961d
+[0m22:25:21.705081 [debug] [Thread-1 (]: Writing runtime sql for node "test.enterprise_mdm.source_relationships_mdm_memberships_source_key__source_key__source_mdm_source_records_.6a8a6e961d"
+[0m22:25:21.705756 [debug] [Thread-1 (]: Using postgres connection "test.enterprise_mdm.source_relationships_mdm_memberships_source_key__source_key__source_mdm_source_records_.6a8a6e961d"
+[0m22:25:21.706209 [debug] [Thread-1 (]: On test.enterprise_mdm.source_relationships_mdm_memberships_source_key__source_key__source_mdm_source_records_.6a8a6e961d: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.source_relationships_mdm_memberships_source_key__source_key__source_mdm_source_records_.6a8a6e961d"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with child as (
+    select source_key as from_field
+    from "mdm_demo"."public"."memberships"
+    where source_key is not null
+),
+
+parent as (
+    select source_key as to_field
+    from "mdm_demo"."public"."source_records"
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.706617 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:21.710460 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.007 seconds
+[0m22:25:21.711673 [debug] [Thread-2 (]: On test.enterprise_mdm.source_relationships_mdm_memberships_golden_id__golden_id__source_mdm_identity_groups_.7e2d1d89f8: ROLLBACK
+[0m22:25:21.712175 [debug] [Thread-2 (]: On test.enterprise_mdm.source_relationships_mdm_memberships_golden_id__golden_id__source_mdm_identity_groups_.7e2d1d89f8: Close
+[0m22:25:21.712679 [info ] [Thread-2 (]: 19 of 46 PASS source_relationships_mdm_memberships_golden_id__golden_id__source_mdm_identity_groups_  [[32mPASS[0m in 0.03s]
+[0m22:25:21.713220 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.007 seconds
+[0m22:25:21.713771 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.source_relationships_mdm_memberships_golden_id__golden_id__source_mdm_identity_groups_.7e2d1d89f8
+[0m22:25:21.714785 [debug] [Thread-1 (]: On test.enterprise_mdm.source_relationships_mdm_memberships_source_key__source_key__source_mdm_source_records_.6a8a6e961d: ROLLBACK
+[0m22:25:21.715183 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.source_unique_mdm_decisions_decision_id.03f494eb11
+[0m22:25:21.715621 [info ] [Thread-2 (]: 21 of 46 START test source_unique_mdm_decisions_decision_id .................... [RUN]
+[0m22:25:21.716013 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_relationships_mdm_memberships_golden_id__golden_id__source_mdm_identity_groups_.7e2d1d89f8, now test.enterprise_mdm.source_unique_mdm_decisions_decision_id.03f494eb11)
+[0m22:25:21.716323 [debug] [Thread-1 (]: On test.enterprise_mdm.source_relationships_mdm_memberships_source_key__source_key__source_mdm_source_records_.6a8a6e961d: Close
+[0m22:25:21.716649 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.source_unique_mdm_decisions_decision_id.03f494eb11
+[0m22:25:21.722303 [info ] [Thread-1 (]: 20 of 46 PASS source_relationships_mdm_memberships_source_key__source_key__source_mdm_source_records_  [[32mPASS[0m in 0.03s]
+[0m22:25:21.723238 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.source_unique_mdm_decisions_decision_id.03f494eb11"
+[0m22:25:21.723725 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.source_relationships_mdm_memberships_source_key__source_key__source_mdm_source_records_.6a8a6e961d
+[0m22:25:21.724178 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.source_unique_mdm_golden_history_history_id.bcc7ef38b4
+[0m22:25:21.724636 [info ] [Thread-1 (]: 22 of 46 START test source_unique_mdm_golden_history_history_id ................ [RUN]
+[0m22:25:21.725056 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_relationships_mdm_memberships_source_key__source_key__source_mdm_source_records_.6a8a6e961d, now test.enterprise_mdm.source_unique_mdm_golden_history_history_id.bcc7ef38b4)
+[0m22:25:21.725381 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.source_unique_mdm_golden_history_history_id.bcc7ef38b4
+[0m22:25:21.725729 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.source_unique_mdm_decisions_decision_id.03f494eb11
+[0m22:25:21.729759 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.source_unique_mdm_golden_history_history_id.bcc7ef38b4"
+[0m22:25:21.730944 [debug] [Thread-2 (]: Writing runtime sql for node "test.enterprise_mdm.source_unique_mdm_decisions_decision_id.03f494eb11"
+[0m22:25:21.731613 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.source_unique_mdm_golden_history_history_id.bcc7ef38b4
+[0m22:25:21.732661 [debug] [Thread-1 (]: Writing runtime sql for node "test.enterprise_mdm.source_unique_mdm_golden_history_history_id.bcc7ef38b4"
+[0m22:25:21.733213 [debug] [Thread-2 (]: Using postgres connection "test.enterprise_mdm.source_unique_mdm_decisions_decision_id.03f494eb11"
+[0m22:25:21.733571 [debug] [Thread-2 (]: On test.enterprise_mdm.source_unique_mdm_decisions_decision_id.03f494eb11: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.source_unique_mdm_decisions_decision_id.03f494eb11"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    decision_id as unique_field,
+    count(*) as n_records
+
+from "mdm_demo"."public"."decisions"
+where decision_id is not null
+group by decision_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.733972 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:25:21.734441 [debug] [Thread-1 (]: Using postgres connection "test.enterprise_mdm.source_unique_mdm_golden_history_history_id.bcc7ef38b4"
+[0m22:25:21.734934 [debug] [Thread-1 (]: On test.enterprise_mdm.source_unique_mdm_golden_history_history_id.bcc7ef38b4: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.source_unique_mdm_golden_history_history_id.bcc7ef38b4"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    history_id as unique_field,
+    count(*) as n_records
+
+from "mdm_demo"."public"."golden_history"
+where history_id is not null
+group by history_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.735236 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:21.740939 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.007 seconds
+[0m22:25:21.742146 [debug] [Thread-2 (]: On test.enterprise_mdm.source_unique_mdm_decisions_decision_id.03f494eb11: ROLLBACK
+[0m22:25:21.742541 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.007 seconds
+[0m22:25:21.743510 [debug] [Thread-1 (]: On test.enterprise_mdm.source_unique_mdm_golden_history_history_id.bcc7ef38b4: ROLLBACK
+[0m22:25:21.743910 [debug] [Thread-2 (]: On test.enterprise_mdm.source_unique_mdm_decisions_decision_id.03f494eb11: Close
+[0m22:25:21.744292 [debug] [Thread-1 (]: On test.enterprise_mdm.source_unique_mdm_golden_history_history_id.bcc7ef38b4: Close
+[0m22:25:21.744835 [info ] [Thread-2 (]: 21 of 46 PASS source_unique_mdm_decisions_decision_id .......................... [[32mPASS[0m in 0.03s]
+[0m22:25:21.745345 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.source_unique_mdm_decisions_decision_id.03f494eb11
+[0m22:25:21.745773 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.source_unique_mdm_identity_groups_golden_id.e1bcfd119f
+[0m22:25:21.746118 [info ] [Thread-2 (]: 23 of 46 START test source_unique_mdm_identity_groups_golden_id ................ [RUN]
+[0m22:25:21.746533 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_unique_mdm_decisions_decision_id.03f494eb11, now test.enterprise_mdm.source_unique_mdm_identity_groups_golden_id.e1bcfd119f)
+[0m22:25:21.747094 [info ] [Thread-1 (]: 22 of 46 PASS source_unique_mdm_golden_history_history_id ...................... [[32mPASS[0m in 0.02s]
+[0m22:25:21.747501 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.source_unique_mdm_identity_groups_golden_id.e1bcfd119f
+[0m22:25:21.748001 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.source_unique_mdm_golden_history_history_id.bcc7ef38b4
+[0m22:25:21.752646 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.source_unique_mdm_identity_groups_golden_id.e1bcfd119f"
+[0m22:25:21.753208 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.source_unique_mdm_memberships_source_key.cb57b4181b
+[0m22:25:21.753841 [info ] [Thread-1 (]: 24 of 46 START test source_unique_mdm_memberships_source_key ................... [RUN]
+[0m22:25:21.754274 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_unique_mdm_golden_history_history_id.bcc7ef38b4, now test.enterprise_mdm.source_unique_mdm_memberships_source_key.cb57b4181b)
+[0m22:25:21.754595 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.source_unique_mdm_memberships_source_key.cb57b4181b
+[0m22:25:21.758525 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.source_unique_mdm_memberships_source_key.cb57b4181b"
+[0m22:25:21.759090 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.source_unique_mdm_identity_groups_golden_id.e1bcfd119f
+[0m22:25:21.760196 [debug] [Thread-2 (]: Writing runtime sql for node "test.enterprise_mdm.source_unique_mdm_identity_groups_golden_id.e1bcfd119f"
+[0m22:25:21.760634 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.source_unique_mdm_memberships_source_key.cb57b4181b
+[0m22:25:21.761730 [debug] [Thread-1 (]: Writing runtime sql for node "test.enterprise_mdm.source_unique_mdm_memberships_source_key.cb57b4181b"
+[0m22:25:21.762247 [debug] [Thread-2 (]: Using postgres connection "test.enterprise_mdm.source_unique_mdm_identity_groups_golden_id.e1bcfd119f"
+[0m22:25:21.762595 [debug] [Thread-2 (]: On test.enterprise_mdm.source_unique_mdm_identity_groups_golden_id.e1bcfd119f: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.source_unique_mdm_identity_groups_golden_id.e1bcfd119f"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    golden_id as unique_field,
+    count(*) as n_records
+
+from "mdm_demo"."public"."identity_groups"
+where golden_id is not null
+group by golden_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.762941 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:25:21.763541 [debug] [Thread-1 (]: Using postgres connection "test.enterprise_mdm.source_unique_mdm_memberships_source_key.cb57b4181b"
+[0m22:25:21.763904 [debug] [Thread-1 (]: On test.enterprise_mdm.source_unique_mdm_memberships_source_key.cb57b4181b: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.source_unique_mdm_memberships_source_key.cb57b4181b"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    source_key as unique_field,
+    count(*) as n_records
+
+from "mdm_demo"."public"."memberships"
+where source_key is not null
+group by source_key
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.764231 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:21.769480 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.006 seconds
+[0m22:25:21.770735 [debug] [Thread-2 (]: On test.enterprise_mdm.source_unique_mdm_identity_groups_golden_id.e1bcfd119f: ROLLBACK
+[0m22:25:21.771119 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.007 seconds
+[0m22:25:21.772164 [debug] [Thread-1 (]: On test.enterprise_mdm.source_unique_mdm_memberships_source_key.cb57b4181b: ROLLBACK
+[0m22:25:21.772549 [debug] [Thread-2 (]: On test.enterprise_mdm.source_unique_mdm_identity_groups_golden_id.e1bcfd119f: Close
+[0m22:25:21.772937 [debug] [Thread-1 (]: On test.enterprise_mdm.source_unique_mdm_memberships_source_key.cb57b4181b: Close
+[0m22:25:21.773438 [info ] [Thread-2 (]: 23 of 46 PASS source_unique_mdm_identity_groups_golden_id ...................... [[32mPASS[0m in 0.03s]
+[0m22:25:21.774017 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.source_unique_mdm_identity_groups_golden_id.e1bcfd119f
+[0m22:25:21.774377 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.source_unique_mdm_outbox_event_id.11eb4c256e
+[0m22:25:21.774727 [info ] [Thread-2 (]: 25 of 46 START test source_unique_mdm_outbox_event_id .......................... [RUN]
+[0m22:25:21.775150 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_unique_mdm_identity_groups_golden_id.e1bcfd119f, now test.enterprise_mdm.source_unique_mdm_outbox_event_id.11eb4c256e)
+[0m22:25:21.775595 [info ] [Thread-1 (]: 24 of 46 PASS source_unique_mdm_memberships_source_key ......................... [[32mPASS[0m in 0.02s]
+[0m22:25:21.776119 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.source_unique_mdm_outbox_event_id.11eb4c256e
+[0m22:25:21.776783 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.source_unique_mdm_memberships_source_key.cb57b4181b
+[0m22:25:21.781351 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.source_unique_mdm_outbox_event_id.11eb4c256e"
+[0m22:25:21.781861 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.source_unique_mdm_raw_records_raw_id.dab4cff7e8
+[0m22:25:21.782381 [info ] [Thread-1 (]: 26 of 46 START test source_unique_mdm_raw_records_raw_id ....................... [RUN]
+[0m22:25:21.782831 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_unique_mdm_memberships_source_key.cb57b4181b, now test.enterprise_mdm.source_unique_mdm_raw_records_raw_id.dab4cff7e8)
+[0m22:25:21.783159 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.source_unique_mdm_raw_records_raw_id.dab4cff7e8
+[0m22:25:21.787828 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.source_unique_mdm_raw_records_raw_id.dab4cff7e8"
+[0m22:25:21.788390 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.source_unique_mdm_raw_records_raw_id.dab4cff7e8
+[0m22:25:21.789462 [debug] [Thread-1 (]: Writing runtime sql for node "test.enterprise_mdm.source_unique_mdm_raw_records_raw_id.dab4cff7e8"
+[0m22:25:21.789961 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.source_unique_mdm_outbox_event_id.11eb4c256e
+[0m22:25:21.790995 [debug] [Thread-2 (]: Writing runtime sql for node "test.enterprise_mdm.source_unique_mdm_outbox_event_id.11eb4c256e"
+[0m22:25:21.791506 [debug] [Thread-1 (]: Using postgres connection "test.enterprise_mdm.source_unique_mdm_raw_records_raw_id.dab4cff7e8"
+[0m22:25:21.791884 [debug] [Thread-1 (]: On test.enterprise_mdm.source_unique_mdm_raw_records_raw_id.dab4cff7e8: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.source_unique_mdm_raw_records_raw_id.dab4cff7e8"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    raw_id as unique_field,
+    count(*) as n_records
+
+from "mdm_demo"."public"."raw_records"
+where raw_id is not null
+group by raw_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.792200 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:21.792659 [debug] [Thread-2 (]: Using postgres connection "test.enterprise_mdm.source_unique_mdm_outbox_event_id.11eb4c256e"
+[0m22:25:21.793196 [debug] [Thread-2 (]: On test.enterprise_mdm.source_unique_mdm_outbox_event_id.11eb4c256e: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.source_unique_mdm_outbox_event_id.11eb4c256e"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    event_id as unique_field,
+    count(*) as n_records
+
+from "mdm_demo"."public"."outbox"
+where event_id is not null
+group by event_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.793527 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:25:21.799996 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.008 seconds
+[0m22:25:21.800396 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.007 seconds
+[0m22:25:21.801570 [debug] [Thread-1 (]: On test.enterprise_mdm.source_unique_mdm_raw_records_raw_id.dab4cff7e8: ROLLBACK
+[0m22:25:21.802869 [debug] [Thread-2 (]: On test.enterprise_mdm.source_unique_mdm_outbox_event_id.11eb4c256e: ROLLBACK
+[0m22:25:21.803402 [debug] [Thread-2 (]: On test.enterprise_mdm.source_unique_mdm_outbox_event_id.11eb4c256e: Close
+[0m22:25:21.803785 [debug] [Thread-1 (]: On test.enterprise_mdm.source_unique_mdm_raw_records_raw_id.dab4cff7e8: Close
+[0m22:25:21.804319 [info ] [Thread-2 (]: 25 of 46 PASS source_unique_mdm_outbox_event_id ................................ [[32mPASS[0m in 0.03s]
+[0m22:25:21.804872 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.source_unique_mdm_outbox_event_id.11eb4c256e
+[0m22:25:21.805244 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.source_unique_mdm_source_records_source_key.2f6c2f23a6
+[0m22:25:21.805790 [info ] [Thread-1 (]: 26 of 46 PASS source_unique_mdm_raw_records_raw_id ............................. [[32mPASS[0m in 0.02s]
+[0m22:25:21.806382 [info ] [Thread-2 (]: 27 of 46 START test source_unique_mdm_source_records_source_key ................ [RUN]
+[0m22:25:21.806934 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.source_unique_mdm_raw_records_raw_id.dab4cff7e8
+[0m22:25:21.807340 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_unique_mdm_outbox_event_id.11eb4c256e, now test.enterprise_mdm.source_unique_mdm_source_records_source_key.2f6c2f23a6)
+[0m22:25:21.807797 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.valid_history_intervals
+[0m22:25:21.808206 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.source_unique_mdm_source_records_source_key.2f6c2f23a6
+[0m22:25:21.808585 [info ] [Thread-1 (]: 28 of 46 START test valid_history_intervals .................................... [RUN]
+[0m22:25:21.813306 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.source_unique_mdm_source_records_source_key.2f6c2f23a6"
+[0m22:25:21.813816 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_unique_mdm_raw_records_raw_id.dab4cff7e8, now test.enterprise_mdm.valid_history_intervals)
+[0m22:25:21.814287 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.valid_history_intervals
+[0m22:25:21.815559 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.valid_history_intervals"
+[0m22:25:21.816196 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.source_unique_mdm_source_records_source_key.2f6c2f23a6
+[0m22:25:21.817296 [debug] [Thread-2 (]: Writing runtime sql for node "test.enterprise_mdm.source_unique_mdm_source_records_source_key.2f6c2f23a6"
+[0m22:25:21.817785 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.valid_history_intervals
+[0m22:25:21.818956 [debug] [Thread-1 (]: Writing runtime sql for node "test.enterprise_mdm.valid_history_intervals"
+[0m22:25:21.819480 [debug] [Thread-2 (]: Using postgres connection "test.enterprise_mdm.source_unique_mdm_source_records_source_key.2f6c2f23a6"
+[0m22:25:21.819896 [debug] [Thread-1 (]: Using postgres connection "test.enterprise_mdm.valid_history_intervals"
+[0m22:25:21.820263 [debug] [Thread-2 (]: On test.enterprise_mdm.source_unique_mdm_source_records_source_key.2f6c2f23a6: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.source_unique_mdm_source_records_source_key.2f6c2f23a6"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    source_key as unique_field,
+    count(*) as n_records
+
+from "mdm_demo"."public"."source_records"
+where source_key is not null
+group by source_key
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.820641 [debug] [Thread-1 (]: On test.enterprise_mdm.valid_history_intervals: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.valid_history_intervals"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  select history_id
+from "mdm_demo"."public"."golden_history"
+where (valid_to is not null and valid_to <= valid_from)
+   or (known_to is not null and known_to <= known_from)
+   or valid_from is null or known_from is null
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.821028 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:25:21.821370 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:21.829335 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.008 seconds
+[0m22:25:21.830536 [debug] [Thread-1 (]: On test.enterprise_mdm.valid_history_intervals: ROLLBACK
+[0m22:25:21.830960 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.010 seconds
+[0m22:25:21.831936 [debug] [Thread-2 (]: On test.enterprise_mdm.source_unique_mdm_source_records_source_key.2f6c2f23a6: ROLLBACK
+[0m22:25:21.832318 [debug] [Thread-1 (]: On test.enterprise_mdm.valid_history_intervals: Close
+[0m22:25:21.832693 [debug] [Thread-2 (]: On test.enterprise_mdm.source_unique_mdm_source_records_source_key.2f6c2f23a6: Close
+[0m22:25:21.833231 [info ] [Thread-1 (]: 28 of 46 PASS valid_history_intervals .......................................... [[32mPASS[0m in 0.02s]
+[0m22:25:21.833996 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.valid_history_intervals
+[0m22:25:21.834378 [debug] [Thread-1 (]: Began running node model.enterprise_mdm.consumer_impact
+[0m22:25:21.834841 [info ] [Thread-1 (]: 29 of 46 START sql view model analytics.consumer_impact ........................ [RUN]
+[0m22:25:21.835251 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.valid_history_intervals, now model.enterprise_mdm.consumer_impact)
+[0m22:25:21.835735 [info ] [Thread-2 (]: 27 of 46 PASS source_unique_mdm_source_records_source_key ...................... [[32mPASS[0m in 0.03s]
+[0m22:25:21.836246 [debug] [Thread-1 (]: Began compiling node model.enterprise_mdm.consumer_impact
+[0m22:25:21.836830 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.source_unique_mdm_source_records_source_key.2f6c2f23a6
+[0m22:25:21.838586 [debug] [Thread-1 (]: Writing injected SQL for node "model.enterprise_mdm.consumer_impact"
+[0m22:25:21.839057 [debug] [Thread-2 (]: Began running node model.enterprise_mdm.golden_records
+[0m22:25:21.839888 [info ] [Thread-2 (]: 30 of 46 START sql view model analytics.golden_records ......................... [RUN]
+[0m22:25:21.840314 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_unique_mdm_source_records_source_key.2f6c2f23a6, now model.enterprise_mdm.golden_records)
+[0m22:25:21.840636 [debug] [Thread-2 (]: Began compiling node model.enterprise_mdm.golden_records
+[0m22:25:21.842422 [debug] [Thread-2 (]: Writing injected SQL for node "model.enterprise_mdm.golden_records"
+[0m22:25:21.842942 [debug] [Thread-1 (]: Began executing node model.enterprise_mdm.consumer_impact
+[0m22:25:21.860192 [debug] [Thread-2 (]: Began executing node model.enterprise_mdm.golden_records
+[0m22:25:21.862128 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.consumer_impact"
+[0m22:25:21.864237 [debug] [Thread-2 (]: Using postgres connection "model.enterprise_mdm.golden_records"
+[0m22:25:21.864648 [debug] [Thread-1 (]: On model.enterprise_mdm.consumer_impact: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.consumer_impact"} */
+
+        select 1 as postgres_session_bounds_are_set_by_connection
+      
+[0m22:25:21.865061 [debug] [Thread-2 (]: On model.enterprise_mdm.golden_records: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.golden_records"} */
+
+        select 1 as postgres_session_bounds_are_set_by_connection
+      
+[0m22:25:21.865417 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:21.865836 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:25:21.872877 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.007 seconds
+[0m22:25:21.878589 [debug] [Thread-1 (]: Writing runtime sql for node "model.enterprise_mdm.consumer_impact"
+[0m22:25:21.879118 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.013 seconds
+[0m22:25:21.880144 [debug] [Thread-2 (]: Writing runtime sql for node "model.enterprise_mdm.golden_records"
+[0m22:25:21.880754 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.consumer_impact"
+[0m22:25:21.881104 [debug] [Thread-1 (]: On model.enterprise_mdm.consumer_impact: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.consumer_impact"} */
+
+  create view "mdm_demo"."analytics"."consumer_impact__dbt_tmp"
+    
+    
+  as (
+    select
+    c.consumer,
+    c.golden_id,
+    c.group_version as consumed_version,
+    c.active as consumer_active,
+    g.version as authoritative_version,
+    g.status as authoritative_status,
+    case
+      when g.golden_id is null then 'unknown_identity'
+      when c.active and g.status = 'retired' then 'retirement_pending'
+      when not c.active and g.status = 'active' then 'activation_pending'
+      when c.group_version < g.version then 'update_pending'
+      when c.group_version > g.version then 'consumer_ahead'
+      else 'aligned'
+    end as reconciliation_status
+from "mdm_demo"."public"."consumer_records" c
+left join "mdm_demo"."public"."identity_groups" g on c.golden_id = g.golden_id
+  );
+[0m22:25:21.881512 [debug] [Thread-2 (]: Using postgres connection "model.enterprise_mdm.golden_records"
+[0m22:25:21.881898 [debug] [Thread-2 (]: On model.enterprise_mdm.golden_records: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.golden_records"} */
+
+  create view "mdm_demo"."analytics"."golden_records__dbt_tmp"
+    
+    
+  as (
+    select
+    h.golden_id,
+    g.entity_type,
+    h.group_version,
+    h.attributes,
+    h.provenance,
+    h.conflicts,
+    h.valid_from,
+    h.valid_to,
+    h.known_from,
+    (h.attributes ->> 'name') as display_name,
+    (h.attributes ->> 'registration_id') as registration_id
+from "mdm_demo"."public"."golden_history" h
+join "mdm_demo"."public"."identity_groups" g on h.golden_id = g.golden_id
+where g.status = 'active'
+  and h.known_to is null
+  and h.valid_from <= current_timestamp
+  and (h.valid_to is null or h.valid_to > current_timestamp)
+  );
+[0m22:25:21.884599 [debug] [Thread-2 (]: SQL status: CREATE VIEW in 0.002 seconds
+[0m22:25:21.888552 [debug] [Thread-2 (]: Using postgres connection "model.enterprise_mdm.golden_records"
+[0m22:25:21.888937 [debug] [Thread-2 (]: On model.enterprise_mdm.golden_records: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.golden_records"} */
+alter table "mdm_demo"."analytics"."golden_records__dbt_tmp" rename to "golden_records"
+[0m22:25:21.889287 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.008 seconds
+[0m22:25:21.890814 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.consumer_impact"
+[0m22:25:21.891110 [debug] [Thread-1 (]: On model.enterprise_mdm.consumer_impact: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.consumer_impact"} */
+alter table "mdm_demo"."analytics"."consumer_impact__dbt_tmp" rename to "consumer_impact"
+[0m22:25:21.891670 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m22:25:21.904368 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.015 seconds
+[0m22:25:21.907951 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.consumer_impact"
+[0m22:25:21.909352 [debug] [Thread-2 (]: Using postgres connection "model.enterprise_mdm.golden_records"
+[0m22:25:21.909822 [debug] [Thread-1 (]: On model.enterprise_mdm.consumer_impact: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.consumer_impact"} */
+
+    
+  
+  comment on view "mdm_demo"."analytics"."consumer_impact" is $dbt_comment_literal_block$Consumer-applied state compared with authoritative identity generations.$dbt_comment_literal_block$;
+
+  
+[0m22:25:21.910223 [debug] [Thread-2 (]: On model.enterprise_mdm.golden_records: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.golden_records"} */
+
+    
+  
+  comment on view "mdm_demo"."analytics"."golden_records" is $dbt_comment_literal_block$One current business-time slice per active golden identity, as known now.$dbt_comment_literal_block$;
+
+  
+[0m22:25:21.911952 [debug] [Thread-1 (]: SQL status: COMMENT in 0.001 seconds
+[0m22:25:21.920882 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.consumer_impact"
+[0m22:25:21.921352 [debug] [Thread-2 (]: SQL status: COMMENT in 0.011 seconds
+[0m22:25:21.921779 [debug] [Thread-1 (]: On model.enterprise_mdm.consumer_impact: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.consumer_impact"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "mdm_demo".INFORMATION_SCHEMA.columns
+      where table_name = 'consumer_impact'
+        
+        and table_schema = 'analytics'
+        
+      order by ordinal_position
+
+  
+[0m22:25:21.923270 [debug] [Thread-2 (]: Using postgres connection "model.enterprise_mdm.golden_records"
+[0m22:25:21.923739 [debug] [Thread-2 (]: On model.enterprise_mdm.golden_records: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.golden_records"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "mdm_demo".INFORMATION_SCHEMA.columns
+      where table_name = 'golden_records'
+        
+        and table_schema = 'analytics'
+        
+      order by ordinal_position
+
+  
+[0m22:25:21.930865 [debug] [Thread-1 (]: SQL status: SELECT 7 in 0.007 seconds
+[0m22:25:21.931256 [debug] [Thread-2 (]: SQL status: SELECT 11 in 0.007 seconds
+[0m22:25:21.943418 [debug] [Thread-2 (]: Using postgres connection "model.enterprise_mdm.golden_records"
+[0m22:25:21.943977 [debug] [Thread-2 (]: On model.enterprise_mdm.golden_records: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.golden_records"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "mdm_demo".INFORMATION_SCHEMA.columns
+      where table_name = 'golden_records'
+        
+        and table_schema = 'analytics'
+        
+      order by ordinal_position
+
+  
+[0m22:25:21.944550 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.consumer_impact"
+[0m22:25:21.945154 [debug] [Thread-1 (]: On model.enterprise_mdm.consumer_impact: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.consumer_impact"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "mdm_demo".INFORMATION_SCHEMA.columns
+      where table_name = 'consumer_impact'
+        
+        and table_schema = 'analytics'
+        
+      order by ordinal_position
+
+  
+[0m22:25:21.947365 [debug] [Thread-2 (]: SQL status: SELECT 11 in 0.002 seconds
+[0m22:25:21.948900 [debug] [Thread-2 (]: Using postgres connection "model.enterprise_mdm.golden_records"
+[0m22:25:21.949252 [debug] [Thread-2 (]: On model.enterprise_mdm.golden_records: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.golden_records"} */
+
+    
+  
+  
+    
+    
+    comment on column "mdm_demo"."analytics"."golden_records".golden_id is $dbt_comment_literal_block$$dbt_comment_literal_block$;
+  
+    
+    
+    comment on column "mdm_demo"."analytics"."golden_records".provenance is $dbt_comment_literal_block$$dbt_comment_literal_block$;
+  
+
+  
+[0m22:25:21.949657 [debug] [Thread-1 (]: SQL status: SELECT 7 in 0.004 seconds
+[0m22:25:21.952236 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.consumer_impact"
+[0m22:25:21.952584 [debug] [Thread-1 (]: On model.enterprise_mdm.consumer_impact: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.consumer_impact"} */
+
+    
+  
+  
+    
+    
+    comment on column "mdm_demo"."analytics"."consumer_impact".reconciliation_status is $dbt_comment_literal_block$$dbt_comment_literal_block$;
+  
+
+  
+[0m22:25:21.952984 [debug] [Thread-2 (]: SQL status: COMMENT in 0.003 seconds
+[0m22:25:21.953933 [debug] [Thread-2 (]: On model.enterprise_mdm.golden_records: COMMIT
+[0m22:25:21.954273 [debug] [Thread-2 (]: Using postgres connection "model.enterprise_mdm.golden_records"
+[0m22:25:21.954571 [debug] [Thread-2 (]: On model.enterprise_mdm.golden_records: COMMIT
+[0m22:25:21.954922 [debug] [Thread-1 (]: SQL status: COMMENT in 0.002 seconds
+[0m22:25:21.955775 [debug] [Thread-1 (]: On model.enterprise_mdm.consumer_impact: COMMIT
+[0m22:25:21.956097 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.consumer_impact"
+[0m22:25:21.956392 [debug] [Thread-1 (]: On model.enterprise_mdm.consumer_impact: COMMIT
+[0m22:25:21.956746 [debug] [Thread-2 (]: SQL status: COMMIT in 0.002 seconds
+[0m22:25:21.960660 [debug] [Thread-2 (]: Applying DROP to: "mdm_demo"."analytics"."golden_records__dbt_backup"
+[0m22:25:21.964241 [debug] [Thread-2 (]: Using postgres connection "model.enterprise_mdm.golden_records"
+[0m22:25:21.964604 [debug] [Thread-2 (]: On model.enterprise_mdm.golden_records: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.golden_records"} */
+drop view if exists "mdm_demo"."analytics"."golden_records__dbt_backup" cascade
+[0m22:25:21.965002 [debug] [Thread-1 (]: SQL status: COMMIT in 0.008 seconds
+[0m22:25:21.966269 [debug] [Thread-1 (]: Applying DROP to: "mdm_demo"."analytics"."consumer_impact__dbt_backup"
+[0m22:25:21.966798 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.consumer_impact"
+[0m22:25:21.967126 [debug] [Thread-1 (]: On model.enterprise_mdm.consumer_impact: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.consumer_impact"} */
+drop view if exists "mdm_demo"."analytics"."consumer_impact__dbt_backup" cascade
+[0m22:25:21.967467 [debug] [Thread-2 (]: SQL status: DROP VIEW in 0.003 seconds
+[0m22:25:21.968600 [debug] [Thread-2 (]: On model.enterprise_mdm.golden_records: Close
+[0m22:25:21.968994 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.001 seconds
+[0m22:25:21.969980 [debug] [Thread-1 (]: On model.enterprise_mdm.consumer_impact: Close
+[0m22:25:21.972333 [info ] [Thread-2 (]: 30 of 46 OK created sql view model analytics.golden_records .................... [[32mCREATE VIEW[0m in 0.13s]
+[0m22:25:21.972901 [info ] [Thread-1 (]: 29 of 46 OK created sql view model analytics.consumer_impact ................... [[32mCREATE VIEW[0m in 0.14s]
+[0m22:25:21.973447 [debug] [Thread-2 (]: Finished running node model.enterprise_mdm.golden_records
+[0m22:25:21.973982 [debug] [Thread-1 (]: Finished running node model.enterprise_mdm.consumer_impact
+[0m22:25:21.974402 [debug] [Thread-2 (]: Began running node model.enterprise_mdm.crosswalk
+[0m22:25:21.975198 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.not_null_golden_records_golden_id.8bcc4cd7af
+[0m22:25:21.975648 [info ] [Thread-2 (]: 31 of 46 START sql view model analytics.crosswalk .............................. [RUN]
+[0m22:25:21.976124 [info ] [Thread-1 (]: 32 of 46 START test not_null_golden_records_golden_id .......................... [RUN]
+[0m22:25:21.976599 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.enterprise_mdm.golden_records, now model.enterprise_mdm.crosswalk)
+[0m22:25:21.977035 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.enterprise_mdm.consumer_impact, now test.enterprise_mdm.not_null_golden_records_golden_id.8bcc4cd7af)
+[0m22:25:21.977407 [debug] [Thread-2 (]: Began compiling node model.enterprise_mdm.crosswalk
+[0m22:25:21.977815 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.not_null_golden_records_golden_id.8bcc4cd7af
+[0m22:25:21.979597 [debug] [Thread-2 (]: Writing injected SQL for node "model.enterprise_mdm.crosswalk"
+[0m22:25:21.984032 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.not_null_golden_records_golden_id.8bcc4cd7af"
+[0m22:25:21.984671 [debug] [Thread-2 (]: Began executing node model.enterprise_mdm.crosswalk
+[0m22:25:21.986788 [debug] [Thread-2 (]: Using postgres connection "model.enterprise_mdm.crosswalk"
+[0m22:25:21.987143 [debug] [Thread-2 (]: On model.enterprise_mdm.crosswalk: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.crosswalk"} */
+
+        select 1 as postgres_session_bounds_are_set_by_connection
+      
+[0m22:25:21.987463 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:25:21.987994 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.not_null_golden_records_golden_id.8bcc4cd7af
+[0m22:25:21.989229 [debug] [Thread-1 (]: Writing runtime sql for node "test.enterprise_mdm.not_null_golden_records_golden_id.8bcc4cd7af"
+[0m22:25:21.990043 [debug] [Thread-1 (]: Using postgres connection "test.enterprise_mdm.not_null_golden_records_golden_id.8bcc4cd7af"
+[0m22:25:21.990486 [debug] [Thread-1 (]: On test.enterprise_mdm.not_null_golden_records_golden_id.8bcc4cd7af: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.not_null_golden_records_golden_id.8bcc4cd7af"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select golden_id
+from "mdm_demo"."analytics"."golden_records"
+where golden_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:21.990923 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:21.993829 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.006 seconds
+[0m22:25:21.995249 [debug] [Thread-2 (]: Writing runtime sql for node "model.enterprise_mdm.crosswalk"
+[0m22:25:21.995769 [debug] [Thread-2 (]: Using postgres connection "model.enterprise_mdm.crosswalk"
+[0m22:25:21.996086 [debug] [Thread-2 (]: On model.enterprise_mdm.crosswalk: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.crosswalk"} */
+
+  create view "mdm_demo"."analytics"."crosswalk__dbt_tmp"
+    
+    
+  as (
+    select
+    m.source_key,
+    s.source_system,
+    s.entity_type,
+    s.source_id,
+    m.golden_id,
+    g.version as group_version
+from "mdm_demo"."public"."memberships" m
+join "mdm_demo"."public"."source_records" s on s.source_key = m.source_key
+join "mdm_demo"."public"."identity_groups" g on g.golden_id = m.golden_id
+where g.status = 'active'
+  );
+[0m22:25:21.997760 [debug] [Thread-2 (]: SQL status: CREATE VIEW in 0.001 seconds
+[0m22:25:21.999224 [debug] [Thread-2 (]: Using postgres connection "model.enterprise_mdm.crosswalk"
+[0m22:25:21.999559 [debug] [Thread-2 (]: On model.enterprise_mdm.crosswalk: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.crosswalk"} */
+alter table "mdm_demo"."analytics"."crosswalk__dbt_tmp" rename to "crosswalk"
+[0m22:25:21.999951 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.009 seconds
+[0m22:25:22.000302 [debug] [Thread-2 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m22:25:22.001416 [debug] [Thread-1 (]: On test.enterprise_mdm.not_null_golden_records_golden_id.8bcc4cd7af: ROLLBACK
+[0m22:25:22.002879 [debug] [Thread-2 (]: Using postgres connection "model.enterprise_mdm.crosswalk"
+[0m22:25:22.003306 [debug] [Thread-2 (]: On model.enterprise_mdm.crosswalk: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.crosswalk"} */
+
+    
+  
+  comment on view "mdm_demo"."analytics"."crosswalk" is $dbt_comment_literal_block$Complete retained source identities and their active golden assignment.$dbt_comment_literal_block$;
+
+  
+[0m22:25:22.003741 [debug] [Thread-1 (]: On test.enterprise_mdm.not_null_golden_records_golden_id.8bcc4cd7af: Close
+[0m22:25:22.004180 [debug] [Thread-2 (]: SQL status: COMMENT in 0.001 seconds
+[0m22:25:22.005534 [debug] [Thread-2 (]: Using postgres connection "model.enterprise_mdm.crosswalk"
+[0m22:25:22.005957 [debug] [Thread-2 (]: On model.enterprise_mdm.crosswalk: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.crosswalk"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "mdm_demo".INFORMATION_SCHEMA.columns
+      where table_name = 'crosswalk'
+        
+        and table_schema = 'analytics'
+        
+      order by ordinal_position
+
+  
+[0m22:25:22.006523 [info ] [Thread-1 (]: 32 of 46 PASS not_null_golden_records_golden_id ................................ [[32mPASS[0m in 0.03s]
+[0m22:25:22.006992 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.not_null_golden_records_golden_id.8bcc4cd7af
+[0m22:25:22.007305 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.not_null_golden_records_provenance.e6f5619ee1
+[0m22:25:22.007590 [info ] [Thread-1 (]: 33 of 46 START test not_null_golden_records_provenance ......................... [RUN]
+[0m22:25:22.007943 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.not_null_golden_records_golden_id.8bcc4cd7af, now test.enterprise_mdm.not_null_golden_records_provenance.e6f5619ee1)
+[0m22:25:22.008319 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.not_null_golden_records_provenance.e6f5619ee1
+[0m22:25:22.012773 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.not_null_golden_records_provenance.e6f5619ee1"
+[0m22:25:22.013209 [debug] [Thread-2 (]: SQL status: SELECT 6 in 0.007 seconds
+[0m22:25:22.014976 [debug] [Thread-2 (]: Using postgres connection "model.enterprise_mdm.crosswalk"
+[0m22:25:22.015445 [debug] [Thread-2 (]: On model.enterprise_mdm.crosswalk: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.crosswalk"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "mdm_demo".INFORMATION_SCHEMA.columns
+      where table_name = 'crosswalk'
+        
+        and table_schema = 'analytics'
+        
+      order by ordinal_position
+
+  
+[0m22:25:22.015960 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.not_null_golden_records_provenance.e6f5619ee1
+[0m22:25:22.017212 [debug] [Thread-1 (]: Writing runtime sql for node "test.enterprise_mdm.not_null_golden_records_provenance.e6f5619ee1"
+[0m22:25:22.017732 [debug] [Thread-1 (]: Using postgres connection "test.enterprise_mdm.not_null_golden_records_provenance.e6f5619ee1"
+[0m22:25:22.018142 [debug] [Thread-2 (]: SQL status: SELECT 6 in 0.002 seconds
+[0m22:25:22.018546 [debug] [Thread-1 (]: On test.enterprise_mdm.not_null_golden_records_provenance.e6f5619ee1: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.not_null_golden_records_provenance.e6f5619ee1"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select provenance
+from "mdm_demo"."analytics"."golden_records"
+where provenance is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:22.019911 [debug] [Thread-2 (]: Using postgres connection "model.enterprise_mdm.crosswalk"
+[0m22:25:22.020308 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:22.020680 [debug] [Thread-2 (]: On model.enterprise_mdm.crosswalk: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.crosswalk"} */
+
+    
+  
+  
+    
+    
+    comment on column "mdm_demo"."analytics"."crosswalk".source_key is $dbt_comment_literal_block$$dbt_comment_literal_block$;
+  
+    
+    
+    comment on column "mdm_demo"."analytics"."crosswalk".golden_id is $dbt_comment_literal_block$$dbt_comment_literal_block$;
+  
+
+  
+[0m22:25:22.021366 [debug] [Thread-2 (]: SQL status: COMMENT in 0.000 seconds
+[0m22:25:22.022297 [debug] [Thread-2 (]: On model.enterprise_mdm.crosswalk: COMMIT
+[0m22:25:22.022636 [debug] [Thread-2 (]: Using postgres connection "model.enterprise_mdm.crosswalk"
+[0m22:25:22.023086 [debug] [Thread-2 (]: On model.enterprise_mdm.crosswalk: COMMIT
+[0m22:25:22.024163 [debug] [Thread-2 (]: SQL status: COMMIT in 0.001 seconds
+[0m22:25:22.025539 [debug] [Thread-2 (]: Applying DROP to: "mdm_demo"."analytics"."crosswalk__dbt_backup"
+[0m22:25:22.026217 [debug] [Thread-2 (]: Using postgres connection "model.enterprise_mdm.crosswalk"
+[0m22:25:22.026503 [debug] [Thread-2 (]: On model.enterprise_mdm.crosswalk: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.crosswalk"} */
+drop view if exists "mdm_demo"."analytics"."crosswalk__dbt_backup" cascade
+[0m22:25:22.026991 [debug] [Thread-2 (]: SQL status: DROP VIEW in 0.000 seconds
+[0m22:25:22.027984 [debug] [Thread-2 (]: On model.enterprise_mdm.crosswalk: Close
+[0m22:25:22.028731 [info ] [Thread-2 (]: 31 of 46 OK created sql view model analytics.crosswalk ......................... [[32mCREATE VIEW[0m in 0.05s]
+[0m22:25:22.029175 [debug] [Thread-2 (]: Finished running node model.enterprise_mdm.crosswalk
+[0m22:25:22.029500 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.unique_golden_records_golden_id.c80d8a5fcc
+[0m22:25:22.030021 [info ] [Thread-2 (]: 34 of 46 START test unique_golden_records_golden_id ............................ [RUN]
+[0m22:25:22.030470 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.enterprise_mdm.crosswalk, now test.enterprise_mdm.unique_golden_records_golden_id.c80d8a5fcc)
+[0m22:25:22.031011 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.unique_golden_records_golden_id.c80d8a5fcc
+[0m22:25:22.035580 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.unique_golden_records_golden_id.c80d8a5fcc"
+[0m22:25:22.036064 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.016 seconds
+[0m22:25:22.037218 [debug] [Thread-1 (]: On test.enterprise_mdm.not_null_golden_records_provenance.e6f5619ee1: ROLLBACK
+[0m22:25:22.037774 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.unique_golden_records_golden_id.c80d8a5fcc
+[0m22:25:22.038917 [debug] [Thread-2 (]: Writing runtime sql for node "test.enterprise_mdm.unique_golden_records_golden_id.c80d8a5fcc"
+[0m22:25:22.039356 [debug] [Thread-1 (]: On test.enterprise_mdm.not_null_golden_records_provenance.e6f5619ee1: Close
+[0m22:25:22.039800 [debug] [Thread-2 (]: Using postgres connection "test.enterprise_mdm.unique_golden_records_golden_id.c80d8a5fcc"
+[0m22:25:22.040137 [debug] [Thread-2 (]: On test.enterprise_mdm.unique_golden_records_golden_id.c80d8a5fcc: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.unique_golden_records_golden_id.c80d8a5fcc"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    golden_id as unique_field,
+    count(*) as n_records
+
+from "mdm_demo"."analytics"."golden_records"
+where golden_id is not null
+group by golden_id
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:22.040444 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:25:22.041070 [info ] [Thread-1 (]: 33 of 46 PASS not_null_golden_records_provenance ............................... [[32mPASS[0m in 0.03s]
+[0m22:25:22.041488 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.not_null_golden_records_provenance.e6f5619ee1
+[0m22:25:22.041920 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.accepted_values_consumer_impact_reconciliation_status__aligned__unknown_identity__retirement_pending__activation_pending__update_pending__consumer_ahead.dc69c1a872
+[0m22:25:22.042363 [info ] [Thread-1 (]: 35 of 46 START test accepted_values_consumer_impact_reconciliation_status__aligned__unknown_identity__retirement_pending__activation_pending__update_pending__consumer_ahead  [RUN]
+[0m22:25:22.042896 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.not_null_golden_records_provenance.e6f5619ee1, now test.enterprise_mdm.accepted_values_consumer_impact_reconciliation_status__aligned__unknown_identity__retirement_pending__activation_pending__update_pending__consumer_ahead.dc69c1a872)
+[0m22:25:22.043323 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.accepted_values_consumer_impact_reconciliation_status__aligned__unknown_identity__retirement_pending__activation_pending__update_pending__consumer_ahead.dc69c1a872
+[0m22:25:22.049309 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.accepted_values_consumer_impact_reconciliation_status__aligned__unknown_identity__retirement_pending__activation_pending__update_pending__consumer_ahead.dc69c1a872"
+[0m22:25:22.049960 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.accepted_values_consumer_impact_reconciliation_status__aligned__unknown_identity__retirement_pending__activation_pending__update_pending__consumer_ahead.dc69c1a872
+[0m22:25:22.051071 [debug] [Thread-1 (]: Writing runtime sql for node "test.enterprise_mdm.accepted_values_consumer_impact_reconciliation_status__aligned__unknown_identity__retirement_pending__activation_pending__update_pending__consumer_ahead.dc69c1a872"
+[0m22:25:22.051514 [debug] [Thread-1 (]: Using postgres connection "test.enterprise_mdm.accepted_values_consumer_impact_reconciliation_status__aligned__unknown_identity__retirement_pending__activation_pending__update_pending__consumer_ahead.dc69c1a872"
+[0m22:25:22.051894 [debug] [Thread-1 (]: On test.enterprise_mdm.accepted_values_consumer_impact_reconciliation_status__aligned__unknown_identity__retirement_pending__activation_pending__update_pending__consumer_ahead.dc69c1a872: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.accepted_values_consumer_impact_reconciliation_status__aligned__unknown_identity__retirement_pending__activation_pending__update_pending__consumer_ahead.dc69c1a872"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        reconciliation_status as value_field,
+        count(*) as n_records
+
+    from "mdm_demo"."analytics"."consumer_impact"
+    group by reconciliation_status
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'aligned','unknown_identity','retirement_pending','activation_pending','update_pending','consumer_ahead'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:22.052229 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:22.052675 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.012 seconds
+[0m22:25:22.053899 [debug] [Thread-2 (]: On test.enterprise_mdm.unique_golden_records_golden_id.c80d8a5fcc: ROLLBACK
+[0m22:25:22.054347 [debug] [Thread-2 (]: On test.enterprise_mdm.unique_golden_records_golden_id.c80d8a5fcc: Close
+[0m22:25:22.054940 [info ] [Thread-2 (]: 34 of 46 PASS unique_golden_records_golden_id .................................. [[32mPASS[0m in 0.02s]
+[0m22:25:22.055523 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.unique_golden_records_golden_id.c80d8a5fcc
+[0m22:25:22.056020 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.full_crosswalk_coverage
+[0m22:25:22.056658 [info ] [Thread-2 (]: 36 of 46 START test full_crosswalk_coverage .................................... [RUN]
+[0m22:25:22.057181 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.unique_golden_records_golden_id.c80d8a5fcc, now test.enterprise_mdm.full_crosswalk_coverage)
+[0m22:25:22.057582 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.full_crosswalk_coverage
+[0m22:25:22.059396 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.full_crosswalk_coverage"
+[0m22:25:22.059963 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.full_crosswalk_coverage
+[0m22:25:22.061241 [debug] [Thread-2 (]: Writing runtime sql for node "test.enterprise_mdm.full_crosswalk_coverage"
+[0m22:25:22.061739 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.009 seconds
+[0m22:25:22.063015 [debug] [Thread-1 (]: On test.enterprise_mdm.accepted_values_consumer_impact_reconciliation_status__aligned__unknown_identity__retirement_pending__activation_pending__update_pending__consumer_ahead.dc69c1a872: ROLLBACK
+[0m22:25:22.063501 [debug] [Thread-2 (]: Using postgres connection "test.enterprise_mdm.full_crosswalk_coverage"
+[0m22:25:22.063895 [debug] [Thread-2 (]: On test.enterprise_mdm.full_crosswalk_coverage: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.full_crosswalk_coverage"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  select s.source_key
+from "mdm_demo"."public"."source_records" s
+left join "mdm_demo"."analytics"."crosswalk" c on s.source_key = c.source_key
+where c.source_key is null
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:22.064223 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:25:22.064662 [debug] [Thread-1 (]: On test.enterprise_mdm.accepted_values_consumer_impact_reconciliation_status__aligned__unknown_identity__retirement_pending__activation_pending__update_pending__consumer_ahead.dc69c1a872: Close
+[0m22:25:22.065244 [info ] [Thread-1 (]: 35 of 46 PASS accepted_values_consumer_impact_reconciliation_status__aligned__unknown_identity__retirement_pending__activation_pending__update_pending__consumer_ahead  [[32mPASS[0m in 0.02s]
+[0m22:25:22.065796 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.accepted_values_consumer_impact_reconciliation_status__aligned__unknown_identity__retirement_pending__activation_pending__update_pending__consumer_ahead.dc69c1a872
+[0m22:25:22.066156 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.no_mixed_entity_groups
+[0m22:25:22.066645 [info ] [Thread-1 (]: 37 of 46 START test no_mixed_entity_groups ..................................... [RUN]
+[0m22:25:22.067168 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.accepted_values_consumer_impact_reconciliation_status__aligned__unknown_identity__retirement_pending__activation_pending__update_pending__consumer_ahead.dc69c1a872, now test.enterprise_mdm.no_mixed_entity_groups)
+[0m22:25:22.067582 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.no_mixed_entity_groups
+[0m22:25:22.069244 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.no_mixed_entity_groups"
+[0m22:25:22.069854 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.no_mixed_entity_groups
+[0m22:25:22.070993 [debug] [Thread-1 (]: Writing runtime sql for node "test.enterprise_mdm.no_mixed_entity_groups"
+[0m22:25:22.071536 [debug] [Thread-1 (]: Using postgres connection "test.enterprise_mdm.no_mixed_entity_groups"
+[0m22:25:22.071876 [debug] [Thread-1 (]: On test.enterprise_mdm.no_mixed_entity_groups: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.no_mixed_entity_groups"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  select golden_id
+from "mdm_demo"."analytics"."crosswalk"
+group by golden_id
+having count(distinct entity_type) > 1
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:22.072141 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:22.073228 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.009 seconds
+[0m22:25:22.074893 [debug] [Thread-2 (]: On test.enterprise_mdm.full_crosswalk_coverage: ROLLBACK
+[0m22:25:22.075456 [debug] [Thread-2 (]: On test.enterprise_mdm.full_crosswalk_coverage: Close
+[0m22:25:22.076136 [info ] [Thread-2 (]: 36 of 46 PASS full_crosswalk_coverage .......................................... [[32mPASS[0m in 0.02s]
+[0m22:25:22.076742 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.full_crosswalk_coverage
+[0m22:25:22.077196 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.not_null_crosswalk_golden_id.a9723c9117
+[0m22:25:22.077579 [info ] [Thread-2 (]: 38 of 46 START test not_null_crosswalk_golden_id ............................... [RUN]
+[0m22:25:22.078085 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.full_crosswalk_coverage, now test.enterprise_mdm.not_null_crosswalk_golden_id.a9723c9117)
+[0m22:25:22.078420 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.not_null_crosswalk_golden_id.a9723c9117
+[0m22:25:22.082669 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.not_null_crosswalk_golden_id.a9723c9117"
+[0m22:25:22.083334 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.not_null_crosswalk_golden_id.a9723c9117
+[0m22:25:22.084396 [debug] [Thread-2 (]: Writing runtime sql for node "test.enterprise_mdm.not_null_crosswalk_golden_id.a9723c9117"
+[0m22:25:22.084992 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.013 seconds
+[0m22:25:22.086100 [debug] [Thread-1 (]: On test.enterprise_mdm.no_mixed_entity_groups: ROLLBACK
+[0m22:25:22.086686 [debug] [Thread-2 (]: Using postgres connection "test.enterprise_mdm.not_null_crosswalk_golden_id.a9723c9117"
+[0m22:25:22.087090 [debug] [Thread-2 (]: On test.enterprise_mdm.not_null_crosswalk_golden_id.a9723c9117: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.not_null_crosswalk_golden_id.a9723c9117"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select golden_id
+from "mdm_demo"."analytics"."crosswalk"
+where golden_id is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:22.087409 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:25:22.087833 [debug] [Thread-1 (]: On test.enterprise_mdm.no_mixed_entity_groups: Close
+[0m22:25:22.088341 [info ] [Thread-1 (]: 37 of 46 PASS no_mixed_entity_groups ........................................... [[32mPASS[0m in 0.02s]
+[0m22:25:22.088803 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.no_mixed_entity_groups
+[0m22:25:22.089170 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.not_null_crosswalk_source_key.2ca9762a39
+[0m22:25:22.089747 [info ] [Thread-1 (]: 39 of 46 START test not_null_crosswalk_source_key .............................. [RUN]
+[0m22:25:22.090229 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.no_mixed_entity_groups, now test.enterprise_mdm.not_null_crosswalk_source_key.2ca9762a39)
+[0m22:25:22.090622 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.not_null_crosswalk_source_key.2ca9762a39
+[0m22:25:22.098139 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.not_null_crosswalk_source_key.2ca9762a39"
+[0m22:25:22.098804 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.not_null_crosswalk_source_key.2ca9762a39
+[0m22:25:22.099901 [debug] [Thread-1 (]: Writing runtime sql for node "test.enterprise_mdm.not_null_crosswalk_source_key.2ca9762a39"
+[0m22:25:22.100321 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.013 seconds
+[0m22:25:22.101519 [debug] [Thread-2 (]: On test.enterprise_mdm.not_null_crosswalk_golden_id.a9723c9117: ROLLBACK
+[0m22:25:22.102096 [debug] [Thread-1 (]: Using postgres connection "test.enterprise_mdm.not_null_crosswalk_source_key.2ca9762a39"
+[0m22:25:22.102455 [debug] [Thread-1 (]: On test.enterprise_mdm.not_null_crosswalk_source_key.2ca9762a39: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.not_null_crosswalk_source_key.2ca9762a39"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select source_key
+from "mdm_demo"."analytics"."crosswalk"
+where source_key is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:22.102792 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:22.103210 [debug] [Thread-2 (]: On test.enterprise_mdm.not_null_crosswalk_golden_id.a9723c9117: Close
+[0m22:25:22.103776 [info ] [Thread-2 (]: 38 of 46 PASS not_null_crosswalk_golden_id ..................................... [[32mPASS[0m in 0.03s]
+[0m22:25:22.104234 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.not_null_crosswalk_golden_id.a9723c9117
+[0m22:25:22.104554 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.unique_crosswalk_source_key.1b1137cb13
+[0m22:25:22.105081 [info ] [Thread-2 (]: 40 of 46 START test unique_crosswalk_source_key ................................ [RUN]
+[0m22:25:22.105548 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.not_null_crosswalk_golden_id.a9723c9117, now test.enterprise_mdm.unique_crosswalk_source_key.1b1137cb13)
+[0m22:25:22.106024 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.unique_crosswalk_source_key.1b1137cb13
+[0m22:25:22.110806 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.unique_crosswalk_source_key.1b1137cb13"
+[0m22:25:22.111358 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.unique_crosswalk_source_key.1b1137cb13
+[0m22:25:22.112428 [debug] [Thread-2 (]: Writing runtime sql for node "test.enterprise_mdm.unique_crosswalk_source_key.1b1137cb13"
+[0m22:25:22.112882 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.010 seconds
+[0m22:25:22.113972 [debug] [Thread-1 (]: On test.enterprise_mdm.not_null_crosswalk_source_key.2ca9762a39: ROLLBACK
+[0m22:25:22.114418 [debug] [Thread-2 (]: Using postgres connection "test.enterprise_mdm.unique_crosswalk_source_key.1b1137cb13"
+[0m22:25:22.114791 [debug] [Thread-2 (]: On test.enterprise_mdm.unique_crosswalk_source_key.1b1137cb13: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.unique_crosswalk_source_key.1b1137cb13"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    source_key as unique_field,
+    count(*) as n_records
+
+from "mdm_demo"."analytics"."crosswalk"
+where source_key is not null
+group by source_key
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:22.115107 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:25:22.115518 [debug] [Thread-1 (]: On test.enterprise_mdm.not_null_crosswalk_source_key.2ca9762a39: Close
+[0m22:25:22.116055 [info ] [Thread-1 (]: 39 of 46 PASS not_null_crosswalk_source_key .................................... [[32mPASS[0m in 0.03s]
+[0m22:25:22.116500 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.not_null_crosswalk_source_key.2ca9762a39
+[0m22:25:22.117021 [debug] [Thread-1 (]: Began running node model.enterprise_mdm.attribute_lineage
+[0m22:25:22.117645 [info ] [Thread-1 (]: 41 of 46 START sql view model analytics.attribute_lineage ...................... [RUN]
+[0m22:25:22.118166 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.not_null_crosswalk_source_key.2ca9762a39, now model.enterprise_mdm.attribute_lineage)
+[0m22:25:22.118573 [debug] [Thread-1 (]: Began compiling node model.enterprise_mdm.attribute_lineage
+[0m22:25:22.120660 [debug] [Thread-1 (]: Writing injected SQL for node "model.enterprise_mdm.attribute_lineage"
+[0m22:25:22.121141 [debug] [Thread-1 (]: Began executing node model.enterprise_mdm.attribute_lineage
+[0m22:25:22.123634 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.attribute_lineage"
+[0m22:25:22.124022 [debug] [Thread-1 (]: On model.enterprise_mdm.attribute_lineage: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.attribute_lineage"} */
+
+        select 1 as postgres_session_bounds_are_set_by_connection
+      
+[0m22:25:22.124402 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:22.124847 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.010 seconds
+[0m22:25:22.126026 [debug] [Thread-2 (]: On test.enterprise_mdm.unique_crosswalk_source_key.1b1137cb13: ROLLBACK
+[0m22:25:22.126584 [debug] [Thread-2 (]: On test.enterprise_mdm.unique_crosswalk_source_key.1b1137cb13: Close
+[0m22:25:22.127243 [info ] [Thread-2 (]: 40 of 46 PASS unique_crosswalk_source_key ...................................... [[32mPASS[0m in 0.02s]
+[0m22:25:22.127835 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.unique_crosswalk_source_key.1b1137cb13
+[0m22:25:22.130031 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.006 seconds
+[0m22:25:22.131028 [debug] [Thread-1 (]: Writing runtime sql for node "model.enterprise_mdm.attribute_lineage"
+[0m22:25:22.131493 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.attribute_lineage"
+[0m22:25:22.131820 [debug] [Thread-1 (]: On model.enterprise_mdm.attribute_lineage: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.attribute_lineage"} */
+
+  create view "mdm_demo"."analytics"."attribute_lineage__dbt_tmp"
+    
+    
+  as (
+    
+select
+    g.golden_id,
+    g.group_version,
+    a.key as attribute_name,
+    a.value as attribute_value,
+    g.provenance -> a.key as lineage
+from "mdm_demo"."analytics"."golden_records" g
+cross join lateral jsonb_each(g.attributes) a
+
+  );
+[0m22:25:22.133208 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.001 seconds
+[0m22:25:22.134661 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.attribute_lineage"
+[0m22:25:22.134991 [debug] [Thread-1 (]: On model.enterprise_mdm.attribute_lineage: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.attribute_lineage"} */
+alter table "mdm_demo"."analytics"."attribute_lineage__dbt_tmp" rename to "attribute_lineage"
+[0m22:25:22.135640 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m22:25:22.136778 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.attribute_lineage"
+[0m22:25:22.137073 [debug] [Thread-1 (]: On model.enterprise_mdm.attribute_lineage: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.attribute_lineage"} */
+
+    
+  
+  comment on view "mdm_demo"."analytics"."attribute_lineage" is $dbt_comment_literal_block$Per-attribute source, rule, trust and freshness evidence. Includes current business slice only.$dbt_comment_literal_block$;
+
+  
+[0m22:25:22.137536 [debug] [Thread-1 (]: SQL status: COMMENT in 0.000 seconds
+[0m22:25:22.138931 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.attribute_lineage"
+[0m22:25:22.139240 [debug] [Thread-1 (]: On model.enterprise_mdm.attribute_lineage: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.attribute_lineage"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "mdm_demo".INFORMATION_SCHEMA.columns
+      where table_name = 'attribute_lineage'
+        
+        and table_schema = 'analytics'
+        
+      order by ordinal_position
+
+  
+[0m22:25:22.144040 [debug] [Thread-1 (]: SQL status: SELECT 5 in 0.004 seconds
+[0m22:25:22.145891 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.attribute_lineage"
+[0m22:25:22.146262 [debug] [Thread-1 (]: On model.enterprise_mdm.attribute_lineage: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.attribute_lineage"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "mdm_demo".INFORMATION_SCHEMA.columns
+      where table_name = 'attribute_lineage'
+        
+        and table_schema = 'analytics'
+        
+      order by ordinal_position
+
+  
+[0m22:25:22.148629 [debug] [Thread-1 (]: SQL status: SELECT 5 in 0.002 seconds
+[0m22:25:22.149853 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.attribute_lineage"
+[0m22:25:22.150157 [debug] [Thread-1 (]: On model.enterprise_mdm.attribute_lineage: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.attribute_lineage"} */
+
+    
+  
+  
+    
+    
+    comment on column "mdm_demo"."analytics"."attribute_lineage".lineage is $dbt_comment_literal_block$$dbt_comment_literal_block$;
+  
+
+  
+[0m22:25:22.150562 [debug] [Thread-1 (]: SQL status: COMMENT in 0.000 seconds
+[0m22:25:22.151375 [debug] [Thread-1 (]: On model.enterprise_mdm.attribute_lineage: COMMIT
+[0m22:25:22.151670 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.attribute_lineage"
+[0m22:25:22.151953 [debug] [Thread-1 (]: On model.enterprise_mdm.attribute_lineage: COMMIT
+[0m22:25:22.152911 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m22:25:22.153925 [debug] [Thread-1 (]: Applying DROP to: "mdm_demo"."analytics"."attribute_lineage__dbt_backup"
+[0m22:25:22.154361 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.attribute_lineage"
+[0m22:25:22.154620 [debug] [Thread-1 (]: On model.enterprise_mdm.attribute_lineage: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.attribute_lineage"} */
+drop view if exists "mdm_demo"."analytics"."attribute_lineage__dbt_backup" cascade
+[0m22:25:22.155247 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.000 seconds
+[0m22:25:22.156253 [debug] [Thread-1 (]: On model.enterprise_mdm.attribute_lineage: Close
+[0m22:25:22.156913 [info ] [Thread-1 (]: 41 of 46 OK created sql view model analytics.attribute_lineage ................. [[32mCREATE VIEW[0m in 0.04s]
+[0m22:25:22.157336 [debug] [Thread-1 (]: Finished running node model.enterprise_mdm.attribute_lineage
+[0m22:25:22.158168 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.not_null_attribute_lineage_lineage.5537c29b34
+[0m22:25:22.158531 [info ] [Thread-2 (]: 42 of 46 START test not_null_attribute_lineage_lineage ......................... [RUN]
+[0m22:25:22.158980 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.unique_crosswalk_source_key.1b1137cb13, now test.enterprise_mdm.not_null_attribute_lineage_lineage.5537c29b34)
+[0m22:25:22.159306 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.not_null_attribute_lineage_lineage.5537c29b34
+[0m22:25:22.164731 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.not_null_attribute_lineage_lineage.5537c29b34"
+[0m22:25:22.165246 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.not_null_attribute_lineage_lineage.5537c29b34
+[0m22:25:22.166354 [debug] [Thread-2 (]: Writing runtime sql for node "test.enterprise_mdm.not_null_attribute_lineage_lineage.5537c29b34"
+[0m22:25:22.166812 [debug] [Thread-2 (]: Using postgres connection "test.enterprise_mdm.not_null_attribute_lineage_lineage.5537c29b34"
+[0m22:25:22.167106 [debug] [Thread-2 (]: On test.enterprise_mdm.not_null_attribute_lineage_lineage.5537c29b34: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.not_null_attribute_lineage_lineage.5537c29b34"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select lineage
+from "mdm_demo"."analytics"."attribute_lineage"
+where lineage is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:22.167359 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:25:22.174743 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.007 seconds
+[0m22:25:22.175838 [debug] [Thread-2 (]: On test.enterprise_mdm.not_null_attribute_lineage_lineage.5537c29b34: ROLLBACK
+[0m22:25:22.176261 [debug] [Thread-2 (]: On test.enterprise_mdm.not_null_attribute_lineage_lineage.5537c29b34: Close
+[0m22:25:22.176761 [info ] [Thread-2 (]: 42 of 46 PASS not_null_attribute_lineage_lineage ............................... [[32mPASS[0m in 0.02s]
+[0m22:25:22.177175 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.not_null_attribute_lineage_lineage.5537c29b34
+[0m22:25:22.177911 [debug] [Thread-1 (]: Began running node model.enterprise_mdm.quality_report
+[0m22:25:22.178340 [info ] [Thread-1 (]: 43 of 46 START sql view model analytics.quality_report ......................... [RUN]
+[0m22:25:22.178803 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.enterprise_mdm.attribute_lineage, now model.enterprise_mdm.quality_report)
+[0m22:25:22.179122 [debug] [Thread-1 (]: Began compiling node model.enterprise_mdm.quality_report
+[0m22:25:22.182008 [debug] [Thread-1 (]: Writing injected SQL for node "model.enterprise_mdm.quality_report"
+[0m22:25:22.182523 [debug] [Thread-1 (]: Began executing node model.enterprise_mdm.quality_report
+[0m22:25:22.184752 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.quality_report"
+[0m22:25:22.185067 [debug] [Thread-1 (]: On model.enterprise_mdm.quality_report: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.quality_report"} */
+
+        select 1 as postgres_session_bounds_are_set_by_connection
+      
+[0m22:25:22.185325 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:22.190620 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.005 seconds
+[0m22:25:22.191788 [debug] [Thread-1 (]: Writing runtime sql for node "model.enterprise_mdm.quality_report"
+[0m22:25:22.192346 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.quality_report"
+[0m22:25:22.192658 [debug] [Thread-1 (]: On model.enterprise_mdm.quality_report: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.quality_report"} */
+
+  create view "mdm_demo"."analytics"."quality_report__dbt_tmp"
+    
+    
+  as (
+    select 'source_records' as metric, count(*) as value from "mdm_demo"."public"."source_records"
+union all
+select 'golden_records', count(*) from "mdm_demo"."analytics"."golden_records"
+union all
+select 'suspected_duplicate_pairs', count(*) from "mdm_demo"."public"."candidates"
+where disposition in ('auto', 'review', 'group_conflict')
+union all
+select 'crosswalk_records', count(*) from "mdm_demo"."analytics"."crosswalk"
+union all
+select 'unmapped_source_records', count(*)
+from "mdm_demo"."public"."source_records" s
+left join "mdm_demo"."analytics"."crosswalk" c on s.source_key = c.source_key
+where c.source_key is null
+union all
+select 'pending_human_decisions', count(*) from "mdm_demo"."public"."decisions"
+where status in ('pending', 'approved')
+union all
+select 'correction_decisions', count(*) from "mdm_demo"."public"."decisions"
+where kind in ('split', 'unmerge') and status = 'executed'
+union all
+select 'executed_decisions', count(*) from "mdm_demo"."public"."decisions" where status = 'executed'
+union all
+select 'attributes_without_lineage', count(*) from "mdm_demo"."analytics"."attribute_lineage" where lineage is null
+union all
+select 'consumer_corrections_pending', count(*) from "mdm_demo"."analytics"."consumer_impact"
+where reconciliation_status <> 'aligned'
+  );
+[0m22:25:22.195081 [debug] [Thread-1 (]: SQL status: CREATE VIEW in 0.002 seconds
+[0m22:25:22.196485 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.quality_report"
+[0m22:25:22.196815 [debug] [Thread-1 (]: On model.enterprise_mdm.quality_report: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.quality_report"} */
+alter table "mdm_demo"."analytics"."quality_report__dbt_tmp" rename to "quality_report"
+[0m22:25:22.197407 [debug] [Thread-1 (]: SQL status: ALTER TABLE in 0.000 seconds
+[0m22:25:22.198924 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.quality_report"
+[0m22:25:22.199225 [debug] [Thread-1 (]: On model.enterprise_mdm.quality_report: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.quality_report"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "mdm_demo".INFORMATION_SCHEMA.columns
+      where table_name = 'quality_report'
+        
+        and table_schema = 'analytics'
+        
+      order by ordinal_position
+
+  
+[0m22:25:22.203692 [debug] [Thread-1 (]: SQL status: SELECT 2 in 0.004 seconds
+[0m22:25:22.205545 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.quality_report"
+[0m22:25:22.206052 [debug] [Thread-1 (]: On model.enterprise_mdm.quality_report: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.quality_report"} */
+
+      select
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+      from "mdm_demo".INFORMATION_SCHEMA.columns
+      where table_name = 'quality_report'
+        
+        and table_schema = 'analytics'
+        
+      order by ordinal_position
+
+  
+[0m22:25:22.208227 [debug] [Thread-1 (]: SQL status: SELECT 2 in 0.002 seconds
+[0m22:25:22.209469 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.quality_report"
+[0m22:25:22.209836 [debug] [Thread-1 (]: On model.enterprise_mdm.quality_report: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.quality_report"} */
+
+    
+  
+  
+    
+    
+    comment on column "mdm_demo"."analytics"."quality_report".metric is $dbt_comment_literal_block$$dbt_comment_literal_block$;
+  
+    
+    
+    comment on column "mdm_demo"."analytics"."quality_report".value is $dbt_comment_literal_block$$dbt_comment_literal_block$;
+  
+
+  
+[0m22:25:22.210316 [debug] [Thread-1 (]: SQL status: COMMENT in 0.000 seconds
+[0m22:25:22.212844 [debug] [Thread-1 (]: On model.enterprise_mdm.quality_report: COMMIT
+[0m22:25:22.213162 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.quality_report"
+[0m22:25:22.213416 [debug] [Thread-1 (]: On model.enterprise_mdm.quality_report: COMMIT
+[0m22:25:22.214798 [debug] [Thread-1 (]: SQL status: COMMIT in 0.001 seconds
+[0m22:25:22.216179 [debug] [Thread-1 (]: Applying DROP to: "mdm_demo"."analytics"."quality_report__dbt_backup"
+[0m22:25:22.216661 [debug] [Thread-1 (]: Using postgres connection "model.enterprise_mdm.quality_report"
+[0m22:25:22.218007 [debug] [Thread-1 (]: On model.enterprise_mdm.quality_report: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "model.enterprise_mdm.quality_report"} */
+drop view if exists "mdm_demo"."analytics"."quality_report__dbt_backup" cascade
+[0m22:25:22.219296 [debug] [Thread-1 (]: SQL status: DROP VIEW in 0.001 seconds
+[0m22:25:22.220503 [debug] [Thread-1 (]: On model.enterprise_mdm.quality_report: Close
+[0m22:25:22.221258 [info ] [Thread-1 (]: 43 of 46 OK created sql view model analytics.quality_report .................... [[32mCREATE VIEW[0m in 0.04s]
+[0m22:25:22.221760 [debug] [Thread-1 (]: Finished running node model.enterprise_mdm.quality_report
+[0m22:25:22.222603 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.not_null_quality_report_metric.2e249e1d20
+[0m22:25:22.222992 [info ] [Thread-2 (]: 44 of 46 START test not_null_quality_report_metric ............................. [RUN]
+[0m22:25:22.223376 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.not_null_attribute_lineage_lineage.5537c29b34, now test.enterprise_mdm.not_null_quality_report_metric.2e249e1d20)
+[0m22:25:22.223684 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.not_null_quality_report_metric.2e249e1d20
+[0m22:25:22.228335 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.not_null_quality_report_metric.2e249e1d20"
+[0m22:25:22.228810 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.not_null_quality_report_value.4cbab5b787
+[0m22:25:22.229170 [info ] [Thread-1 (]: 45 of 46 START test not_null_quality_report_value .............................. [RUN]
+[0m22:25:22.229559 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.enterprise_mdm.quality_report, now test.enterprise_mdm.not_null_quality_report_value.4cbab5b787)
+[0m22:25:22.230043 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.not_null_quality_report_value.4cbab5b787
+[0m22:25:22.234205 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.not_null_quality_report_value.4cbab5b787"
+[0m22:25:22.234662 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.not_null_quality_report_metric.2e249e1d20
+[0m22:25:22.235823 [debug] [Thread-2 (]: Writing runtime sql for node "test.enterprise_mdm.not_null_quality_report_metric.2e249e1d20"
+[0m22:25:22.236300 [debug] [Thread-2 (]: Using postgres connection "test.enterprise_mdm.not_null_quality_report_metric.2e249e1d20"
+[0m22:25:22.236625 [debug] [Thread-2 (]: On test.enterprise_mdm.not_null_quality_report_metric.2e249e1d20: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.not_null_quality_report_metric.2e249e1d20"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select metric
+from "mdm_demo"."analytics"."quality_report"
+where metric is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:22.236934 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:25:22.237328 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.not_null_quality_report_value.4cbab5b787
+[0m22:25:22.238650 [debug] [Thread-1 (]: Writing runtime sql for node "test.enterprise_mdm.not_null_quality_report_value.4cbab5b787"
+[0m22:25:22.239150 [debug] [Thread-1 (]: Using postgres connection "test.enterprise_mdm.not_null_quality_report_value.4cbab5b787"
+[0m22:25:22.239532 [debug] [Thread-1 (]: On test.enterprise_mdm.not_null_quality_report_value.4cbab5b787: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.not_null_quality_report_value.4cbab5b787"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select value
+from "mdm_demo"."analytics"."quality_report"
+where value is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:22.239865 [debug] [Thread-1 (]: Opening a new connection, currently in state closed
+[0m22:25:22.246250 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.009 seconds
+[0m22:25:22.247577 [debug] [Thread-2 (]: On test.enterprise_mdm.not_null_quality_report_metric.2e249e1d20: ROLLBACK
+[0m22:25:22.248102 [debug] [Thread-2 (]: On test.enterprise_mdm.not_null_quality_report_metric.2e249e1d20: Close
+[0m22:25:22.248474 [debug] [Thread-1 (]: SQL status: SELECT 1 in 0.009 seconds
+[0m22:25:22.249748 [debug] [Thread-1 (]: On test.enterprise_mdm.not_null_quality_report_value.4cbab5b787: ROLLBACK
+[0m22:25:22.250307 [info ] [Thread-2 (]: 44 of 46 PASS not_null_quality_report_metric ................................... [[32mPASS[0m in 0.03s]
+[0m22:25:22.250875 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.not_null_quality_report_metric.2e249e1d20
+[0m22:25:22.251223 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.unique_quality_report_metric.929a8ec142
+[0m22:25:22.251528 [info ] [Thread-2 (]: 46 of 46 START test unique_quality_report_metric ............................... [RUN]
+[0m22:25:22.252021 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.not_null_quality_report_metric.2e249e1d20, now test.enterprise_mdm.unique_quality_report_metric.929a8ec142)
+[0m22:25:22.252390 [debug] [Thread-1 (]: On test.enterprise_mdm.not_null_quality_report_value.4cbab5b787: Close
+[0m22:25:22.252766 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.unique_quality_report_metric.929a8ec142
+[0m22:25:22.257360 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.unique_quality_report_metric.929a8ec142"
+[0m22:25:22.257909 [info ] [Thread-1 (]: 45 of 46 PASS not_null_quality_report_value .................................... [[32mPASS[0m in 0.03s]
+[0m22:25:22.258478 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.not_null_quality_report_value.4cbab5b787
+[0m22:25:22.258966 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.unique_quality_report_metric.929a8ec142
+[0m22:25:22.260109 [debug] [Thread-2 (]: Writing runtime sql for node "test.enterprise_mdm.unique_quality_report_metric.929a8ec142"
+[0m22:25:22.260602 [debug] [Thread-2 (]: Using postgres connection "test.enterprise_mdm.unique_quality_report_metric.929a8ec142"
+[0m22:25:22.260926 [debug] [Thread-2 (]: On test.enterprise_mdm.unique_quality_report_metric.929a8ec142: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "node_id": "test.enterprise_mdm.unique_quality_report_metric.929a8ec142"} */
+
+    
+    select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+select
+    metric as unique_field,
+    count(*) as n_records
+
+from "mdm_demo"."analytics"."quality_report"
+where metric is not null
+group by metric
+having count(*) > 1
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+[0m22:25:22.261190 [debug] [Thread-2 (]: Opening a new connection, currently in state closed
+[0m22:25:22.272323 [debug] [Thread-2 (]: SQL status: SELECT 1 in 0.011 seconds
+[0m22:25:22.273653 [debug] [Thread-2 (]: On test.enterprise_mdm.unique_quality_report_metric.929a8ec142: ROLLBACK
+[0m22:25:22.274108 [debug] [Thread-2 (]: On test.enterprise_mdm.unique_quality_report_metric.929a8ec142: Close
+[0m22:25:22.274629 [info ] [Thread-2 (]: 46 of 46 PASS unique_quality_report_metric ..................................... [[32mPASS[0m in 0.02s]
+[0m22:25:22.275088 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.unique_quality_report_metric.929a8ec142
+[0m22:25:22.276562 [debug] [MainThread]: On master: COMMIT
+[0m22:25:22.276913 [debug] [MainThread]: Using postgres connection "master"
+[0m22:25:22.277345 [debug] [MainThread]: On master: COMMIT
+[0m22:25:22.277583 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m22:25:22.283163 [debug] [MainThread]: SQL status: COMMIT in 0.006 seconds
+[0m22:25:22.283485 [debug] [MainThread]: On master: Close
+[0m22:25:22.283897 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:25:22.284160 [debug] [MainThread]: Connection 'test.enterprise_mdm.not_null_quality_report_value.4cbab5b787' was properly closed.
+[0m22:25:22.284388 [debug] [MainThread]: Connection 'test.enterprise_mdm.unique_quality_report_metric.929a8ec142' was properly closed.
+[0m22:25:22.284772 [info ] [MainThread]: 
+[0m22:25:22.285057 [info ] [MainThread]: Finished running 2 project hooks, 41 data tests, 5 view models in 0 hours 0 minutes and 1.02 seconds (1.02s).
+[0m22:25:22.288603 [debug] [MainThread]: Command end result
+[0m22:25:22.318575 [debug] [MainThread]: Wrote artifact WritableManifest to /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/manifest.json
+[0m22:25:22.320816 [debug] [MainThread]: Wrote artifact SemanticManifest to /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/semantic_manifest.json
+[0m22:25:22.322538 [debug] [MainThread]: Wrote artifact OsiDocument to /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/osi_document.json
+[0m22:25:22.328194 [debug] [MainThread]: Wrote artifact RunExecutionResult to /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/build/run_results.json
+[0m22:25:22.328498 [info ] [MainThread]: 
+[0m22:25:22.328829 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m22:25:22.329085 [info ] [MainThread]: 
+[0m22:25:22.329342 [info ] [MainThread]: Done. PASS=48 WARN=0 ERROR=0 SKIP=0 NO-OP=0 REUSED=0 TOTAL=48
+[0m22:25:22.330087 [debug] [MainThread]: Resource report: {"command_name": "build", "command_success": true, "command_wall_clock_time": 3.218803, "process_in_blocks": "35776", "process_kernel_time": 0.71488, "process_mem_max_rss": "176260", "process_out_blocks": "51560", "process_user_time": 5.167378}
+[0m22:25:22.330495 [debug] [MainThread]: Command `dbt build` succeeded at 22:25:22.330433 after 3.22 seconds
+[0m22:25:22.330816 [debug] [MainThread]: Flushing usage events

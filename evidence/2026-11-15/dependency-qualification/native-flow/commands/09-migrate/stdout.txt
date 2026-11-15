@@ -1,0 +1,5 @@
+{
+  "applied": true,
+  "checksum": "7ed5e8b83b6950b6c02a89ff3c214a36834642f91f4dc9ec2d089004f8d242c2",
+  "version": 1
+}

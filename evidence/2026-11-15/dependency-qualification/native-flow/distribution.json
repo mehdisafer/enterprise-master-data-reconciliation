@@ -1,0 +1,128 @@
+{
+  "passed": true,
+  "checks": {
+    "installed_outside_source": true,
+    "not_editable": true,
+    "installed_from_wheel": true,
+    "all_source_resources_preserved": true,
+    "entrypoint": true,
+    "cli_usable": true
+  },
+  "version": "0.1.0rc1",
+  "installed_package_path": "/workspace/scratch/f684f9028a9d/repo/.venv/lib/python3.12/site-packages/mdm",
+  "files": [
+    {
+      "path": "__init__.py",
+      "source_sha256": "7303b14e2e24d4141723719419e3c0e80421f2be09565045cb7f3283f875f782",
+      "installed_sha256": "7303b14e2e24d4141723719419e3c0e80421f2be09565045cb7f3283f875f782",
+      "equal": true
+    },
+    {
+      "path": "api.py",
+      "source_sha256": "b2b8c641e9a8038ce982036267251e47bd40a85ad284944513f928ee2c5b5f0a",
+      "installed_sha256": "b2b8c641e9a8038ce982036267251e47bd40a85ad284944513f928ee2c5b5f0a",
+      "equal": true
+    },
+    {
+      "path": "benchmark.py",
+      "source_sha256": "b417bae40b9a0e142cc6b05f28236e341d99ce4a62af972f664152506114fefe",
+      "installed_sha256": "b417bae40b9a0e142cc6b05f28236e341d99ce4a62af972f664152506114fefe",
+      "equal": true
+    },
+    {
+      "path": "cli.py",
+      "source_sha256": "19ec878bb6d10804113773772c7909636b6bc00bdc617f67854fd620ec74b2f5",
+      "installed_sha256": "19ec878bb6d10804113773772c7909636b6bc00bdc617f67854fd620ec74b2f5",
+      "equal": true
+    },
+    {
+      "path": "config.py",
+      "source_sha256": "fd443176e130cf14acf2c60a03545b62ed5614546d86f1bd35dd4bd2f1e0bae4",
+      "installed_sha256": "fd443176e130cf14acf2c60a03545b62ed5614546d86f1bd35dd4bd2f1e0bae4",
+      "equal": true
+    },
+    {
+      "path": "db.py",
+      "source_sha256": "c8c63e904c3432dfa947719eb52b1fbc9a3c623fb9c53bf326fbf917b820e528",
+      "installed_sha256": "c8c63e904c3432dfa947719eb52b1fbc9a3c623fb9c53bf326fbf917b820e528",
+      "equal": true
+    },
+    {
+      "path": "demo.py",
+      "source_sha256": "43bbae4cf94f7b9efb2896341b530b3aa32ab31aa0b23f76c5f5726fd532d0db",
+      "installed_sha256": "43bbae4cf94f7b9efb2896341b530b3aa32ab31aa0b23f76c5f5726fd532d0db",
+      "equal": true
+    },
+    {
+      "path": "domain.py",
+      "source_sha256": "57adf88d8005251ffe38d38055f8dfd5d11919547747a6bf5daef157d8b1b1ad",
+      "installed_sha256": "57adf88d8005251ffe38d38055f8dfd5d11919547747a6bf5daef157d8b1b1ad",
+      "equal": true
+    },
+    {
+      "path": "matching.py",
+      "source_sha256": "e7a5fbacdbef6abdec27e893fa56319d691e625bb8cad38c563e6740dae9543d",
+      "installed_sha256": "e7a5fbacdbef6abdec27e893fa56319d691e625bb8cad38c563e6740dae9543d",
+      "equal": true
+    },
+    {
+      "path": "pipeline.py",
+      "source_sha256": "435f3daf13800c014b3f1973138a7a71d3f0bcd7e90b8fc7f103e9c79e43665a",
+      "installed_sha256": "435f3daf13800c014b3f1973138a7a71d3f0bcd7e90b8fc7f103e9c79e43665a",
+      "equal": true
+    },
+    {
+      "path": "service.py",
+      "source_sha256": "b2acb1f330340d5656f880b7328a104bb96258ab094faed794fbc5eb2af8c451",
+      "installed_sha256": "b2acb1f330340d5656f880b7328a104bb96258ab094faed794fbc5eb2af8c451",
+      "equal": true
+    },
+    {
+      "path": "snowflake.py",
+      "source_sha256": "a2b56e23fad2783e7f3d33faa0ffe70fd20289d15ae1361c647c9ca2e7519d40",
+      "installed_sha256": "a2b56e23fad2783e7f3d33faa0ffe70fd20289d15ae1361c647c9ca2e7519d40",
+      "equal": true
+    },
+    {
+      "path": "sql/001.sql",
+      "source_sha256": "7ed5e8b83b6950b6c02a89ff3c214a36834642f91f4dc9ec2d089004f8d242c2",
+      "installed_sha256": "7ed5e8b83b6950b6c02a89ff3c214a36834642f91f4dc9ec2d089004f8d242c2",
+      "equal": true
+    },
+    {
+      "path": "static/app.js",
+      "source_sha256": "da12565496ba0d93ad263ea93ae8d549090de4206e0df7f9bd1a58a30a58d417",
+      "installed_sha256": "da12565496ba0d93ad263ea93ae8d549090de4206e0df7f9bd1a58a30a58d417",
+      "equal": true
+    },
+    {
+      "path": "static/index.html",
+      "source_sha256": "a609c62462dd867725ec91ab6cc4730ef910ddf6279655a13e49b6bc969420f4",
+      "installed_sha256": "a609c62462dd867725ec91ab6cc4730ef910ddf6279655a13e49b6bc969420f4",
+      "equal": true
+    },
+    {
+      "path": "static/style.css",
+      "source_sha256": "c06f77b8ab476873e68719eb7096e1c54a8aab70788f57f59407e6ecaa28d3f7",
+      "installed_sha256": "c06f77b8ab476873e68719eb7096e1c54a8aab70788f57f59407e6ecaa28d3f7",
+      "equal": true
+    },
+    {
+      "path": "synthetic.py",
+      "source_sha256": "ff1bace5381dd2c405bbe265ace216b4a23926f932698c7f1605ccab52458a41",
+      "installed_sha256": "ff1bace5381dd2c405bbe265ace216b4a23926f932698c7f1605ccab52458a41",
+      "equal": true
+    },
+    {
+      "path": "telemetry.py",
+      "source_sha256": "255053987f6433ce5c22c460409dfbeb8d6f3c4de4060490f42e8c49de6c27e2",
+      "installed_sha256": "255053987f6433ce5c22c460409dfbeb8d6f3c4de4060490f42e8c49de6c27e2",
+      "equal": true
+    }
+  ],
+  "core_metadata_version": "2.5",
+  "wheel_metadata": "Wheel-Version: 1.0\nGenerator: hatchling 1.33.0\nRoot-Is-Purelib: true\nTag: py3-none-any\n",
+  "cli_returncode": 0,
+  "cli_stdout": "usage: mdm [-h]\n           {migrate,check,quality,demo,snapshot,consume,run,benchmark} ...\n\npositional arguments:\n  {migrate,check,quality,demo,snapshot,consume,run,benchmark}\n\noptions:\n  -h, --help            show this help message and exit\n",
+  "cli_stderr": "{\"correlation_id\":\"a11ab830-bb5a-4181-bcd8-93e888eeb8d7\",\"event\":\"operation.started\",\"operation\":\"cli.command\",\"origin_correlation_id\":\"a11ab830-bb5a-4181-bcd8-93e888eeb8d7\",\"trace_version\":\"correlation.v1\"}\n{\"correlation_id\":\"a11ab830-bb5a-4181-bcd8-93e888eeb8d7\",\"duration_ms\":1.398,\"event\":\"operation.succeeded\",\"operation\":\"cli.command\",\"origin_correlation_id\":\"a11ab830-bb5a-4181-bcd8-93e888eeb8d7\",\"trace_version\":\"correlation.v1\"}\n"
+}

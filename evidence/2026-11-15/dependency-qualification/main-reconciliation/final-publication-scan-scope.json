@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "pattern_scan": "final-publication-pattern-scan.json",
+  "scan_scope_explanation": "540 selected publishable local files and 107 blobs reachable in the source-only local reconstruction. This is not a scan of complete remote GitHub history; the previously captured remote-history scans remain dated separately.",
+  "generated_after_scan": [
+    "final-delivery-checks.json",
+    "final-publication-pattern-scan.json",
+    "final-publication-scan-scope.json"
+  ],
+  "complete_remote_history_scan_claimed": false,
+  "complete_secret_detection_claimed": false
+}

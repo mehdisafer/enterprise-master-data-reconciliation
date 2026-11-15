@@ -1,0 +1,380 @@
+{
+  "observed_date": "2026-11-15",
+  "source": "GitHub connector read-only audit",
+  "repository": "mehdisafer/enterprise-master-data-reconciliation",
+  "main_sha": "16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+  "visibility": "private",
+  "description": null,
+  "topics": [],
+  "license": null,
+  "branches": [
+    {
+      "name": "circleci-project-setup",
+      "commit": {
+        "sha": "e083b131cae575d843fde900dcf4fcd2e7207f23",
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/e083b131cae575d843fde900dcf4fcd2e7207f23"
+      },
+      "protected": false
+    },
+    {
+      "name": "dependabot/docker/python-3.12.16-slim",
+      "commit": {
+        "sha": "ffc0544109c162575cde47695b9d6955371e34a6",
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/ffc0544109c162575cde47695b9d6955371e34a6"
+      },
+      "protected": false
+    },
+    {
+      "name": "dependabot/uv/fastapi-0.162.4",
+      "commit": {
+        "sha": "750e0355942d52236e2d1423fc0637b54216b105",
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/750e0355942d52236e2d1423fc0637b54216b105"
+      },
+      "protected": false
+    },
+    {
+      "name": "dependabot/uv/hatchling-1.33.0",
+      "commit": {
+        "sha": "a39348c3d17515bb3f00bd9a3ac1c1210082b64e",
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/a39348c3d17515bb3f00bd9a3ac1c1210082b64e"
+      },
+      "protected": false
+    },
+    {
+      "name": "dependabot/uv/pydantic-2.14.3",
+      "commit": {
+        "sha": "6fee2d053cb56fff978f7c1abecabadbae222490",
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/6fee2d053cb56fff978f7c1abecabadbae222490"
+      },
+      "protected": false
+    },
+    {
+      "name": "feat/explainable-reconciliation",
+      "commit": {
+        "sha": "be1ca2f2eafbec79dab16ee3629b7e7a9a3380de",
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/be1ca2f2eafbec79dab16ee3629b7e7a9a3380de"
+      },
+      "protected": false
+    },
+    {
+      "name": "main",
+      "commit": {
+        "sha": "16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7"
+      },
+      "protected": false
+    }
+  ],
+  "pull_requests": [
+    {
+      "number": 7,
+      "title": "chore(deps): bump python from 3.12.14-slim to 3.12.16-slim",
+      "state": "open",
+      "merged_at": null,
+      "draft": false,
+      "head": "ffc0544109c162575cde47695b9d6955371e34a6",
+      "branch": "dependabot/docker/python-3.12.16-slim",
+      "base": "16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+      "url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/7"
+    },
+    {
+      "number": 6,
+      "title": "build(deps-dev): bump hatchling from 1.29.0 to 1.33.0",
+      "state": "open",
+      "merged_at": null,
+      "draft": false,
+      "head": "a39348c3d17515bb3f00bd9a3ac1c1210082b64e",
+      "branch": "dependabot/uv/hatchling-1.33.0",
+      "base": "e27f4c2f58d812a2213b1457378095dc72dafd8a",
+      "url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/6"
+    },
+    {
+      "number": 5,
+      "title": "build(deps): bump pydantic from 2.13.4 to 2.14.3",
+      "state": "open",
+      "merged_at": null,
+      "draft": false,
+      "head": "6fee2d053cb56fff978f7c1abecabadbae222490",
+      "branch": "dependabot/uv/pydantic-2.14.3",
+      "base": "e27f4c2f58d812a2213b1457378095dc72dafd8a",
+      "url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/5"
+    },
+    {
+      "number": 4,
+      "title": "build(deps): bump fastapi from 0.141.1 to 0.162.4",
+      "state": "open",
+      "merged_at": null,
+      "draft": false,
+      "head": "750e0355942d52236e2d1423fc0637b54216b105",
+      "branch": "dependabot/uv/fastapi-0.162.4",
+      "base": "e27f4c2f58d812a2213b1457378095dc72dafd8a",
+      "url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/4"
+    },
+    {
+      "number": 3,
+      "title": "build(deps): bump python from 3.12.14-slim to 3.15.0-slim",
+      "state": "closed",
+      "merged_at": null,
+      "draft": false,
+      "head": "8a444eb66601d652b42075dfc8345de2f00a4346",
+      "branch": "dependabot/docker/python-3.15.0-slim",
+      "base": "e27f4c2f58d812a2213b1457378095dc72dafd8a",
+      "url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/3"
+    },
+    {
+      "number": 2,
+      "title": "Build explainable, reversible master-data reconciliation across three ERPs",
+      "state": "closed",
+      "merged_at": "2026-11-14T14:13:41Z",
+      "draft": false,
+      "head": "be1ca2f2eafbec79dab16ee3629b7e7a9a3380de",
+      "branch": "feat/explainable-reconciliation",
+      "base": "8fc92d966bfa05f5e1f3c2a21926ff7cb2408ff2",
+      "url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/2"
+    }
+  ],
+  "main_quality_jobs": {
+    "total_count": 4,
+    "jobs": [
+      {
+        "id": 132477805728,
+        "run_id": 43605050912,
+        "workflow_name": "Quality and PostgreSQL qualification",
+        "head_branch": "main",
+        "run_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43605050912",
+        "run_attempt": 1,
+        "node_id": "CR_kwDOVtqZYM8AAAAe2ErkoA",
+        "head_sha": "16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/actions/jobs/132477805728",
+        "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43605050912/job/132477805728",
+        "status": "completed",
+        "conclusion": "failure",
+        "created_at": "2026-11-14T14:28:41Z",
+        "started_at": "2026-11-14T14:28:41Z",
+        "completed_at": "2026-11-14T14:28:43Z",
+        "name": "scope",
+        "steps": [],
+        "check_run_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/check-runs/132477805728",
+        "labels": [
+          "ubuntu-24.04"
+        ],
+        "runner_id": 0,
+        "runner_name": "",
+        "runner_group_id": 0,
+        "runner_group_name": ""
+      },
+      {
+        "id": 132477819628,
+        "run_id": 43605050912,
+        "workflow_name": "Quality and PostgreSQL qualification",
+        "head_branch": "main",
+        "run_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43605050912",
+        "run_attempt": 1,
+        "node_id": "CR_kwDOVtqZYM8AAAAe2Esa7A",
+        "head_sha": "16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/actions/jobs/132477819628",
+        "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43605050912/job/132477819628",
+        "status": "completed",
+        "conclusion": "skipped",
+        "created_at": "2026-11-14T14:28:44Z",
+        "started_at": "2026-11-14T14:28:44Z",
+        "completed_at": "2026-11-14T14:28:44Z",
+        "name": "dependencies",
+        "steps": [],
+        "check_run_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/check-runs/132477819628",
+        "labels": [
+          "ubuntu-24.04"
+        ],
+        "runner_id": null,
+        "runner_name": null,
+        "runner_group_id": null,
+        "runner_group_name": null
+      },
+      {
+        "id": 132477819695,
+        "run_id": 43605050912,
+        "workflow_name": "Quality and PostgreSQL qualification",
+        "head_branch": "main",
+        "run_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43605050912",
+        "run_attempt": 1,
+        "node_id": "CR_kwDOVtqZYM8AAAAe2EsbLw",
+        "head_sha": "16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/actions/jobs/132477819695",
+        "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43605050912/job/132477819695",
+        "status": "completed",
+        "conclusion": "skipped",
+        "created_at": "2026-11-14T14:28:44Z",
+        "started_at": "2026-11-14T14:28:44Z",
+        "completed_at": "2026-11-14T14:28:44Z",
+        "name": "postgres",
+        "steps": [],
+        "check_run_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/check-runs/132477819695",
+        "labels": [
+          "ubuntu-24.04"
+        ],
+        "runner_id": null,
+        "runner_name": null,
+        "runner_group_id": null,
+        "runner_group_name": null
+      },
+      {
+        "id": 132477819904,
+        "run_id": 43605050912,
+        "workflow_name": "Quality and PostgreSQL qualification",
+        "head_branch": "main",
+        "run_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43605050912",
+        "run_attempt": 1,
+        "node_id": "CR_kwDOVtqZYM8AAAAe2EscAA",
+        "head_sha": "16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/actions/jobs/132477819904",
+        "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43605050912/job/132477819904",
+        "status": "completed",
+        "conclusion": "skipped",
+        "created_at": "2026-11-14T14:28:44Z",
+        "started_at": "2026-11-14T14:28:44Z",
+        "completed_at": "2026-11-14T14:28:44Z",
+        "name": "container",
+        "steps": [],
+        "check_run_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/check-runs/132477819904",
+        "labels": [
+          "ubuntu-24.04"
+        ],
+        "runner_id": null,
+        "runner_name": null,
+        "runner_group_id": null,
+        "runner_group_name": null
+      }
+    ]
+  },
+  "terraform_jobs": {
+    "total_count": 1,
+    "jobs": [
+      {
+        "id": 132473859921,
+        "run_id": 43603763082,
+        "workflow_name": "Terraform static qualification",
+        "head_branch": "main",
+        "run_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43603763082",
+        "run_attempt": 1,
+        "node_id": "CR_kwDOVtqZYM8AAAAe2A6vUQ",
+        "head_sha": "e27f4c2f58d812a2213b1457378095dc72dafd8a",
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/actions/jobs/132473859921",
+        "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43603763082/job/132473859921",
+        "status": "completed",
+        "conclusion": "failure",
+        "created_at": "2026-11-14T14:13:45Z",
+        "started_at": "2026-11-14T14:13:45Z",
+        "completed_at": "2026-11-14T14:13:47Z",
+        "name": "static",
+        "steps": [],
+        "check_run_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/check-runs/132473859921",
+        "labels": [
+          "ubuntu-24.04"
+        ],
+        "runner_id": 0,
+        "runner_name": "",
+        "runner_group_id": 0,
+        "runner_group_name": ""
+      }
+    ]
+  },
+  "circleci_status": {
+    "sha": "e083b131cae575d843fde900dcf4fcd2e7207f23",
+    "state": "failure",
+    "statuses": [
+      {
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/statuses/e083b131cae575d843fde900dcf4fcd2e7207f23",
+        "avatar_url": "https://avatars.githubusercontent.com/in/302869?v=4",
+        "id": 58977674027,
+        "node_id": "SC_kwDOVtqZYM8AAAANu1fjKw",
+        "state": "success",
+        "description": null,
+        "target_url": "https://app.circleci.com/workflow/2e956c1e-ee90-4088-a5d7-44cc7cf7680f/job/1d0cb266-5325-4f67-ab8c-142be27b1a85",
+        "context": "ci/circleci: build-and-test",
+        "created_at": "2026-11-15T20:57:23Z",
+        "updated_at": "2026-11-15T20:57:23Z"
+      },
+      {
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/statuses/e083b131cae575d843fde900dcf4fcd2e7207f23",
+        "avatar_url": "https://avatars.githubusercontent.com/in/302869?v=4",
+        "id": 58978093296,
+        "node_id": "SC_kwDOVtqZYM8AAAANu15I8A",
+        "state": "failure",
+        "description": "Job failed. To see why, run the CircleCI CLI: circleci run get ac292b99-602b-45d2-a908-d6b826b07c7c --failure-report",
+        "target_url": "https://app.circleci.com/workflow/4c00a0f8-6557-4ba1-9927-9933bd4e0490/job/e2deffef-654a-4134-bf34-7de6e37dc778",
+        "context": "ci/circleci: scope",
+        "created_at": "2026-11-15T21:09:01Z",
+        "updated_at": "2026-11-15T21:09:01Z"
+      },
+      {
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/statuses/e083b131cae575d843fde900dcf4fcd2e7207f23",
+        "avatar_url": "https://avatars.githubusercontent.com/in/302869?v=4",
+        "id": 58978112507,
+        "node_id": "SC_kwDOVtqZYM8AAAANu16T-w",
+        "state": "success",
+        "description": null,
+        "target_url": "https://app.circleci.com/workflow/7014b0f5-52c4-4cbd-8b6f-eac838ad747f/job/f2767466-8bfe-4fdc-a08a-65434b460da6",
+        "context": "ci/circleci: static",
+        "created_at": "2026-11-15T21:09:32Z",
+        "updated_at": "2026-11-15T21:09:32Z"
+      }
+    ]
+  },
+  "rulesets": {
+    "error": "GitHub API error 403: {\"message\":\"Upgrade to GitHub Pro or make this repository public to enable this feature.\",\"documentation_url\":\"https://docs.github.com/rest/repos/rules#get-all-repository-rulesets\",\"status\":\"403\"}",
+    "error_code": "FORBIDDEN",
+    "error_data": {
+      "message": "Upgrade to GitHub Pro or make this repository public to enable this feature.",
+      "documentation_url": "https://docs.github.com/rest/repos/rules#get-all-repository-rulesets",
+      "status": "403"
+    }
+  },
+  "check_annotations_errors": [
+    {
+      "error": "HTTPError: 400: GitHub Fetch URL is not an allowed public GitHub repository or search endpoint. (Response: None)",
+      "error_code": "INVALID_ARGUMENT"
+    },
+    {
+      "error": "HTTPError: 400: GitHub Fetch URL is not an allowed public GitHub repository or search endpoint. (Response: None)",
+      "error_code": "INVALID_ARGUMENT"
+    }
+  ],
+  "circleci_compare": {
+    "status": "ahead",
+    "ahead_by": 3,
+    "behind_by": 0,
+    "files": [
+      {
+        "sha": "3304d29b0d02d932de888463f5af043d94b78c3a",
+        "filename": ".circleci/config.yml",
+        "status": "added",
+        "additions": 35,
+        "deletions": 0,
+        "changes": 35,
+        "blob_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/e083b131cae575d843fde900dcf4fcd2e7207f23/.circleci%2Fconfig.yml",
+        "raw_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/raw/e083b131cae575d843fde900dcf4fcd2e7207f23/.circleci%2Fconfig.yml",
+        "contents_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/contents/.circleci%2Fconfig.yml?ref=e083b131cae575d843fde900dcf4fcd2e7207f23",
+        "patch": "@@ -0,0 +1,35 @@\n+version: 2.1\n+jobs:\n+  build-and-test:\n+    docker:\n+      - image: cimg/python:3.12\n+    steps:\n+      - checkout\n+      - restore_cache:\n+          keys:\n+            - mdm-uv-v1-{{ checksum \"uv.lock\" }}\n+      - run:\n+          name: Install locked Python environment\n+          command: |\n+            python -m pip install --disable-pip-version-check uv==0.13.6\n+            uv sync --frozen --extra dev\n+      - save_cache:\n+          key: mdm-uv-v1-{{ checksum \"uv.lock\" }}\n+          paths:\n+            - .venv\n+            - ~/.cache/uv\n+      - run:\n+          name: Lint\n+          command: uv run --extra dev ruff check src tests scripts .github/scripts\n+      - run:\n+          name: Diagnose test suite\n+          command: circleci testsuite doctor \"matching-unit\"\n+      - run:\n+          name: Run test suite\n+          command: circleci testsuite run \"matching-unit\"\n+      - store_test_results:\n+          path: test-results\n+workflows:\n+  build-and-test:\n+    jobs:\n+      - build-and-test"
+      },
+      {
+        "sha": "609da1923b3f54a9b9413e96463d5f10905718cb",
+        "filename": ".circleci/test-suites.yml",
+        "status": "added",
+        "additions": 5,
+        "deletions": 0,
+        "changes": 5,
+        "blob_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/e083b131cae575d843fde900dcf4fcd2e7207f23/.circleci%2Ftest-suites.yml",
+        "raw_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/raw/e083b131cae575d843fde900dcf4fcd2e7207f23/.circleci%2Ftest-suites.yml",
+        "contents_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/contents/.circleci%2Ftest-suites.yml?ref=e083b131cae575d843fde900dcf4fcd2e7207f23",
+        "patch": "@@ -0,0 +1,5 @@\n+name: matching-unit\n+discover: git ls-files tests/test_matching.py\n+run: uv run --extra dev pytest -q -o junit_family=xunit1 --junitxml=\"<< outputs.junit >>\" << test.atoms >>\n+outputs:\n+  junit: test-results/matching-unit.xml"
+      }
+    ]
+  },
+  "releases": [],
+  "limitations": [
+    "No consolidation branch or PR from supplied transcript found among complete 7-branch / 6-PR listings.",
+    "Both failed jobs have runner_id 0 and no steps; logs calls returned BlobNotFound 404.",
+    "Annotation endpoint is unavailable in connector; root cause not established.",
+    "CircleCI build-and-test success covers matching unit scope as configured; other statuses scope failure/static success need CircleCI evidence before broader validation."
+  ]
+}

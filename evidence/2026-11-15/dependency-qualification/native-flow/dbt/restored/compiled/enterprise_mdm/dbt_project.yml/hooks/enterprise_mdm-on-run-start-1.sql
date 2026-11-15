@@ -1,0 +1,1 @@
+select 1 as postgres_session_bounds_are_set_by_connection

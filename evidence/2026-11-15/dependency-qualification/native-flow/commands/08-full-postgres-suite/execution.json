@@ -1,0 +1,15 @@
+{
+  "label": "full-postgres-suite",
+  "command": [
+    "pytest",
+    "-q",
+    "--junitxml=/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/pytest.xml"
+  ],
+  "cwd": "/workspace/scratch/f684f9028a9d/repo",
+  "started_at": "2026-11-15T21:24:58.070345+00:00",
+  "ended_at": "2026-11-15T21:25:14.286276+00:00",
+  "elapsed_seconds": 16.215947113000766,
+  "returncode": 0,
+  "expected_returncode": 0,
+  "timeout_seconds": 240
+}

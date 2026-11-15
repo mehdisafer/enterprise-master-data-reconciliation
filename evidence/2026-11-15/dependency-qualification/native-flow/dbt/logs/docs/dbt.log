@@ -1,0 +1,464 @@
+
+
+============================== 22:25:23.884743 | e54d60cb-3b44-4b74-bd4f-e1c2fa52bef5 ==============================
+[0m22:25:23.884743 [info ] [MainThread]: Running with dbt=1.12.7
+[0m22:25:23.887330 [debug] [MainThread]: running dbt with arguments {'log_path': '/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/logs/docs', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'debug': 'False', 'maximum_seed_size_mib': '1', 'send_anonymous_usage_stats': 'False', 'hints_enabled': 'True', 'partial_parse': 'True', 'log_cache_events': 'False', 'profiles_dir': '/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt-project', 'version_check': 'True', 'cache_selected_only': 'False', 'no_print': 'None', 'warn_error': 'None', 'static_parser': 'True', 'log_format': 'default', 'use_experimental_parser': 'False', 'printer_width': '80', 'introspect': 'True', 'invocation_command': 'dbt docs generate --project-dir /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt-project --profiles-dir /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt-project --target postgres --target-path /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs --log-path /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/logs/docs', 'write_json': 'True', 'empty': 'None', 'target_path': '/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs', 'use_colors': 'True', 'fail_fast': 'False', 'indirect_selection': 'eager'}
+[0m22:25:24.051487 [info ] [MainThread]: Registered adapter: postgres=1.11.0
+[0m22:25:24.105163 [debug] [MainThread]: checksum: f3e979a96d57622af921a14bee005a0dd221345157a5d4e66f158ef3be3d0b0e, vars: {}, profile: enterprise_mdm, target: postgres, version: 1.12.7
+[0m22:25:24.105830 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m22:25:25.511637 [info ] [MainThread]: Found 5 models, 41 data tests, 2 operations, 16 sources, 482 macros
+[0m22:25:25.514312 [info ] [MainThread]: 
+[0m22:25:25.514632 [info ] [MainThread]: Concurrency: 2 threads (target='postgres')
+[0m22:25:25.515175 [info ] [MainThread]: 
+[0m22:25:25.515570 [debug] [MainThread]: Acquiring new postgres connection 'master'
+[0m22:25:25.518654 [debug] [ThreadPool]: Acquiring new postgres connection 'list_mdm_demo_analytics'
+[0m22:25:25.542893 [debug] [ThreadPool]: Using postgres connection "list_mdm_demo_analytics"
+[0m22:25:25.543272 [debug] [ThreadPool]: On list_mdm_demo_analytics: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "connection_name": "list_mdm_demo_analytics"} */
+select
+      'mdm_demo' as database,
+      tablename as name,
+      schemaname as schema,
+      'table' as type
+    from pg_tables
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'mdm_demo' as database,
+      viewname as name,
+      schemaname as schema,
+      'view' as type
+    from pg_views
+    where schemaname ilike 'analytics'
+    union all
+    select
+      'mdm_demo' as database,
+      matviewname as name,
+      schemaname as schema,
+      'materialized_view' as type
+    from pg_matviews
+    where schemaname ilike 'analytics'
+    union all
+    select distinct
+     'mdm_demo' as database,
+     proname as name,
+     ns.nspname as schema,
+     'function' as type
+    from pg_proc
+     join pg_namespace as ns on pronamespace = ns.oid
+    where ns.nspname ilike 'analytics'
+  
+[0m22:25:25.543532 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:25:25.553807 [debug] [ThreadPool]: SQL status: SELECT 5 in 0.010 seconds
+[0m22:25:25.554924 [debug] [ThreadPool]: On list_mdm_demo_analytics: ROLLBACK
+[0m22:25:25.555327 [debug] [ThreadPool]: On list_mdm_demo_analytics: Close
+[0m22:25:25.562852 [debug] [MainThread]: Using postgres connection "master"
+[0m22:25:25.563830 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "connection_name": "master"} */
+select distinct
+        dependent_namespace.nspname as dependent_schema,
+        dependent_class.relname as dependent_name,
+        referenced_namespace.nspname as referenced_schema,
+        referenced_class.relname as referenced_name
+
+    -- Query for views: views are entries in pg_class with an entry in pg_rewrite, but we avoid
+    -- a seq scan on pg_rewrite by leveraging the fact there is an "internal" row in pg_depend for
+    -- the view...
+    from pg_class as dependent_class
+    join pg_namespace as dependent_namespace on dependent_namespace.oid = dependent_class.relnamespace
+    join pg_depend as dependent_depend on dependent_depend.refobjid = dependent_class.oid
+        and dependent_depend.classid = 'pg_rewrite'::regclass
+        and dependent_depend.refclassid = 'pg_class'::regclass
+        and dependent_depend.deptype = 'i'
+
+    -- ... and via pg_depend (that has a row per column, hence the need for "distinct" above, and
+    -- making sure to exclude the internal row to avoid a view appearing to depend on itself)...
+    join pg_depend as joining_depend on joining_depend.objid = dependent_depend.objid
+        and joining_depend.classid = 'pg_rewrite'::regclass
+        and joining_depend.refclassid = 'pg_class'::regclass
+        and joining_depend.refobjid != dependent_depend.refobjid
+
+    -- ... we can find the tables they query from in pg_class, but excluding system tables. Note we
+    -- don't need need to exclude _dependent_ system tables, because they only query from other
+    -- system tables, and so are automatically excluded by excluding _referenced_ system tables
+    join pg_class as referenced_class on referenced_class.oid = joining_depend.refobjid
+    join pg_namespace as referenced_namespace on referenced_namespace.oid = referenced_class.relnamespace
+        and referenced_namespace.nspname != 'information_schema'
+        and referenced_namespace.nspname not like 'pg\_%'
+
+    order by
+        dependent_schema, dependent_name, referenced_schema, referenced_name;
+[0m22:25:25.564444 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m22:25:25.637096 [debug] [MainThread]: SQL status: SELECT 15 in 0.070 seconds
+[0m22:25:25.644626 [debug] [MainThread]: On master: ROLLBACK
+[0m22:25:25.645151 [debug] [MainThread]: On master: Close
+[0m22:25:25.652553 [debug] [Thread-1 (]: Began running node model.enterprise_mdm.consumer_impact
+[0m22:25:25.653105 [debug] [Thread-2 (]: Began running node model.enterprise_mdm.crosswalk
+[0m22:25:25.653599 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly list_mdm_demo_analytics, now model.enterprise_mdm.consumer_impact)
+[0m22:25:25.654546 [debug] [Thread-2 (]: Acquiring new postgres connection 'model.enterprise_mdm.crosswalk'
+[0m22:25:25.654973 [debug] [Thread-1 (]: Began compiling node model.enterprise_mdm.consumer_impact
+[0m22:25:25.655303 [debug] [Thread-2 (]: Began compiling node model.enterprise_mdm.crosswalk
+[0m22:25:25.661946 [debug] [Thread-1 (]: Writing injected SQL for node "model.enterprise_mdm.consumer_impact"
+[0m22:25:25.663926 [debug] [Thread-2 (]: Writing injected SQL for node "model.enterprise_mdm.crosswalk"
+[0m22:25:25.666010 [debug] [Thread-2 (]: Began executing node model.enterprise_mdm.crosswalk
+[0m22:25:25.666606 [debug] [Thread-2 (]: Finished running node model.enterprise_mdm.crosswalk
+[0m22:25:25.666956 [debug] [Thread-2 (]: Began running node model.enterprise_mdm.golden_records
+[0m22:25:25.667291 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.enterprise_mdm.crosswalk, now model.enterprise_mdm.golden_records)
+[0m22:25:25.667596 [debug] [Thread-2 (]: Began compiling node model.enterprise_mdm.golden_records
+[0m22:25:25.669612 [debug] [Thread-2 (]: Writing injected SQL for node "model.enterprise_mdm.golden_records"
+[0m22:25:25.670469 [debug] [Thread-1 (]: Began executing node model.enterprise_mdm.consumer_impact
+[0m22:25:25.671072 [debug] [Thread-1 (]: Finished running node model.enterprise_mdm.consumer_impact
+[0m22:25:25.671437 [debug] [Thread-1 (]: Began running node operation.enterprise_mdm.enterprise_mdm-on-run-start-0
+[0m22:25:25.671796 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly model.enterprise_mdm.consumer_impact, now operation.enterprise_mdm.enterprise_mdm-on-run-start-0)
+[0m22:25:25.672100 [debug] [Thread-1 (]: Began compiling node operation.enterprise_mdm.enterprise_mdm-on-run-start-0
+[0m22:25:25.672400 [debug] [Thread-2 (]: Began executing node model.enterprise_mdm.golden_records
+[0m22:25:25.673591 [debug] [Thread-1 (]: Writing injected SQL for node "operation.enterprise_mdm.enterprise_mdm-on-run-start-0"
+[0m22:25:25.674373 [debug] [Thread-2 (]: Finished running node model.enterprise_mdm.golden_records
+[0m22:25:25.674854 [debug] [Thread-2 (]: Began running node operation.enterprise_mdm.enterprise_mdm-on-run-start-1
+[0m22:25:25.675440 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.enterprise_mdm.golden_records, now operation.enterprise_mdm.enterprise_mdm-on-run-start-1)
+[0m22:25:25.675802 [debug] [Thread-2 (]: Began compiling node operation.enterprise_mdm.enterprise_mdm-on-run-start-1
+[0m22:25:25.676952 [debug] [Thread-2 (]: Writing injected SQL for node "operation.enterprise_mdm.enterprise_mdm-on-run-start-1"
+[0m22:25:25.677541 [debug] [Thread-1 (]: Began executing node operation.enterprise_mdm.enterprise_mdm-on-run-start-0
+[0m22:25:25.678168 [debug] [Thread-1 (]: Finished running node operation.enterprise_mdm.enterprise_mdm-on-run-start-0
+[0m22:25:25.678534 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.consumer_inbox_unique
+[0m22:25:25.678897 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly operation.enterprise_mdm.enterprise_mdm-on-run-start-0, now test.enterprise_mdm.consumer_inbox_unique)
+[0m22:25:25.679193 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.consumer_inbox_unique
+[0m22:25:25.680366 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.consumer_inbox_unique"
+[0m22:25:25.680808 [debug] [Thread-2 (]: Began executing node operation.enterprise_mdm.enterprise_mdm-on-run-start-1
+[0m22:25:25.681328 [debug] [Thread-2 (]: Finished running node operation.enterprise_mdm.enterprise_mdm-on-run-start-1
+[0m22:25:25.681816 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.consumer_records_unique
+[0m22:25:25.682404 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly operation.enterprise_mdm.enterprise_mdm-on-run-start-1, now test.enterprise_mdm.consumer_records_unique)
+[0m22:25:25.682764 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.consumer_records_unique
+[0m22:25:25.684217 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.consumer_records_unique"
+[0m22:25:25.684658 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.consumer_inbox_unique
+[0m22:25:25.685198 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.consumer_inbox_unique
+[0m22:25:25.685522 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.historical_attribute_lineage
+[0m22:25:25.685954 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.consumer_records_unique
+[0m22:25:25.686332 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.consumer_inbox_unique, now test.enterprise_mdm.historical_attribute_lineage)
+[0m22:25:25.686939 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.consumer_records_unique
+[0m22:25:25.687259 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.historical_attribute_lineage
+[0m22:25:25.687608 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.no_bitemporal_overlap
+[0m22:25:25.690731 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.historical_attribute_lineage"
+[0m22:25:25.691157 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.consumer_records_unique, now test.enterprise_mdm.no_bitemporal_overlap)
+[0m22:25:25.691587 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.no_bitemporal_overlap
+[0m22:25:25.694408 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.no_bitemporal_overlap"
+[0m22:25:25.694888 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.historical_attribute_lineage
+[0m22:25:25.695414 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.historical_attribute_lineage
+[0m22:25:25.695759 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.no_conflicting_registration_ids
+[0m22:25:25.696085 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.historical_attribute_lineage, now test.enterprise_mdm.no_conflicting_registration_ids)
+[0m22:25:25.696383 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.no_conflicting_registration_ids
+[0m22:25:25.698441 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.no_conflicting_registration_ids"
+[0m22:25:25.698994 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.no_conflicting_registration_ids
+[0m22:25:25.699507 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.no_conflicting_registration_ids
+[0m22:25:25.699848 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.no_parent_child_merge
+[0m22:25:25.700243 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.no_conflicting_registration_ids, now test.enterprise_mdm.no_parent_child_merge)
+[0m22:25:25.700534 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.no_parent_child_merge
+[0m22:25:25.702219 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.no_parent_child_merge"
+[0m22:25:25.702669 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.no_bitemporal_overlap
+[0m22:25:25.703371 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.no_bitemporal_overlap
+[0m22:25:25.703818 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.no_retired_memberships
+[0m22:25:25.704180 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.no_bitemporal_overlap, now test.enterprise_mdm.no_retired_memberships)
+[0m22:25:25.704477 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.no_retired_memberships
+[0m22:25:25.707260 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.no_retired_memberships"
+[0m22:25:25.707817 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.no_parent_child_merge
+[0m22:25:25.708406 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.no_parent_child_merge
+[0m22:25:25.708774 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.source_accepted_values_mdm_identity_groups_status__active__retired.0fae5701e7
+[0m22:25:25.709110 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.no_parent_child_merge, now test.enterprise_mdm.source_accepted_values_mdm_identity_groups_status__active__retired.0fae5701e7)
+[0m22:25:25.709411 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.source_accepted_values_mdm_identity_groups_status__active__retired.0fae5701e7
+[0m22:25:25.714033 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.source_accepted_values_mdm_identity_groups_status__active__retired.0fae5701e7"
+[0m22:25:25.714484 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.no_retired_memberships
+[0m22:25:25.715524 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.no_retired_memberships
+[0m22:25:25.715939 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.source_not_null_mdm_decisions_decision_id.324f16383a
+[0m22:25:25.716283 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.no_retired_memberships, now test.enterprise_mdm.source_not_null_mdm_decisions_decision_id.324f16383a)
+[0m22:25:25.716580 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.source_not_null_mdm_decisions_decision_id.324f16383a
+[0m22:25:25.717056 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.source_accepted_values_mdm_identity_groups_status__active__retired.0fae5701e7
+[0m22:25:25.728376 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.source_accepted_values_mdm_identity_groups_status__active__retired.0fae5701e7
+[0m22:25:25.730441 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.source_not_null_mdm_decisions_decision_id.324f16383a"
+[0m22:25:25.730883 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.source_not_null_mdm_golden_history_golden_id.93d7565d76
+[0m22:25:25.731480 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_accepted_values_mdm_identity_groups_status__active__retired.0fae5701e7, now test.enterprise_mdm.source_not_null_mdm_golden_history_golden_id.93d7565d76)
+[0m22:25:25.731812 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.source_not_null_mdm_golden_history_golden_id.93d7565d76
+[0m22:25:25.735851 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.source_not_null_mdm_golden_history_golden_id.93d7565d76"
+[0m22:25:25.736387 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.source_not_null_mdm_decisions_decision_id.324f16383a
+[0m22:25:25.736980 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.source_not_null_mdm_decisions_decision_id.324f16383a
+[0m22:25:25.737562 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.source_not_null_mdm_golden_history_history_id.45fcafadf0
+[0m22:25:25.738393 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_not_null_mdm_decisions_decision_id.324f16383a, now test.enterprise_mdm.source_not_null_mdm_golden_history_history_id.45fcafadf0)
+[0m22:25:25.738753 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.source_not_null_mdm_golden_history_history_id.45fcafadf0
+[0m22:25:25.743502 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.source_not_null_mdm_golden_history_history_id.45fcafadf0"
+[0m22:25:25.744000 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.source_not_null_mdm_golden_history_golden_id.93d7565d76
+[0m22:25:25.744553 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.source_not_null_mdm_golden_history_golden_id.93d7565d76
+[0m22:25:25.744908 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.source_not_null_mdm_identity_groups_golden_id.b4c6633645
+[0m22:25:25.745243 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_not_null_mdm_golden_history_golden_id.93d7565d76, now test.enterprise_mdm.source_not_null_mdm_identity_groups_golden_id.b4c6633645)
+[0m22:25:25.745542 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.source_not_null_mdm_identity_groups_golden_id.b4c6633645
+[0m22:25:25.749519 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.source_not_null_mdm_identity_groups_golden_id.b4c6633645"
+[0m22:25:25.750027 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.source_not_null_mdm_golden_history_history_id.45fcafadf0
+[0m22:25:25.750573 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.source_not_null_mdm_golden_history_history_id.45fcafadf0
+[0m22:25:25.750953 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.source_not_null_mdm_memberships_golden_id.06e7845aa9
+[0m22:25:25.751305 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_not_null_mdm_golden_history_history_id.45fcafadf0, now test.enterprise_mdm.source_not_null_mdm_memberships_golden_id.06e7845aa9)
+[0m22:25:25.751670 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.source_not_null_mdm_memberships_golden_id.06e7845aa9
+[0m22:25:25.756123 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.source_not_null_mdm_memberships_golden_id.06e7845aa9"
+[0m22:25:25.756499 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.source_not_null_mdm_identity_groups_golden_id.b4c6633645
+[0m22:25:25.757150 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.source_not_null_mdm_identity_groups_golden_id.b4c6633645
+[0m22:25:25.757477 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.source_not_null_mdm_memberships_source_key.7f7a8464eb
+[0m22:25:25.757845 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_not_null_mdm_identity_groups_golden_id.b4c6633645, now test.enterprise_mdm.source_not_null_mdm_memberships_source_key.7f7a8464eb)
+[0m22:25:25.758233 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.source_not_null_mdm_memberships_source_key.7f7a8464eb
+[0m22:25:25.762241 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.source_not_null_mdm_memberships_source_key.7f7a8464eb"
+[0m22:25:25.762790 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.source_not_null_mdm_memberships_golden_id.06e7845aa9
+[0m22:25:25.763334 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.source_not_null_mdm_memberships_golden_id.06e7845aa9
+[0m22:25:25.763673 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.source_not_null_mdm_outbox_event_id.3109641ff0
+[0m22:25:25.764088 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_not_null_mdm_memberships_golden_id.06e7845aa9, now test.enterprise_mdm.source_not_null_mdm_outbox_event_id.3109641ff0)
+[0m22:25:25.764396 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.source_not_null_mdm_outbox_event_id.3109641ff0
+[0m22:25:25.768459 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.source_not_null_mdm_outbox_event_id.3109641ff0"
+[0m22:25:25.768981 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.source_not_null_mdm_memberships_source_key.7f7a8464eb
+[0m22:25:25.769583 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.source_not_null_mdm_memberships_source_key.7f7a8464eb
+[0m22:25:25.770149 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.source_not_null_mdm_raw_records_raw_id.29e0cfe5ca
+[0m22:25:25.770489 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_not_null_mdm_memberships_source_key.7f7a8464eb, now test.enterprise_mdm.source_not_null_mdm_raw_records_raw_id.29e0cfe5ca)
+[0m22:25:25.770961 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.source_not_null_mdm_raw_records_raw_id.29e0cfe5ca
+[0m22:25:25.775015 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.source_not_null_mdm_raw_records_raw_id.29e0cfe5ca"
+[0m22:25:25.775504 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.source_not_null_mdm_outbox_event_id.3109641ff0
+[0m22:25:25.776095 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.source_not_null_mdm_outbox_event_id.3109641ff0
+[0m22:25:25.776437 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.source_not_null_mdm_source_records_source_key.cd064caf50
+[0m22:25:25.776918 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_not_null_mdm_outbox_event_id.3109641ff0, now test.enterprise_mdm.source_not_null_mdm_source_records_source_key.cd064caf50)
+[0m22:25:25.777235 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.source_not_null_mdm_source_records_source_key.cd064caf50
+[0m22:25:25.781542 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.source_not_null_mdm_source_records_source_key.cd064caf50"
+[0m22:25:25.782160 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.source_not_null_mdm_source_records_source_key.cd064caf50
+[0m22:25:25.782677 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.source_not_null_mdm_source_records_source_key.cd064caf50
+[0m22:25:25.783042 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.source_not_null_mdm_raw_records_raw_id.29e0cfe5ca
+[0m22:25:25.783488 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.source_relationships_mdm_golden_history_golden_id__golden_id__source_mdm_identity_groups_.0843c7870a
+[0m22:25:25.784154 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.source_not_null_mdm_raw_records_raw_id.29e0cfe5ca
+[0m22:25:25.784524 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_not_null_mdm_source_records_source_key.cd064caf50, now test.enterprise_mdm.source_relationships_mdm_golden_history_golden_id__golden_id__source_mdm_identity_groups_.0843c7870a)
+[0m22:25:25.784972 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.source_relationships_mdm_memberships_golden_id__golden_id__source_mdm_identity_groups_.7e2d1d89f8
+[0m22:25:25.785343 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.source_relationships_mdm_golden_history_golden_id__golden_id__source_mdm_identity_groups_.0843c7870a
+[0m22:25:25.785764 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_not_null_mdm_raw_records_raw_id.29e0cfe5ca, now test.enterprise_mdm.source_relationships_mdm_memberships_golden_id__golden_id__source_mdm_identity_groups_.7e2d1d89f8)
+[0m22:25:25.792614 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.source_relationships_mdm_golden_history_golden_id__golden_id__source_mdm_identity_groups_.0843c7870a"
+[0m22:25:25.793048 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.source_relationships_mdm_memberships_golden_id__golden_id__source_mdm_identity_groups_.7e2d1d89f8
+[0m22:25:25.800288 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.source_relationships_mdm_memberships_golden_id__golden_id__source_mdm_identity_groups_.7e2d1d89f8"
+[0m22:25:25.800772 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.source_relationships_mdm_golden_history_golden_id__golden_id__source_mdm_identity_groups_.0843c7870a
+[0m22:25:25.801426 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.source_relationships_mdm_golden_history_golden_id__golden_id__source_mdm_identity_groups_.0843c7870a
+[0m22:25:25.801843 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.source_relationships_mdm_memberships_golden_id__golden_id__source_mdm_identity_groups_.7e2d1d89f8
+[0m22:25:25.802250 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.source_relationships_mdm_memberships_source_key__source_key__source_mdm_source_records_.6a8a6e961d
+[0m22:25:25.802895 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.source_relationships_mdm_memberships_golden_id__golden_id__source_mdm_identity_groups_.7e2d1d89f8
+[0m22:25:25.803350 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_relationships_mdm_golden_history_golden_id__golden_id__source_mdm_identity_groups_.0843c7870a, now test.enterprise_mdm.source_relationships_mdm_memberships_source_key__source_key__source_mdm_source_records_.6a8a6e961d)
+[0m22:25:25.803751 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.source_unique_mdm_decisions_decision_id.03f494eb11
+[0m22:25:25.804089 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.source_relationships_mdm_memberships_source_key__source_key__source_mdm_source_records_.6a8a6e961d
+[0m22:25:25.804590 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_relationships_mdm_memberships_golden_id__golden_id__source_mdm_identity_groups_.7e2d1d89f8, now test.enterprise_mdm.source_unique_mdm_decisions_decision_id.03f494eb11)
+[0m22:25:25.811383 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.source_relationships_mdm_memberships_source_key__source_key__source_mdm_source_records_.6a8a6e961d"
+[0m22:25:25.811798 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.source_unique_mdm_decisions_decision_id.03f494eb11
+[0m22:25:25.817448 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.source_unique_mdm_decisions_decision_id.03f494eb11"
+[0m22:25:25.817903 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.source_relationships_mdm_memberships_source_key__source_key__source_mdm_source_records_.6a8a6e961d
+[0m22:25:25.818469 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.source_relationships_mdm_memberships_source_key__source_key__source_mdm_source_records_.6a8a6e961d
+[0m22:25:25.818849 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.source_unique_mdm_golden_history_history_id.bcc7ef38b4
+[0m22:25:25.819189 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_relationships_mdm_memberships_source_key__source_key__source_mdm_source_records_.6a8a6e961d, now test.enterprise_mdm.source_unique_mdm_golden_history_history_id.bcc7ef38b4)
+[0m22:25:25.819489 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.source_unique_mdm_golden_history_history_id.bcc7ef38b4
+[0m22:25:25.823418 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.source_unique_mdm_golden_history_history_id.bcc7ef38b4"
+[0m22:25:25.823879 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.source_unique_mdm_decisions_decision_id.03f494eb11
+[0m22:25:25.824406 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.source_unique_mdm_decisions_decision_id.03f494eb11
+[0m22:25:25.824778 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.source_unique_mdm_identity_groups_golden_id.e1bcfd119f
+[0m22:25:25.825183 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_unique_mdm_decisions_decision_id.03f494eb11, now test.enterprise_mdm.source_unique_mdm_identity_groups_golden_id.e1bcfd119f)
+[0m22:25:25.825482 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.source_unique_mdm_identity_groups_golden_id.e1bcfd119f
+[0m22:25:25.829387 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.source_unique_mdm_identity_groups_golden_id.e1bcfd119f"
+[0m22:25:25.829799 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.source_unique_mdm_golden_history_history_id.bcc7ef38b4
+[0m22:25:25.830416 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.source_unique_mdm_golden_history_history_id.bcc7ef38b4
+[0m22:25:25.830761 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.source_unique_mdm_memberships_source_key.cb57b4181b
+[0m22:25:25.831100 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_unique_mdm_golden_history_history_id.bcc7ef38b4, now test.enterprise_mdm.source_unique_mdm_memberships_source_key.cb57b4181b)
+[0m22:25:25.831395 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.source_unique_mdm_memberships_source_key.cb57b4181b
+[0m22:25:25.835948 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.source_unique_mdm_memberships_source_key.cb57b4181b"
+[0m22:25:25.836493 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.source_unique_mdm_memberships_source_key.cb57b4181b
+[0m22:25:25.837047 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.source_unique_mdm_memberships_source_key.cb57b4181b
+[0m22:25:25.837455 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.source_unique_mdm_outbox_event_id.11eb4c256e
+[0m22:25:25.837856 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_unique_mdm_memberships_source_key.cb57b4181b, now test.enterprise_mdm.source_unique_mdm_outbox_event_id.11eb4c256e)
+[0m22:25:25.838197 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.source_unique_mdm_identity_groups_golden_id.e1bcfd119f
+[0m22:25:25.838531 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.source_unique_mdm_outbox_event_id.11eb4c256e
+[0m22:25:25.839144 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.source_unique_mdm_identity_groups_golden_id.e1bcfd119f
+[0m22:25:25.843143 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.source_unique_mdm_outbox_event_id.11eb4c256e"
+[0m22:25:25.843582 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.source_unique_mdm_raw_records_raw_id.dab4cff7e8
+[0m22:25:25.844125 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_unique_mdm_identity_groups_golden_id.e1bcfd119f, now test.enterprise_mdm.source_unique_mdm_raw_records_raw_id.dab4cff7e8)
+[0m22:25:25.844434 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.source_unique_mdm_raw_records_raw_id.dab4cff7e8
+[0m22:25:25.849031 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.source_unique_mdm_raw_records_raw_id.dab4cff7e8"
+[0m22:25:25.849505 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.source_unique_mdm_outbox_event_id.11eb4c256e
+[0m22:25:25.850104 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.source_unique_mdm_outbox_event_id.11eb4c256e
+[0m22:25:25.850430 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.source_unique_mdm_source_records_source_key.2f6c2f23a6
+[0m22:25:25.850780 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_unique_mdm_outbox_event_id.11eb4c256e, now test.enterprise_mdm.source_unique_mdm_source_records_source_key.2f6c2f23a6)
+[0m22:25:25.851079 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.source_unique_mdm_source_records_source_key.2f6c2f23a6
+[0m22:25:25.854997 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.source_unique_mdm_source_records_source_key.2f6c2f23a6"
+[0m22:25:25.855510 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.source_unique_mdm_raw_records_raw_id.dab4cff7e8
+[0m22:25:25.856102 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.source_unique_mdm_raw_records_raw_id.dab4cff7e8
+[0m22:25:25.856440 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.valid_history_intervals
+[0m22:25:25.856819 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_unique_mdm_raw_records_raw_id.dab4cff7e8, now test.enterprise_mdm.valid_history_intervals)
+[0m22:25:25.857191 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.valid_history_intervals
+[0m22:25:25.858510 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.valid_history_intervals"
+[0m22:25:25.858964 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.source_unique_mdm_source_records_source_key.2f6c2f23a6
+[0m22:25:25.859488 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.source_unique_mdm_source_records_source_key.2f6c2f23a6
+[0m22:25:25.859845 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.full_crosswalk_coverage
+[0m22:25:25.860297 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.source_unique_mdm_source_records_source_key.2f6c2f23a6, now test.enterprise_mdm.full_crosswalk_coverage)
+[0m22:25:25.860728 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.full_crosswalk_coverage
+[0m22:25:25.862423 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.full_crosswalk_coverage"
+[0m22:25:25.862950 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.valid_history_intervals
+[0m22:25:25.863510 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.valid_history_intervals
+[0m22:25:25.863850 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.no_mixed_entity_groups
+[0m22:25:25.864174 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.valid_history_intervals, now test.enterprise_mdm.no_mixed_entity_groups)
+[0m22:25:25.864527 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.no_mixed_entity_groups
+[0m22:25:25.866037 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.no_mixed_entity_groups"
+[0m22:25:25.866501 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.full_crosswalk_coverage
+[0m22:25:25.867125 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.full_crosswalk_coverage
+[0m22:25:25.867444 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.not_null_crosswalk_golden_id.a9723c9117
+[0m22:25:25.867792 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.full_crosswalk_coverage, now test.enterprise_mdm.not_null_crosswalk_golden_id.a9723c9117)
+[0m22:25:25.868087 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.not_null_crosswalk_golden_id.a9723c9117
+[0m22:25:25.872558 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.not_null_crosswalk_golden_id.a9723c9117"
+[0m22:25:25.872972 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.no_mixed_entity_groups
+[0m22:25:25.873650 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.no_mixed_entity_groups
+[0m22:25:25.874127 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.not_null_crosswalk_source_key.2ca9762a39
+[0m22:25:25.874484 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.no_mixed_entity_groups, now test.enterprise_mdm.not_null_crosswalk_source_key.2ca9762a39)
+[0m22:25:25.874810 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.not_null_crosswalk_source_key.2ca9762a39
+[0m22:25:25.879795 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.not_null_crosswalk_source_key.2ca9762a39"
+[0m22:25:25.880332 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.not_null_crosswalk_golden_id.a9723c9117
+[0m22:25:25.880914 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.not_null_crosswalk_golden_id.a9723c9117
+[0m22:25:25.881273 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.unique_crosswalk_source_key.1b1137cb13
+[0m22:25:25.881614 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.not_null_crosswalk_golden_id.a9723c9117, now test.enterprise_mdm.unique_crosswalk_source_key.1b1137cb13)
+[0m22:25:25.882045 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.unique_crosswalk_source_key.1b1137cb13
+[0m22:25:25.886100 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.unique_crosswalk_source_key.1b1137cb13"
+[0m22:25:25.886549 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.not_null_crosswalk_source_key.2ca9762a39
+[0m22:25:25.887124 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.not_null_crosswalk_source_key.2ca9762a39
+[0m22:25:25.887459 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.accepted_values_consumer_impact_reconciliation_status__aligned__unknown_identity__retirement_pending__activation_pending__update_pending__consumer_ahead.dc69c1a872
+[0m22:25:25.887837 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.not_null_crosswalk_source_key.2ca9762a39, now test.enterprise_mdm.accepted_values_consumer_impact_reconciliation_status__aligned__unknown_identity__retirement_pending__activation_pending__update_pending__consumer_ahead.dc69c1a872)
+[0m22:25:25.888164 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.accepted_values_consumer_impact_reconciliation_status__aligned__unknown_identity__retirement_pending__activation_pending__update_pending__consumer_ahead.dc69c1a872
+[0m22:25:25.892297 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.accepted_values_consumer_impact_reconciliation_status__aligned__unknown_identity__retirement_pending__activation_pending__update_pending__consumer_ahead.dc69c1a872"
+[0m22:25:25.892858 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.unique_crosswalk_source_key.1b1137cb13
+[0m22:25:25.893388 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.unique_crosswalk_source_key.1b1137cb13
+[0m22:25:25.893791 [debug] [Thread-2 (]: Began running node model.enterprise_mdm.attribute_lineage
+[0m22:25:25.894156 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.unique_crosswalk_source_key.1b1137cb13, now model.enterprise_mdm.attribute_lineage)
+[0m22:25:25.894806 [debug] [Thread-2 (]: Began compiling node model.enterprise_mdm.attribute_lineage
+[0m22:25:25.896418 [debug] [Thread-2 (]: Writing injected SQL for node "model.enterprise_mdm.attribute_lineage"
+[0m22:25:25.896948 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.accepted_values_consumer_impact_reconciliation_status__aligned__unknown_identity__retirement_pending__activation_pending__update_pending__consumer_ahead.dc69c1a872
+[0m22:25:25.897482 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.accepted_values_consumer_impact_reconciliation_status__aligned__unknown_identity__retirement_pending__activation_pending__update_pending__consumer_ahead.dc69c1a872
+[0m22:25:25.897864 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.not_null_golden_records_golden_id.8bcc4cd7af
+[0m22:25:25.898195 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.accepted_values_consumer_impact_reconciliation_status__aligned__unknown_identity__retirement_pending__activation_pending__update_pending__consumer_ahead.dc69c1a872, now test.enterprise_mdm.not_null_golden_records_golden_id.8bcc4cd7af)
+[0m22:25:25.898484 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.not_null_golden_records_golden_id.8bcc4cd7af
+[0m22:25:25.902570 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.not_null_golden_records_golden_id.8bcc4cd7af"
+[0m22:25:25.903154 [debug] [Thread-2 (]: Began executing node model.enterprise_mdm.attribute_lineage
+[0m22:25:25.903687 [debug] [Thread-2 (]: Finished running node model.enterprise_mdm.attribute_lineage
+[0m22:25:25.904081 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.not_null_golden_records_provenance.e6f5619ee1
+[0m22:25:25.904409 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.enterprise_mdm.attribute_lineage, now test.enterprise_mdm.not_null_golden_records_provenance.e6f5619ee1)
+[0m22:25:25.904748 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.not_null_golden_records_provenance.e6f5619ee1
+[0m22:25:25.908858 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.not_null_golden_records_provenance.e6f5619ee1"
+[0m22:25:25.909674 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.not_null_golden_records_golden_id.8bcc4cd7af
+[0m22:25:25.910307 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.not_null_golden_records_golden_id.8bcc4cd7af
+[0m22:25:25.910662 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.unique_golden_records_golden_id.c80d8a5fcc
+[0m22:25:25.911061 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.not_null_golden_records_golden_id.8bcc4cd7af, now test.enterprise_mdm.unique_golden_records_golden_id.c80d8a5fcc)
+[0m22:25:25.911372 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.unique_golden_records_golden_id.c80d8a5fcc
+[0m22:25:25.915392 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.unique_golden_records_golden_id.c80d8a5fcc"
+[0m22:25:25.915960 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.not_null_golden_records_provenance.e6f5619ee1
+[0m22:25:25.916489 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.not_null_golden_records_provenance.e6f5619ee1
+[0m22:25:25.916868 [debug] [Thread-2 (]: Began running node model.enterprise_mdm.quality_report
+[0m22:25:25.917373 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.not_null_golden_records_provenance.e6f5619ee1, now model.enterprise_mdm.quality_report)
+[0m22:25:25.917757 [debug] [Thread-2 (]: Began compiling node model.enterprise_mdm.quality_report
+[0m22:25:25.920501 [debug] [Thread-2 (]: Writing injected SQL for node "model.enterprise_mdm.quality_report"
+[0m22:25:25.920974 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.unique_golden_records_golden_id.c80d8a5fcc
+[0m22:25:25.921527 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.unique_golden_records_golden_id.c80d8a5fcc
+[0m22:25:25.921908 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.not_null_attribute_lineage_lineage.5537c29b34
+[0m22:25:25.922345 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.unique_golden_records_golden_id.c80d8a5fcc, now test.enterprise_mdm.not_null_attribute_lineage_lineage.5537c29b34)
+[0m22:25:25.922657 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.not_null_attribute_lineage_lineage.5537c29b34
+[0m22:25:25.926699 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.not_null_attribute_lineage_lineage.5537c29b34"
+[0m22:25:25.927132 [debug] [Thread-2 (]: Began executing node model.enterprise_mdm.quality_report
+[0m22:25:25.927672 [debug] [Thread-2 (]: Finished running node model.enterprise_mdm.quality_report
+[0m22:25:25.928242 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.not_null_attribute_lineage_lineage.5537c29b34
+[0m22:25:25.928575 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.not_null_quality_report_metric.2e249e1d20
+[0m22:25:25.929108 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.not_null_attribute_lineage_lineage.5537c29b34
+[0m22:25:25.929451 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly model.enterprise_mdm.quality_report, now test.enterprise_mdm.not_null_quality_report_metric.2e249e1d20)
+[0m22:25:25.929862 [debug] [Thread-1 (]: Began running node test.enterprise_mdm.not_null_quality_report_value.4cbab5b787
+[0m22:25:25.930225 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.not_null_quality_report_metric.2e249e1d20
+[0m22:25:25.930738 [debug] [Thread-1 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.not_null_attribute_lineage_lineage.5537c29b34, now test.enterprise_mdm.not_null_quality_report_value.4cbab5b787)
+[0m22:25:25.934913 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.not_null_quality_report_metric.2e249e1d20"
+[0m22:25:25.935431 [debug] [Thread-1 (]: Began compiling node test.enterprise_mdm.not_null_quality_report_value.4cbab5b787
+[0m22:25:25.939457 [debug] [Thread-1 (]: Writing injected SQL for node "test.enterprise_mdm.not_null_quality_report_value.4cbab5b787"
+[0m22:25:25.939958 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.not_null_quality_report_metric.2e249e1d20
+[0m22:25:25.940494 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.not_null_quality_report_metric.2e249e1d20
+[0m22:25:25.940864 [debug] [Thread-2 (]: Began running node test.enterprise_mdm.unique_quality_report_metric.929a8ec142
+[0m22:25:25.941293 [debug] [Thread-2 (]: Re-using an available connection from the pool (formerly test.enterprise_mdm.not_null_quality_report_metric.2e249e1d20, now test.enterprise_mdm.unique_quality_report_metric.929a8ec142)
+[0m22:25:25.941609 [debug] [Thread-2 (]: Began compiling node test.enterprise_mdm.unique_quality_report_metric.929a8ec142
+[0m22:25:25.945581 [debug] [Thread-2 (]: Writing injected SQL for node "test.enterprise_mdm.unique_quality_report_metric.929a8ec142"
+[0m22:25:25.946058 [debug] [Thread-1 (]: Began executing node test.enterprise_mdm.not_null_quality_report_value.4cbab5b787
+[0m22:25:25.946626 [debug] [Thread-1 (]: Finished running node test.enterprise_mdm.not_null_quality_report_value.4cbab5b787
+[0m22:25:25.947107 [debug] [Thread-2 (]: Began executing node test.enterprise_mdm.unique_quality_report_metric.929a8ec142
+[0m22:25:25.947631 [debug] [Thread-2 (]: Finished running node test.enterprise_mdm.unique_quality_report_metric.929a8ec142
+[0m22:25:25.948751 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m22:25:25.949047 [debug] [MainThread]: Connection 'test.enterprise_mdm.not_null_quality_report_value.4cbab5b787' was properly closed.
+[0m22:25:25.949298 [debug] [MainThread]: Connection 'test.enterprise_mdm.unique_quality_report_metric.929a8ec142' was properly closed.
+[0m22:25:25.952692 [debug] [MainThread]: Command end result
+[0m22:25:26.047101 [debug] [MainThread]: Wrote artifact WritableManifest to /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/manifest.json
+[0m22:25:26.049927 [debug] [MainThread]: Wrote artifact SemanticManifest to /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/semantic_manifest.json
+[0m22:25:26.059630 [debug] [MainThread]: Wrote artifact OsiDocument to /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/osi_document.json
+[0m22:25:26.065577 [debug] [MainThread]: Wrote artifact RunExecutionResult to /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/run_results.json
+[0m22:25:26.071357 [debug] [MainThread]: Acquiring new postgres connection 'generate_catalog'
+[0m22:25:26.071638 [info ] [MainThread]: Building catalog
+[0m22:25:26.079624 [debug] [ThreadPool]: Acquiring new postgres connection 'mdm_demo.information_schema'
+[0m22:25:26.084453 [debug] [ThreadPool]: Using postgres connection "mdm_demo.information_schema"
+[0m22:25:26.084872 [debug] [ThreadPool]: On mdm_demo.information_schema: /* {"app": "dbt", "dbt_version": "1.12.7", "profile_name": "enterprise_mdm", "target_name": "postgres", "connection_name": "mdm_demo.information_schema"} */
+
+    
+    
+
+    select
+        'mdm_demo' as table_database,
+        sch.nspname as table_schema,
+        tbl.relname as table_name,
+        case tbl.relkind
+            when 'v' then 'VIEW'
+            when 'm' then 'MATERIALIZED VIEW'
+            else 'BASE TABLE'
+        end as table_type,
+        tbl_desc.description as table_comment,
+        col.attname as column_name,
+        col.attnum as column_index,
+        pg_catalog.format_type(col.atttypid, col.atttypmod) as column_type,
+        col_desc.description as column_comment,
+        pg_get_userbyid(tbl.relowner) as table_owner
+
+    from pg_catalog.pg_namespace sch
+    join pg_catalog.pg_class tbl on tbl.relnamespace = sch.oid
+    join pg_catalog.pg_attribute col on col.attrelid = tbl.oid
+    left outer join pg_catalog.pg_description tbl_desc on (tbl_desc.objoid = tbl.oid and tbl_desc.objsubid = 0)
+    left outer join pg_catalog.pg_description col_desc on (col_desc.objoid = tbl.oid and col_desc.objsubid = col.attnum)
+    where ((upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('decisions')) or (upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('consumer_records')) or (upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('identity_groups')) or (upper(sch.nspname) = upper('analytics') and
+           upper(tbl.relname) = upper('golden_records')) or (upper(sch.nspname) = upper('analytics') and
+           upper(tbl.relname) = upper('attribute_lineage')) or (upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('run_sources')) or (upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('candidates')) or (upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('decision_events')) or (upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('consumer_inbox')) or (upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('standard_records')) or (upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('memberships')) or (upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('runs')) or (upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('consumer_crosswalk')) or (upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('raw_records')) or (upper(sch.nspname) = upper('analytics') and
+           upper(tbl.relname) = upper('consumer_impact')) or (upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('source_records')) or (upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('membership_history')) or (upper(sch.nspname) = upper('analytics') and
+           upper(tbl.relname) = upper('quality_report')) or (upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('outbox')) or (upper(sch.nspname) = upper('public') and
+           upper(tbl.relname) = upper('golden_history')) or (upper(sch.nspname) = upper('analytics') and
+           upper(tbl.relname) = upper('crosswalk')))
+      and not pg_is_other_temp_schema(sch.oid) -- not a temporary schema belonging to another session
+      and tbl.relpersistence in ('p', 'u') -- [p]ermanent table or [u]nlogged table. Exclude [t]emporary tables
+      and tbl.relkind in ('r', 'v', 'f', 'p', 'm') -- o[r]dinary table, [v]iew, [f]oreign table, [p]artitioned table, [m]aterialized view. Other values are [i]ndex, [S]equence, [c]omposite type, [t]OAST table
+      and col.attnum > 0 -- negative numbers are used for system columns such as oid
+      and not col.attisdropped -- column as not been dropped
+
+    order by
+        sch.nspname,
+        tbl.relname,
+        col.attnum
+[0m22:25:26.085196 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m22:25:26.097755 [debug] [ThreadPool]: SQL status: SELECT 127 in 0.012 seconds
+[0m22:25:26.101583 [debug] [ThreadPool]: On mdm_demo.information_schema: ROLLBACK
+[0m22:25:26.102124 [debug] [ThreadPool]: On mdm_demo.information_schema: Close
+[0m22:25:26.113534 [debug] [MainThread]: Wrote artifact CatalogArtifact to /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/catalog.json
+[0m22:25:26.141698 [debug] [MainThread]: Wrote artifact WritableManifest to /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/manifest.json
+[0m22:25:26.143656 [debug] [MainThread]: Wrote artifact SemanticManifest to /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/semantic_manifest.json
+[0m22:25:26.145114 [debug] [MainThread]: Wrote artifact OsiDocument to /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/osi_document.json
+[0m22:25:26.145680 [info ] [MainThread]: Catalog written to /workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/dbt/docs/catalog.json
+[0m22:25:26.146624 [debug] [MainThread]: Resource report: {"command_name": "generate", "command_success": true, "command_wall_clock_time": 2.3175907, "process_in_blocks": "2080", "process_kernel_time": 0.186896, "process_mem_max_rss": "143752", "process_out_blocks": "8736", "process_user_time": 3.133653}
+[0m22:25:26.147102 [debug] [MainThread]: Command `dbt docs generate` succeeded at 22:25:26.147032 after 2.32 seconds
+[0m22:25:26.147384 [debug] [MainThread]: Connection 'generate_catalog' was properly closed.
+[0m22:25:26.147604 [debug] [MainThread]: Connection 'mdm_demo.information_schema' was properly closed.
+[0m22:25:26.148005 [debug] [MainThread]: Flushing usage events

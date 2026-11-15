@@ -1,0 +1,1703 @@
+{
+  "main_sha": "03c927b3f19e387df770130d59d9c09bea3800d1",
+  "base_sha": "16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+  "files": [
+    {
+      "path": ".github/workflows/quality.yml",
+      "sha": "92626b5f35462556750fe915745fa28716de55a0",
+      "chars": 19481,
+      "source_commit": "03c927b3f19e387df770130d59d9c09bea3800d1"
+    },
+    {
+      "path": "Dockerfile",
+      "sha": "9ff624a5dbbb41a75990508efbbc895f7877de45",
+      "chars": 1236,
+      "source_commit": "03c927b3f19e387df770130d59d9c09bea3800d1"
+    },
+    {
+      "path": "README.md",
+      "sha": "f0046c3ae9d6236b369b2b0ff062c550b419b096",
+      "chars": 13934,
+      "source_commit": "03c927b3f19e387df770130d59d9c09bea3800d1"
+    },
+    {
+      "path": "docs/acceptance.md",
+      "sha": "83748e16bc9485ae34ab5dcb392e443ebe63cbf4",
+      "chars": 12093,
+      "source_commit": "03c927b3f19e387df770130d59d9c09bea3800d1"
+    },
+    {
+      "path": "docs/dependency-refresh-2026-11-15.md",
+      "sha": "8b67db59128c928a1d46f87d35d3d4fb2195dc52",
+      "chars": 3639,
+      "source_commit": "03c927b3f19e387df770130d59d9c09bea3800d1"
+    },
+    {
+      "path": "docs/operations.md",
+      "sha": "db79de4dc78a876f09fdedc4df9d31a57e45b7d4",
+      "chars": 22628,
+      "source_commit": "03c927b3f19e387df770130d59d9c09bea3800d1"
+    },
+    {
+      "path": "docs/publication.md",
+      "sha": "43a351ec66a81425c977054e4158dbe46ace5ce4",
+      "chars": 10061,
+      "source_commit": "03c927b3f19e387df770130d59d9c09bea3800d1"
+    },
+    {
+      "path": "docs/releases/0.1.0rc1.md",
+      "sha": "beb141b4cb08e4dce886360b93717bb232b85b9b",
+      "chars": 10663,
+      "source_commit": "03c927b3f19e387df770130d59d9c09bea3800d1"
+    },
+    {
+      "path": "docs/verification.md",
+      "sha": "7c4c0d41e977320868b622e6d1dcfd63fe5050a0",
+      "chars": 11822,
+      "source_commit": "03c927b3f19e387df770130d59d9c09bea3800d1"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha": "21189f6c6dc2858a23cc81210ad22bdc3f16cc39",
+      "chars": 1067,
+      "source_commit": "03c927b3f19e387df770130d59d9c09bea3800d1"
+    },
+    {
+      "path": "tests/test_dependency_compatibility.py",
+      "sha": "f3980636bca92c517b93242d98eae77cecd0a8ca",
+      "chars": 2598,
+      "source_commit": "03c927b3f19e387df770130d59d9c09bea3800d1"
+    },
+    {
+      "path": "uv.lock",
+      "sha": "ffb81c5dc00c15fbe67669c7d92a000458196cba",
+      "chars": 181736,
+      "source_commit": "03c927b3f19e387df770130d59d9c09bea3800d1"
+    }
+  ],
+  "compare": {
+    "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/compare/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7...03c927b3f19e387df770130d59d9c09bea3800d1",
+    "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/compare/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7...03c927b3f19e387df770130d59d9c09bea3800d1",
+    "permalink_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/compare/mehdisafer:16f7325...mehdisafer:03c927b",
+    "diff_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/compare/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7...03c927b3f19e387df770130d59d9c09bea3800d1.diff",
+    "patch_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/compare/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7...03c927b3f19e387df770130d59d9c09bea3800d1.patch",
+    "base_commit": {
+      "sha": "16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+      "node_id": "C_kwDOVtqZYNoAKDE2ZjczMjVjNWY4YjE2Y2UyYzUyNTlkMmZiYTQ0ZjQwZTc4YmViZTc",
+      "commit": {
+        "author": {
+          "name": "mehdisafer",
+          "email": "142994379+mehdisafer@users.noreply.github.com",
+          "date": "2026-11-14T14:28:34Z"
+        },
+        "committer": {
+          "name": "mehdisafer",
+          "email": "142994379+mehdisafer@users.noreply.github.com",
+          "date": "2026-11-14T14:28:34Z"
+        },
+        "message": "chore: finalize main delivery and constrain Python update proposals",
+        "tree": {
+          "sha": "bcc83ae57e77f0081dbfbd276ddd6108ec5ee1d2",
+          "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/trees/bcc83ae57e77f0081dbfbd276ddd6108ec5ee1d2"
+        },
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/commits/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+        "comment_count": 0,
+        "verification": {
+          "verified": false,
+          "reason": "unsigned",
+          "signature": null,
+          "payload": null,
+          "verified_at": null
+        }
+      },
+      "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+      "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+      "comments_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7/comments",
+      "author": {
+        "login": "mehdisafer",
+        "id": 142994379,
+        "node_id": "U_kgDOCIXryw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mehdisafer",
+        "html_url": "https://github.com/mehdisafer",
+        "followers_url": "https://api.github.com/users/mehdisafer/followers",
+        "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+        "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+        "repos_url": "https://api.github.com/users/mehdisafer/repos",
+        "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "mehdisafer",
+        "id": 142994379,
+        "node_id": "U_kgDOCIXryw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mehdisafer",
+        "html_url": "https://github.com/mehdisafer",
+        "followers_url": "https://api.github.com/users/mehdisafer/followers",
+        "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+        "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+        "repos_url": "https://api.github.com/users/mehdisafer/repos",
+        "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "e27f4c2f58d812a2213b1457378095dc72dafd8a",
+          "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/e27f4c2f58d812a2213b1457378095dc72dafd8a",
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/e27f4c2f58d812a2213b1457378095dc72dafd8a"
+        }
+      ]
+    },
+    "merge_base_commit": {
+      "sha": "16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+      "node_id": "C_kwDOVtqZYNoAKDE2ZjczMjVjNWY4YjE2Y2UyYzUyNTlkMmZiYTQ0ZjQwZTc4YmViZTc",
+      "commit": {
+        "author": {
+          "name": "mehdisafer",
+          "email": "142994379+mehdisafer@users.noreply.github.com",
+          "date": "2026-11-14T14:28:34Z"
+        },
+        "committer": {
+          "name": "mehdisafer",
+          "email": "142994379+mehdisafer@users.noreply.github.com",
+          "date": "2026-11-14T14:28:34Z"
+        },
+        "message": "chore: finalize main delivery and constrain Python update proposals",
+        "tree": {
+          "sha": "bcc83ae57e77f0081dbfbd276ddd6108ec5ee1d2",
+          "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/trees/bcc83ae57e77f0081dbfbd276ddd6108ec5ee1d2"
+        },
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/commits/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+        "comment_count": 0,
+        "verification": {
+          "verified": false,
+          "reason": "unsigned",
+          "signature": null,
+          "payload": null,
+          "verified_at": null
+        }
+      },
+      "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+      "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+      "comments_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7/comments",
+      "author": {
+        "login": "mehdisafer",
+        "id": 142994379,
+        "node_id": "U_kgDOCIXryw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mehdisafer",
+        "html_url": "https://github.com/mehdisafer",
+        "followers_url": "https://api.github.com/users/mehdisafer/followers",
+        "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+        "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+        "repos_url": "https://api.github.com/users/mehdisafer/repos",
+        "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "mehdisafer",
+        "id": 142994379,
+        "node_id": "U_kgDOCIXryw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mehdisafer",
+        "html_url": "https://github.com/mehdisafer",
+        "followers_url": "https://api.github.com/users/mehdisafer/followers",
+        "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+        "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+        "repos_url": "https://api.github.com/users/mehdisafer/repos",
+        "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "e27f4c2f58d812a2213b1457378095dc72dafd8a",
+          "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/e27f4c2f58d812a2213b1457378095dc72dafd8a",
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/e27f4c2f58d812a2213b1457378095dc72dafd8a"
+        }
+      ]
+    },
+    "status": "ahead",
+    "ahead_by": 2,
+    "behind_by": 0,
+    "total_commits": 2,
+    "commits": [
+      {
+        "sha": "baae6a477278d72afb6ffaae8a84b8ee49f7d800",
+        "node_id": "C_kwDOVtqZYNoAKGJhYWU2YTQ3NzI3OGQ3MmFmYjZmZmFhZThhODRiOGVlNDlmN2Q4MDA",
+        "commit": {
+          "author": {
+            "name": "mehdisafer",
+            "email": "142994379+mehdisafer@users.noreply.github.com",
+            "date": "2026-11-15T21:26:41Z"
+          },
+          "committer": {
+            "name": "mehdisafer",
+            "email": "142994379+mehdisafer@users.noreply.github.com",
+            "date": "2026-11-15T21:26:41Z"
+          },
+          "message": "build: consolidate Python 3.12 security and runtime dependency updates",
+          "tree": {
+            "sha": "597edf47a88c1a4a346be367fe8d655962027a06",
+            "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/trees/597edf47a88c1a4a346be367fe8d655962027a06"
+          },
+          "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/commits/baae6a477278d72afb6ffaae8a84b8ee49f7d800",
+          "comment_count": 0,
+          "verification": {
+            "verified": false,
+            "reason": "unsigned",
+            "signature": null,
+            "payload": null,
+            "verified_at": null
+          }
+        },
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/baae6a477278d72afb6ffaae8a84b8ee49f7d800",
+        "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/baae6a477278d72afb6ffaae8a84b8ee49f7d800",
+        "comments_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/baae6a477278d72afb6ffaae8a84b8ee49f7d800/comments",
+        "author": {
+          "login": "mehdisafer",
+          "id": 142994379,
+          "node_id": "U_kgDOCIXryw",
+          "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/mehdisafer",
+          "html_url": "https://github.com/mehdisafer",
+          "followers_url": "https://api.github.com/users/mehdisafer/followers",
+          "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+          "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+          "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+          "repos_url": "https://api.github.com/users/mehdisafer/repos",
+          "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "committer": {
+          "login": "mehdisafer",
+          "id": 142994379,
+          "node_id": "U_kgDOCIXryw",
+          "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/mehdisafer",
+          "html_url": "https://github.com/mehdisafer",
+          "followers_url": "https://api.github.com/users/mehdisafer/followers",
+          "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+          "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+          "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+          "repos_url": "https://api.github.com/users/mehdisafer/repos",
+          "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "parents": [
+          {
+            "sha": "16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+            "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+            "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7"
+          }
+        ]
+      },
+      {
+        "sha": "03c927b3f19e387df770130d59d9c09bea3800d1",
+        "node_id": "C_kwDOVtqZYNoAKDAzYzkyN2IzZjE5ZTM4N2RmNzcwMTMwZDU5ZDljMDliZWEzODAwZDE",
+        "commit": {
+          "author": {
+            "name": "mehdisafer",
+            "email": "142994379+mehdisafer@users.noreply.github.com",
+            "date": "2026-11-15T21:31:22Z"
+          },
+          "committer": {
+            "name": "GitHub",
+            "email": "noreply@github.com",
+            "date": "2026-11-15T21:31:22Z"
+          },
+          "message": "Merge dependency refresh for Python 3.12 reference\n\nIntegrate the documented lock and runtime upgrade. Historical validation remains dated; live CI and provider acceptance stay open in issue #1.",
+          "tree": {
+            "sha": "597edf47a88c1a4a346be367fe8d655962027a06",
+            "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/trees/597edf47a88c1a4a346be367fe8d655962027a06"
+          },
+          "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/commits/03c927b3f19e387df770130d59d9c09bea3800d1",
+          "comment_count": 0,
+          "verification": {
+            "verified": true,
+            "reason": "valid",
+            "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJq+iSqCRC1aQ7uu5UhlAAARpMQAByxSgqih9YvOndQmDhpVMuE\nlXo9CJ911kho6jrhfQS+jxlVOEDUS+zv22z9sgtPxn+xQmE7wQOnErcNPlNe12vV\nNEJNPhzNwCNxQhyAaC9ywNciNUfYXs4idNwGrJQVusSjN9OjhMonwuFTn37fAHAI\nni693SQbVY6MVVey/DadBDYKTr5qBHv1jQ4PsAkLIUj10pjy/6W6egiG3Fmq26Ro\nJB0m1PpEUR1NUxw/ljUTwnfrz8Cm9ErkHqwDlDbEN7+sj+enFWe9os57Fq51LWIT\nAd5j+wbGdBuB1lFfr22gVejUoT4Z4jRdtgiXPoCiBieUsqBdeym9Vo8RLR7s0B9C\nkwH0tytLwYiDsIp/lJ3d7338Clf3cAmMd5w3jDNPKaPqr6NAkwl9hxxiZ3XuOPd+\nflfX8aIRuf+KD8rlq5ZZ1g42z5AY5JwZlowbxGzw6BgjFMvgE49F6NLv98JlY8Hj\naNNOLK+xKsY126PgGoRufJpjGwP7mDWnZnZRuyeYk3pQCic835lmZ8uUyTwCvDPv\npOQ+/7DkGhmpuapb2xDeLL3CRD3le+wf/OeLnV6EmVZQBHmsUXeGlYBkvwBsbnbP\nrglFS27L0t/ckuNOy3v2yfw1EkZjbaFpfeku40QkpB+2bZqenx0ZAvxB7ShxX1s2\nWh5Rbii2vQ+JQXN5vz9Y\n=QbXN\n-----END PGP SIGNATURE-----\n",
+            "payload": "tree 597edf47a88c1a4a346be367fe8d655962027a06\nparent 16f7325c5f8b16ce2c5259d2fba44f40e78bebe7\nparent baae6a477278d72afb6ffaae8a84b8ee49f7d800\nauthor mehdisafer <142994379+mehdisafer@users.noreply.github.com> 1794778282 +0100\ncommitter GitHub <noreply@github.com> 1794778282 +0100\n\nMerge dependency refresh for Python 3.12 reference\n\nIntegrate the documented lock and runtime upgrade. Historical validation remains dated; live CI and provider acceptance stay open in issue #1.",
+            "verified_at": "2026-11-15T21:31:22Z"
+          }
+        },
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/03c927b3f19e387df770130d59d9c09bea3800d1",
+        "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/03c927b3f19e387df770130d59d9c09bea3800d1",
+        "comments_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/03c927b3f19e387df770130d59d9c09bea3800d1/comments",
+        "author": {
+          "login": "mehdisafer",
+          "id": 142994379,
+          "node_id": "U_kgDOCIXryw",
+          "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/mehdisafer",
+          "html_url": "https://github.com/mehdisafer",
+          "followers_url": "https://api.github.com/users/mehdisafer/followers",
+          "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+          "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+          "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+          "repos_url": "https://api.github.com/users/mehdisafer/repos",
+          "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "committer": {
+          "login": "web-flow",
+          "id": 19864447,
+          "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+          "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/web-flow",
+          "html_url": "https://github.com/web-flow",
+          "followers_url": "https://api.github.com/users/web-flow/followers",
+          "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+          "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+          "organizations_url": "https://api.github.com/users/web-flow/orgs",
+          "repos_url": "https://api.github.com/users/web-flow/repos",
+          "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/web-flow/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "parents": [
+          {
+            "sha": "16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+            "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+            "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7"
+          },
+          {
+            "sha": "baae6a477278d72afb6ffaae8a84b8ee49f7d800",
+            "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/baae6a477278d72afb6ffaae8a84b8ee49f7d800",
+            "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/baae6a477278d72afb6ffaae8a84b8ee49f7d800"
+          }
+        ]
+      }
+    ],
+    "files": [
+      {
+        "sha": "92626b5f35462556750fe915745fa28716de55a0",
+        "filename": ".github/workflows/quality.yml",
+        "status": "modified",
+        "additions": 1,
+        "deletions": 1,
+        "changes": 2,
+        "blob_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/03c927b3f19e387df770130d59d9c09bea3800d1/.github%2Fworkflows%2Fquality.yml",
+        "raw_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/raw/03c927b3f19e387df770130d59d9c09bea3800d1/.github%2Fworkflows%2Fquality.yml",
+        "contents_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/contents/.github%2Fworkflows%2Fquality.yml?ref=03c927b3f19e387df770130d59d9c09bea3800d1",
+        "patch": "@@ -21,7 +21,7 @@ concurrency:\n   cancel-in-progress: false\n \n env:\n-  PYTHON_VERSION: \"3.12.14\"\n+  PYTHON_VERSION: \"3.12.16\"\n   UV_VERSION: \"0.13.6\"\n   DBT_SEND_ANONYMOUS_USAGE_STATS: \"false\"\n   DO_NOT_TRACK: \"1\""
+      },
+      {
+        "sha": "9ff624a5dbbb41a75990508efbbc895f7877de45",
+        "filename": "Dockerfile",
+        "status": "modified",
+        "additions": 2,
+        "deletions": 2,
+        "changes": 4,
+        "blob_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/03c927b3f19e387df770130d59d9c09bea3800d1/Dockerfile",
+        "raw_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/raw/03c927b3f19e387df770130d59d9c09bea3800d1/Dockerfile",
+        "contents_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/contents/Dockerfile?ref=03c927b3f19e387df770130d59d9c09bea3800d1",
+        "patch": "@@ -1,6 +1,6 @@\n # syntax=docker/dockerfile:1\n # Dependency versions come from uv.lock. Record resolved image digests at release.\n-FROM python:3.12.14-slim AS builder\n+FROM python:3.12.16-slim AS builder\n COPY --from=ghcr.io/astral-sh/uv:0.13.6 /uv /uvx /usr/local/bin/\n ENV UV_PYTHON_DOWNLOADS=never \\\n     UV_LINK_MODE=copy \\\n@@ -10,7 +10,7 @@ WORKDIR /app\n COPY . /app\n RUN uv sync --frozen --no-dev --extra postgres --no-editable\n \n-FROM python:3.12.14-slim AS runtime\n+FROM python:3.12.16-slim AS runtime\n RUN groupadd --gid 10001 mdm \\\n     && useradd --uid 10001 --gid 10001 --create-home --home-dir /home/mdm mdm\n COPY --from=builder --chown=10001:10001 /app /app"
+      },
+      {
+        "sha": "f0046c3ae9d6236b369b2b0ff062c550b419b096",
+        "filename": "README.md",
+        "status": "modified",
+        "additions": 2,
+        "deletions": 0,
+        "changes": 2,
+        "blob_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/03c927b3f19e387df770130d59d9c09bea3800d1/README.md",
+        "raw_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/raw/03c927b3f19e387df770130d59d9c09bea3800d1/README.md",
+        "contents_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/contents/README.md?ref=03c927b3f19e387df770130d59d9c09bea3800d1",
+        "patch": "@@ -34,6 +34,8 @@ A subsequent [targeted native check](evidence/2026-11-14/ci-evidence-hardening/q\n \n The merged reference's [quality workflow](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43603763090) and [Terraform workflow](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43603763082) again stopped before runner execution. The [post-merge inventory](evidence/2026-11-14/publication-preflight/post-merge-actions.json) separately records successful Dependabot service steps; these do not qualify the application or its proposed dependency updates. The native results remain separate original evidence. The precise qualification-job admission annotation remains inaccessible through the connected interface.\n \n+**Dependency refresh (15 November 2026):** Python 3.12.16, FastAPI 0.162.4, Pydantic 2.14.3 and Hatchling 1.33.0 are consolidated in [a separate change record](docs/dependency-refresh-2026-11-15.md). The 14 November full-suite and audit reports concern the earlier source and lock; they do not automatically qualify this refresh. Runtime and CI evidence for the updated commit must be captured separately.\n+\n ## Run the complete reference\n \n Requirements: Docker Engine with Compose v2, approximately 2 CPU cores and 2–3 GB available RAM. The API binds only to `127.0.0.1:8000`; the database has no host port."
+      },
+      {
+        "sha": "83748e16bc9485ae34ab5dcb392e443ebe63cbf4",
+        "filename": "docs/acceptance.md",
+        "status": "modified",
+        "additions": 4,
+        "deletions": 0,
+        "changes": 4,
+        "blob_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/03c927b3f19e387df770130d59d9c09bea3800d1/docs%2Facceptance.md",
+        "raw_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/raw/03c927b3f19e387df770130d59d9c09bea3800d1/docs%2Facceptance.md",
+        "contents_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/contents/docs%2Facceptance.md?ref=03c927b3f19e387df770130d59d9c09bea3800d1",
+        "patch": "@@ -50,6 +50,10 @@ The CI evidence review then found that documentation generation overwrote dbt bu\n | Dependency/licence/secret controls | Frozen lock, dated audit/inventory and scoped scans | Original local reports retained; remote application qualification has no executed steps |\n | Source publication, licence and release | Integrated candidate, prepared metadata and publication procedure | Main integration verified; public visibility requested and anonymous access pending; no licence or release tag selected |\n \n+### 15 November dependency-refresh boundary\n+\n+The consolidated [dependency refresh](dependency-refresh-2026-11-15.md) changes Python/FastAPI/Pydantic/Hatchling without changing domain decisions or migration contracts. The 14 November PostgreSQL, dbt, HTTP and audit evidence predates the new lock. A new source-head CI and integration run is required to qualify it; the existing runner admission, container, browser, Terraform and live Snowflake blockers remain independent.\n+\n ## Environment and CI limits\n \n The earlier inference that Unix socket denial prevented every local server was too broad. A fresh probe established that loopback TCP works. PostgreSQL 17.12 ran with `unix_socket_directories=''` and Uvicorn bound to `127.0.0.1`. The packages came from the signed official PGDG repository; signature, package checksums, binary versions and real readiness queries are retained. No system installation, permission change or external resource was needed."
+      },
+      {
+        "sha": "8b67db59128c928a1d46f87d35d3d4fb2195dc52",
+        "filename": "docs/dependency-refresh-2026-11-15.md",
+        "status": "added",
+        "additions": 33,
+        "deletions": 0,
+        "changes": 33,
+        "blob_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/03c927b3f19e387df770130d59d9c09bea3800d1/docs%2Fdependency-refresh-2026-11-15.md",
+        "raw_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/raw/03c927b3f19e387df770130d59d9c09bea3800d1/docs%2Fdependency-refresh-2026-11-15.md",
+        "contents_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/contents/docs%2Fdependency-refresh-2026-11-15.md?ref=03c927b3f19e387df770130d59d9c09bea3800d1",
+        "patch": "@@ -0,0 +1,33 @@\n+# Dependency refresh — 15 November 2026\n+\n+This change updates the packaging and Python runtime of my existing master-data reconciliation reference. It does not introduce a new reconciliation algorithm, alter business contracts or run a migration. The maintained Python range stays `>=3.12,<3.13`.\n+\n+| Component | Prior pin | Selected pin | Source |\n+| --- | --- | --- | --- |\n+| Python Docker / CI | 3.12.14 | 3.12.16 | [Dependabot #7](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/7), [Python security release](https://www.python.org/downloads/release/python-31216/) |\n+| FastAPI | 0.141.1 | 0.162.4 | [Dependabot #4](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/4), [release notes](https://fastapi.tiangolo.com/release-notes/) |\n+| Pydantic | 2.13.4 | 2.14.3 | [Dependabot #5](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/5) |\n+| Pydantic Core | 2.46.4 | 2.50.4 | Transitive pin from #5 |\n+| Hatchling | 1.29.0 | 1.33.0 | [Dependabot #6](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/6), [changelog](https://hatch.pypa.io/dev/history/hatchling/) |\n+\n+## Lockfile construction\n+\n+The complete FastAPI package block comes from PR #4; the complete Pydantic and Pydantic Core blocks come from PR #5. Both direct dependency specifiers are updated in the locked root-project metadata. All other package blocks come unchanged from the qualified main lock. Hatchling remains a build-system requirement outside the application lock. No package checksums, URLs or compatibility claims were invented. The builder/runtime Docker tags, GitHub Actions Python selection and operating documentation now agree.\n+\n+## Verification status\n+\n+Previous committed original evidence is under [evidence](../evidence/README.md). The full 14 November Python/PostgreSQL, dbt, HTTP, restore and audit results apply to the **previous** executable source and dependency lock. A prior isolated continuation reported additional checks, but its unpublished original files are not present in this GitHub revision; these claims are not promoted to retained evidence for this change.\n+\n+To qualify the new head:\n+\n+1. Run `uv sync --locked --all-extras` with Python 3.12.16 and uv 0.13.6; build and test the sdist, wheel and editable install.\n+2. Run `uv run --no-sync pytest -q` against the dedicated real PostgreSQL test DB; execute the synthetic business demonstration, dbt build/catalog, HTTP checks, backup/restore and post-restore tests.\n+3. Execute the bounded load and retrieve the current dependency advisory, component and license inventory. Preserve raw output, inputs, source SHA, versions and any nonzero exit.\n+4. Run the container/rendered-browser and Terraform provider-schema profiles on an actually allocated runner. A successful Dependabot service job or empty Actions job does not pass them.\n+5. Qualify Snowflake publication, readback, rollback and dbt parity only with an explicitly authorized account/role/warehouse, cost cap and source-linked evidence.\n+\n+No updated-runtime test is called successful merely from these edits. Full acceptance remains open in [issue #1](https://github.com/mehdisafer/enterprise-master-data-reconciliation/issues/1); the repository's public visibility and project licence are separate maintainer decisions.\n+\n+## Rollback\n+\n+Revert the dependency-refresh commit and deploy the previously qualified application build, subject to the usual source/schema/outbox compatibility checks. A dependency rollback does not reverse already-consumed business events; the existing correction and consumer-reconciliation processes remain authoritative."
+      },
+      {
+        "sha": "db79de4dc78a876f09fdedc4df9d31a57e45b7d4",
+        "filename": "docs/operations.md",
+        "status": "modified",
+        "additions": 2,
+        "deletions": 2,
+        "changes": 4,
+        "blob_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/03c927b3f19e387df770130d59d9c09bea3800d1/docs%2Foperations.md",
+        "raw_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/raw/03c927b3f19e387df770130d59d9c09bea3800d1/docs%2Foperations.md",
+        "contents_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/contents/docs%2Foperations.md?ref=03c927b3f19e387df770130d59d9c09bea3800d1",
+        "patch": "@@ -9,10 +9,10 @@ repository's visibility does not expose a running service.\n \n | Component | Selected version or contract | Evidence boundary |\n | --- | --- | --- |\n-| Python image | `python:3.12.14-slim` | Version tag exists in the official image registry; the container job records its actual built image. |\n+| Python image | `python:3.12.16-slim` | Version tag exists in the official image registry; the container job records its actual built image. |\n | PostgreSQL image | `postgres:17.12` | Selected after the 12 November 2026 security update; CI records `version()` and the pulled digest. |\n | uv | `0.13.6` | The Docker build and CI install from the same lock. |\n-| Python dependencies | `uv.lock` | Direct constraints are in `pyproject.toml`; the lock captures transitive versions and hashes. |\n+| Python dependencies | `uv.lock` | Direct constraints are in `pyproject.toml`; the lock captures transitive versions and hashes. See the [15 November dependency refresh](dependency-refresh-2026-11-15.md); earlier results concern the prior lock. |\n | dbt | PostgreSQL and Snowflake adapters in the lock | SQL compilation is distinct from executing models and data tests. |\n | Source and rules | `contracts/` | Input data is synthetic; repository licensing awaits maintainer approval. |\n "
+      },
+      {
+        "sha": "43a351ec66a81425c977054e4158dbe46ace5ce4",
+        "filename": "docs/publication.md",
+        "status": "modified",
+        "additions": 2,
+        "deletions": 0,
+        "changes": 2,
+        "blob_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/03c927b3f19e387df770130d59d9c09bea3800d1/docs%2Fpublication.md",
+        "raw_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/raw/03c927b3f19e387df770130d59d9c09bea3800d1/docs%2Fpublication.md",
+        "contents_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/contents/docs%2Fpublication.md?ref=03c927b3f19e387df770130d59d9c09bea3800d1",
+        "patch": "@@ -22,6 +22,8 @@ The [post-merge Actions record](../evidence/2026-11-14/publication-preflight/pos\n \n Dependabot proposed Python 3.15 in [PR #3](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/3), outside the project's `>=3.12,<3.13` runtime contract. That PR was closed without merging. The [Dependabot configuration](../.github/dependabot.yml) now ignores major and minor Docker updates for `python`, retaining eligibility for patch updates on 3.12. This follows GitHub's [documented ignore options](https://docs.github.com/en/code-security/reference/supply-chain-security/dependabot-options-reference#ignore); future service behavior under this rule remains to be observed. The FastAPI, Pydantic and Hatchling proposals in PRs [#4](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/4), [#5](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/5) and [#6](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/6) remain outside the verified candidate. No runtime dependency or lockfile was changed by this triage.\n \n+The subsequent [15 November dependency refresh](dependency-refresh-2026-11-15.md) consolidates proposals #4–#7 in a single change instead of merging overlapping lockfile edits independently. The 14 November results remain tied to their original source. Closing redundant Dependabot PRs after the rollup merges is maintenance bookkeeping, not evidence of a successful CI run.\n+\n ## Integrate the candidate and apply visibility\n \n 1. **Completed — source integration.** PR #2 was marked ready and merged with its exact reviewed head. The resulting tree matches the complete reviewed candidate, including `src/`, `tests/`, `dbt/`, the Compose files, documentation, evidence and both workflows. The [readback record](../evidence/2026-11-14/publication-preflight/integration-verification.json) preserves the merge and tree identifiers. Issue #1 remains open."
+      },
+      {
+        "sha": "beb141b4cb08e4dce886360b93717bb232b85b9b",
+        "filename": "docs/releases/0.1.0rc1.md",
+        "status": "modified",
+        "additions": 1,
+        "deletions": 1,
+        "changes": 2,
+        "blob_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/03c927b3f19e387df770130d59d9c09bea3800d1/docs%2Freleases%2F0.1.0rc1.md",
+        "raw_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/raw/03c927b3f19e387df770130d59d9c09bea3800d1/docs%2Freleases%2F0.1.0rc1.md",
+        "contents_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/contents/docs%2Freleases%2F0.1.0rc1.md?ref=03c927b3f19e387df770130d59d9c09bea3800d1",
+        "patch": "@@ -52,7 +52,7 @@ The application, test and dbt inputs qualified by the full suite match [commit 2\n \n The held-out corpus still has sixteen records and seven positive pairs. Both matching modes retrieve all seven positives as candidates. Automatic matching produces three true pairs and zero false pairs, with recall 3/7. The bounded fuzzy review signal raises auto-plus-review recall from 6/7 to 7/7, with one false review. These are synthetic observations, not an industrial accuracy estimate.\n \n-The 13 November audit reported zero known vulnerabilities across 119 dependencies at its capture time. The lock has not changed. A Starlette TestClient deprecation warning remains in the successful test report. Original failed attempts and corrected harness results are preserved alongside successes.\n+The 13 November audit reported zero known vulnerabilities across 119 dependencies at its capture time. The lock had not changed at the date of that capture; a later [15 November dependency refresh](../dependency-refresh-2026-11-15.md) changes it and requires new-head qualification. A Starlette TestClient deprecation warning remains in the successful test report. Original failed attempts and corrected harness results are preserved alongside successes.\n \n ## Remaining qualification and publication work\n "
+      },
+      {
+        "sha": "7c4c0d41e977320868b622e6d1dcfd63fe5050a0",
+        "filename": "docs/verification.md",
+        "status": "modified",
+        "additions": 6,
+        "deletions": 0,
+        "changes": 6,
+        "blob_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/03c927b3f19e387df770130d59d9c09bea3800d1/docs%2Fverification.md",
+        "raw_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/raw/03c927b3f19e387df770130d59d9c09bea3800d1/docs%2Fverification.md",
+        "contents_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/contents/docs%2Fverification.md?ref=03c927b3f19e387df770130d59d9c09bea3800d1",
+        "patch": "@@ -59,6 +59,12 @@ The [13:45 UTC capture](../evidence/2026-11-14/ci-evidence-hardening/qualificati\n \n The [original command outputs](../evidence/2026-11-14/ci-evidence-hardening/commands/02-dbt-build/execution.json), [copy manifest](../evidence/2026-11-14/ci-evidence-hardening/preserved-artifacts.json), dbt results, restore-control responses and runtime logs are retained. The Snowflake helper uses the same separation between build/docs output paths; only its shell syntax and source changes are checked here. No live Snowflake result follows from this native run.\n \n+## Dependency refresh qualification — 15 November 2026\n+\n+The [change record](dependency-refresh-2026-11-15.md) combines Dependabot PRs #4–#7. Historical source, tests, dbt, restore, HTTP results and dependency-audit reports remain valid only for the source revisions they captured. The updated lock is not accepted on the strength of old evidence.\n+\n+A new-head qualification must install Python 3.12.16 and uv 0.13.6; run `uv sync --locked --all-extras`, package-build checks, full `pytest -q` with real dedicated PostgreSQL, dbt build/tests, HTTP contracts, business demo, native backup/restore, component/advisory inventory and container/browser/Terraform checks on an assigned runner. Snowflake remains a separate authorized live qualification. Preserve original results tied to the new SHA.\n+\n ## Remaining environment boundaries\n \n Loopback TCP is allowed in the provided workspace; Unix socket creation is denied. PostgreSQL 17.12 used `unix_socket_directories=''`, with standard TCP and private SCRAM credentials. The signed PGDG packages were extracted locally without a system installation. Uvicorn served actual HTTP on loopback. The earlier blanket socket restriction diagnosis was therefore too broad and is superseded by these observed runs."
+      },
+      {
+        "sha": "21189f6c6dc2858a23cc81210ad22bdc3f16cc39",
+        "filename": "pyproject.toml",
+        "status": "modified",
+        "additions": 3,
+        "deletions": 3,
+        "changes": 6,
+        "blob_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/03c927b3f19e387df770130d59d9c09bea3800d1/pyproject.toml",
+        "raw_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/raw/03c927b3f19e387df770130d59d9c09bea3800d1/pyproject.toml",
+        "contents_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/contents/pyproject.toml?ref=03c927b3f19e387df770130d59d9c09bea3800d1",
+        "patch": "@@ -1,5 +1,5 @@\n [build-system]\n-requires = [\"hatchling==1.29.0\"]\n+requires = [\"hatchling==1.33.0\"]\n build-backend = \"hatchling.build\"\n \n [project]\n@@ -8,9 +8,9 @@ version = \"0.1.0rc1\"\n description = \"Explainable, reversible master-data decisions across industrial ERP systems\"\n requires-python = \">=3.12,<3.13\"\n dependencies = [\n-  \"fastapi==0.141.1\",\n+  \"fastapi==0.162.4\",\n   \"uvicorn==0.52.1\",\n-  \"pydantic==2.13.4\",\n+  \"pydantic==2.14.3\",\n   \"psycopg[binary]==3.3.9\",\n ]\n "
+      },
+      {
+        "sha": "f3980636bca92c517b93242d98eae77cecd0a8ca",
+        "filename": "tests/test_dependency_compatibility.py",
+        "status": "added",
+        "additions": 57,
+        "deletions": 0,
+        "changes": 57,
+        "blob_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/03c927b3f19e387df770130d59d9c09bea3800d1/tests%2Ftest_dependency_compatibility.py",
+        "raw_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/raw/03c927b3f19e387df770130d59d9c09bea3800d1/tests%2Ftest_dependency_compatibility.py",
+        "contents_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/contents/tests%2Ftest_dependency_compatibility.py?ref=03c927b3f19e387df770130d59d9c09bea3800d1",
+        "patch": "@@ -0,0 +1,57 @@\n+\"\"\"Smoke contracts for upgrades to Python, Pydantic and FastAPI; no database required.\"\"\"\n+\n+from __future__ import annotations\n+\n+import tomllib\n+from importlib.metadata import version\n+from pathlib import Path\n+\n+import pytest\n+from fastapi.testclient import TestClient\n+from pydantic import ValidationError\n+\n+from mdm.api import (\n+    IngestInput, MergeInput, PreviewInput, SplitInput, UnmergeInput, VersionInput,\n+    create_app,\n+)\n+from mdm.config import Actor\n+\n+\n+@pytest.mark.parametrize(\"distribution\", [\"fastapi\", \"uvicorn\", \"pydantic\", \"psycopg\"])\n+def test_installed_runtime_distributions_match_direct_pins(distribution):\n+    data = tomllib.loads((Path(__file__).resolve().parents[1] / \"pyproject.toml\").read_text())\n+    pins = {}\n+    for requirement in data[\"project\"][\"dependencies\"]:\n+        name, sep, exact_version = requirement.partition(\"==\")\n+        assert sep and exact_version and \";\" not in exact_version, requirement\n+        pins[name.split(\"[\")[0]] = exact_version\n+    assert version(distribution) == pins[distribution]\n+\n+\n+@pytest.mark.parametrize((\"model\", \"data\"), [\n+    (MergeInput, {\"group_ids\": [\"g1\", \"g2\"], \"expected_versions\": {\"g1\": 1, \"g2\": 1},\n+                  \"reason\": \"unit\", \"idempotency_key\": \"test-merge\"}),\n+    (PreviewInput, {\"group_ids\": [\"g1\", \"g2\"]}),\n+    (SplitInput, {\"group_id\": \"g1\", \"partitions\": [[\"a\"], [\"b\"]], \"expected_version\": 1,\n+                  \"reason\": \"unit\", \"idempotency_key\": \"test-split\"}),\n+    (UnmergeInput, {\"merge_decision_id\": \"m1\", \"expected_versions\": {\"g1\": 1},\n+                    \"reason\": \"unit\", \"idempotency_key\": \"test-unmerge\"}),\n+    (VersionInput, {\"expected_version\": 1}),\n+    (IngestInput, {\"records\": []}),\n+])\n+def test_pydantic_inputs_preserve_strict_unknown_field_rejection(model, data):\n+    assert model.model_validate(data).model_dump(exclude_none=True)\n+    with pytest.raises(ValidationError):\n+        model.model_validate({**data, \"unreviewed_field\": \"must be refused\"})\n+\n+\n+def test_authentic_openapi_is_bearer_protected_and_preserves_domain_routes():\n+    token = \"unit-only-contract-token\"\n+    client = TestClient(create_app(actor_map={token: Actor(\"unit-reader\", \"reader\")}))\n+    assert client.get(\"/api/openapi.json\").status_code == 401\n+    response = client.get(\"/api/openapi.json\", headers={\"Authorization\": f\"Bearer {token}\"})\n+    assert response.status_code == 200\n+    for path in (\"/api/decisions/merge\", \"/api/decisions/split\", \"/api/decisions/unmerge\",\n+                 \"/api/preview-merge\", \"/api/ingest\"):\n+        assert path in response.json()[\"paths\"]\n+    assert client.get(\"/openapi.json\").status_code == 404"
+      },
+      {
+        "sha": "ffb81c5dc00c15fbe67669c7d92a000458196cba",
+        "filename": "uv.lock",
+        "status": "modified",
+        "additions": 32,
+        "deletions": 30,
+        "changes": 62,
+        "blob_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/03c927b3f19e387df770130d59d9c09bea3800d1/uv.lock",
+        "raw_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/raw/03c927b3f19e387df770130d59d9c09bea3800d1/uv.lock",
+        "contents_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/contents/uv.lock?ref=03c927b3f19e387df770130d59d9c09bea3800d1",
+        "patch": "@@ -513,14 +513,14 @@ requires-dist = [\n     { name = \"dbt-core\", marker = \"extra == 'snowflake'\", specifier = \"==1.12.7\" },\n     { name = \"dbt-postgres\", marker = \"extra == 'postgres'\", specifier = \"==1.11.0\" },\n     { name = \"dbt-snowflake\", marker = \"extra == 'snowflake'\", specifier = \"==1.12.5\" },\n-    { name = \"fastapi\", specifier = \"==0.141.1\" },\n+    { name = \"fastapi\", specifier = \"==0.162.4\" },\n     { name = \"filelock\", marker = \"extra == 'snowflake'\", specifier = \">=4.2.1,<5\" },\n     { name = \"httpx\", marker = \"extra == 'dev'\", specifier = \"==0.28.1\" },\n     { name = \"pip-audit\", marker = \"extra == 'dev'\", specifier = \">=2.9,<3\" },\n     { name = \"pip-licenses\", marker = \"extra == 'dev'\", specifier = \">=5,<6\" },\n     { name = \"playwright\", marker = \"extra == 'browser'\", specifier = \"==1.65.1\" },\n     { name = \"psycopg\", extras = [\"binary\"], specifier = \"==3.3.9\" },\n-    { name = \"pydantic\", specifier = \"==2.13.4\" },\n+    { name = \"pydantic\", specifier = \"==2.14.3\" },\n     { name = \"pytest\", marker = \"extra == 'dev'\", specifier = \">=8.4,<10\" },\n     { name = \"ruff\", marker = \"extra == 'dev'\", specifier = \">=0.14,<1\" },\n     { name = \"snowflake-connector-python\", marker = \"extra == 'snowflake'\", specifier = \"==4.8.1\" },\n@@ -530,18 +530,20 @@ provides-extras = [\"postgres\", \"snowflake\", \"dev\", \"browser\"]\n \n [[package]]\n name = \"fastapi\"\n-version = \"0.141.1\"\n+version = \"0.162.4\"\n source = { registry = \"https://pypi.org/simple\" }\n dependencies = [\n     { name = \"annotated-doc\" },\n+    { name = \"anyio\" },\n+    { name = \"opentelemetry-api\" },\n     { name = \"pydantic\" },\n     { name = \"starlette\" },\n     { name = \"typing-extensions\" },\n     { name = \"typing-inspection\" },\n ]\n-sdist = { url = \"https://files.pythonhosted.org/packages/8a/02/91e3416a8fdd715abb903a952a6bec7cdd8d14eed55d415fc8595524c319/fastapi-0.141.1.tar.gz\", hash = \"sha256:e8822fc40db1e1858054d7a949a888695bc9bdce70139178e33bd2871a453ca1\", size = 425799, upload-time = \"2026-07-29T17:18:05.568Z\" }\n+sdist = { url = \"https://files.pythonhosted.org/packages/60/39/7435269dcabb3c1b4ce1b9b03b40dae919415c258e1caa27160c22f55b9a/fastapi-0.162.4.tar.gz\", hash = \"sha256:4abdb1ef367090678d8bc664631df432ae7a1bfe7709c37547d3606e667650e3\", size = 529374, upload-time = \"2026-11-10T17:51:17.96Z\" }\n wheels = [\n-    { url = \"https://files.pythonhosted.org/packages/cb/03/10388a42375ee7e4ac9b94eb2c5c569c8b5795e377e701c9ac3ad63de890/fastapi-0.141.1-py3-none-any.whl\", hash = \"sha256:bfb91aa2d334c61cb35ba9a116fc123b3d3df31640b801cf57a7a78ec3f603b3\", size = 131954, upload-time = \"2026-07-29T17:18:04.364Z\" },\n+    { url = \"https://files.pythonhosted.org/packages/3f/6b/0537ac682ac728dbe91f75c16683a985d11812f9930f21a35b756d6df629/fastapi-0.162.4-py3-none-any.whl\", hash = \"sha256:f093bc306d3958278d30ffd14f3834ca3d9b144fbb898ab5c9b652cf6e75f869\", size = 151685, upload-time = \"2026-11-10T17:51:16.562Z\" },\n ]\n \n [[package]]\n@@ -1172,47 +1174,47 @@ wheels = [\n \n [[package]]\n name = \"pydantic\"\n-version = \"2.13.4\"\n+version = \"2.14.3\"\n source = { registry = \"https://pypi.org/simple\" }\n dependencies = [\n     { name = \"annotated-types\" },\n     { name = \"pydantic-core\" },\n     { name = \"typing-extensions\" },\n     { name = \"typing-inspection\" },\n ]\n-sdist = { url = \"https://files.pythonhosted.org/packages/18/a5/b60d21ac674192f8ab0ba4e9fd860690f9b4a6e51ca5df118733b487d8d6/pydantic-2.13.4.tar.gz\", hash = \"sha256:c40756b57adaa8b1efeeced5c196f3f3b7c435f90e84ea7f443901bec8099ef6\", size = 844775, upload-time = \"2026-05-06T13:43:05.343Z\" }\n+sdist = { url = \"https://files.pythonhosted.org/packages/b4/fc/1203d011145c98ddce3cd2f505bb54375ef8d43223053df6bfcf3c746f46/pydantic-2.14.3.tar.gz\", hash = \"sha256:1054f237f4d4733e5a30e1e2333bd33a2004ab9ab1510bd053a9a31bb48e232d\", size = 925636, upload-time = \"2026-11-05T09:17:04.686Z\" }\n wheels = [\n-    { url = \"https://files.pythonhosted.org/packages/fd/7b/122376b1fd3c62c1ed9dc80c931ace4844b3c55407b6fb2d199377c9736f/pydantic-2.13.4-py3-none-any.whl\", hash = \"sha256:45a282cde31d808236fd7ea9d919b128653c8b38b393d1c4ab335c62924d9aba\", size = 472262, upload-time = \"2026-05-06T13:43:02.641Z\" },\n+    { url = \"https://files.pythonhosted.org/packages/72/b8/b864503789ef5c58597d2a7b4adbee62c26440ab1e682581fc6838df8947/pydantic-2.14.3-py3-none-any.whl\", hash = \"sha256:3f7b347782ab7e4cf4c798496ae3a82787d9f21ec12676a9c564355eeef8daa8\", size = 494071, upload-time = \"2026-11-05T09:17:02.426Z\" },\n ]\n \n [[package]]\n name = \"pydantic-core\"\n-version = \"2.46.4\"\n+version = \"2.50.4\"\n source = { registry = \"https://pypi.org/simple\" }\n dependencies = [\n     { name = \"typing-extensions\" },\n ]\n-sdist = { url = \"https://files.pythonhosted.org/packages/9d/56/921726b776ace8d8f5db44c4ef961006580d91dc52b803c489fafd1aa249/pydantic_core-2.46.4.tar.gz\", hash = \"sha256:62f875393d7f270851f20523dd2e29f082bcc82292d66db2b64ea71f64b6e1c1\", size = 471464, upload-time = \"2026-05-06T13:37:06.98Z\" }\n-wheels = [\n-    { url = \"https://files.pythonhosted.org/packages/ce/8c/af022f0af448d7747c5154288d46b5f2bc5f17366eaa0e23e9aa04d59f3b/pydantic_core-2.46.4-cp312-cp312-macosx_10_12_x86_64.whl\", hash = \"sha256:3245406455a5d98187ec35530fd772b1d799b26667980872c8d4614991e2c4a2\", size = 2106158, upload-time = \"2026-05-06T13:38:57.215Z\" },\n-    { url = \"https://files.pythonhosted.org/packages/19/95/6195171e385007300f0f5574592e467c568becce2d937a0b6804f218bc49/pydantic_core-2.46.4-cp312-cp312-macosx_11_0_arm64.whl\", hash = \"sha256:962ccbab7b642487b1d8b7df90ef677e03134cf1fd8880bf698649b22a69371f\", size = 1951724, upload-time = \"2026-05-06T13:37:02.697Z\" },\n-    { url = \"https://files.pythonhosted.org/packages/8e/bc/f47d1ff9cbb1620e1b5b697eef06010035735f07820180e74178226b27b3/pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl\", hash = \"sha256:8233f2947cf85404441fd7e0085f53b10c93e0ee78611099b5c7237e36aacbf7\", size = 1975742, upload-time = \"2026-05-06T13:37:09.448Z\" },\n-    { url = \"https://files.pythonhosted.org/packages/5b/11/9b9a5b0306345664a2da6410877af6e8082481b5884b3ddd78d47c6013ce/pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_armv7l.manylinux2014_armv7l.whl\", hash = \"sha256:3a233125ac121aa3ffba9a2b59edfc4a985a76092dc8279586ab4b71390875e7\", size = 2052418, upload-time = \"2026-05-06T13:37:38.234Z\" },\n-    { url = \"https://files.pythonhosted.org/packages/f1/b7/a65fec226f5d78fc39f4a13c4cc0c768c22b113438f60c14adc9d2865038/pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_ppc64le.manylinux2014_ppc64le.whl\", hash = \"sha256:5b712b53160b79a5850310b912a5ef8e57e56947c8ad690c227f5c9d7e561712\", size = 2232274, upload-time = \"2026-05-06T13:38:27.753Z\" },\n-    { url = \"https://files.pythonhosted.org/packages/68/f0/92039db98b907ef49269a8271f67db9cb78ae2fc68062ef7e4e77adb5f61/pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_s390x.manylinux2014_s390x.whl\", hash = \"sha256:9401557acd873c3a7f3eb9383edef8ac4968f9510e340f4808d427e75667e7b4\", size = 2309940, upload-time = \"2026-05-06T13:38:05.353Z\" },\n-    { url = \"https://files.pythonhosted.org/packages/5f/97/2aab507d3d00ca626e8e57c1eac6a79e4e5fbcc63eb99733ff55d1717f65/pydantic_core-2.46.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl\", hash = \"sha256:926c9541b14b12b1681dca8a0b75feb510b06c6341b70a8e500c2fdcff837cce\", size = 2094516, upload-time = \"2026-05-06T13:39:10.577Z\" },\n-    { url = \"https://files.pythonhosted.org/packages/22/37/a8aca44d40d737dde2bc05b3c6c07dff0de07ce6f82e9f3167aeaf4d5dea/pydantic_core-2.46.4-cp312-cp312-manylinux_2_31_riscv64.whl\", hash = \"sha256:56cb4851bcaf3d117eddcef4fe66afd750a50274b0da8e22be256d10e5611987\", size = 2136854, upload-time = \"2026-05-06T13:40:22.59Z\" },\n-    { url = \"https://files.pythonhosted.org/packages/24/99/fcef1b79238c06a8cbec70819ac722ba76e02bc8ada9b0fd66eba40da01b/pydantic_core-2.46.4-cp312-cp312-manylinux_2_5_i686.manylinux1_i686.whl\", hash = \"sha256:c68fcd102d71ea85c5b2dfac3f4f8476eff42a9e078fd5faefff6d145063536b\", size = 2180306, upload-time = \"2026-05-06T13:40:10.666Z\" },\n-    { url = \"https://files.pythonhosted.org/packages/ae/6c/fc44000918855b42779d007ae63b0532794739027b2f417321cddbc44f6a/pydantic_core-2.46.4-cp312-cp312-musllinux_1_1_aarch64.whl\", hash = \"sha256:b2f69dec1725e79a012d920df1707de5caf7ed5e08f3be4435e25803efc47458\", size = 2190044, upload-time = \"2026-05-06T13:40:43.231Z\" },\n-    { url = \"https://files.pythonhosted.org/packages/6b/65/d9cadc9f1920d7a127ad2edba16c1db7916e59719285cd6c94600b0080ba/pydantic_core-2.46.4-cp312-cp312-musllinux_1_1_armv7l.whl\", hash = \"sha256:8d0820e8192167f80d88d64038e609c31452eeca865b4e1d9950a27a4609b00b\", size = 2329133, upload-time = \"2026-05-06T13:39:57.365Z\" },\n-    { url = \"https://files.pythonhosted.org/packages/d0/cf/c873d91679f3a30bcf5e7ac280ce5573483e72295307685120d0d5ad3416/pydantic_core-2.46.4-cp312-cp312-musllinux_1_1_x86_64.whl\", hash = \"sha256:fbdb89b3e1c94a30cc5edfce477c6e6a5dc4d8f84665b455c27582f211a1c72c\", size = 2374464, upload-time = \"2026-05-06T13:38:06.976Z\" },\n-    { url = \"https://files.pythonhosted.org/packages/47/bd/6f2fc8188f31bf10590f1e98e7b306336161fac930a8c514cd7bd828c7dc/pydantic_core-2.46.4-cp312-cp312-win32.whl\", hash = \"sha256:9aa768456404a8bf48a4406685ac2bec8e72b62c69313734fa3b73cf33b3a894\", size = 1974823, upload-time = \"2026-05-06T13:40:47.985Z\" },\n-    { url = \"https://files.pythonhosted.org/packages/40/8c/985c1d41ea1107c2534abd9870e4ed5c8e7669b5c308297835c001e7a1c4/pydantic_core-2.46.4-cp312-cp312-win_amd64.whl\", hash = \"sha256:e9c26f834c65f5752f3f06cb08cb86a913ceb7274d0db6e267808a708b46bc89\", size = 2072919, upload-time = \"2026-05-06T13:39:21.153Z\" },\n-    { url = \"https://files.pythonhosted.org/packages/c4/ba/f463d006e0c47373ca7ec5e1a261c59dc01ef4d62b2657af925fb0deee3a/pydantic_core-2.46.4-cp312-cp312-win_arm64.whl\", hash = \"sha256:4fc73cb559bdb54b1134a706a2802a4cddd27a0633f5abb7e53056268751ac6a\", size = 2027604, upload-time = \"2026-05-06T13:39:03.753Z\" },\n-    { url = \"https://files.pythonhosted.org/packages/9d/1d/8987ad40f65ae1432753072f214fb5c74fe47ffbd0698bb9cbbb585664f8/pydantic_core-2.46.4-graalpy312-graalpy250_312_native-macosx_10_12_x86_64.whl\", hash = \"sha256:1d8ba486450b14f3b1d63bc521d410ec7565e52f887b9fb671791886436a42f7\", size = 2095527, upload-time = \"2026-05-06T13:39:52.283Z\" },\n-    { url = \"https://files.pythonhosted.org/packages/64/d3/84c282a7eee1d3ac4c0377546ef5a1ea436ce26840d9ac3b7ed54a377507/pydantic_core-2.46.4-graalpy312-graalpy250_312_native-macosx_11_0_arm64.whl\", hash = \"sha256:3009f12e4e90b7f88b4f9adb1b0c4a3d58fe7820f3238c190047209d148026df\", size = 1936024, upload-time = \"2026-05-06T13:40:15.671Z\" },\n-    { url = \"https://files.pythonhosted.org/packages/d7/ca/eac61596cdeb4d7e174d3dc0bd8a6238f14f75f97a24e7b7db4c7e7340a0/pydantic_core-2.46.4-graalpy312-graalpy250_312_native-manylinux_2_17_aarch64.manylinux2014_aarch64.whl\", hash = \"sha256:ad785e92e6dc634c21555edc8bd6b64957ab844541bcb96a1366c202951ae526\", size = 1990696, upload-time = \"2026-05-06T13:38:34.717Z\" },\n-    { url = \"https://files.pythonhosted.org/packages/fa/c3/7c8b240552251faf6b3a957db200fcfbbcec36763c050428b601e0c9b83b/pydantic_core-2.46.4-graalpy312-graalpy250_312_native-manylinux_2_17_x86_64.manylinux2014_x86_64.whl\", hash = \"sha256:00c603d540afdd6b80eb39f078f33ebd46211f02f33e34a32d9f053bba711de0\", size = 2147590, upload-time = \"2026-05-06T13:39:29.883Z\" },\n+sdist = { url = \"https://files.pythonhosted.org/packages/9c/0f/34f9ce4ba701dd0b815033ef94d99b56f66200e578ee6052aa3ac26f064e/pydantic_core-2.50.4.tar.gz\", hash = \"sha256:aead3b74b68396bf0feab5d57e050b730ded7df55853c1e048a87e00aaf033c6\", size = 522249, upload-time = \"2026-11-05T09:15:26.774Z\" }\n+wheels = [\n+    { url = \"https://files.pythonhosted.org/packages/10/bf/d1f6b81709538f831ebe1c42f50fb89db3dfda06f9e9b1ea24e90fc69209/pydantic_core-2.50.4-cp312-cp312-macosx_10_12_x86_64.whl\", hash = \"sha256:32a991aebd165f227b7c7c60bb9d66c2c7de9c24308552da264c9938fde0f8d6\", size = 2231444, upload-time = \"2026-11-05T09:12:06.969Z\" },\n+    { url = \"https://files.pythonhosted.org/packages/c1/39/6618e541658d5a687a8d4962fc304350073a8f322bc4c62e8ed4c2d514d6/pydantic_core-2.50.4-cp312-cp312-macosx_11_0_arm64.whl\", hash = \"sha256:1e20cbde2b6deb33a51d08cd168454dd9044ec7d4474056f4d98d63f51578783\", size = 2108048, upload-time = \"2026-11-05T09:12:08.85Z\" },\n+    { url = \"https://files.pythonhosted.org/packages/d9/54/1c941fffa4e14bfc9ab0cd4977075f0e03201447856130d08a33cd45e47b/pydantic_core-2.50.4-cp312-cp312-manylinux1_i686.manylinux_2_5_i686.whl\", hash = \"sha256:8cceae48ae7f94990c2f4e36291e9ec9868735e8b0f19e4489a17b0422338466\", size = 2256866, upload-time = \"2026-11-05T09:12:10.495Z\" },\n+    { url = \"https://files.pythonhosted.org/packages/61/a0/8028ef3e014be522ce43060aeac82a5be2288215e660866f5e6260acc123/pydantic_core-2.50.4-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl\", hash = \"sha256:16902a147b3da4840612164a5e67947104d63e978f7a57c395877a5e26690b9c\", size = 2125682, upload-time = \"2026-11-05T09:12:12.278Z\" },\n+    { url = \"https://files.pythonhosted.org/packages/c3/f2/b98bb73b1734ec4e42e786a766abc24f3c89620a0ddbaf8aa14e4b4c628c/pydantic_core-2.50.4-cp312-cp312-manylinux2014_armv7l.manylinux_2_17_armv7l.whl\", hash = \"sha256:d6e3485a5e5c01fb5339c1ee3d4b9e21e2135a2a9d44caafb71acd994487ee7c\", size = 2197108, upload-time = \"2026-11-05T09:12:13.873Z\" },\n+    { url = \"https://files.pythonhosted.org/packages/f1/d1/7a7142786781400143e8806633fe5b65e2d407c311041fc9494490f05b18/pydantic_core-2.50.4-cp312-cp312-manylinux2014_ppc64le.manylinux_2_17_ppc64le.whl\", hash = \"sha256:629eae995185540406e3635df5d5cf1d44f19ea240840b835d3f44541ff694d8\", size = 2380521, upload-time = \"2026-11-05T09:12:15.539Z\" },\n+    { url = \"https://files.pythonhosted.org/packages/b5/34/cf710ca48d4498b04a3ea605d45892675dc2b14a94a25121a8d03f56d3e9/pydantic_core-2.50.4-cp312-cp312-manylinux2014_s390x.manylinux_2_17_s390x.whl\", hash = \"sha256:41b2cd8b29dbb5a4c9828a70f50d1abfc92011115c813213d3a91205c6f731b3\", size = 2457436, upload-time = \"2026-11-05T09:12:17.447Z\" },\n+    { url = \"https://files.pythonhosted.org/packages/91/23/e0c6e3cd09a0ac809953fea698c816b9f03bf0b35b6820c9553e4f5d85a8/pydantic_core-2.50.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl\", hash = \"sha256:c81d98e27d9d9261909dcccab1ba5d6ea1c98b0bb9470e368604614fd1d36ddd\", size = 2261727, upload-time = \"2026-11-05T09:12:19.097Z\" },\n+    { url = \"https://files.pythonhosted.org/packages/f9/00/292a0ed96d5d2d6edb49468ef481336e5b7e54f13435d73b7c912c891c23/pydantic_core-2.50.4-cp312-cp312-manylinux_2_31_riscv64.whl\", hash = \"sha256:ca83a32b2b41653d89f09a3d22b770bca96da72273bef8f7a68136bdd1e8b823\", size = 2262071, upload-time = \"2026-11-05T09:12:20.78Z\" },\n+    { url = \"https://files.pythonhosted.org/packages/f8/36/d4690faf8c082eacf7754e52ab6bebe1bc73b167272e28699c00480ee908/pydantic_core-2.50.4-cp312-cp312-musllinux_1_1_aarch64.whl\", hash = \"sha256:817953730e4a73a09008b010c4a42396cefe799616a22df2ac21d3927b3080cf\", size = 2298931, upload-time = \"2026-11-05T09:12:22.614Z\" },\n+    { url = \"https://files.pythonhosted.org/packages/21/17/b180af6d17cf6c8e0d3d2661fc501a4a40959744ca4947d6ad0db81b1416/pydantic_core-2.50.4-cp312-cp312-musllinux_1_1_armv7l.whl\", hash = \"sha256:664e74848c2f5fc27db8505fe24e1ecd3ac669412913bf73d176916f86cc08e2\", size = 2474285, upload-time = \"2026-11-05T09:12:24.842Z\" },\n+    { url = \"https://files.pythonhosted.org/packages/6e/bb/7e44d4ac6e1292f1859384c688713045bdf5448e0635c49c003d2be3bb6c/pydantic_core-2.50.4-cp312-cp312-musllinux_1_1_x86_64.whl\", hash = \"sha256:219114f8dcdcbe4720d82ef016b1287ce5a0a67d7c69ca61524eb72e82aac344\", size = 2498172, upload-time = \"2026-11-05T09:12:26.434Z\" },\n+    { url = \"https://files.pythonhosted.org/packages/d8/84/5101f35294579c4bef7dc32fd4f097d91eedac2e195894266bdabc1e6dfd/pydantic_core-2.50.4-cp312-cp312-win32.whl\", hash = \"sha256:67f7cc397e1d5556a801d1cba74de0d27d827eb242e6c036c0ca273c745414f1\", size = 2119592, upload-time = \"2026-11-05T09:12:27.971Z\" },\n+    { url = \"https://files.pythonhosted.org/packages/82/88/d438a8fcf3738e9ff2670f724047ca3893ec899bcd5cdfc077a2aab133c6/pydantic_core-2.50.4-cp312-cp312-win_amd64.whl\", hash = \"sha256:ea2f61b0bc12f3592288503961b764579dea0658852d96a0b3d823614d808821\", size = 2264064, upload-time = \"2026-11-05T09:12:29.538Z\" },\n+    { url = \"https://files.pythonhosted.org/packages/77/d4/4a0c73dc3ef9e50b122b8c3527afcded15a44838f1c9668d2d4b72cc09f0/pydantic_core-2.50.4-cp312-cp312-win_arm64.whl\", hash = \"sha256:32d6dda86383645ec428ea64dfc277036f5cbc60a72238eab28b91a3fdb9a113\", size = 2167792, upload-time = \"2026-11-05T09:12:31.103Z\" },\n+    { url = \"https://files.pythonhosted.org/packages/9a/18/2f6a25e9104d5af713d16671711927601da1f0db74e785be67bd590385c9/pydantic_core-2.50.4-graalpy312-graalpy250_312_native-macosx_10_12_x86_64.whl\", hash = \"sha256:c04e9d920e2674f54651fd260a15c5d2843526c73d5242ee4311325ddc9573b3\", size = 2212591, upload-time = \"2026-11-05T09:14:56.262Z\" },\n+    { url = \"https://files.pythonhosted.org/packages/4c/1b/ba8b721af10a7659e7fbbef320ff8eb55462557a72607858af5a9bd22cb1/pydantic_core-2.50.4-graalpy312-graalpy250_312_native-macosx_11_0_arm64.whl\", hash = \"sha256:5bc1811ef2b4d4ba63e8e452f6e332b6374bd1d2cbbfdf66826c8cb1f71dd10d\", size = 2048167, upload-time = \"2026-11-05T09:14:57.681Z\" },\n+    { url = \"https://files.pythonhosted.org/packages/48/42/3f8638e7d90bdd9a7c7f3e5084723af59e7f43f15a292e242d35624073ce/pydantic_core-2.50.4-graalpy312-graalpy250_312_native-manylinux2014_aarch64.manylinux_2_17_aarch64.whl\", hash = \"sha256:0b059a7968b1911be5a2d9a8234827ab0bef9d1e465d4b42da525894143550e8\", size = 2119548, upload-time = \"2026-11-05T09:14:59.317Z\" },\n+    { url = \"https://files.pythonhosted.org/packages/e0/8d/4bfbacaf191f7939893d165e18eb301731fa3366c59a6e57336c4f168fbd/pydantic_core-2.50.4-graalpy312-graalpy250_312_native-manylinux2014_x86_64.manylinux_2_17_x86_64.whl\", hash = \"sha256:bee28aab5a580eec673f7b68dfa8dece3dd37bd207ef8d22fafe23a8e9837296\", size = 2279952, upload-time = \"2026-11-05T09:15:00.907Z\" },\n ]\n \n [[package]]"
+      }
+    ]
+  },
+  "pull_request": {
+    "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/pulls/8",
+    "id": 5327376461,
+    "node_id": "PR_kwDOVtqZYM8AAAABPYlQTQ",
+    "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/8",
+    "diff_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/8.diff",
+    "patch_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/8.patch",
+    "issue_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/issues/8",
+    "commits_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/pulls/8/commits",
+    "review_comments_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/pulls/8/comments",
+    "review_comment_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/pulls/comments{/number}",
+    "comments_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/issues/8/comments",
+    "statuses_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/statuses/baae6a477278d72afb6ffaae8a84b8ee49f7d800",
+    "number": 8,
+    "state": "closed",
+    "locked": false,
+    "title": "build: consolidate Python 3.12 and application dependency updates",
+    "user": {
+      "login": "mehdisafer",
+      "id": 142994379,
+      "node_id": "U_kgDOCIXryw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mehdisafer",
+      "html_url": "https://github.com/mehdisafer",
+      "followers_url": "https://api.github.com/users/mehdisafer/followers",
+      "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+      "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+      "repos_url": "https://api.github.com/users/mehdisafer/repos",
+      "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "body": "## Purpose\n\nConsolidate four compatible Dependabot proposals against the already integrated enterprise MDM reference. This keeps the existing `>=3.12,<3.13` runtime contract and avoids independently merging overlapping `uv.lock` edits.\n\n## Changes\n\n- Python Docker builder/runtime and GitHub Actions: **3.12.14 → 3.12.16** (#7).\n- FastAPI **0.141.1 → 0.162.4** (#4), Pydantic **2.13.4 → 2.14.3** and Core **2.46.4 → 2.50.4** (#5).\n- Hatchling build backend **1.29.0 → 1.33.0** (#6).\n- Combined the exact upstream Dependabot package blocks and direct root constraints; 122 locked package identities remain, and unrelated blocks are untouched.\n- Added dependency/runtime compatibility smoke tests and aligned the README, CI runtime, operating runbook, verification, acceptance, publication and release notes.\n\n## Reviewed and observed\n\n- Candidate branch is one commit ahead of the exact original `main` SHA `16f7325c5f8b16ce2c5259d2fb...`; diff/readback lists **12 changed files**, including the exact merged lock.\n- The code and published documentation explicitly retain the **14 November native PostgreSQL/dbt/HTTP evidence** as historical evidence for its original dependency lock. Those old results **do not** count as a pass for this new source.\n- No domain-model change, SQL migration, Snowflake deployment, repo licence, visibility update or external service change.\n\n## Open verification gates\n\n- Run `uv sync --locked --all-extras`, the full real-PostgreSQL pytest suite, wheel/sdist checks, native HTTP, dbt/restore, component/advisory inventory and container/browser/Terraform jobs at the new head; preserve original logs and hashes. These actions are **not asserted as executed in this PR**.\n- GitHub Actions application runner admission and live Snowflake remain separate open gates. No unassigned Actions job is a pass.\n- Merge this rollup only after its diff and verification limitations are consciously reviewed. Close #4–#7 as superseded only after the combined change is integrated.\n\nTracking: #1. Documentation: `docs/dependency-refresh-2026-11-15.md`. This is maintainer-agent self-review, not an independent approval.",
+    "labels": [],
+    "milestone": null,
+    "active_lock_reason": null,
+    "created_at": "2026-11-15T21:27:50Z",
+    "updated_at": "2026-11-15T21:31:22Z",
+    "closed_at": "2026-11-15T21:31:22Z",
+    "merged_at": "2026-11-15T21:31:22Z",
+    "merge_commit_sha": "03c927b3f19e387df770130d59d9c09bea3800d1",
+    "assignee": null,
+    "assignees": [],
+    "requested_reviewers": [],
+    "requested_teams": [],
+    "head": {
+      "label": "mehdisafer:chore/dependency-refresh-2026-11-15",
+      "ref": "chore/dependency-refresh-2026-11-15",
+      "repo": {
+        "id": 1457166688,
+        "node_id": "R_kgDOVtqZYA",
+        "name": "enterprise-master-data-reconciliation",
+        "full_name": "mehdisafer/enterprise-master-data-reconciliation",
+        "owner": {
+          "login": "mehdisafer",
+          "id": 142994379,
+          "node_id": "U_kgDOCIXryw",
+          "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/mehdisafer",
+          "html_url": "https://github.com/mehdisafer",
+          "followers_url": "https://api.github.com/users/mehdisafer/followers",
+          "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+          "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+          "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+          "repos_url": "https://api.github.com/users/mehdisafer/repos",
+          "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "private": true,
+        "fork": false,
+        "archived": false,
+        "disabled": false,
+        "description": null,
+        "homepage": null,
+        "language": "Python",
+        "visibility": "private",
+        "is_template": false,
+        "topics": [],
+        "forks_count": 0,
+        "forks": 0,
+        "stargazers_count": 0,
+        "watchers_count": 0,
+        "watchers": 0,
+        "open_issues_count": 1,
+        "open_issues": 1,
+        "size": 1971,
+        "default_branch": "main",
+        "has_issues": true,
+        "has_projects": true,
+        "has_wiki": false,
+        "has_pages": false,
+        "has_downloads": false,
+        "has_discussions": false,
+        "has_pull_requests": true,
+        "pushed_at": "2026-11-15T21:33:57Z",
+        "created_at": "2026-11-13T22:35:29Z",
+        "updated_at": "2026-11-14T14:14:00Z",
+        "allow_forking": true,
+        "web_commit_signoff_required": false,
+        "pull_request_creation_policy": "all",
+        "license": null,
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation",
+        "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation",
+        "archive_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/{archive_format}{/ref}",
+        "assignees_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/assignees{/user}",
+        "blobs_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/blobs{/sha}",
+        "branches_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/branches{/branch}",
+        "collaborators_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/collaborators{/collaborator}",
+        "comments_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/comments{/number}",
+        "commits_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits{/sha}",
+        "compare_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/compare/{base}...{head}",
+        "contents_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/contents/{+path}",
+        "contributors_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/contributors",
+        "deployments_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/deployments",
+        "downloads_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/downloads",
+        "events_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/events",
+        "forks_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/forks",
+        "git_commits_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/commits{/sha}",
+        "git_refs_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/refs{/sha}",
+        "git_tags_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/tags{/sha}",
+        "git_url": "git://github.com/mehdisafer/enterprise-master-data-reconciliation.git",
+        "issue_comment_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/issues/comments{/number}",
+        "issue_events_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/issues/events{/number}",
+        "issues_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/issues{/number}",
+        "keys_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/keys{/key_id}",
+        "labels_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/labels{/name}",
+        "languages_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/languages",
+        "merges_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/merges",
+        "milestones_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/milestones{/number}",
+        "notifications_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/notifications{?since,all,participating}",
+        "pulls_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/pulls{/number}",
+        "releases_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/releases{/id}",
+        "ssh_url": "git@github.com:mehdisafer/enterprise-master-data-reconciliation.git",
+        "stargazers_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/stargazers",
+        "statuses_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/statuses/{sha}",
+        "subscribers_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/subscribers",
+        "subscription_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/subscription",
+        "tags_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/tags",
+        "teams_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/teams",
+        "trees_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/trees{/sha}",
+        "clone_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation.git",
+        "mirror_url": null,
+        "hooks_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/hooks",
+        "svn_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation"
+      },
+      "sha": "baae6a477278d72afb6ffaae8a84b8ee49f7d800",
+      "user": {
+        "login": "mehdisafer",
+        "id": 142994379,
+        "node_id": "U_kgDOCIXryw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mehdisafer",
+        "html_url": "https://github.com/mehdisafer",
+        "followers_url": "https://api.github.com/users/mehdisafer/followers",
+        "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+        "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+        "repos_url": "https://api.github.com/users/mehdisafer/repos",
+        "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      }
+    },
+    "base": {
+      "label": "mehdisafer:main",
+      "ref": "main",
+      "repo": {
+        "id": 1457166688,
+        "node_id": "R_kgDOVtqZYA",
+        "name": "enterprise-master-data-reconciliation",
+        "full_name": "mehdisafer/enterprise-master-data-reconciliation",
+        "owner": {
+          "login": "mehdisafer",
+          "id": 142994379,
+          "node_id": "U_kgDOCIXryw",
+          "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/mehdisafer",
+          "html_url": "https://github.com/mehdisafer",
+          "followers_url": "https://api.github.com/users/mehdisafer/followers",
+          "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+          "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+          "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+          "repos_url": "https://api.github.com/users/mehdisafer/repos",
+          "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "private": true,
+        "fork": false,
+        "archived": false,
+        "disabled": false,
+        "description": null,
+        "homepage": null,
+        "language": "Python",
+        "visibility": "private",
+        "is_template": false,
+        "topics": [],
+        "forks_count": 0,
+        "forks": 0,
+        "stargazers_count": 0,
+        "watchers_count": 0,
+        "watchers": 0,
+        "open_issues_count": 1,
+        "open_issues": 1,
+        "size": 1971,
+        "default_branch": "main",
+        "has_issues": true,
+        "has_projects": true,
+        "has_wiki": false,
+        "has_pages": false,
+        "has_downloads": false,
+        "has_discussions": false,
+        "has_pull_requests": true,
+        "pushed_at": "2026-11-15T21:33:57Z",
+        "created_at": "2026-11-13T22:35:29Z",
+        "updated_at": "2026-11-14T14:14:00Z",
+        "allow_forking": true,
+        "web_commit_signoff_required": false,
+        "pull_request_creation_policy": "all",
+        "license": null,
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation",
+        "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation",
+        "archive_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/{archive_format}{/ref}",
+        "assignees_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/assignees{/user}",
+        "blobs_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/blobs{/sha}",
+        "branches_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/branches{/branch}",
+        "collaborators_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/collaborators{/collaborator}",
+        "comments_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/comments{/number}",
+        "commits_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits{/sha}",
+        "compare_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/compare/{base}...{head}",
+        "contents_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/contents/{+path}",
+        "contributors_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/contributors",
+        "deployments_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/deployments",
+        "downloads_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/downloads",
+        "events_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/events",
+        "forks_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/forks",
+        "git_commits_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/commits{/sha}",
+        "git_refs_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/refs{/sha}",
+        "git_tags_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/tags{/sha}",
+        "git_url": "git://github.com/mehdisafer/enterprise-master-data-reconciliation.git",
+        "issue_comment_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/issues/comments{/number}",
+        "issue_events_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/issues/events{/number}",
+        "issues_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/issues{/number}",
+        "keys_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/keys{/key_id}",
+        "labels_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/labels{/name}",
+        "languages_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/languages",
+        "merges_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/merges",
+        "milestones_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/milestones{/number}",
+        "notifications_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/notifications{?since,all,participating}",
+        "pulls_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/pulls{/number}",
+        "releases_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/releases{/id}",
+        "ssh_url": "git@github.com:mehdisafer/enterprise-master-data-reconciliation.git",
+        "stargazers_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/stargazers",
+        "statuses_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/statuses/{sha}",
+        "subscribers_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/subscribers",
+        "subscription_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/subscription",
+        "tags_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/tags",
+        "teams_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/teams",
+        "trees_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/trees{/sha}",
+        "clone_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation.git",
+        "mirror_url": null,
+        "hooks_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/hooks",
+        "svn_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation"
+      },
+      "sha": "16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+      "user": {
+        "login": "mehdisafer",
+        "id": 142994379,
+        "node_id": "U_kgDOCIXryw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mehdisafer",
+        "html_url": "https://github.com/mehdisafer",
+        "followers_url": "https://api.github.com/users/mehdisafer/followers",
+        "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+        "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+        "repos_url": "https://api.github.com/users/mehdisafer/repos",
+        "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      }
+    },
+    "_links": {
+      "comments": {
+        "href": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/issues/8/comments"
+      },
+      "commits": {
+        "href": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/pulls/8/commits"
+      },
+      "statuses": {
+        "href": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/statuses/baae6a477278d72afb6ffaae8a84b8ee49f7d800"
+      },
+      "html": {
+        "href": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/8"
+      },
+      "issue": {
+        "href": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/issues/8"
+      },
+      "review_comments": {
+        "href": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/pulls/8/comments"
+      },
+      "review_comment": {
+        "href": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/pulls/comments{/number}"
+      },
+      "self": {
+        "href": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/pulls/8"
+      }
+    },
+    "author_association": "OWNER",
+    "auto_merge": null,
+    "draft": false,
+    "merged": true,
+    "mergeable": null,
+    "rebaseable": null,
+    "mergeable_state": "unknown",
+    "merged_by": {
+      "login": "mehdisafer",
+      "id": 142994379,
+      "node_id": "U_kgDOCIXryw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mehdisafer",
+      "html_url": "https://github.com/mehdisafer",
+      "followers_url": "https://api.github.com/users/mehdisafer/followers",
+      "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+      "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+      "repos_url": "https://api.github.com/users/mehdisafer/repos",
+      "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "comments": 0,
+    "review_comments": 0,
+    "maintainer_can_modify": false,
+    "commits": 1,
+    "additions": 145,
+    "deletions": 39,
+    "changed_files": 12
+  },
+  "issue1": {
+    "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/issues/1",
+    "repository_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation",
+    "labels_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/issues/1/labels{/name}",
+    "comments_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/issues/1/comments",
+    "events_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/issues/1/events",
+    "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/issues/1",
+    "id": 6381312203,
+    "node_id": "I_kwDOVtqZYM8AAAABfFsYyw",
+    "number": 1,
+    "title": "Deliver explainable and reversible industrial master data reconciliation",
+    "user": {
+      "login": "mehdisafer",
+      "id": 142994379,
+      "node_id": "U_kgDOCIXryw",
+      "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/mehdisafer",
+      "html_url": "https://github.com/mehdisafer",
+      "followers_url": "https://api.github.com/users/mehdisafer/followers",
+      "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+      "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+      "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+      "repos_url": "https://api.github.com/users/mehdisafer/repos",
+      "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "labels": [],
+    "state": "open",
+    "locked": false,
+    "assignees": [],
+    "milestone": null,
+    "comments": 1,
+    "created_at": "2026-11-13T22:42:51Z",
+    "updated_at": "2026-11-15T21:33:41Z",
+    "closed_at": null,
+    "assignee": null,
+    "author_association": "OWNER",
+    "issue_field_values": [],
+    "type": null,
+    "active_lock_reason": null,
+    "sub_issues_summary": {
+      "total": 0,
+      "completed": 0,
+      "percent_completed": 0
+    },
+    "issue_dependencies_summary": {
+      "blocked_by": 0,
+      "total_blocked_by": 0,
+      "blocking": 0,
+      "total_blocking": 0
+    },
+    "body": "## Outcome\n\nBuild a working master-data reconciliation platform for a fictitious industrial group with three ERP systems. The first integrated delivery must ingest immutable originals, explain candidate matches, support human approval, publish attribute-level provenance, and correct a mistaken merge without losing source identities.\n\n## Inventory\n\nInspected on 2026-11-13: the repository is private and empty, with no branches, issues or pull requests. There is no existing code or licence to preserve. This issue records the scope before implementation. Only this repository and isolated execution environments are in scope.\n\n## Acceptance criteria\n\n- [x] Versioned source, matching, survivorship, decision and output contracts; validated configuration and identifiers.\n- [x] Three synthetic ERPs; positive, negative and held-out truth; legal entities, establishments and roles distinguished.\n- [x] Measured candidate recall, pair precision/recall, review burden and group correctness; bridge merges blocked.\n- [ ] Human review, distinct requester/approver/executor, optimistic versions, merge/split/unmerge and stable source crosswalks. Server workflows are qualified; rendered-console verification remains open.\n- [x] Attribute lineage, authority-before-recency survivorship, bitemporal late corrections and non-overlapping history.\n- [x] Transactional outbox, idempotent consumer, consumer correction after split and crash recovery.\n- [x] Real PostgreSQL integration tests and dbt build artifacts; repeat ingestion, stale decisions, unavailable source, event duplication and recovery exercised.\n- [ ] Container reference deployment, locked dependencies, CI, observability, backup and exercised restore.\n- [ ] Snowflake adapter and infrastructure reviewed, followed by an authorized live Snowflake/dbt qualification.\n- [ ] Repository release review, explicit licence choice, metadata/protections within available permissions and public visibility only if separately authorized.\n\n## Prioritized delivery\n\n1. **P0 — Integrated reference:** domain contracts, synthetic truth, matching, durable PostgreSQL service, API/review console and executable scenario.\n2. **P0 — Correctness:** lifecycle/concurrency/failure tests, genuine dbt build, evidence and restore drill.\n3. **P1 — Target integration:** Snowflake snapshot publication, dbt parity, bounded Terraform configuration and live qualification.\n4. **P1 — Operation and release:** deployment, runbooks, CI checks, measured bounded load, release candidate notes and complete acceptance matrix.\n\n## Constraints and open prerequisites\n\nThe maintainer requested public source publication on 14 November and will perform the repository-setting changes in GitHub's interface. No repository licence has been approved; no licence grant will be added implicitly. A dedicated authorized Snowflake account, role, warehouse/database scope and spend cap are needed for live Snowflake qualification. Static Terraform schema checks need a compatible runner but no warehouse credentials. Local PostgreSQL success will not be recorded as Snowflake validation. Reviews performed by the implementation agents are self-review, not independent approval.\n\n## Delivery update — 2026-11-14 UTC\n\n**Source integration is complete.** PR #2 merged into `main` at [`e27f4c2f`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/e27f4c2f58d812a2213b1457378095dc72dafd8a). The final [delivery consolidation `16f7325c`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7) follows that merge, with complete tree `bcc83ae57e77f0081dbfbd276ddd6108ec5ee1d2` equal to the reviewed local tree. The main README and Dependabot configuration were read back byte-for-byte.\n\nAt the latest API readback the repository remained private and About metadata unset. The maintainer owns those interface changes under the explicit Public objective. Full project acceptance remains open in this issue; no release tag or repository licence was selected.\n\n- [Project entry point](https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7/README.md)\n- [Original evidence and source correspondence](https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7/evidence/README.md)\n- [Acceptance matrix](https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7/docs/acceptance.md)\n- [Release candidate notes](https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7/docs/releases/0.1.0rc1.md)\n- [Publication procedure and exact About metadata](https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7/docs/publication.md)\n\n### Supported qualification\n\n**125 tests and 15 subtests passed with zero skips, including 53 real PostgreSQL cases.** Thirteen added regressions cover bounded publication completion/recovery, historical incompatibility and stale group disposition. Application, test, dbt, dependency and Docker inputs remain identical to qualified source `205e7507b9cd7dc1b34a858f2c524ce0c832642c`.\n\nThe actual PostgreSQL 17.12 flow passed all seventeen phases. Its business scenario passed six assertions and nine invariants, with 34 retained source identities, 28 active golden records and 34 aligned reporting mappings. Five dbt models and 41 data tests passed; a populated catalog was generated. Native backup/restore preserved seventeen table fingerprints, rejected the populated target for the exact intended reason, and passed 41 restored dbt tests.\n\nThe live HTTP server passed 24 requests and 127 assertions for auth, assets, provenance, metrics and correlation, with verified shutdown and secret cleanup. A 300-source profile measured ingestion, consolidation, SQL plan and history growth; these are limited synthetic measurements.\n\nThe [targeted evidence-control qualification](https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7/evidence/2026-11-14/ci-evidence-hardening/qualification.json) subsequently passed 41 dbt tests again, preserved build output through docs generation, accepted the intended restore refusal and rejected two actual unrelated failures. Both databases' seventeen operational table fingerprints were unchanged. Fifty-two originals are preserved. The equivalent Snowflake helper fix is syntax-checked, not live-qualified. No new full runtime suite was run for the final documentation/Dependabot-policy changes.\n\n### Publication checks and automation\n\nThe [expanded history capture](https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/16f7325c5f8b16ce2c5259d2fba44f40e78bebe7/evidence/2026-11-14/publication-preflight/post-merge-history/remote-history-scan.json) records five listed branches plus closed PR #3's head at 14:22 UTC: 16 commits, 15 complete trees, 540 hash-verified blobs and 11,065,653 bytes. No configured pattern or limited input was reported in that scope; 23 older/remote blobs were fetched to complete it. Tags, unreachable objects and inaccessible account/log data remain excluded.\n\nThe final working-tree scan covers 561 files and 517 local-history blobs, with no detected pattern or limited input before its own report was copied. Static consolidation checks cover 192 relative links, metadata, the Python contract and four new preserved originals. These checks are scoped evidence, not exhaustive secret detection.\n\nThree initial Dependabot service jobs succeeded with 18 steps in total. Application/Terraform qualification remains distinct. Python 3.15 PR #3 was closed without merging because the project supports Python 3.12; the published update policy ignores major/minor Python Docker updates while retaining patch eligibility. PRs #4–#6 for FastAPI, Pydantic and Hatchling remain open and unmerged. The verified lock is unchanged.\n\n### Remaining concrete gates\n\n1. **Application CI/container/browser/provider schema:** final-head [Quality run 43605050912](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43605050912) has a failed scope job with runner 0 and no steps, skipped dependent jobs and zero artifacts. The merged-reference [Terraform run 43603763082](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43603763082) also has no executed steps. Exact admission text remains unread; no billing/quota/policy cause is established. Native TCP qualification does not qualify Docker, rendered Chromium or the provider schema. Terraform schema validation needs a compatible runner, not Snowflake credentials.\n2. **Snowflake:** provide a dedicated authorized account/role, key-pair credential, database/warehouse scope and explicit budget, then execute live publication/readback/rollback, dbt parity and accessible timing/cost evidence.\n3. **Public access and administration:** apply Public and About metadata through the maintainer's GitHub interface, then verify anonymous repository/README access and metadata. Main integration is already verified. Available protections and any future licence grant remain separate explicit decisions.\n\nIssue #1 stays open. The unchecked criteria retain their remaining rendered deployment, provider and release scope. No full-runtime acceptance, paid-plan change, live warehouse deployment or independent approval is asserted. Last delivery/API consolidation: 2026-11-14 14:30:27 UTC.",
+    "closed_by": null,
+    "reactions": {
+      "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/issues/1/reactions",
+      "total_count": 0,
+      "+1": 0,
+      "-1": 0,
+      "laugh": 0,
+      "hooray": 0,
+      "confused": 0,
+      "heart": 0,
+      "rocket": 0,
+      "eyes": 0
+    },
+    "timeline_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/issues/1/timeline",
+    "performed_via_github_app": {
+      "id": 1144995,
+      "client_id": "Iv23liVemv8A9if9v0F2",
+      "slug": "chatgpt-codex-connector",
+      "node_id": "A_kwHOAOQ6Gs4AEXij",
+      "owner": {
+        "login": "openai",
+        "id": 14957082,
+        "node_id": "MDEyOk9yZ2FuaXphdGlvbjE0OTU3MDgy",
+        "avatar_url": "https://avatars.githubusercontent.com/u/14957082?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/openai",
+        "html_url": "https://github.com/openai",
+        "followers_url": "https://api.github.com/users/openai/followers",
+        "following_url": "https://api.github.com/users/openai/following{/other_user}",
+        "gists_url": "https://api.github.com/users/openai/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/openai/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/openai/subscriptions",
+        "organizations_url": "https://api.github.com/users/openai/orgs",
+        "repos_url": "https://api.github.com/users/openai/repos",
+        "events_url": "https://api.github.com/users/openai/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/openai/received_events",
+        "type": "Organization",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "name": "ChatGPT Codex Connector",
+      "description": "Bring ChatGPT and Codex to your GitHub repositories.",
+      "external_url": "https://www.chatgpt.com",
+      "html_url": "https://github.com/apps/chatgpt-codex-connector",
+      "created_at": "2025-02-14T01:37:05Z",
+      "updated_at": "2026-09-23T18:52:59Z",
+      "permissions": {
+        "actions": "write",
+        "checks": "read",
+        "contents": "write",
+        "emails": "read",
+        "issues": "write",
+        "metadata": "read",
+        "pull_requests": "write",
+        "statuses": "read",
+        "workflows": "write"
+      },
+      "events": [
+        "check_run",
+        "check_suite",
+        "commit_comment",
+        "issues",
+        "issue_comment",
+        "pull_request",
+        "pull_request_review",
+        "pull_request_review_comment",
+        "pull_request_review_thread",
+        "repository",
+        "status",
+        "sub_issues"
+      ]
+    },
+    "state_reason": null,
+    "pinned_comment": null
+  },
+  "issue1_comments": [
+    {
+      "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/issues/comments/6901711058",
+      "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/issues/1#issuecomment-6901711058",
+      "issue_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/issues/1",
+      "id": 6901711058,
+      "node_id": "IC_kwDOVtqZYM8AAAABm1_A0g",
+      "user": {
+        "login": "mehdisafer",
+        "id": 142994379,
+        "node_id": "U_kgDOCIXryw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mehdisafer",
+        "html_url": "https://github.com/mehdisafer",
+        "followers_url": "https://api.github.com/users/mehdisafer/followers",
+        "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+        "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+        "repos_url": "https://api.github.com/users/mehdisafer/repos",
+        "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "created_at": "2026-11-15T21:33:41Z",
+      "updated_at": "2026-11-15T21:33:41Z",
+      "body": "## Dependency maintenance integration — 15 November 2026\n\n**Source integrated (not runtime-accepted):** [PR #8](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/8) merged into `main` at [`03c927b3f19e387df770130d59d9c09bea3800d1`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/03c927b3f19e387df770130d59d9c09bea3800d1). The live GitHub readback confirms the exact reviewed tree `597edf47a88c1a4a346be367fe8d655962027a06`, the README, Python/CI versions, combined lock and newly added tests.\n\nThe update consolidates Dependabot #4 (FastAPI 0.162.4), #5 (Pydantic 2.14.3 / Pydantic Core 2.50.4), #6 (Hatchling 1.33.0) and #7 (Python 3.12.16). PRs #4–#7 are now closed, unmerged individually; #8 is the single integrated rollup. No source identity, decision logic, migration, target warehouse or visibility/licence setting was changed. The [dependency change record](https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/03c927b3f19e387df770130d59d9c09bea3800d1/docs/dependency-refresh-2026-11-15.md) separates source changes from observed validation.\n\n**CI state:** [new-head Quality push run 43764143909](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43764143909) concluded failure in `scope` with no recorded steps; the dependencies, PostgreSQL and container jobs were skipped. The PR-head [run 43763821581](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43763821581) has the same no-steps boundary. Neither run establishes an executed regression failure or an application PASS, and the runner admission cause remains unconfirmed. Dependabot service-run activity is not application CI.\n\n**Acceptance remains open.** Requalify the updated lock on an assigned runner (real PostgreSQL full suite, dbt, HTTP, restore, Docker/browser, Terraform provider/schema, current package advisory/license inventory), and execute live Snowflake only with an expressly approved dedicated account, role, scope and cost cap. The historical 14 November successes remain source-specific. Repository visibility is still private, no project licence or release tag is selected, and the maintainer retains the GitHub interface/publication steps. Issue #1 is not closed.",
+      "author_association": "OWNER",
+      "pin": null,
+      "reactions": {
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/issues/comments/6901711058/reactions",
+        "total_count": 0,
+        "+1": 0,
+        "-1": 0,
+        "laugh": 0,
+        "hooray": 0,
+        "confused": 0,
+        "heart": 0,
+        "rocket": 0,
+        "eyes": 0
+      },
+      "performed_via_github_app": {
+        "id": 1144995,
+        "client_id": "Iv23liVemv8A9if9v0F2",
+        "slug": "chatgpt-codex-connector",
+        "node_id": "A_kwHOAOQ6Gs4AEXij",
+        "owner": {
+          "login": "openai",
+          "id": 14957082,
+          "node_id": "MDEyOk9yZ2FuaXphdGlvbjE0OTU3MDgy",
+          "avatar_url": "https://avatars.githubusercontent.com/u/14957082?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/openai",
+          "html_url": "https://github.com/openai",
+          "followers_url": "https://api.github.com/users/openai/followers",
+          "following_url": "https://api.github.com/users/openai/following{/other_user}",
+          "gists_url": "https://api.github.com/users/openai/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/openai/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/openai/subscriptions",
+          "organizations_url": "https://api.github.com/users/openai/orgs",
+          "repos_url": "https://api.github.com/users/openai/repos",
+          "events_url": "https://api.github.com/users/openai/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/openai/received_events",
+          "type": "Organization",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "name": "ChatGPT Codex Connector",
+        "description": "Bring ChatGPT and Codex to your GitHub repositories.",
+        "external_url": "https://www.chatgpt.com",
+        "html_url": "https://github.com/apps/chatgpt-codex-connector",
+        "created_at": "2025-02-14T01:37:05Z",
+        "updated_at": "2026-09-23T18:52:59Z",
+        "permissions": {
+          "actions": "write",
+          "checks": "read",
+          "contents": "write",
+          "emails": "read",
+          "issues": "write",
+          "metadata": "read",
+          "pull_requests": "write",
+          "statuses": "read",
+          "workflows": "write"
+        },
+        "events": [
+          "check_run",
+          "check_suite",
+          "commit_comment",
+          "issues",
+          "issue_comment",
+          "pull_request",
+          "pull_request_review",
+          "pull_request_review_comment",
+          "pull_request_review_thread",
+          "repository",
+          "status",
+          "sub_issues"
+        ]
+      },
+      "minimized": null
+    }
+  ],
+  "circleci_branch": {
+    "name": "circleci-project-setup",
+    "commit": {
+      "sha": "9cae86657963e8c3e2abd5a615120a7d46a154b3",
+      "node_id": "C_kwDOVtqZYNoAKDljYWU4NjY1Nzk2M2U4YzNlMmFiZDVhNjE1MTIwYTdkNDZhMTU0YjM",
+      "commit": {
+        "author": {
+          "name": "mehdisafer",
+          "email": "142994379+mehdisafer@users.noreply.github.com",
+          "date": "2026-11-15T21:33:56Z"
+        },
+        "committer": {
+          "name": "mehdisafer",
+          "email": "142994379+mehdisafer@users.noreply.github.com",
+          "date": "2026-11-15T21:33:56Z"
+        },
+        "message": "ci: run container and rendered operator qualification on a Linux VM",
+        "tree": {
+          "sha": "40e516eda20fe5dc9439fe071013a16b4dd9e747",
+          "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/trees/40e516eda20fe5dc9439fe071013a16b4dd9e747"
+        },
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/commits/9cae86657963e8c3e2abd5a615120a7d46a154b3",
+        "comment_count": 0,
+        "verification": {
+          "verified": false,
+          "reason": "unsigned",
+          "signature": null,
+          "payload": null,
+          "verified_at": null
+        }
+      },
+      "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/9cae86657963e8c3e2abd5a615120a7d46a154b3",
+      "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/9cae86657963e8c3e2abd5a615120a7d46a154b3",
+      "comments_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/9cae86657963e8c3e2abd5a615120a7d46a154b3/comments",
+      "author": {
+        "login": "mehdisafer",
+        "id": 142994379,
+        "node_id": "U_kgDOCIXryw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mehdisafer",
+        "html_url": "https://github.com/mehdisafer",
+        "followers_url": "https://api.github.com/users/mehdisafer/followers",
+        "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+        "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+        "repos_url": "https://api.github.com/users/mehdisafer/repos",
+        "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "mehdisafer",
+        "id": 142994379,
+        "node_id": "U_kgDOCIXryw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mehdisafer",
+        "html_url": "https://github.com/mehdisafer",
+        "followers_url": "https://api.github.com/users/mehdisafer/followers",
+        "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+        "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+        "repos_url": "https://api.github.com/users/mehdisafer/repos",
+        "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "33c8b2d8fa1544925bb529025f9d715ad9afe7e5",
+          "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/33c8b2d8fa1544925bb529025f9d715ad9afe7e5",
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/33c8b2d8fa1544925bb529025f9d715ad9afe7e5"
+        }
+      ]
+    },
+    "_links": {
+      "self": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/branches/circleci-project-setup",
+      "html": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/tree/circleci-project-setup"
+    },
+    "protected": false,
+    "protection": {
+      "enabled": false,
+      "required_status_checks": {
+        "enforcement_level": "off",
+        "contexts": [],
+        "checks": []
+      }
+    },
+    "protection_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/branches/circleci-project-setup/protection"
+  },
+  "circleci_compare": {
+    "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/compare/e083b131cae575d843fde900dcf4fcd2e7207f23...9cae86657963e8c3e2abd5a615120a7d46a154b3",
+    "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/compare/e083b131cae575d843fde900dcf4fcd2e7207f23...9cae86657963e8c3e2abd5a615120a7d46a154b3",
+    "permalink_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/compare/mehdisafer:e083b13...mehdisafer:9cae866",
+    "diff_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/compare/e083b131cae575d843fde900dcf4fcd2e7207f23...9cae86657963e8c3e2abd5a615120a7d46a154b3.diff",
+    "patch_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/compare/e083b131cae575d843fde900dcf4fcd2e7207f23...9cae86657963e8c3e2abd5a615120a7d46a154b3.patch",
+    "base_commit": {
+      "sha": "e083b131cae575d843fde900dcf4fcd2e7207f23",
+      "node_id": "C_kwDOVtqZYNoAKGUwODNiMTMxY2FlNTc1ZDg0M2ZkZTkwMGRjZjRmY2QyZTcyMDdmMjM",
+      "commit": {
+        "author": {
+          "name": "mehdisafer",
+          "email": "142994379+mehdisafer@users.noreply.github.com",
+          "date": "2026-11-15T20:57:06Z"
+        },
+        "committer": {
+          "name": "mehdisafer",
+          "email": "142994379+mehdisafer@users.noreply.github.com",
+          "date": "2026-11-15T20:57:06Z"
+        },
+        "message": "ci: export JUnit file metadata for Smarter Testing",
+        "tree": {
+          "sha": "d91504f39ae5c67de7f78f00cae68f421605d9e3",
+          "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/trees/d91504f39ae5c67de7f78f00cae68f421605d9e3"
+        },
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/commits/e083b131cae575d843fde900dcf4fcd2e7207f23",
+        "comment_count": 0,
+        "verification": {
+          "verified": false,
+          "reason": "unsigned",
+          "signature": null,
+          "payload": null,
+          "verified_at": null
+        }
+      },
+      "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/e083b131cae575d843fde900dcf4fcd2e7207f23",
+      "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/e083b131cae575d843fde900dcf4fcd2e7207f23",
+      "comments_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/e083b131cae575d843fde900dcf4fcd2e7207f23/comments",
+      "author": {
+        "login": "mehdisafer",
+        "id": 142994379,
+        "node_id": "U_kgDOCIXryw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mehdisafer",
+        "html_url": "https://github.com/mehdisafer",
+        "followers_url": "https://api.github.com/users/mehdisafer/followers",
+        "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+        "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+        "repos_url": "https://api.github.com/users/mehdisafer/repos",
+        "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "mehdisafer",
+        "id": 142994379,
+        "node_id": "U_kgDOCIXryw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mehdisafer",
+        "html_url": "https://github.com/mehdisafer",
+        "followers_url": "https://api.github.com/users/mehdisafer/followers",
+        "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+        "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+        "repos_url": "https://api.github.com/users/mehdisafer/repos",
+        "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "93e8b6990d4603fe1379f5cf30a0ff169c609124",
+          "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/93e8b6990d4603fe1379f5cf30a0ff169c609124",
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/93e8b6990d4603fe1379f5cf30a0ff169c609124"
+        }
+      ]
+    },
+    "merge_base_commit": {
+      "sha": "e083b131cae575d843fde900dcf4fcd2e7207f23",
+      "node_id": "C_kwDOVtqZYNoAKGUwODNiMTMxY2FlNTc1ZDg0M2ZkZTkwMGRjZjRmY2QyZTcyMDdmMjM",
+      "commit": {
+        "author": {
+          "name": "mehdisafer",
+          "email": "142994379+mehdisafer@users.noreply.github.com",
+          "date": "2026-11-15T20:57:06Z"
+        },
+        "committer": {
+          "name": "mehdisafer",
+          "email": "142994379+mehdisafer@users.noreply.github.com",
+          "date": "2026-11-15T20:57:06Z"
+        },
+        "message": "ci: export JUnit file metadata for Smarter Testing",
+        "tree": {
+          "sha": "d91504f39ae5c67de7f78f00cae68f421605d9e3",
+          "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/trees/d91504f39ae5c67de7f78f00cae68f421605d9e3"
+        },
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/commits/e083b131cae575d843fde900dcf4fcd2e7207f23",
+        "comment_count": 0,
+        "verification": {
+          "verified": false,
+          "reason": "unsigned",
+          "signature": null,
+          "payload": null,
+          "verified_at": null
+        }
+      },
+      "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/e083b131cae575d843fde900dcf4fcd2e7207f23",
+      "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/e083b131cae575d843fde900dcf4fcd2e7207f23",
+      "comments_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/e083b131cae575d843fde900dcf4fcd2e7207f23/comments",
+      "author": {
+        "login": "mehdisafer",
+        "id": 142994379,
+        "node_id": "U_kgDOCIXryw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mehdisafer",
+        "html_url": "https://github.com/mehdisafer",
+        "followers_url": "https://api.github.com/users/mehdisafer/followers",
+        "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+        "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+        "repos_url": "https://api.github.com/users/mehdisafer/repos",
+        "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "committer": {
+        "login": "mehdisafer",
+        "id": 142994379,
+        "node_id": "U_kgDOCIXryw",
+        "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+        "gravatar_id": "",
+        "url": "https://api.github.com/users/mehdisafer",
+        "html_url": "https://github.com/mehdisafer",
+        "followers_url": "https://api.github.com/users/mehdisafer/followers",
+        "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+        "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+        "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+        "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+        "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+        "repos_url": "https://api.github.com/users/mehdisafer/repos",
+        "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+        "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+        "type": "User",
+        "user_view_type": "public",
+        "site_admin": false
+      },
+      "parents": [
+        {
+          "sha": "93e8b6990d4603fe1379f5cf30a0ff169c609124",
+          "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/93e8b6990d4603fe1379f5cf30a0ff169c609124",
+          "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/93e8b6990d4603fe1379f5cf30a0ff169c609124"
+        }
+      ]
+    },
+    "status": "ahead",
+    "ahead_by": 2,
+    "behind_by": 0,
+    "total_commits": 2,
+    "commits": [
+      {
+        "sha": "33c8b2d8fa1544925bb529025f9d715ad9afe7e5",
+        "node_id": "C_kwDOVtqZYNoAKDMzYzhiMmQ4ZmExNTQ0OTI1YmI1MjkwMjVmOWQ3MTVhZDlhZmU3ZTU",
+        "commit": {
+          "author": {
+            "name": "mehdisafer",
+            "email": "142994379+mehdisafer@users.noreply.github.com",
+            "date": "2026-11-15T21:16:06Z"
+          },
+          "committer": {
+            "name": "mehdisafer",
+            "email": "142994379+mehdisafer@users.noreply.github.com",
+            "date": "2026-11-15T21:16:06Z"
+          },
+          "message": "ci: preserve full qualification without GitHub event metadata",
+          "tree": {
+            "sha": "65779c929a6f29ea2be98545db0ab1aff37d3a3c",
+            "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/trees/65779c929a6f29ea2be98545db0ab1aff37d3a3c"
+          },
+          "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/commits/33c8b2d8fa1544925bb529025f9d715ad9afe7e5",
+          "comment_count": 0,
+          "verification": {
+            "verified": false,
+            "reason": "unsigned",
+            "signature": null,
+            "payload": null,
+            "verified_at": null
+          }
+        },
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/33c8b2d8fa1544925bb529025f9d715ad9afe7e5",
+        "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/33c8b2d8fa1544925bb529025f9d715ad9afe7e5",
+        "comments_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/33c8b2d8fa1544925bb529025f9d715ad9afe7e5/comments",
+        "author": {
+          "login": "mehdisafer",
+          "id": 142994379,
+          "node_id": "U_kgDOCIXryw",
+          "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/mehdisafer",
+          "html_url": "https://github.com/mehdisafer",
+          "followers_url": "https://api.github.com/users/mehdisafer/followers",
+          "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+          "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+          "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+          "repos_url": "https://api.github.com/users/mehdisafer/repos",
+          "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "committer": {
+          "login": "mehdisafer",
+          "id": 142994379,
+          "node_id": "U_kgDOCIXryw",
+          "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/mehdisafer",
+          "html_url": "https://github.com/mehdisafer",
+          "followers_url": "https://api.github.com/users/mehdisafer/followers",
+          "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+          "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+          "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+          "repos_url": "https://api.github.com/users/mehdisafer/repos",
+          "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "parents": [
+          {
+            "sha": "e083b131cae575d843fde900dcf4fcd2e7207f23",
+            "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/e083b131cae575d843fde900dcf4fcd2e7207f23",
+            "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/e083b131cae575d843fde900dcf4fcd2e7207f23"
+          }
+        ]
+      },
+      {
+        "sha": "9cae86657963e8c3e2abd5a615120a7d46a154b3",
+        "node_id": "C_kwDOVtqZYNoAKDljYWU4NjY1Nzk2M2U4YzNlMmFiZDVhNjE1MTIwYTdkNDZhMTU0YjM",
+        "commit": {
+          "author": {
+            "name": "mehdisafer",
+            "email": "142994379+mehdisafer@users.noreply.github.com",
+            "date": "2026-11-15T21:33:56Z"
+          },
+          "committer": {
+            "name": "mehdisafer",
+            "email": "142994379+mehdisafer@users.noreply.github.com",
+            "date": "2026-11-15T21:33:56Z"
+          },
+          "message": "ci: run container and rendered operator qualification on a Linux VM",
+          "tree": {
+            "sha": "40e516eda20fe5dc9439fe071013a16b4dd9e747",
+            "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/trees/40e516eda20fe5dc9439fe071013a16b4dd9e747"
+          },
+          "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/git/commits/9cae86657963e8c3e2abd5a615120a7d46a154b3",
+          "comment_count": 0,
+          "verification": {
+            "verified": false,
+            "reason": "unsigned",
+            "signature": null,
+            "payload": null,
+            "verified_at": null
+          }
+        },
+        "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/9cae86657963e8c3e2abd5a615120a7d46a154b3",
+        "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/9cae86657963e8c3e2abd5a615120a7d46a154b3",
+        "comments_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/9cae86657963e8c3e2abd5a615120a7d46a154b3/comments",
+        "author": {
+          "login": "mehdisafer",
+          "id": 142994379,
+          "node_id": "U_kgDOCIXryw",
+          "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/mehdisafer",
+          "html_url": "https://github.com/mehdisafer",
+          "followers_url": "https://api.github.com/users/mehdisafer/followers",
+          "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+          "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+          "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+          "repos_url": "https://api.github.com/users/mehdisafer/repos",
+          "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "committer": {
+          "login": "mehdisafer",
+          "id": 142994379,
+          "node_id": "U_kgDOCIXryw",
+          "avatar_url": "https://avatars.githubusercontent.com/u/142994379?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/mehdisafer",
+          "html_url": "https://github.com/mehdisafer",
+          "followers_url": "https://api.github.com/users/mehdisafer/followers",
+          "following_url": "https://api.github.com/users/mehdisafer/following{/other_user}",
+          "gists_url": "https://api.github.com/users/mehdisafer/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/mehdisafer/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/mehdisafer/subscriptions",
+          "organizations_url": "https://api.github.com/users/mehdisafer/orgs",
+          "repos_url": "https://api.github.com/users/mehdisafer/repos",
+          "events_url": "https://api.github.com/users/mehdisafer/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/mehdisafer/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "parents": [
+          {
+            "sha": "33c8b2d8fa1544925bb529025f9d715ad9afe7e5",
+            "url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/commits/33c8b2d8fa1544925bb529025f9d715ad9afe7e5",
+            "html_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/33c8b2d8fa1544925bb529025f9d715ad9afe7e5"
+          }
+        ]
+      }
+    ],
+    "files": [
+      {
+        "sha": "363abb3d5d0d65b0fdea13468467a0f3b41a616c",
+        "filename": ".circleci/reference.yml",
+        "status": "added",
+        "additions": 70,
+        "deletions": 0,
+        "changes": 70,
+        "blob_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/9cae86657963e8c3e2abd5a615120a7d46a154b3/.circleci%2Freference.yml",
+        "raw_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/raw/9cae86657963e8c3e2abd5a615120a7d46a154b3/.circleci%2Freference.yml",
+        "contents_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/contents/.circleci%2Freference.yml?ref=9cae86657963e8c3e2abd5a615120a7d46a154b3",
+        "patch": "@@ -0,0 +1,70 @@\n+# Manual Docker/HTTP/browser qualification. PostgreSQL/dbt/restore and Terraform\n+# retain their separate full workflows; this does not claim Snowflake acceptance.\n+version: 2.1\n+jobs:\n+  reference-containers:\n+    machine:\n+      image: ubuntu-2404:2026.10.1\n+    resource_class: large\n+    environment:\n+      DBT_SEND_ANONYMOUS_USAGE_STATS: \"false\"\n+      DO_NOT_TRACK: \"1\"\n+    steps:\n+      - checkout\n+      - run:\n+          name: Record source and scope an isolated reference deployment\n+          command: |\n+            mkdir -p artifacts\n+            git rev-parse HEAD > artifacts/commit.txt\n+            docker version > artifacts/docker-version.txt\n+            docker compose version > artifacts/compose-version.txt\n+            printf 'export COMPOSE_PROJECT_NAME=mdm-ci-%s\\n' \"$CIRCLE_WORKFLOW_ID\" >> \"$BASH_ENV\"\n+            printf 'export MDM_SECRET_DIR=.secrets/ci-%s\\n' \"$CIRCLE_WORKFLOW_ID\" >> \"$BASH_ENV\"\n+            python3 -m venv /tmp/mdm-ci-tools\n+            /tmp/mdm-ci-tools/bin/python -m pip install --disable-pip-version-check uv==0.13.6\n+            printf 'export PATH=/tmp/mdm-ci-tools/bin:$PATH\\n' >> \"$BASH_ENV\"\n+      - run:\n+          name: Install the reviewed browser qualification environment\n+          command: |\n+            uv sync --frozen --extra browser --python 3.12.14\n+            uv run --no-sync python --version\n+            uv run --no-sync python -m playwright install --with-deps --only-shell chromium\n+      - run:\n+          name: Prepare ephemeral identities and build the reference image\n+          no_output_timeout: 20m\n+          command: |\n+            python3 .github/scripts/setup_ci_secrets.py\n+            docker compose config --quiet\n+            printf '%s\\n' \"$COMPOSE_PROJECT_NAME\" > artifacts/owned-compose-project.txt\n+            docker compose build\n+      - run:\n+          name: Start PostgreSQL, migrations and API with health checks\n+          command: docker compose up --detach --wait --wait-timeout 120 api\n+      - run:\n+          name: Execute the image and verify the host-facing API\n+          command: |\n+            docker compose exec -T api mdm demo > artifacts/container-demo.json\n+            docker compose exec -T api mdm check > artifacts/container-check.json\n+            curl --fail --silent --show-error --max-time 10 http://127.0.0.1:8000/healthz > artifacts/container-health.json\n+            docker compose images --format json > artifacts/container-images.json\n+      - run:\n+          name: Exercise the actual rendered review and consumer views\n+          command: timeout --signal=TERM --kill-after=10s 180s uv run --no-sync python scripts/browser_smoke.py\n+      - run:\n+          name: Retain diagnostics and remove only this synthetic deployment\n+          when: always\n+          command: |\n+            mkdir -p artifacts\n+            if test -f artifacts/owned-compose-project.txt &&\n+               test \"$(cat artifacts/owned-compose-project.txt)\" = \"$COMPOSE_PROJECT_NAME\"; then\n+              docker compose logs --no-color > artifacts/container.log 2>&1 || true\n+              docker compose ps --all --format json > artifacts/container-state.json || true\n+              docker compose down --volumes --remove-orphans --timeout 30\n+            fi\n+      - store_artifacts:\n+          path: artifacts\n+          destination: reference\n+workflows:\n+  reference-qualification:\n+    jobs:\n+      - reference-containers"
+      },
+      {
+        "sha": "a940d705907dc18350648cf36b5d09791e59bca2",
+        "filename": ".github/workflows/quality.yml",
+        "status": "modified",
+        "additions": 16,
+        "deletions": 8,
+        "changes": 24,
+        "blob_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/blob/9cae86657963e8c3e2abd5a615120a7d46a154b3/.github%2Fworkflows%2Fquality.yml",
+        "raw_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/raw/9cae86657963e8c3e2abd5a615120a7d46a154b3/.github%2Fworkflows%2Fquality.yml",
+        "contents_url": "https://api.github.com/repos/mehdisafer/enterprise-master-data-reconciliation/contents/.github%2Fworkflows%2Fquality.yml?ref=9cae86657963e8c3e2abd5a615120a7d46a154b3",
+        "patch": "@@ -44,11 +44,14 @@ jobs:\n           python3 - <<'PY'\n           import json, os, re, subprocess\n           from pathlib import Path\n-          event = json.loads(Path(os.environ[\"GITHUB_EVENT_PATH\"]).read_text())\n-          event_name = os.environ[\"GITHUB_EVENT_NAME\"]\n+          event_path = os.environ.get(\"GITHUB_EVENT_PATH\")\n+          # Missing event metadata is normal for a manual CircleCI Actions run.\n+          # Unknown scope means full qualification, never a documentation skip.\n+          event = json.loads(Path(event_path).read_text()) if event_path else {}\n+          event_name = os.environ.get(\"GITHUB_EVENT_NAME\", \"workflow_dispatch\")\n           pr = event.get(\"pull_request\", {})\n           pr_head = pr.get(\"head\", {}).get(\"sha\", \"\")\n-          force_runtime = event_name == \"workflow_dispatch\"\n+          force_runtime = not event_path or event_name == \"workflow_dispatch\"\n           if event_name == \"pull_request\" and event.get(\"action\") == \"synchronize\":\n               # The previous push head, not the PR base, makes a later docs-only\n               # commit incremental even when the whole PR introduces runtime code.\n@@ -70,6 +73,8 @@ jobs:\n           changed = []\n           if force_runtime:\n               selection = \"manual-full-qualification\" if event_name == \"workflow_dispatch\" else selection\n+              if not event_path:\n+                  selection = \"unavailable-event-full-qualification\"\n           elif available_commit(base) and available_commit(head):\n               changed = subprocess.check_output([\n                   \"git\", \"diff\", \"--no-ext-diff\", \"--no-renames\", \"--name-only\", \"-z\", base, head, \"--\"\n@@ -80,7 +85,7 @@ jobs:\n               # change scope must never silently suppress runtime qualification.\n               force_runtime = True\n               selection = \"unavailable-reference-full-qualification\"\n-          prefixes = (\"src/\", \"tests/\", \"dbt/\", \"contracts/\", \"data/\", \"migrations/\", \"scripts/\", \".github/\", \"infra/\", \"observability/\")\n+          prefixes = (\"src/\", \"tests/\", \"dbt/\", \"contracts/\", \"data/\", \"migrations/\", \"scripts/\", \".github/\", \".circleci/\", \"infra/\", \"observability/\")\n           runtime = force_runtime or any(\n               path.startswith(prefixes) or path in {\"pyproject.toml\", \"uv.lock\", \"Dockerfile\", \"compose.yaml\", \".dockerignore\"}\n               for path in changed\n@@ -124,7 +129,10 @@ jobs:\n           version: ${{ env.UV_VERSION }}\n           enable-cache: true\n       - name: Install the exact reviewed lock\n-        run: uv sync --frozen --all-extras\n+        run: |\n+          uv sync --frozen --all-extras --python \"${{ env.PYTHON_VERSION }}\"\n+          uv --version\n+          uv run --no-sync python --version\n       - name: Retain installed component and license declarations\n         run: uv run --no-sync python scripts/component_inventory.py --check --output artifacts/components.json\n       - name: Audit installed dependencies against published advisories\n@@ -185,7 +193,7 @@ jobs:\n         with:\n           version: ${{ env.UV_VERSION }}\n           enable-cache: true\n-      - run: uv sync --frozen --all-extras\n+      - run: uv sync --frozen --all-extras --python \"${{ env.PYTHON_VERSION }}\"\n       - name: Record runtime and create isolated qualification databases\n         env:\n           MDM_CI_POSTGRES_CONTAINER: ${{ job.services.postgres.id }}\n@@ -315,7 +323,7 @@ jobs:\n           MDM_DATABASE_URL: postgresql://mdm@127.0.0.1:5432/mdm_load\n         run: uv run --no-sync mdm benchmark --size 300 --database --output artifacts/benchmark-database.json\n       - name: Measure an explicitly requested load profile\n-        if: github.event_name == 'workflow_dispatch' && inputs.load_records != '0'\n+        if: github.event_name == 'workflow_dispatch' && inputs.load_records != '' && inputs.load_records != '0'\n         env:\n           MDM_LOAD_RECORDS: ${{ inputs.load_records }}\n         run: |\n@@ -370,7 +378,7 @@ jobs:\n           enable-cache: true\n       - name: Install the locked browser qualification environment\n         run: |\n-          uv sync --frozen --extra browser\n+          uv sync --frozen --extra browser --python \"${{ env.PYTHON_VERSION }}\"\n           uv run --no-sync python -m playwright install --with-deps --only-shell chromium\n       - name: Create ephemeral file secrets\n         run: python3 .github/scripts/setup_ci_secrets.py"
+      }
+    ]
+  },
+  "pr_summaries": [
+    {
+      "number": 7,
+      "user": "dependabot[bot]",
+      "state": "closed",
+      "updated_at": "2026-11-15T21:32:47Z",
+      "closed_at": "2026-11-15T21:32:37Z",
+      "merged_at": null,
+      "head": "ffc0544109c162575cde47695b9d6955371e34a6",
+      "base": "16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+      "merge_commit_sha": "52217687d8104b7548be9e003185d56dcfaea1f9"
+    },
+    {
+      "number": 6,
+      "user": "dependabot[bot]",
+      "state": "closed",
+      "updated_at": "2026-11-15T21:32:46Z",
+      "closed_at": "2026-11-15T21:32:35Z",
+      "merged_at": null,
+      "head": "a39348c3d17515bb3f00bd9a3ac1c1210082b64e",
+      "base": "e27f4c2f58d812a2213b1457378095dc72dafd8a",
+      "merge_commit_sha": "50470da267bccd83f138b430cae8a5fd602fe038"
+    },
+    {
+      "number": 5,
+      "user": "dependabot[bot]",
+      "state": "closed",
+      "updated_at": "2026-11-15T21:32:43Z",
+      "closed_at": "2026-11-15T21:32:32Z",
+      "merged_at": null,
+      "head": "6fee2d053cb56fff978f7c1abecabadbae222490",
+      "base": "e27f4c2f58d812a2213b1457378095dc72dafd8a",
+      "merge_commit_sha": "24af8716bf5ce6769882002c7f0ab03e00300a4d"
+    },
+    {
+      "number": 4,
+      "user": "dependabot[bot]",
+      "state": "closed",
+      "updated_at": "2026-11-15T21:31:24Z",
+      "closed_at": "2026-11-15T21:31:24Z",
+      "merged_at": null,
+      "head": "750e0355942d52236e2d1423fc0637b54216b105",
+      "base": "e27f4c2f58d812a2213b1457378095dc72dafd8a",
+      "merge_commit_sha": "186652ea7854177f8ed69415301b740f3b85fa65"
+    },
+    {
+      "number": 8,
+      "user": "mehdisafer",
+      "state": "closed",
+      "updated_at": "2026-11-15T21:31:22Z",
+      "closed_at": "2026-11-15T21:31:22Z",
+      "merged_at": "2026-11-15T21:31:22Z",
+      "head": "baae6a477278d72afb6ffaae8a84b8ee49f7d800",
+      "base": "16f7325c5f8b16ce2c5259d2fba44f40e78bebe7",
+      "merge_commit_sha": "03c927b3f19e387df770130d59d9c09bea3800d1"
+    }
+  ]
+}

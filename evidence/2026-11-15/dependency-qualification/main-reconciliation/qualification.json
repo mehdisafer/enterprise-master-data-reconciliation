@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "started_at": "2026-11-15T21:43:50.238828+00:00",
+  "ended_at": "2026-11-15T21:44:08.026199+00:00",
+  "commands": [
+    {
+      "label": "01-ruff",
+      "command": [
+        "/workspace/scratch/f684f9028a9d/repo/.venv/bin/ruff",
+        "check",
+        "src",
+        "tests",
+        "scripts",
+        ".github/scripts"
+      ],
+      "cwd": "/workspace/scratch/f684f9028a9d/repo",
+      "started_at": "2026-11-15T21:43:50.284539+00:00",
+      "ended_at": "2026-11-15T21:43:50.323339+00:00",
+      "elapsed_seconds": 0.03880347999984224,
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_seconds": 120
+    },
+    {
+      "label": "02-full-postgres-suite",
+      "command": [
+        "/workspace/scratch/f684f9028a9d/repo/.venv/bin/python",
+        "-m",
+        "pytest",
+        "-q",
+        "--junitxml=/workspace/scratch/f684f9028a9d/repo/artifacts/main-reconciliation-20261115/pytest.xml"
+      ],
+      "cwd": "/workspace/scratch/f684f9028a9d/repo",
+      "started_at": "2026-11-15T21:43:50.323567+00:00",
+      "ended_at": "2026-11-15T21:44:08.025140+00:00",
+      "elapsed_seconds": 17.701587239999753,
+      "returncode": 0,
+      "expected_returncode": 0,
+      "timeout_seconds": 900
+    }
+  ],
+  "pytest_summary": {
+    "passed_tests_from_stdout": 180,
+    "passed_subtests_from_stdout": 15,
+    "testcase_nodes": 180,
+    "suites": [
+      {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "0",
+        "tests": "195",
+        "time": "16.709",
+        "timestamp": "2026-11-15T22:43:50.895224+01:00",
+        "hostname": "585377ce97f9"
+      }
+    ],
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "known_database_secret_scan": {
+    "matched_files": [],
+    "passed": true
+  },
+  "scope": "Ruff and full PostgreSQL suite after copying the concurrent-main compatibility test; existing installed wheel, no sync/build or repeated dbt/demo/HTTP qualification."
+}

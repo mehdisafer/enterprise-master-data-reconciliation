@@ -1,0 +1,66 @@
+{
+  "automatic_pairs": 300,
+  "blocking_seconds": 0.018262621000758372,
+  "candidate_count": 309,
+  "comparison_seconds": 0.05211396499998955,
+  "control": {
+    "automatic_pair_equivalence": true,
+    "blocked_comparison_seconds": 0.006655479000073683,
+    "exhaustive_seconds": 0.8889393309991647,
+    "metrics": {
+      "auto": {
+        "false_negatives": 0,
+        "false_positives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_positives": 150
+      },
+      "candidate_missed_pairs": [],
+      "candidate_pairs": 150,
+      "candidate_recall": 1.0,
+      "comparison_reduction": 0.9865771812080537,
+      "exhaustive_pairs": 11175,
+      "mode": "hybrid",
+      "records": 150,
+      "review_false_positives": 0,
+      "review_pairs": 0,
+      "review_share_of_candidates": 0.0,
+      "rule_version": "matching.v1",
+      "suggestion": {
+        "false_negatives": 0,
+        "false_positives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_positives": 150
+      },
+      "truth_positive_pairs": 150
+    },
+    "records": 150
+  },
+  "database_executed": false,
+  "environment": {
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "python": "3.12.16"
+  },
+  "exhaustive_pair_count": 44850,
+  "limits": [
+    "single process",
+    "synthetic distribution",
+    "not a Snowflake performance or cost measurement",
+    "process RSS includes interpreter and imports; Python heap is measured separately"
+  ],
+  "pairs_per_second": 5929.31280511974,
+  "peak_python_heap_bytes": 572450,
+  "predeclared_thresholds": {
+    "control_candidate_recall": 1.0,
+    "false_automatic_merges": 0,
+    "peak_python_heap_limit_bytes": 256000000,
+    "time_budget_seconds": 180
+  },
+  "process_max_rss_kib": 65380,
+  "profile": "bounded-synthetic.v1",
+  "records": 300,
+  "requested_records": 300,
+  "seed": 42,
+  "thresholds_met": true
+}

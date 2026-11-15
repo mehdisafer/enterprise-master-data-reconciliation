@@ -1,0 +1,2 @@
+warning: The `--require-build-hashes` option is experimental and may change without warning. Pass `--preview-features build-dependency-hashes` to disable this warning.
+Resolved 7 packages in 2ms

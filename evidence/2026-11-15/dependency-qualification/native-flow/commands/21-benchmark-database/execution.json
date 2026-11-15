@@ -1,0 +1,19 @@
+{
+  "label": "benchmark-database",
+  "command": [
+    "mdm",
+    "benchmark",
+    "--size",
+    "300",
+    "--database",
+    "--output",
+    "/workspace/scratch/f684f9028a9d/repo/artifacts/qualification-20261115/benchmark-database.json"
+  ],
+  "cwd": "/workspace/scratch/f684f9028a9d/repo",
+  "started_at": "2026-11-15T21:25:33.089676+00:00",
+  "ended_at": "2026-11-15T21:25:37.417483+00:00",
+  "elapsed_seconds": 4.327816621000238,
+  "returncode": 0,
+  "expected_returncode": 0,
+  "timeout_seconds": 240
+}

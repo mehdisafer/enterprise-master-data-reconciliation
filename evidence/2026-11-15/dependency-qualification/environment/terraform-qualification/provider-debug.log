@@ -1,0 +1,33 @@
+2026-11-15T22:21:07.548+0100 [INFO]  Terraform version: 1.17.2
+2026-11-15T22:21:07.548+0100 [DEBUG] using github.com/hashicorp/go-tfe v1.112.0
+2026-11-15T22:21:07.548+0100 [DEBUG] using github.com/hashicorp/hcl/v2 v2.24.0
+2026-11-15T22:21:07.548+0100 [DEBUG] using github.com/hashicorp/terraform-svchost v0.2.1
+2026-11-15T22:21:07.548+0100 [DEBUG] using github.com/zclconf/go-cty v1.18.1
+2026-11-15T22:21:07.548+0100 [INFO]  Go runtime version: go1.26.10
+2026-11-15T22:21:07.548+0100 [INFO]  CLI args: []string{"/workspace/scratch/f684f9028a9d/runtime/terraform-qualification/bin/terraform", "validate", "-json"}
+2026-11-15T22:21:07.548+0100 [DEBUG] Attempting to open CLI config file: /home/agent/.terraformrc
+2026-11-15T22:21:07.548+0100 [DEBUG] File doesn't exist, but doesn't need to. Ignoring.
+2026-11-15T22:21:07.548+0100 [DEBUG] ignoring non-existing provider search directory terraform.d/plugins
+2026-11-15T22:21:07.548+0100 [DEBUG] ignoring non-existing provider search directory /home/agent/.terraform.d/plugins
+2026-11-15T22:21:07.548+0100 [DEBUG] ignoring non-existing provider search directory /home/agent/.local/share/terraform/plugins
+2026-11-15T22:21:07.548+0100 [DEBUG] ignoring non-existing provider search directory /usr/local/share/terraform/plugins
+2026-11-15T22:21:07.548+0100 [DEBUG] ignoring non-existing provider search directory /usr/share/terraform/plugins
+2026-11-15T22:21:07.549+0100 [INFO]  CLI command args: []string{"validate", "-json"}
+2026-11-15T22:21:07.551+0100 [DEBUG] Using GOMAXPROCS=9 for policy evaluation parallelism
+2026-11-15T22:21:07.551+0100 [DEBUG] ReferenceTransformer: "" references: []
+2026-11-15T22:21:07.551+0100 [DEBUG] ReferenceTransformer: "var.environment_authorized" references: []
+2026-11-15T22:21:07.551+0100 [DEBUG] ReferenceTransformer: "var.prefix" references: []
+2026-11-15T22:21:07.551+0100 [DEBUG] ReferenceTransformer: "var.total_credit_quota" references: []
+2026-11-15T22:21:07.551+0100 [DEBUG] Starting graph walk: walkInit
+2026-11-15T22:21:07.599+0100 [DEBUG] checking for provisioner in "."
+2026-11-15T22:21:07.599+0100 [DEBUG] checking for provisioner in "/workspace/scratch/f684f9028a9d/runtime/terraform-qualification/bin"
+2026-11-15T22:21:07.600+0100 [DEBUG] Using GOMAXPROCS=9 for policy evaluation parallelism
+2026-11-15T22:21:07.600+0100 [DEBUG] created provider logger: level=debug
+2026-11-15T22:21:07.600+0100 [INFO]  provider: configuring client automatic mTLS
+2026-11-15T22:21:07.615+0100 [DEBUG] provider: starting plugin: path=/workspace/scratch/f684f9028a9d/runtime/terraform-qualification/data/providers/registry.terraform.io/snowflakedb/snowflake/2.22.1/linux_amd64/terraform-provider-snowflake_v2.22.1 args=["/workspace/scratch/f684f9028a9d/runtime/terraform-qualification/data/providers/registry.terraform.io/snowflakedb/snowflake/2.22.1/linux_amd64/terraform-provider-snowflake_v2.22.1"]
+2026-11-15T22:21:07.615+0100 [DEBUG] provider: plugin started: path=/workspace/scratch/f684f9028a9d/runtime/terraform-qualification/data/providers/registry.terraform.io/snowflakedb/snowflake/2.22.1/linux_amd64/terraform-provider-snowflake_v2.22.1 pid=16
+2026-11-15T22:21:07.615+0100 [DEBUG] provider: waiting for RPC address: plugin=/workspace/scratch/f684f9028a9d/runtime/terraform-qualification/data/providers/registry.terraform.io/snowflakedb/snowflake/2.22.1/linux_amd64/terraform-provider-snowflake_v2.22.1
+2026-11-15T22:21:07.711+0100 [DEBUG] provider.terraform-provider-snowflake_v2.22.1: 2026/11/15 22:21:07 [INFO] Setting provider version: v2.22.1
+2026-11-15T22:21:07.712+0100 [ERROR] provider.terraform-provider-snowflake_v2.22.1: plugin init error: error="listen unix /tmp/plugin1466001661: socket: operation not permitted" timestamp="2026-11-15T22:21:07.711+0100"
+2026-11-15T22:21:07.713+0100 [INFO]  provider: plugin process exited: plugin=/workspace/scratch/f684f9028a9d/runtime/terraform-qualification/data/providers/registry.terraform.io/snowflakedb/snowflake/2.22.1/linux_amd64/terraform-provider-snowflake_v2.22.1 id=16
+2026-11-15T22:21:07.714+0100 [WARN]  provider: plugin failed to exit gracefully

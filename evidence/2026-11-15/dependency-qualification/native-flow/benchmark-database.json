@@ -1,0 +1,289 @@
+{
+  "automatic_pairs": 300,
+  "blocking_seconds": 0.02101470799971139,
+  "candidate_count": 309,
+  "comparison_seconds": 0.058486284000537125,
+  "control": {
+    "automatic_pair_equivalence": true,
+    "blocked_comparison_seconds": 0.00709147599991411,
+    "exhaustive_seconds": 0.9710593340005289,
+    "metrics": {
+      "auto": {
+        "false_negatives": 0,
+        "false_positives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_positives": 150
+      },
+      "candidate_missed_pairs": [],
+      "candidate_pairs": 150,
+      "candidate_recall": 1.0,
+      "comparison_reduction": 0.9865771812080537,
+      "exhaustive_pairs": 11175,
+      "mode": "hybrid",
+      "records": 150,
+      "review_false_positives": 0,
+      "review_pairs": 0,
+      "review_share_of_candidates": 0.0,
+      "rule_version": "matching.v1",
+      "suggestion": {
+        "false_negatives": 0,
+        "false_positives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "true_positives": 150
+      },
+      "truth_positive_pairs": 150
+    },
+    "records": 150
+  },
+  "database": {
+    "consolidation_seconds": 1.376505301999714,
+    "history_after": {
+      "history_rows": 530,
+      "outbox_events": 730,
+      "raw_records": 330
+    },
+    "history_before": {
+      "history_rows": 500,
+      "outbox_events": 700,
+      "raw_records": 300
+    },
+    "ingestion": {
+      "accepted": 300,
+      "duplicates": 0,
+      "groups_rebuilt": 300,
+      "received": 300,
+      "trace": {
+        "correlation_id": "389a1459-e380-4356-9dc2-57a5add3e8e9",
+        "origin_correlation_id": "389a1459-e380-4356-9dc2-57a5add3e8e9",
+        "trace_version": "correlation.v1"
+      }
+    },
+    "ingestion_seconds": 0.8461579509994408,
+    "invariants": {
+      "checks": 9,
+      "passed": true,
+      "violations": {
+        "active_memberships": 0,
+        "attribute_provenance": 0,
+        "empty_active_groups": 0,
+        "group_compatibility": 0,
+        "ledger_outbox": 0,
+        "membership_history": 0,
+        "nonoverlap": 0,
+        "source_crosswalk_coverage": 0,
+        "source_domains": 0
+      }
+    },
+    "join_explain_analyze": [
+      {
+        "Execution Time": 0.42,
+        "Plan": {
+          "Actual Loops": 1,
+          "Actual Rows": 100,
+          "Actual Startup Time": 0.328,
+          "Actual Total Time": 0.338,
+          "Async Capable": false,
+          "Disk Usage": 0,
+          "Group Key": [
+            "m.golden_id"
+          ],
+          "HashAgg Batches": 1,
+          "Local Dirtied Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Written Blocks": 0,
+          "Node Type": "Aggregate",
+          "Parallel Aware": false,
+          "Partial Mode": "Simple",
+          "Peak Memory Usage": 40,
+          "Plan Rows": 200,
+          "Plan Width": 24,
+          "Planned Partitions": 0,
+          "Plans": [
+            {
+              "Actual Loops": 1,
+              "Actual Rows": 300,
+              "Actual Startup Time": 0.1,
+              "Actual Total Time": 0.289,
+              "Async Capable": false,
+              "Hash Cond": "(s.source_key = m.source_key)",
+              "Inner Unique": true,
+              "Join Type": "Inner",
+              "Local Dirtied Blocks": 0,
+              "Local Hit Blocks": 0,
+              "Local Read Blocks": 0,
+              "Local Written Blocks": 0,
+              "Node Type": "Hash Join",
+              "Parallel Aware": false,
+              "Parent Relationship": "Outer",
+              "Plan Rows": 1070,
+              "Plan Width": 16,
+              "Plans": [
+                {
+                  "Actual Loops": 1,
+                  "Actual Rows": 300,
+                  "Actual Startup Time": 0.006,
+                  "Actual Total Time": 0.146,
+                  "Alias": "s",
+                  "Async Capable": false,
+                  "Local Dirtied Blocks": 0,
+                  "Local Hit Blocks": 0,
+                  "Local Read Blocks": 0,
+                  "Local Written Blocks": 0,
+                  "Node Type": "Seq Scan",
+                  "Parallel Aware": false,
+                  "Parent Relationship": "Outer",
+                  "Plan Rows": 1880,
+                  "Plan Width": 32,
+                  "Relation Name": "source_records",
+                  "Shared Dirtied Blocks": 0,
+                  "Shared Hit Blocks": 47,
+                  "Shared Read Blocks": 0,
+                  "Shared Written Blocks": 0,
+                  "Startup Cost": 0.0,
+                  "Temp Read Blocks": 0,
+                  "Temp Written Blocks": 0,
+                  "Total Cost": 65.8
+                },
+                {
+                  "Actual Loops": 1,
+                  "Actual Rows": 300,
+                  "Actual Startup Time": 0.085,
+                  "Actual Total Time": 0.085,
+                  "Async Capable": false,
+                  "Hash Batches": 1,
+                  "Hash Buckets": 2048,
+                  "Local Dirtied Blocks": 0,
+                  "Local Hit Blocks": 0,
+                  "Local Read Blocks": 0,
+                  "Local Written Blocks": 0,
+                  "Node Type": "Hash",
+                  "Original Hash Batches": 1,
+                  "Original Hash Buckets": 2048,
+                  "Parallel Aware": false,
+                  "Parent Relationship": "Inner",
+                  "Peak Memory Usage": 40,
+                  "Plan Rows": 1070,
+                  "Plan Width": 48,
+                  "Plans": [
+                    {
+                      "Actual Loops": 1,
+                      "Actual Rows": 300,
+                      "Actual Startup Time": 0.005,
+                      "Actual Total Time": 0.042,
+                      "Alias": "m",
+                      "Async Capable": false,
+                      "Local Dirtied Blocks": 0,
+                      "Local Hit Blocks": 0,
+                      "Local Read Blocks": 0,
+                      "Local Written Blocks": 0,
+                      "Node Type": "Seq Scan",
+                      "Parallel Aware": false,
+                      "Parent Relationship": "Outer",
+                      "Plan Rows": 1070,
+                      "Plan Width": 48,
+                      "Relation Name": "memberships",
+                      "Shared Dirtied Blocks": 0,
+                      "Shared Hit Blocks": 5,
+                      "Shared Read Blocks": 0,
+                      "Shared Written Blocks": 0,
+                      "Startup Cost": 0.0,
+                      "Temp Read Blocks": 0,
+                      "Temp Written Blocks": 0,
+                      "Total Cost": 20.7
+                    }
+                  ],
+                  "Shared Dirtied Blocks": 0,
+                  "Shared Hit Blocks": 5,
+                  "Shared Read Blocks": 0,
+                  "Shared Written Blocks": 0,
+                  "Startup Cost": 20.7,
+                  "Temp Read Blocks": 0,
+                  "Temp Written Blocks": 0,
+                  "Total Cost": 20.7
+                }
+              ],
+              "Shared Dirtied Blocks": 0,
+              "Shared Hit Blocks": 52,
+              "Shared Read Blocks": 0,
+              "Shared Written Blocks": 0,
+              "Startup Cost": 34.08,
+              "Temp Read Blocks": 0,
+              "Temp Written Blocks": 0,
+              "Total Cost": 104.82
+            }
+          ],
+          "Shared Dirtied Blocks": 0,
+          "Shared Hit Blocks": 52,
+          "Shared Read Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Startup Cost": 110.17,
+          "Strategy": "Hashed",
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0,
+          "Total Cost": 112.17
+        },
+        "Planning": {
+          "Local Dirtied Blocks": 0,
+          "Local Hit Blocks": 0,
+          "Local Read Blocks": 0,
+          "Local Written Blocks": 0,
+          "Shared Dirtied Blocks": 0,
+          "Shared Hit Blocks": 244,
+          "Shared Read Blocks": 0,
+          "Shared Written Blocks": 0,
+          "Temp Read Blocks": 0,
+          "Temp Written Blocks": 0
+        },
+        "Planning Time": 0.547,
+        "Triggers": []
+      }
+    ],
+    "reconciliation": {
+      "automatic_merges": 200,
+      "candidates": 309,
+      "group_conflicts": 0,
+      "mode": "hybrid",
+      "new_evidence": 309,
+      "policy_blocked_candidates": 0,
+      "records": 300,
+      "reject": 9,
+      "review": 0,
+      "trace": {
+        "correlation_id": "389a1459-e380-4356-9dc2-57a5add3e8e9",
+        "origin_correlation_id": "389a1459-e380-4356-9dc2-57a5add3e8e9",
+        "trace_version": "correlation.v1"
+      }
+    },
+    "server": "PostgreSQL 17.12 (Debian 17.12-0+deb13u1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 14.2.0-19) 14.2.0, 64-bit",
+    "source_records_per_second": 354.54373458956985
+  },
+  "database_executed": true,
+  "environment": {
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "python": "3.12.16"
+  },
+  "exhaustive_pair_count": 44850,
+  "limits": [
+    "single process",
+    "synthetic distribution",
+    "not a Snowflake performance or cost measurement",
+    "process RSS includes interpreter and imports; Python heap is measured separately"
+  ],
+  "pairs_per_second": 5283.290010306728,
+  "peak_python_heap_bytes": 581260,
+  "predeclared_thresholds": {
+    "control_candidate_recall": 1.0,
+    "false_automatic_merges": 0,
+    "peak_python_heap_limit_bytes": 256000000,
+    "time_budget_seconds": 180
+  },
+  "process_max_rss_kib": 64912,
+  "profile": "bounded-synthetic.v1",
+  "records": 300,
+  "requested_records": 300,
+  "seed": 42,
+  "thresholds_met": true
+}

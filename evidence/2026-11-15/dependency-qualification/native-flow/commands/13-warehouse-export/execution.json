@@ -1,0 +1,15 @@
+{
+  "label": "warehouse-export",
+  "command": [
+    "python",
+    "-c",
+    "import json,os,psycopg; from mdm.snowflake import export_snapshot; c=psycopg.connect(os.environ['MDM_DATABASE_URL']); c.execute('SET TRANSACTION ISOLATION LEVEL REPEATABLE READ READ ONLY'); s=export_snapshot(c); print(json.dumps({'snapshot_id':s.snapshot_id,'counts':s.counts,'postgres_export_executed':True,'snowflake_load_executed':False})); c.close()"
+  ],
+  "cwd": "/workspace/scratch/f684f9028a9d/repo",
+  "started_at": "2026-11-15T21:25:16.052566+00:00",
+  "ended_at": "2026-11-15T21:25:16.267092+00:00",
+  "elapsed_seconds": 0.2145401120005772,
+  "returncode": 0,
+  "expected_returncode": 0,
+  "timeout_seconds": 240
+}
