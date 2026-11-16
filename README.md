@@ -25,7 +25,7 @@ The original reference was integrated through [PR #2](https://github.com/mehdisa
 | Terraform configuration | Implemented; provider lock retained | Local format/init passed, local provider startup blocked; an earlier CircleCI static job succeeded on setup, but its schema evidence was not independently read |
 | Snowflake publication and dbt parity | Implemented | **Not live-qualified: dedicated authorized account, role, scope and budget required** |
 | Public source and repository licence | Source public; project licence not chosen | No open-source licence grant, About metadata or release tag; `main` currently unprotected |
-| Repository visibility | **Public** (GitHub API, 16 November 2026) | Description/topics remain unset; anonymous README and `main` protection verification are separate |
+| Repository visibility | **Public** (GitHub API, 16 November 2026) | Repository and raw README readable in a clean browser without sign-in; description/topics remain unset and `main` unprotected |
 
 The qualified versions are FastAPI **0.162.4**, Pydantic **2.14.3**, Hatchling **1.33.0** and Python **3.12.16**. Forty-four HTTP regression cases cover validation, authorization, serialization and real decision lifecycles, alongside the eleven compatibility tests from PR #8. Seven build dependencies have explicit version and artifact-hash constraints alongside the application and development lock. The dated audits report zero known vulnerabilities across **119 installed application, development and qualification packages** and, separately, **seven explicitly constrained build dependencies**. The inventories overlap and are not a total of 126 unique packages or a continuous security guarantee.
 
