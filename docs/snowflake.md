@@ -15,6 +15,10 @@ account/environment, a service principal with an external key, a bounded
 warehouse, the dedicated database and schemas, and approved grants. No account,
 warehouse, billing setting or public service is created by the local demo.
 
+## Static provider qualification — 17 November 2026 CET
+
+The pinned Snowflake **Terraform provider and static configuration** have now been successfully validated by [GitHub Actions static run #43593711641, attempt 2](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711641), with `fmt`, `init -backend=false`, `validate` and `providers schema` all successful. That historical job's static Terraform workflow/HCL/lock files match current main by exact Git SHA. [Original-job evidence and identity boundaries](../evidence/2026-11-17/ci-mainline-hardening/) are retained. The local Unix-socket provider failure was an environment restriction, not a universal provider failure. This check involved **no plan, apply, credentials, Snowflake environment, credits or billing**, and it does **not** qualify the Snowflake publisher/dbt target. Live qualification still requires explicit authorization of the dedicated account, role, scope, costs and cleanup.
+
 ## Version and upstream checks
 
 The selected Python 3.12 environment uses the dependency lock at the repository
@@ -197,11 +201,14 @@ and schema `prevent_destroy` guards require a reviewed decommission operation.
 Terraform state must use an access-controlled backend before a shared deployment.
 `terraform init`, provider-schema validation, plan, apply and restore remain
 separate evidence requirements; an unexecuted HCL file is not a deployed system.
-Provider installation and formatting were observed locally; schema loading failed
-at Unix socket creation. The [pinned-provider transport investigation](terraform-provider-transport.md)
-explains why its Linux normal/debug entry points cannot be redirected to TCP by
-the examined official parameters. Static schema checks need a compatible runner
-but no warehouse credentials; the live operations below require their own scope.
+Provider installation and formatting were observed in the earlier **local** environment;
+schema loading failed there at Unix socket creation. The [pinned-provider
+transport investigation](terraform-provider-transport.md) explains that local
+limit. On 16 November UTC, a separate compatible GitHub Actions runner
+successfully executed format, backend-free init, validation and actual pinned
+provider-schema inspection (the static Terraform files match current main).
+**Live** Snowflake plan/apply and publisher/dbt operations still require an
+explicitly authorized account, role, budget, evidence and cleanup plan.
 
 Resource monitors help control warehouse usage but are not an exact currency
 cap and do not cover every serverless feature. No such feature is enabled here.

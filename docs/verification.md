@@ -23,7 +23,13 @@ Predeclared correctness and safety thresholds are zero false automatic merges in
 
 The full suite fails if its database is missing. No skipped test is accepted as integration evidence. Snowflake unit doubles are explicitly identified and never reported as a live provider run.
 
-## Hosted mainline qualification — 16 November 2026
+## 17 November 2026 CET — qualified mainline CI and static Terraform
+
+The new [`main` source `af4ed2b77616`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/af4ed2b776162f8dce497b20d4f4fad063adeeab) eliminated the first-parent CircleCI skip that could turn a multi-commit code-plus-docs push green without PostgreSQL tests. Real source-specific [GitHub Actions Quality run #43978646310](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43978646310) and both default CircleCI jobs completed successfully on the new SHA. GitHub Actions original logs record **189 pytest + 15 subtests** (one warning), dbt **48/48**, restored dbt **43/43**, `restore_verified=true`, an expected blocked second restore, and browser lifecycle `passed=true` with 34 retained sources and no JavaScript errors. GitHub Actions retained four artifact collections. CircleCI success contexts were observed, but the raw CircleCI `scope.json` and JUnit bytes were not downloaded. Source selection is mandatory on `main`; the six selector regression tests passed locally in two pytest modes.
+
+A separate [Terraform static attempt 2](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711641) successfully executed `fmt`, `init -backend=false`, `validate` and provider-schema JSON on an older source whose static Terraform HCL/workflow/lock blobs are identical to current main. The original job logs and artifact metadata were read; no plan/apply or Snowflake connection occurred. [Original evidence and source comparison](../evidence/2026-11-17/ci-mainline-hardening/) identify this limit. **No live Snowflake target or production operation was qualified.**
+
+## Historical hosted mainline qualification — 16 November 2026
 
 The [GitHub Actions run #43920046617](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43920046617) completed successfully on commit [`9b72725da693`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/9b72725da693b4587c27a12b1d65e6f639d69a86), with **four actual jobs** (`scope`, `dependencies`, `postgres`, `container`) executed on assigned runners. The returned job steps and original logs were inspected and the four original artifact collections were listed as uploaded. This supersedes the earlier runner-admission failure **for the tested SHA only**.
 
@@ -122,7 +128,7 @@ The [CircleCI record](circleci.md) verifies successful `scope`, `dependencies`, 
 
 CircleCI pipelines #39–#42 were initially `Not Run` because config v2.1 interpreted four unescaped Python heredoc delimiters as invalid parameter expressions. [PR #17](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/17) escaped them and added a regression test. A corrected branch CI run passed, followed by both successful mainline CircleCI jobs and the fully executed GitHub Actions run described above.
 
-The 16 November default CircleCI policy permitted a green docs/evidence-only scope result with `runtime_requested=false`; that described the old behavior, not another executed PostgreSQL qualification. On 17 November a three-commit Git reproduction demonstrated a missed code change when the final pushed commit was documentation only. The proposed new selector always demands full `postgres-integration` on `main` and verifies `CIRCLE_SHA1` against the checked-out commit. Six isolated regression tests of the selector passed locally. Its **new-head remote CircleCI and GitHub Actions results are not yet observed**, so no new runtime acceptance is claimed from implementation or the old successful builds.
+The earlier CircleCI policy permitted a docs-only `runtime_requested=false` scope; an isolated multi-commit reproduction demonstrated an unsafe false skip. The corrected policy always requires `postgres-integration` on `main`, checks the checkout SHA and emits `runtime_requested=true`. **Both mainline CircleCI jobs and the full independent GitHub Actions run succeeded** at `af4ed2b77616`. No direct CircleCI artifacts were downloaded, whereas original GitHub Actions PostgreSQL/dbt/restore/browser logs were inspected. Earlier Unix-socket limitations apply only to the separate local workspace.
 
 ## Remaining environment boundaries
 

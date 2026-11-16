@@ -1,0 +1,179 @@
+{
+  "schema": "p02-mainline-ci-hardening.v1",
+  "record_date": "2026-11-17 Europe/Paris; associated UTC runs dated 2026-11-16",
+  "repo": "mehdisafer/enterprise-master-data-reconciliation",
+  "qualified_runtime_commit": "af4ed2b776162f8dce497b20d4f4fad063adeeab",
+  "main_at_capture": "af4ed2b776162f8dce497b20d4f4fad063adeeab",
+  "change": {
+    "pr": 22,
+    "merge_sha": "af4ed2b776162f8dce497b20d4f4fad063adeeab",
+    "selector": "mandatory-mainline-qualification",
+    "git_checkout_matches_circleci_sha": true,
+    "doc_only_skip_disabled": true,
+    "source_files": [
+      ".circleci/config.yml",
+      "scripts/circleci_scope.py",
+      "tests/test_circleci_scope.py"
+    ],
+    "local_selector_tests": {
+      "pytest": "6 passed",
+      "python_module_pytest": "6 passed",
+      "includes_multi_commit_push_last_docs": true
+    },
+    "remote_mainline_ci_verified": true
+  },
+  "circleci": {
+    "commit": "af4ed2b776162f8dce497b20d4f4fad063adeeab",
+    "contexts": [
+      {
+        "context": "ci/circleci: build-and-test",
+        "state": "success",
+        "url": "https://app.circleci.com/workflow/6bf085dd-9633-4c01-8ad8-5062d54f2bfc/job/21c07969-24df-4dc4-8098-371c27364ac3"
+      },
+      {
+        "context": "ci/circleci: postgres-integration",
+        "state": "success",
+        "url": "https://app.circleci.com/workflow/6bf085dd-9633-4c01-8ad8-5062d54f2bfc/job/ffbca4c9-ba92-47f9-83a7-b71249d757be"
+      }
+    ],
+    "raw_circleci_artifacts_read": false,
+    "note": "Commit status reports observed. No direct independent download of original CircleCI scope.json/JUnit/dbt manifests in this turn. Do not invent their content."
+  },
+  "github_actions": {
+    "run_id": 43978646310,
+    "source_commit": "af4ed2b776162f8dce497b20d4f4fad063adeeab",
+    "status": "completed",
+    "conclusion": "success",
+    "run_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43978646310",
+    "jobs": [
+      {
+        "name": "scope",
+        "id": 133689057444,
+        "status": "success"
+      },
+      {
+        "name": "dependencies",
+        "id": 133689183155,
+        "status": "success"
+      },
+      {
+        "name": "postgres",
+        "id": 133689183198,
+        "status": "success"
+      },
+      {
+        "name": "container",
+        "id": 133689965358,
+        "status": "success"
+      }
+    ],
+    "pytest": {
+      "passed": 189,
+      "subtests_passed": 15,
+      "warnings": 1,
+      "source": "Original GitHub Actions postgres job log, UTC 2026-11-16 23:23:04"
+    },
+    "dbt": {
+      "models": 5,
+      "data_tests": 41,
+      "hooks": 2,
+      "build": {
+        "pass": 48,
+        "total": 48,
+        "warn": 0,
+        "error": 0,
+        "skip": 0
+      },
+      "restored": {
+        "pass": 43,
+        "total": 43,
+        "warn": 0,
+        "error": 0,
+        "skip": 0
+      }
+    },
+    "restore": {
+      "verified": true,
+      "second_restore_rejected_step": "success",
+      "postgresql_target": "isolated synthetic test database"
+    },
+    "browser": {
+      "passed": true,
+      "actual_http_and_browser": true,
+      "lifecycle_executed": true,
+      "source_identities_preserved": 34,
+      "javascript_errors": 0,
+      "post_lifecycle_check_step": "success"
+    },
+    "original_artifacts": [
+      {
+        "id": 14283260117,
+        "name": "container-evidence-af4ed2b776162f8dce497b20d4f4fad063adeeab",
+        "size_bytes": 1098398,
+        "expires_at": "2026-11-30T23:25:01Z"
+      },
+      {
+        "id": 14281956333,
+        "name": "secret-scan-af4ed2b776162f8dce497b20d4f4fad063adeeab",
+        "size_bytes": 325,
+        "expires_at": "2026-11-30T23:22:11Z"
+      },
+      {
+        "id": 14281756562,
+        "name": "postgres-evidence-af4ed2b776162f8dce497b20d4f4fad063adeeab",
+        "size_bytes": 625715,
+        "expires_at": "2026-11-30T23:23:43Z"
+      },
+      {
+        "id": 14281313788,
+        "name": "dependencies-af4ed2b776162f8dce497b20d4f4fad063adeeab",
+        "size_bytes": 15217,
+        "expires_at": "2026-11-30T23:22:45Z"
+      }
+    ],
+    "readback_scope": "Original executed GitHub Actions job logs, job steps and artifact metadata inspected; original archive files are not stored in this Git tree."
+  },
+  "terraform_static": {
+    "run_id": 43593711641,
+    "attempt": 2,
+    "source_commit": "205e7507b9cd7dc1b34a858f2c524ce0c832642c",
+    "status": "completed",
+    "conclusion": "success",
+    "run_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711641",
+    "job_id": 133690982048,
+    "actual_checks": {
+      "fmt": "success",
+      "init_backend_false": "success",
+      "validate": "success",
+      "provider_schema": "success"
+    },
+    "artifact": {
+      "id": 14282436739,
+      "name": "terraform-static-b7668b24dbbb04a9d871b1a99596d50f5531acd3",
+      "size_bytes": 179195,
+      "expires_at": "2026-11-30T23:25:59Z"
+    },
+    "source_correspondence_main": {
+      ".github/workflows/terraform.yml": "5f291ed791e7d2674b9ef3c38d8d96e5cd82102d",
+      "infra/snowflake/main.tf": "0414d957575af55bd9d91a596ebb5475f21d5c7c",
+      "infra/snowflake/variables.tf": "4a8c64b3792b478c350c0f7d36dd686871daa6ba",
+      "infra/snowflake/.terraform.lock.hcl": "e51beec6432fc01822f1cab12b9c0d0ba09911a2"
+    },
+    "qualification_script_differs_from_old_commit": true,
+    "cloud_connected": false,
+    "terraform_plan_executed": false,
+    "terraform_apply_executed": false,
+    "note": "Observed actual provider-schema success on historical commit with byte-identical workflow/HCL/lock relevant to static check. Qualification script differs but was not run by this workflow. No live Snowflake or provider apply was executed."
+  },
+  "release_boundaries": {
+    "repository_visibility": "public",
+    "license": null,
+    "description": null,
+    "topics": [],
+    "main_protected": false,
+    "anonymous_readback_recorded_before": true,
+    "live_snowflake_executed": false,
+    "production_target_qualified": false,
+    "independent_external_signoff": false
+  }
+}

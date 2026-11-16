@@ -1,5 +1,17 @@
 # Terraform provider transport investigation
 
+## 17 November 2026 hosted provider-schema result
+
+The earlier Unix-socket restriction **was specific to the isolated local workspace**. [GitHub Actions Terraform static workflow #43593711641, attempt 2](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711641) later executed on a compatible assigned runner and concluded **success** for all four actual checks: `fmt`, `init -backend=false`, `validate -json`, `providers schema -json`. The original job stdout reports:
+
+```json
+{"fmt":"success","init":"success","validate":"success","schema":"success"}
+```
+
+The run checked out `205e7507b9cd7dc1b34a858f2c524ce0c832642c`, **not current main**. Full Git blob readback confirms that its Terraform workflow, `infra/snowflake/main.tf`, `variables.tf`, and pinned `.terraform.lock.hcl` are byte-identical to the current source. The `qualify.sh` script has changed, but this static workflow **does not execute it**. The run uploaded `terraform-static` original artifact ID `14282436739`, expiring 30 November UTC; [manifest](../evidence/2026-11-17/ci-mainline-hardening/manifest.json) identifies the original source and evidence boundary.
+
+This is **actual pinned-provider static validation**, resolving that portion of the earlier local qualification blocker. No credentials, plan, apply, warehouse, Snowflake query, billing or cloud resource were involved. These remain separate live/production authorization and acceptance gates.
+
 ## Decision and scope
 
 The pinned Linux Snowflake provider cannot select a TCP listener through the official parameters examined. Its normal and `-debug` entry points both use a Unix socket. The existing `terraform validate` and provider-schema gates therefore remain blocked in this workspace, where that socket operation was denied.
