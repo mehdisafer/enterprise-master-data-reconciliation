@@ -87,45 +87,12 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Select full qualification only for runtime or unknown changes
-          command: |
-            mkdir -p artifacts
-            python3 - \<<'PYCODE'
-            import json
-            import os
-            from pathlib import Path
-            import subprocess
-
-            commit = os.environ.get('CIRCLE_SHA1', '')
-            base = subprocess.run(['git', 'rev-parse', f'{commit}^'], text=True,
-                                  stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
-            paths = []
-            selection = 'unavailable-base-full-qualification'
-            run_full = True
-            if base.returncode == 0:
-                comparison = subprocess.run(['git', 'diff', '--no-renames', '--name-only',
-                                             base.stdout.strip(), commit, '--'],
-                                            text=True, capture_output=True)
-                if comparison.returncode == 0:
-                    paths = [name for name in comparison.stdout.splitlines() if name]
-                    docs_only = bool(paths) and all(
-                        name == 'README.md' or name.startswith(('docs/', 'evidence/'))
-                        for name in paths
-                    )
-                    run_full = not docs_only
-                    selection = 'documentation-only' if docs_only else 'runtime-or-unknown-paths'
-            report = {'commit': commit, 'selection': selection,
-                      'runtime_requested': run_full, 'changed_paths': len(paths)}
-            Path('artifacts/scope.json').write_text(json.dumps(report, indent=2) + '\n')
-            with Path(os.environ['BASH_ENV']).open('a') as bash_env:
-                bash_env.write('export MDM_FULL_QUALIFY=' + ('1' if run_full else '0') + '\n')
-            print(json.dumps(report))
-            PYCODE
+          name: Record mandatory source-bound mainline qualification
+          command: python3 scripts/circleci_scope.py
       - run:
           name: Install Python 3.12.16 and the exact application/dbt lock
           no_output_timeout: 10m
           command: |
-            if [ "${MDM_FULL_QUALIFY:-1}" != "1" ]; then echo 'Full qualification not requested for docs/evidence-only changes'; exit 0; fi
             python -m pip install --disable-pip-version-check uv==0.13.6
             uv python install 3.12.16
             uv sync --frozen --python 3.12.16 --extra dev --extra postgres
@@ -133,7 +100,6 @@ jobs:
       - run:
           name: Wait for disposable PostgreSQL and create the isolated test database
           command: |
-            if [ "${MDM_FULL_QUALIFY:-1}" != "1" ]; then echo 'Skipped: docs/evidence-only change'; exit 0; fi
             mkdir -p artifacts test-results
             uv run --no-sync python - \<<'PY'
             import json
@@ -164,7 +130,6 @@ jobs:
           name: Execute complete real-PostgreSQL suite and prohibit skipped tests
           no_output_timeout: 10m
           command: |
-            if [ "${MDM_FULL_QUALIFY:-1}" != "1" ]; then echo 'Skipped: docs/evidence-only change'; exit 0; fi
             uv run --no-sync pytest -q --junitxml=test-results/postgres.xml
             uv run --no-sync python - \<<'PY'
             import xml.etree.ElementTree as ET
@@ -176,7 +141,6 @@ jobs:
       - run:
           name: Run real three-ERP reconciliation and business invariants
           command: |
-            if [ "${MDM_FULL_QUALIFY:-1}" != "1" ]; then echo 'Skipped: docs/evidence-only change'; exit 0; fi
             uv run --no-sync mdm migrate
             uv run --no-sync mdm demo --output artifacts/demo.json
             uv run --no-sync mdm check > artifacts/business-check.json
@@ -184,14 +148,12 @@ jobs:
           name: Build PostgreSQL dbt models and data tests
           no_output_timeout: 10m
           command: |
-            if [ "${MDM_FULL_QUALIFY:-1}" != "1" ]; then echo 'Skipped: docs/evidence-only change'; exit 0; fi
             uv run --no-sync dbt deps --project-dir dbt --profiles-dir dbt --target postgres
             uv run --no-sync dbt build --project-dir dbt --profiles-dir dbt --target postgres --target-path ../artifacts/dbt-build
             uv run --no-sync dbt docs generate --project-dir dbt --profiles-dir dbt --target postgres --target-path ../artifacts/dbt-docs
       - run:
           name: Measure bounded synthetic matching candidates
           command: |
-            if [ "${MDM_FULL_QUALIFY:-1}" != "1" ]; then echo 'Skipped: docs/evidence-only change'; exit 0; fi
             uv run --no-sync mdm benchmark --size 300 --output artifacts/benchmark-control.json
       - store_test_results:
           path: test-results
