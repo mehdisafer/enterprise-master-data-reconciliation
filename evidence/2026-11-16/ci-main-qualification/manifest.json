@@ -1,0 +1,155 @@
+{
+  "schema_version": "p02-ci-qualification.v1",
+  "observed_date_utc": "2026-11-16",
+  "repository": "mehdisafer/enterprise-master-data-reconciliation",
+  "source_commit": "9b72725da693b4587c27a12b1d65e6f639d69a86",
+  "github_actions": {
+    "run_id": 43920046617,
+    "url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43920046617",
+    "created_at": "2026-11-16T17:35:54Z",
+    "updated_at": "2026-11-16T17:39:56Z",
+    "status": "completed",
+    "conclusion": "success",
+    "jobs": {
+      "scope": {
+        "job_id": 133484571624,
+        "status": "completed",
+        "conclusion": "success",
+        "step_count": 7,
+        "failed_step_count": 0
+      },
+      "postgres": {
+        "job_id": 133484749971,
+        "status": "completed",
+        "conclusion": "success",
+        "step_count": 26,
+        "failed_step_count": 0
+      },
+      "dependencies": {
+        "job_id": 133484750058,
+        "status": "completed",
+        "conclusion": "success",
+        "step_count": 12,
+        "failed_step_count": 0
+      },
+      "container": {
+        "job_id": 133485726286,
+        "status": "completed",
+        "conclusion": "success",
+        "step_count": 17,
+        "failed_step_count": 0
+      }
+    },
+    "pytest": {
+      "passed": 183,
+      "warnings": 1,
+      "subtests_passed": 15,
+      "source": "GitHub Actions postgres job original log"
+    },
+    "dbt": {
+      "build": {
+        "pass": 48,
+        "warnings": 0,
+        "errors": 0,
+        "skipped": 0,
+        "noop": 0,
+        "reused": 0,
+        "total": 48
+      },
+      "restored_tests": {
+        "pass": 43,
+        "warnings": 0,
+        "errors": 0,
+        "skipped": 0,
+        "noop": 0,
+        "reused": 0,
+        "total": 43
+      },
+      "models": 5,
+      "data_tests": 41,
+      "operations": 2,
+      "source": "GitHub Actions postgres job original log"
+    },
+    "restore": {
+      "verified": true,
+      "second_restore_rejection_step": true,
+      "source": "Original postgres log and recorded job step"
+    },
+    "browser": {
+      "passed": true,
+      "actual_http_and_browser": true,
+      "lifecycle_executed": true,
+      "sources": 34,
+      "javascript_errors_count": 0,
+      "lifecycle": {
+        "passed": true,
+        "all_mutations_from_rendered_controls": true,
+        "source_identities_preserved": 34,
+        "unmerge_restored_original_mapping": true,
+        "split_preserved_unaffected_mapping": true,
+        "source_assertions_unchanged": true,
+        "consumer_alignment_verified_after_each_operation": true
+      },
+      "post_lifecycle_business_step": true,
+      "source": "GitHub Actions container original log and job step"
+    },
+    "artifacts": [
+      {
+        "id": 14254671130,
+        "name": "postgres-evidence-9b72725da693b4587c27a12b1d65e6f639d69a86",
+        "bytes": 624272,
+        "created_at": "2026-11-16T17:37:41Z",
+        "expires_at": "2026-11-30T17:37:39Z",
+        "expired": false
+      },
+      {
+        "id": 14253776287,
+        "name": "secret-scan-9b72725da693b4587c27a12b1d65e6f639d69a86",
+        "bytes": 325,
+        "created_at": "2026-11-16T17:36:09Z",
+        "expires_at": "2026-11-30T17:36:07Z",
+        "expired": false
+      },
+      {
+        "id": 14252264199,
+        "name": "container-evidence-9b72725da693b4587c27a12b1d65e6f639d69a86",
+        "bytes": 1098451,
+        "created_at": "2026-11-16T17:39:51Z",
+        "expires_at": "2026-11-30T17:39:49Z",
+        "expired": false
+      },
+      {
+        "id": 14252173713,
+        "name": "dependencies-9b72725da693b4587c27a12b1d65e6f639d69a86",
+        "bytes": 15219,
+        "created_at": "2026-11-16T17:36:27Z",
+        "expires_at": "2026-11-30T17:36:26Z",
+        "expired": false
+      }
+    ]
+  },
+  "circleci": {
+    "commit": "9b72725da693b4587c27a12b1d65e6f639d69a86",
+    "checks": [
+      {
+        "context": "ci/circleci: build-and-test",
+        "status": "success",
+        "job_url": "https://app.circleci.com/workflow/9fd56b39-9f8f-431e-bb11-177bcfe45f86/job/1c1c7628-3f69-4fa0-aac0-4e8eca38444b"
+      },
+      {
+        "context": "ci/circleci: postgres-integration",
+        "status": "success",
+        "job_url": "https://app.circleci.com/workflow/9fd56b39-9f8f-431e-bb11-177bcfe45f86/job/8098e38b-9f89-4910-9ab0-95cf0309f1a7"
+      }
+    ],
+    "original_job_logs_and_artifacts_inspected": false,
+    "note": "GitHub commit statuses are observed; original CircleCI job artifact bytes were not downloaded in this continuation."
+  },
+  "boundaries": {
+    "live_snowflake_executed": false,
+    "production_deployment_verified": false,
+    "repository_licence_selected": false,
+    "independent_approval_obtained": false,
+    "note": "No live Snowflake, production environment or open-source licence is established by this synthetic CI result."
+  }
+}

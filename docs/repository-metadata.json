@@ -29,8 +29,12 @@
     "merge_commit": "e27f4c2f58d812a2213b1457378095dc72dafd8a",
     "tree": "4e3591997281aeb6666c933d39d731e00b53186c"
   },
-  "verification_status": "github_repository_public_verified_anonymous_access_and_about_metadata_pending",
+  "verification_status": "authenticated_github_api_visibility_public;anonymous_http_not_verified;about_metadata_license_protection_pending",
   "latest_observed_visibility": "public",
   "latest_visibility_observation_date": "2026-11-16",
-  "latest_visibility_source": "GitHub repository REST metadata readback"
+  "latest_visibility_source": "GitHub repository REST metadata readback",
+  "observed_license": null,
+  "observed_main_protected": false,
+  "latest_qualified_source_sha": "9b72725da693b4587c27a12b1d65e6f639d69a86",
+  "latest_repository_main_at_publication_observation": "c76a7d05def9e90f5b3173558b4ebba652e17ecd"
 }
