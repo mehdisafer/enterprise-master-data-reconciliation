@@ -5,6 +5,12 @@ integration workflow and the explicitly authorized Snowflake path. Commands act
 on the named dedicated environment. The business API is bound to loopback; the
 repository's visibility does not expose a running service.
 
+## Verified hosted CI scope — 16 November 2026
+
+The source at [`9b72725da693`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/9b72725da693b4587c27a12b1d65e6f639d69a86) passed both default CircleCI jobs and all four jobs of [GitHub Actions Quality #43920046617](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43920046617). The hosted PostgreSQL job ran **183 pytest tests plus 15 subtests**, 48 successful dbt build tasks, a verified backup/restore and 43 successful restored-db dbt tasks. The Docker/browser job built the reference image, started PostgreSQL/migrations/API, executed the synthetic demo and completed a real rendered three-role merge/unmerge/split lifecycle with 34 preserved source identities and no JavaScript errors. The [source-linked evidence index](../evidence/2026-11-16/ci-main-qualification/) names the original jobs and retained artifact collections.
+
+**Boundary:** This is a disposable **synthetic** CI environment, not a deployed production service or live Snowflake workload. The local workspace's Docker/Unix-socket restrictions below remain dated local-environment observations; they do not invalidate the successful hosted run. CI artifact retention is finite; original job logs and packaged results should be consulted while available.
+
 ## Versions and qualification scope
 
 | Component | Selected version or contract | Evidence boundary |
@@ -45,9 +51,11 @@ Original remote artifacts and current-main execution remain to be inspected.
 Provider-schema and Snowflake qualification are independent. Earlier evidence
 retains its original versions.
 
-The CI definitions select these profiles but do not themselves prove execution.
-Recorded GitHub qualification jobs failed before runner assignment; native evidence
-is not a successful CI result. The exact admission cause remains unconfirmed.
+The CI definitions alone do not establish an execution result. Earlier GitHub
+qualification jobs failed before runner assignment; their cause remains
+unconfirmed. In contrast, the 16 November source-specific hosted Quality run
+completed all four jobs on assigned runners, including database and browser,
+with original logs and artifacts available for inspection.
 Snowflake requires a separate dedicated authorized account configuration; see
 [its qualification procedure](snowflake.md).
 
@@ -139,9 +147,10 @@ then merges and explicitly splits the group. The split creates a new identity
 for one partition by design; source assertions and unrelated mappings stay
 unchanged. Each stage publishes corrections and checks reporting alignment.
 Use this only in the disposable synthetic environment, and retain the final
-`mdm check` result with the browser report/screenshots. The local workspace
-has not executed this profile; CircleCI reported successful execution on
-the setup-branch commit, and original screenshots/reports need readback.
+`mdm check` result with the browser report/screenshots. The earlier isolated local workspace could not execute this profile;
+the 16 November GitHub Actions container job has now executed it successfully
+at the recorded source SHA. Original artifacts are accessible through the
+source-linked CI run; this does not qualify production user permissions.
 
 ### Shutdown and restart
 
@@ -160,7 +169,7 @@ kill still needs database crash recovery and outbox reconciliation on restart.
 
 ## Mainline CI gates
 
-The default [CircleCI configuration](../.circleci/config.yml) now separates a low-cost branch gate (matching, other non-DB unit tests, lint and scoped secret-history scan) from an ephemeral `postgres:17.12` real-integration/dbt gate, restricted to `main`. It installs Python 3.12.16 via uv; the test fixture resets only the explicitly named `mdm_test` database. CI outputs and source SHA belong to each CircleCI job. The configuration's presence is not proof of remote execution.
+The default [CircleCI configuration](../.circleci/config.yml) now separates a low-cost branch gate (matching, other non-DB unit tests, lint and scoped secret-history scan) from an ephemeral `postgres:17.12` real-integration/dbt gate, restricted to `main`. It installs Python 3.12.16 via uv; the test fixture resets only the explicitly named `mdm_test` database. CI outputs and source SHA belong to each CircleCI job. The source-specific 16 November CircleCI mainline statuses are now successful; the separate GitHub Actions database and browser jobs also actually executed and passed. Documentation-only scope results remain different from runtime acceptance.
 
 The mainline gate intentionally does **not** execute full native backup/restore, image build or rendered browser, which remain in the separate full/reference qualification profiles. It uses only disposable synthetic records and ephemeral credentials. No real customer environment or Snowflake account is involved.
 
@@ -389,8 +398,9 @@ carries the supplementary qualification, controls and evidence; its conversation
 is the record for review, the delivered head, final `main`/tree readback and
 workflow observations. Follow the [publication procedure](publication.md) for
 the maintainer's visibility/metadata changes and anonymous-access check. Source
-delivery leaves issue #1, final-main container/browser artifact readback,
-Terraform provider-schema and Snowflake qualification open. It does not create a release tag or select the
+delivery leaves issue #1, live Snowflake and production target
+qualification, explicit project licence, branch protection and release
+approval open. The synthetic container/browser path passed on 16 November. It does not create a release tag or select the
 project licence.
 
 During initial setup on 13 November 2026, the rulesets endpoint reported a

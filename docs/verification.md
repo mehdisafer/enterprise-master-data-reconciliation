@@ -23,6 +23,23 @@ Predeclared correctness and safety thresholds are zero false automatic merges in
 
 The full suite fails if its database is missing. No skipped test is accepted as integration evidence. Snowflake unit doubles are explicitly identified and never reported as a live provider run.
 
+## Hosted mainline qualification — 16 November 2026
+
+The [GitHub Actions run #43920046617](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43920046617) completed successfully on commit [`9b72725da693`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/9b72725da693b4587c27a12b1d65e6f639d69a86), with **four actual jobs** (`scope`, `dependencies`, `postgres`, `container`) executed on assigned runners. The returned job steps and original logs were inspected and the four original artifact collections were listed as uploaded. This supersedes the earlier runner-admission failure **for the tested SHA only**.
+
+| Control | Observed result | Source |
+| --- | --- | --- |
+| Full real-PostgreSQL Python suite | **183 tests + 15 subtests passed**, one warning; no executed test failure | [postgres job](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43920046617/job/133484749971) |
+| PostgreSQL dbt build | Five models, 41 data tests, two hooks; **PASS=48, ERROR=0, SKIP=0** | Same PostgreSQL job |
+| Consistent backup/restore | `restore_verified=true`; the expected negative second-restore check passed | Same PostgreSQL job |
+| dbt tests on restored database | 41 data tests and two hooks; **PASS=43, ERROR=0, SKIP=0** | Same PostgreSQL job |
+| Rendered browser and Docker | API/health/demo executed, browser `passed=true`, `lifecycle_executed=true`, **34** source identities preserved, JavaScript errors absent, and post-lifecycle business check passed | [container job](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43920046617/job/133485726286) |
+| Source/lock and security controls | `scope` and `dependencies` executed and succeeded, with source-linked artifacts | [full run](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43920046617) |
+
+The default [CircleCI `build-and-test`](https://app.circleci.com/workflow/9fd56b39-9f8f-431e-bb11-177bcfe45f86/job/1c1c7628-3f69-4fa0-aac0-4e8eca38444b) and [`postgres-integration`](https://app.circleci.com/workflow/9fd56b39-9f8f-431e-bb11-177bcfe45f86/job/8098e38b-9f89-4910-9ab0-95cf0309f1a7) also reported `success` at the same SHA. Their actual run statuses were read through GitHub commit contexts; their raw CircleCI JUnit and `scope.json` artifacts were not separately downloaded. The GitHub Actions original logs provide distinct, directly inspected runtime evidence.
+
+This is a **synthetic, source-specific qualification**. It neither deploys nor tests a live Snowflake account, production environments, arbitrary industrial scale or full provider parity. The [dated manifest](../evidence/2026-11-16/ci-main-qualification/manifest.json) records the observed jobs, artifact IDs/sizes and original source links without copying complete CI archives into Git.
+
 ## Observed 15 November dependency qualification
 
 The initial complete native capture used [commit `88c932de`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/88c932de80dd1d20f49b93798153f2986f3c5029), with [source correspondence](../evidence/2026-11-15/dependency-qualification/source-correspondence.json). The supplementary full test suite used [commit `bb369db1`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/bb369db1360ef17c5328dc6a68392355728e9920), preserving all eleven tests from the dependency rollup integrated through [PR #8](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/8); its [correspondence record](../evidence/2026-11-15/dependency-qualification/main-reconciliation/source-correspondence.json) checks 83 inputs. Both runs used Python 3.12.16 and PostgreSQL 17.12 with the same installed wheel, FastAPI 0.162.4, Pydantic 2.14.3 and Hatchling 1.33.0 build. [PR #9](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/9) carries these controls and evidence; its conversation records review, the delivered head, final `main`/tree readback and workflow observations separately from native execution.
@@ -101,11 +118,11 @@ The [original command outputs](../evidence/2026-11-14/ci-evidence-hardening/comm
 
 The [CircleCI record](circleci.md) verifies successful `scope`, `dependencies`, `postgres`, `container` and separate `reference-containers` status contexts for tested setup commit `b7485a2`. Direct Git tree comparison found only the Compose ingress and quality workflow source differences (plus one main-only documentation page) before the exact tested versions were integrated. All application, tests, migrations, contracts, fixtures, dbt and lockfile blobs were identical. The CircleCI statuses are observed; original JUnit, dbt, restore, browser screenshots and reports have not been independently fetched. A new merged-head full run and live Snowflake remain unverified.
 
-## Mainline CI expansion (pending execution)
+## Mainline CI 2.1 compilation correction and executed result
 
-The updated [CircleCI default configuration](../.circleci/config.yml) adds a complete non-database regression suite and history scan to the cheap branch build, and a `main`-only real PostgreSQL 17.12 job with the full pytest suite, demo, business invariants, dbt build/catalog and 300-source matching control. The expected runtime is Python 3.12.16 with uv 0.13.6 and frozen dependencies. JUnit checks fail when tests are skipped, and both jobs upload original outputs.
+CircleCI pipelines #39–#42 were initially `Not Run` because config v2.1 interpreted four unescaped Python heredoc delimiters as invalid parameter expressions. [PR #17](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/17) escaped them and added a regression test. A corrected branch CI run passed, followed by both successful mainline CircleCI jobs and the fully executed GitHub Actions run described above.
 
-**Qualification boundary:** The job definitions and shell/YAML syntax were checked statically before their PR; the new `postgres-integration` job has **not yet** been observed running successfully on the delivered commit. The historical setup-branch full and browser successes remain attached to `b7485a2`, not this new configuration. This default mainline gate does not replace the separately qualified installed-wheel, backup/restore, Docker/browser, Terraform schema and authorized live Snowflake profiles. See [CircleCI source/evidence history](circleci.md).
+The default CircleCI configuration still makes a scope distinction: docs/evidence-only merges can produce a green **scope-only result** with `runtime_requested=false`, not a PostgreSQL PASS. The tested correction commit changed CI configuration and tests, and both CircleCI jobs succeeded. Original CircleCI `scope.json` bytes were not inspected; however, the separate same-SHA GitHub Actions `postgres` job unequivocally executed the full real-database suite. Earlier local restrictions on Unix sockets/Docker/Chromium remain historical, not current hosted-run limitations.
 
 ## Remaining environment boundaries
 

@@ -1,8 +1,25 @@
 # Observed evidence — 0.1.0rc1
 
-**The native PostgreSQL reference and HTTP path passed the recorded qualification. Full release acceptance remains open.** Original successes, failures and environment limits are preserved separately. Database results do not establish Docker, rendered-browser, Terraform or Snowflake qualification.
+**The synthetic PostgreSQL/dbt, container and rendered-browser reference passed hosted CI on 16 November 2026; full live Snowflake, production and release acceptance remain open.** The 13–15 November native evidence below is preserved at its original source versions. A database-only result did not qualify Docker at that time; a separate later GitHub Actions container job has now executed successfully.
 
-## Latest capture — 15 November dependency qualification
+## Latest hosted CI capture — 16 November 2026
+
+The fully executed [GitHub Actions Quality run #43920046617](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43920046617) at commit [`9b72725da693`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/9b72725da693b4587c27a12b1d65e6f639d69a86) completed **successfully**, with all four jobs on assigned runners: `scope`, `dependencies`, `postgres`, and `container`. Both default CircleCI jobs (`build-and-test`, `postgres-integration`) also reported `success` for the exact source SHA. These distinct platforms' evidence is not conflated.
+
+| Check | Executed result | Retained reference |
+| --- | --- | --- |
+| Full Python test suite | **183 passed + 15 subtests passed**, one warning | [Original postgres job](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43920046617/job/133484749971) |
+| dbt build | Five models, 41 data tests, two hooks; **PASS=48, ERROR=0, SKIP=0** | Same job; `postgres-evidence` artifact |
+| Consistent backup/restore | `restore_verified=true`; expected repeated-restore refusal step succeeded | Same job; `restore.json` and refusal report |
+| Restored dbt tests | 41 data tests, two hooks; **PASS=43, ERROR=0, SKIP=0** | Same job; dbt restored result |
+| Docker + browser | Real API/demo/health; `passed=true`, `lifecycle_executed=true`, 34 preserved source identities, no JavaScript errors, post-lifecycle business check passed | [Original container job](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43920046617/job/133485726286) |
+| Locked dependencies and security | Scope/history scan and dependency inventory/audit jobs passed | `secret-scan` and `dependencies` artifacts |
+
+Original GitHub Actions `postgres-evidence`, `container-evidence`, `secret-scan` and `dependencies` artifact collections were uploaded with the tested SHA and limited retention. See the [16 November evidence report](2026-11-16/ci-main-qualification/) and its [structured observation manifest](2026-11-16/ci-main-qualification/manifest.json) for the original run/job IDs, artifact identifiers, sizes and proof boundaries. The manifest is a derived record, not a copy of the raw archives.
+
+This qualifies the recorded **synthetic** source only. Live Snowflake publication/readback/dbt parity, real production deployment/permissions/monitoring and an explicit open-source licence remain outside the result. The repository's visibility is now public by GitHub API, but no project licence, description/topics or branch protection is present; an independent anonymous HTTP fetch was not completed in this execution environment.
+
+## Historical capture — 15 November dependency qualification
 
 The initial native capture used [commit `88c932de80dd1d20f49b93798153f2986f3c5029`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/88c932de80dd1d20f49b93798153f2986f3c5029), tree `00fe3801be1c48b5c8ddb729f4d8c02b2ad7dc54`; its [source-correspondence record](2026-11-15/dependency-qualification/source-correspondence.json) checks 82 inputs. After preserving the dependency rollup and eleven tests integrated through [PR #8](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/8), the supplementary suite used [commit `bb369db1`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/bb369db1360ef17c5328dc6a68392355728e9920), tree `052360b31b0b831d80ddbaa34d93870577c68637`; its [source correspondence](2026-11-15/dependency-qualification/main-reconciliation/source-correspondence.json) checks 83 inputs. [PR #9](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/9) carries the controls and evidence, and its conversation records review, the delivered head, final `main`/tree readback and workflows. [Publication](../docs/publication.md) remains separate from full runtime acceptance.
 
@@ -182,4 +199,4 @@ The [known-database-secret scan](2026-11-14/native-flow/known-secret-scan.json) 
 
 Upstream macros and compiled derivatives retain the rights in [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md) and [preserved licence files](third-party-licenses/sources.json). Credentials, database archives, vendor binaries and generated dbt application HTML are excluded. Evidence hashes prove correspondence, not independent certification, licence approval or production readiness.
 
-Remaining evidence is the actual container/browser run, Terraform provider-schema validation, GitHub application-qualification execution and authorized live Snowflake publication/dbt parity/cost observations. The exact acceptance and publication prerequisites are in [the acceptance matrix](../docs/acceptance.md). A successful native reference does not close those gates.
+The 16 November hosted CI has now executed the full PostgreSQL/dbt/container/browser reference. Remaining qualification is live Snowflake publication/readback/rollback and parity/cost evidence, production-target operating controls, public-release/licence/protection/anonymous-access decisions and any still-uninspected original CircleCI artifact bytes. The separate [acceptance matrix](../docs/acceptance.md) identifies those boundaries. A successful synthetic reference is not a production or provider qualification.

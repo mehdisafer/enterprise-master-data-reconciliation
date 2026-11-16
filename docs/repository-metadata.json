@@ -1,6 +1,6 @@
 {
   "repository": "mehdisafer/enterprise-master-data-reconciliation",
-  "status": "prepared_not_applied",
+  "status": "visibility_public_about_metadata_pending",
   "observed_description": null,
   "observed_topics": [],
   "description": "Explainable, reversible master-data reconciliation across industrial ERPs with Python, dbt, PostgreSQL and Snowflake.",
@@ -18,8 +18,8 @@
     "terraform",
     "synthetic-data"
   ],
-  "observed_visibility": "private",
-  "visibility_observation_date": "2026-11-14",
+  "observed_visibility": "public",
+  "visibility_observation_date": "2026-11-16",
   "requested_visibility": "public",
   "license": "pending_explicit_maintainer_choice",
   "application_method": "maintainer_github_interface",
@@ -29,5 +29,8 @@
     "merge_commit": "e27f4c2f58d812a2213b1457378095dc72dafd8a",
     "tree": "4e3591997281aeb6666c933d39d731e00b53186c"
   },
-  "verification_status": "main_integration_verified_public_access_and_metadata_readback_pending"
+  "verification_status": "authenticated_github_api_visibility_public;anonymous_http_not_verified;about_metadata_license_protection_pending",
+  "observed_license": null,
+  "observed_main_protected": false,
+  "latest_main_source_sha": "9b72725da693b4587c27a12b1d65e6f639d69a86"
 }
