@@ -1,6 +1,14 @@
 # Acceptance and remaining work
 
-## Current acceptance snapshot — 16 November 2026
+## Current qualification — 17 November 2026 CET
+
+**The corrected mainline CI policy is now qualified on [`af4ed2b77616`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/af4ed2b776162f8dce497b20d4f4fad063adeeab).** Both default CircleCI jobs and all four executed GitHub Actions quality jobs succeeded after [PR #22](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/22) removed the first-parent docs-only false skip. Original GitHub Actions postgres logs report **189 passed tests + 15 subtests** (one warning), dbt build **48/48**, restored dbt **43/43**, verified backup/restore and a successful real Docker/Playwright three-role lifecycle with 34 identities and zero JavaScript errors. The [source-specific evidence index](../evidence/2026-11-17/ci-mainline-hardening/) is a derivative manifest with original run/job/artifact references.
+
+The previously blocked **Terraform provider schema** is now actually qualified in a compatible runner: [static workflow attempt 2](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711641) passed `fmt`, `init -backend=false`, `validate` and `providers schema` on an older commit with byte-identical workflow/HCL/lock inputs to the current source. No Terraform `plan`/`apply`, live Snowflake account or Snowflake dbt execution was performed.
+
+**Acceptance boundary:** This validates the synthetic reference and static Terraform provider, not a deployed industrial production workload, the live Snowflake integration, licence or release. The optional original CircleCI artifact and Project Setup readbacks remain under #16.
+
+## Historical acceptance snapshot — 16 November 2026
 
 **The synthetic reference is now qualified through the hosted PostgreSQL, dbt, Docker and rendered-browser paths on [`9b72725da693`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/9b72725da693b4587c27a12b1d65e6f639d69a86).** Both default CircleCI jobs reported success at that SHA; all four jobs of [GitHub Actions full qualification #43920046617](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43920046617) executed and succeeded. Original GitHub Actions logs confirm **183 pytest tests and 15 subtests**, dbt build **48/48**, restored dbt **43/43** (zero errors/skips), `restore_verified=true` and a real rendered merge/unmerge/split lifecycle with 34 source identities preserved. Source-linked artifact collections for security, dependencies, PostgreSQL and container were uploaded. The [dated evidence index](../evidence/2026-11-16/ci-main-qualification/) identifies the API/log basis and limitations.
 
@@ -75,7 +83,7 @@ The CI evidence review then found that documentation generation overwrote dbt bu
 | Container reference and rendered console | Compose, actual rendered three-role lifecycle and business checks | 16 November GitHub Actions container job executed successfully on tested `main`: `passed=true`, `lifecycle_executed=true`, 34 identities, no JavaScript errors |
 | Durable business correlation | HTTP/CLI, run, decision, audit, outbox and receipt tests | PostgreSQL/HTTP qualified; live warehouse query links not qualified |
 | Snowflake snapshot and dbt semantics | Publisher, unit boundaries, real PostgreSQL export | Live Snowflake load/readback and parity not executed |
-| Terraform and actual provider schema | Pinned CLI/provider and retained lock | 15 November format/init passed; validate/schema blocked; no plan/apply |
+| Terraform and actual provider schema | Pinned CLI/provider lock; `fmt`, `init -backend=false`, `validate`, `providers schema` | **Hosted static provider-schema qualification passed** on historical commit with byte-identical workflow/HCL/lock; no plan/apply/live account |
 | Dependency/licence/secret controls | Locked deps, dated audits, source-history scan and notices | 16 November `scope` and `dependencies` jobs executed and passed; no project licence chosen |
 | Installed package | Source distribution, wheel, resource hashes and entrypoint | All 18 resources preserved; full suite passed against the installed wheel |
 | Source publication, licence and release | Public source, metadata manifest and release-candidate notes | Visibility public by GitHub API and anonymous browser readback; About metadata blank, no project licence/tag, `main` unprotected |
@@ -96,11 +104,11 @@ After [PR #17](https://github.com/mehdisafer/enterprise-master-data-reconciliati
 
 The same SHA's [GitHub Actions full run](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43920046617) independently executed scope, dependency auditing, actual PostgreSQL pytest, five dbt models and 41 data tests, consistent backup/restoration and real Docker/browser lifecycle. The original logs and artifact inventory were inspected; the original CircleCI `scope.json` and other CircleCI artifact bytes were not separately downloaded, so their values must not be invented or conflated with GitHub Actions evidence. The repo remains a **synthetic reference**, not an authorized live Snowflake or production target.
 
-## 17 November mainline CI skip-safety hardening — awaiting remote acceptance
+## 17 November mainline CI skip-safety hardening — remote CI qualified
 
 An isolated Git reproduction found a **real CI-selection false negative**: the old CircleCI `postgres-integration` scope logic compared only the head commit to its first parent, potentially skipping all PostgreSQL/dbt tests when a multi-commit push ended in documentation. This is a *selection-policy defect*, not evidence of incorrect application data. The new policy eliminates documentation-only runtime skipping on `main`, verifies the exact checkout SHA, and records a `runtime_requested=true` scope receipt. It retains the cheaper `build-and-test` profile on branches and the separate full GitHub Actions qualification. The tradeoff is additional CircleCI minutes on every main push.
 
-Six standalone tests of the new scope helper passed locally, including the multi-commit case and invalid-SHA rejection. **The new policy must pass actual CircleCI mainline execution before it is called qualified.** The 16 November full PostgreSQL/dbt/browser results remain valid for their original executable source; they do not prove the new CI selector. Live Snowflake, public licence and production acceptance are independent.
+Six standalone tests of the new scope helper passed using both pytest entrypoints; **the corrected mainline source subsequently passed both default CircleCI jobs and all four GitHub Actions quality jobs** at [`af4ed2b77616`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/af4ed2b776162f8dce497b20d4f4fad063adeeab). The six checks remain local test evidence, while remote integration and browser execution are separately verified through original GitHub Actions logs. No provider-specific CircleCI artifact bytes were downloaded. The synthetic Snowflake adapter, licence and production target remain separate.
 
 ## Source publication and remaining qualification
 

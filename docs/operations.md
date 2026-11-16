@@ -5,7 +5,15 @@ integration workflow and the explicitly authorized Snowflake path. Commands act
 on the named dedicated environment. The business API is bound to loopback; the
 repository's visibility does not expose a running service.
 
-## Verified hosted CI scope — 16 November 2026
+## Current CI and static-provider qualification — 17 November 2026 CET
+
+The [source `af4ed2b77616`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/af4ed2b776162f8dce497b20d4f4fad063adeeab) is qualified in hosted CI: both default CircleCI jobs succeeded, and the [complete GitHub Actions Quality run #43978646310](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43978646310) executed `scope`, `dependencies`, `postgres`, `container` successfully. Original PostgreSQL logs record **189 tests + 15 subtests passed**, one warning, dbt **48/48**, restored dbt **43/43**, `restore_verified=true` and an expected repeated-restore rejection. The Docker/browser job ran a real three-role decision lifecycle preserving 34 source identities, with zero recorded JavaScript errors and passing post-lifecycle invariants. The mainline CircleCI job now runs full PostgreSQL/dbt **on every main push**, without any docs-only early return; this increases compute use but removes the false-green multi-commit case.
+
+A separate [Terraform static qualification, attempt 2](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711641) loaded the pinned provider and passed `fmt`, `init -backend=false`, `validate` and `providers schema` on an older source whose static workflow/HCL/lock blobs exactly match current main. No `plan`, `apply`, live Snowflake authentication or billable warehouse operation occurred. The [source-linked report](../evidence/2026-11-17/ci-mainline-hardening/) records original run IDs, artifact expiry and source scope.
+
+**Only the synthetic reference and static provider schema are qualified**, not a production service or live Snowflake. The earlier native-workspace Unix socket, Docker and browser restrictions below remain dated historical observations.
+
+## Historical hosted CI scope — 16 November 2026
 
 The source at [`9b72725da693`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/9b72725da693b4587c27a12b1d65e6f639d69a86) passed both default CircleCI jobs and all four jobs of [GitHub Actions Quality #43920046617](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43920046617). The hosted PostgreSQL job ran **183 pytest tests plus 15 subtests**, 48 successful dbt build tasks, a verified backup/restore and 43 successful restored-db dbt tasks. The Docker/browser job built the reference image, started PostgreSQL/migrations/API, executed the synthetic demo and completed a real rendered three-role merge/unmerge/split lifecycle with 34 preserved source identities and no JavaScript errors. The [source-linked evidence index](../evidence/2026-11-16/ci-main-qualification/) names the original jobs and retained artifact collections.
 
@@ -47,8 +55,8 @@ creation, while Terraform formatting/initialization succeeded. Docker is absent
 in that workspace. On a separate Linux runner, CircleCI reported successful
 container and rendered browser jobs at the tested setup-branch commit
 `b7485a2`; see [CircleCI source and status reconciliation](circleci.md).
-Original remote artifacts and current-main execution remain to be inspected.
-Provider-schema and Snowflake qualification are independent. Earlier evidence
+The separate 17 November hosted mainline run now provides actual database and browser execution evidence.
+The pinned Terraform **static provider-schema** step also passed on a compatible runner, but *live Snowflake* and production remain unqualified. Earlier evidence
 retains its original versions.
 
 The CI definitions alone do not establish an execution result. Earlier GitHub
@@ -169,7 +177,7 @@ kill still needs database crash recovery and outbox reconciliation on restart.
 
 ## Mainline CI gates
 
-The [CircleCI config](../.circleci/config.yml) retains a low-cost branch gate (matching, non-DB unit tests, Ruff and a scoped history-pattern scan) and a PostgreSQL 17.12/dbt job restricted to `main`. As of the 17 November scope-safety change, the mainline database job **always runs**, even on docs-only pushes; it no longer trusts the last Git commit as the complete push range. Before the job, `scripts/circleci_scope.py` verifies the checked-out SHA and writes `scope.json` with `runtime_requested=true`. A SHA mismatch fails closed. This increases CI consumption by design but avoids an untested runtime becoming green after a later docs-only commit. Only the explicitly scoped disposable `mdm_test` database is reset; no real customer or Snowflake account is involved. The implementation passed six isolated selector tests; the new revision requires an actual CircleCI and GitHub Actions run before claiming further qualification.
+The [CircleCI config](../.circleci/config.yml) retains low-cost branch checks (matching, non-DB unit tests, Ruff, scoped history scan) and a PostgreSQL 17.12/dbt job on **every main push**, including docs-only commits. The [PR #22](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/22) change removed the unsafe first-parent docs-only skip and verifies the exact `CIRCLE_SHA1` using `scripts/circleci_scope.py`; its recorded `artifacts/scope.json` sets `runtime_requested=true`. A SHA mismatch fails closed. Six isolated selector regressions passed, and both real CircleCI mainline jobs and all four GitHub Actions quality jobs subsequently succeeded on `af4ed2b77616`. This policy consumes extra CircleCI resources by design. The disposable job creates only `mdm_test`; no customer DB or real Snowflake environment is affected.
 
 The mainline gate intentionally does **not** execute full native backup/restore, image build or rendered browser, which remain in the separate full/reference qualification profiles. It uses only disposable synthetic records and ephemeral credentials. No real customer environment or Snowflake account is involved.
 
