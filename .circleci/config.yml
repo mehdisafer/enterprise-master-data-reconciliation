@@ -42,7 +42,7 @@ jobs:
           command: |
             mkdir -p test-results
             uv run --no-sync pytest -q -m 'not integration' --junitxml=test-results/non-integration.xml
-            uv run --no-sync python - <<'PY'
+            uv run --no-sync python - \<<'PY'
             import xml.etree.ElementTree as ET
             root = ET.parse('test-results/non-integration.xml').getroot()
             suites = [root] if root.tag == 'testsuite' else root.findall('testsuite')
@@ -90,7 +90,7 @@ jobs:
           name: Select full qualification only for runtime or unknown changes
           command: |
             mkdir -p artifacts
-            python3 - <<'PYCODE'
+            python3 - \<<'PYCODE'
             import json
             import os
             from pathlib import Path
@@ -135,7 +135,7 @@ jobs:
           command: |
             if [ "${MDM_FULL_QUALIFY:-1}" != "1" ]; then echo 'Skipped: docs/evidence-only change'; exit 0; fi
             mkdir -p artifacts test-results
-            uv run --no-sync python - <<'PY'
+            uv run --no-sync python - \<<'PY'
             import json
             import os
             import platform
@@ -166,7 +166,7 @@ jobs:
           command: |
             if [ "${MDM_FULL_QUALIFY:-1}" != "1" ]; then echo 'Skipped: docs/evidence-only change'; exit 0; fi
             uv run --no-sync pytest -q --junitxml=test-results/postgres.xml
-            uv run --no-sync python - <<'PY'
+            uv run --no-sync python - \<<'PY'
             import xml.etree.ElementTree as ET
             root = ET.parse('test-results/postgres.xml').getroot()
             suites = [root] if root.tag == 'testsuite' else root.findall('testsuite')
