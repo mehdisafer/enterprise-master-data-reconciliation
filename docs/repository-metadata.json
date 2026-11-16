@@ -29,12 +29,26 @@
     "merge_commit": "e27f4c2f58d812a2213b1457378095dc72dafd8a",
     "tree": "4e3591997281aeb6666c933d39d731e00b53186c"
   },
-  "verification_status": "authenticated_github_api_visibility_public;anonymous_http_not_verified;about_metadata_license_protection_pending",
+  "verification_status": "github_public_and_anonymous_browser_readback_verified;about_metadata_license_protection_pending",
   "latest_observed_visibility": "public",
   "latest_visibility_observation_date": "2026-11-16",
   "latest_visibility_source": "GitHub repository REST metadata readback",
   "observed_license": null,
   "observed_main_protected": false,
   "latest_qualified_source_sha": "9b72725da693b4587c27a12b1d65e6f639d69a86",
-  "latest_repository_main_at_publication_observation": "c76a7d05def9e90f5b3173558b4ebba652e17ecd"
+  "latest_repository_main_at_publication_observation": "c76a7d05def9e90f5b3173558b4ebba652e17ecd",
+  "anonymous_public_readback": {
+    "observed_date": "2026-11-16",
+    "method": "clean read-only browser session without authenticated profile or vault",
+    "repository_url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation",
+    "repository_page": "readable_without_sign_in",
+    "raw_readme_url": "https://raw.githubusercontent.com/mehdisafer/enterprise-master-data-reconciliation/main/README.md",
+    "raw_readme": "readable_without_sign_in",
+    "readme_heading": "Enterprise Master Data Reconciliation",
+    "login_wall": false,
+    "not_found": false,
+    "http_status_code": "not separately captured",
+    "original_bytes_sha256": "not captured",
+    "evidence_boundary": "Browser observation only; does not imply licence, metadata or branch protection."
+  }
 }
