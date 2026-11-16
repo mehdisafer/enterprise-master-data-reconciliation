@@ -40,7 +40,7 @@ The parallel report says the database JUnit had 195 case entries with zero failu
 
 A file hash establishes content identity only once original bytes are available. The CircleCI artifact retention window is finite; if those artifacts expire, the register is a historical third-party capture, not independently reproducible raw evidence. Live Snowflake, production permissions/cost and the repository's public release decision remain separate.
 
-## Mainline test-gate implementation (pending remote acceptance)
+## Mainline test gate: hosted job success, artifacts awaiting independent review
 
 The low-cost branch job installs exactly Python 3.12.16, synchronizes the reviewed uv lock with development and PostgreSQL extras, and runs both the pre-existing `matching-unit` Smarter Testing suite and all non-database pytest regressions. `.circleci/test-suites.yml` now uses `uv run --no-sync` so its selected matching tests cannot silently resynchronize away dependencies needed by subsequent tests.
 
@@ -48,7 +48,7 @@ The `postgres-integration` job is filtered to `main`; it creates only the dispos
 
 For `main` changes limited to `README.md`, `docs/` and `evidence/`, the PostgreSQL job records `artifacts/scope.json` with `runtime_requested: false` and exits its expensive steps without running tests. All other paths, missing parents or failed diffs select the complete suite (fail-open). The scope computation compares the checkout commit against its first Git parent, which is appropriate for ordinary mainline merges; a forced history rewrite requires an explicit source comparison before accepting a skipped result. **A successful skipped-scope job is not a PostgreSQL PASS.** Only a run whose scope record requests runtime qualification and whose JUnit/dbt artifacts actually exist can qualify the new main head.
 
-Both job definitions underwent local YAML parsing, structural checks and Bash syntax checks, and the submitted configuration blob matched the statically checked file byte-for-byte. The scope selector was also executed against three isolated Git scenarios: documentation-only selected no heavy tests, source changes selected full qualification, and an unavailable parent selected full qualification. These are **static/local checks only**. A new successful CircleCI `postgres-integration` job and its original output are required to qualify that job.
+Both job definitions underwent local YAML parsing, structural checks and Bash syntax checks, and the submitted configuration blob matched the statically checked file byte-for-byte. The scope selector was also executed against three isolated Git scenarios: documentation-only selected no heavy tests, source changes selected full qualification, and an unavailable parent selected full qualification. These are **static/local checks only**. GitHub now reports a successful CircleCI `postgres-integration` job on main `9b72725d`; its original `scope.json`, JUnit/dbt files and command log must still be inspected before interpreting this as full runtime qualification.
 
 ## CircleCI 2.1 config compilation failure — 16 November 2026
 
@@ -62,13 +62,13 @@ CircleCI guidance: [compiler escape troubleshooting](https://circleci.zendesk.co
 
 ## Pipeline definitions and remaining work
 
-The historical default `.circleci/config.yml` executed **matching-only** smoke testing; this is what the earlier successful `main` statuses actually prove. The new default configuration defines a fast `build-and-test` job (matching, complete non-database pytest, Ruff, secret-history scan) on every branch, followed by a **`postgres-integration` job on `main` only** (real PostgreSQL 17.12, full pytest with zero skipped tests, three-ERP demonstration, dbt build/catalog and a bounded benchmark). It records checkout SHA, Python version and PostgreSQL version and retains JUnit/DBT evidence. The `postgres-integration` job has not yet been observed as successful at the new head and must not be treated as a pass merely because its YAML exists.
+The historical default `.circleci/config.yml` executed **matching-only** smoke testing; this is what the earlier successful `main` statuses actually prove. The new default configuration defines a fast `build-and-test` job (matching, complete non-database pytest, Ruff, secret-history scan) on every branch, followed by a **`postgres-integration` job on `main` only** (real PostgreSQL 17.12, full pytest with zero skipped tests, three-ERP demonstration, dbt build/catalog and a bounded benchmark). It records checkout SHA, Python version and PostgreSQL version and retains JUnit/DBT evidence. The `postgres-integration` job is **observed successful at main `9b72725d` (16 Nov)** ([CircleCI job](https://app.circleci.com/workflow/9fd56b39-9f8f-431e-bb11-177bcfe45f86/job/8098e38b-9f89-4910-9ab0-95cf0309f1a7)), alongside [build-and-test](https://app.circleci.com/workflow/9fd56b39-9f8f-431e-bb11-177bcfe45f86/job/1c1c7628-3f69-4fa0-aac0-4e8eca38444b). The exact original artifacts are not independently read in this reconciliation, so `runtime_requested: true` and complete dbt/JUnit acceptance are **not yet proven**.
 
 The separate `.circleci/reference.yml` is a manual Docker/browser lifecycle profile. CircleCI's additional `v1-reference-qualification` pipeline exercised the original broader `.github/workflows/quality.yml` workflow on the setup revision. Neither historic pipeline status nor a new default smoke run alone can replace the mainline database job and the separately tested restore/browser/provider gates.
 
 1. Review or export the original CircleCI `postgres`, `container` and `reference-containers` artifacts (pytest JUnit, dbt, backup/restore, screenshots, lifecycle and `mdm check`), including exact `CIRCLE_SHA1`.
 2. Run the appropriate full and, if needed, separate container qualifications on the final `main` ref. Record actual job results; avoid unnecessary duplicate expensive runs if a reviewed source correspondence meets the intended acceptance threshold.
 3. Keep GitHub Actions runner-admission failures separate from successful CircleCI execution. GitHub Actions has no confirmed billing/quota/policy root cause.
-4. Live Snowflake publication/dbt parity, provider-schema evidence, public visibility, licence and release/tag decisions require separate authorization or proof.
+4. Live Snowflake publication/dbt parity, provider-schema evidence, anonymous public readback, About metadata, licence and release/tag decisions remain separate. GitHub already reports the source repository as public; this is not a pending visibility switch.
 
 This document is a status reconciliation, not a generated test artifact or a provider certification. No CircleCI billing, external infrastructure or repository visibility is changed.
