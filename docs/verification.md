@@ -17,7 +17,7 @@
 | Restored data | `dbt test --project-dir dbt --profiles-dir dbt --target postgres --target-path ../artifacts/dbt-restored` with restored `PGDATABASE` | Tests over restored views and operational tables |
 | Container/browser | Container job in `quality.yml`, including `scripts/browser_smoke.py --exercise-lifecycle`, followed by `mdm check` | Real image, rendered three-role merge/unmerge/split, consumer alignment and screenshots |
 | Terraform | Static workflow: init without backend, format, validate and provider schema | Actual pinned provider; no cloud apply |
-| Snowflake | `infra/snowflake/qualify.sh --execute-live` | Authorized dedicated provider resources; no local substitute |
+| Snowflake | `bash infra/snowflake/qualify.sh --execute-live <new-evidence-directory>` | Authorized dedicated account only; refuses overwrites, keeps failed-stage evidence. Offline wrapper tests are not live Snowflake qualification |
 
 Predeclared correctness and safety thresholds are zero false automatic merges in the labeled control, complete control candidate recall, equivalent automatic pairs between blocked and exhaustive comparison, traced Python heap below 256 MB for that control, and no violated business invariants. The 180-second limit is a protective execution bound, not an enterprise latency objective. Every measured value needs its input distribution and execution context.
 
