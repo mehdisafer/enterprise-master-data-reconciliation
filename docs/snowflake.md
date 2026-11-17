@@ -258,8 +258,11 @@ before the first publication, reads all source views back, repeats the same
 publication to test idempotency, executes `dbt build --target snowflake`, and
 generates dbt documentation. It preserves the connector report, query ids,
 build `manifest.json` and `run_results.json` under `dbt/build/`, and documentation
-results and `catalog.json` under `dbt/docs/`, with compiled SQL and logs. This
-separation prevents documentation compilation from replacing executed test results.
+results and `catalog.json` under `dbt/docs/`, with compiled SQL. The build
+and docs logs use distinct `logs/dbt-build/` and `logs/dbt-docs/` directories,
+so the later dbt invocation cannot reuse the build's `dbt.log` path. This
+separation prevents documentation generation from replacing executed test
+results or obscuring build-stage diagnostics.
 The dbt build/docs output separation and the additional evidence-preservation
 wrapper are tested without provider access; live Snowflake execution remains
 open. Inspect

@@ -97,13 +97,14 @@ uv run --locked --extra snowflake python -m mdm.snowflake \
   --execute --exercise-rollback --output "$evidence_dir/publication.json"
 require_artifact "$evidence_dir/publication.json"
 stage="dbt-build"
+# Keep the original dbt build log separate from the subsequent docs command.
 uv run --locked --extra snowflake dbt build --project-dir dbt --profiles-dir dbt \
-  --target snowflake --target-path "$evidence_dir/dbt/build" --log-path "$evidence_dir/logs"
+  --target snowflake --target-path "$evidence_dir/dbt/build" --log-path "$evidence_dir/logs/dbt-build"
 require_artifact "$evidence_dir/dbt/build/manifest.json"
 require_artifact "$evidence_dir/dbt/build/run_results.json"
 stage="dbt-docs"
 uv run --locked --extra snowflake dbt docs generate --project-dir dbt --profiles-dir dbt \
-  --target snowflake --target-path "$evidence_dir/dbt/docs" --log-path "$evidence_dir/logs"
+  --target snowflake --target-path "$evidence_dir/dbt/docs" --log-path "$evidence_dir/logs/dbt-docs"
 require_artifact "$evidence_dir/dbt/docs/catalog.json"
 require_artifact "$evidence_dir/dbt/docs/manifest.json"
 stage="complete"
