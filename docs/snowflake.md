@@ -1,5 +1,13 @@
 # PostgreSQL and Snowflake integration
 
+## Latest verified synthetic source — 17 November 2026
+
+Following [PR #26](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/26) and [PR #29](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/29), the current licensed source [57c78b657027](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/57c78b657027377bf656ef516f4e08aba313fb2a) has a fully executed hosted CI qualification. [GitHub Actions Quality #44168081554](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/44168081554) passed all four jobs with **212 Python tests + 15 subtests**, one warning, dbt **48/48**, restored dbt **43/43**, verified PostgreSQL restoration and a real Docker/Playwright reviewer lifecycle preserving **34** identities without recorded JavaScript errors. The installed wheel retained SPDX **Apache-2.0** and the exact legal files.
+
+[Terraform static #44168081748](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/44168081748) passed fmt, backend-free init, validate and provider schema on the exact source; **no plan/apply or Snowflake connection**. Both CircleCI main statuses were **success**, but their original JUnit/dbt/scope files and authenticated Project Settings remain uninspected. The new live-qualification wrapper has offline fake-uv safety regressions, including separate dbt build/docs logs; it has **not** been run against a Snowflake account.
+
+**Release boundary:** repository source is public with detected Apache-2.0; GitHub About description/topics are still unset, main unprotected, no tag/release published. Issue #1 remains **8/10** and issue #16 **4/6**. Neither synthetic CI nor a successful Terraform schema check constitutes live Snowflake, spending or production acceptance. See the [dated source-bound evidence register](../evidence/2026-11-17/snowflake-proof-preservation/).
+
 ## Status and scope
 
 PostgreSQL is the reference system of record for identity decisions. Snowflake is
@@ -15,7 +23,7 @@ account/environment, a service principal with an external key, a bounded
 warehouse, the dedicated database and schemas, and approved grants. No account,
 warehouse, billing setting or public service is created by the local demo.
 
-## Static provider qualification — 17 November 2026 CET
+## Historical provider qualification — 17 November 2026 CET
 
 The pinned Snowflake **Terraform provider and static configuration** have now been successfully validated by [GitHub Actions static run #43593711641, attempt 2](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711641), with `fmt`, `init -backend=false`, `validate` and `providers schema` all successful. That historical job's static Terraform workflow/HCL/lock files match current main by exact Git SHA. [Original-job evidence and identity boundaries](../evidence/2026-11-17/ci-mainline-hardening/) are retained. The local Unix-socket provider failure was an environment restriction, not a universal provider failure. This check involved **no plan, apply, credentials, Snowflake environment, credits or billing**, and it does **not** qualify the Snowflake publisher/dbt target. Live qualification still requires explicit authorization of the dedicated account, role, scope, costs and cleanup.
 

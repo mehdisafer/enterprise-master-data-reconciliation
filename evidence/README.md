@@ -1,8 +1,12 @@
 # Observed evidence — 0.1.0rc1
 
-**The Apache-2.0 synthetic reference was fully qualified on 17 November 2026** at [`b36b260415d4`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/b36b260415d48a911916ab6b2ce24ca8900a6693) by [GitHub Actions #44162018432](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/44162018432), with **199 tests + 15 subtests**, dbt **48/48**, restored dbt **43/43**, verified restoration, a real rendered lifecycle retaining 34 source identities and exact installed-wheel licence metadata checks. Both CircleCI main jobs report success. Live Snowflake, production acceptance and release/tag publication remain open. Dated older captures are retained without rewriting their source-specific results.
+**Latest verified synthetic reference:** [57c78b657027](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/57c78b657027377bf656ef516f4e08aba313fb2a) — 212 Python tests + 15 subtests, dbt 48/48, restored dbt 43/43, real Docker/Playwright with 34 identities, successful Terraform static schema and two successful CircleCI main status contexts. The open-source licence remains Apache-2.0; live Snowflake and production acceptance remain unqualified. Historical evidence below stays attached to its own source SHA.
 
-## Current Apache-2.0 licence and fully executed main — 17 November 2026
+## Current source-bound qualification and Snowflake offline hardening — 17 November 2026
+
+See the [dated proof register](2026-11-17/snowflake-proof-preservation/) and [manifest](2026-11-17/snowflake-proof-preservation/manifest.json) for the exact GitHub Actions runs, original artifact identifiers and retention, CircleCI status URLs, review boundaries and the fake-uv test scope. The live wrapper requires explicit authorization and has **not** been invoked on Snowflake.
+
+## Earlier Apache-2.0 licence and CI qualification — 17 November 2026
 
 [Licence evidence, original run/job/artifact indexes and observed release boundaries](2026-11-17/apache-2-0-publication/) record the exact application and legal-file qualification at `b36b260415d4`. GitHub's REST repository metadata detects `Apache-2.0`, while the four GitHub Actions jobs and both CircleCI statuses succeeded. Original GitHub Actions job logs report 199 tests and 15 subtests, dbt 48/48, restored dbt 43/43, verified restore and 34 identities preserved in the rendered lifecycle; installed wheel checks confirm the LICENSE/NOTICE/upstream files. Original CircleCI JUnit/dbt artefacts and project trigger settings remain unread.
 

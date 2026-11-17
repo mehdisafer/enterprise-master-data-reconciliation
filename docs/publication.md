@@ -1,6 +1,14 @@
 # Public source: publication state and outstanding acceptance
 
-## Apache-2.0 applied and recognised — 17 November 2026
+## Latest verified synthetic source — 17 November 2026
+
+Following [PR #26](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/26) and [PR #29](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/29), the current licensed source [57c78b657027](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/57c78b657027377bf656ef516f4e08aba313fb2a) has a fully executed hosted CI qualification. [GitHub Actions Quality #44168081554](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/44168081554) passed all four jobs with **212 Python tests + 15 subtests**, one warning, dbt **48/48**, restored dbt **43/43**, verified PostgreSQL restoration and a real Docker/Playwright reviewer lifecycle preserving **34** identities without recorded JavaScript errors. The installed wheel retained SPDX **Apache-2.0** and the exact legal files.
+
+[Terraform static #44168081748](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/44168081748) passed fmt, backend-free init, validate and provider schema on the exact source; **no plan/apply or Snowflake connection**. Both CircleCI main statuses were **success**, but their original JUnit/dbt/scope files and authenticated Project Settings remain uninspected. The new live-qualification wrapper has offline fake-uv safety regressions, including separate dbt build/docs logs; it has **not** been run against a Snowflake account.
+
+**Release boundary:** repository source is public with detected Apache-2.0; GitHub About description/topics are still unset, main unprotected, no tag/release published. Issue #1 remains **8/10** and issue #16 **4/6**. Neither synthetic CI nor a successful Terraform schema check constitutes live Snowflake, spending or production acceptance. See the [dated source-bound evidence register](../evidence/2026-11-17/snowflake-proof-preservation/).
+
+## Earlier Apache-2.0 licence publication — 17 November 2026
 
 The maintainer selected **Apache-2.0**, integrated in [PR #25](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/25) and squash-merged as [`b36b260415d4`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/b36b260415d48a911916ab6b2ce24ca8900a6693). GitHub's repository metadata now explicitly reports `license.spdx_id=Apache-2.0`. The complete [LICENSE](../LICENSE), [NOTICE](../NOTICE), upstream [third-party notices](../THIRD_PARTY_NOTICES.md) and PEP 639 [package metadata](../pyproject.toml) were independently checked during the installed-wheel qualification.
 
