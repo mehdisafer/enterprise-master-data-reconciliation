@@ -44,6 +44,12 @@ for executable in git uv; do
     exit 2
   fi
 done
+# A commit hash does not identify modified tracked code. Refuse live execution
+# until the tracked source/index match the SHA recorded in the evidence.
+if ! git diff --quiet -- || ! git diff --cached --quiet --; then
+  printf '%s\n' 'Tracked source is modified; commit/review it before live qualification' >&2
+  exit 2
+fi
 source_sha="$(git rev-parse --verify HEAD)"
 evidence_dir="${2:-evidence/snowflake-live}"
 if [[ "$evidence_dir" == "." || "$evidence_dir" == "/" || "$evidence_dir" == "-" ]]; then

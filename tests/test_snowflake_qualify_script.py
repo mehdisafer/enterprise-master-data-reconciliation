@@ -8,6 +8,7 @@ import os
 from pathlib import Path
 import stat
 import subprocess
+import shutil
 
 import pytest
 
@@ -72,6 +73,36 @@ def test_requires_explicit_opt_in_without_creating_evidence(tmp_path, sandbox):
         result = invoke(*args, env=env)
         assert result.returncode == 2 and "Usage:" in result.stderr
         assert not dest.exists() and not log.exists()
+
+
+
+def test_dirty_tracked_source_is_rejected_before_any_remote_command(tmp_path, sandbox):
+    env, log = sandbox
+    checkout = tmp_path / "synthetic-checkout"
+    copied = checkout / "infra/snowflake/qualify.sh"
+    copied.parent.mkdir(parents=True)
+    shutil.copyfile(SCRIPT, copied)
+    source = checkout / "tracked.txt"
+    source.write_text("committed", encoding="utf-8")
+    subprocess.run(["git", "init", "-q", "-b", "main", str(checkout)],
+                   check=True, capture_output=True)
+    subprocess.run(["git", "-C", str(checkout), "add", "."], check=True)
+    subprocess.run([
+        "git", "-C", str(checkout),
+        "-c", "user.email=synthetic@example.invalid",
+        "-c", "user.name=Synthetic",
+        "commit", "-qm", "synthetic source",
+    ], check=True)
+    source.write_text("uncommitted mutation", encoding="utf-8")
+    dest = tmp_path / "must-not-exist"
+    run = subprocess.run(
+        ["bash", str(copied), "--execute-live", str(dest)],
+        cwd=checkout, env=env, text=True, capture_output=True,
+        check=False, timeout=15,
+    )
+    assert run.returncode == 2
+    assert "Tracked source is modified" in run.stderr
+    assert not dest.exists() and not log.exists()
 
 
 def test_refuses_existing_directory_and_preserves_original_bytes(tmp_path, sandbox):
