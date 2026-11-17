@@ -406,7 +406,9 @@ limited coverage and never prints matched credentials. `pip-audit` checks known
 published advisories; missing network access is a failed audit, not a clean one.
 The license inventory records publisher declarations and license files, flags
 missing/proprietary evidence and keeps distribution obligations visible. It is
-not a licensing certification and does not choose this repository's license.
+not a licensing certification. The maintainer's separately selected
+Apache-2.0 grant is in [LICENSE](../LICENSE) and [NOTICE](../NOTICE);
+inventory scanning neither grants nor replaces those terms.
 
 The original reference was integrated into `main` through PR #2, as recorded in
 the historical [merge and tree readback](../evidence/2026-11-14/publication-preflight/integration-verification.json).
