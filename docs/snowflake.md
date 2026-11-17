@@ -1,12 +1,18 @@
 # PostgreSQL and Snowflake integration
 
+## Direct CircleCI native artifact inspection — 17 November 2026
+
+The [provider-native evidence register](../evidence/2026-11-17/circleci-native-readback/) now records independent read-only CircleCI API and original artifact URL inspection for executable `57c78b657027` (jobs #81/#82) and the documentation-only main `96868b0540a5` (jobs #85/#86). Original `scope.json` on each SHA reports `runtime_requested=true` and the correct checkout commit. The CircleCI test-result API reports **212/212 successes** for each PostgreSQL job, with matching extracted JUnit case counts; native dbt build results have **41 pass + 7 success (48 total)**, and the manifests describe **5 models, 41 tests, 2 operations and 16 sources**. The real business report records nine checks without violations and complete 34/34 consumer coverage on the executable source.
+
+**Acceptance boundary:** Original artifact content was retrieved and semantically parsed, not independently preserved as raw byte streams or SHA-256 hashes. Actual CircleCI pipeline metadata confirms a GitHub App push, `.circleci/config.yml` and matching config/checkout SHA. The saved Project Settings (trigger preset, config source and checkout source administration fields) still require authenticated owner-side readback. **Issue #16: 5/6 after integration; only Project Settings remains open.** This does not change issue #1 (8/10), live Snowflake, release or production acceptance.
+
 ## Latest verified synthetic source — 17 November 2026
 
 Following [PR #26](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/26) and [PR #29](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/29), the last fully executed licensed source [57c78b657027](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/57c78b657027377bf656ef516f4e08aba313fb2a) has a fully executed hosted CI qualification. [GitHub Actions Quality #44168081554](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/44168081554) passed all four jobs with **212 Python tests + 15 subtests**, one warning, dbt **48/48**, restored dbt **43/43**, verified PostgreSQL restoration and a real Docker/Playwright reviewer lifecycle preserving **34** identities without recorded JavaScript errors. The installed wheel retained SPDX **Apache-2.0** and the exact legal files.
 
 [Terraform static #44168081748](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/44168081748) passed fmt, backend-free init, validate and provider schema on the exact source; **no plan/apply or Snowflake connection**. Both CircleCI main statuses were **success**, but their original JUnit/dbt/scope files and authenticated Project Settings remain uninspected. The new live-qualification wrapper has offline fake-uv safety regressions, including separate dbt build/docs logs; it has **not** been run against a Snowflake account.
 
-**Release boundary:** repository source is public with detected Apache-2.0; GitHub About description/topics are still unset, main unprotected, no tag/release published. Issue #1 remains **8/10** and issue #16 **4/6**. Neither synthetic CI nor a successful Terraform schema check constitutes live Snowflake, spending or production acceptance. See the [dated source-bound evidence register](../evidence/2026-11-17/snowflake-proof-preservation/).
+**Release boundary:** repository source is public with detected Apache-2.0; GitHub About description/topics are still unset, main unprotected, no tag/release published. Issue #1 remains **8/10** and issue #16 **5/6**. Neither synthetic CI nor a successful Terraform schema check constitutes live Snowflake, spending or production acceptance. See the [dated source-bound evidence register](../evidence/2026-11-17/snowflake-proof-preservation/).
 
 ## Status and scope
 

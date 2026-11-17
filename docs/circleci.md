@@ -2,7 +2,13 @@
 
 The default `main` branch is the code source of truth. Each CI result applies to its checkout SHA; a setup-branch success must not be presented as execution on another commit.
 
-## Current mainline source qualification — 17 November 2026 (CET)
+## Direct CircleCI native artifact inspection — 17 November 2026
+
+The [provider-native evidence register](../evidence/2026-11-17/circleci-native-readback/) now records independent read-only CircleCI API and original artifact URL inspection for executable `57c78b657027` (jobs #81/#82) and the documentation-only main `96868b0540a5` (jobs #85/#86). Original `scope.json` on each SHA reports `runtime_requested=true` and the correct checkout commit. The CircleCI test-result API reports **212/212 successes** for each PostgreSQL job, with matching extracted JUnit case counts; native dbt build results have **41 pass + 7 success (48 total)**, and the manifests describe **5 models, 41 tests, 2 operations and 16 sources**. The real business report records nine checks without violations and complete 34/34 consumer coverage on the executable source.
+
+**Acceptance boundary:** Original artifact content was retrieved and semantically parsed, not independently preserved as raw byte streams or SHA-256 hashes. Actual CircleCI pipeline metadata confirms a GitHub App push, `.circleci/config.yml` and matching config/checkout SHA. The saved Project Settings (trigger preset, config source and checkout source administration fields) still require authenticated owner-side readback. **Issue #16: 5/6 after integration; only Project Settings remains open.** This does not change issue #1 (8/10), live Snowflake, release or production acceptance.
+
+## Historical mainline selector qualification — 17 November 2026 (CET)
 
 [PR #22](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/22) merged at [`af4ed2b776162f8dce497b20d4f4fad063adeeab`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/af4ed2b776162f8dce497b20d4f4fad063adeeab) and eliminated a real false-green risk: the old CircleCI selector compared only `HEAD^` with `HEAD`, missing runtime commits earlier in a multi-commit push ending with docs. The new `scripts/circleci_scope.py` always requests PostgreSQL/dbt on `main`, verifies the checkout SHA against `CIRCLE_SHA1`, records `runtime_requested=true`, and **has no docs-only skip**. Six isolated selector regressions passed (both `pytest` and `python -m pytest`); this is a separate local result.
 
