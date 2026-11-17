@@ -29,7 +29,7 @@
     "merge_commit": "e27f4c2f58d812a2213b1457378095dc72dafd8a",
     "tree": "4e3591997281aeb6666c933d39d731e00b53186c"
   },
-  "verification_status": "public_apache_2_0_detected;main_gha_terraform_circleci_qualified;offline_snowflake_wrapper_qualified;about_protection_release_pending;circleci_originals_pending;live_snowflake_unqualified",
+  "verification_status": "public_apache_2_0_detected;main_gha_terraform_circleci_qualified;offline_snowflake_wrapper_qualified;about_protection_release_pending;circleci_native_artifact_text_parsed;circleci_project_settings_pending;circleci_original_sha256_unverified;live_snowflake_unqualified",
   "latest_observed_visibility": "public",
   "latest_visibility_observation_date": "2026-11-17",
   "latest_visibility_source": "GitHub repository REST metadata readback",
@@ -64,5 +64,23 @@
   "latest_qualified_github_actions_run": 44168081554,
   "last_complete_source_qualification_type": "synthetic_postgresql_dbt_docker_browser_wheel_and_offline_snowflake_wrapper",
   "latest_qualified_terraform_static_run": 44168081748,
-  "latest_qualified_source_release_status": "synthetic-rc-source-only"
+  "latest_qualified_source_release_status": "synthetic-rc-source-only",
+  "circleci_native_readback": {
+    "observed_date": "2026-11-17",
+    "verified_executable_sha": "57c78b657027377bf656ef516f4e08aba313fb2a",
+    "verified_current_main_sha": "96868b0540a55ed561a49cd295cdf6a25d4b2235",
+    "job_numbers": {
+      "executable_postgres": 82,
+      "current_main_postgres": 86
+    },
+    "native_artifact_entries_per_job": 164,
+    "native_scope_runtime_requested": true,
+    "provider_junit_success_cases_per_job": 212,
+    "dbt_build_total": 48,
+    "original_artifact_text_inspected": true,
+    "original_byte_sha256_validated": false,
+    "provider_pipeline_config_and_checkout_sha_verified": true,
+    "project_settings_authored_configuration_read": false,
+    "issue_16_reconciled_target": "5/6"
+  }
 }

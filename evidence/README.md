@@ -1,8 +1,14 @@
 # Observed evidence — 0.1.0rc1
 
+## Direct CircleCI native artifact inspection — 17 November 2026
+
+The [provider-native evidence register](2026-11-17/circleci-native-readback/) now records independent read-only CircleCI API and original artifact URL inspection for executable `57c78b657027` (jobs #81/#82) and the documentation-only main `96868b0540a5` (jobs #85/#86). Original `scope.json` on each SHA reports `runtime_requested=true` and the correct checkout commit. The CircleCI test-result API reports **212/212 successes** for each PostgreSQL job, with matching extracted JUnit case counts; native dbt build results have **41 pass + 7 success (48 total)**, and the manifests describe **5 models, 41 tests, 2 operations and 16 sources**. The real business report records nine checks without violations and complete 34/34 consumer coverage on the executable source.
+
+**Acceptance boundary:** Original artifact content was retrieved and semantically parsed, not independently preserved as raw byte streams or SHA-256 hashes. Actual CircleCI pipeline metadata confirms a GitHub App push, `.circleci/config.yml` and matching config/checkout SHA. The saved Project Settings (trigger preset, config source and checkout source administration fields) still require authenticated owner-side readback. **Issue #16: 5/6 after integration; only Project Settings remains open.** This does not change issue #1 (8/10), live Snowflake, release or production acceptance.
+
 **Latest verified synthetic reference:** [57c78b657027](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/57c78b657027377bf656ef516f4e08aba313fb2a) — 212 Python tests + 15 subtests, dbt 48/48, restored dbt 43/43, real Docker/Playwright with 34 identities, successful Terraform static schema and two successful CircleCI main status contexts. The open-source licence remains Apache-2.0; live Snowflake and production acceptance remain unqualified. Historical evidence below stays attached to its own source SHA.
 
-## Current source-bound qualification and Snowflake offline hardening — 17 November 2026
+## Earlier source-bound qualification and Snowflake offline hardening — 17 November 2026
 
 See the [dated proof register](2026-11-17/snowflake-proof-preservation/) and [manifest](2026-11-17/snowflake-proof-preservation/manifest.json) for the exact GitHub Actions runs, original artifact identifiers and retention, CircleCI status URLs, review boundaries and the fake-uv test scope. The live wrapper requires explicit authorization and has **not** been invoked on Snowflake.
 

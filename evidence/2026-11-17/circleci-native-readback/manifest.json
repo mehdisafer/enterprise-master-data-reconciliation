@@ -1,0 +1,223 @@
+{
+  "schema": "p02-circleci-native-readback.v1",
+  "observed_date": "2026-11-17",
+  "repository": "mehdisafer/enterprise-master-data-reconciliation",
+  "project": {
+    "id": "5eccb93b-5b24-4bf1-b26e-ad4c2282fdcf",
+    "slug": "circleci/Um5XQQtD4BE9Jcfy4XTzBb/Chxu19ueaSaHpEwDgFD9t2"
+  },
+  "method": {
+    "provider": "CircleCI API v2 and direct output.circle-artifacts.com original artifact URLs",
+    "authentication": "unauthenticated read-only HTTP GET",
+    "response_form": "Public provider responses fetched and inspected via text extraction; JSON fields parsed and XML test-case elements counted; no signed redirect URLs retained",
+    "original_archive_bytes_preserved": false,
+    "original_byte_sha256_validated": false,
+    "note": "XML text extraction did not retain the testsuite root attributes. Provider /tests endpoint independently reported 212 successful test cases. Never claim byte-level preservation, root-attribute validation or an authentic archive digest."
+  },
+  "jobs": [
+    {
+      "source_role": "last_fully_executed_application_source",
+      "source_sha": "57c78b657027377bf656ef516f4e08aba313fb2a",
+      "workflow_id": "56565fa9-a13b-4ec1-8f6c-fcdc30666b05",
+      "pipeline_id": "7f659a3e-b8cd-437c-a155-b09770136721",
+      "build_job": {
+        "name": "build-and-test",
+        "number": 81,
+        "id": "afe3cfbc-d032-48ef-a584-3fc135fd8b3a",
+        "status": "success"
+      },
+      "postgres_job": {
+        "name": "postgres-integration",
+        "number": 82,
+        "id": "9b3406eb-53de-4fe4-b5b0-59b8b350597f",
+        "status": "success",
+        "native_artifact_count": 164
+      },
+      "provider_endpoints": {
+        "workflow_jobs": "https://circleci.com/api/v2/workflow/56565fa9-a13b-4ec1-8f6c-fcdc30666b05/job",
+        "artifacts": "https://circleci.com/api/v2/project/circleci/Um5XQQtD4BE9Jcfy4XTzBb/Chxu19ueaSaHpEwDgFD9t2/82/artifacts",
+        "tests": "https://circleci.com/api/v2/project/circleci/Um5XQQtD4BE9Jcfy4XTzBb/Chxu19ueaSaHpEwDgFD9t2/82/tests",
+        "pipeline_values": "https://circleci.com/api/v2/pipeline/7f659a3e-b8cd-437c-a155-b09770136721/values",
+        "resolved_pipeline_config": "https://circleci.com/api/v2/pipeline/7f659a3e-b8cd-437c-a155-b09770136721/config"
+      },
+      "scope": {
+        "commit": "57c78b657027377bf656ef516f4e08aba313fb2a",
+        "selection": "mandatory-mainline-qualification",
+        "runtime_requested": true,
+        "changed_paths": null
+      },
+      "environment": {
+        "commit": "57c78b657027377bf656ef516f4e08aba313fb2a",
+        "branch": "main",
+        "python": "3.12.16",
+        "postgres_version": "17.12",
+        "snowflake_live_executed": false
+      },
+      "tests": {
+        "provider_test_api_count": 212,
+        "provider_api_success": 212,
+        "extracted_xml_testcase_count": 212,
+        "xml_failure_elements": 0,
+        "xml_error_elements": 0,
+        "xml_skipped_elements": 0
+      },
+      "dbt": {
+        "build": {
+          "total": 48,
+          "pass": 41,
+          "success": 7,
+          "models": 5,
+          "tests": 41,
+          "operations": 2,
+          "sources": 16
+        },
+        "docs": {
+          "total": 48,
+          "success": 48,
+          "manifest_models": 5,
+          "manifest_tests": 41,
+          "manifest_operations": 2,
+          "catalog_models": 5,
+          "catalog_sources": 16
+        }
+      },
+      "business": {
+        "check_passed": true,
+        "check_count": 9,
+        "violation_count": 0,
+        "assertions_true": 6,
+        "publication_caught_up": true,
+        "source_crosswalks": 34,
+        "consumed_crosswalks": 34,
+        "consumed_coverage": 1,
+        "remaining_events": 0
+      },
+      "native_artifacts": {
+        "scope": "https://output.circle-artifacts.com/output/job/9b3406eb-53de-4fe4-b5b0-59b8b350597f/artifacts/0/postgres-dbt-evidence/scope.json",
+        "environment": "https://output.circle-artifacts.com/output/job/9b3406eb-53de-4fe4-b5b0-59b8b350597f/artifacts/0/postgres-dbt-evidence/environment.json",
+        "business_check": "https://output.circle-artifacts.com/output/job/9b3406eb-53de-4fe4-b5b0-59b8b350597f/artifacts/0/postgres-dbt-evidence/business-check.json",
+        "demo": "https://output.circle-artifacts.com/output/job/9b3406eb-53de-4fe4-b5b0-59b8b350597f/artifacts/0/postgres-dbt-evidence/demo.json",
+        "junit": "https://output.circle-artifacts.com/output/job/9b3406eb-53de-4fe4-b5b0-59b8b350597f/artifacts/0/postgres-junit/postgres.xml",
+        "dbt_build_manifest": "https://output.circle-artifacts.com/output/job/9b3406eb-53de-4fe4-b5b0-59b8b350597f/artifacts/0/postgres-dbt-evidence/dbt-build/manifest.json",
+        "dbt_build_results": "https://output.circle-artifacts.com/output/job/9b3406eb-53de-4fe4-b5b0-59b8b350597f/artifacts/0/postgres-dbt-evidence/dbt-build/run_results.json",
+        "dbt_docs_manifest": "https://output.circle-artifacts.com/output/job/9b3406eb-53de-4fe4-b5b0-59b8b350597f/artifacts/0/postgres-dbt-evidence/dbt-docs/manifest.json",
+        "dbt_docs_results": "https://output.circle-artifacts.com/output/job/9b3406eb-53de-4fe4-b5b0-59b8b350597f/artifacts/0/postgres-dbt-evidence/dbt-docs/run_results.json",
+        "dbt_docs_catalog": "https://output.circle-artifacts.com/output/job/9b3406eb-53de-4fe4-b5b0-59b8b350597f/artifacts/0/postgres-dbt-evidence/dbt-docs/catalog.json"
+      }
+    },
+    {
+      "source_role": "current_documentation_only_main_at_observation",
+      "source_sha": "96868b0540a55ed561a49cd295cdf6a25d4b2235",
+      "workflow_id": "1c0e671f-1417-4a5b-9f3c-fb6e8f78813b",
+      "pipeline_id": "17fd5b0a-f5fc-4338-b907-23655c81ad8b",
+      "build_job": {
+        "name": "build-and-test",
+        "number": 85,
+        "id": "73ac4865-aafe-418c-8379-b7cf27fd79ad",
+        "status": "success"
+      },
+      "postgres_job": {
+        "name": "postgres-integration",
+        "number": 86,
+        "id": "859ca94a-dd84-4655-a777-e47374121b57",
+        "status": "success",
+        "native_artifact_count": 164
+      },
+      "provider_endpoints": {
+        "workflow_jobs": "https://circleci.com/api/v2/workflow/1c0e671f-1417-4a5b-9f3c-fb6e8f78813b/job",
+        "artifacts": "https://circleci.com/api/v2/project/circleci/Um5XQQtD4BE9Jcfy4XTzBb/Chxu19ueaSaHpEwDgFD9t2/86/artifacts",
+        "tests": "https://circleci.com/api/v2/project/circleci/Um5XQQtD4BE9Jcfy4XTzBb/Chxu19ueaSaHpEwDgFD9t2/86/tests",
+        "pipeline_values": "https://circleci.com/api/v2/pipeline/17fd5b0a-f5fc-4338-b907-23655c81ad8b/values",
+        "resolved_pipeline_config": "https://circleci.com/api/v2/pipeline/17fd5b0a-f5fc-4338-b907-23655c81ad8b/config"
+      },
+      "scope": {
+        "commit": "96868b0540a55ed561a49cd295cdf6a25d4b2235",
+        "selection": "mandatory-mainline-qualification",
+        "runtime_requested": true,
+        "changed_paths": null
+      },
+      "environment": {
+        "commit": "96868b0540a55ed561a49cd295cdf6a25d4b2235",
+        "branch": "main",
+        "python": "3.12.16",
+        "postgres_version": "17.12",
+        "snowflake_live_executed": false
+      },
+      "tests": {
+        "provider_test_api_count": 212,
+        "provider_api_success": 212,
+        "extracted_xml_testcase_count": 212,
+        "xml_failure_elements": 0,
+        "xml_error_elements": 0,
+        "xml_skipped_elements": 0
+      },
+      "dbt": {
+        "build": {
+          "total": 48,
+          "pass": 41,
+          "success": 7,
+          "models": 5,
+          "tests": 41,
+          "operations": 2,
+          "sources": 16
+        },
+        "docs": {
+          "total": 48,
+          "success": 48,
+          "manifest_models": 5,
+          "manifest_tests": 41,
+          "manifest_operations": 2,
+          "catalog_models": 5,
+          "catalog_sources": 16
+        }
+      },
+      "business": {
+        "check_passed": true
+      },
+      "native_artifacts": {
+        "scope": "https://output.circle-artifacts.com/output/job/859ca94a-dd84-4655-a777-e47374121b57/artifacts/0/postgres-dbt-evidence/scope.json",
+        "environment": "https://output.circle-artifacts.com/output/job/859ca94a-dd84-4655-a777-e47374121b57/artifacts/0/postgres-dbt-evidence/environment.json",
+        "business_check": "https://output.circle-artifacts.com/output/job/859ca94a-dd84-4655-a777-e47374121b57/artifacts/0/postgres-dbt-evidence/business-check.json",
+        "demo": "https://output.circle-artifacts.com/output/job/859ca94a-dd84-4655-a777-e47374121b57/artifacts/0/postgres-dbt-evidence/demo.json",
+        "junit": "https://output.circle-artifacts.com/output/job/859ca94a-dd84-4655-a777-e47374121b57/artifacts/0/postgres-junit/postgres.xml",
+        "dbt_build_manifest": "https://output.circle-artifacts.com/output/job/859ca94a-dd84-4655-a777-e47374121b57/artifacts/0/postgres-dbt-evidence/dbt-build/manifest.json",
+        "dbt_build_results": "https://output.circle-artifacts.com/output/job/859ca94a-dd84-4655-a777-e47374121b57/artifacts/0/postgres-dbt-evidence/dbt-build/run_results.json",
+        "dbt_docs_manifest": "https://output.circle-artifacts.com/output/job/859ca94a-dd84-4655-a777-e47374121b57/artifacts/0/postgres-dbt-evidence/dbt-docs/manifest.json",
+        "dbt_docs_results": "https://output.circle-artifacts.com/output/job/859ca94a-dd84-4655-a777-e47374121b57/artifacts/0/postgres-dbt-evidence/dbt-docs/run_results.json",
+        "dbt_docs_catalog": "https://output.circle-artifacts.com/output/job/859ca94a-dd84-4655-a777-e47374121b57/artifacts/0/postgres-dbt-evidence/dbt-docs/catalog.json"
+      }
+    }
+  ],
+  "pipeline_operational_readback": {
+    "trigger_provider": "github_app",
+    "trigger_source": "webhook",
+    "event_type": "push",
+    "branch": "main",
+    "config_source_repo": "mehdisafer/enterprise-master-data-reconciliation",
+    "config_source_path": ".circleci/config.yml",
+    "config_sha_matches_checkout_sha": true,
+    "actual_checkout_source_repo": "mehdisafer/enterprise-master-data-reconciliation",
+    "source_sha_matches_trigger_sha": true,
+    "provider_pipeline_values_checked_on_both_sources": true,
+    "provider_compiled_and_source_config_observed": true,
+    "project_settings_admin_read": false,
+    "project_pipeline_definition_list_endpoint": "https://circleci.com/api/v2/projects/5eccb93b-5b24-4bf1-b26e-ad4c2282fdcf/pipeline-definitions",
+    "project_settings_endpoint_auth_required": true,
+    "configured_trigger_event_preset_unverified": true,
+    "settings_gate_outcome": "pending_direct_authorized_Project_Settings_review"
+  },
+  "acceptance": {
+    "issue": 16,
+    "before": "4/6",
+    "native_artifact_content_criterion": "newly supported by direct native provider data",
+    "project_settings_criterion": "still pending",
+    "after_expected": "5/6 after source publication and issue update"
+  },
+  "other_boundaries": {
+    "live_snowflake": false,
+    "production": false,
+    "github_about_applied": false,
+    "github_main_protected": false,
+    "github_release_published": false
+  }
+}
