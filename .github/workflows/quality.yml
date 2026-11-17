@@ -52,17 +52,14 @@ jobs:
           pr = event.get("pull_request", {})
           pr_head = pr.get("head", {}).get("sha", "")
           force_runtime = not event_path or event_name == "workflow_dispatch"
-          if event_name == "pull_request" and event.get("action") == "synchronize":
-              # The previous push head, not the PR base, makes a later docs-only
-              # commit incremental even when the whole PR introduces runtime code.
-              base, head = event.get("before", ""), event.get("after", "")
-              selection = "incremental-pr-push"
-              if head != pr_head:
-                  force_runtime = True
-                  selection = "inconsistent-pr-head-full-qualification"
-          elif event_name == "pull_request":
+          if event_name == "pull_request":
+              # Every PR event must qualify the entire diff against its base.
+              # A docs-only synchronize push must not hide earlier untested code.
               base, head = pr.get("base", {}).get("sha", ""), pr_head
               selection = "full-pr-diff"
+              if event.get("action") == "synchronize" and event.get("after") not in (None, "", pr_head):
+                  force_runtime = True
+                  selection = "inconsistent-pr-head-full-qualification"
           else:
               base, head = event.get("before", ""), event.get("after") or os.environ["GITHUB_SHA"]
               selection = "branch-push-diff"
