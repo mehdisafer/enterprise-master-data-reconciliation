@@ -1,10 +1,12 @@
 # Acceptance and remaining work
 
-## Apache-2.0 selected — 17 November 2026
+## Apache-2.0 integrated and fully CI-qualified — 17 November 2026
 
-The maintainer explicitly selected **Apache-2.0**. The root [LICENSE](../LICENSE), [NOTICE](../NOTICE), PEP 639 [pyproject.toml](../pyproject.toml) metadata and preserved [third-party notices](../THIRD_PARTY_NOTICES.md) implement the project licence choice. Licence presence is not a release, branch protection or live Snowflake qualification. **Issue #1 remains 8/10** until the release/admin criterion and dedicated Snowflake criterion are independently satisfied.
+The maintainer explicitly selected **Apache-2.0**, and [PR #25](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/25) integrated it at [`b36b260415d4`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/b36b260415d48a911916ab6b2ce24ca8900a6693). GitHub's repository API recognizes `license.spdx_id=Apache-2.0`. The full [LICENSE](../LICENSE), [NOTICE](../NOTICE), PEP 639 [package metadata](../pyproject.toml) and distinct [upstream notices](../THIRD_PARTY_NOTICES.md) were checked on the non-editable installed wheel.
 
-The last fully executed **pre-licence** main source is [`c18423e`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/c18423efdc9ea9db9430dcc0a64182452a1ef23e), [GitHub Actions #43991228308](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43991228308): four successful jobs, **196 Python tests + 15 subtests**, dbt **48/48**, restored dbt **43/43**, real Docker/browser lifecycle preserving 34 source identities. Both CircleCI jobs succeeded on the same source. The new licence-bearing package requires its own CI evidence.
+[GitHub Actions #44162018432](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/44162018432) executed all four jobs successfully on the exact licence-bearing SHA, with **199 Python tests + 15 subtests**, dbt build **48/48**, restored dbt **43/43**, verified restoration and real Docker/Playwright lifecycle preserving **34** source identities without JavaScript errors. Both CircleCI main jobs returned `success` at the same commit. The [dated evidence index](../evidence/2026-11-17/apache-2-0-publication/) retains run, job and artifact references.
+
+**Acceptance remains 8/10:** GitHub About metadata/topics, `main` protections and release/tag approval are not completed, and live Snowflake publication/dbt/rollback has not been executed. CircleCI original artifacts/Project Settings remain uninspected (#16 at 4/6). An Apache licence and synthetic CI PASS do not establish production readiness.
 
 ## Previous mainline selector qualification — 17 November 2026 CET
 
