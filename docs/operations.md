@@ -5,7 +5,13 @@ integration workflow and the explicitly authorized Snowflake path. Commands act
 on the named dedicated environment. The business API is bound to loopback; the
 repository's visibility does not expose a running service.
 
-## Current CI and static-provider qualification — 17 November 2026 CET
+## Last fully executed main reference and project licence — 17 November 2026
+
+The [`c18423e` main commit](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/c18423efdc9ea9db9430dcc0a64182452a1ef23e) passed [GitHub Actions #43991228308](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43991228308): four executed successful jobs, **196 tests + 15 subtests**, dbt **48/48**, restored dbt **43/43**, verified backup/restore and real browser lifecycle retaining 34 source identities. Both CircleCI main jobs reported success, but their raw provider artefacts and project setup remain uninspected.
+
+Original project code is [Apache-2.0](../LICENSE). The wheel must include full [LICENSE](../LICENSE), [NOTICE](../NOTICE) and [third-party notices](../THIRD_PARTY_NOTICES.md), verified with `scripts/verify_distribution.py`. Licensing-related changes require their own CI; no Snowflake, client or production deployment is authorized by this document.
+
+## Previous CI and static-provider qualification — 17 November 2026 CET
 
 The [source `af4ed2b77616`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/af4ed2b776162f8dce497b20d4f4fad063adeeab) is qualified in hosted CI: both default CircleCI jobs succeeded, and the [complete GitHub Actions Quality run #43978646310](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43978646310) executed `scope`, `dependencies`, `postgres`, `container` successfully. Original PostgreSQL logs record **189 tests + 15 subtests passed**, one warning, dbt **48/48**, restored dbt **43/43**, `restore_verified=true` and an expected repeated-restore rejection. The Docker/browser job ran a real three-role decision lifecycle preserving 34 source identities, with zero recorded JavaScript errors and passing post-lifecycle invariants. The mainline CircleCI job now runs full PostgreSQL/dbt **on every main push**, without any docs-only early return; this increases compute use but removes the false-green multi-commit case.
 

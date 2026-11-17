@@ -1,12 +1,18 @@
 # Acceptance and remaining work
 
-## Current qualification — 17 November 2026 CET
+## Apache-2.0 selected — 17 November 2026
+
+The maintainer explicitly selected **Apache-2.0**. The root [LICENSE](../LICENSE), [NOTICE](../NOTICE), PEP 639 [pyproject.toml](../pyproject.toml) metadata and preserved [third-party notices](../THIRD_PARTY_NOTICES.md) implement the project licence choice. Licence presence is not a release, branch protection or live Snowflake qualification. **Issue #1 remains 8/10** until the release/admin criterion and dedicated Snowflake criterion are independently satisfied.
+
+The last fully executed **pre-licence** main source is [`c18423e`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/c18423efdc9ea9db9430dcc0a64182452a1ef23e), [GitHub Actions #43991228308](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43991228308): four successful jobs, **196 Python tests + 15 subtests**, dbt **48/48**, restored dbt **43/43**, real Docker/browser lifecycle preserving 34 source identities. Both CircleCI jobs succeeded on the same source. The new licence-bearing package requires its own CI evidence.
+
+## Previous mainline selector qualification — 17 November 2026 CET
 
 **The corrected mainline CI policy is now qualified on [`af4ed2b77616`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/af4ed2b776162f8dce497b20d4f4fad063adeeab).** Both default CircleCI jobs and all four executed GitHub Actions quality jobs succeeded after [PR #22](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/22) removed the first-parent docs-only false skip. Original GitHub Actions postgres logs report **189 passed tests + 15 subtests** (one warning), dbt build **48/48**, restored dbt **43/43**, verified backup/restore and a successful real Docker/Playwright three-role lifecycle with 34 identities and zero JavaScript errors. The [source-specific evidence index](../evidence/2026-11-17/ci-mainline-hardening/) is a derivative manifest with original run/job/artifact references.
 
 The previously blocked **Terraform provider schema** is now actually qualified in a compatible runner: [static workflow attempt 2](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43593711641) passed `fmt`, `init -backend=false`, `validate` and `providers schema` on an older commit with byte-identical workflow/HCL/lock inputs to the current source. No Terraform `plan`/`apply`, live Snowflake account or Snowflake dbt execution was performed.
 
-**Acceptance boundary:** This validates the synthetic reference and static Terraform provider, not a deployed industrial production workload, the live Snowflake integration, licence or release. The optional original CircleCI artifact and Project Setup readbacks remain under #16.
+**Acceptance boundary:** This validates the synthetic reference and static Terraform provider, not a deployed industrial production workload, the live Snowflake integration or a published release. The optional original CircleCI artifact and Project Setup readbacks remain under #16.
 
 ## Historical acceptance snapshot — 16 November 2026
 

@@ -21,7 +21,7 @@
   "observed_visibility": "private",
   "visibility_observation_date": "2026-11-14",
   "requested_visibility": "public",
-  "license": "pending_explicit_maintainer_choice",
+  "license": "Apache-2.0",
   "application_method": "maintainer_github_interface",
   "source_integration": {
     "status": "verified",
@@ -29,13 +29,12 @@
     "merge_commit": "e27f4c2f58d812a2213b1457378095dc72dafd8a",
     "tree": "4e3591997281aeb6666c933d39d731e00b53186c"
   },
-  "verification_status": "github_public_and_anonymous_browser_readback_verified;about_metadata_license_protection_pending",
+  "verification_status": "github_public_readback_verified;apache_2_0_selected;github_license_detection_pending_post_merge;about_metadata_protection_release_pending;live_snowflake_unqualified",
   "latest_observed_visibility": "public",
   "latest_visibility_observation_date": "2026-11-16",
   "latest_visibility_source": "GitHub repository REST metadata readback",
-  "observed_license": null,
   "observed_main_protected": false,
-  "latest_qualified_source_sha": "9b72725da693b4587c27a12b1d65e6f639d69a86",
+  "latest_qualified_source_sha": "c18423efdc9ea9db9430dcc0a64182452a1ef23e",
   "latest_repository_main_at_publication_observation": "c76a7d05def9e90f5b3173558b4ebba652e17ecd",
   "anonymous_public_readback": {
     "observed_date": "2026-11-16",
@@ -50,5 +49,12 @@
     "http_status_code": "not separately captured",
     "original_bytes_sha256": "not captured",
     "evidence_boundary": "Browser observation only; does not imply licence, metadata or branch protection."
-  }
+  },
+  "license_decision_date": "2026-11-17",
+  "license_decision_source": "explicit_maintainer_approval",
+  "license_file": "LICENSE",
+  "project_notice_file": "NOTICE",
+  "third_party_notices_file": "THIRD_PARTY_NOTICES.md",
+  "last_fully_qualified_main_before_license_update": "c18423efdc9ea9db9430dcc0a64182452a1ef23e",
+  "observed_license_before_license_update": null
 }
