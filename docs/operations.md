@@ -5,11 +5,11 @@ integration workflow and the explicitly authorized Snowflake path. Commands act
 on the named dedicated environment. The business API is bound to loopback; the
 repository's visibility does not expose a running service.
 
-## Last fully executed main reference and project licence — 17 November 2026
+## Latest hosted synthetic reference and licence qualification — 17 November 2026
 
-The [`c18423e` main commit](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/c18423efdc9ea9db9430dcc0a64182452a1ef23e) passed [GitHub Actions #43991228308](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43991228308): four executed successful jobs, **196 tests + 15 subtests**, dbt **48/48**, restored dbt **43/43**, verified backup/restore and real browser lifecycle retaining 34 source identities. Both CircleCI main jobs reported success, but their raw provider artefacts and project setup remain uninspected.
+The Apache-2.0 main SHA [`b36b260415d4`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/b36b260415d48a911916ab6b2ce24ca8900a6693) passed [GitHub Actions #44162018432](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/44162018432) with four executed jobs: **199 Python tests + 15 subtests**, dbt build **48/48**, restored dbt **43/43**, verified restoration, and a real browser merge/unmerge/split lifecycle preserving 34 source identities. Both CircleCI mainline status contexts succeeded; their raw artifact bytes/Project Settings were not independently read.
 
-Original project code is [Apache-2.0](../LICENSE). The wheel must include full [LICENSE](../LICENSE), [NOTICE](../NOTICE) and [third-party notices](../THIRD_PARTY_NOTICES.md), verified with `scripts/verify_distribution.py`. Licensing-related changes require their own CI; no Snowflake, client or production deployment is authorized by this document.
+The wheel verification confirmed SPDX `Apache-2.0` with exact [LICENSE](../LICENSE), [NOTICE](../NOTICE) and [upstream notices](../THIRD_PARTY_NOTICES.md). The [evidence index](../evidence/2026-11-17/apache-2-0-publication/) records original run/job IDs and retention limits. This is a synthetic CI reference, **not** a live Snowflake or production deployment. GitHub About, branch protections and release/tag remain separate maintainer decisions.
 
 ## Previous CI and static-provider qualification — 17 November 2026 CET
 
@@ -406,9 +406,7 @@ limited coverage and never prints matched credentials. `pip-audit` checks known
 published advisories; missing network access is a failed audit, not a clean one.
 The license inventory records publisher declarations and license files, flags
 missing/proprietary evidence and keeps distribution obligations visible. It is
-not a licensing certification. The maintainer's separately selected
-Apache-2.0 grant is in [LICENSE](../LICENSE) and [NOTICE](../NOTICE);
-inventory scanning neither grants nor replaces those terms.
+not a licensing certification and does not choose this repository's license.
 
 The original reference was integrated into `main` through PR #2, as recorded in
 the historical [merge and tree readback](../evidence/2026-11-14/publication-preflight/integration-verification.json).
@@ -418,11 +416,11 @@ integrated the dependency versions.
 carries the supplementary qualification, controls and evidence; its conversation
 is the record for review, the delivered head, final `main`/tree readback and
 workflow observations. Follow the [publication procedure](publication.md) for
-the maintainer's visibility/metadata changes and anonymous-access check. Source
-delivery leaves issue #1, live Snowflake and production target
-qualification, explicit project licence, branch protection and release
-approval open. The synthetic container/browser path passed on 16 November. It does not create a release tag or select the
-project licence.
+the maintainer's visibility/metadata changes and anonymous-access check. Source delivery leaves issue #1, live Snowflake, production target
+qualification, branch protection and source-release approval open.
+The maintainer-selected Apache-2.0 project licence has **already been
+integrated** through PR #25. The synthetic container/browser qualification
+is source-bound and does not create a release tag or execute Snowflake.
 
 During initial setup on 13 November 2026, the rulesets endpoint reported a
 private-plan restriction, and the integration could not read the branch-protection

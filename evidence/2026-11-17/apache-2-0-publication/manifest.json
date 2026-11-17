@@ -1,0 +1,136 @@
+{
+  "schema": "p02-apache-2.0-publication-evidence.v1",
+  "observation_date": "2026-11-17",
+  "repository": "mehdisafer/enterprise-master-data-reconciliation",
+  "qualified_main_commit": "b36b260415d48a911916ab6b2ce24ca8900a6693",
+  "license": {
+    "spdx": "Apache-2.0",
+    "github_detected": true,
+    "github_license_key": "apache-2.0",
+    "user_choice_explicit": true,
+    "pr": 25,
+    "license_path": "LICENSE",
+    "license_blob_sha": "17d235b0eb903346c362c07d202cc34d3b6e5984",
+    "notice_blob_sha": "40c1bf498d81113a8a006aca0d6faabb4d7b262b",
+    "third_party_notice_blob_sha": "e0b1b0b0bccfa75748f8b54629ced08e400a665f",
+    "pyproject_blob_sha": "bbdfb3733472476e8f3f11a405883a04aabf52b4",
+    "wheel_spdx_expression_validated": true,
+    "wheel_legal_files_declared": true,
+    "wheel_legal_files_bytes_preserved": true,
+    "upstream_licences_unchanged": true
+  },
+  "github_actions": {
+    "id": 44162018432,
+    "url": "https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/44162018432",
+    "head_sha": "b36b260415d48a911916ab6b2ce24ca8900a6693",
+    "status": "completed",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "name": "scope",
+        "id": 134318044379,
+        "conclusion": "success"
+      },
+      {
+        "name": "dependencies",
+        "id": 134318230864,
+        "conclusion": "success"
+      },
+      {
+        "name": "postgres",
+        "id": 134318231346,
+        "conclusion": "success"
+      },
+      {
+        "name": "container",
+        "id": 134319294729,
+        "conclusion": "success"
+      }
+    ],
+    "python": {
+      "passed": 199,
+      "subtests_passed": 15,
+      "warnings": 1
+    },
+    "dbt": {
+      "build_pass": 48,
+      "build_total": 48,
+      "restored_pass": 43,
+      "restored_total": 43,
+      "errors": 0,
+      "skips": 0
+    },
+    "restore": {
+      "verified": true
+    },
+    "browser": {
+      "passed": true,
+      "actual_http_and_browser": true,
+      "lifecycle_executed": true,
+      "identities_preserved": 34,
+      "javascript_errors": 0
+    },
+    "artifacts": [
+      {
+        "name": "postgres-evidence",
+        "id": 14364865064,
+        "expires_at": "2026-12-01T19:47:23Z"
+      },
+      {
+        "name": "container-evidence",
+        "id": 14363876837,
+        "expires_at": "2026-12-01T19:49:04Z"
+      },
+      {
+        "name": "dependencies",
+        "id": 14363432974,
+        "expires_at": "2026-12-01T19:46:14Z"
+      },
+      {
+        "name": "secret-scan",
+        "id": 14363222933,
+        "expires_at": "2026-12-01T19:45:47Z"
+      }
+    ],
+    "original_logs_read": true,
+    "original_archive_bytes_copied": false
+  },
+  "circleci": {
+    "source_commit": "b36b260415d48a911916ab6b2ce24ca8900a6693",
+    "contexts": [
+      {
+        "context": "ci/circleci: build-and-test",
+        "state": "success",
+        "target_url": "https://app.circleci.com/workflow/fc4bdf21-d851-4090-a77f-5b4c223c58a2/job/249d5f2a-3f1b-4a65-9831-873f31617088"
+      },
+      {
+        "context": "ci/circleci: postgres-integration",
+        "state": "success"
+      }
+    ],
+    "raw_artifacts_read": false,
+    "project_settings_read": false
+  },
+  "release": {
+    "visibility": "public",
+    "description": null,
+    "topics": [],
+    "main_protected": false,
+    "release_published": false,
+    "tag_published": false
+  },
+  "snowflake": {
+    "live_executed": false,
+    "terraform_plan_or_apply": false,
+    "production_qualified": false
+  },
+  "issues": {
+    "acceptance_number": 1,
+    "checked": 8,
+    "total": 10,
+    "circleci_number": 16,
+    "circleci_checked": 4,
+    "circleci_total": 6
+  },
+  "evidence_limits": "GitHub Actions original job logs and metadata read; raw ZIP bytes and CircleCI native artifacts not independently downloaded. Synthetic reference only."
+}

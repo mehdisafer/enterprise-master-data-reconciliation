@@ -29,13 +29,13 @@
     "merge_commit": "e27f4c2f58d812a2213b1457378095dc72dafd8a",
     "tree": "4e3591997281aeb6666c933d39d731e00b53186c"
   },
-  "verification_status": "github_public_readback_verified;apache_2_0_selected;github_license_detection_pending_post_merge;about_metadata_protection_release_pending;live_snowflake_unqualified",
+  "verification_status": "github_public_and_apache_2_0_recognized;main_gha_and_circleci_qualified;about_metadata_protection_release_pending;circleci_originals_pending;live_snowflake_unqualified",
   "latest_observed_visibility": "public",
-  "latest_visibility_observation_date": "2026-11-16",
+  "latest_visibility_observation_date": "2026-11-17",
   "latest_visibility_source": "GitHub repository REST metadata readback",
   "observed_main_protected": false,
-  "latest_qualified_source_sha": "c18423efdc9ea9db9430dcc0a64182452a1ef23e",
-  "latest_repository_main_at_publication_observation": "c76a7d05def9e90f5b3173558b4ebba652e17ecd",
+  "latest_qualified_source_sha": "b36b260415d48a911916ab6b2ce24ca8900a6693",
+  "latest_repository_main_at_publication_observation": "b36b260415d48a911916ab6b2ce24ca8900a6693",
   "anonymous_public_readback": {
     "observed_date": "2026-11-16",
     "method": "clean read-only browser session without authenticated profile or vault",
@@ -56,5 +56,11 @@
   "project_notice_file": "NOTICE",
   "third_party_notices_file": "THIRD_PARTY_NOTICES.md",
   "last_fully_qualified_main_before_license_update": "c18423efdc9ea9db9430dcc0a64182452a1ef23e",
-  "observed_license_before_license_update": null
+  "observed_license_before_license_update": null,
+  "observed_license": "Apache-2.0",
+  "observed_license_key": "apache-2.0",
+  "license_recognition_date": "2026-11-17",
+  "license_recognition_source": "GitHub REST repository metadata",
+  "latest_qualified_github_actions_run": 44162018432,
+  "last_complete_source_qualification_type": "synthetic_postgresql_dbt_docker_browser_with_licence_wheel"
 }
