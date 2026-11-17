@@ -6,6 +6,8 @@ build-backend = "hatchling.build"
 name = "enterprise-master-data-reconciliation"
 version = "0.1.0rc1"
 description = "Explainable, reversible master-data decisions across industrial ERP systems"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE", "THIRD_PARTY_NOTICES.md"]
 requires-python = ">=3.12,<3.13"
 dependencies = [
   "fastapi==0.162.4",

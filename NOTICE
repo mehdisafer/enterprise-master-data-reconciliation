@@ -1,0 +1,14 @@
+Enterprise Master Data Reconciliation
+Copyright 2026 Mehdi SAFER
+
+Licensed under the Apache License, Version 2.0 (Apache-2.0).
+See LICENSE for the complete terms.
+
+The original project-authored code, tests, documentation and synthetic fixtures
+are provided under Apache-2.0 unless a file states otherwise.
+
+Some retained test and dbt evidence includes generated output derived from
+third-party software. Original upstream rights and attribution notices are
+preserved in THIRD_PARTY_NOTICES.md and evidence/third-party-licenses/.
+The project licence does not relicense third-party components or their
+copyrighted contributions.

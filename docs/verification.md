@@ -5,6 +5,7 @@
 | Profile | Command | Boundary |
 | --- | --- | --- |
 | Installed package | `uv build --no-sources`, wheel install, then `python scripts/verify_distribution.py` | Seven hashed build pins; all 18 installed application resources and CLI checked |
+| Project licence and packaged notices | `pytest -q tests/test_project_license.py` plus installed-distribution verification | SPDX Apache-2.0, full root LICENSE/NOTICE, upstream attributions and wheel licence-file contents; no Snowflake |
 | Unit smoke | `uv run --no-sync pytest -q -m 'not integration'` | Domain, matching, in-process auth and Snowflake driver boundaries; no provider integration |
 | Real integration | `uv run --no-sync pytest -q` with `MDM_TEST_DATABASE_URL` | Real PostgreSQL; reset restricted to an explicitly supplied `*_test` database |
 | Business demonstration | `mdm demo --output artifacts/demo.json` | Dedicated synthetic database; completed demonstration is idempotent |
