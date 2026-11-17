@@ -1,6 +1,14 @@
 # Public source: publication state and outstanding acceptance
 
-## Live publication readback — 16 November 2026
+## Apache-2.0 project licence decision — 17 November 2026
+
+The maintainer explicitly selected **Apache-2.0** for original project material. The full [LICENSE](../LICENSE) and [NOTICE](../NOTICE) are accompanied by the separate [third-party notices](../THIRD_PARTY_NOTICES.md); [pyproject.toml](../pyproject.toml) declares SPDX `Apache-2.0` and distributes those legal files with the Python package. This choice does not relicense upstream dbt macros or other third-party contributions embedded in retained evidence.
+
+The latest **fully executed pre-licence** main reference is [`c18423efdc9e`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/c18423efdc9ea9db9430dcc0a64182452a1ef23e). [GitHub Actions #43991228308](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43991228308) successfully executed four jobs: **196 Python tests + 15 subtests**, dbt **48/48**, restored dbt **43/43**, and real Docker/browser lifecycle preserving 34 source identities. Both CircleCI main statuses were also successful. The licence/package change needs a new source-specific qualification after integration.
+
+**Open publication conditions:** GitHub About description/topics remain unset, `main` unprotected, release/tag not published; CircleCI provider-specific original artefacts/settings remain uninspected. No live Snowflake load/readback/rollback, warehouse spend or production operation has been qualified. The prepared About values are in [repository-metadata.json](repository-metadata.json).
+
+## Historical public-readback observation — 16 November 2026
 
 GitHub's repository API now reports `mehdisafer/enterprise-master-data-reconciliation` as **public**, with default branch `main` at [`9b72725da693`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/9b72725da693b4587c27a12b1d65e6f639d69a86). The source successfully completed both default CircleCI jobs and the full [GitHub Actions Quality run #43920046617](https://github.com/mehdisafer/enterprise-master-data-reconciliation/actions/runs/43920046617), including actual PostgreSQL, dbt, restore, container and rendered browser execution. The [source-linked evidence record](../evidence/2026-11-16/ci-main-qualification/) preserves observed job statuses and artifact identifiers.
 
@@ -8,7 +16,7 @@ Publication is **not** fully closed: the GitHub API returns **no repository proj
 
 The maintainer handles explicit licence choice, About metadata, branch protection and any release/tag decision in GitHub's interface. Source public visibility alone grants no open-source licence for original project code or synthetic fixtures. Live Snowflake and production-target qualification remain separate from public source delivery.
 
-## Decision and current state
+## Historical source integration and publication — 14–16 November 2026
 
 On 14 November 2026, the maintainer requested public source publication and chose to make repository-setting changes in GitHub's interface. [PR #2](https://github.com/mehdisafer/enterprise-master-data-reconciliation/pull/2) integrated the original reference into `main` at [merge `e27f4c2f`](https://github.com/mehdisafer/enterprise-master-data-reconciliation/commit/e27f4c2f58d812a2213b1457378095dc72dafd8a). The [readback record](../evidence/2026-11-14/publication-preflight/integration-verification.json) verifies the default branch, complete matching tree and full README. Visibility was still private at 14:15:46 UTC. **Current GitHub repository metadata confirms `public` on 16 November 2026**, while About description/topics remain unset. An unsigned-in browser subsequently displayed both the repository and raw README; it was not an authenticated GitHub API fetch. The [metadata record](repository-metadata.json) separates observed visibility from requested public visibility.
 
@@ -84,4 +92,4 @@ synthetic-data
 
 ## Licence status
 
-No project licence has been selected. GitHub's [licensing guidance](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/licensing-a-repository) states that choosing one is optional; public visibility does not create an open-source licence grant. GitHub users can view and fork a public repository under its platform terms. Original code and synthetic fixtures retain their current unlicensed status, while the [third-party notices](../THIRD_PARTY_NOTICES.md) preserve upstream rights. A later project-licence decision requires the maintainer's explicit choice.
+The maintainer selected **Apache-2.0 on 17 November 2026**. [LICENSE](../LICENSE), [NOTICE](../NOTICE), [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md) and the PEP 639 Python metadata provide the source and package licence declarations. Verify GitHub licence recognition after merging the change. This choice alone does not publish a release, protect `main`, qualify Snowflake or certify production.

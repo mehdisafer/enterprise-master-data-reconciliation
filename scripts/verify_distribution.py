@@ -39,6 +39,9 @@ def main() -> int:
     direct_url = json.loads(dist.read_text("direct_url.json") or "{}")
     entrypoints = [entry.value for entry in dist.entry_points if entry.group == "console_scripts" and entry.name == "mdm"]
     cli = subprocess.run([sys.executable, "-m", "mdm.cli", "--help"], capture_output=True, text=True, timeout=10)
+    expected_license_files = ("LICENSE", "NOTICE", "THIRD_PARTY_NOTICES.md")
+    declared_license_files = set(dist.metadata.get_all("License-File") or ())
+    installed_licenses = {name: dist.read_text(f"licenses/{name}") for name in expected_license_files}
     checks = {
         "installed_outside_source": not installed.is_relative_to(source),
         "not_editable": not direct_url.get("dir_info", {}).get("editable", False),
@@ -46,10 +49,18 @@ def main() -> int:
         "all_source_resources_preserved": bool(files) and all(item["equal"] for item in files),
         "entrypoint": entrypoints == ["mdm.cli:main"],
         "cli_usable": cli.returncode == 0 and "benchmark" in cli.stdout and "migrate" in cli.stdout,
+        "spdx_license_expression": dist.metadata.get("License-Expression") == "Apache-2.0",
+        "license_files_declared": set(expected_license_files).issubset(declared_license_files),
+        "license_files_preserved": all(
+            installed_licenses[name] == (root / name).read_text(encoding="utf-8")
+            for name in expected_license_files
+        ),
     }
     report = {"passed": all(checks.values()), "checks": checks, "version": dist.version,
               "installed_package_path": str(installed), "files": files,
               "core_metadata_version": dist.metadata.get("Metadata-Version"),
+              "spdx_license_expression": dist.metadata.get("License-Expression"),
+              "license_files": sorted(declared_license_files),
               "wheel_metadata": dist.read_text("WHEEL"),
               "cli_returncode": cli.returncode, "cli_stdout": cli.stdout, "cli_stderr": cli.stderr}
     args.output.parent.mkdir(parents=True, exist_ok=True)
