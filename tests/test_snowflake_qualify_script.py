@@ -43,6 +43,12 @@ if "mdm.snowflake" in args:
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text('{"publication":{"snapshot_id":"synthetic"}}\\n')
 elif "dbt" in args:
+    # Emulate dbt writing one shared filename into its configured log directory.
+    log_directory = Path(args[args.index("--log-path") + 1])
+    log_directory.mkdir(parents=True, exist_ok=True)
+    (log_directory / "dbt.log").write_text(
+        ("build" if "build" in args else "docs") + "\\n"
+    )
     target = Path(args[args.index("--target-path") + 1])
     target.mkdir(parents=True, exist_ok=True)
     (target / "manifest.json").write_text("{}\\n")
@@ -218,3 +224,20 @@ def test_partial_failure_preserves_status_and_prohibits_reuse(tmp_path, sandbox)
     assert (dest / "commit.txt").is_file()
     assert invoke("--execute-live", dest, env=env).returncode == 2
     assert log.read_text().splitlines() == calls
+
+
+def test_dbt_build_and_docs_logs_are_separately_preserved(tmp_path, sandbox):
+    env, calls_path = sandbox
+    dest = tmp_path / "distinct-logs"
+    result = invoke("--execute-live", dest, env=env)
+    assert result.returncode == 0, result.stderr
+
+    build_log = dest / "logs" / "dbt-build" / "dbt.log"
+    docs_log = dest / "logs" / "dbt-docs" / "dbt.log"
+    assert build_log.read_text(encoding="utf-8").strip() == "build"
+    assert docs_log.read_text(encoding="utf-8").strip() == "docs"
+    calls = calls_path.read_text(encoding="utf-8").splitlines()
+    assert len(calls) == 3
+    assert f"--log-path {build_log.parent}" in calls[1]
+    assert f"--log-path {docs_log.parent}" in calls[2]
+    assert build_log.parent != docs_log.parent
