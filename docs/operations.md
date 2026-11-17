@@ -71,7 +71,12 @@ unconfirmed. In contrast, the 16 November source-specific hosted Quality run
 completed all four jobs on assigned runners, including database and browser,
 with original logs and artifacts available for inspection.
 Snowflake requires a separate dedicated authorized account configuration; see
-[its qualification procedure](snowflake.md).
+[its qualification procedure](snowflake.md). The opt-in live wrapper now refuses
+an existing evidence directory (including symlinks), refuses a modified
+tracked Git worktree/index, preflights the external credential files, and
+retains source/failure status separately from dbt
+artifacts. Use a fresh evidence path for every attempt and never equate a
+wrapper's mocked unit tests with provider acceptance.
 
 The seven build constraints complement the application/development package entries
 in `uv.lock` by constraining isolated backend resolution. `require-build-hashes`
@@ -411,11 +416,11 @@ integrated the dependency versions.
 carries the supplementary qualification, controls and evidence; its conversation
 is the record for review, the delivered head, final `main`/tree readback and
 workflow observations. Follow the [publication procedure](publication.md) for
-the maintainer's visibility/metadata changes and anonymous-access check. Source
-delivery leaves issue #1, live Snowflake and production target
-qualification, explicit project licence, branch protection and release
-approval open. The synthetic container/browser path passed on 16 November. It does not create a release tag or select the
-project licence.
+the maintainer's visibility/metadata changes and anonymous-access check. Source delivery leaves issue #1, live Snowflake, production target
+qualification, branch protection and source-release approval open.
+The maintainer-selected Apache-2.0 project licence has **already been
+integrated** through PR #25. The synthetic container/browser qualification
+is source-bound and does not create a release tag or execute Snowflake.
 
 During initial setup on 13 November 2026, the rulesets endpoint reported a
 private-plan restriction, and the integration could not read the branch-protection

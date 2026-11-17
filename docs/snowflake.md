@@ -223,8 +223,35 @@ authorized, supply the external configuration and execute from the repository
 root:
 
 ```bash
-bash infra/snowflake/qualify.sh --execute-live evidence/snowflake-live
+bash infra/snowflake/qualify.sh --execute-live evidence/snowflake-live-YYYYMMDD-HHMMSS
 ```
+
+**Proof preservation and authorization preflight:** the script requires an
+explicit `--execute-live` flag, a complete `SNOWFLAKE_*` environment, a
+readable external key file, a dedicated PostgreSQL connection URL/file and
+installed `git`/`uv`. It checks these before creating an output directory
+or connecting to the cloud. The selected output directory must be **new**:
+an existing path, including a dangling symlink, is rejected, not replaced.
+Tracked source and the Git index must also be clean before execution; an
+uncommitted change would make a recorded commit SHA misleading. Untracked
+synthetic inputs still require separate identity/provenance. The parent must
+exist and be writable. Every attempt, including a failed
+one, needs a unique path. A private 0700 evidence directory contains the
+source SHA and a minimal `qualification-status.json` indicating the last
+stage and actual exit code. Minimal non-empty proof files are required
+after each command: publisher report, dbt build manifest/run-results, and dbt
+docs manifest/catalog. A process exit code of zero with missing receipt files
+is treated as **failed**, not an accepted provider execution; semantic
+business and dbt results still require separate inspection. If dbt fails
+after Snowflake publication, the
+partial evidence remains and the status is **failed**, not PASS. Do not rerun
+over those files; reconcile the committed Snowflake manifest before a new
+attempt, because publication and dbt are not one cross-service transaction.
+
+[Offline wrapper regressions](../tests/test_snowflake_qualify_script.py)
+use a fake `uv` executable to verify missing authorization, output refusal,
+clean tracked-source identity, failure preservation and separate dbt paths. **They do not connect to
+Snowflake or qualify an actual provider.**
 
 The script records the commit, publishes a real snapshot, exercises rollback
 before the first publication, reads all source views back, repeats the same
@@ -233,7 +260,9 @@ generates dbt documentation. It preserves the connector report, query ids,
 build `manifest.json` and `run_results.json` under `dbt/build/`, and documentation
 results and `catalog.json` under `dbt/docs/`, with compiled SQL and logs. This
 separation prevents documentation compilation from replacing executed test results.
-The output-path correction is syntax-checked; live Snowflake execution remains open. Inspect
+The dbt build/docs output separation and the additional evidence-preservation
+wrapper are tested without provider access; live Snowflake execution remains
+open. Inspect
 the report: on a previously-published identical snapshot, rollback is not
 re-exercised and `rollback_exercised` remains false. Use a genuine changed input
 for a new rollback exercise; do not relabel an idempotent no-op as a failure test.
