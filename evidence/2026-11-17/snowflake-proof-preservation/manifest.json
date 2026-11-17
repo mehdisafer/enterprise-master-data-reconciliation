@@ -1,0 +1,159 @@
+{
+  "schema": "p02-snowflake-proof-preservation.v1",
+  "date": "2026-11-17",
+  "repo": "mehdisafer/enterprise-master-data-reconciliation",
+  "qualified_source_sha": "57c78b657027377bf656ef516f4e08aba313fb2a",
+  "changes": [
+    {
+      "pr": 26,
+      "merge_sha": "0998c1d8364147c3c57205246887d9bc183d5a6d",
+      "scope": "fail-closed live qualification wrapper with offline regressions"
+    },
+    {
+      "pr": 29,
+      "merge_sha": "57c78b657027377bf656ef516f4e08aba313fb2a",
+      "scope": "separate dbt build/docs logs and offline regression"
+    }
+  ],
+  "github_actions": {
+    "quality": {
+      "run_id": 44168081554,
+      "commit_sha": "57c78b657027377bf656ef516f4e08aba313fb2a",
+      "status": "completed",
+      "conclusion": "success",
+      "jobs": [
+        [
+          "scope",
+          134339430940
+        ],
+        [
+          "dependencies",
+          134339680687
+        ],
+        [
+          "postgres",
+          134339680695
+        ],
+        [
+          "container",
+          134340513261
+        ]
+      ],
+      "pytest": {
+        "passed": 212,
+        "subtests_passed": 15,
+        "warnings": 1,
+        "failures": 0,
+        "errors": 0
+      },
+      "dbt_build": {
+        "pass": 48,
+        "total": 48,
+        "errors": 0,
+        "skips": 0
+      },
+      "dbt_restored": {
+        "pass": 43,
+        "total": 43,
+        "errors": 0,
+        "skips": 0
+      },
+      "restore_verified": true,
+      "browser": {
+        "passed": true,
+        "actual_http_and_browser": true,
+        "lifecycle_executed": true,
+        "identities_preserved": 34,
+        "javascript_errors": 0
+      },
+      "wheel": {
+        "spdx": "Apache-2.0",
+        "installed_non_editable": true,
+        "license_files_declared": true,
+        "license_files_preserved": true
+      },
+      "artifacts": [
+        {
+          "id": 14367320336,
+          "name": "dependencies-57c78b657027377bf656ef516f4e08aba313fb2a",
+          "expires": "2026-12-01T20:20:11Z"
+        },
+        {
+          "id": 14366282147,
+          "name": "secret-scan-57c78b657027377bf656ef516f4e08aba313fb2a",
+          "expires": "2026-12-01T20:19:48Z"
+        },
+        {
+          "id": 14366137947,
+          "name": "container-evidence-57c78b657027377bf656ef516f4e08aba313fb2a",
+          "expires": "2026-12-01T20:22:32Z"
+        },
+        {
+          "id": 14365788935,
+          "name": "postgres-evidence-57c78b657027377bf656ef516f4e08aba313fb2a",
+          "expires": "2026-12-01T20:21:08Z"
+        }
+      ]
+    },
+    "terraform": {
+      "run_id": 44168081748,
+      "commit_sha": "57c78b657027377bf656ef516f4e08aba313fb2a",
+      "status": "completed",
+      "conclusion": "success",
+      "job_id": 134339431946,
+      "fmt": "success",
+      "init_backend_false": "success",
+      "validate": "success",
+      "schema": "success",
+      "plan_executed": false,
+      "apply_executed": false,
+      "snowflake_connected": false,
+      "artifact": {
+        "id": 14366256901,
+        "name": "terraform-static-57c78b657027377bf656ef516f4e08aba313fb2a",
+        "expires": "2026-12-01T20:19:37Z"
+      }
+    }
+  },
+  "circleci": {
+    "main_sha": "57c78b657027377bf656ef516f4e08aba313fb2a",
+    "statuses": [
+      {
+        "context": "ci/circleci: build-and-test",
+        "state": "success",
+        "url": "https://app.circleci.com/workflow/56565fa9-a13b-4ec1-8f6c-fcdc30666b05/job/afe3cfbc-d032-48ef-a584-3fc135fd8b3a"
+      },
+      {
+        "context": "ci/circleci: postgres-integration",
+        "state": "success",
+        "url": "https://app.circleci.com/workflow/56565fa9-a13b-4ec1-8f6c-fcdc30666b05/job/9b3406eb-53de-4fe4-b5b0-59b8b350597f"
+      }
+    ],
+    "original_artifacts_inspected": false,
+    "authenticated_settings_inspected": false
+  },
+  "snowflake_wrapper": {
+    "explicit_opt_in": true,
+    "fresh_private_evidence": true,
+    "tracked_source_drift_rejected": true,
+    "stage_status_retained": true,
+    "build_logs": "logs/dbt-build",
+    "docs_logs": "logs/dbt-docs",
+    "offline_fake_uv_regressions_passed": true,
+    "live_snowflake_executed": false
+  },
+  "release": {
+    "public": true,
+    "spdx": "Apache-2.0",
+    "description": null,
+    "topics": [],
+    "main_protected": false,
+    "rulesets_count": 0,
+    "release_published": false
+  },
+  "acceptance": {
+    "issue1": "8/10",
+    "issue16": "4/6"
+  },
+  "limitations": "Synthetic execution and Terraform static only. GitHub Actions original job logs read, ZIP bytes not copied. CircleCI original artifacts/settings unread. No live Snowflake, billable cloud action, production deployment or independent signoff."
+}
