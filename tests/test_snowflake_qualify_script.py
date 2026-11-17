@@ -5,10 +5,10 @@ PostgreSQL or Snowflake and never use actual credentials.
 """
 import json
 import os
-from pathlib import Path
+import shutil
 import stat
 import subprocess
-import shutil
+from pathlib import Path
 
 import pytest
 
@@ -76,7 +76,10 @@ def test_requires_explicit_opt_in_without_creating_evidence(tmp_path, sandbox):
 
 
 
-def test_dirty_tracked_source_is_rejected_before_any_remote_command(tmp_path, sandbox):
+@pytest.mark.parametrize("mutation", ["unstaged", "staged"])
+def test_dirty_tracked_source_is_rejected_before_any_remote_command(
+    tmp_path, sandbox, mutation
+):
     env, log = sandbox
     checkout = tmp_path / "synthetic-checkout"
     copied = checkout / "infra/snowflake/qualify.sh"
@@ -94,6 +97,8 @@ def test_dirty_tracked_source_is_rejected_before_any_remote_command(tmp_path, sa
         "commit", "-qm", "synthetic source",
     ], check=True)
     source.write_text("uncommitted mutation", encoding="utf-8")
+    if mutation == "staged":
+        subprocess.run(["git", "-C", str(checkout), "add", "tracked.txt"], check=True)
     dest = tmp_path / "must-not-exist"
     run = subprocess.run(
         ["bash", str(copied), "--execute-live", str(dest)],

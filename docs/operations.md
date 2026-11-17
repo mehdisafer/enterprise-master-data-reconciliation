@@ -66,8 +66,9 @@ completed all four jobs on assigned runners, including database and browser,
 with original logs and artifacts available for inspection.
 Snowflake requires a separate dedicated authorized account configuration; see
 [its qualification procedure](snowflake.md). The opt-in live wrapper now refuses
-an existing evidence directory (including symlinks), preflights the external
-credential files, and retains source/failure status separately from dbt
+an existing evidence directory (including symlinks), refuses a modified
+tracked Git worktree/index, preflights the external credential files, and
+retains source/failure status separately from dbt
 artifacts. Use a fresh evidence path for every attempt and never equate a
 wrapper's mocked unit tests with provider acceptance.
 

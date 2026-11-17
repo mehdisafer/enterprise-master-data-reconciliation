@@ -232,7 +232,10 @@ readable external key file, a dedicated PostgreSQL connection URL/file and
 installed `git`/`uv`. It checks these before creating an output directory
 or connecting to the cloud. The selected output directory must be **new**:
 an existing path, including a dangling symlink, is rejected, not replaced.
-The parent must exist and be writable. Every attempt, including a failed
+Tracked source and the Git index must also be clean before execution; an
+uncommitted change would make a recorded commit SHA misleading. Untracked
+synthetic inputs still require separate identity/provenance. The parent must
+exist and be writable. Every attempt, including a failed
 one, needs a unique path. A private 0700 evidence directory contains the
 source SHA and a minimal `qualification-status.json` indicating the last
 stage and actual exit code. If dbt fails after Snowflake publication, the
@@ -242,7 +245,7 @@ attempt, because publication and dbt are not one cross-service transaction.
 
 [Offline wrapper regressions](../tests/test_snowflake_qualify_script.py)
 use a fake `uv` executable to verify missing authorization, output refusal,
-failure preservation and separate dbt paths. **They do not connect to
+clean tracked-source identity, failure preservation and separate dbt paths. **They do not connect to
 Snowflake or qualify an actual provider.**
 
 The script records the commit, publishes a real snapshot, exercises rollback
