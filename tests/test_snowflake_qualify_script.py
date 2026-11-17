@@ -27,11 +27,30 @@ def sandbox(tmp_path):
     binary.mkdir()
     fake_uv = binary / "uv"
     fake_uv.write_text(
-        '#!/usr/bin/env bash\n'
-        'printf "%s\\n" "$*" >> "$MDM_FAKE_UV_LOG"\n'
-        'if [[ "${MDM_FAKE_FAIL_STAGE:-}" == "dbt-build" && "$*" == *"dbt build"* ]]; then\n'
-        '  exit 31\n'
-        'fi\n',
+        """#!/usr/bin/env python3
+import os
+from pathlib import Path
+import sys
+
+args = sys.argv[1:]
+with Path(os.environ["MDM_FAKE_UV_LOG"]).open("a", encoding="utf-8") as handle:
+    handle.write(" ".join(args) + "\\n")
+if os.environ.get("MDM_FAKE_FAIL_STAGE") == "dbt-build" and "dbt" in args and "build" in args:
+    sys.exit(31)
+if "mdm.snowflake" in args:
+    if os.environ.get("MDM_FAKE_SKIP_OUTPUT") != "publisher":
+        dest = Path(args[args.index("--output") + 1])
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_text('{"publication":{"snapshot_id":"synthetic"}}\\n')
+elif "dbt" in args:
+    target = Path(args[args.index("--target-path") + 1])
+    target.mkdir(parents=True, exist_ok=True)
+    (target / "manifest.json").write_text("{}\\n")
+    if "build" in args:
+        (target / "run_results.json").write_text("{}\\n")
+    else:
+        (target / "catalog.json").write_text("{}\\n")
+""",
         encoding="utf-8",
     )
     fake_uv.chmod(0o700)
@@ -169,6 +188,20 @@ def test_success_only_with_fresh_private_directory_and_distinct_dbt_paths(tmp_pa
     assert str(dest / "publication.json") in calls[0]
     assert "dbt build" in calls[1] and str(dest / "dbt/build") in calls[1]
     assert "dbt docs generate" in calls[2] and str(dest / "dbt/docs") in calls[2]
+
+
+def test_zero_exit_without_required_receipt_is_not_a_pass(tmp_path, sandbox):
+    env, log = sandbox
+    env["MDM_FAKE_SKIP_OUTPUT"] = "publisher"
+    dest = tmp_path / "missing-publication"
+    result = invoke("--execute-live", dest, env=env)
+    assert result.returncode == 1
+    assert "Missing expected publisher evidence" in result.stderr
+    assert json.loads((dest / "qualification-status.json").read_text()) == {
+        "status": "failed", "last_stage": "publisher", "exit_code": 1,
+    }
+    assert len(log.read_text().splitlines()) == 1
+    assert not (dest / "publication.json").exists()
 
 
 def test_partial_failure_preserves_status_and_prohibits_reuse(tmp_path, sandbox):

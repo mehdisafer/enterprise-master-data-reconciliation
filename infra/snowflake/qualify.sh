@@ -85,14 +85,26 @@ finish() {
 trap finish EXIT
 printf '%s\n' "$source_sha" > "$evidence_dir/commit.txt"
 
+require_artifact() {
+  if [[ ! -s "$1" ]]; then
+    printf 'Missing expected %s evidence: %s\n' "$stage" "$1" >&2
+    return 1
+  fi
+}
+
 stage="publisher"
 uv run --locked --extra snowflake python -m mdm.snowflake \
   --execute --exercise-rollback --output "$evidence_dir/publication.json"
+require_artifact "$evidence_dir/publication.json"
 stage="dbt-build"
 uv run --locked --extra snowflake dbt build --project-dir dbt --profiles-dir dbt \
   --target snowflake --target-path "$evidence_dir/dbt/build" --log-path "$evidence_dir/logs"
+require_artifact "$evidence_dir/dbt/build/manifest.json"
+require_artifact "$evidence_dir/dbt/build/run_results.json"
 stage="dbt-docs"
 uv run --locked --extra snowflake dbt docs generate --project-dir dbt --profiles-dir dbt \
   --target snowflake --target-path "$evidence_dir/dbt/docs" --log-path "$evidence_dir/logs"
+require_artifact "$evidence_dir/dbt/docs/catalog.json"
+require_artifact "$evidence_dir/dbt/docs/manifest.json"
 stage="complete"
 printf '%s\n' 'Live commands returned success; inspect the original grant, rollback, dbt, cost and cleanup evidence before accepting this environment.'

@@ -238,7 +238,12 @@ synthetic inputs still require separate identity/provenance. The parent must
 exist and be writable. Every attempt, including a failed
 one, needs a unique path. A private 0700 evidence directory contains the
 source SHA and a minimal `qualification-status.json` indicating the last
-stage and actual exit code. If dbt fails after Snowflake publication, the
+stage and actual exit code. Minimal non-empty proof files are required
+after each command: publisher report, dbt build manifest/run-results, and dbt
+docs manifest/catalog. A process exit code of zero with missing receipt files
+is treated as **failed**, not an accepted provider execution; semantic
+business and dbt results still require separate inspection. If dbt fails
+after Snowflake publication, the
 partial evidence remains and the status is **failed**, not PASS. Do not rerun
 over those files; reconcile the committed Snowflake manifest before a new
 attempt, because publication and dbt are not one cross-service transaction.
